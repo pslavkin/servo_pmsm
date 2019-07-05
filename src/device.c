@@ -224,7 +224,6 @@ void Device_initGPIO(void)
     //
     // Disable pin locks.
     //
-    //so piola!
     GPIO_unlockPortConfig(GPIO_PORT_A, 0xFFFFFFFF);
     GPIO_unlockPortConfig(GPIO_PORT_B, 0xFFFFFFFF);
     GPIO_unlockPortConfig(GPIO_PORT_C, 0xFFFFFFFF);

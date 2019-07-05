@@ -36,11 +36,13 @@ ORDERED_OBJS += \
 "./driverlib/version.obj" \
 "./driverlib/xbar.obj" \
 "./src/device.obj" \
-"./src/motor.obj" \
+"./src/main.obj" \
+"./src/scia.obj" \
 "../cmd/RAM_cpu1.cmd" \
 "../lib/rts2800_fpu32.lib" \
 $(GEN_CMDS__FLAG) \
--l"/home/pslavkin/workspace_v9/motor/lib/rts2800_fpu32.lib" \
+-l"/home/pslavkin/workspace_v9/servo_pmsm/lib/rts2800_fpu32.lib" \
+-l"/home/pslavkin/workspace_v9/servo_pmsm/lib/rts2800_fpu32.lib" \
 
 -include ../makefile.init
 
@@ -153,42 +155,42 @@ endif
 
 # Add inputs and outputs from these tool invocations to the build variables 
 EXE_OUTPUTS += \
-motor.out \
+servo_pmsm.out \
 
 EXE_OUTPUTS__QUOTED += \
-"motor.out" \
+"servo_pmsm.out" \
 
 BIN_OUTPUTS += \
-motor.hex \
+servo_pmsm.hex \
 
 BIN_OUTPUTS__QUOTED += \
-"motor.hex" \
+"servo_pmsm.hex" \
 
 
 # All Target
 all: $(OBJS) $(CMD_SRCS) $(LIB_SRCS) $(GEN_CMDS)
-	@$(MAKE) --no-print-directory -Onone "motor.out"
+	@$(MAKE) --no-print-directory -Onone "servo_pmsm.out"
 
 # Tool invocations
-motor.out: $(OBJS) $(CMD_SRCS) $(LIB_SRCS) $(GEN_CMDS)
+servo_pmsm.out: $(OBJS) $(CMD_SRCS) $(LIB_SRCS) $(GEN_CMDS)
 	@echo 'Building target: "$@"'
 	@echo 'Invoking: C2000 Linker'
-	"/opt/ti/ccs901/ccs/tools/compiler/ti-cgt-c2000_18.12.1.LTS/bin/cl2000" -v28 -ml -mt --cla_support=cla1 --float_support=fpu32 --tmu_support=tmu0 --vcu_support=vcu2 --advice:performance=all --define=CPU1 --define=_LAUNCHXL_F28379D -g --diag_warning=225 --diag_wrap=off --display_error_number --abi=coffabi -z -m"motor.map" --stack_size=0x200 --warn_sections --disable_auto_rts --diag_wrap=off --display_error_number --xml_link_info="motor_linkInfo.xml" --rom_model -o "motor.out" $(ORDERED_OBJS)
+	"/opt/ti/ccs901/ccs/tools/compiler/ti-cgt-c2000_18.12.1.LTS/bin/cl2000" -v28 -ml -mt --cla_support=cla1 --float_support=fpu32 --tmu_support=tmu0 --vcu_support=vcu2 --advice:performance=all --define=CPU1 -g --diag_warning=225 --diag_wrap=off --display_error_number --abi=coffabi -z -m"servo_pmsm.map" --stack_size=0x200 --warn_sections --reread_libs --diag_wrap=off --display_error_number --xml_link_info="servo_pmsm_linkInfo.xml" --rom_model -o "servo_pmsm.out" $(ORDERED_OBJS)
 	@echo 'Finished building target: "$@"'
 	@echo ' '
 
-motor.hex: $(EXE_OUTPUTS)
+servo_pmsm.hex: $(EXE_OUTPUTS)
 	@echo 'Building files: $(strip $(EXE_OUTPUTS__QUOTED))'
 	@echo 'Invoking: C2000 Hex Utility'
-	"/opt/ti/ccs901/ccs/tools/compiler/ti-cgt-c2000_18.12.1.LTS/bin/hex2000"  -o "motor.hex" $(EXE_OUTPUTS__QUOTED)
+	"/opt/ti/ccs901/ccs/tools/compiler/ti-cgt-c2000_18.12.1.LTS/bin/hex2000"  -o "servo_pmsm.hex" $(EXE_OUTPUTS__QUOTED)
 	@echo 'Finished building: $(strip $(EXE_OUTPUTS__QUOTED))'
 	@echo ' '
 
 # Other Targets
 clean:
 	-$(RM) $(BIN_OUTPUTS__QUOTED)$(EXE_OUTPUTS__QUOTED)
-	-$(RM) "driverlib/adc.obj" "driverlib/asysctl.obj" "driverlib/can.obj" "driverlib/cla.obj" "driverlib/cmpss.obj" "driverlib/cputimer.obj" "driverlib/dac.obj" "driverlib/dcsm.obj" "driverlib/dma.obj" "driverlib/ecap.obj" "driverlib/emif.obj" "driverlib/epwm.obj" "driverlib/eqep.obj" "driverlib/flash.obj" "driverlib/gpio.obj" "driverlib/hrpwm.obj" "driverlib/i2c.obj" "driverlib/interrupt.obj" "driverlib/mcbsp.obj" "driverlib/memcfg.obj" "driverlib/sci.obj" "driverlib/sdfm.obj" "driverlib/spi.obj" "driverlib/sysctl.obj" "driverlib/upp.obj" "driverlib/version.obj" "driverlib/xbar.obj" "src/device.obj" "src/motor.obj" 
-	-$(RM) "driverlib/adc.d" "driverlib/asysctl.d" "driverlib/can.d" "driverlib/cla.d" "driverlib/cmpss.d" "driverlib/cputimer.d" "driverlib/dac.d" "driverlib/dcsm.d" "driverlib/dma.d" "driverlib/ecap.d" "driverlib/emif.d" "driverlib/epwm.d" "driverlib/eqep.d" "driverlib/flash.d" "driverlib/gpio.d" "driverlib/hrpwm.d" "driverlib/i2c.d" "driverlib/interrupt.d" "driverlib/mcbsp.d" "driverlib/memcfg.d" "driverlib/sci.d" "driverlib/sdfm.d" "driverlib/spi.d" "driverlib/sysctl.d" "driverlib/upp.d" "driverlib/version.d" "driverlib/xbar.d" "src/device.d" "src/motor.d" 
+	-$(RM) "driverlib/adc.obj" "driverlib/asysctl.obj" "driverlib/can.obj" "driverlib/cla.obj" "driverlib/cmpss.obj" "driverlib/cputimer.obj" "driverlib/dac.obj" "driverlib/dcsm.obj" "driverlib/dma.obj" "driverlib/ecap.obj" "driverlib/emif.obj" "driverlib/epwm.obj" "driverlib/eqep.obj" "driverlib/flash.obj" "driverlib/gpio.obj" "driverlib/hrpwm.obj" "driverlib/i2c.obj" "driverlib/interrupt.obj" "driverlib/mcbsp.obj" "driverlib/memcfg.obj" "driverlib/sci.obj" "driverlib/sdfm.obj" "driverlib/spi.obj" "driverlib/sysctl.obj" "driverlib/upp.obj" "driverlib/version.obj" "driverlib/xbar.obj" "src/device.obj" "src/main.obj" "src/scia.obj" 
+	-$(RM) "driverlib/adc.d" "driverlib/asysctl.d" "driverlib/can.d" "driverlib/cla.d" "driverlib/cmpss.d" "driverlib/cputimer.d" "driverlib/dac.d" "driverlib/dcsm.d" "driverlib/dma.d" "driverlib/ecap.d" "driverlib/emif.d" "driverlib/epwm.d" "driverlib/eqep.d" "driverlib/flash.d" "driverlib/gpio.d" "driverlib/hrpwm.d" "driverlib/i2c.d" "driverlib/interrupt.d" "driverlib/mcbsp.d" "driverlib/memcfg.d" "driverlib/sci.d" "driverlib/sdfm.d" "driverlib/spi.d" "driverlib/sysctl.d" "driverlib/upp.d" "driverlib/version.d" "driverlib/xbar.d" "src/device.d" "src/main.d" "src/scia.d" 
 	-@echo 'Finished clean'
 	-@echo ' '
 

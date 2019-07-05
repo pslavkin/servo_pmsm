@@ -8,10 +8,10 @@
 	<codegenToolVersion value="18.12.1.LTS"/>
 	<isElfFormat value="false"/>
 	<connection value="common/targetdb/connections/TIXDS100v2_Connection.xml"/>
-	<linkerCommandFile value="/home/pslavkin/workspace_v9/cmd/RAM_cpu1.cmd"/>
-	<rts value="/home/pslavkin/workspace_v9/motor/lib/rts2800_ml.lib"/>
+	<linkerCommandFile value="2837x_FLASH_lnk_cpu1.cmd"/>
+	<rts value="libc.a"/>
 	<createSlaveProjects value=""/>
-	<templateProperties value="id=com.ti.common.project.core.emptyProjectTemplate"/>
-	<filesToOpen value=""/>
+	<templateProperties value="id=com.ti.common.project.core.emptyProjectWithMainTemplate"/>
+	<filesToOpen value="main.c"/>
 	<isTargetManual value="false"/>
 </projectOptions>
