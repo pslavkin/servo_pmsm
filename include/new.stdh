@@ -1,0 +1,141 @@
+/* Edison Design Group, 1992-2017. */
+/*
+new -- Include file for C++ default operator new (see ARM 12.5).
+*/
+
+#ifndef __NEW_STDH
+#define __NEW_STDH
+
+#ifndef __STDDEF_H
+#include <stddef.h>
+#endif  /* ifndef __STDDEF_H */
+#ifndef _EXCEPTION_H
+/*** START TI REPLACE ***/
+#include <exception>
+/*** END TI REPLACE ***/
+#endif /* _EXCEPTION_H */
+
+#ifndef __EDG_STD_NAMESPACE
+/* If not already defined, define a macro that expands to the namespace
+   containing the standard library. */
+#ifdef __EDG_RUNTIME_USES_NAMESPACES
+#define __EDG_STD_NAMESPACE std
+#else /* ifndef __EDG_RUNTIME_USES_NAMESPACES */
+#define __EDG_STD_NAMESPACE /* nothing */
+#endif /* ifdef __EDG_RUNTIME_USES_NAMESPACES */
+#endif /* ifdef __EDG_STD_NAMESPACE */
+
+/* C++03 uses "throw(std::bad_alloc)" and "throw()" exception specifications.
+   C++11 uses "noexcept" instead of "throw()" and does not otherwise specify
+   exception specifications. */
+#if __cplusplus < 201103L
+#define __NEW_THROWS  throw(__EDG_STD_NAMESPACE::bad_alloc)
+#define __DOES_NOT_THROW throw()
+#else /* !(__cplusplus < 201103L) */
+#define __NEW_THROWS  /* nothing */
+#define __DOES_NOT_THROW noexcept
+#endif /* __cplusplus < 201103L */
+
+
+#ifdef __EDG_RUNTIME_USES_NAMESPACES
+namespace std {
+#endif /* ifdef __EDG_RUNTIME_USES_NAMESPACES */
+
+/* This lets users disable the EDG supplied exception classes. */
+#ifndef __NO_EDG_EXCEPTION_CLASSES
+
+  class bad_alloc : public exception {
+  public:
+    bad_alloc() __DOES_NOT_THROW;
+    bad_alloc(const bad_alloc&) __DOES_NOT_THROW;
+    bad_alloc& operator=(const bad_alloc&) __DOES_NOT_THROW;
+    virtual ~bad_alloc() __DOES_NOT_THROW;
+    virtual const char* what() const __DOES_NOT_THROW;
+  };
+
+  class bad_array_new_length : public bad_alloc {
+  public:
+    bad_array_new_length() __DOES_NOT_THROW;
+    virtual ~bad_array_new_length() __DOES_NOT_THROW;
+  };
+
+#endif /* ifndef __NO_EDG_EXCEPTION_CLASSES */
+
+  typedef void (*new_handler)();
+  new_handler set_new_handler(new_handler) __DOES_NOT_THROW;
+  struct nothrow_t { };
+  // Declaration of object nothrow to permit the use of the placement new
+  // syntax: new (nothrow) T;
+  const nothrow_t nothrow = {};
+
+#ifdef __EDG_RUNTIME_USES_NAMESPACES
+}  /* namespace std */
+
+#ifdef __EDG_IMPLICIT_USING_STD
+/* Implicitly include a using directive for the STD namespace when this
+   preprocessing flag is TRUE. */
+using namespace std;
+#endif /* ifdef __EDG_IMPLICIT_USING_STD */
+
+#endif /* ifdef __EDG_RUNTIME_USES_NAMESPACES */
+
+/* Normal operator new. */
+void *operator new(size_t) __NEW_THROWS;
+
+/* Normal operator delete. */
+void operator delete(void*) throw ();
+
+/* Nothrow version of operator new. */
+void *operator new(size_t, const __EDG_STD_NAMESPACE::nothrow_t&)
+                                                              __DOES_NOT_THROW;
+
+/* Nothrow version of operator delete. */
+void operator delete(void*, const __EDG_STD_NAMESPACE::nothrow_t&)
+                                                              __DOES_NOT_THROW;
+
+/* Placement new. */
+void *operator new(size_t, void*) __DOES_NOT_THROW;
+
+/* Placement delete. */
+#ifdef __PLACEMENT_DELETE
+void operator delete(void*, void*) __DOES_NOT_THROW;
+#endif /* ifdef __PLACEMENT_DELETE */
+
+#ifdef __cpp_sized_deallocation
+/* Sized deallocation version of delete. */
+void operator delete(void*, size_t) __DOES_NOT_THROW;
+#endif /* __cpp_sized_deallocation */
+
+#ifdef __ARRAY_OPERATORS
+
+/* Array new. */
+void *operator new[](size_t) __NEW_THROWS;
+
+/* Array delete. */
+void operator delete[](void*) __DOES_NOT_THROW;
+
+/* Placement array new. */
+void *operator new[](size_t, void*) __DOES_NOT_THROW;
+
+/* Placement array delete. */
+#ifdef __PLACEMENT_DELETE
+void operator delete[](void*, void*) __DOES_NOT_THROW;
+#endif /* ifdef __PLACEMENT_DELETE */
+
+#ifdef __cpp_sized_deallocation
+/* Sized deallocation version of array delete. */
+void operator delete[](void*, size_t) __DOES_NOT_THROW;
+#endif /* __cpp_sized_deallocation */
+
+/* Nothrow version of array new. */
+void *operator new[](size_t,
+                     const __EDG_STD_NAMESPACE::nothrow_t&) __DOES_NOT_THROW;
+
+/* Nothrow version of array delete. */
+void operator delete[](void*,
+                       const __EDG_STD_NAMESPACE::nothrow_t&) __DOES_NOT_THROW;
+#endif /* __ARRAY_OPERATORS */
+
+#undef __NEW_THROWS
+#undef __DOES_NOT_THROW
+#endif  /* ifndef __NEW_STDH */
