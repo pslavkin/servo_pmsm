@@ -1269,6 +1269,9 @@ extern void
 SCI_writeCharArray(uint32_t base, const uint16_t * const array,
                    uint16_t length);
 
+uint16_t
+SCI_writeCharTillFillTxFifo(uint32_t base, const uint16_t * const array,
+                   uint16_t length); //pslavkin
 //*****************************************************************************
 //
 //! Waits to receive an array of characters from the specified port.
@@ -1317,6 +1320,8 @@ SCI_readCharArray(uint32_t base, uint16_t * const array, uint16_t length);
 //*****************************************************************************
 extern void
 SCI_enableInterrupt(uint32_t base, uint32_t intFlags);
+void
+SCI_enableTxInterrupt(uint32_t base); //oslavkin
 
 //*****************************************************************************
 //
@@ -1337,6 +1342,8 @@ SCI_enableInterrupt(uint32_t base, uint32_t intFlags);
 //*****************************************************************************
 extern void
 SCI_disableInterrupt(uint32_t base, uint32_t intFlags);
+void
+SCI_disableTxInterrupt(uint32_t base); //pslavkin
 
 //*****************************************************************************
 //

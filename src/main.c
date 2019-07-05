@@ -12,7 +12,10 @@ void main(void)
     initSCIAFIFO              ( );
     EINT;                          // Enable Global Interrupt (INTM) and realtime interrupt (DBGM)
     ERTM;
-    for(;;);                       // IDLE loop. Just sit and loop forever (optional):
-}
+    for(;;) {
 
+       SysCtl_delay(10000);
+    }
+
+}
 

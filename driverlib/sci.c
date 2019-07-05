@@ -151,6 +151,20 @@ SCI_writeCharArray(uint32_t base, const uint16_t * const array,
         }
     }
 }
+uint16_t
+SCI_writeCharTillFillTxFifo(uint32_t base, const uint16_t * const array,
+                   uint16_t length) //pslavkin
+{
+   ASSERT(SCI_isBaseValid(base));
+   uint16_t i;
+   uint16_t space= SCI_FIFO_TX16-SCI_getTxFIFOStatus(base);
+   if(length>space)
+      length=space;
+   for(i = 0U; i < length; i++)
+      HWREGH(base + SCI_O_TXBUF) = array[i];
+   return i;
+}
+
 
 //*****************************************************************************
 //
@@ -252,6 +266,14 @@ SCI_enableInterrupt(uint32_t base, uint32_t intFlags)
         HWREGH(base + SCI_O_FFRX) |= SCI_FFRX_RXFFIENA;
     }
 }
+void
+SCI_enableTxInterrupt(uint32_t base) //oslavkin
+{
+    //
+    // Enable the specified interrupts.
+    //
+    HWREGH(base + SCI_O_FFTX) |= SCI_FFTX_TXFFIENA;
+}
 
 //*****************************************************************************
 //
@@ -289,6 +311,12 @@ SCI_disableInterrupt(uint32_t base, uint32_t intFlags)
     {
         HWREGH(base + SCI_O_FFRX) &= ~SCI_FFRX_RXFFIENA;
     }
+}
+void
+SCI_disableTxInterrupt(uint32_t base) //pslavkin
+{
+    // Disable the specified interrupts.
+   HWREGH(base + SCI_O_FFTX) &= ~SCI_FFTX_TXFFIENA;
 }
 
 //*****************************************************************************
