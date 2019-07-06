@@ -8,6 +8,7 @@ C_SRCS += \
 ../src/device.c \
 ../src/events.c \
 ../src/everythings.c \
+../src/leds.c \
 ../src/main.c \
 ../src/scia.c \
 ../src/sm.c 
@@ -17,6 +18,7 @@ C_DEPS += \
 ./src/device.d \
 ./src/events.d \
 ./src/everythings.d \
+./src/leds.d \
 ./src/main.d \
 ./src/scia.d \
 ./src/sm.d 
@@ -26,6 +28,7 @@ OBJS += \
 ./src/device.obj \
 ./src/events.obj \
 ./src/everythings.obj \
+./src/leds.obj \
 ./src/main.obj \
 ./src/scia.obj \
 ./src/sm.obj 
@@ -35,6 +38,7 @@ OBJS__QUOTED += \
 "src/device.obj" \
 "src/events.obj" \
 "src/everythings.obj" \
+"src/leds.obj" \
 "src/main.obj" \
 "src/scia.obj" \
 "src/sm.obj" 
@@ -44,6 +48,7 @@ C_DEPS__QUOTED += \
 "src/device.d" \
 "src/events.d" \
 "src/everythings.d" \
+"src/leds.d" \
 "src/main.d" \
 "src/scia.d" \
 "src/sm.d" 
@@ -53,6 +58,7 @@ C_SRCS__QUOTED += \
 "../src/device.c" \
 "../src/events.c" \
 "../src/everythings.c" \
+"../src/leds.c" \
 "../src/main.c" \
 "../src/scia.c" \
 "../src/sm.c" 
