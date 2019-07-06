@@ -7,8 +7,8 @@ uint16_t nextWIndex ( cBuffer_t* cb                 ) { return nextIndex(cb, cb-
 uint16_t nextRIndex ( cBuffer_t* cb                 ) { return nextIndex(cb, cb->rIndex)           ;}
 
 uint16_t prevIndex  ( cBuffer_t* cb, uint16_t index ) { return (index == 0)?cb->poolSize:(index-1) ;}
-uint16_t prevRIndex ( cBuffer_t* cb                 ) { return prevIndex(cb, cb->rIndex)           ;}
 uint16_t prevWIndex ( cBuffer_t* cb                 ) { return prevIndex(cb, cb->wIndex)           ;}
+uint16_t prevRIndex ( cBuffer_t* cb                 ) { return prevIndex(cb, cb->rIndex)           ;}
 
 uint16_t dataOnCBuffer(cBuffer_t* cb)
 {
@@ -22,53 +22,50 @@ uint16_t spaceOnCBuffer(cBuffer_t* cb)
    return cb->poolSize-dataOnCBuffer(cb);
 }
 //-----------------------------------------------------------------
-void initCBuffer ( void )
-{
-}
-//-----------------------------------------------------------------
-bool writeCBuffer(cBuffer_t* cb, char data)
+bool writeCBuffer(cBuffer_t* cb, uint16_t* data)
 {
    bool ans;
    uint16_t next=nextWIndex(cb);
    if (next != cb->rIndex) {
-      cb->pool[cb->wIndex] = data;
-      cb->wIndex          = next;
-      ans=true;
+      uint16_t i, dataSize=cb->dataSize;
+      for(i=0;i<dataSize;i++)
+         cb->pool[cb->wIndex*dataSize+i] = data[i];
+      cb->wIndex = next;
+      ans        = true;
    }
    else
       ans=false;
    return ans;
 }
-uint16_t writeCBufferArray(cBuffer_t* cb, char* data, uint16_t len)
+uint16_t writeCBufferArray(cBuffer_t* cb, uint16_t* data, uint16_t len)
 {
    uint16_t i;
    for ( i=0;i<len;i++ ) {
-      if ( writeCBuffer (cb, data[i] )==false)
+      if ( writeCBuffer(cb, data + (i*cb->dataSize))==false)
          break;
    }
    return i;
 }
-
 //-------------------------------------------------------------------------------------
-char readCBuffer(cBuffer_t* cb, bool* space)
+bool readCBuffer(cBuffer_t* cb, uint16_t* data)
 {
-   char data;
+   bool ans;
    if (cb->rIndex != cb->wIndex) {
-      data=cb->pool[cb->rIndex];
+      uint16_t i,dataSize=cb->dataSize;
+      for(i=0;i<dataSize;i++)
+         data[i]=cb->pool[cb->rIndex*dataSize+i];
       cb->rIndex = nextRIndex(cb);
-      *space=true;
+      ans=true;
    }
    else
-      *space=false;
-   return data;                  //notar que si no hay nada para leer, devuelve simempre el ultimo dato escrito...
+      ans=false;
+   return ans;                  //notar que si no hay nada para leer, devuelve simempre el ultimo dato escrito...
 }
-uint16_t readCBufferArray(cBuffer_t* cb, char* data, uint16_t len)
+uint16_t readCBufferArray(cBuffer_t* cb, uint16_t* data, uint16_t len)
 {
-   uint16_t i;
-   bool space;
+   uint16_t i,dataSize=cb->dataSize;
    for ( i=0;i<len;i++ ) {
-      data[i]=readCBuffer(cb, &space);
-      if(space==false)
+      if(readCBuffer(cb,data+i*dataSize )==false)
          break;
    }
    return i;

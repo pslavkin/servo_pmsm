@@ -6,37 +6,55 @@
 C_SRCS += \
 ../src/cbuffer.c \
 ../src/device.c \
+../src/events.c \
+../src/everythings.c \
 ../src/main.c \
-../src/scia.c 
+../src/scia.c \
+../src/sm.c 
 
 C_DEPS += \
 ./src/cbuffer.d \
 ./src/device.d \
+./src/events.d \
+./src/everythings.d \
 ./src/main.d \
-./src/scia.d 
+./src/scia.d \
+./src/sm.d 
 
 OBJS += \
 ./src/cbuffer.obj \
 ./src/device.obj \
+./src/events.obj \
+./src/everythings.obj \
 ./src/main.obj \
-./src/scia.obj 
+./src/scia.obj \
+./src/sm.obj 
 
 OBJS__QUOTED += \
 "src/cbuffer.obj" \
 "src/device.obj" \
+"src/events.obj" \
+"src/everythings.obj" \
 "src/main.obj" \
-"src/scia.obj" 
+"src/scia.obj" \
+"src/sm.obj" 
 
 C_DEPS__QUOTED += \
 "src/cbuffer.d" \
 "src/device.d" \
+"src/events.d" \
+"src/everythings.d" \
 "src/main.d" \
-"src/scia.d" 
+"src/scia.d" \
+"src/sm.d" 
 
 C_SRCS__QUOTED += \
 "../src/cbuffer.c" \
 "../src/device.c" \
+"../src/events.c" \
+"../src/everythings.c" \
 "../src/main.c" \
-"../src/scia.c" 
+"../src/scia.c" \
+"../src/sm.c" 
 
 

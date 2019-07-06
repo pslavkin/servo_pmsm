@@ -1270,7 +1270,7 @@ SCI_writeCharArray(uint32_t base, const uint16_t * const array,
                    uint16_t length);
 
 uint16_t
-SCI_writeCharTillFillTxFifo(uint32_t base, const uint16_t * const array,
+SCI_writeCharArrayNoneBlocking(uint32_t base, const uint16_t * const array,
                    uint16_t length); //pslavkin
 //*****************************************************************************
 //
@@ -1292,6 +1292,9 @@ SCI_writeCharTillFillTxFifo(uint32_t base, const uint16_t * const array,
 //*****************************************************************************
 extern void
 SCI_readCharArray(uint32_t base, uint16_t * const array, uint16_t length);
+
+void
+SCI_readCharArrayNoneBlocking(uint32_t base, uint16_t * const array, uint16_t length);
 
 //*****************************************************************************
 //

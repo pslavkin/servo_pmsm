@@ -1,6 +1,9 @@
 #include "driverlib.h"
 #include "device.h"
-#include "sci.h"
+#include "scia.h"
+#include "sm.h"
+#include "events.h"
+#include "everythings.h"
 
 void main(void)
 {
@@ -10,11 +13,12 @@ void main(void)
     Interrupt_initModule      ( ); // Initialize PIE and clear PIE registers. Disables CPU interrupts.
     Interrupt_initVectorTable ( ); // Initialize the PIE vector table with pointers to the shell Interrupt // Service Routines (ISR).
     initSCIAFIFO              ( );
+    Init_Events               ( );
+    Init_everythings();
     EINT;                          // Enable Global Interrupt (INTM) and realtime interrupt (DBGM)
     ERTM;
     for(;;) {
-       SysCtl_delay(10000);
-       sciaBufferWrite("12345\r\n",7);
+       State_Machine();
     }
 
 }

@@ -40,6 +40,7 @@
 // $
 //###########################################################################
 
+
 #include "sci.h"
 
 //*****************************************************************************
@@ -151,20 +152,16 @@ SCI_writeCharArray(uint32_t base, const uint16_t * const array,
         }
     }
 }
+
 uint16_t
-SCI_writeCharTillFillTxFifo(uint32_t base, const uint16_t * const array,
+SCI_writeCharArrayNoneBlocking(uint32_t base, const uint16_t * const array,
                    uint16_t length) //pslavkin
 {
-   ASSERT(SCI_isBaseValid(base));
    uint16_t i;
-   uint16_t space= SCI_FIFO_TX16-SCI_getTxFIFOStatus(base);
-   if(length>space)
-      length=space;
    for(i = 0U; i < length; i++)
       HWREGH(base + SCI_O_TXBUF) = array[i];
    return i;
 }
-
 
 //*****************************************************************************
 //
@@ -227,6 +224,13 @@ SCI_readCharArray(uint32_t base, uint16_t * const array, uint16_t length)
                        (HWREGH(base + SCI_O_RXBUF) & SCI_RXBUF_SAR_M);
         }
     }
+}
+void
+SCI_readCharArrayNoneBlocking(uint32_t base, uint16_t * const array, uint16_t length)
+{
+   uint16_t i;
+   for(i = 0U; i < length; i++)
+      array[i] = (uint16_t) (HWREGH(base + SCI_O_RXBUF) & SCI_RXBUF_SAR_M);
 }
 
 //*****************************************************************************
