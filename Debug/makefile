@@ -35,6 +35,7 @@ ORDERED_OBJS += \
 "./driverlib/upp.obj" \
 "./driverlib/version.obj" \
 "./driverlib/xbar.obj" \
+"./src/cbuffer.obj" \
 "./src/device.obj" \
 "./src/main.obj" \
 "./src/scia.obj" \
@@ -189,8 +190,8 @@ servo_pmsm.hex: $(EXE_OUTPUTS)
 # Other Targets
 clean:
 	-$(RM) $(BIN_OUTPUTS__QUOTED)$(EXE_OUTPUTS__QUOTED)
-	-$(RM) "driverlib/adc.obj" "driverlib/asysctl.obj" "driverlib/can.obj" "driverlib/cla.obj" "driverlib/cmpss.obj" "driverlib/cputimer.obj" "driverlib/dac.obj" "driverlib/dcsm.obj" "driverlib/dma.obj" "driverlib/ecap.obj" "driverlib/emif.obj" "driverlib/epwm.obj" "driverlib/eqep.obj" "driverlib/flash.obj" "driverlib/gpio.obj" "driverlib/hrpwm.obj" "driverlib/i2c.obj" "driverlib/interrupt.obj" "driverlib/mcbsp.obj" "driverlib/memcfg.obj" "driverlib/sci.obj" "driverlib/sdfm.obj" "driverlib/spi.obj" "driverlib/sysctl.obj" "driverlib/upp.obj" "driverlib/version.obj" "driverlib/xbar.obj" "src/device.obj" "src/main.obj" "src/scia.obj" 
-	-$(RM) "driverlib/adc.d" "driverlib/asysctl.d" "driverlib/can.d" "driverlib/cla.d" "driverlib/cmpss.d" "driverlib/cputimer.d" "driverlib/dac.d" "driverlib/dcsm.d" "driverlib/dma.d" "driverlib/ecap.d" "driverlib/emif.d" "driverlib/epwm.d" "driverlib/eqep.d" "driverlib/flash.d" "driverlib/gpio.d" "driverlib/hrpwm.d" "driverlib/i2c.d" "driverlib/interrupt.d" "driverlib/mcbsp.d" "driverlib/memcfg.d" "driverlib/sci.d" "driverlib/sdfm.d" "driverlib/spi.d" "driverlib/sysctl.d" "driverlib/upp.d" "driverlib/version.d" "driverlib/xbar.d" "src/device.d" "src/main.d" "src/scia.d" 
+	-$(RM) "driverlib/adc.obj" "driverlib/asysctl.obj" "driverlib/can.obj" "driverlib/cla.obj" "driverlib/cmpss.obj" "driverlib/cputimer.obj" "driverlib/dac.obj" "driverlib/dcsm.obj" "driverlib/dma.obj" "driverlib/ecap.obj" "driverlib/emif.obj" "driverlib/epwm.obj" "driverlib/eqep.obj" "driverlib/flash.obj" "driverlib/gpio.obj" "driverlib/hrpwm.obj" "driverlib/i2c.obj" "driverlib/interrupt.obj" "driverlib/mcbsp.obj" "driverlib/memcfg.obj" "driverlib/sci.obj" "driverlib/sdfm.obj" "driverlib/spi.obj" "driverlib/sysctl.obj" "driverlib/upp.obj" "driverlib/version.obj" "driverlib/xbar.obj" "src/cbuffer.obj" "src/device.obj" "src/main.obj" "src/scia.obj" 
+	-$(RM) "driverlib/adc.d" "driverlib/asysctl.d" "driverlib/can.d" "driverlib/cla.d" "driverlib/cmpss.d" "driverlib/cputimer.d" "driverlib/dac.d" "driverlib/dcsm.d" "driverlib/dma.d" "driverlib/ecap.d" "driverlib/emif.d" "driverlib/epwm.d" "driverlib/eqep.d" "driverlib/flash.d" "driverlib/gpio.d" "driverlib/hrpwm.d" "driverlib/i2c.d" "driverlib/interrupt.d" "driverlib/mcbsp.d" "driverlib/memcfg.d" "driverlib/sci.d" "driverlib/sdfm.d" "driverlib/spi.d" "driverlib/sysctl.d" "driverlib/upp.d" "driverlib/version.d" "driverlib/xbar.d" "src/cbuffer.d" "src/device.d" "src/main.d" "src/scia.d" 
 	-@echo 'Finished clean'
 	-@echo ' '
 
