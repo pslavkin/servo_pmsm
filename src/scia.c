@@ -1,28 +1,30 @@
 #include "driverlib.h"
 #include "device.h"
 #include "cbuffer.h"
+#include "scia.h"
 
+char rBuffPool[MAX_RCBUFFER_POOL+1];
+char wBuffPool[MAX_WCBUFFER_POOL+1];
+cBuffer_t rBuff,wBuff;
+
+char wData[SCI_FIFO_TX16];
 __interrupt void sciaTXFIFOISR(void)/*{{{*/
 {
-   char data[SCI_FIFO_TX16];
-   uint16_t fifoSpace= SCI_FIFO_TX16-SCI_getTxFIFOStatus(SCIA_BASE);
-   uint16_t cBufferLen;
-   cBufferLen=readCBufferArray(&wBuff,data,fifoSpace);
-   SCI_writeCharArray( SCIA_BASE ,data , cBufferLen );
+   uint16_t fifoSpace  = SCI_FIFO_TX16-SCI_getTxFIFOStatus(SCIA_BASE);
+   uint16_t cBufferLen = readCBufferArray(&wBuff,wData,fifoSpace);
+   SCI_writeCharArray( SCIA_BASE ,wData , cBufferLen );
    if(cBufferLen<fifoSpace)
       SCI_disableTxInterrupt ( SCIA_BASE );
    SCI_clearInterruptStatus ( SCIA_BASE, SCI_INT_TXFF    );
    Interrupt_clearACKGroup  ( INTERRUPT_ACK_GROUP9       );
 }/*}}}*/
 
+char rData[SCI_FIFO_RX16];
 __interrupt void sciaRXFIFOISR(void)/*{{{*/
 {
-   char data[SCI_FIFO_RX16];
    uint16_t len= SCI_getRxFIFOStatus ( SCIA_BASE               );
-   SCI_readCharArray                 ( SCIA_BASE ,data ,len    );
-   writeCBufferArray                 ( &rBuff    ,data ,len    );
-   SCI_enableTxInterrupt             ( SCIA_BASE               );
-
+   SCI_readCharArray                 ( SCIA_BASE ,rData ,len   );
+   writeCBufferArray                 ( &rBuff    ,rData ,len   );
    SCI_clearOverflowStatus           ( SCIA_BASE               );
    SCI_clearInterruptStatus          ( SCIA_BASE ,SCI_INT_RXFF );
    Interrupt_clearACKGroup           ( INTERRUPT_ACK_GROUP9    );
@@ -54,7 +56,7 @@ void initSCIAFIFO(void)/*{{{*/
     SCI_enableFIFO            ( SCIA_BASE                               );
     SCI_enableInterrupt       ( SCIA_BASE   ,SCI_INT_RXFF               );
     SCI_disableInterrupt      ( SCIA_BASE   ,SCI_INT_RXERR              );
-    SCI_setFIFOInterruptLevel ( SCIA_BASE   ,SCI_FIFO_TX2 ,SCI_FIFO_RX2 );
+    SCI_setFIFOInterruptLevel ( SCIA_BASE   ,SCI_FIFO_TX2 ,SCI_FIFO_RX1 );
     SCI_performSoftwareReset  ( SCIA_BASE                               );
     SCI_resetTxFIFO           ( SCIA_BASE                               );
     SCI_resetRxFIFO           ( SCIA_BASE                               );
@@ -62,6 +64,38 @@ void initSCIAFIFO(void)/*{{{*/
     Interrupt_register        ( INT_SCIA_TX ,sciaTXFIFOISR              );
     Interrupt_enable          ( INT_SCIA_RX                             );
     Interrupt_enable          ( INT_SCIA_TX                             );
-    initCBuffer();
+    initSCIACBuffer           (                                         );
     Interrupt_clearACKGroup   ( INTERRUPT_ACK_GROUP9                    );
 }/*}}}*/
+
+
+uint16_t sciaBufferWrite(char* data, uint16_t len)
+{
+   uint16_t ans;
+   SCI_disableTxInterrupt ( SCIA_BASE        );
+   ans=writeCBufferArray  ( &wBuff,data ,len );
+   SCI_enableTxInterrupt  ( SCIA_BASE        );
+   return ans;
+}
+uint16_t sciaBufferRead(char* data, uint16_t len)
+{
+   uint16_t ans;
+   SCI_disableRxInterrupt ( SCIA_BASE        );
+   ans=readCBufferArray  ( &rBuff,data ,len );
+   SCI_enableRxInterrupt  ( SCIA_BASE        );
+   return ans;
+}
+
+void initSCIACBuffer ( void )
+{
+   rBuff.pool     = rBuffPool;
+   rBuff.poolSize = MAX_RCBUFFER_POOL;
+   rBuff.rIndex   = 0;
+   rBuff.wIndex   = 0;
+
+   wBuff.pool     = wBuffPool;
+   wBuff.poolSize = MAX_WCBUFFER_POOL;
+   wBuff.rIndex   = 0;
+   wBuff.wIndex   = 0;
+}
+

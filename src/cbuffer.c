@@ -2,10 +2,6 @@
 #include "stdbool.h"
 #include "cbuffer.h"
 
-char rBuffPool[MAX_RCBUFFER_POOL+1];
-char wBuffPool[MAX_WCBUFFER_POOL+1];
-cBuffer_t rBuff,wBuff;
-
 uint16_t nextIndex  ( cBuffer_t* cb, uint16_t index ) { return (index == cb->poolSize)?0U:(index+1);}
 uint16_t nextWIndex ( cBuffer_t* cb                 ) { return nextIndex(cb, cb->wIndex)           ;}
 uint16_t nextRIndex ( cBuffer_t* cb                 ) { return nextIndex(cb, cb->rIndex)           ;}
@@ -28,15 +24,6 @@ uint16_t spaceOnCBuffer(cBuffer_t* cb)
 //-----------------------------------------------------------------
 void initCBuffer ( void )
 {
-   rBuff.pool     = rBuffPool;
-   rBuff.poolSize = MAX_RCBUFFER_POOL;
-   rBuff.rIndex   = 0;
-   rBuff.wIndex   = 0;
-
-   wBuff.pool     = wBuffPool;
-   wBuff.poolSize = MAX_WCBUFFER_POOL;
-   wBuff.rIndex   = 0;
-   wBuff.wIndex   = 0;
 }
 //-----------------------------------------------------------------
 bool writeCBuffer(cBuffer_t* cb, char data)

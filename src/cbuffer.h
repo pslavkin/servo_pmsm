@@ -4,8 +4,6 @@
 #include "stdbool.h"
 #include "stdint.h"
 //-----------------------------------------------------------
-#define MAX_RCBUFFER_POOL 100
-#define MAX_WCBUFFER_POOL 100
 
 typedef struct cBuff_struct {
    char*    pool;
@@ -13,7 +11,6 @@ typedef struct cBuff_struct {
    uint16_t rIndex;
    uint16_t wIndex;
 } cBuffer_t;
-extern cBuffer_t rBuff,wBuff;
 
 //-----------------------------------------------------------
 void     initCBuffer       ( void                                    );

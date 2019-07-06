@@ -269,10 +269,12 @@ SCI_enableInterrupt(uint32_t base, uint32_t intFlags)
 void
 SCI_enableTxInterrupt(uint32_t base) //oslavkin
 {
-    //
-    // Enable the specified interrupts.
-    //
     HWREGH(base + SCI_O_FFTX) |= SCI_FFTX_TXFFIENA;
+}
+void
+SCI_enableRxInterrupt(uint32_t base) //oslavkin
+{
+   HWREGH(base + SCI_O_FFRX) |= SCI_FFRX_RXFFIENA;
 }
 
 //*****************************************************************************
@@ -315,8 +317,12 @@ SCI_disableInterrupt(uint32_t base, uint32_t intFlags)
 void
 SCI_disableTxInterrupt(uint32_t base) //pslavkin
 {
-    // Disable the specified interrupts.
    HWREGH(base + SCI_O_FFTX) &= ~SCI_FFTX_TXFFIENA;
+}
+void
+SCI_disableRxInterrupt(uint32_t base) //pslavkin
+{
+   HWREGH(base + SCI_O_FFRX) &= ~SCI_FFRX_RXFFIENA;
 }
 
 //*****************************************************************************

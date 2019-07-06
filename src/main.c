@@ -13,8 +13,8 @@ void main(void)
     EINT;                          // Enable Global Interrupt (INTM) and realtime interrupt (DBGM)
     ERTM;
     for(;;) {
-
        SysCtl_delay(10000);
+       sciaBufferWrite("12345\r\n",7);
     }
 
 }

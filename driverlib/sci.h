@@ -1322,6 +1322,8 @@ extern void
 SCI_enableInterrupt(uint32_t base, uint32_t intFlags);
 void
 SCI_enableTxInterrupt(uint32_t base); //oslavkin
+void 
+SCI_enableRxInterrupt(uint32_t base); //oslavkin
 
 //*****************************************************************************
 //
@@ -1344,6 +1346,9 @@ extern void
 SCI_disableInterrupt(uint32_t base, uint32_t intFlags);
 void
 SCI_disableTxInterrupt(uint32_t base); //pslavkin
+void
+SCI_disableRxInterrupt(uint32_t base); //pslavkin
+
 
 //*****************************************************************************
 //
