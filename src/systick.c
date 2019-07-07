@@ -2,6 +2,7 @@
 #include "device.h"
 #include "events.h"
 #include "everythings.h"
+#include "leds.h"
 
 __interrupt void  cpuTimer2ISR   ( void                   );
 void              initCPUTimers  ( void                   );
@@ -87,6 +88,7 @@ void enableTimer2Interrupt(void)
 __interrupt void cpuTimer2ISR(void)
 {
     // The CPU acknowledges the interrupt.
-    Send_Event(ANY_Event,everythings());
+//    Send_Event(ANY_Event,everythings());
+    led1Toogle();
 }
 

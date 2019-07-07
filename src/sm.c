@@ -22,13 +22,16 @@ void State_Machine(void)
 {
    while(1) {
       if(atomicReadEvent(&Event)==true) {
-         led1Toogle();
+         SysCtl_delay(10000000);
+//         led1Toogle();
          ActualState = *(Event.Machine);
          for(;ActualState->Event!=ANY_Event && ActualState->Event!=Event.Event;ActualState++)
             ;
          *Event.Machine=ActualState->Next_State;
          ActualState->Func();
       }
+      else
+         Send_Event(ANY_Event,everythings());
    }
 }
 

@@ -33,11 +33,11 @@ void Init_everythings(void)
 }
 void func1(void)
 {
-   sciaBufferWrite((uint16_t*)"funcion1\r\n",10);
+   sciaBufferWrite((uint16_t*)"blablan1\r\n",10);
 }
 void func2(void)
 {
-   sciaBufferWrite((uint16_t*)"funcion2\r\n",10);
+    sciaBufferWrite((uint16_t*)"ram  ---\r\n",10);
 }
 void func3(void)
 {

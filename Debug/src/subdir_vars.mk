@@ -3,6 +3,9 @@
 ################################################################################
 
 # Add inputs and outputs from these tool invocations to the build variables 
+ASM_SRCS += \
+../src/F2837xD_CodeStartBranch.asm 
+
 C_SRCS += \
 ../src/cbuffer.c \
 ../src/device.c \
@@ -26,6 +29,7 @@ C_DEPS += \
 ./src/systick.d 
 
 OBJS += \
+./src/F2837xD_CodeStartBranch.obj \
 ./src/cbuffer.obj \
 ./src/device.obj \
 ./src/events.obj \
@@ -36,7 +40,11 @@ OBJS += \
 ./src/sm.obj \
 ./src/systick.obj 
 
+ASM_DEPS += \
+./src/F2837xD_CodeStartBranch.d 
+
 OBJS__QUOTED += \
+"src/F2837xD_CodeStartBranch.obj" \
 "src/cbuffer.obj" \
 "src/device.obj" \
 "src/events.obj" \
@@ -57,6 +65,12 @@ C_DEPS__QUOTED += \
 "src/scia.d" \
 "src/sm.d" \
 "src/systick.d" 
+
+ASM_DEPS__QUOTED += \
+"src/F2837xD_CodeStartBranch.d" 
+
+ASM_SRCS__QUOTED += \
+"../src/F2837xD_CodeStartBranch.asm" 
 
 C_SRCS__QUOTED += \
 "../src/cbuffer.c" \
