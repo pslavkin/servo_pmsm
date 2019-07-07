@@ -51,23 +51,23 @@ void initSCIAFIFO(void)
     SCI_setConfig(SCIA_BASE, DEVICE_LSPCLK_FREQ, 9600, (SCI_CONFIG_WLEN_8 |
                                                         SCI_CONFIG_STOP_ONE |
                                                         SCI_CONFIG_PAR_NONE));
-    SCI_enableModule          ( SCIA_BASE                               );
-    SCI_resetChannels         ( SCIA_BASE                               );
-    SCI_enableFIFO            ( SCIA_BASE                               );
-    SCI_enableInterrupt       ( SCIA_BASE   ,SCI_INT_RXFF               );
+    SCI_enableModule          ( SCIA_BASE                                                         );
+    SCI_resetChannels         ( SCIA_BASE                                                         );
+    SCI_enableFIFO            ( SCIA_BASE                                                         );
+    SCI_enableInterrupt       ( SCIA_BASE   ,SCI_INT_RXFF                                         );
     SCI_disableInterrupt      ( SCIA_BASE   ,SCI_INT_RXERR | SCI_INT_FE | SCI_INT_OE | SCI_INT_PE );
-    SCI_setFIFOInterruptLevel ( SCIA_BASE   ,SCI_FIFO_TX2 ,SCI_FIFO_RX1 );
-    SCI_performSoftwareReset  ( SCIA_BASE                               );
-    SCI_resetTxFIFO           ( SCIA_BASE                               );
-    SCI_resetRxFIFO           ( SCIA_BASE                               );
-    Interrupt_register        ( INT_SCIA_RX ,sciaRXFIFOISR              );
-    Interrupt_register        ( INT_SCIA_TX ,sciaTXFIFOISR              );
-    Interrupt_enable          ( INT_SCIA_RX                             );
-    Interrupt_enable          ( INT_SCIA_TX                             );
-    initSCIACBuffer           (                                         );
-    Interrupt_clearACKGroup   ( INTERRUPT_ACK_GROUP9                    );
+    SCI_setFIFOInterruptLevel ( SCIA_BASE   ,SCI_FIFO_TX2 ,SCI_FIFO_RX1                           );
+    SCI_performSoftwareReset  ( SCIA_BASE                                                         );
+    SCI_resetTxFIFO           ( SCIA_BASE                                                         );
+    SCI_resetRxFIFO           ( SCIA_BASE                                                         );
+    Interrupt_register        ( INT_SCIA_RX ,sciaRXFIFOISR                                        );
+    Interrupt_register        ( INT_SCIA_TX ,sciaTXFIFOISR                                        );
+    Interrupt_enable          ( INT_SCIA_RX                                                       );
+    Interrupt_enable          ( INT_SCIA_TX                                                       );
+    initSCIACBuffer           (                                                                   );
+    Interrupt_clearACKGroup   ( INTERRUPT_ACK_GROUP9                                              );
+    sciaBufferWrite           ( "servo init\r\n",12                                               );
 }
-
 
 uint16_t sciaBufferWrite(uint16_t* data, uint16_t len)
 {

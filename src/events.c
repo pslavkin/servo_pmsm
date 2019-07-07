@@ -3,6 +3,7 @@
 #include "events.h"
 #include "cbuffer.h"
 #include "systick.h"
+#include "cpu.h"
 
 Events eventsBuffPool[MAX_EVENTS+1];
 cBuffer_t eventsBuff;
@@ -22,16 +23,16 @@ bool Send_Event(uint16_t Event,const State** Machine)
    Events E={Event,Machine};
    return writeCBuffer(&eventsBuff,(uint16_t*)&E);
 }
-bool Read_Event(Events* E)
+bool readEvent(Events* E)
 {
    return readCBuffer(&eventsBuff,(uint16_t*)E);
 }
 bool atomicReadEvent(Events* E)
 {
    bool ans;
-   disableTimer2Interrupt ( );
-   ans = readCBuffer ( &eventsBuff,(uint16_t* )E);
-   enableTimer2Interrupt ( );
+   DINT;                          // Disable Global Interrupt (INTM) and realtime interrupt (DBGM)
+      ans = readCBuffer ( &eventsBuff,(uint16_t* )E);
+   EINT;                          // Enable Global Interrupt (INTM) and realtime interrupt (DBGM)
    return ans;
 }
 //-------------------------------------------------------------------------------------
