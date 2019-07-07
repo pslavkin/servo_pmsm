@@ -9,18 +9,18 @@ typedef struct Efn      //Event-Function-Next
 {
    uint16_t                Event;
    void                    (*Func) (void);
-   struct Efn* Next_State;
+   const struct Efn* const Next_State;
 } State;
 
 //------------------------------------------------------------------
 void           Rien          ( void                                         );
-void           Set_State     ( State* New_State,State** Machine );
+void           Set_State     ( const State* New_State,const State** Machine );
 uint16_t       Actual_Event  ( void                                         );
-State**  Actual_Sm     ( void                                         );
+const State**  Actual_Sm     ( void                                         );
 void           State_Machine ( void                                         );
-State**  Empty_Sm      ( void                                         );
+const State**  Empty_Sm      ( void                                         );
 //------------------------------------------------------------------
-#define  Empty_State_Machine     ((State**)0x00000000)
+#define  Empty_State_Machine     ((const State**)0x00000000)
 
 enum Event_Code {
        Empty_Event   = 0x0000, // este evento se usa para saber cuando la cola de eventos esta vacia...

@@ -11,7 +11,8 @@ C_SRCS += \
 ../src/leds.c \
 ../src/main.c \
 ../src/scia.c \
-../src/sm.c 
+../src/sm.c \
+../src/systick.c 
 
 C_DEPS += \
 ./src/cbuffer.d \
@@ -21,7 +22,8 @@ C_DEPS += \
 ./src/leds.d \
 ./src/main.d \
 ./src/scia.d \
-./src/sm.d 
+./src/sm.d \
+./src/systick.d 
 
 OBJS += \
 ./src/cbuffer.obj \
@@ -31,7 +33,8 @@ OBJS += \
 ./src/leds.obj \
 ./src/main.obj \
 ./src/scia.obj \
-./src/sm.obj 
+./src/sm.obj \
+./src/systick.obj 
 
 OBJS__QUOTED += \
 "src/cbuffer.obj" \
@@ -41,7 +44,8 @@ OBJS__QUOTED += \
 "src/leds.obj" \
 "src/main.obj" \
 "src/scia.obj" \
-"src/sm.obj" 
+"src/sm.obj" \
+"src/systick.obj" 
 
 C_DEPS__QUOTED += \
 "src/cbuffer.d" \
@@ -51,7 +55,8 @@ C_DEPS__QUOTED += \
 "src/leds.d" \
 "src/main.d" \
 "src/scia.d" \
-"src/sm.d" 
+"src/sm.d" \
+"src/systick.d" 
 
 C_SRCS__QUOTED += \
 "../src/cbuffer.c" \
@@ -61,6 +66,7 @@ C_SRCS__QUOTED += \
 "../src/leds.c" \
 "../src/main.c" \
 "../src/scia.c" \
-"../src/sm.c" 
+"../src/sm.c" \
+"../src/systick.c" 
 
 

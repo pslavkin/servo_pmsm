@@ -11,6 +11,8 @@ void     led1On            ( void                         );
 void     led1Off           ( void                         );
 void     led2On            ( void                         );
 void     led2Off           ( void                         );
+void     led2Toogle        ( void                         );
+void     led1Toogle        ( void                         );
 //---------------------------------------------------------
 enum Leds_Position
 {

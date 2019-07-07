@@ -22,10 +22,9 @@ __interrupt void sciaTXFIFOISR(void)
 uint16_t rData[SCI_FIFO_RX16];
 __interrupt void sciaRXFIFOISR(void)
 {
-//   uint16_t len= SCI_getRxFIFOStatus ( SCIA_BASE               );
-   //SCI_readCharArrayNoneBlocking     ( SCIA_BASE ,rData ,1   );
-   SCI_readCharArray( SCIA_BASE ,rData ,5   );
-//   writeCBufferArray                 ( &rBuff    ,rData ,len   );
+   uint16_t len= SCI_getRxFIFOStatus ( SCIA_BASE               );
+   SCI_readCharArrayNoneBlocking     ( SCIA_BASE ,rData ,len   );
+   writeCBufferArray                 ( &rBuff    ,rData ,len   );
    SCI_clearOverflowStatus           ( SCIA_BASE               );
    SCI_clearInterruptStatus          ( SCIA_BASE ,SCI_INT_RXFF );
    Interrupt_clearACKGroup           ( INTERRUPT_ACK_GROUP9    );
@@ -57,7 +56,7 @@ void initSCIAFIFO(void)
     SCI_enableFIFO            ( SCIA_BASE                               );
     SCI_enableInterrupt       ( SCIA_BASE   ,SCI_INT_RXFF               );
     SCI_disableInterrupt      ( SCIA_BASE   ,SCI_INT_RXERR | SCI_INT_FE | SCI_INT_OE | SCI_INT_PE );
-    SCI_setFIFOInterruptLevel ( SCIA_BASE   ,SCI_FIFO_TX2 ,SCI_FIFO_RX5 );
+    SCI_setFIFOInterruptLevel ( SCIA_BASE   ,SCI_FIFO_TX2 ,SCI_FIFO_RX1 );
     SCI_performSoftwareReset  ( SCIA_BASE                               );
     SCI_resetTxFIFO           ( SCIA_BASE                               );
     SCI_resetRxFIFO           ( SCIA_BASE                               );

@@ -9,13 +9,20 @@
 #include "leds.h"
 #include "everythings.h"
 //--------------------------------------------------------------------------------
-State
+const State
    idle1[],
    idle2[],
-   idle3[];
+   idle3[],
+   idle4[],
+   idle5[],
+   idle6[],
+   idle7[],
+   idle8[],
+   idle9[],
+   idle10[];
 
-State*   everythingsSm;
-State**  everythings    ( void )
+const State*   everythingsSm;
+const State**  everythings    ( void )
 {
    return &everythingsSm;
 }
@@ -24,7 +31,6 @@ void Init_everythings(void)
    everythingsSm=idle1;
    initLeds();
 }
-
 void func1(void)
 {
    sciaBufferWrite((uint16_t*)"funcion1\r\n",10);
@@ -36,21 +42,47 @@ void func2(void)
 void func3(void)
 {
    sciaBufferWrite((uint16_t*)"funcion3\r\n",10);
-   ledEffectsFunc();
+//   ledEffectsFunc();
 }
 
-State idle1  [ ] =
+//--------------------------------------------------------------------------------
+const State idle1 [ ]=
 {
-    Rti_Event ,func1 ,idle2 ,
-    ANY_Event ,Rien  ,idle1 ,
+    ANY_Event ,func1 ,idle2  ,
 };
-State idle2  [ ] =
+const State idle2 [ ]=
 {
-    Rti_Event ,func2 ,idle3 ,
-    ANY_Event ,Rien  ,idle2 ,
+    ANY_Event ,func2 ,idle3  ,
 };
-State idle3  [ ] =
+const State idle3 [ ]=
 {
-    Rti_Event ,func3 ,idle1 ,
-    ANY_Event ,Rien  ,idle3 ,
+    ANY_Event ,func3 ,idle4  ,
+};
+const State idle4 [ ]=
+{
+    ANY_Event ,Rien  ,idle5  ,
+};
+const State idle5 [ ]=
+{
+    ANY_Event ,Rien  ,idle6  ,
+};
+const State idle6 [ ]=
+{
+    ANY_Event ,Rien  ,idle7  ,
+};
+const State idle7 [ ]=
+{
+    ANY_Event ,Rien  ,idle8  ,
+};
+const State idle8 [ ]=
+{
+    ANY_Event ,Rien  ,idle9  ,
+};
+const State idle9 [ ]=
+{
+    ANY_Event ,Rien  ,idle10 ,
+};
+const State idle10[ ]=
+{
+    ANY_Event ,Rien  ,idle1  ,
 };

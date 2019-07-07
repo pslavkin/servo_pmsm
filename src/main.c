@@ -4,6 +4,7 @@
 #include "sm.h"
 #include "events.h"
 #include "everythings.h"
+#include "systick.h"
 
 void main(void)
 {
@@ -14,12 +15,12 @@ void main(void)
     Interrupt_initVectorTable ( ); // Initialize the PIE vector table with pointers to the shell Interrupt // Service Routines (ISR).
     initSCIAFIFO              ( );
     Init_Events               ( );
-    Init_everythings();
+    Init_everythings          ( );
+    initTimer2                ( );
     EINT;                          // Enable Global Interrupt (INTM) and realtime interrupt (DBGM)
     ERTM;
     for(;;) {
        State_Machine();
     }
-
 }
 
