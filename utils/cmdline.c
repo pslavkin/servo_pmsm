@@ -1,6 +1,7 @@
 #include <stdint.h>
 #include <stdbool.h>
 #include <string.h>
+#include <stdlib.h>
 #include "scia.h"
 #include "opt.h"
 #include "cmdline.h"
@@ -15,19 +16,41 @@ tCmdLineEntry Login_Cmd_Table[] =
     { "?"      ,Cmd_Help    ,": help"         },
     { 0        ,0           ,0                }
 };
+
+tCmdLineEntry adcCmdTable[] =
+{
+    { "a"   ,Cmd_AdcChannelx       ,": print adc channel x" },
+    { "<"   ,Cmd_AdcChannelx2Login ,": back to login table" },
+    { "?"   ,Cmd_Help              ,": help"                },
+    { 0     ,0                     ,0                       }
+};
+
 tCmdLineEntry* actualCmdTable=Login_Cmd_Table;
 
 uint16_t Cmd_Login(uint16_t argc, char *argv[])
 {
    sciPrintf("login\r\n");
-   Cmd_Help(argc,argv);
+   actualCmdTable=adcCmdTable;
+   return 0;
+}
+uint16_t Cmd_AdcChannelx(uint16_t argc, char *argv[])
+{
+   if(argc>1) {
+      uint32_t channel=atoi(argv[1]);
+      sciPrintf("adc channel%d = %f\r\n",channel,123.456f);
+   }
+   return 0;
+}
+uint16_t Cmd_AdcChannelx2Login(uint16_t argc, char *argv[])
+{
+   actualCmdTable=Login_Cmd_Table;
    return 0;
 }
 uint16_t Cmd_Help(uint16_t argc, char *argv[])
 {
     tCmdLineEntry *pEntry;
     sciPrintf("\r\navailable commands\r\n------------------\r\n");
-    pEntry = Login_Cmd_Table;
+    pEntry = actualCmdTable;
     for(;pEntry->pcCmd;pEntry++)
         sciPrintf("%15s%s\r\n", pEntry->pcCmd, pEntry->pcHelp);
     return 0;
@@ -76,10 +99,6 @@ void CmdLineProcess(char* line)
 prompt:                                                    // Fall through to here means that no matching command was found, so return an error.
     sciPrintf("> ");
 }
-
-
-
-
 
 
 

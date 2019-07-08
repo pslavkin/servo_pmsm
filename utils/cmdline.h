@@ -13,8 +13,10 @@ typedef struct Cmd_Table_Struct{ // ! Structure for an entry in the command list
 
 void     CmdLineProcess     ( char* line                  );
 void     Clear_Parser_Index ( void                        );
-uint16_t Cmd_Login          ( uint16_t argc, char *argv[] );
-uint16_t Cmd_Help           ( uint16_t argc, char *argv[] );
 void     Parser_Process     ( void                        );
 
+uint16_t Cmd_Login             ( uint16_t argc, char *argv[] );
+uint16_t Cmd_AdcChannelx       ( uint16_t argc, char *argv[] );
+uint16_t Cmd_AdcChannelx2Login ( uint16_t argc, char *argv[] );
+uint16_t Cmd_Help              ( uint16_t argc, char *argv[] );
 #endif
