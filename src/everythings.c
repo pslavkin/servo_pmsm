@@ -9,6 +9,7 @@
 #include "leds.h"
 #include "everythings.h"
 #include "cmdline.h"
+#include "wdog.h"
 //--------------------------------------------------------------------------------
 const State
    idle1[],
@@ -33,64 +34,45 @@ void Init_everythings(void)
    initLeds           ( );
    Clear_Parser_Index ( );
 }
-void func1(void)
-{
-//   sciaBufferWrite("blablan1\r\n",10);
-}
-void func2(void)
-{
-   static uint32_t t=0;
-   t++;
-//   sciPrintf("time= %d\r\n",t);
-}
-void func3(void)
-{
- //  sciaBufferWrite("funcion3\r\n",10);
-//   ledEffectsFunc();
-}
-void func4(void)
-{
-   Parser_Process();
-}
 
 //--------------------------------------------------------------------------------
-const State idle1 [ ]=
+const State idle1 [ ] =
 {
-    ANY_Event ,func1 ,idle2  ,
+    ANY_Event ,ledEffectsFunc ,idle2  ,
 };
-const State idle2 [ ]=
+const State idle2 [ ] =
 {
-    ANY_Event ,func2 ,idle3  ,
+    ANY_Event ,Rien           ,idle3  ,
 };
-const State idle3 [ ]=
+const State idle3 [ ] =
 {
-    ANY_Event ,func3 ,idle4  ,
+    ANY_Event ,wdogTask           ,idle4  ,
 };
-const State idle4 [ ]=
+const State idle4 [ ] =
 {
-    ANY_Event ,func4  ,idle5  ,
+    ANY_Event ,Parser_Process ,idle5  ,
 };
-const State idle5 [ ]=
+const State idle5 [ ] =
 {
-    ANY_Event ,Rien  ,idle6  ,
+    ANY_Event ,Rien           ,idle6  ,
 };
-const State idle6 [ ]=
+const State idle6 [ ] =
 {
-    ANY_Event ,Rien  ,idle7  ,
+    ANY_Event ,Rien           ,idle7  ,
 };
-const State idle7 [ ]=
+const State idle7 [ ] =
 {
-    ANY_Event ,Rien  ,idle8  ,
+    ANY_Event ,Rien           ,idle8  ,
 };
-const State idle8 [ ]=
+const State idle8 [ ] =
 {
-    ANY_Event ,Rien  ,idle9  ,
+    ANY_Event ,Rien           ,idle9  ,
 };
-const State idle9 [ ]=
+const State idle9 [ ] =
 {
-    ANY_Event ,Rien  ,idle10 ,
+    ANY_Event ,Rien           ,idle10 ,
 };
-const State idle10[ ]=
+const State idle10[ ] =
 {
-    ANY_Event ,Rien  ,idle1  ,
+    ANY_Event ,Rien           ,idle1  ,
 };

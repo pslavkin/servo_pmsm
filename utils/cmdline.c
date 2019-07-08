@@ -5,6 +5,7 @@
 #include "scia.h"
 #include "opt.h"
 #include "cmdline.h"
+#include "wdog.h"
 
 // An array to hold the pointers to the command line arguments.
 static char *g_ppcArgv[CMDLINE_MAX_ARGS + 1];
@@ -13,6 +14,7 @@ static char *g_ppcArgv[CMDLINE_MAX_ARGS + 1];
 tCmdLineEntry Login_Cmd_Table[] =
 {
     { "login"  ,Cmd_Login   ,": login"        },
+    { "uptime" ,Cmd_Uptime  ,": upteim"       },
     { "?"      ,Cmd_Help    ,": help"         },
     { 0        ,0           ,0                }
 };

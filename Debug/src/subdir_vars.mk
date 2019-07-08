@@ -15,7 +15,8 @@ C_SRCS += \
 ../src/main.c \
 ../src/scia.c \
 ../src/sm.c \
-../src/systick.c 
+../src/systick.c \
+../src/wdog.c 
 
 C_DEPS += \
 ./src/cbuffer.d \
@@ -26,7 +27,8 @@ C_DEPS += \
 ./src/main.d \
 ./src/scia.d \
 ./src/sm.d \
-./src/systick.d 
+./src/systick.d \
+./src/wdog.d 
 
 OBJS += \
 ./src/F2837xD_CodeStartBranch.obj \
@@ -38,7 +40,8 @@ OBJS += \
 ./src/main.obj \
 ./src/scia.obj \
 ./src/sm.obj \
-./src/systick.obj 
+./src/systick.obj \
+./src/wdog.obj 
 
 ASM_DEPS += \
 ./src/F2837xD_CodeStartBranch.d 
@@ -53,7 +56,8 @@ OBJS__QUOTED += \
 "src/main.obj" \
 "src/scia.obj" \
 "src/sm.obj" \
-"src/systick.obj" 
+"src/systick.obj" \
+"src/wdog.obj" 
 
 C_DEPS__QUOTED += \
 "src/cbuffer.d" \
@@ -64,7 +68,8 @@ C_DEPS__QUOTED += \
 "src/main.d" \
 "src/scia.d" \
 "src/sm.d" \
-"src/systick.d" 
+"src/systick.d" \
+"src/wdog.d" 
 
 ASM_DEPS__QUOTED += \
 "src/F2837xD_CodeStartBranch.d" 
@@ -81,6 +86,7 @@ C_SRCS__QUOTED += \
 "../src/main.c" \
 "../src/scia.c" \
 "../src/sm.c" \
-"../src/systick.c" 
+"../src/systick.c" \
+"../src/wdog.c" 
 
 

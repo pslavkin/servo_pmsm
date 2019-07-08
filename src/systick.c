@@ -20,7 +20,7 @@ void initTimer2(void)
 
     // Configure CPU-Timer 0, 1, and 2 to interrupt every second:
     // 1 second Period (in uSeconds)
-    configCPUTimer(CPUTIMER2_BASE, DEVICE_SYSCLK_FREQ, 100000);
+    configCPUTimer(CPUTIMER2_BASE, DEVICE_SYSCLK_FREQ, 10000);
 
     // To ensure precise timing, use write-only instructions to write to the
     // entire register. Therefore, if any of the configuration bits are changed
@@ -97,10 +97,6 @@ void systickFunc(void)
 {
    if(systickFlag==true) {
       systickFlag=false;
-      led1Toogle();
       Send_Event(ANY_Event,everythings());
    }
 }
-
-
-
