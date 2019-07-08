@@ -115,4 +115,5 @@ SUBDIRS := \
 driverlib \
 lib \
 src \
+utils \
 

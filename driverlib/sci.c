@@ -271,12 +271,12 @@ SCI_enableInterrupt(uint32_t base, uint32_t intFlags)
     }
 }
 void
-SCI_enableTxInterrupt(uint32_t base) //oslavkin
+SCI_enableTxInterrupt(uint32_t base) //pslavkin
 {
     HWREGH(base + SCI_O_FFTX) |= SCI_FFTX_TXFFIENA;
 }
 void
-SCI_enableRxInterrupt(uint32_t base) //oslavkin
+SCI_enableRxInterrupt(uint32_t base) //pslavkin
 {
    HWREGH(base + SCI_O_FFRX) |= SCI_FFRX_RXFFIENA;
 }

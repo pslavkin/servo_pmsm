@@ -14,12 +14,13 @@ typedef struct cBuff_struct {
 } cBuffer_t;
 
 //-----------------------------------------------------------
-bool     writeCBuffer      ( cBuffer_t* cb, uint16_t* data               );
-uint16_t writeCBufferArray ( cBuffer_t* cb, uint16_t* data, uint16_t len );
-bool     readCBuffer       ( cBuffer_t* cb, uint16_t* data               );
-uint16_t readCBufferArray  ( cBuffer_t* cb, uint16_t* data, uint16_t len );
-uint16_t dataOnCBuffer     ( cBuffer_t* cb                               );
-uint16_t spaceOnCBuffer    ( cBuffer_t* cb                               );
+bool     writeCBuffer      ( cBuffer_t* cb, void* data               );
+uint16_t writeCBufferArray ( cBuffer_t* cb, void* data, uint16_t len );
+bool     readCBuffer       ( cBuffer_t* cb, void* data               );
+uint16_t readCBufferArray  ( cBuffer_t* cb, void* data, uint16_t len );
+bool     peekCBuffer       ( cBuffer_t* cb, void* data               );
+uint16_t dataOnCBuffer     ( cBuffer_t* cb                           );
+uint16_t spaceOnCBuffer    ( cBuffer_t* cb                           );
 
 #endif
 

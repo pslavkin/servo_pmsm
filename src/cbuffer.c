@@ -22,14 +22,14 @@ uint16_t spaceOnCBuffer(cBuffer_t* cb)
    return cb->poolSize-dataOnCBuffer(cb);
 }
 //-----------------------------------------------------------------
-bool writeCBuffer(cBuffer_t* cb, uint16_t* data)
+bool writeCBuffer(cBuffer_t* cb, void* data)
 {
    bool ans;
    uint16_t next=nextWIndex(cb);
    if (next != cb->rIndex) {
       uint16_t i, dataSize=cb->dataSize;
       for(i=0;i<dataSize;i++)
-         cb->pool[cb->wIndex*dataSize+i] = data[i];
+         cb->pool[cb->wIndex*dataSize+i] = ((uint16_t*)data)[i];
       cb->wIndex = next;
       ans        = true;
    }
@@ -37,23 +37,24 @@ bool writeCBuffer(cBuffer_t* cb, uint16_t* data)
       ans=false;
    return ans;
 }
-uint16_t writeCBufferArray(cBuffer_t* cb, uint16_t* data, uint16_t len)
+
+uint16_t writeCBufferArray(cBuffer_t* cb, void* data, uint16_t len)
 {
    uint16_t i;
    for ( i=0;i<len;i++ ) {
-      if ( writeCBuffer(cb, data + (i*cb->dataSize))==false)
+      if ( writeCBuffer(cb, (uint16_t*)data + (i*cb->dataSize))==false)
          break;
    }
    return i;
 }
 //-------------------------------------------------------------------------------------
-bool readCBuffer(cBuffer_t* cb, uint16_t* data)
+bool readCBuffer(cBuffer_t* cb, void* data)
 {
    bool ans;
    if (cb->rIndex != cb->wIndex) {
       uint16_t i,dataSize=cb->dataSize;
       for(i=0;i<dataSize;i++)
-         data[i]=cb->pool[cb->rIndex*dataSize+i];
+         ((uint16_t*)data)[i]=cb->pool[cb->rIndex*dataSize+i];
       cb->rIndex = nextRIndex(cb);
       ans=true;
    }
@@ -61,11 +62,25 @@ bool readCBuffer(cBuffer_t* cb, uint16_t* data)
       ans=false;
    return ans;                  //notar que si no hay nada para leer, devuelve simempre el ultimo dato escrito...
 }
-uint16_t readCBufferArray(cBuffer_t* cb, uint16_t* data, uint16_t len)
+bool peekCBuffer(cBuffer_t* cb, void* data)
+{
+   bool ans;
+   if (cb->rIndex != cb->wIndex) {
+      uint16_t i,dataSize=cb->dataSize;
+      for(i=0;i<dataSize;i++)
+         ((uint16_t*)data)[i]=cb->pool[cb->rIndex*dataSize+i];
+      //cb->rIndex = nextRIndex(cb);
+      ans=true;
+   }
+   else
+      ans=false;
+   return ans;                  //notar que si no hay nada para leer, devuelve simempre el ultimo dato escrito...
+}
+uint16_t readCBufferArray(cBuffer_t* cb, void* data, uint16_t len)
 {
    uint16_t i,dataSize=cb->dataSize;
    for ( i=0;i<len;i++ ) {
-      if(readCBuffer(cb,data+i*dataSize )==false)
+      if(readCBuffer(cb,(uint16_t*)data+i*dataSize )==false)
          break;
    }
    return i;

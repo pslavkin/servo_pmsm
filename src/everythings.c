@@ -8,6 +8,7 @@
 #include "device.h"
 #include "leds.h"
 #include "everythings.h"
+#include "cmdline.h"
 //--------------------------------------------------------------------------------
 const State
    idle1[],
@@ -29,20 +30,27 @@ const State**  everythings    ( void )
 void Init_everythings(void)
 {
    everythingsSm=idle1;
-   initLeds();
+   initLeds           ( );
+   Clear_Parser_Index ( );
 }
 void func1(void)
 {
-   sciaBufferWrite((uint16_t*)"blablan1\r\n",10);
+//   sciaBufferWrite("blablan1\r\n",10);
 }
 void func2(void)
 {
-    sciaBufferWrite((uint16_t*)"ram  ---\r\n",10);
+   static uint32_t t=0;
+   t++;
+//   sciPrintf("time= %d\r\n",t);
 }
 void func3(void)
 {
-   sciaBufferWrite((uint16_t*)"funcion3\r\n",10);
+ //  sciaBufferWrite("funcion3\r\n",10);
 //   ledEffectsFunc();
+}
+void func4(void)
+{
+   Parser_Process();
 }
 
 //--------------------------------------------------------------------------------
@@ -60,7 +68,7 @@ const State idle3 [ ]=
 };
 const State idle4 [ ]=
 {
-    ANY_Event ,Rien  ,idle5  ,
+    ANY_Event ,func4  ,idle5  ,
 };
 const State idle5 [ ]=
 {

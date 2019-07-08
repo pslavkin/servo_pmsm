@@ -4,9 +4,13 @@
 #define MAX_RCBUFFER_POOL 100
 #define MAX_WCBUFFER_POOL 100
 
-void     initSCIAFIFO    ( void                         );
-void     initSCIAGpio    ( void                         );
-void     initSCIACBuffer ( void                         );
-uint16_t sciaBufferWrite ( uint16_t* data, uint16_t len );
+void     initSCIAFIFO         ( void                         );
+void     initSCIAGpio         ( void                         );
+void     initSCIACBuffer      ( void                         );
+uint16_t sciaBufferWrite      ( char* data, uint16_t len     );
+uint16_t sciaBufferRead       ( uint16_t* data, uint16_t len );
+uint16_t dataOnsciaReadBuffer ( void                         );
+uint16_t sciaBufferPeek       ( uint16_t* data               );
+void     sciPrintf            ( const char *pcString, ...    );
 
 #endif

@@ -2,6 +2,8 @@
 #include "device.h"
 #include "cbuffer.h"
 #include "scia.h"
+#include "ustdlib.h"
+#include "opt.h"
 
 uint16_t rBuffPool[MAX_RCBUFFER_POOL+1];
 uint16_t wBuffPool[MAX_WCBUFFER_POOL+1];
@@ -69,7 +71,7 @@ void initSCIAFIFO(void)
     sciaBufferWrite           ( "servo init\r\n",12                                               );
 }
 
-uint16_t sciaBufferWrite(uint16_t* data, uint16_t len)
+uint16_t sciaBufferWrite(char* data, uint16_t len)
 {
    uint16_t ans;
    SCI_disableTxInterrupt ( SCIA_BASE        );
@@ -85,7 +87,22 @@ uint16_t sciaBufferRead(uint16_t* data, uint16_t len)
    SCI_enableRxInterrupt  ( SCIA_BASE        );
    return ans;
 }
-
+uint16_t dataOnsciaReadBuffer(void)
+{
+   uint16_t ans;
+   SCI_disableRxInterrupt ( SCIA_BASE );
+   ans=dataOnCBuffer      ( &rBuff    );
+   SCI_enableRxInterrupt  ( SCIA_BASE );
+   return ans;
+}
+uint16_t sciaBufferPeek(uint16_t* data)
+{
+   uint16_t ans;
+   SCI_disableRxInterrupt ( SCIA_BASE   );
+   ans=peekCBuffer        ( &rBuff,data );
+   SCI_enableRxInterrupt  ( SCIA_BASE   );
+   return ans;
+}
 void initSCIACBuffer ( void )
 {
    rBuff.pool     = rBuffPool;
@@ -100,4 +117,15 @@ void initSCIACBuffer ( void )
    wBuff.rIndex   = 0;
    wBuff.wIndex   = 0;
 }
-
+//*****************************************************************************
+char Buff[APP_OUT_BUF_SIZE];
+void sciPrintf(const char *pcString, ...)
+{
+   va_list vaArgP;
+   int len;
+   va_start(vaArgP, pcString);
+   len=uvsnprintf(Buff,sizeof(Buff),pcString, vaArgP);
+   sciaBufferWrite(Buff,len);
+   va_end(vaArgP);
+}
+//*****************************************************************************

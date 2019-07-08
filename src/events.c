@@ -5,9 +5,9 @@
 #include "systick.h"
 #include "cpu.h"
 
-Events eventsBuffPool[MAX_EVENTS+1];
-cBuffer_t eventsBuff;
- 
+Events      eventsBuffPool[MAX_EVENTS+1];
+cBuffer_t   eventsBuff;
+
 //-----------------------------------------------------------------
 void Init_Events(void)
 {
@@ -30,9 +30,9 @@ bool readEvent(Events* E)
 bool atomicReadEvent(Events* E)
 {
    bool ans;
-   DINT;                          // Disable Global Interrupt (INTM) and realtime interrupt (DBGM)
+   //DINT;                          // Disable Global Interrupt (INTM) and realtime interrupt (DBGM)
       ans = readCBuffer ( &eventsBuff,(uint16_t* )E);
-   EINT;                          // Enable Global Interrupt (INTM) and realtime interrupt (DBGM)
+   //EINT;                          // Enable Global Interrupt (INTM) and realtime interrupt (DBGM)
    return ans;
 }
 //-------------------------------------------------------------------------------------

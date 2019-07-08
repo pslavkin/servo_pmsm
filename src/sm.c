@@ -3,7 +3,7 @@
 #include "sm.h"
 #include "events.h"
 #include "everythings.h"
-#include "sysctl.h"
+#include "systick.h"
 #include "leds.h"
 
 const State* ActualState;
@@ -31,5 +31,4 @@ void State_Machine(void)
       systickFunc();
    }
 }
-
 //------------------------------------------------------------------------------------------
