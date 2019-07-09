@@ -10,4 +10,6 @@
 #define MAX_RCBUFFER_POOL  128         //capacidad para ir guardando desde la isr de uart RX a la cola circular..
 #define MAX_WCBUFFER_POOL  256         //este es el que usa el printf para que la TX isr de la sci lo vaya vaciando..
 
+#define EX_ADC_RESOLUTION 12
+
 #endif

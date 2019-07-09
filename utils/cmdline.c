@@ -7,6 +7,7 @@
 #include "sm.h"
 #include "cmdline.h"
 #include "wdog.h"
+#include "adc.h"
 
 tCmdLineEntry Login_Cmd_Table[];
 tCmdLineEntry adcCmdTable[];
@@ -42,7 +43,8 @@ uint16_t Cmd_AdcChannelx(uint16_t argc, char *argv[])
 {
    if(argc>1) {
       uint32_t channel=atoi(argv[1]);
-      sciPrintf("adc channel%d = %f\r\n",channel,123.456f);
+      float r=readAdc(channel);
+      sciPrintf("adc channel%d = %f\r\n",channel,r);
    }
    return 0;
 }
@@ -62,46 +64,49 @@ uint16_t Cmd_Help(uint16_t argc, char *argv[])
     return 0;
 }
 //----------------------------------------------------------------------------
-void CmdLineProcess(char* line)/*{{{*/
+void CmdLineProcess(char* originalLine)/*{{{*/
 {
-    char*            pcChar;
-    char             ui8Argc;
-    bool             bFindArg = true;
-    tCmdLineEntry*   psCmdEntry;
+   char line[APP_INPUT_BUF_SIZE];
+   strncpy(line,originalLine,sizeof(line));
 
-    ui8Argc = 0;                                           // Initialize the argument counter, and point to the beginning of the command line string.
-    pcChar  = line;
-    while(*pcChar) {                                       // Advance through the command line until a zero character is found.
-        if(*pcChar == ' ') {                               // If there is a space, then replace it with a zero, and set the flag to search for the next argument.
-            *pcChar  = 0;
-            bFindArg = true;
-        }
-        else {                                             // Otherwise it is not a space, so it must be a character that is part of an argument.
-            if(bFindArg) {                                 // If bFindArg is set, then that means we are looking for the start of the next argument.
-                if(ui8Argc < CMDLINE_MAX_ARGS) {           // As long as the maximum number of arguments has not been reached, then save the pointer to the start of this new arg in the argv array, and increment the count of args, argc.
-                    g_ppcArgv[ui8Argc] = pcChar;
-                    ui8Argc++;
-                    bFindArg           = false;
-                }
-                else {                                     // The maximum number of arguments has been reached so return the error.
-                   sciPrintf("too many arguments for command processor\r\n");
-                   goto prompt;
-                }
+   char*            pcChar;
+   char             ui8Argc;
+   bool             bFindArg = true;
+   tCmdLineEntry*   psCmdEntry;
+
+   ui8Argc = 0;                                           // Initialize the argument counter, and point to the beginning of the command line string.
+   pcChar  = line;
+   while(*pcChar) {                                       // Advance through the command line until a zero character is found.
+      if(*pcChar == ' ') {                               // If there is a space, then replace it with a zero, and set the flag to search for the next argument.
+         *pcChar  = 0;
+         bFindArg = true;
+      }
+      else {                                             // Otherwise it is not a space, so it must be a character that is part of an argument.
+         if(bFindArg) {                                 // If bFindArg is set, then that means we are looking for the start of the next argument.
+            if(ui8Argc < CMDLINE_MAX_ARGS) {           // As long as the maximum number of arguments has not been reached, then save the pointer to the start of this new arg in the argv array, and increment the count of args, argc.
+               g_ppcArgv[ui8Argc] = pcChar;
+               ui8Argc++;
+               bFindArg           = false;
             }
-        }
-        pcChar++;                                          // Advance to the next character in the command line.
-    }
-    if(ui8Argc) {                                          // If one or more arguments was found, then process the command.
-        psCmdEntry = actualCmdTable;                       // Start at the beginning of the command table, to look for a matching command.
-        while(psCmdEntry->pcCmd) {                         // Search through the command table until a null command string is found, which marks the end of the table.
-            if(!strcmp(g_ppcArgv[0], psCmdEntry->pcCmd)) { // If this command entry command string matches argv[0], then call the function for this command, passing the command line arguments.
-                psCmdEntry->pfnCmd(ui8Argc, g_ppcArgv);
-                goto prompt;
+            else {                                     // The maximum number of arguments has been reached so return the error.
+               sciPrintf("too many arguments for command processor\r\n");
+               goto prompt;
             }
-            psCmdEntry++;                                  // Not found, so advance to the next entry.
-        }
-       sciPrintf("bad command\r\n");
-    }
+         }
+      }
+      pcChar++;                                          // Advance to the next character in the command line.
+   }
+   if(ui8Argc) {                                          // If one or more arguments was found, then process the command.
+      psCmdEntry = actualCmdTable;                       // Start at the beginning of the command table, to look for a matching command.
+      while(psCmdEntry->pcCmd) {                         // Search through the command table until a null command string is found, which marks the end of the table.
+         if(!strcmp(g_ppcArgv[0], psCmdEntry->pcCmd)) { // If this command entry command string matches argv[0], then call the function for this command, passing the command line arguments.
+            psCmdEntry->pfnCmd(ui8Argc, g_ppcArgv);
+            goto prompt;
+         }
+         psCmdEntry++;                                  // Not found, so advance to the next entry.
+      }
+      sciPrintf("bad command\r\n");
+   }
 prompt:                                                    // Fall through to here means that no matching command was found, so return an error.
-    sciPrintf("> ");
+   sciPrintf("> ");
 }/*}}}*/

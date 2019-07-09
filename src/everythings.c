@@ -10,6 +10,7 @@
 #include "everythings.h"
 #include "cmdline.h"
 #include "wdog.h"
+#include "adc.h"
 //--------------------------------------------------------------------------------
 const State
    idle1[],
@@ -31,6 +32,7 @@ const State**  everythings    ( void )
 void Init_everythings(void)
 {
    initLeds ( );
+   initAdc  ( );
 }
 //--------------------------------------------------------------------------------
 const State idle1 [ ] =

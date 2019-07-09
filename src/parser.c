@@ -11,7 +11,7 @@
 const State
    receiving[];
 
-char lineBuff[APP_INPUT_BUF_SIZE];
+char     lineBuff[APP_INPUT_BUF_SIZE]="";
 uint16_t lineIndex=0;
 
 const State*   parserSm=receiving;
@@ -23,14 +23,20 @@ void parserProcess(void)
 {
    uint16_t Char=Actual_Event()&0x00FF;
    if(lineIndex<sizeof(lineBuff)) {
+
       if(Char=='\n' || Char=='\r') {
-proc:    lineBuff[lineIndex]='\0';
+proc:
+         if(lineIndex>0)
+            lineBuff[lineIndex]='\0';
          CmdLineProcess(lineBuff);
          lineIndex=0;
          return;
       }
       if(Char!=0x7F)
          lineBuff[lineIndex++]=Char;
+      else
+         if(lineIndex>0)
+            lineIndex--;
    }
    else
       goto proc;
