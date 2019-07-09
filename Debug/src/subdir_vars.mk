@@ -16,7 +16,8 @@ C_SRCS += \
 ../src/scia.c \
 ../src/sm.c \
 ../src/systick.c \
-../src/wdog.c 
+../src/wdog.c \
+../src/parser.c 
 
 C_DEPS += \
 ./src/cbuffer.d \
@@ -28,7 +29,8 @@ C_DEPS += \
 ./src/scia.d \
 ./src/sm.d \
 ./src/systick.d \
-./src/wdog.d 
+./src/wdog.d \
+./src/parser.d 
 
 OBJS += \
 ./src/F2837xD_CodeStartBranch.obj \
@@ -41,7 +43,8 @@ OBJS += \
 ./src/scia.obj \
 ./src/sm.obj \
 ./src/systick.obj \
-./src/wdog.obj 
+./src/wdog.obj \
+./src/parser.obj 
 
 ASM_DEPS += \
 ./src/F2837xD_CodeStartBranch.d 

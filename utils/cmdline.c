@@ -4,13 +4,17 @@
 #include <stdlib.h>
 #include "scia.h"
 #include "opt.h"
+#include "sm.h"
 #include "cmdline.h"
 #include "wdog.h"
 
-// An array to hold the pointers to the command line arguments.
-static char *g_ppcArgv[CMDLINE_MAX_ARGS + 1];
+tCmdLineEntry Login_Cmd_Table[];
+tCmdLineEntry adcCmdTable[];
 
+char *         g_ppcArgv[CMDLINE_MAX_ARGS + 1];
+tCmdLineEntry* actualCmdTable=Login_Cmd_Table;
 
+//--------------------------------------------------------------------------------
 tCmdLineEntry Login_Cmd_Table[] =
 {
     { "login"  ,Cmd_Login   ,": login"        },
@@ -19,6 +23,13 @@ tCmdLineEntry Login_Cmd_Table[] =
     { 0        ,0           ,0                }
 };
 
+uint16_t Cmd_Login(uint16_t argc, char *argv[])
+{
+   sciPrintf("login\r\n");
+   actualCmdTable=adcCmdTable;
+   return 0;
+}
+//--------------------------------------------------------------------------------
 tCmdLineEntry adcCmdTable[] =
 {
     { "a"   ,Cmd_AdcChannelx       ,": print adc channel x" },
@@ -27,14 +38,6 @@ tCmdLineEntry adcCmdTable[] =
     { 0     ,0                     ,0                       }
 };
 
-tCmdLineEntry* actualCmdTable=Login_Cmd_Table;
-
-uint16_t Cmd_Login(uint16_t argc, char *argv[])
-{
-   sciPrintf("login\r\n");
-   actualCmdTable=adcCmdTable;
-   return 0;
-}
 uint16_t Cmd_AdcChannelx(uint16_t argc, char *argv[])
 {
    if(argc>1) {
@@ -48,6 +51,7 @@ uint16_t Cmd_AdcChannelx2Login(uint16_t argc, char *argv[])
    actualCmdTable=Login_Cmd_Table;
    return 0;
 }
+//--------------------------------------------------------------------------------
 uint16_t Cmd_Help(uint16_t argc, char *argv[])
 {
     tCmdLineEntry *pEntry;
@@ -58,15 +62,15 @@ uint16_t Cmd_Help(uint16_t argc, char *argv[])
     return 0;
 }
 //----------------------------------------------------------------------------
-void CmdLineProcess(char* line)
+void CmdLineProcess(char* line)/*{{{*/
 {
-    char*        pcChar;
-    char         ui8Argc;
+    char*            pcChar;
+    char             ui8Argc;
     bool             bFindArg = true;
     tCmdLineEntry*   psCmdEntry;
 
     ui8Argc = 0;                                           // Initialize the argument counter, and point to the beginning of the command line string.
-    pcChar  = line; 
+    pcChar  = line;
     while(*pcChar) {                                       // Advance through the command line until a zero character is found.
         if(*pcChar == ' ') {                               // If there is a space, then replace it with a zero, and set the flag to search for the next argument.
             *pcChar  = 0;
@@ -88,7 +92,7 @@ void CmdLineProcess(char* line)
         pcChar++;                                          // Advance to the next character in the command line.
     }
     if(ui8Argc) {                                          // If one or more arguments was found, then process the command.
-        psCmdEntry = actualCmdTable;                      // Start at the beginning of the command table, to look for a matching command.
+        psCmdEntry = actualCmdTable;                       // Start at the beginning of the command table, to look for a matching command.
         while(psCmdEntry->pcCmd) {                         // Search through the command table until a null command string is found, which marks the end of the table.
             if(!strcmp(g_ppcArgv[0], psCmdEntry->pcCmd)) { // If this command entry command string matches argv[0], then call the function for this command, passing the command line arguments.
                 psCmdEntry->pfnCmd(ui8Argc, g_ppcArgv);
@@ -100,63 +104,4 @@ void CmdLineProcess(char* line)
     }
 prompt:                                                    // Fall through to here means that no matching command was found, so return an error.
     sciPrintf("> ");
-}
-
-
-
-char lineBuff[100];
-uint16_t lineIndex;
-
-void Clear_Parser_Index   ( void ) 
-{
-   lineIndex=0;
-}
-bool Manage_Enter(uint16_t Char)
-{
-   Char&=0x00FF;
-   uint16_t Next_Char;
-   if(Char=='\n' || Char=='\r') {
-      if(sciaBufferPeek(&Next_Char)==true) {
-         if( (Char=='\n' && Next_Char=='\r') || (Char=='\r' && Next_Char=='\n'))
-            sciaBufferRead(&Next_Char,1);
-      }
-      return true;
-   }
-   else
-      return false;
-}
-bool Manage_Backspace(uint16_t Char)
-{
-   Char&=0x00FF;
-   if(Char==0x7F) {
-      if(lineIndex>0)
-         lineIndex--;
-      return true;
-   }
-   else
-      return false;
-}
-
-void Parser_Process(void)
-{
-   uint16_t Char;
-   while(dataOnsciaReadBuffer()) {
-      if(lineIndex<sizeof(lineBuff)) {
-         sciaBufferRead(&Char,1);
-         if(Manage_Enter(Char)==true) {
-            lineBuff[lineIndex]='\0';
-            CmdLineProcess(lineBuff);
-            Clear_Parser_Index();
-            return;
-         }
-         if(Manage_Backspace(Char)==false)
-            lineBuff[lineIndex++]=Char;
-      }
-      else {
-         lineBuff[lineIndex]='\0';
-         CmdLineProcess(lineBuff);
-         Clear_Parser_Index();
-         return;
-      }
-   }
-}
+}/*}}}*/

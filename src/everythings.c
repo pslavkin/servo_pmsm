@@ -23,18 +23,15 @@ const State
    idle9[],
    idle10[];
 
-const State*   everythingsSm;
+const State*   everythingsSm=idle1;
 const State**  everythings    ( void )
 {
    return &everythingsSm;
 }
 void Init_everythings(void)
 {
-   everythingsSm=idle1;
-   initLeds           ( );
-   Clear_Parser_Index ( );
+   initLeds ( );
 }
-
 //--------------------------------------------------------------------------------
 const State idle1 [ ] =
 {
@@ -50,7 +47,7 @@ const State idle3 [ ] =
 };
 const State idle4 [ ] =
 {
-    ANY_Event ,Parser_Process ,idle5  ,
+    ANY_Event ,Rien ,idle5  ,
 };
 const State idle5 [ ] =
 {

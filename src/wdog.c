@@ -32,7 +32,7 @@ uint32_t readUptimeDays(void)
    return ((uptime/10)/3660)/24;
 }
 
-uint16_t Cmd_Uptime(int argc, char *argv[])
+uint16_t Cmd_Uptime(uint16_t argc, char *argv[])
 {
    sciPrintf("%d days %02d:%02d:%02d.%1d \r\n",
                   readUptimeDays  ( ),

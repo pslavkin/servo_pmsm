@@ -4,10 +4,12 @@
 #include "scia.h"
 #include "ustdlib.h"
 #include "opt.h"
+#include "events.h"
+#include "cmdline.h"
+#include "parser.h"
 
-uint16_t rBuffPool[MAX_RCBUFFER_POOL+1];
 uint16_t wBuffPool[MAX_WCBUFFER_POOL+1];
-cBuffer_t rBuff,wBuff;
+cBuffer_t wBuff;
 
 uint16_t wData[SCI_FIFO_TX16];
 __interrupt void sciaTXFIFOISR(void)
@@ -24,9 +26,11 @@ __interrupt void sciaTXFIFOISR(void)
 uint16_t rData[SCI_FIFO_RX16];
 __interrupt void sciaRXFIFOISR(void)
 {
+   uint16_t i;
    uint16_t len= SCI_getRxFIFOStatus ( SCIA_BASE               );
    SCI_readCharArrayNoneBlocking     ( SCIA_BASE ,rData ,len   );
-   writeCBufferArray                 ( &rBuff    ,rData ,len   );
+   for ( i=0;i<len;i++ )
+      Send_Event(rData[0],parser());
    SCI_clearOverflowStatus           ( SCIA_BASE               );
    SCI_clearInterruptStatus          ( SCIA_BASE ,SCI_INT_RXFF );
    Interrupt_clearACKGroup           ( INTERRUPT_ACK_GROUP9    );
@@ -79,38 +83,8 @@ uint16_t sciaBufferWrite(char* data, uint16_t len)
    SCI_enableTxInterrupt  ( SCIA_BASE        );
    return ans;
 }
-uint16_t sciaBufferRead(uint16_t* data, uint16_t len)
-{
-   uint16_t ans;
-   SCI_disableRxInterrupt ( SCIA_BASE        );
-   ans=readCBufferArray   ( &rBuff,data ,len );
-   SCI_enableRxInterrupt  ( SCIA_BASE        );
-   return ans;
-}
-uint16_t dataOnsciaReadBuffer(void)
-{
-   uint16_t ans;
-   SCI_disableRxInterrupt ( SCIA_BASE );
-   ans=dataOnCBuffer      ( &rBuff    );
-   SCI_enableRxInterrupt  ( SCIA_BASE );
-   return ans;
-}
-uint16_t sciaBufferPeek(uint16_t* data)
-{
-   uint16_t ans;
-   SCI_disableRxInterrupt ( SCIA_BASE   );
-   ans=peekCBuffer        ( &rBuff,data );
-   SCI_enableRxInterrupt  ( SCIA_BASE   );
-   return ans;
-}
 void initSCIACBuffer ( void )
 {
-   rBuff.pool     = rBuffPool;
-   rBuff.dataSize = sizeof(rBuffPool[0]);
-   rBuff.poolSize = MAX_RCBUFFER_POOL;
-   rBuff.rIndex   = 0;
-   rBuff.wIndex   = 0;
-
    wBuff.pool     = wBuffPool;
    wBuff.dataSize = sizeof(wBuffPool[0]);
    wBuff.poolSize = MAX_WCBUFFER_POOL;
