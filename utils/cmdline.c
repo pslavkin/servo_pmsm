@@ -7,10 +7,11 @@
 #include "sm.h"
 #include "cmdline.h"
 #include "wdog.h"
-#include "adc.h"
+#include "adc_.h"
 
-tCmdLineEntry Login_Cmd_Table[];
-tCmdLineEntry adcCmdTable[];
+tCmdLineEntry Login_Cmd_Table[ ];
+tCmdLineEntry adcCmdTable    [ ];
+tCmdLineEntry pwmCmdTable    [ ];
 
 char *         g_ppcArgv[CMDLINE_MAX_ARGS + 1];
 tCmdLineEntry* actualCmdTable=Login_Cmd_Table;
@@ -18,50 +19,59 @@ tCmdLineEntry* actualCmdTable=Login_Cmd_Table;
 //--------------------------------------------------------------------------------
 tCmdLineEntry Login_Cmd_Table[] =
 {
-    { "login"  ,Cmd_Login   ,": login"        },
-    { "uptime" ,Cmd_Uptime  ,": upteim"       },
-    { "?"      ,Cmd_Help    ,": help"         },
-    { 0        ,0           ,0                }
+    { "login"  ,Cmd_login     ,": login"     },
+    { "adc"    ,Cmd_login2adc ,": adc setup" },
+    { "pwm"    ,Cmd_login2pwm ,": pwm setup" },
+    { "uptime" ,Cmd_Uptime    ,": upteim"    },
+    { "?"      ,Cmd_Help      ,": help"      },
+    { 0        ,0             ,0             }
 };
 
-uint16_t Cmd_Login(uint16_t argc, char *argv[])
-{
-   sciPrintf("login\r\n");
-   actualCmdTable=adcCmdTable;
-   return 0;
-}
+void Cmd_login     ( uint16_t argc, char *argv[] ) { sciPrintf("login\r\n")    ;}
+void Cmd_login2adc ( uint16_t argc, char *argv[] ) { actualCmdTable=adcCmdTable;}
+void Cmd_login2pwm ( uint16_t argc, char *argv[] ) { actualCmdTable=pwmCmdTable;}
 //--------------------------------------------------------------------------------
 tCmdLineEntry adcCmdTable[] =
 {
-    { "a"   ,Cmd_AdcChannelx       ,": print adc channel x" },
-    { "<"   ,Cmd_AdcChannelx2Login ,": back to login table" },
-    { "?"   ,Cmd_Help              ,": help"                },
-    { 0     ,0                     ,0                       }
+    { "a" ,Cmd_readAdc    ,": print adc channel x" } ,
+    { "<" ,Cmd_back2login ,": back to login table" } ,
+    { "?" ,Cmd_Help       ,": help"                } ,
+    { 0   ,0              ,0                       }
 };
 
-uint16_t Cmd_AdcChannelx(uint16_t argc, char *argv[])
+void Cmd_readAdc(uint16_t argc, char *argv[])
 {
    if(argc>1) {
       uint32_t channel=atoi(argv[1]);
       float r=readAdc(channel);
       sciPrintf("adc channel%d = %f\r\n",channel,r);
    }
-   return 0;
-}
-uint16_t Cmd_AdcChannelx2Login(uint16_t argc, char *argv[])
-{
-   actualCmdTable=Login_Cmd_Table;
-   return 0;
 }
 //--------------------------------------------------------------------------------
-uint16_t Cmd_Help(uint16_t argc, char *argv[])
+tCmdLineEntry pwmCmdTable[] =
+{
+    { "pwm" ,Cmd_pwm        ,": pwm"                 },
+    { "<"   ,Cmd_back2login ,": back to login table" },
+    { "?"   ,Cmd_Help       ,": help"                },
+    { 0     ,0              ,0                       }
+};
+
+void Cmd_pwm(uint16_t argc, char *argv[])
+{
+   sciPrintf("pwm\r\n");
+}
+//--------------------------------------------------------------------------------
+void Cmd_back2login(uint16_t argc, char *argv[])
+{
+   actualCmdTable=Login_Cmd_Table;
+}
+void Cmd_Help(uint16_t argc, char *argv[])
 {
     tCmdLineEntry *pEntry;
     sciPrintf("\r\navailable commands\r\n------------------\r\n");
     pEntry = actualCmdTable;
     for(;pEntry->pcCmd;pEntry++)
         sciPrintf("%15s%s\r\n", pEntry->pcCmd, pEntry->pcHelp);
-    return 0;
 }
 //----------------------------------------------------------------------------
 void CmdLineProcess(char* originalLine)/*{{{*/

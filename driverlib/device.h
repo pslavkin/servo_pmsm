@@ -63,18 +63,12 @@ a single CPU should be defined."
 //
 // LEDs
 //
-#define DEVICE_GPIO_PIN_LED1        31U  // GPIO number for LD2
-#define DEVICE_GPIO_PIN_LED2        34U  // GPIO number for LD3
+#define DEVICE_GPIO_PIN_LED1        31U             // GPIO number for LD2
+#define DEVICE_GPIO_PIN_LED2        34U             // GPIO number for LD3
 #define DEVICE_GPIO_CFG_LED1        GPIO_31_GPIO31  // "pinConfig" for LD2
 #define DEVICE_GPIO_CFG_LED2        GPIO_34_GPIO34  // "pinConfig" for LD3
 
-//
-// SCI for USB-to-UART adapter on FTDI chip
-//
-#define DEVICE_GPIO_PIN_SCIRXDA     28U             // GPIO number for SCI RX
-#define DEVICE_GPIO_PIN_SCITXDA     29U             // GPIO number for SCI TX
-#define DEVICE_GPIO_CFG_SCIRXDA     GPIO_28_SCIRXDA // "pinConfig" for SCI RX
-#define DEVICE_GPIO_CFG_SCITXDA     GPIO_29_SCITXDA // "pinConfig" for SCI TX
+
 
 //
 // CANA
@@ -119,6 +113,11 @@ a single CPU should be defined."
 //
 #define DEVICE_SYSCLK_FREQ          ((DEVICE_OSCSRC_FREQ * 40 * 1) / 2)
 
+// SCI for USB-to-UART adapter on FTDI chip
+#define DEVICE_GPIO_PIN_SCIRXDA     43U             // GPIO number for SCI RX
+#define DEVICE_GPIO_PIN_SCITXDA     42U             // GPIO number for SCI TX
+#define DEVICE_GPIO_CFG_SCIRXDA     GPIO_43_SCIRXDA // "pinConfig" for SCI RX
+#define DEVICE_GPIO_CFG_SCITXDA     GPIO_42_SCITXDA // "pinConfig" for SCI TX
 //
 // ControlCARD Configuration
 //
@@ -142,6 +141,12 @@ a single CPU should be defined."
 // code below if a different clock configuration is used!
 //
 #define DEVICE_SYSCLK_FREQ          ((DEVICE_OSCSRC_FREQ * 20 * 1) / 2)
+
+// SCI for USB-to-UART adapter on FTDI chip
+#define DEVICE_GPIO_PIN_SCIRXDA     28U             // GPIO number for SCI RX
+#define DEVICE_GPIO_PIN_SCITXDA     29U             // GPIO number for SCI TX
+#define DEVICE_GPIO_CFG_SCIRXDA     GPIO_28_SCIRXDA // "pinConfig" for SCI RX
+#define DEVICE_GPIO_CFG_SCITXDA     GPIO_29_SCITXDA // "pinConfig" for SCI TX
 
 #endif
 

@@ -10,7 +10,7 @@ uint32_t       readUptimeSecs   ( void                        );
 uint32_t       readUptimeMins   ( void                        );
 uint32_t       readUptimeHours  ( void                        );
 uint32_t       readUptimeDays   ( void                        );
-uint16_t       Cmd_Uptime       ( uint16_t argc, char *argv[] );
+void           Cmd_Uptime       ( uint16_t argc, char *argv[] );
 void           wdogTask         ( void                        );
 //-----------------------------------------------
 #endif

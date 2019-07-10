@@ -38,23 +38,23 @@ __interrupt void sciaRXFIFOISR(void)
 void initSCIAGpio(void)
 {
    // GPIO43 is the SCI Rx pin.
-   GPIO_setMasterCore        ( 43, GPIO_CORE_CPU1    );
-   GPIO_setPinConfig         ( GPIO_43_SCIRXDA       );
-   GPIO_setDirectionMode     ( 43, GPIO_DIR_MODE_IN  );
-   GPIO_setPadConfig         ( 43, GPIO_PIN_TYPE_STD );
-   GPIO_setQualificationMode ( 43, GPIO_QUAL_ASYNC   );
+   GPIO_setMasterCore        ( DEVICE_GPIO_PIN_SCIRXDA ,GPIO_CORE_CPU1    );
+   GPIO_setPinConfig         ( DEVICE_GPIO_CFG_SCIRXDA                    );
+   GPIO_setDirectionMode     ( DEVICE_GPIO_PIN_SCIRXDA ,GPIO_DIR_MODE_IN  );
+   GPIO_setPadConfig         ( DEVICE_GPIO_PIN_SCIRXDA ,GPIO_PIN_TYPE_STD );
+   GPIO_setQualificationMode ( DEVICE_GPIO_PIN_SCIRXDA ,GPIO_QUAL_ASYNC   );
 
    // GPIO42 is the SCI Tx pin.
-   GPIO_setMasterCore        ( 42 ,GPIO_CORE_CPU1    );
-   GPIO_setPinConfig         ( GPIO_42_SCITXDA       );
-   GPIO_setDirectionMode     ( 42 ,GPIO_DIR_MODE_OUT );
-   GPIO_setPadConfig         ( 42 ,GPIO_PIN_TYPE_STD );
-   GPIO_setQualificationMode ( 42 ,GPIO_QUAL_ASYNC   );
+   GPIO_setMasterCore        ( DEVICE_GPIO_PIN_SCITXDA ,GPIO_CORE_CPU1    );
+   GPIO_setPinConfig         ( DEVICE_GPIO_CFG_SCITXDA                    );
+   GPIO_setDirectionMode     ( DEVICE_GPIO_PIN_SCITXDA ,GPIO_DIR_MODE_OUT );
+   GPIO_setPadConfig         ( DEVICE_GPIO_PIN_SCITXDA ,GPIO_PIN_TYPE_STD );
+   GPIO_setQualificationMode ( DEVICE_GPIO_PIN_SCITXDA ,GPIO_QUAL_ASYNC   );
 }
 
 void initSCIAFIFO(void)
 {
-    SCI_setConfig(SCIA_BASE, DEVICE_LSPCLK_FREQ, 9600, (SCI_CONFIG_WLEN_8 |
+    SCI_setConfig(SCIA_BASE, DEVICE_LSPCLK_FREQ, 115200, (SCI_CONFIG_WLEN_8 |
                                                         SCI_CONFIG_STOP_ONE |
                                                         SCI_CONFIG_PAR_NONE));
     SCI_enableModule          ( SCIA_BASE                                                         );
@@ -91,7 +91,7 @@ void initSCIACBuffer ( void )
    wBuff.rIndex   = 0;
    wBuff.wIndex   = 0;
 }
-//*****************************************************************************
+//--------------------------------------------------------------------------------
 char Buff[APP_OUT_BUF_SIZE];
 void sciPrintf(const char *pcString, ...)
 {
@@ -102,4 +102,4 @@ void sciPrintf(const char *pcString, ...)
    sciaBufferWrite(Buff,len);
    va_end(vaArgP);
 }
-//*****************************************************************************
+//--------------------------------------------------------------------------------
