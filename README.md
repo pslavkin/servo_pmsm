@@ -2,13 +2,14 @@
 
 > development of a customized high precision microcontrolled permament magnet endoded servo motor
 
-<a href="https://github.com/pslavkin/servo_pmsm"><img src="https://github.com/pslavkin/servo_pmsm/doc/pics/TMDXIDDK379D.jpeg" title="servo pmsm" alt="TMDXIDDK379D"></a>
+<a href="https://github.com/pslavkin/servo_pmsm"><img src="./eoc/pics/TMDXIDDK379D.jpeg" title="servo pmsm" width="400" height="200" alt="TMDXIDDK379D"></a>
 
 ## Progress
 <!--- 
-- ![rojo](https://placehold.it/15/FF0000/000000?text=+) `rojo`
-- ![amarillo](https://placehold.it/15/FFFF00/000000?text=+) `amarillo`
-- ![azul](https://placehold.it/15/0000FF/000000?text=+) `azul`
+- ![rojo](https://placehold.it/15/FF0000/000000?text=+)
+- ![amarillo](https://placehold.it/15/FFFF00/000000?text=+)
+- ![azul](https://placehold.it/15/0000FF/000000?text=+)
+- ![verde](https://placehold.it/15/00FF00/000000?text=+)
 -->
 
 - ![verde](https://placehold.it/15/00FF00/000000?text=+)
@@ -20,7 +21,19 @@ Blinky
 - ![verde](https://placehold.it/15/00FF00/000000?text=+)
 Cooperative RTOS
 - ![verde](https://placehold.it/15/00FF00/000000?text=+)
-SCI
+SCI based command console
+- ![amarillo](https://placehold.it/15/FFFF00/000000?text=+)
+ePWM one channel for testing registers
+- ![amarillo](https://placehold.it/15/FFFF00/000000?text=+)
+eQEP encoder test as a frequenci measurement
+- ![azul](https://placehold.it/15/0000FF/000000?text=+)
+QDU cuadrature decoder
+- ![azul](https://placehold.it/15/0000FF/000000?text=+)
+wPWM 3 phase
+- ![azul](https://placehold.it/15/0000FF/000000?text=+)
+shunt current close loop
+
+
 
 
 ## Table of Contents
@@ -115,11 +128,9 @@ $ bower install
 
 ## Team
 
-> Or Contributors/People
-
-| <a href="https://github.com/pslavkin" target="_blank">**pslavkin**</a> | <a href="https://github.com/pslavkin" target="_blank">**pslavkin2**</a> | <a href="https://github.com/pslavkin" target="_blank">**pslavkin3**</a> |
+| <a href="https://github.com/pslavkin" target="_blank">**pslavkin**</a> | <a href="https://github.com/pslavkin" target="_blank">**jhon**</a> | <a href="https://github.com/pslavkin" target="_blank">**doe**</a> |
 | :---: |:---:| :---:|
-| [![pslavkin](https://avatars1.githubusercontent.com/u/8507601?s=460&v=4&s=200)](https://github.com/pslavkin)    | [![pslavkin](https://avatars1.githubusercontent.com/u/8507601?s=460&v=4&s=200)](https://github.com/pslavkin) | [![pslavkin](https://avatars1.githubusercontent.com/u/8507601?s=460&v=4&s=200)](https://github.com/pslavkin)  |
+| [![pslavkin](https://avatars1.githubusercontent.com/u/8507601?s=150)](https://github.com/pslavkin)    | [<img src=https://media.metrolatam.com/2019/04/04/matrixreloadedneo01-3ec18ba895c91e664865ece4b3c9381d-600x400.jpg width="200" height="150">](https://github.com/pslavkin) | [<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcStNOGY8Cj2fH3B6L3OD91VJiuIq3iBA3FkCz0w0OJSQGuIxrsF" width="200" height="150">](https://github.com/pslavkin)  |
 | <a href="https://github.com/pslavkin" target="_blank">`github.com/pslavkin`</a> | <a href="https://github.com/pslavkin" target="_blank">`github.com/pslavkin`</a> | <a href="https://github.com/pslavkin" target="_blank">`github.com/pslavkin`</a> |
 
 <!--
