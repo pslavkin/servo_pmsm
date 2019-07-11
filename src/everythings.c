@@ -12,6 +12,7 @@
 #include "wdog.h"
 #include "adc_.h"
 #include "pwm.h"
+#include "parser.h"
 //--------------------------------------------------------------------------------
 const State
    idle1[],
@@ -32,9 +33,10 @@ const State**  everythings    ( void )
 }
 void Init_everythings(void)
 {
-   initLeds ( );
-   initAdc  ( );
-   initPwm  ( );
+   initLeds   ( );
+   initAdc    ( );
+   initPwm    ( );
+   initParser ( );
 }
 //--------------------------------------------------------------------------------
 const State idle1 [ ] =

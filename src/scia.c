@@ -72,7 +72,6 @@ void initSCIAFIFO(void)
     Interrupt_enable          ( INT_SCIA_TX                                                       );
     initSCIACBuffer           (                                                                   );
     Interrupt_clearACKGroup   ( INTERRUPT_ACK_GROUP9                                              );
-    sciaBufferWrite           ( "servo init\r\n",12                                               );
 }
 
 uint16_t sciaBufferWrite(char* data, uint16_t len)

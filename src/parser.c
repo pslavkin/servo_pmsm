@@ -11,10 +11,15 @@
 const State
    receiving[];
 
-char     lineBuff[APP_INPUT_BUF_SIZE]="";
+char     lineBuff[APP_INPUT_BUF_SIZE]="?";
 uint16_t lineIndex=0;
 
 const State*   parserSm=receiving;
+void  initParser    ( void )
+{
+   CmdLineProcess("v");
+   CmdLineProcess("?");
+}
 const State**  parser    ( void )
 {
    return &parserSm;

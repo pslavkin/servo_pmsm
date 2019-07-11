@@ -23,11 +23,13 @@ tCmdLineEntry Login_Cmd_Table[] =
     { "adc"    ,Cmd_login2adc ,": adc setup" },
     { "pwm"    ,Cmd_login2pwm ,": pwm setup" },
     { "uptime" ,Cmd_Uptime    ,": upteim"    },
+    { "v"      ,Cmd_version   ,": version"   },
     { "?"      ,Cmd_Help      ,": help"      },
     { 0        ,0             ,0             }
 };
 
 void Cmd_login     ( uint16_t argc, char *argv[] ) { sciPrintf("login\r\n")    ;}
+void Cmd_version   ( uint16_t argc, char *argv[] ) { sciPrintf("PMSM C2000 V1.0 - Pablo Slavkin\r\n")    ;}
 void Cmd_login2adc ( uint16_t argc, char *argv[] ) { actualCmdTable=adcCmdTable;}
 void Cmd_login2pwm ( uint16_t argc, char *argv[] ) { actualCmdTable=pwmCmdTable;}
 //--------------------------------------------------------------------------------

@@ -1,8 +1,9 @@
 # PMSM Servo motor driver based on C2000
 
-> development of a customized high precision microcontrolled permament magnet endoded servo motor
-:+1 
-<a href="https://github.com/pslavkin/servo_pmsm"><img src="https://github.com/pslavkin/servo_pmsm/doc/pics/TMDXIDDK379D.jpeg" title="servo pmsm" width="400" height="200" alt="TMDXIDDK379D"></a>
+> development of a customized high precision microcontrolled permament magnet embedded servo motor
+
+<a href="https://github.com/pslavkin/servo_pmsm"><img src="https://raw.githubusercontent.com/pslavkin/servo_pmsm/master/doc/pics/TMDXIDDK379D.jpeg" title="servo pmsm" width="400" height="200" alt="TMDXIDDK379D"></a>
+
 
 ## Progress
 <!--- 
@@ -12,27 +13,16 @@
 - ![verde](https://placehold.it/15/00FF00/000000?text=+)
 -->
 
-- ![verde](https://placehold.it/15/00FF00/000000?text=+)
-Soft tools (compiler, css. eclipse, cmd)
-- ![verde](https://placehold.it/15/00FF00/000000?text=+)
-Hard tools (blue big board, launchpad, mootors)
-- ![verde](https://placehold.it/15/00FF00/000000?text=+)
-Blinky
-- ![verde](https://placehold.it/15/00FF00/000000?text=+)
-Cooperative RTOS
-- ![verde](https://placehold.it/15/00FF00/000000?text=+)
-SCI based command console
-- ![amarillo](https://placehold.it/15/FFFF00/000000?text=+)
-ePWM one channel for testing registers
-- ![amarillo](https://placehold.it/15/FFFF00/000000?text=+)
-eQEP encoder test as a frequenci measurement
-- ![azul](https://placehold.it/15/0000FF/000000?text=+)
-QDU cuadrature decoder
-- ![azul](https://placehold.it/15/0000FF/000000?text=+)
-wPWM 3 phase
-- ![azul](https://placehold.it/15/0000FF/000000?text=+)
-shunt current close loop
-
+- :heavy_check_mark: Soft tools (compiler, css. eclipse, cmd)
+- :heavy_check_mark: Hard tools (blue big board, launchpad, mootors)
+- :heavy_check_mark: Blinky
+- :heavy_check_mark: ooperative RTOS
+- :heavy_check_mark: SCI based command console
+- :construction:     PWM one channel for testing registers
+- :construction:     QEP encoder test as a frequenci measurement
+- :construction:     DU cuadrature decoder
+- :red_circle:       PWM 3 phase
+- :red_circle:       hunt current close loop
 
 
 
@@ -47,6 +37,10 @@ shunt current close loop
 - [FAQ](#faq)
 - [Support](#support)
 - [License](#license)
+
+## SCI gif demo
+
+https://raw.githubusercontent.com/pslavkin/servo_pmsm/master/doc/videos/sci.gif
 
 <!--
 

@@ -15,6 +15,7 @@ void     CmdLineProcess ( char* line );
 void     Parser_Process ( void       );
 
 void Cmd_login      ( uint16_t argc, char *argv[] );
+void Cmd_version    ( uint16_t argc, char *argv[] );
 void Cmd_login2adc  ( uint16_t argc, char *argv[] );
 void Cmd_login2pwm  ( uint16_t argc, char *argv[] );
 
