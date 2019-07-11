@@ -1,8 +1,8 @@
 # PMSM Servo motor driver based on C2000
 
 > development of a customized high precision microcontrolled permament magnet endoded servo motor
-
-<a href="https://github.com/pslavkin/servo_pmsm"><img src="./eoc/pics/TMDXIDDK379D.jpeg" title="servo pmsm" width="400" height="200" alt="TMDXIDDK379D"></a>
+:+1 
+<a href="https://github.com/pslavkin/servo_pmsm"><img src="https://github.com/pslavkin/servo_pmsm/doc/pics/TMDXIDDK379D.jpeg" title="servo pmsm" width="400" height="200" alt="TMDXIDDK379D"></a>
 
 ## Progress
 <!--- 
