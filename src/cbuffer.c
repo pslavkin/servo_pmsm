@@ -48,34 +48,25 @@ uint16_t writeCBufferArray(cBuffer_t* cb, void* data, uint16_t len)
    return i;
 }
 //-------------------------------------------------------------------------------------
-bool readCBuffer(cBuffer_t* cb, void* data)
+bool readOrPeekCBuffer(cBuffer_t* cb, void* data,bool read)
 {
    bool ans;
    if (cb->rIndex != cb->wIndex) {
       uint16_t i,dataSize=cb->dataSize;
       for(i=0;i<dataSize;i++)
          ((uint16_t*)data)[i]=cb->pool[cb->rIndex*dataSize+i];
-      cb->rIndex = nextRIndex(cb);
+      if(read==true)
+         cb->rIndex = nextRIndex(cb);
       ans=true;
    }
    else
       ans=false;
    return ans;                  //notar que si no hay nada para leer, devuelve simempre el ultimo dato escrito...
 }
-bool peekCBuffer(cBuffer_t* cb, void* data)
-{
-   bool ans;
-   if (cb->rIndex != cb->wIndex) {
-      uint16_t i,dataSize=cb->dataSize;
-      for(i=0;i<dataSize;i++)
-         ((uint16_t*)data)[i]=cb->pool[cb->rIndex*dataSize+i];
-      //cb->rIndex = nextRIndex(cb);
-      ans=true;
-   }
-   else
-      ans=false;
-   return ans;                  //notar que si no hay nada para leer, devuelve simempre el ultimo dato escrito...
-}
+
+bool readCBuffer(cBuffer_t* cb, void* data) { return readOrPeekCBuffer(cb,data,true); }
+bool peekCBuffer(cBuffer_t* cb, void* data) { return readOrPeekCBuffer(cb,data,false); }
+
 uint16_t readCBufferArray(cBuffer_t* cb, void* data, uint16_t len)
 {
    uint16_t i,dataSize=cb->dataSize;
