@@ -11,6 +11,8 @@
 - ![amarillo](https://placehold.it/15/FFFF00/000000?text=+)
 - ![azul](https://placehold.it/15/0000FF/000000?text=+)
 - ![verde](https://placehold.it/15/00FF00/000000?text=+)
+embedded gist
+https://gist.github.com/rxaviers/7360908
 -->
 
 - :heavy_check_mark: Soft tools (compiler, css. eclipse, cmd)

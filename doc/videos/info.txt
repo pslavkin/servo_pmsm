@@ -1,0 +1,3 @@
+giff screencast provided by
+byzanz-record -d 20 out.giff
+
