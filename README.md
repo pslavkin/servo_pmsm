@@ -42,7 +42,9 @@ https://gist.github.com/rxaviers/7360908
 
 ## SCI gif demo
 
-https://github.com/pslavkin/servo_pmsm/blob/master/doc/videos/sci.gif
+<!-- ![](doc/videos/https://github.com/pslavkin/servo_pmsm/blob/master/doc/videos/sci.gif) -->
+<img src="https://github.com/pslavkin/servo_pmsm/blob/master/doc/videos/sci.gif" width="600" height="320"/>
+<img src="doc/videos/sci.gif" width="100" height="100"/>
 
 <!--
 
