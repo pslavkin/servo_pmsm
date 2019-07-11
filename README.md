@@ -42,7 +42,7 @@ https://gist.github.com/rxaviers/7360908
 
 ## SCI gif demo
 
-https://raw.githubusercontent.com/pslavkin/servo_pmsm/master/doc/videos/sci.gif
+https://github.com/pslavkin/servo_pmsm/blob/master/doc/videos/sci.gif
 
 <!--
 
