@@ -108,12 +108,11 @@ https://gist.github.com/rxaviers/7360908
 - [License](#license)
 ---
 ## SCI gif demo
-
 <img src="doc/videos/sci.gif" width="600" height="300"/>
 
 ## PWM complementary demo
-
 <img src="doc/videos/pwm.gif" width="600" height="300"/>
+
 <!--
 
 ## Example (Optional)

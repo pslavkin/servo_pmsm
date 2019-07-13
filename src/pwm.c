@@ -8,8 +8,6 @@
 #include "sysctl.h"
 #include "opt.h"
 
-#define EPWM_TIMER_TBPRD    1000
-
 void initEPWM(uint32_t base);
 __interrupt void epwm1ISR(void);
 
@@ -20,16 +18,16 @@ void initPwm(void)
 
     // Configure GPIO0/1 ePWM1A/1B
     GPIO_setPadConfig ( 0 ,GPIO_PIN_TYPE_STD );
-    GPIO_setPinConfig ( GPIO_0_EPWM1A         );
     GPIO_setPadConfig ( 1 ,GPIO_PIN_TYPE_STD );
-    GPIO_setPinConfig ( GPIO_1_EPWM1B         );
+    GPIO_setPinConfig ( GPIO_0_EPWM1A        );
+    GPIO_setPinConfig ( GPIO_1_EPWM1B        );
 
     // CHANGE XBAR inputs from using GPIO0
     // if EPWM SYNCIN is enabled, EXTSYNCIN1 and EXTSYNCIN2 will use
     // GPIO0 (which is the output of EPWM1).
     // Pick any unused GPIO
-    XBAR_setInputPin(XBAR_INPUT5, 50);
-    XBAR_setInputPin(XBAR_INPUT6, 50);
+//    XBAR_setInputPin(XBAR_INPUT5, 50);
+//    XBAR_setInputPin(XBAR_INPUT6, 50);
 
     // Disable sync(Freeze clock to PWM as well)
     SysCtl_disablePeripheral(SYSCTL_PERIPH_CLK_GTBCLKSYNC);
@@ -46,17 +44,17 @@ void initPwm(void)
 }
 
 // epwm1ISR - ePWM 1 ISR
-#define INC 5
+#define INC (EPWM_TIMER_PERIOD/10)
 __interrupt void epwm1ISR(void)
 {
    static int16_t t0=0;
    static bool upDown=true;
    if(upDown) {
-      if(t0<=(EPWM_TIMER_TBPRD-INC)) {
+      if(t0<=(EPWM_TIMER_PERIOD-INC)) {
          t0+=INC;
       }
       else {
-         t0     = EPWM_TIMER_TBPRD;
+         t0     = EPWM_TIMER_PERIOD;
          upDown = false;
       }
    }
@@ -70,7 +68,7 @@ __interrupt void epwm1ISR(void)
       }
    }
    EPWM_setCounterCompareValue(EPWM1_BASE, EPWM_COUNTER_COMPARE_A, t0);
-   EPWM_setCounterCompareValue(EPWM1_BASE, EPWM_COUNTER_COMPARE_B, EPWM_TIMER_TBPRD-t0);
+   EPWM_setCounterCompareValue(EPWM1_BASE, EPWM_COUNTER_COMPARE_B, t0);
    // Clear INT flag for this timer
    EPWM_clearEventTriggerInterruptFlag(EPWM1_BASE);
    // Acknowledge interrupt group
@@ -80,13 +78,13 @@ __interrupt void epwm1ISR(void)
 void initEPWM(uint32_t base)
 {
     // Set-up TBCLK
-    EPWM_setTimeBasePeriod  ( base, EPWM_TIMER_TBPRD );
+    EPWM_setTimeBasePeriod  ( base, EPWM_TIMER_PERIOD );
     EPWM_setPhaseShift      ( base, 0U               );
     EPWM_setTimeBaseCounter ( base, 0U               );
 
     // Set Compare values
-    EPWM_setCounterCompareValue(base, EPWM_COUNTER_COMPARE_A, EPWM_TIMER_TBPRD/10);
-    EPWM_setCounterCompareValue(base, EPWM_COUNTER_COMPARE_B, EPWM_TIMER_TBPRD/4);
+    EPWM_setCounterCompareValue(base, EPWM_COUNTER_COMPARE_A, EPWM_TIMER_PERIOD/2);
+    EPWM_setCounterCompareValue(base, EPWM_COUNTER_COMPARE_B, EPWM_TIMER_PERIOD/2);
 
     // Set up counter mode
     EPWM_setTimeBaseCounterMode ( base, EPWM_COUNTER_MODE_UP                         );
@@ -99,10 +97,13 @@ void initEPWM(uint32_t base)
 
     // Set actions
     EPWM_setActionQualifierAction ( base ,EPWM_AQ_OUTPUT_A ,EPWM_AQ_OUTPUT_HIGH ,EPWM_AQ_OUTPUT_ON_TIMEBASE_ZERO    );
-    EPWM_setActionQualifierAction ( base ,EPWM_AQ_OUTPUT_B ,EPWM_AQ_OUTPUT_HIGH ,EPWM_AQ_OUTPUT_ON_TIMEBASE_ZERO    );
     EPWM_setActionQualifierAction ( base ,EPWM_AQ_OUTPUT_A ,EPWM_AQ_OUTPUT_LOW  ,EPWM_AQ_OUTPUT_ON_TIMEBASE_UP_CMPA );
-    EPWM_setActionQualifierAction ( base ,EPWM_AQ_OUTPUT_B ,EPWM_AQ_OUTPUT_LOW  ,EPWM_AQ_OUTPUT_ON_TIMEBASE_UP_CMPB );
+    EPWM_setActionQualifierAction ( base ,EPWM_AQ_OUTPUT_B ,EPWM_AQ_OUTPUT_LOW  ,EPWM_AQ_OUTPUT_ON_TIMEBASE_ZERO    );
+    EPWM_setActionQualifierAction ( base ,EPWM_AQ_OUTPUT_B ,EPWM_AQ_OUTPUT_HIGH ,EPWM_AQ_OUTPUT_ON_TIMEBASE_UP_CMPB );
 
+    EPWM_setDeadBandDelayPolarity ( EPWM1_BASE, EPWM_DB_FED, EPWM_DB_POLARITY_ACTIVE_LOW );
+    EPWM_setDeadBandDelayMode     ( EPWM1_BASE, EPWM_DB_FED, true                        );
+    EPWM_setDeadBandDelayMode     ( EPWM1_BASE, EPWM_DB_RED, true                        );
     // Interrupt where we will change the Compare Values
     // Select INT on Time base counter zero event,
     // Enable INT, generate INT on 1rd event

@@ -131,40 +131,7 @@ FreqCal_Object freq =
 //
 void main(void)
 {
-    //
-    // Initialize device clock and peripherals
-    //
-    Device_init();
 
-    //
-    // Disable pin locks and enable internal pullups.
-    //
-    Device_initGPIO();
-
-    //
-    // Initialize GPIOs for use as EPWM1A and EQEP1A
-    //
-    GPIO_setPinConfig(GPIO_0_EPWM1A);
-    GPIO_setPadConfig(0, GPIO_PIN_TYPE_STD);
-    GPIO_setPinConfig(GPIO_20_EQEP1A);
-    GPIO_setPadConfig(20, GPIO_PIN_TYPE_STD);
-
-    //
-    // Initialize PIE and clear PIE registers. Disables CPU interrupts.
-    //
-    Interrupt_initModule();
-
-    //
-    // Initialize the PIE vector table with pointers to the shell Interrupt
-    // Service Routines (ISR).
-    //
-    Interrupt_initVectorTable();
-
-    //
-    // Interrupts that are used in this example are re-mapped to ISR functions
-    // found within this file.
-    //
-    Interrupt_register(INT_EPWM1, &epwmISR);
 
     //
     // Setup ePWM1 to generate a 5 kHz signal to be an input to the eQEP
@@ -216,6 +183,10 @@ void main(void)
 void
 initEQEP(void)
 {
+    // Initialize GPIOs for use as EQEP1A
+    //
+    GPIO_setPinConfig ( GPIO_20_EQEP1A        );
+    GPIO_setPadConfig ( 20, GPIO_PIN_TYPE_STD );
     //
     // Configure the decoder for up-count mode, counting both rising and
     // falling edges (that is, 2x resolution)
@@ -275,10 +246,8 @@ initEPWM(void)
     //
     // Disable the shadow load; the load will be immediate instead
     //
-    EPWM_disableCounterCompareShadowLoadMode(EPWM1_BASE,
-                                             EPWM_COUNTER_COMPARE_A);
-    EPWM_disableCounterCompareShadowLoadMode(EPWM1_BASE,
-                                             EPWM_COUNTER_COMPARE_B);
+    EPWM_disableCounterCompareShadowLoadMode(EPWM1_BASE, EPWM_COUNTER_COMPARE_A);
+    EPWM_disableCounterCompareShadowLoadMode(EPWM1_BASE, EPWM_COUNTER_COMPARE_B);
 
     //
     // Set the compare A value to half the period value, compare B to 0
@@ -291,26 +260,21 @@ initEPWM(void)
     // - EPWM1A --> 1 when CTR = CMPA and increasing
     // - EPWM1A --> 0 when CTR = CMPA and decreasing
     //
-    EPWM_setActionQualifierAction(EPWM1_BASE, EPWM_AQ_OUTPUT_A,
-                                  EPWM_AQ_OUTPUT_HIGH,
-                                  EPWM_AQ_OUTPUT_ON_TIMEBASE_UP_CMPA);
-    EPWM_setActionQualifierAction(EPWM1_BASE, EPWM_AQ_OUTPUT_A,
-                                  EPWM_AQ_OUTPUT_LOW,
-                                  EPWM_AQ_OUTPUT_ON_TIMEBASE_DOWN_CMPA);
+    EPWM_setActionQualifierAction ( EPWM1_BASE ,EPWM_AQ_OUTPUT_A ,EPWM_AQ_OUTPUT_HIGH ,EPWM_AQ_OUTPUT_ON_TIMEBASE_UP_CMPA   );
+    EPWM_setActionQualifierAction ( EPWM1_BASE ,EPWM_AQ_OUTPUT_A ,EPWM_AQ_OUTPUT_LOW  ,EPWM_AQ_OUTPUT_ON_TIMEBASE_DOWN_CMPA );
 
     //
     // Configure EPWM1B to be complementary to EPWM1A
     //
-    EPWM_setDeadBandDelayPolarity(EPWM1_BASE, EPWM_DB_FED,
-                                  EPWM_DB_POLARITY_ACTIVE_LOW);
-    EPWM_setDeadBandDelayMode(EPWM1_BASE, EPWM_DB_FED, true);
-    EPWM_setDeadBandDelayMode(EPWM1_BASE, EPWM_DB_RED, true);
+    EPWM_setDeadBandDelayPolarity ( EPWM1_BASE, EPWM_DB_FED, EPWM_DB_POLARITY_ACTIVE_LOW );
+    EPWM_setDeadBandDelayMode     ( EPWM1_BASE, EPWM_DB_FED, true                        );
+    EPWM_setDeadBandDelayMode     ( EPWM1_BASE, EPWM_DB_RED, true                        );
 
     //
     // Enable interrupt when the counter is equal to 0
     //
-    EPWM_setInterruptSource(EPWM1_BASE, EPWM_INT_TBCTR_ZERO);
-    EPWM_enableInterrupt(EPWM1_BASE);
+    EPWM_setInterruptSource ( EPWM1_BASE, EPWM_INT_TBCTR_ZERO );
+    EPWM_enableInterrupt    ( EPWM1_BASE                      );
 
     //
     // Interrupt on first event
