@@ -47,28 +47,6 @@ void initPwm(void)
 #define INC (EPWM_TIMER_PERIOD/10)
 __interrupt void epwm1ISR(void)
 {
-   static int16_t t0=0;
-   static bool upDown=true;
-   if(upDown) {
-      if(t0<=(EPWM_TIMER_PERIOD-INC)) {
-         t0+=INC;
-      }
-      else {
-         t0     = EPWM_TIMER_PERIOD;
-         upDown = false;
-      }
-   }
-   else {
-      if(t0>=INC) {
-         t0-=INC;
-      }
-      else {
-         t0     = 0;
-         upDown = true;
-      }
-   }
-   EPWM_setCounterCompareValue(EPWM1_BASE, EPWM_COUNTER_COMPARE_A, t0);
-   EPWM_setCounterCompareValue(EPWM1_BASE, EPWM_COUNTER_COMPARE_B, t0);
    // Clear INT flag for this timer
    EPWM_clearEventTriggerInterruptFlag(EPWM1_BASE);
    // Acknowledge interrupt group
@@ -87,23 +65,26 @@ void initEPWM(uint32_t base)
     EPWM_setCounterCompareValue(base, EPWM_COUNTER_COMPARE_B, EPWM_TIMER_PERIOD/2);
 
     // Set up counter mode
-    EPWM_setTimeBaseCounterMode ( base, EPWM_COUNTER_MODE_UP                         );
-    EPWM_disablePhaseShiftLoad  ( base                                               );
+    EPWM_setTimeBaseCounterMode ( base, EPWM_COUNTER_MODE_UP_DOWN                       );
+    EPWM_disablePhaseShiftLoad  ( base                                                  );
     EPWM_setClockPrescaler      ( base, EPWM_CLOCK_DIVIDER_128, EPWM_HSCLOCK_DIVIDER_14 );
 
     // Set up shadowing
     EPWM_setCounterCompareShadowLoadMode(base, EPWM_COUNTER_COMPARE_A, EPWM_COMP_LOAD_ON_CNTR_ZERO);
     EPWM_setCounterCompareShadowLoadMode(base, EPWM_COUNTER_COMPARE_B, EPWM_COMP_LOAD_ON_CNTR_ZERO);
 
-    // Set actions
-    EPWM_setActionQualifierAction ( base ,EPWM_AQ_OUTPUT_A ,EPWM_AQ_OUTPUT_HIGH ,EPWM_AQ_OUTPUT_ON_TIMEBASE_ZERO    );
-    EPWM_setActionQualifierAction ( base ,EPWM_AQ_OUTPUT_A ,EPWM_AQ_OUTPUT_LOW  ,EPWM_AQ_OUTPUT_ON_TIMEBASE_UP_CMPA );
-    EPWM_setActionQualifierAction ( base ,EPWM_AQ_OUTPUT_B ,EPWM_AQ_OUTPUT_LOW  ,EPWM_AQ_OUTPUT_ON_TIMEBASE_ZERO    );
-    EPWM_setActionQualifierAction ( base ,EPWM_AQ_OUTPUT_B ,EPWM_AQ_OUTPUT_HIGH ,EPWM_AQ_OUTPUT_ON_TIMEBASE_UP_CMPB );
+    // Set action qualifier behavior on compare A events
+    // - EPWM1A --> 1 when CTR = CMPA and increasing
+    // - EPWM1A --> 0 when CTR = CMPA and decreasing
+    EPWM_setActionQualifierAction ( base ,EPWM_AQ_OUTPUT_A ,EPWM_AQ_OUTPUT_HIGH ,EPWM_AQ_OUTPUT_ON_TIMEBASE_UP_CMPA   );
+    EPWM_setActionQualifierAction ( base ,EPWM_AQ_OUTPUT_A ,EPWM_AQ_OUTPUT_LOW  ,EPWM_AQ_OUTPUT_ON_TIMEBASE_DOWN_CMPA );
 
-    EPWM_setDeadBandDelayPolarity ( EPWM1_BASE, EPWM_DB_FED, EPWM_DB_POLARITY_ACTIVE_LOW );
-    EPWM_setDeadBandDelayMode     ( EPWM1_BASE, EPWM_DB_FED, true                        );
-    EPWM_setDeadBandDelayMode     ( EPWM1_BASE, EPWM_DB_RED, true                        );
+    // Set action qualifier behavior on compare B events
+    // - EPWM1B --> 1 when CTR = PRD and increasing
+    // - EPWM1B --> 0 when CTR = 0 and decreasing
+    EPWM_setActionQualifierAction ( base ,EPWM_AQ_OUTPUT_B ,EPWM_AQ_OUTPUT_HIGH ,EPWM_AQ_OUTPUT_ON_TIMEBASE_PERIOD );
+    EPWM_setActionQualifierAction ( base ,EPWM_AQ_OUTPUT_B ,EPWM_AQ_OUTPUT_LOW  ,EPWM_AQ_OUTPUT_ON_TIMEBASE_ZERO   );
+
     // Interrupt where we will change the Compare Values
     // Select INT on Time base counter zero event,
     // Enable INT, generate INT on 1rd event
@@ -111,5 +92,3 @@ void initEPWM(uint32_t base)
     EPWM_enableInterrupt        ( base                      );
     EPWM_setInterruptEventCount ( base, 1U                  );
 }
-
-

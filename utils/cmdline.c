@@ -12,6 +12,7 @@
 tCmdLineEntry Login_Cmd_Table[ ];
 tCmdLineEntry adcCmdTable    [ ];
 tCmdLineEntry pwmCmdTable    [ ];
+tCmdLineEntry eqepCmdTable   [ ];
 
 char *         g_ppcArgv[CMDLINE_MAX_ARGS + 1];
 tCmdLineEntry* actualCmdTable=Login_Cmd_Table;
@@ -19,19 +20,21 @@ tCmdLineEntry* actualCmdTable=Login_Cmd_Table;
 //--------------------------------------------------------------------------------
 tCmdLineEntry Login_Cmd_Table[] =
 {
-    { "login"  ,Cmd_login     ,": login"     },
-    { "adc"    ,Cmd_login2adc ,": adc setup" },
-    { "pwm"    ,Cmd_login2pwm ,": pwm setup" },
-    { "uptime" ,Cmd_Uptime    ,": upteim"    },
-    { "v"      ,Cmd_version   ,": version"   },
-    { "?"      ,Cmd_Help      ,": help"      },
-    { 0        ,0             ,0             }
+   { "login"  ,Cmd_login      ,": login"      },
+   { "adc"    ,Cmd_login2adc  ,": adc setup"  },
+   { "pwm"    ,Cmd_login2pwm  ,": pwm setup"  },
+   { "eqep"   ,Cmd_login2eqep ,": eqep setup" },
+   { "uptime" ,Cmd_Uptime     ,": upteim"     },
+   { "v"      ,Cmd_version    ,": version"    },
+   { "?"      ,Cmd_Help       ,": help"       },
+   { 0        ,0              ,0              }
 };
 
-void Cmd_login     ( uint16_t argc, char *argv[] ) { sciPrintf("login\r\n")    ;}
-void Cmd_version   ( uint16_t argc, char *argv[] ) { sciPrintf("PMSM C2000 V1.0 - Pablo Slavkin\r\n")    ;}
-void Cmd_login2adc ( uint16_t argc, char *argv[] ) { actualCmdTable=adcCmdTable;}
-void Cmd_login2pwm ( uint16_t argc, char *argv[] ) { actualCmdTable=pwmCmdTable;}
+void Cmd_login      ( uint16_t argc, char *argv[] ) { sciPrintf("login\r\n")    ;}
+void Cmd_version    ( uint16_t argc, char *argv[] ) { sciPrintf("PMSM C2000 V1.0 - Pablo Slavkin\r\n")    ;}
+void Cmd_login2adc  ( uint16_t argc, char *argv[] ) { actualCmdTable=adcCmdTable;}
+void Cmd_login2pwm  ( uint16_t argc, char *argv[] ) { actualCmdTable=pwmCmdTable;}
+void Cmd_login2eqep ( uint16_t argc, char *argv[] ) { actualCmdTable=eqepCmdTable;}
 //--------------------------------------------------------------------------------
 tCmdLineEntry adcCmdTable[] =
 {
@@ -61,6 +64,19 @@ tCmdLineEntry pwmCmdTable[] =
 void Cmd_pwm(uint16_t argc, char *argv[])
 {
    sciPrintf("pwm\r\n");
+}
+//--------------------------------------------------------------------------------
+tCmdLineEntry eqepCmdTable[] =
+{
+   { "a" ,Cmd_readEqepPos ,": read posx"           },
+   { "<" ,Cmd_back2login  ,": back to login table" },
+   { "?" ,Cmd_Help        ,": help"                },
+   { 0   ,0               ,0                       }
+};
+
+void Cmd_readEqepPos(uint16_t argc, char *argv[])
+{
+   sciPrintf("eqep pos%d = ",1234);
 }
 //--------------------------------------------------------------------------------
 void Cmd_back2login(uint16_t argc, char *argv[])

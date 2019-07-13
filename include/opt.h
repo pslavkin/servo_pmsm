@@ -14,5 +14,5 @@
 #define EX_ADC_RESOLUTION 12
 
 //PWM
-#define EPWM_TIMER_PERIOD    5580
+#define EPWM_TIMER_PERIOD    55580
 #endif
