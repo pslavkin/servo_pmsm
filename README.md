@@ -2,9 +2,8 @@
 
 > development of a customized high precision microcontrolled permament magnet embedded servo motor
 
-<a href="https://github.com/pslavkin/servo_pmsm"><img src="https://raw.githubusercontent.com/pslavkin/servo_pmsm/master/doc/pics/TMDXIDDK379D.jpeg" title="servo pmsm" width="400" height="200" alt="TMDXIDDK379D"></a>
-
-
+<a href="https://github.com/pslavkin/servo_pmsm"><img src="doc/pics/TMDXIDDK379D.jpeg" title="servo pmsm" width="400" height="200" alt="TMDXIDDK379D"></a>
+---
 ## Progress
 <!--- 
 - ![rojo](https://placehold.it/15/FF0000/000000?text=+)
@@ -24,10 +23,78 @@ https://gist.github.com/rxaviers/7360908
 - :construction:     QEP encoder test as a frequenci measurement
 - :construction:     DU cuadrature decoder
 - :red_circle:       PWM 3 phase
-- :red_circle:       hunt current close loop
+- :red_circle:       Shunt current close loop
+---
+## Project Hierarchy
 
-
-
+```ruby
+.
+├── 2837xD_FLASH_lnk_cpu1.cmd
+├── 2837xD_RAM_lnk_cpu1.cmd
+├── Debug
+├── doc
+│   ├── pics
+│   │   └── TMDXIDDK379D.jpeg
+│   └── videos
+│       ├── info.txt
+│       └── sci.gif
+├── driverlib
+│   ├── inc
+├── flash.sh
+├── include
+│   ├── opt.h
+├── lib
+│   └── rts2800_fpu32.lib
+├── ram.sh
+├── README.md
+├── Release
+├── src
+│   ├── adc_.c          //function related to adc module
+│   ├── adc_.h
+│   ├── cbuffer.c
+│   ├── cbuffer.h
+│   ├── device.c
+│   ├── eqep.c
+│   ├── eqep.h
+│   ├── events.c
+│   ├── events.h
+│   ├── everythings.c
+│   ├── everythings.h
+│   ├── F2837xD_CodeStartBranch.asm
+│   ├── leds.c
+│   ├── leds.h
+│   ├── main.c
+│   ├── parser.c
+│   ├── parser.h
+│   ├── pwm.c
+│   ├── pwm.h
+│   ├── scia.c
+│   ├── scia.h
+│   ├── sm.c
+│   ├── sm.h
+│   ├── systick.c
+│   ├── systick.h
+│   ├── wdog.c
+│   └── wdog.h
+├── targetConfigs
+│   ├── readme.txt
+│   └── TMS320F28379D.ccxml
+├── types_c.taghl
+├── user_files
+│   ├── configs
+│   │   └── f28379d.ccxml
+│   ├── images
+│   │   └── servo_pmsm.out -> ../../Release/servo_pmsm.out
+│   └── settings
+│       └── generated.ufsettings
+└── utils
+    ├── cmdline.c
+    ├── cmdline.h
+    ├── makefile_ram2flash.sh
+    ├── ustdlib.c
+    └── ustdlib.h
+```
+---
 ## Table of Contents
 
 > If you're `README` has a lot of info, section headers might be nice.
@@ -39,13 +106,14 @@ https://gist.github.com/rxaviers/7360908
 - [FAQ](#faq)
 - [Support](#support)
 - [License](#license)
-
+---
 ## SCI gif demo
 
-<!-- ![](doc/videos/https://github.com/pslavkin/servo_pmsm/blob/master/doc/videos/sci.gif) -->
-<img src="https://github.com/pslavkin/servo_pmsm/blob/master/doc/videos/sci.gif" width="600" height="320"/>
-<img src="doc/videos/sci.gif" width="100" height="100"/>
+<img src="doc/videos/sci.gif" width="600" height="300"/>
 
+## PWM complementary demo
+
+<img src="doc/videos/pwm.gif" width="600" height="300"/>
 <!--
 
 ## Example (Optional)

@@ -8,7 +8,7 @@
 #include "sysctl.h"
 #include "opt.h"
 
-#define EPWM_TIMER_TBPRD    2000
+#define EPWM_TIMER_TBPRD    1000
 
 void initEPWM(uint32_t base);
 __interrupt void epwm1ISR(void);
@@ -18,12 +18,11 @@ void initPwm(void)
     // Assign the interrupt service routines to ePWM interrupts
     Interrupt_register(INT_EPWM1, &epwm1ISR);
 
-    // Configure GPIO0/1 , GPIO2/3 and GPIO4/5 and GPIO6/7 as
-    // ePWM1A/1B, ePWM2A/2B, ePWM3A/3B, ePWM4A/4B pins respectively
-    GPIO_setPadConfig ( 34 ,GPIO_PIN_TYPE_STD );
-    GPIO_setPinConfig ( GPIO_0_EPWM1A        );
+    // Configure GPIO0/1 ePWM1A/1B
+    GPIO_setPadConfig ( 0 ,GPIO_PIN_TYPE_STD );
+    GPIO_setPinConfig ( GPIO_0_EPWM1A         );
     GPIO_setPadConfig ( 1 ,GPIO_PIN_TYPE_STD );
-    GPIO_setPinConfig ( GPIO_1_EPWM1B        );
+    GPIO_setPinConfig ( GPIO_1_EPWM1B         );
 
     // CHANGE XBAR inputs from using GPIO0
     // if EPWM SYNCIN is enabled, EXTSYNCIN1 and EXTSYNCIN2 will use
@@ -36,7 +35,7 @@ void initPwm(void)
     SysCtl_disablePeripheral(SYSCTL_PERIPH_CLK_GTBCLKSYNC);
     SysCtl_disablePeripheral(SYSCTL_PERIPH_CLK_TBCLKSYNC);
 
-    // Initialize PWM1 without phase shift as master
+   // Initialize PWM1 without phase shift as master
     initEPWM(EPWM1_BASE);
 
     // Enable sync and clock to PWM
@@ -47,12 +46,35 @@ void initPwm(void)
 }
 
 // epwm1ISR - ePWM 1 ISR
+#define INC 5
 __interrupt void epwm1ISR(void)
 {
-    // Clear INT flag for this timer
-    EPWM_clearEventTriggerInterruptFlag(EPWM1_BASE);
-    // Acknowledge interrupt group
-    Interrupt_clearACKGroup(INTERRUPT_ACK_GROUP3);
+   static int16_t t0=0;
+   static bool upDown=true;
+   if(upDown) {
+      if(t0<=(EPWM_TIMER_TBPRD-INC)) {
+         t0+=INC;
+      }
+      else {
+         t0     = EPWM_TIMER_TBPRD;
+         upDown = false;
+      }
+   }
+   else {
+      if(t0>=INC) {
+         t0-=INC;
+      }
+      else {
+         t0     = 0;
+         upDown = true;
+      }
+   }
+   EPWM_setCounterCompareValue(EPWM1_BASE, EPWM_COUNTER_COMPARE_A, t0);
+   EPWM_setCounterCompareValue(EPWM1_BASE, EPWM_COUNTER_COMPARE_B, EPWM_TIMER_TBPRD-t0);
+   // Clear INT flag for this timer
+   EPWM_clearEventTriggerInterruptFlag(EPWM1_BASE);
+   // Acknowledge interrupt group
+   Interrupt_clearACKGroup(INTERRUPT_ACK_GROUP3);
 }
 
 void initEPWM(uint32_t base)
@@ -63,13 +85,13 @@ void initEPWM(uint32_t base)
     EPWM_setTimeBaseCounter ( base, 0U               );
 
     // Set Compare values
-    EPWM_setCounterCompareValue(base, EPWM_COUNTER_COMPARE_A, EPWM_TIMER_TBPRD/2);
+    EPWM_setCounterCompareValue(base, EPWM_COUNTER_COMPARE_A, EPWM_TIMER_TBPRD/10);
     EPWM_setCounterCompareValue(base, EPWM_COUNTER_COMPARE_B, EPWM_TIMER_TBPRD/4);
 
     // Set up counter mode
     EPWM_setTimeBaseCounterMode ( base, EPWM_COUNTER_MODE_UP                         );
     EPWM_disablePhaseShiftLoad  ( base                                               );
-    EPWM_setClockPrescaler      ( base, EPWM_CLOCK_DIVIDER_8, EPWM_HSCLOCK_DIVIDER_1 );
+    EPWM_setClockPrescaler      ( base, EPWM_CLOCK_DIVIDER_128, EPWM_HSCLOCK_DIVIDER_14 );
 
     // Set up shadowing
     EPWM_setCounterCompareShadowLoadMode(base, EPWM_COUNTER_COMPARE_A, EPWM_COMP_LOAD_ON_CNTR_ZERO);
