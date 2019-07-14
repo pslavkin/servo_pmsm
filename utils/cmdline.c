@@ -96,16 +96,20 @@ tCmdLineEntry eqepCmdTable[] =
 
 void Cmd_readEqepPos(uint16_t argc, char *argv[])
 {
-   posCalc( );
+   posCalc      ( );
+   speedLowCalc ( );
    sciPrintf (
-         "posActual        =%10d\r\n"
-         "dirActual        =%10d\r\n"
-         "pos              =%10d\r\n"
-         "dir              =%10d\r\n"
-         "possDiff         =%10d\r\n"
-         "speedFastLinear  =%f\r\n"
-         "speedFastRps     =%f\r\n"
-         "speedFastRpm     =%f\r\n",
+         "posActual       =%10d\r\n"
+         "dirActual       =%10d\r\n"
+         "pos             =%10d\r\n"
+         "dir             =%10d\r\n"
+         "possDiff        =%10d\r\n"
+         "speedFastLinear =%f\r\n"
+         "speedFastRps    =%f\r\n"
+         "speedFastRpm    =%f\r\n"
+         "speedLowPeriod  =%10d\r\n"
+         "speedLowRps     =%f\r\n"
+         "speedLowRpm     =%f\r\n",
          posSpeed.posActual,
          posSpeed.dirActual,
          posSpeed.pos,
@@ -113,7 +117,10 @@ void Cmd_readEqepPos(uint16_t argc, char *argv[])
          posSpeed.posDiff,
          posSpeed.speedFastLinear,
          posSpeed.speedFastRps,
-         posSpeed.speedFastRpm
+         posSpeed.speedFastRpm,
+         posSpeed.speedLowPeriod,
+         posSpeed.speedLowRps,
+         posSpeed.speedLowRpm
          );
 
 //   sciprintf (

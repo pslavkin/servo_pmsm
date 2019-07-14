@@ -21,9 +21,9 @@ uint32_t getPwmPeriod(void)
 }
 void setPwmPeriod(uint32_t new)
 {
-   if ( new<=100  )new = 100  ;
-   if ( new>=60000 )new = 60000;
-   EPWM_setTimeBasePeriod      ( EPWM1_BASE, new                     );
+   if ( new<=100   ) new = 100  ;
+   if ( new>=60000 ) new = 60000;
+   EPWM_setTimeBasePeriod      ( EPWM1_BASE, new                           );
    EPWM_setCounterCompareValue ( EPWM1_BASE, EPWM_COUNTER_COMPARE_A, new/2 );
 }
 
@@ -75,7 +75,7 @@ void initEPWM(uint32_t base)
     // Set up counter mode
     EPWM_setTimeBaseCounterMode ( base, EPWM_COUNTER_MODE_UP_DOWN                    );
     EPWM_disablePhaseShiftLoad  ( base                                               );
-    EPWM_setClockPrescaler      ( base, EPWM_CLOCK_DIVIDER_1, EPWM_HSCLOCK_DIVIDER_1 );
+    EPWM_setClockPrescaler      ( base, EPWM_CLOCK_DIVIDER_128, EPWM_HSCLOCK_DIVIDER_14 );
 
     // Set up shadowing
     EPWM_setCounterCompareShadowLoadMode(base, EPWM_COUNTER_COMPARE_A, EPWM_COMP_LOAD_ON_CNTR_ZERO);
@@ -96,7 +96,7 @@ void initEPWM(uint32_t base)
     // Interrupt where we will change the Compare Values
     // Select INT on Time base counter zero event,
     // Enable INT, generate INT on 1rd event
-    EPWM_setInterruptSource     ( base, EPWM_INT_TBCTR_ZERO );
-    EPWM_enableInterrupt        ( base                      );
-    EPWM_setInterruptEventCount ( base, 1U                  );
+//    EPWM_setInterruptSource     ( base, EPWM_INT_TBCTR_ZERO );
+//    EPWM_enableInterrupt        ( base                      );
+//    EPWM_setInterruptEventCount ( base, 1U                  );
 }

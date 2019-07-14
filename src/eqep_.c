@@ -16,6 +16,9 @@ PosSpeed_Object posSpeed =
     .speedFastLinear = 0,
     .speedFastRps    = 0,
     .speedFastRpm    = 0,
+    .speedLowPeriod  = 0,
+    .speedLowRps     = 0,
+    .speedLowRpm     = 0,
 };
 //       , 0, 0, 0,     // Initialize outputs to zero
 //    MECH_SCALER,    // mechScaler
@@ -62,10 +65,9 @@ void initEqep(void)
 
    // Configure and enable the edge-capture unit. The capture clock divider is
    // SYSCLKOUT/64. The unit-position event divider is QCLK/32.
-   EQEP_setCaptureConfig ( EQEP1_BASE, EQEP_CAPTURE_CLK_DIV_64, EQEP_UNIT_POS_EVNT_DIV_32 );
+   EQEP_setCaptureConfig ( EQEP1_BASE, EQEP_CAPTURE_CLK_DIV_128, EQEP_UNIT_POS_EVNT_DIV_1);
    EQEP_enableCapture    ( EQEP1_BASE                                                     );
 }
-
 
 void posCalc(void)
 {
@@ -73,15 +75,31 @@ void posCalc(void)
    posSpeed.posActual = EQEP_getPosition  ( EQEP1_BASE );
 }
 
-void speedCalc(void)
+void speedFastCalc(void)
 {
    posSpeed.dir             = EQEP_getDirection ( EQEP1_BASE );
    posSpeed.pos             = EQEP_getPosition  ( EQEP1_BASE );
    posSpeed.posDiff         = posSpeed.pos-posSpeed.posLast;
    posSpeed.posLast         = posSpeed.pos;
-   posSpeed.speedFastLinear = ( posSpeed.posDiff )/SPEED_FAST_DIFF;
+   posSpeed.speedFastLinear = ( posSpeed.posDiff )/SPEED_FAST_DELTA_T;
    posSpeed.speedFastRps    = posSpeed.speedFastLinear/ENCODER_RESOLUTION;
    posSpeed.speedFastRpm    = posSpeed.speedFastRps*60;
+}
+
+void speedLowCalc(void)
+{
+   if((EQEP_getStatus(EQEP1_BASE) & EQEP_STS_UNIT_POS_EVNT) != 0) {       // Check for unit position event
+      if((EQEP_getStatus(EQEP1_BASE) & EQEP_STS_CAP_OVRFLW_ERROR) == 0) { // No Capture overflow
+         posSpeed.speedLowPeriod = EQEP_getCapturePeriodLatch(EQEP1_BASE);
+      }
+      else { // Capture overflow, saturate the result
+         posSpeed.speedLowPeriod = 0xFFFF;
+      }
+      posSpeed.speedLowRps=DEVICE_SYSCLK_FREQ/((float)posSpeed.speedLowPeriod*128*4000);
+      posSpeed.speedLowRpm=posSpeed.speedLowRps*60;
+      EQEP_clearStatus(EQEP1_BASE, (EQEP_STS_UNIT_POS_EVNT | EQEP_STS_CAP_OVRFLW_ERROR));
+   }
+}
 
 //   // Capture position once per QA/QB period
 //   pos16bVal = (uint16_t)EQEP_getPosition(EQEP1_BASE);
@@ -194,5 +212,4 @@ void speedCalc(void)
 //      // Clear unit position event flag and overflow error flag
 //      EQEP_clearStatus(EQEP1_BASE, (EQEP_STS_UNIT_POS_EVNT | EQEP_STS_CAP_OVRFLW_ERROR));
 //   }
-}
 

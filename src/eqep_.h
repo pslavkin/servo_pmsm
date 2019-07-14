@@ -14,6 +14,9 @@ typedef struct {
     float     speedFastLinear; // is simply possDiff/T (T is the time between calcs)
     float     speedFastRps   ; // is speedFastLinear/ENCODER_RESOLUTION
     float     speedFastRpm   ; // is speedFastRpm*60
+    uint32_t  speedLowPeriod ; // it's time between edges (for low speed)
+    float     speedLowRps    ; // it's time between edges dot ENCODER_RESOLUTION
+    float     speedLowRpm    ; // it's speedLowRps*60
 
 //    int32_t thetaElec;      // Output: Motor electrical angle (Q15)
  //   int32_t thetaMech;      // Output: Motor mechanical angle (Q15)
@@ -44,8 +47,9 @@ typedef struct {
 typedef PosSpeed_Object *PosSpeed_Handle;
 extern PosSpeed_Object posSpeed;
 
-void initEqep  ( void );
-void speedCalc ( void );
-void posCalc   ( void );
+void initEqep      ( void );
+void speedFastCalc ( void );
+void speedLowCalc  ( void );
+void posCalc       ( void );
 
 #endif
