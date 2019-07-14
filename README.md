@@ -2,7 +2,9 @@
 
 > development of a customized high precision microcontrolled permament magnet embedded servo motor
 
-<a href="https://github.com/pslavkin/servo_pmsm"><img src="doc/pics/TMDXIDDK379D.jpeg" title="servo pmsm" width="400" height="200" alt="TMDXIDDK379D"></a>
+<a href="https://github.com/pslavkin/servo_pmsm"><img src="doc/pics/TMDXIDDK379D.jpeg" title="servo pmsm"  width="400" height="200" alt="TMDXIDDK379D"></a>
+<a href="https://github.com/pslavkin/servo_pmsm"><img src="doc/pics/controlcard.jpeg"  title="controlcard" width="300" height="200" alt="controlcard"></a>
+<a href="https://github.com/pslavkin/servo_pmsm"><img src="doc/pics/launchpad.jpeg"    title="launchpad"   width="300" height="200" alt="launchpad"></a>
 ---
 ## Progress
 <!--- 
@@ -19,81 +21,17 @@ https://gist.github.com/rxaviers/7360908
 - :heavy_check_mark: Blinky
 - :heavy_check_mark: ooperative RTOS
 - :heavy_check_mark: SCI based command console
-- :construction:     PWM one channel for testing registers
+- :heavy_check_mark: PWM two channel as encoder output
+- :construction:     IQMath RAM math library for math acceleration
 - :construction:     QEP encoder test as a frequenci measurement
 - :construction:     DU cuadrature decoder
 - :red_circle:       PWM 3 phase
 - :red_circle:       Shunt current close loop
+- :red_circle:       IQMath ROM math library for math acceleration on C2000 ROM
+- :red_circle:       Dual core compilation
+- :red_circle:       Dual core interconnect IPC
 ---
-## Project Hierarchy
 
-```ruby
-.
-├── 2837xD_FLASH_lnk_cpu1.cmd
-├── 2837xD_RAM_lnk_cpu1.cmd
-├── Debug
-├── doc
-│   ├── pics
-│   │   └── TMDXIDDK379D.jpeg
-│   └── videos
-│       ├── info.txt
-│       └── sci.gif
-├── driverlib
-│   ├── inc
-├── flash.sh
-├── include
-│   ├── opt.h
-├── lib
-│   └── rts2800_fpu32.lib
-├── ram.sh
-├── README.md
-├── Release
-├── src
-│   ├── adc_.c          //function related to adc module
-│   ├── adc_.h
-│   ├── cbuffer.c
-│   ├── cbuffer.h
-│   ├── device.c
-│   ├── eqep.c
-│   ├── eqep.h
-│   ├── events.c
-│   ├── events.h
-│   ├── everythings.c
-│   ├── everythings.h
-│   ├── F2837xD_CodeStartBranch.asm
-│   ├── leds.c
-│   ├── leds.h
-│   ├── main.c
-│   ├── parser.c
-│   ├── parser.h
-│   ├── pwm.c
-│   ├── pwm.h
-│   ├── scia.c
-│   ├── scia.h
-│   ├── sm.c
-│   ├── sm.h
-│   ├── systick.c
-│   ├── systick.h
-│   ├── wdog.c
-│   └── wdog.h
-├── targetConfigs
-│   ├── readme.txt
-│   └── TMS320F28379D.ccxml
-├── types_c.taghl
-├── user_files
-│   ├── configs
-│   │   └── f28379d.ccxml
-│   ├── images
-│   │   └── servo_pmsm.out -> ../../Release/servo_pmsm.out
-│   └── settings
-│       └── generated.ufsettings
-└── utils
-    ├── cmdline.c
-    ├── cmdline.h
-    ├── makefile_ram2flash.sh
-    ├── ustdlib.c
-    └── ustdlib.h
-```
 ---
 ## Table of Contents
 
@@ -105,6 +43,7 @@ https://gist.github.com/rxaviers/7360908
 - [Team](#team)
 - [FAQ](#faq)
 - [Support](#support)
+- [Hierarchy](#hierarchy)
 - [License](#license)
 ---
 ## SCI gif demo
@@ -112,6 +51,58 @@ https://gist.github.com/rxaviers/7360908
 
 ## PWM complementary demo
 <img src="doc/videos/pwm.gif" width="600" height="300"/>
+
+## Hierarchy
+
+<!-- tree --ignore-case -L 3 -I "*utils*|*user*|*target*|*Debug*|Release|include|driverlib|tags|*types_c*" -->
+
+```ruby
+.
+├── 2837xD_FLASH_lnk_cpu1.cmd
+├── 2837xD_RAM_lnk_cpu1.cmd
+├── doc
+│   ├── pics
+│   │   └── TMDXIDDK379D.jpeg
+│   └── videos
+│       ├── info.txt
+│       ├── pwm.gif
+│       └── sci.gif
+├── flash.sh
+├── lib
+│   ├── IQmath_fpu32_coff.lib
+│   ├── IQmath_fpu32.lib
+│   └── rts2800_fpu32.lib
+├── ram.sh
+├── README.md
+└── src
+    ├── adc_.c
+    ├── adc_.h
+    ├── cbuffer.c
+    ├── cbuffer.h
+    ├── device.c
+    ├── eqep.c
+    ├── eqep.h
+    ├── events.c
+    ├── events.h
+    ├── everythings.c
+    ├── everythings.h
+    ├── F2837xD_CodeStartBranch.asm
+    ├── leds.c
+    ├── leds.h
+    ├── main.c
+    ├── parser.c
+    ├── parser.h
+    ├── pwm.c
+    ├── pwm.h
+    ├── scia.c
+    ├── scia.h
+    ├── sm.c
+    ├── sm.h
+    ├── systick.c
+    ├── systick.h
+    ├── wdog.c
+    └── wdog.h
+```
 
 <!--
 
@@ -206,17 +197,15 @@ $ bower install
     - No problem! Just do this.
 
 
+-->
 
 ## Support
 
 Reach out to me at one of the following places!
-
-- Website at <a href="http://fvcproductions.com" target="_blank">`fvcproductions.com`</a>
-- Twitter at <a href="http://twitter.com/fvcproductions" target="_blank">`@fvcproductions`</a>
-- Insert more social links here.
+- <a href="http://www.ti.com/tool/launchXL-F28379d#" target="_blank">**launchXL-F28379d** <img src="doc/pics/launchpad.jpeg"    title="launchpad"   width="100" height="100" alt="launchpad"></a>
 
 
--->
+
 
 ## License
 

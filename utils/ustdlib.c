@@ -424,7 +424,7 @@ again:
                 case 'f':
                 {
                     // Get the value from the varargs.
-                    double f = va_arg(arg, double);
+                    float f = va_arg(arg, float);
                     uint16_t len=ustrlen(ftostr(f,s,n));
                     iConvertCount+=len;
                     s+=len;

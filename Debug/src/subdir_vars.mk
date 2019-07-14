@@ -15,7 +15,7 @@ C_SRCS += \
 ../src/leds.c \
 ../src/main.c \
 ../src/parser.c \
-../src/eqep.c \
+../src/eqep_.c \
 ../src/pwm.c \
 ../src/scia.c \
 ../src/sm.c \
@@ -31,7 +31,7 @@ C_DEPS += \
 ./src/leds.d \
 ./src/main.d \
 ./src/parser.d \
-./src/eqep.d \
+./src/eqep_.d \
 ./src/pwm.d \
 ./src/scia.d \
 ./src/sm.d \
@@ -48,7 +48,7 @@ OBJS += \
 ./src/leds.obj \
 ./src/main.obj \
 ./src/parser.obj \
-./src/eqep.obj \
+./src/eqep_.obj \
 ./src/pwm.obj \
 ./src/scia.obj \
 ./src/sm.obj \

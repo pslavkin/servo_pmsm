@@ -8,6 +8,7 @@
 #include "cmdline.h"
 #include "wdog.h"
 #include "adc_.h"
+#include "eqep_.h"
 
 tCmdLineEntry Login_Cmd_Table[ ];
 tCmdLineEntry adcCmdTable    [ ];
@@ -20,14 +21,15 @@ tCmdLineEntry* actualCmdTable=Login_Cmd_Table;
 //--------------------------------------------------------------------------------
 tCmdLineEntry Login_Cmd_Table[] =
 {
-   { "login"  ,Cmd_login      ,": login"      },
-   { "adc"    ,Cmd_login2adc  ,": adc setup"  },
-   { "pwm"    ,Cmd_login2pwm  ,": pwm setup"  },
-   { "eqep"   ,Cmd_login2eqep ,": eqep setup" },
-   { "uptime" ,Cmd_Uptime     ,": upteim"     },
-   { "v"      ,Cmd_version    ,": version"    },
-   { "?"      ,Cmd_Help       ,": help"       },
-   { 0        ,0              ,0              }
+   { "login"  ,Cmd_login       ,": login"      },
+   { "adc"    ,Cmd_login2adc   ,": adc setup"  },
+   { "pwm"    ,Cmd_login2pwm   ,": pwm setup"  },
+   { "eqep"   ,Cmd_login2eqep  ,": eqep setup" },
+   { "uptime" ,Cmd_Uptime      ,": upteim"     },
+   { "p"      ,Cmd_readEqepPos ,": read posx"  },//debug
+   { "v"      ,Cmd_version     ,": version"    },
+   { "?"      ,Cmd_Help        ,": help"       },
+   { 0        ,0               ,0              }
 };
 
 void Cmd_login      ( uint16_t argc, char *argv[] ) { sciPrintf("login\r\n")    ;}
@@ -68,7 +70,7 @@ void Cmd_pwm(uint16_t argc, char *argv[])
 //--------------------------------------------------------------------------------
 tCmdLineEntry eqepCmdTable[] =
 {
-   { "a" ,Cmd_readEqepPos ,": read posx"           },
+   { "p" ,Cmd_readEqepPos ,": read posx"           },
    { "<" ,Cmd_back2login  ,": back to login table" },
    { "?" ,Cmd_Help        ,": help"                },
    { 0   ,0               ,0                       }
@@ -76,7 +78,37 @@ tCmdLineEntry eqepCmdTable[] =
 
 void Cmd_readEqepPos(uint16_t argc, char *argv[])
 {
-   sciPrintf("eqep pos%d = ",1234);
+//   PosSpeed_calculate ( &posSpeed );
+   sciPrintf (
+         "thetaElec     =%10d\r\n"
+         "thetaMech     =%10d\r\n"
+         "directionQEP  =%10d\r\n"
+         "thetaRaw      =%10d\r\n"
+         "mechScaler    =%10d\r\n"
+         "polePairs     =%10d\r\n"
+         "calAngle      =%10d\r\n"
+         "speedScaler   =%10d\r\n"
+         "speedPR       =%10d\r\n"
+         "baseRPM       =%10d\r\n"
+         "speedRPMPR    =%10d\r\n"
+         "oldPos        =%10d\r\n"
+         "speedFR       =%10d\r\n"
+         "speedRPMFR    =%10d\r\n",
+         (uint32_t)posSpeed.thetaElec,
+         (uint32_t)posSpeed.thetaMech,
+         (uint32_t)posSpeed.directionQEP,
+         (uint32_t)posSpeed.thetaRaw,
+         (uint32_t)posSpeed.mechScaler,
+         (uint32_t)posSpeed.polePairs,
+         (uint32_t)posSpeed.calAngle,
+         (uint32_t)posSpeed.speedScaler,
+         (uint32_t)posSpeed.speedPR,
+         (uint32_t)posSpeed.baseRPM,
+         (uint32_t)posSpeed.speedRPMPR,
+         (uint32_t)posSpeed.oldPos,
+         (uint32_t)posSpeed.speedFR,
+         (uint32_t)posSpeed.speedRPMFR
+            );
 }
 //--------------------------------------------------------------------------------
 void Cmd_back2login(uint16_t argc, char *argv[])

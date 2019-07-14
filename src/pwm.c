@@ -7,51 +7,51 @@
 #include "adc.h"
 #include "sysctl.h"
 #include "opt.h"
+#include "eqep_.h"
 
 void initEPWM(uint32_t base);
 __interrupt void epwm1ISR(void);
 
 void initPwm(void)
 {
-    // Assign the interrupt service routines to ePWM interrupts
-    Interrupt_register(INT_EPWM1, &epwm1ISR);
+   // Assign the interrupt service routines to ePWM interrupts
+   Interrupt_register(INT_EPWM1, &epwm1ISR);
 
-    // Configure GPIO0/1 ePWM1A/1B
-    GPIO_setPadConfig ( 0 ,GPIO_PIN_TYPE_STD );
-    GPIO_setPadConfig ( 1 ,GPIO_PIN_TYPE_STD );
-    GPIO_setPinConfig ( GPIO_0_EPWM1A        );
-    GPIO_setPinConfig ( GPIO_1_EPWM1B        );
+   // Configure GPIO0/1 ePWM1A/1B
+   GPIO_setPadConfig ( 0 ,GPIO_PIN_TYPE_STD );
+   GPIO_setPadConfig ( 1 ,GPIO_PIN_TYPE_STD );
+   GPIO_setPinConfig ( GPIO_0_EPWM1A        );
+   GPIO_setPinConfig ( GPIO_1_EPWM1B        );
 
-    // CHANGE XBAR inputs from using GPIO0
-    // if EPWM SYNCIN is enabled, EXTSYNCIN1 and EXTSYNCIN2 will use
-    // GPIO0 (which is the output of EPWM1).
-    // Pick any unused GPIO
-//    XBAR_setInputPin(XBAR_INPUT5, 50);
-//    XBAR_setInputPin(XBAR_INPUT6, 50);
 
-    // Disable sync(Freeze clock to PWM as well)
-    SysCtl_disablePeripheral(SYSCTL_PERIPH_CLK_GTBCLKSYNC);
-    SysCtl_disablePeripheral(SYSCTL_PERIPH_CLK_TBCLKSYNC);
+   // Disable sync(Freeze clock to PWM as well)
+   SysCtl_disablePeripheral(SYSCTL_PERIPH_CLK_GTBCLKSYNC);
+   SysCtl_disablePeripheral(SYSCTL_PERIPH_CLK_TBCLKSYNC);
 
    // Initialize PWM1 without phase shift as master
-    initEPWM(EPWM1_BASE);
+   initEPWM(EPWM1_BASE);
 
-    // Enable sync and clock to PWM
-    SysCtl_enablePeripheral(SYSCTL_PERIPH_CLK_TBCLKSYNC);
+   // Enable sync and clock to PWM
+   SysCtl_enablePeripheral(SYSCTL_PERIPH_CLK_TBCLKSYNC);
 
-    // Enable ePWM interrupts
-    Interrupt_enable(INT_EPWM1);
+   // Enable ePWM interrupts
+   Interrupt_enable(INT_EPWM1);
 }
 
 // epwm1ISR - ePWM 1 ISR
-#define INC (EPWM_TIMER_PERIOD/10)
 __interrupt void epwm1ISR(void)
 {
+   PosSpeed_calculate(&posSpeed);
    // Clear INT flag for this timer
    EPWM_clearEventTriggerInterruptFlag(EPWM1_BASE);
    // Acknowledge interrupt group
    Interrupt_clearACKGroup(INTERRUPT_ACK_GROUP3);
 }
+
+#define TB_CLK                DEVICE_SYSCLK_FREQ / 2   // 100Mhz, Time base clock is SYSCLK / 2 (sysclk = 200Mhz)
+#define PWM_CLK               5000                     // or 300 rpm (= 4 * 5000 cnts/sec * 60 sec/min) / 4000 cnts/rev)
+#define EPWM_TIMER_PERIOD     (TB_CLK / (PWM_CLK * 2)) // Calculate value period value for an up/down pwm counter mode
+#define ENCODER_RESOLUTION    4000                     // 4000 edges per revolution
 
 void initEPWM(uint32_t base)
 {
@@ -65,9 +65,9 @@ void initEPWM(uint32_t base)
     EPWM_setCounterCompareValue(base, EPWM_COUNTER_COMPARE_B, EPWM_TIMER_PERIOD/2);
 
     // Set up counter mode
-    EPWM_setTimeBaseCounterMode ( base, EPWM_COUNTER_MODE_UP_DOWN                       );
-    EPWM_disablePhaseShiftLoad  ( base                                                  );
-    EPWM_setClockPrescaler      ( base, EPWM_CLOCK_DIVIDER_128, EPWM_HSCLOCK_DIVIDER_14 );
+    EPWM_setTimeBaseCounterMode ( base, EPWM_COUNTER_MODE_UP_DOWN                    );
+    EPWM_disablePhaseShiftLoad  ( base                                               );
+    EPWM_setClockPrescaler      ( base, EPWM_CLOCK_DIVIDER_1, EPWM_HSCLOCK_DIVIDER_1 );
 
     // Set up shadowing
     EPWM_setCounterCompareShadowLoadMode(base, EPWM_COUNTER_COMPARE_A, EPWM_COMP_LOAD_ON_CNTR_ZERO);

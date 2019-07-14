@@ -13,7 +13,7 @@
 #include "adc_.h"
 #include "pwm.h"
 #include "parser.h"
-#include "eqep.h"
+#include "eqep_.h"
 //--------------------------------------------------------------------------------
 const State
    idle1[],
@@ -38,7 +38,7 @@ void Init_everythings(void)
    initAdc    ( );
    initPwm    ( );
    initParser ( );
-   initEqep ( );
+   initEqep   ( );
 }
 //--------------------------------------------------------------------------------
 const State idle1 [ ] =
