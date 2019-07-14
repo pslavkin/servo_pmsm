@@ -59,7 +59,7 @@ const State idle4 [ ] =
 };
 const State idle5 [ ] =
 {
-    ANY_Event ,Rien           ,idle6  ,
+    ANY_Event ,speedCalc           ,idle6  ,
 };
 const State idle6 [ ] =
 {

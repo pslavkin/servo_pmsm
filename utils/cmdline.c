@@ -9,6 +9,7 @@
 #include "wdog.h"
 #include "adc_.h"
 #include "eqep_.h"
+#include "pwm.h"
 
 tCmdLineEntry Login_Cmd_Table[ ];
 tCmdLineEntry adcCmdTable    [ ];
@@ -57,15 +58,32 @@ void Cmd_readAdc(uint16_t argc, char *argv[])
 //--------------------------------------------------------------------------------
 tCmdLineEntry pwmCmdTable[] =
 {
-    { "pwm" ,Cmd_pwm        ,": pwm"                 },
-    { "<"   ,Cmd_back2login ,": back to login table" },
-    { "?"   ,Cmd_Help       ,": help"                },
-    { 0     ,0              ,0                       }
+    { "pwm" ,Cmd_setPwmPeriod ,": set pwm period for eqep simulation" },
+    { "+"   ,Cmd_incPwmPeriod ,": inc pwm period for eqep simulation" },
+    { "-"   ,Cmd_decPwmPeriod ,": dec pwm period for eqep simulation" },
+    { "p"   ,Cmd_readEqepPos  ,": read posx"                          },//debug
+    { "<"   ,Cmd_back2login   ,": back to login table"                },
+    { "?"   ,Cmd_Help         ,": help"                               },
+    { 0     ,0                ,0                                      }
 };
 
-void Cmd_pwm(uint16_t argc, char *argv[])
+void Cmd_setPwmPeriod(uint16_t argc, char *argv[])
 {
-   sciPrintf("pwm\r\n");
+   if(argc>1) {
+      uint32_t newPeriod=atoi(argv[1]);
+      setPwmPeriod(newPeriod);
+      sciPrintf("pwm period=%10d\r\n",getPwmPeriod());
+   }
+}
+void Cmd_incPwmPeriod(uint16_t argc, char *argv[])
+{
+   setPwmPeriod(getPwmPeriod()+109);
+   sciPrintf("pwm period=%10d\r\n",getPwmPeriod());
+}
+void Cmd_decPwmPeriod(uint16_t argc, char *argv[])
+{
+   setPwmPeriod(getPwmPeriod()-100);
+   sciPrintf("pwm period=%10d\r\n",getPwmPeriod());
 }
 //--------------------------------------------------------------------------------
 tCmdLineEntry eqepCmdTable[] =
@@ -78,37 +96,56 @@ tCmdLineEntry eqepCmdTable[] =
 
 void Cmd_readEqepPos(uint16_t argc, char *argv[])
 {
-//   PosSpeed_calculate ( &posSpeed );
+   posCalc( );
    sciPrintf (
-         "thetaElec     =%10d\r\n"
-         "thetaMech     =%10d\r\n"
-         "directionQEP  =%10d\r\n"
-         "thetaRaw      =%10d\r\n"
-         "mechScaler    =%10d\r\n"
-         "polePairs     =%10d\r\n"
-         "calAngle      =%10d\r\n"
-         "speedScaler   =%10d\r\n"
-         "speedPR       =%10d\r\n"
-         "baseRPM       =%10d\r\n"
-         "speedRPMPR    =%10d\r\n"
-         "oldPos        =%10d\r\n"
-         "speedFR       =%10d\r\n"
-         "speedRPMFR    =%10d\r\n",
-         (uint32_t)posSpeed.thetaElec,
-         (uint32_t)posSpeed.thetaMech,
-         (uint32_t)posSpeed.directionQEP,
-         (uint32_t)posSpeed.thetaRaw,
-         (uint32_t)posSpeed.mechScaler,
-         (uint32_t)posSpeed.polePairs,
-         (uint32_t)posSpeed.calAngle,
-         (uint32_t)posSpeed.speedScaler,
-         (uint32_t)posSpeed.speedPR,
-         (uint32_t)posSpeed.baseRPM,
-         (uint32_t)posSpeed.speedRPMPR,
-         (uint32_t)posSpeed.oldPos,
-         (uint32_t)posSpeed.speedFR,
-         (uint32_t)posSpeed.speedRPMFR
-            );
+         "posActual        =%10d\r\n"
+         "dirActual        =%10d\r\n"
+         "pos              =%10d\r\n"
+         "dir              =%10d\r\n"
+         "possDiff         =%10d\r\n"
+         "speedFastLinear  =%f\r\n"
+         "speedFastRps     =%f\r\n"
+         "speedFastRpm     =%f\r\n",
+         posSpeed.posActual,
+         posSpeed.dirActual,
+         posSpeed.pos,
+         posSpeed.dir,
+         posSpeed.posDiff,
+         posSpeed.speedFastLinear,
+         posSpeed.speedFastRps,
+         posSpeed.speedFastRpm
+         );
+
+//   sciprintf (
+//         "thetaelec     =%10d\r\n"
+//         "thetamech     =%10d\r\n"
+//         "directionQEP  =%10d\r\n"
+//         "thetaRaw      =%10d\r\n"
+//         "mechScaler    =%10d\r\n"
+//         "polePairs     =%10d\r\n"
+//         "calAngle      =%10d\r\n"
+//         "speedScaler   =%10d\r\n"
+//         "speedPR       =%10d\r\n"
+//         "baseRPM       =%10d\r\n"
+//         "speedRPMPR    =%10d\r\n"
+//         "oldPos        =%10d\r\n"
+//         "speedFR       =%10d\r\n"
+//         "speedRPMFR    =%10d\r\n",
+//         (uint32_t)posSpeed.thetaElec,
+//         (uint32_t)posSpeed.thetaMech,
+//         (uint32_t)posSpeed.directionQEP,
+//         (uint32_t)posSpeed.thetaRaw,
+//         (uint32_t)posSpeed.mechScaler,
+//         (uint32_t)posSpeed.polePairs,
+//         (uint32_t)posSpeed.calAngle,
+//         (uint32_t)posSpeed.speedScaler,
+//         (uint32_t)posSpeed.speedPR,
+//         (uint32_t)posSpeed.baseRPM,
+//         (uint32_t)posSpeed.speedRPMPR,
+//         (uint32_t)posSpeed.oldPos,
+//         (uint32_t)posSpeed.speedFR,
+//         (uint32_t)posSpeed.speedRPMFR
+//            );
 }
 //--------------------------------------------------------------------------------
 void Cmd_back2login(uint16_t argc, char *argv[])

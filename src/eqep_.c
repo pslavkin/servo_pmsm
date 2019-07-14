@@ -2,25 +2,30 @@
 #include "device.h"
 #include "IQmathLib.h"
 #include "eqep_.h"
-
-#define MECH_SCALER     16776                                                          // .9999 / 4000 converted to IQ26 fixed point format
-#define POLE_PAIRS      2                                                              // 2 pole pairs in this example
-#define CAL_ANGLE       0                                                              // Angular offset between encoder and Phase A
-#define SPEED_SCALER    ((((uint64_t)32 * DEVICE_SYSCLK_FREQ / 64) * 60) / (24000000)) // See Equation 5 in eqep_ex2_calculation.c
-#define BASE_RPM        6000                                                           // Base/max rpm is 6000rpm
+#include "opt.h"
 
 // Globals
 PosSpeed_Object posSpeed =
 {
-    0, 0, 0, 0,     // Initialize outputs to zero
-    MECH_SCALER,    // mechScaler
-    POLE_PAIRS,     // polePairs
-    CAL_ANGLE,      // calAngle
-    SPEED_SCALER,   // speedScaler
-    0,              // Initialize output to zero
-    BASE_RPM,       // baseRPM
-    0, 0, 0, 0      // Initialize outputs to zero
+    .posActual       = 0,
+    .dirActual       = 0,
+    .pos             = 0,
+    .dir             = 0,
+    .posLast         = 0,
+    .posDiff         = 0,
+    .speedFastLinear = 0,
+    .speedFastRps    = 0,
+    .speedFastRpm    = 0,
 };
+//       , 0, 0, 0,     // Initialize outputs to zero
+//    MECH_SCALER,    // mechScaler
+//    POLE_PAIRS,     // polePairs
+//    CAL_ANGLE,      // calAngle
+//    SPEED_SCALER,   // speedScaler
+//    0,              // Initialize output to zero
+//    BASE_RPM,       // baseRPM
+//    0, 0, 0, 0      // Initialize outputs to zero
+//};
 
 void initEqep(void)
 {
@@ -62,22 +67,27 @@ void initEqep(void)
 }
 
 
-void PosSpeed_calculate(PosSpeed_Object *p)
+void posCalc(void)
 {
-   int32_t temp;
-   uint16_t pos16bVal, temp1;
-   _iq temp2, newPosCnt, oldPosCnt;
+   posSpeed.dirActual = EQEP_getDirection ( EQEP1_BASE );
+   posSpeed.posActual = EQEP_getPosition  ( EQEP1_BASE );
+}
 
-   // **** Position calculation - mechanical and electrical motor angle ****
-   // Get the motor direction: -1 = CCW/reverse, 1 = CW/forward
-   p->directionQEP = EQEP_getDirection(EQEP1_BASE);
-   p->absolutePos  = EQEP_getDirection(EQEP1_BASE);
+void speedCalc(void)
+{
+   posSpeed.dir             = EQEP_getDirection ( EQEP1_BASE );
+   posSpeed.pos             = EQEP_getPosition  ( EQEP1_BASE );
+   posSpeed.posDiff         = posSpeed.pos-posSpeed.posLast;
+   posSpeed.posLast         = posSpeed.pos;
+   posSpeed.speedFastLinear = ( posSpeed.posDiff )/SPEED_FAST_DIFF;
+   posSpeed.speedFastRps    = posSpeed.speedFastLinear/ENCODER_RESOLUTION;
+   posSpeed.speedFastRpm    = posSpeed.speedFastRps*60;
 
-   // Capture position once per QA/QB period
-   pos16bVal = (uint16_t)EQEP_getPosition(EQEP1_BASE);
-
-   // Raw theta = current pos. + ang. offset from QA
-   p->thetaRaw = pos16bVal;//` + p->calAngle;
+//   // Capture position once per QA/QB period
+//   pos16bVal = (uint16_t)EQEP_getPosition(EQEP1_BASE);
+//
+//   // Raw theta = current pos. + ang. offset from QA
+//   p->thetaRaw = pos16bVal;//` + p->calAngle;
 //
 //   // The following lines calculate
 //   // p->thetaMech ~= QPOSCNT / mechScaler [current cnt/(total cnt in 1 rev)]

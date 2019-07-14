@@ -9,8 +9,23 @@
 #include "opt.h"
 #include "eqep_.h"
 
+
 void initEPWM(uint32_t base);
 __interrupt void epwm1ISR(void);
+
+uint32_t pwmPeriod=EPWM_TIMER_PERIOD;
+
+uint32_t getPwmPeriod(void)
+{
+   return EPWM_getTimeBasePeriod(EPWM1_BASE);
+}
+void setPwmPeriod(uint32_t new)
+{
+   if ( new<=100  )new = 100  ;
+   if ( new>=60000 )new = 60000;
+   EPWM_setTimeBasePeriod      ( EPWM1_BASE, new                     );
+   EPWM_setCounterCompareValue ( EPWM1_BASE, EPWM_COUNTER_COMPARE_A, new/2 );
+}
 
 void initPwm(void)
 {
@@ -22,7 +37,6 @@ void initPwm(void)
    GPIO_setPadConfig ( 1 ,GPIO_PIN_TYPE_STD );
    GPIO_setPinConfig ( GPIO_0_EPWM1A        );
    GPIO_setPinConfig ( GPIO_1_EPWM1B        );
-
 
    // Disable sync(Freeze clock to PWM as well)
    SysCtl_disablePeripheral(SYSCTL_PERIPH_CLK_GTBCLKSYNC);
@@ -41,28 +55,22 @@ void initPwm(void)
 // epwm1ISR - ePWM 1 ISR
 __interrupt void epwm1ISR(void)
 {
-   PosSpeed_calculate(&posSpeed);
    // Clear INT flag for this timer
    EPWM_clearEventTriggerInterruptFlag(EPWM1_BASE);
    // Acknowledge interrupt group
    Interrupt_clearACKGroup(INTERRUPT_ACK_GROUP3);
 }
 
-#define TB_CLK                DEVICE_SYSCLK_FREQ / 2   // 100Mhz, Time base clock is SYSCLK / 2 (sysclk = 200Mhz)
-#define PWM_CLK               5000                     // or 300 rpm (= 4 * 5000 cnts/sec * 60 sec/min) / 4000 cnts/rev)
-#define EPWM_TIMER_PERIOD     (TB_CLK / (PWM_CLK * 2)) // Calculate value period value for an up/down pwm counter mode
-#define ENCODER_RESOLUTION    4000                     // 4000 edges per revolution
-
 void initEPWM(uint32_t base)
 {
     // Set-up TBCLK
-    EPWM_setTimeBasePeriod  ( base, EPWM_TIMER_PERIOD );
+    EPWM_setTimeBasePeriod  ( base, pwmPeriod );
     EPWM_setPhaseShift      ( base, 0U               );
     EPWM_setTimeBaseCounter ( base, 0U               );
 
     // Set Compare values
-    EPWM_setCounterCompareValue(base, EPWM_COUNTER_COMPARE_A, EPWM_TIMER_PERIOD/2);
-    EPWM_setCounterCompareValue(base, EPWM_COUNTER_COMPARE_B, EPWM_TIMER_PERIOD/2);
+    EPWM_setCounterCompareValue(base, EPWM_COUNTER_COMPARE_A, pwmPeriod/2);
+    EPWM_setCounterCompareValue(base, EPWM_COUNTER_COMPARE_B, pwmPeriod/2);
 
     // Set up counter mode
     EPWM_setTimeBaseCounterMode ( base, EPWM_COUNTER_MODE_UP_DOWN                    );
