@@ -23,6 +23,14 @@ bool Send_Event(uint16_t Event,const State** Machine)
    Events E={Event,Machine};
    return writeCBuffer(&eventsBuff,(uint16_t*)&E);
 }
+bool atomicSendEvent(uint16_t Event,const State** Machine)
+{
+   Events E={Event,Machine};
+   //DINT;                          // Disable Global Interrupt (INTM) and realtime interrupt (DBGM)
+   bool ans= writeCBuffer(&eventsBuff,(uint16_t*)&E);
+   //EINT;                          // Enable Global Interrupt (INTM) and realtime interrupt (DBGM)
+   return ans;
+}
 bool readEvent(Events* E)
 {
    return readCBuffer(&eventsBuff,(uint16_t*)E);

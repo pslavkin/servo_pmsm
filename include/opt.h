@@ -29,4 +29,7 @@
 #define PWM_CLK               1000                     // or 300 rpm (= 4 * 5000 cnts/sec * 60 sec/min) / 4000 cnts/rev)
 #define EPWM_TIMER_PERIOD     (TB_CLK / (PWM_CLK * 2)) // Calculate value period value for an up/down pwm counter mode
 
+// SCHEDULE
+#define MAX_SCHEDULE_INDEX       18                    // define el maximo numero de solicitantes de tiem+outs concurrentes...
+
 #endif

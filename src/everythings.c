@@ -14,6 +14,7 @@
 #include "pwm.h"
 #include "parser.h"
 #include "eqep_.h"
+#include "schedule.h"
 //--------------------------------------------------------------------------------
 const State
    idle1[],
@@ -34,11 +35,12 @@ const State**  everythings    ( void )
 }
 void Init_everythings(void)
 {
-   initLeds   ( );
-   initAdc    ( );
-   initPwm    ( );
-   initParser ( );
-   initEqep   ( );
+   initLeds      ( );
+   initAdc       ( );
+   initPwm       ( );
+   initParser    ( );
+   initEqep      ( );
+   Init_Schedule ( );
 }
 //--------------------------------------------------------------------------------
 const State idle1 [ ] =
@@ -63,7 +65,7 @@ const State idle5 [ ] =
 };
 const State idle6 [ ] =
 {
-    ANY_Event ,Rien           ,idle7  ,
+    ANY_Event ,Schedule           ,idle7  ,
 };
 const State idle7 [ ] =
 {

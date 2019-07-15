@@ -21,16 +21,21 @@ https://gist.github.com/rxaviers/7360908
 - :heavy_check_mark: Blinky
 - :heavy_check_mark: ooperative RTOS
 - :heavy_check_mark: SCI based command console
+- :heavy_check_mark: ADC module single ended 15bits
 - :heavy_check_mark: PWM two channel as encoder output
-- :construction:     IQMath RAM math library for math acceleration
-- :construction:     QEP encoder test as a frequenci measurement
-- :construction:     DU cuadrature decoder
+- :heavy_check_mark: IQMath RAM math library for math acceleration
+- :heavy_check_mark: EQEP cuadrature decoder high and low speed and position managemenr
+- :heavy_check_mark: Internal temperature sensor measurement using ADC 
+- :heavy_check_mark: Add schedule module to manage periodic task
+- :construction:     Spin motor reading his pos and speed
 - :red_circle:       PWM 3 phase
+- :red_circle:       Port the project to controlBoard
+- :red_circle:       Sigma delta ADC decoder
 - :red_circle:       Shunt current close loop
 - :red_circle:       IQMath ROM math library for math acceleration on C2000 ROM
 - :red_circle:       Dual core compilation
 - :red_circle:       Dual core interconnect IPC
----
+
 
 ---
 ## Table of Contents
@@ -203,9 +208,6 @@ $ bower install
 
 Reach out to me at one of the following places!
 - <a href="http://www.ti.com/tool/launchXL-F28379d#" target="_blank">**launchXL-F28379d** <img src="doc/pics/launchpad.jpeg"    title="launchpad"   width="100" height="100" alt="launchpad"></a>
-
-
-
 
 ## License
 

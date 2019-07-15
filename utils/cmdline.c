@@ -10,6 +10,7 @@
 #include "adc_.h"
 #include "eqep_.h"
 #include "pwm.h"
+#include "schedule.h"
 
 tCmdLineEntry Login_Cmd_Table[ ];
 tCmdLineEntry adcCmdTable    [ ];
@@ -41,19 +42,33 @@ void Cmd_login2eqep ( uint16_t argc, char *argv[] ) { actualCmdTable=eqepCmdTabl
 //--------------------------------------------------------------------------------
 tCmdLineEntry adcCmdTable[] =
 {
-    { "a" ,Cmd_readAdc    ,": print adc channel x" } ,
-    { "<" ,Cmd_back2login ,": back to login table" } ,
-    { "?" ,Cmd_Help       ,": help"                } ,
-    { 0   ,0              ,0                       }
+    { "a" ,Cmd_readAdc         ,": print adc channel x" },
+    { "t" ,Cmd_readTemperature ,": print temperature"   },
+    { "<" ,Cmd_back2login      ,": back to login table" },
+    { "?" ,Cmd_Help            ,": help"                },
+    { 0   ,0                   ,0                       }
 };
 
 void Cmd_readAdc(uint16_t argc, char *argv[])
 {
    if(argc>1) {
       uint32_t channel=atoi(argv[1]);
-      float r=readAdc(channel);
+      float r=readAdc((ADC_Channel)channel);
       sciPrintf("adc channel%d = %f\r\n",channel,r);
    }
+}
+void printTemp(void)
+{
+   float t=adc2Temperature(readAdc(13));
+   sciPrintf("adc temperature = %f\r\n",t);
+}
+
+void Cmd_readTemperature(uint16_t argc, char *argv[])
+{
+   if(Func_Schedule_Running(printTemp))
+      Free_Func_Schedule(printTemp);
+   else
+      New_Periodic_Func_Schedule(10,printTemp);
 }
 //--------------------------------------------------------------------------------
 tCmdLineEntry pwmCmdTable[] =

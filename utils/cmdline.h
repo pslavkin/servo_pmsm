@@ -20,7 +20,9 @@ void Cmd_login2adc  ( uint16_t argc, char *argv[] );
 void Cmd_login2pwm  ( uint16_t argc, char *argv[] );
 void Cmd_login2eqep ( uint16_t argc, char *argv[] );
 
-void Cmd_readAdc      ( uint16_t argc, char *argv[] );
+void Cmd_readAdc         ( uint16_t argc, char *argv[] );
+void Cmd_readTemperature ( uint16_t argc, char *argv[] );
+
 void Cmd_setPwmPeriod ( uint16_t argc, char *argv[] );
 void Cmd_incPwmPeriod ( uint16_t argc, char *argv[] );
 void Cmd_decPwmPeriod ( uint16_t argc, char *argv[] );
