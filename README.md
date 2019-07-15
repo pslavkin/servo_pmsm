@@ -27,8 +27,8 @@ https://gist.github.com/rxaviers/7360908
 - :heavy_check_mark: EQEP cuadrature decoder high and low speed and position managemenr
 - :heavy_check_mark: Internal temperature sensor measurement using ADC 
 - :heavy_check_mark: Add schedule module to manage periodic task
-- :construction:     Spin motor reading his pos and speed
-- :red_circle:       PWM 3 phase
+- :heavy_check_mark: Spin motor reading his pos and speed
+- :construction:     PWM 3 phase
 - :red_circle:       Port the project to controlBoard
 - :red_circle:       Sigma delta ADC decoder
 - :red_circle:       Shunt current close loop
@@ -56,6 +56,9 @@ https://gist.github.com/rxaviers/7360908
 
 ## PWM complementary demo
 <img src="doc/videos/pwm.gif" width="600" height="300"/>
+
+## Spin motor manually. Encoder test
+<img src="doc/videos/encoder_manual.gif" width="600" height="300"/>
 
 ## Hierarchy
 

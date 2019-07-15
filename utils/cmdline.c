@@ -65,10 +65,13 @@ void printTemp(void)
 
 void Cmd_readTemperature(uint16_t argc, char *argv[])
 {
+   uint32_t t=10;
+   if(argc>1)
+      t=atoi(argv[1]);
    if(Func_Schedule_Running(printTemp))
       Free_Func_Schedule(printTemp);
    else
-      New_Periodic_Func_Schedule(10,printTemp);
+      New_Periodic_Func_Schedule(t,printTemp);
 }
 //--------------------------------------------------------------------------------
 tCmdLineEntry pwmCmdTable[] =
@@ -109,7 +112,7 @@ tCmdLineEntry eqepCmdTable[] =
    { 0   ,0               ,0                       }
 };
 
-void Cmd_readEqepPos(uint16_t argc, char *argv[])
+void printPosSpeed(void)
 {
    posCalc      ( );
    speedLowCalc ( );
@@ -137,37 +140,17 @@ void Cmd_readEqepPos(uint16_t argc, char *argv[])
          posSpeed.speedLowRps,
          posSpeed.speedLowRpm
          );
+}
 
-//   sciprintf (
-//         "thetaelec     =%10d\r\n"
-//         "thetamech     =%10d\r\n"
-//         "directionQEP  =%10d\r\n"
-//         "thetaRaw      =%10d\r\n"
-//         "mechScaler    =%10d\r\n"
-//         "polePairs     =%10d\r\n"
-//         "calAngle      =%10d\r\n"
-//         "speedScaler   =%10d\r\n"
-//         "speedPR       =%10d\r\n"
-//         "baseRPM       =%10d\r\n"
-//         "speedRPMPR    =%10d\r\n"
-//         "oldPos        =%10d\r\n"
-//         "speedFR       =%10d\r\n"
-//         "speedRPMFR    =%10d\r\n",
-//         (uint32_t)posSpeed.thetaElec,
-//         (uint32_t)posSpeed.thetaMech,
-//         (uint32_t)posSpeed.directionQEP,
-//         (uint32_t)posSpeed.thetaRaw,
-//         (uint32_t)posSpeed.mechScaler,
-//         (uint32_t)posSpeed.polePairs,
-//         (uint32_t)posSpeed.calAngle,
-//         (uint32_t)posSpeed.speedScaler,
-//         (uint32_t)posSpeed.speedPR,
-//         (uint32_t)posSpeed.baseRPM,
-//         (uint32_t)posSpeed.speedRPMPR,
-//         (uint32_t)posSpeed.oldPos,
-//         (uint32_t)posSpeed.speedFR,
-//         (uint32_t)posSpeed.speedRPMFR
-//            );
+void Cmd_readEqepPos(uint16_t argc, char *argv[])
+{
+   uint32_t t=10;
+   if(argc>1)
+      t=atoi(argv[1]);
+   if(Func_Schedule_Running(printPosSpeed))
+      Free_Func_Schedule(printPosSpeed);
+   else
+      New_Periodic_Func_Schedule(t,printPosSpeed);
 }
 //--------------------------------------------------------------------------------
 void Cmd_back2login(uint16_t argc, char *argv[])
