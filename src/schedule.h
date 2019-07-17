@@ -33,7 +33,7 @@ void              Update_Or_New_Periodic_Func_Schedule      ( uint32_t Time_Out 
 void              Update_Or_New_None_Periodic_Func_Schedule ( uint32_t Time_Out       ,void (*Func                                    )(void));
 void              Pause_Func_Schedule                       ( void (*Func                                                             )(void));
 void              Resume_Func_Schedule                      ( void (*Func                                                             )(void));
-void              Free_Func_Schedule                        ( void (*Func                                                             )(void));
+bool              Free_Func_Schedule                        ( void (*Func                                                             )(void));
 uint32_t          Read_Func_Schedule                        ( void (*Func                                                             )(void));
 // ------------------------------------------------------------------------
 void              Periodic1Sec4Sm                           ( const State** Machine                                                   )       ;

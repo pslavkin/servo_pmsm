@@ -20,22 +20,9 @@ PosSpeed_Object posSpeed =
     .speedLowRps     = 0,
     .speedLowRpm     = 0,
 };
-//       , 0, 0, 0,     // Initialize outputs to zero
-//    MECH_SCALER,    // mechScaler
-//    POLE_PAIRS,     // polePairs
-//    CAL_ANGLE,      // calAngle
-//    SPEED_SCALER,   // speedScaler
-//    0,              // Initialize output to zero
-//    BASE_RPM,       // baseRPM
-//    0, 0, 0, 0      // Initialize outputs to zero
-//};
 
 void initEqep(void)
 {
-   //como salida index
-   GPIO_setPinConfig     ( GPIO_2_GPIO2         );
-   GPIO_setDirectionMode ( 2, GPIO_DIR_MODE_OUT );
-   GPIO_writePin         ( 2, 0                 );
 
    // Initialize GPIOs for use as EQEP1A, EQEP1B, and EQEP1I
    GPIO_setPinConfig ( GPIO_20_EQEP1A        );

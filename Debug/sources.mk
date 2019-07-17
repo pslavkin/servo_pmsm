@@ -115,5 +115,6 @@ SUBDIRS := \
 driverlib \
 lib \
 src \
+user_files/images \
 utils \
 

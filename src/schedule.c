@@ -144,11 +144,17 @@ void     New_Offset_Periodic_Func_Schedule      (uint32_t First_Time_Out,uint32_
 void     New_Periodic_Func_Schedule                ( uint32_t Time_Out,void (*Func )(void)) { New_Offset_Periodic_Func_Schedule(Time_Out,Time_Out,Func)                                                   ;}
 void     Update_Or_New_Periodic_Func_Schedule      ( uint32_t Time_Out,void (*Func )(void)) { if(!(Update_Func_Schedule(Time_Out,Func)<MAX_SCHEDULE_INDEX)) New_Periodic_Func_Schedule(Time_Out,Func)     ;}
 void     Update_Or_New_None_Periodic_Func_Schedule ( uint32_t Time_Out,void (*Func )(void)) { if(!(Update_Func_Schedule(Time_Out,Func)<MAX_SCHEDULE_INDEX)) New_None_Periodic_Func_Schedule(Time_Out,Func);}
-void     Free_Func_Schedule ( void (*Func )(void))
+bool     Free_Func_Schedule ( void (*Func )(void))
 {
    uint16_t i=Find_Func_Schedule_Index(Func);
-   if(i<MAX_SCHEDULE_INDEX)
+   bool ans;
+   if(i<MAX_SCHEDULE_INDEX) {
      Add_Schedule(i,0,0,0,Empty_State_Machine,Rien,0);
+     ans=true;
+   }
+   else
+      ans=false;
+   return ans;
 }
 uint16_t Update_Func_Schedule(uint32_t Time_Out,void (*Func)(void))  
 {

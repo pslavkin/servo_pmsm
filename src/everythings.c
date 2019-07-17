@@ -37,10 +37,10 @@ void Init_everythings(void)
 {
    initLeds      ( );
    initAdc       ( );
-   initPwm       ( );
    initParser    ( );
    initEqep      ( );
    Init_Schedule ( );
+   initPwm       ( );
 }
 //--------------------------------------------------------------------------------
 const State idle1 [ ] =

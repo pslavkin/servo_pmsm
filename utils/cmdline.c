@@ -16,31 +16,33 @@ tCmdLineEntry Login_Cmd_Table[ ];
 tCmdLineEntry adcCmdTable    [ ];
 tCmdLineEntry pwmCmdTable    [ ];
 tCmdLineEntry eqepCmdTable   [ ];
+tCmdLineEntry rampGenCmdTable[ ];
 
 char *         g_ppcArgv[CMDLINE_MAX_ARGS + 1];
 tCmdLineEntry* actualCmdTable=Login_Cmd_Table;
-
 //--------------------------------------------------------------------------------
 tCmdLineEntry Login_Cmd_Table[] =
 {
-   { "login"  ,Cmd_login       ,": login"      },
-   { "adc"    ,Cmd_login2adc   ,": adc setup"  },
-   { "pwm"    ,Cmd_login2pwm   ,": pwm setup"  },
-   { "eqep"   ,Cmd_login2eqep  ,": eqep setup" },
-   { "uptime" ,Cmd_Uptime      ,": upteim"     },
-   { "p"      ,Cmd_readEqepPos ,": read posx"  },//debug
-   { "v"      ,Cmd_version     ,": version"    },
-   { "?"      ,Cmd_Help        ,": help"       },
-   { 0        ,0               ,0              }
+   { "login"  ,Cmd_login         ,": login"          },
+   { "adc"    ,Cmd_login2adc     ,": adc setup"      },
+   { "pwm"    ,Cmd_login2pwm     ,": pwm setup"      },
+   { "ramp"   ,Cmd_login2rampGen ,": ramp Generator" },
+   { "eqep"   ,Cmd_login2eqep    ,": eqep setup"     },
+   { "uptime" ,Cmd_Uptime        ,": upteim"         },
+   { "p"      ,Cmd_readEqepPos   ,": read posx"      },//debug
+   { "v"      ,Cmd_version       ,": version"        },
+   { "?"      ,Cmd_Help          ,": help"           },
+   { 0        ,0                 ,0                  }
 };
 
-void Cmd_login      ( uint16_t argc, char *argv[] ) { sciPrintf("login\r\n")    ;}
-void Cmd_version    ( uint16_t argc, char *argv[] ) { sciPrintf("PMSM C2000 V1.0 - Pablo Slavkin\r\n")    ;}
-void Cmd_login2adc  ( uint16_t argc, char *argv[] ) { actualCmdTable=adcCmdTable;}
-void Cmd_login2pwm  ( uint16_t argc, char *argv[] ) { actualCmdTable=pwmCmdTable;}
-void Cmd_login2eqep ( uint16_t argc, char *argv[] ) { actualCmdTable=eqepCmdTable;}
+void Cmd_login         ( uint16_t argc, char *argv[] ) { sciPrintf("login\r\n")                          ;}
+void Cmd_version       ( uint16_t argc, char *argv[] ) { sciPrintf("PMSM C2000 V1.0 - Pablo Slavkin\r\n");}
+void Cmd_login2adc     ( uint16_t argc, char *argv[] ) { actualCmdTable=adcCmdTable                      ;}
+void Cmd_login2pwm     ( uint16_t argc, char *argv[] ) { actualCmdTable=pwmCmdTable                      ;}
+void Cmd_login2rampGen ( uint16_t argc, char *argv[] ) { actualCmdTable=rampGenCmdTable                  ;}
+void Cmd_login2eqep    ( uint16_t argc, char *argv[] ) { actualCmdTable=eqepCmdTable                     ;}
 //--------------------------------------------------------------------------------
-tCmdLineEntry adcCmdTable[] =
+tCmdLineEntry adcCmdTable[] =/*{{{*/
 {
     { "a" ,Cmd_readAdc         ,": print adc channel x" },
     { "t" ,Cmd_readTemperature ,": print temperature"   },
@@ -65,16 +67,47 @@ void printTemp(void)
 
 void Cmd_readTemperature(uint16_t argc, char *argv[])
 {
-   uint32_t t=10;
-   if(argc>1)
-      t=atoi(argv[1]);
-   if(Func_Schedule_Running(printTemp))
-      Free_Func_Schedule(printTemp);
-   else
-      New_Periodic_Func_Schedule(t,printTemp);
-}
+   if(!Free_Func_Schedule(printTemp)) {
+      if(argc>1)
+         New_Periodic_Func_Schedule(atoi(argv[1]),printTemp);
+      else
+         printTemp();
+   }
+}/*}}}*/
 //--------------------------------------------------------------------------------
-tCmdLineEntry pwmCmdTable[] =
+tCmdLineEntry rampGenCmdTable[] =/*{{{*/
+{
+    { "r" ,Cmd_printRampCtl    ,": print rampCtl structure"    },
+    { "g" ,Cmd_printRampGen    ,": print rampGen structure"    },
+    { "p" ,Cmd_printPark       ,": print park structure"       },
+    { "s" ,Cmd_printSvGen      ,": print svGen structure"       },
+    { "m" ,Cmd_motorIsr        ,": execute motor ise one time" },
+    { "<" ,Cmd_back2login      ,": back to login table"        },
+    { "?" ,Cmd_Help            ,": help"                       },
+    { 0   ,0                   ,0                              }
+};
+void Cmd_motorIsr(uint16_t argc, char *argv[])
+{
+   motorISR();
+}
+void Cmd_printPark(uint16_t argc, char *argv[])
+{
+   printPark();
+}
+void Cmd_printSvGen(uint16_t argc, char *argv[])
+{
+   printSvGen();
+}
+void Cmd_printRampCtl(uint16_t argc, char *argv[])
+{
+   printRampCtl();
+}
+void Cmd_printRampGen(uint16_t argc, char *argv[])
+{
+   printRampGen();
+}/*}}}*/
+//--------------------------------------------------------------------------------
+tCmdLineEntry pwmCmdTable[] =/*{{{*/
 {
     { "pwm" ,Cmd_setPwmPeriod ,": set pwm period for eqep simulation" },
     { "+"   ,Cmd_incPwmPeriod ,": inc pwm period for eqep simulation" },
@@ -102,9 +135,9 @@ void Cmd_decPwmPeriod(uint16_t argc, char *argv[])
 {
    setPwmPeriod(getPwmPeriod()-100);
    sciPrintf("pwm period=%10d\r\n",getPwmPeriod());
-}
+}/*}}}*/
 //--------------------------------------------------------------------------------
-tCmdLineEntry eqepCmdTable[] =
+tCmdLineEntry eqepCmdTable[] =/*{{{*/
 {
    { "p" ,Cmd_readEqepPos ,": read posx"           },
    { "<" ,Cmd_back2login  ,": back to login table" },
@@ -141,19 +174,17 @@ void printPosSpeed(void)
          posSpeed.speedLowRpm
          );
 }
-
 void Cmd_readEqepPos(uint16_t argc, char *argv[])
 {
-   uint32_t t=10;
-   if(argc>1)
-      t=atoi(argv[1]);
-   if(Func_Schedule_Running(printPosSpeed))
-      Free_Func_Schedule(printPosSpeed);
-   else
-      New_Periodic_Func_Schedule(t,printPosSpeed);
-}
+   if(!Free_Func_Schedule(printPosSpeed)) {
+      if(argc>1)
+         New_Periodic_Func_Schedule(atoi(argv[1]),printPosSpeed);
+      else
+         printPosSpeed();
+   }
+}/*}}}*/
 //--------------------------------------------------------------------------------
-void Cmd_back2login(uint16_t argc, char *argv[])
+void Cmd_back2login(uint16_t argc, char *argv[])/*{{{*/
 {
    actualCmdTable=Login_Cmd_Table;
 }
@@ -164,7 +195,7 @@ void Cmd_Help(uint16_t argc, char *argv[])
     pEntry = actualCmdTable;
     for(;pEntry->pcCmd;pEntry++)
         sciPrintf("%15s%s\r\n", pEntry->pcCmd, pEntry->pcHelp);
-}
+}/*}}}*/
 //----------------------------------------------------------------------------
 void CmdLineProcess(char* originalLine)/*{{{*/
 {
