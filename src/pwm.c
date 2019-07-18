@@ -15,7 +15,7 @@
 #include "dmctype.h"
 #include "aci_se_const.h"
 #include "pwm.h"
-#include "IQmathLib.h"
+//#include "IQmathLib.h"
 
 
 void initEPWM(uint32_t base);
@@ -282,7 +282,7 @@ void motorISR(void)
 // -----------------------------------------------------------------------------
     ipark1.Ds     = 0.1;//VdTesting;
     ipark1.Qs     = 0.1;//VqTesting;
-    ipark1.Sine   = __sinpuf32(rg1.Out);
+    ipark1.Sine   = __sinpuf32(rg1.Out); //TMU call
     ipark1.Cosine = __cospuf32(rg1.Out);
     runIPark(&ipark1);
 

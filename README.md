@@ -29,8 +29,8 @@ https://gist.github.com/rxaviers/7360908
 - :heavy_check_mark: Add schedule module to manage periodic task
 - :heavy_check_mark: Spin motor reading his pos and speed
 - :heavy_check_mark: PWM 3 phase openloop (added sample video)
+- :heavy_check_mark: Port the project to controlBoard and do the fitst spin! (see video)
 - :construction:     PWM callibrate using ipark and svgen
-- :red_circle:       Port the project to controlBoard
 - :red_circle:       Sigma delta ADC decoder
 - :red_circle:       Shunt current close loop
 - :red_circle:       IQMath ROM math library for math acceleration on C2000 ROM
@@ -63,6 +63,9 @@ https://gist.github.com/rxaviers/7360908
 
 ## 3PH generator open loop with leds, but fully functional
 <img src="doc/videos/pwm_3ph_openloop.gif" width="600" height="300"/>
+
+## First Motor Spin, open loop, with blue board
+<img src="doc/videos/level2open_loop.gif" width="600" height="300"/>
 
 ## Hierarchy
 
