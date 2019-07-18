@@ -106,7 +106,7 @@ void initEPWM(uint32_t base)/*{{{*/
     // Set up counter mode
     EPWM_setTimeBaseCounterMode ( base, EPWM_COUNTER_MODE_UP_DOWN                    );
     EPWM_disablePhaseShiftLoad  ( base                                               );
-    EPWM_setClockPrescaler      ( base, EPWM_CLOCK_DIVIDER_128, EPWM_HSCLOCK_DIVIDER_14 );
+    EPWM_setClockPrescaler      ( base, EPWM_CLOCK_DIVIDER_1, EPWM_HSCLOCK_DIVIDER_14 );
 
     // Set up shadowing
     EPWM_setCounterCompareShadowLoadMode(base, EPWM_COUNTER_COMPARE_A, EPWM_COMP_LOAD_ON_CNTR_ZERO);
@@ -149,7 +149,7 @@ void configurePWM(void)/*{{{*/
       EPWM_setPhaseShift                    ( pwmHandle[base], 0                                                   )                                                             ;
       EPWM_setTimeBaseCounter               ( pwmHandle[base], 0                                                   )                                                             ;
       EPWM_setTimeBaseCounterMode           ( pwmHandle[base], EPWM_COUNTER_MODE_UP_DOWN                           )                                                             ;
-      EPWM_setClockPrescaler                ( pwmHandle[base], EPWM_CLOCK_DIVIDER_128, EPWM_HSCLOCK_DIVIDER_1        )                                                             ;
+      EPWM_setClockPrescaler                ( pwmHandle[base], EPWM_CLOCK_DIVIDER_1, EPWM_HSCLOCK_DIVIDER_1        )                                                             ;
       EPWM_disablePhaseShiftLoad            ( pwmHandle[base]                                                      )                                                             ;
 
       // sync "down-stream"

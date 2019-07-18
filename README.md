@@ -19,7 +19,7 @@ https://gist.github.com/rxaviers/7360908
 - :heavy_check_mark: Soft tools (compiler, css. eclipse, cmd)
 - :heavy_check_mark: Hard tools (blue big board, launchpad, mootors)
 - :heavy_check_mark: Blinky
-- :heavy_check_mark: ooperative RTOS
+- :heavy_check_mark: Customized cooperative RTOS
 - :heavy_check_mark: SCI based command console
 - :heavy_check_mark: ADC module single ended 15bits
 - :heavy_check_mark: PWM two channel as encoder output
@@ -28,7 +28,8 @@ https://gist.github.com/rxaviers/7360908
 - :heavy_check_mark: Internal temperature sensor measurement using ADC 
 - :heavy_check_mark: Add schedule module to manage periodic task
 - :heavy_check_mark: Spin motor reading his pos and speed
-- :construction:     PWM 3 phase
+- :heavy_check_mark: PWM 3 phase openloop (added sample video)
+- :construction:     PWM callibrate using ipark and svgen
 - :red_circle:       Port the project to controlBoard
 - :red_circle:       Sigma delta ADC decoder
 - :red_circle:       Shunt current close loop
@@ -59,6 +60,9 @@ https://gist.github.com/rxaviers/7360908
 
 ## Spin motor manually. Encoder test
 <img src="doc/videos/encoder_manual.gif" width="600" height="300"/>
+
+## 3PH generator open loop with leds, but fully functional
+<img src="doc/videos/pwm_3ph_openloop.gif" width="600" height="300"/>
 
 ## Hierarchy
 
