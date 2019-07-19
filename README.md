@@ -30,6 +30,7 @@ https://gist.github.com/rxaviers/7360908
 - :heavy_check_mark: Spin motor reading his pos and speed
 - :heavy_check_mark: PWM 3 phase openloop (added sample video)
 - :heavy_check_mark: Port the project to controlBoard and do the fitst spin! (see video)
+- :heavy_check_mark: controlBoard closed loop with LEM fitst aproach! (see video)
 - :construction:     PWM callibrate using ipark and svgen
 - :red_circle:       Sigma delta ADC decoder
 - :red_circle:       Shunt current close loop
@@ -66,6 +67,9 @@ https://gist.github.com/rxaviers/7360908
 
 ## First Motor Spin, open loop, with blue board
 <img src="doc/videos/level2open_loop.gif" width="600" height="300"/>
+
+## First Motor Spin, closed loop, with blue board first aproach
+<img src="doc/videos/level5closed_loop.gif" width="600" height="300"/>
 
 ## Hierarchy
 
