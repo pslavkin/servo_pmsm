@@ -32,4 +32,9 @@
 // SCHEDULE
 #define MAX_SCHEDULE_INDEX       18                    // define el maximo numero de solicitantes de tiem+outs concurrentes...
 
+
+// Sigma Delta Filter Module - frame setting
+#define  SDFM_TICKS    5
+#define  OSR_RATE      (128-1)
+
 #endif
