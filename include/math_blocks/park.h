@@ -68,8 +68,8 @@ Default initalizer for the PARK object.
 
 static inline void runPark(PARK * in)
 {
-	in->Ds = (in->Alpha * in->Cosine) + (in->Beta * in->Sine);
-	in->Qs = (in->Beta * in->Cosine) - (in->Alpha * in->Sine);
+	in->Ds = (in->Alpha * in->Cosine) + (in->Beta  * in->Sine);
+	in->Qs = (in->Beta  * in->Cosine) - (in->Alpha * in->Sine);
 }
 
 

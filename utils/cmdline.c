@@ -45,6 +45,8 @@ void Cmd_login2eqep    ( uint16_t argc, char *argv[] ) { actualCmdTable=eqepCmdT
 tCmdLineEntry adcCmdTable[] =/*{{{*/
 {
     { "a" ,Cmd_readAdc         ,": print adc channel x" },
+    { "v" ,Cmd_readLemV        ,": read Iv"             },
+    { "w" ,Cmd_readLemW        ,": read Iw"             },
     { "t" ,Cmd_readTemperature ,": print temperature"   },
     { "<" ,Cmd_back2login      ,": back to login table" },
     { "?" ,Cmd_Help            ,": help"                },
@@ -53,16 +55,27 @@ tCmdLineEntry adcCmdTable[] =/*{{{*/
 
 void Cmd_readAdc(uint16_t argc, char *argv[])
 {
-   if(argc>1) {
-      uint32_t channel=atoi(argv[1]);
-      float r=readAdc((ADC_Channel)channel);
-      sciPrintf("adc channel%d = %f\r\n",channel,r);
+   if(argc>2) {
+      uint32_t base    = atoi(argv[1]);
+      uint32_t channel = atoi(argv[2]);
+      uint32_t r=readAdc(base,(ADC_Channel)channel);
+      sciPrintf("adc base %d channel %d = %i\r\n",base,channel,r);
    }
+}
+void Cmd_readLemV(uint16_t argc, char *argv[])
+{
+   float V=readLemV();
+   sciPrintf("LemV %f\r\n",V);
+}
+
+void Cmd_readLemW(uint16_t argc, char *argv[])
+{
+   sciPrintf("LemW %f\r\n",readLemW());
 }
 void printTemp(void)
 {
-   float t=adc2Temperature(readAdc(13));
-   sciPrintf("adc temperature = %f\r\n",t);
+   uint16_t t=adc2Temperature(readAdc(0,13));
+   sciPrintf("adc temperature = %i\r\n",t);
 }
 
 void Cmd_readTemperature(uint16_t argc, char *argv[])
@@ -88,7 +101,12 @@ tCmdLineEntry rampGenCmdTable[] =/*{{{*/
 };
 void Cmd_motorIsr(uint16_t argc, char *argv[])
 {
-   motorISR();
+   if(!Free_Func_Schedule(motorISR)) {
+      if(argc>1)
+         New_Periodic_Func_Schedule(atoi(argv[1]),motorISR);
+      else
+         motorISR();
+   }
 }
 void Cmd_printPark(uint16_t argc, char *argv[])
 {

@@ -42,13 +42,13 @@ File name:       IPARK.H
 #define __IPARK_H__
 
 typedef struct {  float32_t  Alpha;  // Output: stationary d-axis stator variable
-				  float32_t  Beta;	 // Output: stationary q-axis stator variable
-				  float32_t  Angle;	 // Input: rotating angle (pu)
-				  float32_t  Ds;	 // Input: rotating d-axis stator variable
-				  float32_t  Qs;	 // Input: rotating q-axis stator variable
-				  float32_t  Sine;	 // Input: Sine term
-				  float32_t  Cosine; // Input: Cosine term
-		 	    } IPARK;	            
+              float32_t  Beta;    // Output: stationary q-axis stator variable
+              float32_t  Angle;   // Input: rotating angle (pu)
+              float32_t  Ds;   // Input: rotating d-axis stator variable
+              float32_t  Qs;   // Input: rotating q-axis stator variable
+              float32_t  Sine;    // Input: Sine term
+              float32_t  Cosine; // Input: Cosine term
+             } IPARK;               
 
 /*-----------------------------------------------------------------------------
 Default initalizer for the IPARK object.
@@ -58,24 +58,24 @@ Default initalizer for the IPARK object.
                           0, \
                           0, \
                           0, \
-						  0, \
+                    0, \
                           0  \
-              		   }
+                     }
 
 /*------------------------------------------------------------------------------
-	Inverse PARK Transformation Macro Definition
+   Inverse PARK Transformation Macro Definition
 ------------------------------------------------------------------------------*/
 
 static inline void runIPark(IPARK * in)
 {
-	in->Alpha = (in->Ds * in->Cosine) - (in->Qs * in->Sine);
-	in->Beta = (in->Qs * in->Cosine) + (in->Ds * in->Sine);
+   in->Alpha = (in->Ds * in->Cosine) - (in->Qs * in->Sine);
+   in->Beta  = (in->Qs * in->Cosine) + (in->Ds * in->Sine);
 }
 
 
-#define IPARK_MACRO(v)										\
-															\
-v.Alpha = _IQmpy(v.Ds,v.Cosine) - _IQmpy(v.Qs,v.Sine);		\
+#define IPARK_MACRO(v)                             \
+                                             \
+v.Alpha = _IQmpy(v.Ds,v.Cosine) - _IQmpy(v.Qs,v.Sine);      \
 v.Beta  = _IQmpy(v.Qs,v.Cosine) + _IQmpy(v.Ds,v.Sine);
 
 

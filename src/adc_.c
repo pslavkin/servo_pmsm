@@ -16,17 +16,21 @@ uint16_t adc2Temperature(uint16_t sensorSample)
    return ADC_getTemperatureC(sensorSample, 3.0f);
 }
 
-uint16_t readAdc(ADC_Channel ch)
+uint16_t readAdc(uint16_t base,uint16_t ch)
 {
-   ADC_setupSOC             ( ADCA_BASE ,ADC_SOC_NUMBER0 ,ADC_TRIGGER_SW_ONLY ,ch ,140 );
-   ADC_setInterruptSource   ( ADCA_BASE ,ADC_INT_NUMBER1 ,ADC_SOC_NUMBER0              );
-   ADC_enableInterrupt      ( ADCA_BASE ,ADC_INT_NUMBER1                               );
-   ADC_clearInterruptStatus ( ADCA_BASE ,ADC_INT_NUMBER1                               );
-   ADC_forceSOC(ADCA_BASE, ADC_SOC_NUMBER0);
-   while(ADC_getInterruptStatus(ADCA_BASE, ADC_INT_NUMBER1) == false) {
+   uint32_t adcList[]={ADCA_BASE,ADCB_BASE,ADCC_BASE,ADCD_BASE};
+   uint32_t adcResultList[]={ADCARESULT_BASE,ADCBRESULT_BASE,ADCCRESULT_BASE,ADCDRESULT_BASE};
+   uint32_t adcBase=adcList[base];
+
+   ADC_setupSOC             ( adcBase ,ADC_SOC_NUMBER0 ,ADC_TRIGGER_SW_ONLY ,(ADC_Channel)ch ,140 );
+   ADC_setInterruptSource   ( adcBase ,ADC_INT_NUMBER1 ,ADC_SOC_NUMBER0              );
+   ADC_enableInterrupt      ( adcBase ,ADC_INT_NUMBER1                               );
+   ADC_clearInterruptStatus ( adcBase ,ADC_INT_NUMBER1                               );
+   ADC_forceSOC(adcBase, ADC_SOC_NUMBER0);
+   while(ADC_getInterruptStatus(adcBase, ADC_INT_NUMBER1) == false) {
    }
-   ADC_clearInterruptStatus(ADCA_BASE, ADC_INT_NUMBER1);
-   return  ADC_readResult(ADCARESULT_BASE, ADC_SOC_NUMBER0);
+   ADC_clearInterruptStatus(adcBase, ADC_INT_NUMBER1);
+   return  ADC_readResult(adcResultList[base], ADC_SOC_NUMBER0);
 }
 
 void initAdc(void)
@@ -36,10 +40,31 @@ void initAdc(void)
     ADC_setInterruptPulseMode       ( ADCA_BASE, ADC_PULSE_END_OF_CONV                       ); // Set pulse positions to late
     ADC_enableConverter             ( ADCA_BASE                                              ); // Power up the ADCs and then delay for 1 ms
     DEVICE_DELAY_US                 ( 1000                                                   );
+    ADC_setPrescaler                ( ADCB_BASE, ADC_CLK_DIV_4_0                             ); // Set ADCCLK divider to /4
+    ADC_setMode                     ( ADCB_BASE, ADC_RESOLUTION_12BIT, ADC_MODE_SINGLE_ENDED );
+    ADC_setInterruptPulseMode       ( ADCB_BASE, ADC_PULSE_END_OF_CONV                       ); // Set pulse positions to late
+    ADC_enableConverter             ( ADCB_BASE                                              ); // Power up the ADCs and then delay for 1 ms
+    DEVICE_DELAY_US                 ( 1000                                                   );
     ASysCtl_enableTemperatureSensor (                                                        );
     DEVICE_DELAY_US                 ( 500                                                    );
+    initSigmaDelta                  (                                                        );
 }
 
+
+float readLemV(void)
+{
+   float i=readAdc(0,2);
+   i=i-2271;   //resto el offset que mido con el lem apagado
+   i=i/2048;   //estoy en 12 bits, 2048 valores para cada lado reprentan 1 y -1a
+   return i;
+}
+float readLemW(void)
+{
+   float i=readAdc(1,2);
+   i=i-2227;   //resto el offset que mido con el lem apagado
+   i=i/2048;   //estoy en 12 bits, 2048 valores para cada lado reprentan 1 y -1a
+   return i;
+}
 
 void initSigmaDelta(void)
 {

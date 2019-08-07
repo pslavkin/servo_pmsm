@@ -281,7 +281,7 @@ void motorISR(void)
 // Connect inputs of the INV_PARK module and call the inverse park module
 // -----------------------------------------------------------------------------
     ipark1.Ds     = 0.0;//VdTesting;
-    ipark1.Qs     = 0.1;//VqTesting;
+    ipark1.Qs     = 0.2;//VqTesting;
     ipark1.Sine   = __sinpuf32(rg1.Out); //TMU call
     ipark1.Cosine = __cospuf32(rg1.Out);
     runIPark(&ipark1);
