@@ -145,7 +145,7 @@ void configurePWM(void)/*{{{*/
    {
       // Time Base SubModule Registers set Immediate load
       EPWM_setPeriodLoadMode                ( pwmHandle[base], EPWM_PERIOD_DIRECT_LOAD                             )                                                             ;
-      EPWM_setTimeBasePeriod                ( pwmHandle[base], pwmPeriod /* /2*/                                   )                                                             ;
+      EPWM_setTimeBasePeriod                ( pwmHandle[base], pwmPeriod                                           )                                                             ;
       EPWM_setPhaseShift                    ( pwmHandle[base], 0                                                   )                                                             ;
       EPWM_setTimeBaseCounter               ( pwmHandle[base], 0                                                   )                                                             ;
       EPWM_setTimeBaseCounterMode           ( pwmHandle[base], EPWM_COUNTER_MODE_UP_DOWN                           )                                                             ;
@@ -156,7 +156,7 @@ void configurePWM(void)/*{{{*/
       EPWM_setSyncOutPulseMode              ( pwmHandle[base], EPWM_SYNC_OUT_PULSE_ON_COUNTER_ZERO                 )                                                             ;
 
       // Counter Compare Submodule Registers set duty 0% initially
-      EPWM_setCounterCompareValue           ( pwmHandle[base], EPWM_COUNTER_COMPARE_A, pwmPeriod/2                           )                                                             ;
+      EPWM_setCounterCompareValue           ( pwmHandle[base], EPWM_COUNTER_COMPARE_A, 0                           )                                                             ;
       EPWM_setCounterCompareShadowLoadMode  ( pwmHandle[base], EPWM_COUNTER_COMPARE_A, EPWM_COMP_LOAD_ON_CNTR_ZERO )                                                             ;
 
       // Action Qualifier SubModule Registers
@@ -280,7 +280,7 @@ void motorISR(void)
 // -----------------------------------------------------------------------------
 // Connect inputs of the INV_PARK module and call the inverse park module
 // -----------------------------------------------------------------------------
-    ipark1.Ds     = 0.1;//VdTesting;
+    ipark1.Ds     = 0.0;//VdTesting;
     ipark1.Qs     = 0.1;//VqTesting;
     ipark1.Sine   = __sinpuf32(rg1.Out); //TMU call
     ipark1.Cosine = __cospuf32(rg1.Out);
@@ -296,9 +296,9 @@ void motorISR(void)
 // -----------------------------------------------------------------------------
 // Computed Duty and Write to CMPA register
 // -----------------------------------------------------------------------------
-   EPWM_setCounterCompareValue(EPWM1_BASE, EPWM_COUNTER_COMPARE_A, (uint16_t)((pwmPeriod*svgen1.Tc) + pwmPeriod));
-   EPWM_setCounterCompareValue(EPWM2_BASE, EPWM_COUNTER_COMPARE_A, (uint16_t)((pwmPeriod*svgen1.Ta) + pwmPeriod));
-   EPWM_setCounterCompareValue(EPWM3_BASE, EPWM_COUNTER_COMPARE_A, (uint16_t)((pwmPeriod*svgen1.Tb) + pwmPeriod));
+   EPWM_setCounterCompareValue(EPWM1_BASE, EPWM_COUNTER_COMPARE_A, (uint16_t)((pwmPeriod*svgen1.Tc) + pwmPeriod/2));
+   EPWM_setCounterCompareValue(EPWM2_BASE, EPWM_COUNTER_COMPARE_A, (uint16_t)((pwmPeriod*svgen1.Ta) + pwmPeriod/2));
+   EPWM_setCounterCompareValue(EPWM3_BASE, EPWM_COUNTER_COMPARE_A, (uint16_t)((pwmPeriod*svgen1.Tb) + pwmPeriod/2));
 
    return;
 }

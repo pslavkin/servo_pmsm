@@ -1,5 +1,6 @@
 //#############################################################################
 //
+//
 // FILE:   device.h
 //
 // TITLE:  Device setup for examples.
@@ -92,7 +93,8 @@ a single CPU should be defined."
 //
 // Launchpad Configuration
 //
-#ifdef _LAUNCHXL_F28379D
+#ifdef _LAUNCHXL_xxxxxxx     //choose between Launchpad y control card
+//#ifdef _LAUNCHXL_F28379D_
 
 //
 // 10MHz XTAL on LaunchPad. For use with SysCtl_getClock().

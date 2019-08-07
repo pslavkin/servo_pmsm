@@ -92,4 +92,3 @@ void initSigmaDelta(void)
     EPWM_setCounterCompareValue           ( EPWM5_BASE ,EPWM_COUNTER_COMPARE_A ,(uint16_t                        )(EPWM_getTimeBasePeriod(EPWM5_BASE) >> 1))              ;
     EPWM_setSyncOutPulseMode              ( EPWM5_BASE ,EPWM_SYNC_OUT_PULSE_ON_EPWMxSYNCIN                       )                                                        ;
 }
-

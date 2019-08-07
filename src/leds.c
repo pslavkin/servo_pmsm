@@ -20,6 +20,7 @@ struct ledEffect_struct ledEffects[]=
  { 0x8080 ,0x8080 ,led1On ,led1Off },
  { 0xAAAA ,0XAAAA ,led2On ,led2Off },
 };
+
 //-------------------------------------------------------------------------------------
 void initLeds ( void )
 {

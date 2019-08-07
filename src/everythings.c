@@ -53,19 +53,19 @@ const State idle2 [ ] =
 };
 const State idle3 [ ] =
 {
-    ANY_Event ,wdogTask           ,idle4  ,
+    ANY_Event ,wdogTask       ,idle4  ,
 };
 const State idle4 [ ] =
 {
-    ANY_Event ,Rien ,idle5  ,
+    ANY_Event ,Rien           ,idle5  ,
 };
 const State idle5 [ ] =
 {
-    ANY_Event ,speedFastCalc           ,idle6  ,
+    ANY_Event ,speedFastCalc  ,idle6  ,
 };
 const State idle6 [ ] =
 {
-    ANY_Event ,Schedule           ,idle7  ,
+    ANY_Event ,Schedule       ,idle7  ,
 };
 const State idle7 [ ] =
 {
