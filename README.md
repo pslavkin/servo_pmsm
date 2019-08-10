@@ -31,7 +31,9 @@ https://gist.github.com/rxaviers/7360908
 - :heavy_check_mark: PWM 3 phase openloop (added sample video)
 - :heavy_check_mark: Port the project to controlBoard and do the fitst spin! (see video)
 - :heavy_check_mark: controlBoard closed loop with LEM fitst aproach! (see video)
-- :construction:     PWM callibrate using ipark and svgen
+- :heavy_check_mark: PWM callibrate using ipark and svgen
+- :heavy_check_mark: PWM follows mechanical angle 'current loop' at 5k
+- :construction:     Testing current loop parameters
 - :red_circle:       Sigma delta ADC decoder
 - :red_circle:       Shunt current close loop
 - :red_circle:       IQMath ROM math library for math acceleration on C2000 ROM

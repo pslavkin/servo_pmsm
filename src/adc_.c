@@ -59,8 +59,9 @@ float readLemV(void)
 {
    static float last=0,i;
    i=readAdc(0,2);
-   i=i-2271;   //resto el offset que mido con el lem apagado
-   i=i/2048;   //estoy en 12 bits, 2048 valores para cada lado reprentan 1 y -1a
+   i=i-2263;   //resto el offset que mido con el lem apagado
+//   i=i/2048;   //estoy en 12 bits, 2048 valores para cada lado reprentan 1 y -1a
+   i=i/1000;   //estoy en 12 bits, 2048 valores para cada lado reprentan 1 y -1a
    last=(i+last)/2;
    return i;
 }
@@ -68,8 +69,9 @@ float readLemW(void)
 {
    static float last=0,i;
    i=readAdc(1,2);
-   i=i-2227;   //resto el offset que mido con el lem apagado
-   i=i/2048;   //estoy en 12 bits, 2048 valores para cada lado reprentan 1 y -1a
+   i=i-2243;   //resto el offset que mido con el lem apagado
+   //i=i/2048;   //estoy en 12 bits, 2048 valores para cada lado reprentan 1 y -1a
+   i=i/1000;   //estoy en 12 bits, 2048 valores para cada lado reprentan 1 y -1a
    last=(i+last)/2;
    return i;
 }

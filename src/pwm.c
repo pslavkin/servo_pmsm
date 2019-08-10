@@ -332,7 +332,9 @@ void motorISR(void)
 //// ----------------------------------------------------------------------------
 //// Connect inputs of the PARK module and call the park module
 //// ----------------------------------------------------------------------------
+//
     speedFastCalc();
+
     park1.Alpha  = clarke1.Alpha;
     park1.Beta   = clarke1.Beta;
     //park1.Angle  = rg1.Out;
@@ -344,9 +346,19 @@ void motorISR(void)
 //// ----------------------------------------------------------------------------
 //// Connect inputs of the INV_PARK module and call the inverse park module
 //// ----------------------------------------------------------------------------
+    static float integratorQ =0;
+    float errorQ =readQsRef()-park1.Qs;
+    integratorQ += errorQ * 0.001;
 
-    ipark1.Ds     = readDsRef();//-park1.Ds;//0.2;//02-park1.Ds/2;
-    ipark1.Qs     = readQsRef();//-park1.Qs;
+    static float integratorD =0;
+    float errorD =readDsRef()-park1.Ds;
+    integratorD += errorD * 0.001;
+
+    ipark1.Qs     = errorQ * 1 + integratorQ;
+         if(ipark1.Qs> 0.4) ipark1.Qs= 0.4;
+    else if(ipark1.Qs<-0.4) ipark1.Qs=-0.4;
+
+    ipark1.Ds     =0;// errorD * 1 + integratorD;
     ipark1.Angle  = park1.Angle;
     ipark1.Sine   = __sinpuf32(park1.Angle); //TMU call
     ipark1.Cosine = __cospuf32(park1.Angle);

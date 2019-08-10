@@ -66,12 +66,12 @@ void posCalc(void)
 
 void incDeltaAngle(void)
 {
-   posSpeed.deltaAngle+=0.1;
+   posSpeed.deltaAngle+=0.01;
    if(posSpeed.deltaAngle>1) posSpeed.deltaAngle=0;
 }
 void decDeltaAngle(void)
 {
-   posSpeed.deltaAngle-=0.1;
+   posSpeed.deltaAngle-=0.01;
    if(posSpeed.deltaAngle<0) posSpeed.deltaAngle=1;
 }
 float readAngle(void)
