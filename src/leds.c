@@ -17,10 +17,9 @@ void led2Toogle ( void ) { (GPIO_readPin(DEVICE_GPIO_PIN_LED2)!=0)?led2On():led2
 //-------------------------------------------------------------------------------------
 struct ledEffect_struct ledEffects[]=
 {
- { 0x8080 ,0x8080 ,led1On ,led1Off },
+// { 0x8080 ,0x8080 ,led1On ,led1Off },
  { 0xAAAA ,0XAAAA ,led2On ,led2Off },
 };
-
 //-------------------------------------------------------------------------------------
 void initLeds ( void )
 {

@@ -22,14 +22,14 @@ uint16_t readAdc(uint16_t base,uint16_t ch)
    uint32_t adcResultList[]={ADCARESULT_BASE,ADCBRESULT_BASE,ADCCRESULT_BASE,ADCDRESULT_BASE};
    uint32_t adcBase=adcList[base];
 
-   ADC_setupSOC             ( adcBase ,ADC_SOC_NUMBER0 ,ADC_TRIGGER_SW_ONLY ,(ADC_Channel)ch ,140 );
-   ADC_setInterruptSource   ( adcBase ,ADC_INT_NUMBER1 ,ADC_SOC_NUMBER0              );
-   ADC_enableInterrupt      ( adcBase ,ADC_INT_NUMBER1                               );
-   ADC_clearInterruptStatus ( adcBase ,ADC_INT_NUMBER1                               );
-   ADC_forceSOC(adcBase, ADC_SOC_NUMBER0);
-   while(ADC_getInterruptStatus(adcBase, ADC_INT_NUMBER1) == false) {
-   }
-   ADC_clearInterruptStatus(adcBase, ADC_INT_NUMBER1);
+//   ADC_setupSOC             ( adcBase ,ADC_SOC_NUMBER0 ,ADC_TRIGGER_SW_ONLY ,(ADC_Channel)ch ,140 );
+//   ADC_setInterruptSource   ( adcBase ,ADC_INT_NUMBER1 ,ADC_SOC_NUMBER0              );
+//   ADC_enableInterrupt      ( adcBase ,ADC_INT_NUMBER1                               );
+//   ADC_clearInterruptStatus ( adcBase ,ADC_INT_NUMBER1                               );
+//   ADC_forceSOC(adcBase, ADC_SOC_NUMBER0);
+//   while(ADC_getInterruptStatus(adcBase, ADC_INT_NUMBER1) == false) {
+//   }
+//   ADC_clearInterruptStatus(adcBase, ADC_INT_NUMBER1);
    return  ADC_readResult(adcResultList[base], ADC_SOC_NUMBER0);
 }
 
@@ -47,24 +47,41 @@ void initAdc(void)
     DEVICE_DELAY_US                 ( 1000                                                   );
     ASysCtl_enableTemperatureSensor (                                                        );
     DEVICE_DELAY_US                 ( 500                                                    );
-    initSigmaDelta                  (                                                        );
+    //initSigmaDelta                  (                                                        );
+    linkPwm2Adc();
+
+    ADC_setupSOC(ADCA_BASE, ADC_SOC_NUMBER0, ADC_TRIGGER_EPWM1_SOCA, ADC_CH_ADCIN2, 25);
+    ADC_setupSOC(ADCB_BASE, ADC_SOC_NUMBER0, ADC_TRIGGER_EPWM1_SOCA, ADC_CH_ADCIN2, 25);
 }
 
 
 float readLemV(void)
 {
-   float i=readAdc(0,2);
+   static float last=0,i;
+   i=readAdc(0,2);
    i=i-2271;   //resto el offset que mido con el lem apagado
    i=i/2048;   //estoy en 12 bits, 2048 valores para cada lado reprentan 1 y -1a
+   last=(i+last)/2;
    return i;
 }
 float readLemW(void)
 {
-   float i=readAdc(1,2);
+   static float last=0,i;
+   i=readAdc(1,2);
    i=i-2227;   //resto el offset que mido con el lem apagado
    i=i/2048;   //estoy en 12 bits, 2048 valores para cada lado reprentan 1 y -1a
+   last=(i+last)/2;
    return i;
 }
+
+void linkPwm2Adc(void)
+{
+   EPWM_setADCTriggerSource        ( EPWM1_BASE, EPWM_SOC_A, EPWM_SOC_TBCTR_PERIOD );
+   EPWM_setADCTriggerEventPrescale ( EPWM1_BASE, EPWM_SOC_A, 1                     ); // Generate pulse on 1st event
+   EPWM_enableADCTrigger           ( EPWM1_BASE, EPWM_SOC_A                        ); // Enable SOC on A group
+}
+
+
 
 void initSigmaDelta(void)
 {
@@ -95,25 +112,25 @@ void initSigmaDelta(void)
     GPIO_setPinConfig(GPIO_53_SD1_C3);
 
     // **********************************************
-    // Sigma Delta clock set up - pwm5
-    // **********************************************
-    // Configure PWM5A for SD Clock i.e. 20Mhz
-    // 20 Mhz => 50ns => 50ns/10
-    // PWM5B - clock SDFM for DCBUS voltage sensing
-    // PWM5A - clock SDFM for Phase current sensing (not used)
-    EPWM_setPeriodLoadMode      ( EPWM5_BASE, EPWM_PERIOD_DIRECT_LOAD                      ); // set Immediate load
-    EPWM_setTimeBasePeriod      ( EPWM5_BASE, SDFM_TICKS-1                                 ); // PWM frequency = 1 / period
-    EPWM_setPhaseShift          ( EPWM5_BASE, 0                                            );
-    EPWM_setTimeBaseCounter     ( EPWM5_BASE, 0                                            );
-    EPWM_setTimeBaseCounterMode ( EPWM5_BASE, EPWM_COUNTER_MODE_UP                         );
-    EPWM_setClockPrescaler      ( EPWM5_BASE, EPWM_CLOCK_DIVIDER_1, EPWM_HSCLOCK_DIVIDER_1 );
-    EPWM_disablePhaseShiftLoad  ( EPWM5_BASE                                               );
-    EPWM_setSyncOutPulseMode    ( EPWM5_BASE, EPWM_SYNC_OUT_PULSE_ON_COUNTER_ZERO          ); // sync "down-stream"
-    // Counter Compare Submodule Registers
-    EPWM_setCounterCompareValue           ( EPWM5_BASE ,EPWM_COUNTER_COMPARE_A ,0                                )                                                        ; // set duty 0% initiall
-    EPWM_setCounterCompareShadowLoadMode  ( EPWM5_BASE ,EPWM_COUNTER_COMPARE_A ,EPWM_COMP_LOAD_ON_CNTR_ZERO      )                                                        ;
-    EPWM_setActionQualifierActionComplete ( EPWM5_BASE ,EPWM_AQ_OUTPUT_A       ,(EPWM_ActionQualifierEventAction )(EPWM_AQ_OUTPUT_LOW_UP_CMPA | EPWM_AQ_OUTPUT_HIGH_ZERO)); // Action Qualifier SubModule Registers
-    EPWM_setActionQualifierActionComplete ( EPWM5_BASE ,EPWM_AQ_OUTPUT_B       ,(EPWM_ActionQualifierEventAction )(EPWM_AQ_OUTPUT_LOW_UP_CMPA | EPWM_AQ_OUTPUT_HIGH_ZERO));
-    EPWM_setCounterCompareValue           ( EPWM5_BASE ,EPWM_COUNTER_COMPARE_A ,(uint16_t                        )(EPWM_getTimeBasePeriod(EPWM5_BASE) >> 1))              ;
-    EPWM_setSyncOutPulseMode              ( EPWM5_BASE ,EPWM_SYNC_OUT_PULSE_ON_EPWMxSYNCIN                       )                                                        ;
+    //// Sigma Delta clock set up - pwm5
+    //// **********************************************
+    //// Configure PWM5A for SD Clock i.e. 20Mhz
+    //// 20 Mhz => 50ns => 50ns/10
+    //// PWM5B - clock SDFM for DCBUS voltage sensing
+    //// PWM5A - clock SDFM for Phase current sensing (not used)
+    //EPWM_setPeriodLoadMode      ( EPWM5_BASE, EPWM_PERIOD_DIRECT_LOAD                      ); // set Immediate load
+    //EPWM_setTimeBasePeriod      ( EPWM5_BASE, SDFM_TICKS-1                                 ); // PWM frequency = 1 / period
+    //EPWM_setPhaseShift          ( EPWM5_BASE, 0                                            );
+    //EPWM_setTimeBaseCounter     ( EPWM5_BASE, 0                                            );
+    //EPWM_setTimeBaseCounterMode ( EPWM5_BASE, EPWM_COUNTER_MODE_UP                         );
+    //EPWM_setClockPrescaler      ( EPWM5_BASE, EPWM_CLOCK_DIVIDER_1, EPWM_HSCLOCK_DIVIDER_1 );
+    //EPWM_disablePhaseShiftLoad  ( EPWM5_BASE                                               );
+    //EPWM_setSyncOutPulseMode    ( EPWM5_BASE, EPWM_SYNC_OUT_PULSE_ON_COUNTER_ZERO          ); // sync "down-stream"
+    //// Counter Compare Submodule Registers
+    //EPWM_setCounterCompareValue           ( EPWM5_BASE ,EPWM_COUNTER_COMPARE_A ,0                                )                                                        ; // set duty 0% initiall
+    //EPWM_setCounterCompareShadowLoadMode  ( EPWM5_BASE ,EPWM_COUNTER_COMPARE_A ,EPWM_COMP_LOAD_ON_CNTR_ZERO      )                                                        ;
+    //EPWM_setActionQualifierActionComplete ( EPWM5_BASE ,EPWM_AQ_OUTPUT_A       ,(EPWM_ActionQualifierEventAction )(EPWM_AQ_OUTPUT_LOW_UP_CMPA | EPWM_AQ_OUTPUT_HIGH_ZERO)); // Action Qualifier SubModule Registers
+    //EPWM_setActionQualifierActionComplete ( EPWM5_BASE ,EPWM_AQ_OUTPUT_B       ,(EPWM_ActionQualifierEventAction )(EPWM_AQ_OUTPUT_LOW_UP_CMPA | EPWM_AQ_OUTPUT_HIGH_ZERO));
+    //EPWM_setCounterCompareValue           ( EPWM5_BASE ,EPWM_COUNTER_COMPARE_A ,(uint16_t                        )(EPWM_getTimeBasePeriod(EPWM5_BASE) >> 1))              ;
+    //EPWM_setSyncOutPulseMode              ( EPWM5_BASE ,EPWM_SYNC_OUT_PULSE_ON_EPWMxSYNCIN                       )                                                        ;
 }

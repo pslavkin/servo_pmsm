@@ -11,6 +11,8 @@ typedef struct {
     int32_t   posActual      ; // is an instantaneus pos, nor the pos used in the speed calculation
     int32_t   posLast        ; // number of qa/qb edges
     int32_t   posDiff        ; // delta pos between isr calls
+    float     angle          ; // pos / ENCODER_RESOLUTION
+    float     deltaAngle     ; // diff between electrical and mechanical angle
     float     speedFastLinear; // is simply possDiff/T (T is the time between calcs)
     float     speedFastRps   ; // is speedFastLinear/ENCODER_RESOLUTION
     float     speedFastRpm   ; // is speedFastRpm*60
@@ -47,9 +49,12 @@ typedef struct {
 typedef PosSpeed_Object *PosSpeed_Handle;
 extern PosSpeed_Object posSpeed;
 
-void initEqep      ( void );
-void speedFastCalc ( void );
-void speedLowCalc  ( void );
-void posCalc       ( void );
+void  initEqep      ( void );
+void  speedFastCalc ( void );
+void  speedLowCalc  ( void );
+void  posCalc       ( void );
+float readAngle     ( void );
+void  incDeltaAngle ( void );
+void  decDeltaAngle ( void );
 
 #endif

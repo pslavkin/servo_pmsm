@@ -26,17 +26,24 @@ void Cmd_readLemV        ( uint16_t argc, char *argv[] );
 void Cmd_readLemW        ( uint16_t argc, char *argv[] );
 void Cmd_readTemperature ( uint16_t argc, char *argv[] );
 
-void Cmd_setPwmPeriod ( uint16_t argc, char *argv[ ] );
-void Cmd_incPwmPeriod ( uint16_t argc, char *argv[ ] );
-void Cmd_decPwmPeriod ( uint16_t argc, char *argv[ ] );
-void printPosSpeed    ( void                         );
-void Cmd_readEqepPos  ( uint16_t argc, char *argv[]  );
+void Cmd_setPwmPeriod  ( uint16_t argc, char *argv[ ]  );
+void Cmd_incPwmPeriod  ( uint16_t argc, char *argv[ ]  );
+void Cmd_decPwmPeriod  ( uint16_t argc, char *argv[ ]  );
+void printPosSpeed     ( void                          );
+void Cmd_readEqepPos   ( uint16_t argc, char *argv[ ]  );
+void Cmd_incDeltaAngle ( uint16_t argc, char *argv [ ] );
+void Cmd_decDeltaAngle ( uint16_t argc, char *argv [ ] );
 
 
 void Cmd_printRampGen ( uint16_t argc, char *argv[] );
 void Cmd_printRampCtl ( uint16_t argc, char *argv[] );
-void Cmd_printPark    ( uint16_t argc, char *argv[] );
-void Cmd_printSvGen   ( uint16_t argc, char *argv[] );
+
+void Cmd_printIPark  ( uint16_t argc, char *argv[] );
+void Cmd_printPark   ( uint16_t argc, char *argv[] );
+void Cmd_printClarke ( uint16_t argc, char *argv[] );
+void Cmd_printSvGen  ( uint16_t argc, char *argv[] );
+void Cmd_writeQsRef  ( uint16_t argc, char *argv[] );
+void Cmd_writeDsRef  ( uint16_t argc, char *argv[] );
 
 void Cmd_motorIsr(uint16_t argc, char *argv[]);
 

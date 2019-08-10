@@ -7,6 +7,7 @@ uint16_t adc2Temperature ( uint16_t sensorSample     );
 void     initSigmaDelta  ( void                      );
 float    readLemV        ( void                      );
 float    readLemW        ( void                      );
+void     linkPwm2Adc     ( void                      );
 
 #endif
 

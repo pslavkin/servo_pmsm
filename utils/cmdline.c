@@ -92,9 +92,13 @@ tCmdLineEntry rampGenCmdTable[] =/*{{{*/
 {
     { "r" ,Cmd_printRampCtl    ,": print rampCtl structure"    },
     { "g" ,Cmd_printRampGen    ,": print rampGen structure"    },
+    { "c" ,Cmd_printClarke     ,": print clarke structure"     },
     { "p" ,Cmd_printPark       ,": print park structure"       },
-    { "s" ,Cmd_printSvGen      ,": print svGen structure"       },
+    { "i" ,Cmd_printIPark      ,": print ipark structure"      },
+    { "s" ,Cmd_printSvGen      ,": print svGen structure"      },
     { "m" ,Cmd_motorIsr        ,": execute motor ise one time" },
+    { "d" ,Cmd_writeDsRef      ,": set Ds ref"                 },
+    { "q" ,Cmd_writeQsRef      ,": set Qs ref"                 },
     { "<" ,Cmd_back2login      ,": back to login table"        },
     { "?" ,Cmd_Help            ,": help"                       },
     { 0   ,0                   ,0                              }
@@ -108,9 +112,33 @@ void Cmd_motorIsr(uint16_t argc, char *argv[])
          motorISR();
    }
 }
+void Cmd_writeQsRef(uint16_t argc, char *argv[])
+{
+   if(argc>1) {
+      float ref=atof(argv[1]);
+      writeQsRef(ref);
+      sciPrintf("Qs =%f\r\n",readQsRef());
+   }
+}
+void Cmd_writeDsRef(uint16_t argc, char *argv[])
+{
+   if(argc>1) {
+      float ref=atof(argv[1]);
+      writeDsRef(ref);
+      sciPrintf("Ds =%f\r\n",readDsRef());
+   }
+}
 void Cmd_printPark(uint16_t argc, char *argv[])
 {
    printPark();
+}
+void Cmd_printIPark(uint16_t argc, char *argv[])
+{
+   printIPark();
+}
+void Cmd_printClarke(uint16_t argc, char *argv[])
+{
+   printClarke();
 }
 void Cmd_printSvGen(uint16_t argc, char *argv[])
 {
@@ -130,7 +158,7 @@ tCmdLineEntry pwmCmdTable[] =/*{{{*/
     { "pwm" ,Cmd_setPwmPeriod ,": set pwm period for eqep simulation" },
     { "+"   ,Cmd_incPwmPeriod ,": inc pwm period for eqep simulation" },
     { "-"   ,Cmd_decPwmPeriod ,": dec pwm period for eqep simulation" },
-    { "p"   ,Cmd_readEqepPos  ,": read posx"                          },//debug
+    { "p"   ,Cmd_readEqepPos  ,": read posx"                          },
     { "<"   ,Cmd_back2login   ,": back to login table"                },
     { "?"   ,Cmd_Help         ,": help"                               },
     { 0     ,0                ,0                                      }
@@ -157,10 +185,12 @@ void Cmd_decPwmPeriod(uint16_t argc, char *argv[])
 //--------------------------------------------------------------------------------
 tCmdLineEntry eqepCmdTable[] =/*{{{*/
 {
-   { "p" ,Cmd_readEqepPos ,": read posx"           },
-   { "<" ,Cmd_back2login  ,": back to login table" },
-   { "?" ,Cmd_Help        ,": help"                },
-   { 0   ,0               ,0                       }
+   { "p" ,Cmd_readEqepPos   ,": read posx"                       },
+   { "+" ,Cmd_incDeltaAngle ,": inc angle btw elec and mech pos" },
+   { "-" ,Cmd_decDeltaAngle ,": dec angle btw elec and mech pos" },
+   { "<" ,Cmd_back2login    ,": back to login table"             },
+   { "?" ,Cmd_Help          ,": help"                            },
+   { 0   ,0                 ,0                                   }
 };
 
 void printPosSpeed(void)
@@ -173,6 +203,8 @@ void printPosSpeed(void)
          "pos             =%10d\r\n"
          "dir             =%10d\r\n"
          "possDiff        =%10d\r\n"
+         "angle           =%f\r\n"
+         "deltaAngle      =%f\r\n"
          "speedFastLinear =%f\r\n"
          "speedFastRps    =%f\r\n"
          "speedFastRpm    =%f\r\n"
@@ -184,6 +216,8 @@ void printPosSpeed(void)
          posSpeed.pos,
          posSpeed.dir,
          posSpeed.posDiff,
+         posSpeed.angle,
+         posSpeed.deltaAngle,
          posSpeed.speedFastLinear,
          posSpeed.speedFastRps,
          posSpeed.speedFastRpm,
@@ -200,7 +234,21 @@ void Cmd_readEqepPos(uint16_t argc, char *argv[])
       else
          printPosSpeed();
    }
-}/*}}}*/
+}
+void Cmd_incDeltaAngle(uint16_t argc, char *argv[])
+{
+   incDeltaAngle();
+   printPosSpeed();
+}
+void Cmd_decDeltaAngle(uint16_t argc, char *argv[])
+{
+   decDeltaAngle();
+   printPosSpeed();
+}
+/*}}}*/
+
+
+/*}}}*/
 //--------------------------------------------------------------------------------
 void Cmd_back2login(uint16_t argc, char *argv[])/*{{{*/
 {

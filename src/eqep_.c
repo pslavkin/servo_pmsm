@@ -13,6 +13,8 @@ PosSpeed_Object posSpeed =
     .dir             = 0,
     .posLast         = 0,
     .posDiff         = 0,
+    .angle           = 0,
+    .deltaAngle      = 0,
     .speedFastLinear = 0,
     .speedFastRps    = 0,
     .speedFastRpm    = 0,
@@ -62,11 +64,26 @@ void posCalc(void)
    posSpeed.posActual = EQEP_getPosition  ( EQEP1_BASE );
 }
 
+void incDeltaAngle(void)
+{
+   posSpeed.deltaAngle+=0.1;
+   if(posSpeed.deltaAngle>1) posSpeed.deltaAngle=0;
+}
+void decDeltaAngle(void)
+{
+   posSpeed.deltaAngle-=0.1;
+   if(posSpeed.deltaAngle<0) posSpeed.deltaAngle=1;
+}
+float readAngle(void)
+{
+   return posSpeed.angle-posSpeed.deltaAngle;
+}
 void speedFastCalc(void)
 {
    posSpeed.dir             = EQEP_getDirection ( EQEP1_BASE );
    posSpeed.pos             = EQEP_getPosition  ( EQEP1_BASE );
    posSpeed.posDiff         = posSpeed.pos-posSpeed.posLast;
+   posSpeed.angle           = (posSpeed.pos%(ENCODER_RESOLUTION/4))/(float)(ENCODER_RESOLUTION/4);
    posSpeed.posLast         = posSpeed.pos;
    posSpeed.speedFastLinear = ( posSpeed.posDiff )/SPEED_FAST_DELTA_T;
    posSpeed.speedFastRps    = posSpeed.speedFastLinear/ENCODER_RESOLUTION;
@@ -82,7 +99,7 @@ void speedLowCalc(void)
       else { // Capture overflow, saturate the result
          posSpeed.speedLowPeriod = 0xFFFF;
       }
-      posSpeed.speedLowRps=DEVICE_SYSCLK_FREQ/((float)posSpeed.speedLowPeriod*128*4000);
+      posSpeed.speedLowRps=DEVICE_SYSCLK_FREQ/((float)posSpeed.speedLowPeriod*128*ENCODER_RESOLUTION);
       posSpeed.speedLowRpm=posSpeed.speedLowRps*60;
       EQEP_clearStatus(EQEP1_BASE, (EQEP_STS_UNIT_POS_EVNT | EQEP_STS_CAP_OVRFLW_ERROR));
    }

@@ -20,8 +20,8 @@
 //#define CAL_ANGLE       0                                                              // Angular offset between encoder and Phase A
 //#define SPEED_SCALER    ((((uint64_t)32 * DEVICE_SYSCLK_FREQ / 64) * 60) / (24000000)) // See Equation 5 in eqep_ex2_calculation.c
 //#define BASE_RPM        6000                                                           // Base/max rpm is 6000rpm
-#define ENCODER_RESOLUTION    4000        // 4000 edges per revolution
-#define SPEED_FAST_DELTA_T    0.1f        //until now I call it in everythings sm at 0.1 calls/secs
+#define ENCODER_RESOLUTION    10000        // 4000 edges per revolution
+#define SPEED_FAST_DELTA_T    (1.0/PWM_CLK)        //until now I call it in everythings sm at 0.1 calls/secs
 
 //PWM
 //only for encoder simulation

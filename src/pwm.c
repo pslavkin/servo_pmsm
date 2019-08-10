@@ -4,28 +4,36 @@
 #include "sm.h"
 #include "events.h"
 #include "everythings.h"
-#include "adc.h"
+#include "adc_.h"
 #include "sysctl.h"
 #include "opt.h"
 #include "eqep_.h"
 #include "svgen.h"
+#include "clarke.h"
 #include "rampgen.h"
 #include "rmp_cntl.h"
+#include "park.h"
 #include "ipark.h"
 #include "dmctype.h"
 #include "aci_se_const.h"
 #include "pwm.h"
+#include "leds.h"
 //#include "IQmathLib.h"
 
 
 void initEPWM(uint32_t base);
+#pragma INTERRUPT (epwm1ISR, LPI)
 __interrupt void epwm1ISR(void);
 
+
 uint32_t pwmPeriod = EPWM_TIMER_PERIOD;
-RMPCNTL rc1        = RMPCNTL_DEFAULTS;
-RAMPGEN rg1        = RAMPGEN_DEFAULTS;
-IPARK ipark1       = IPARK_DEFAULTS  ;
-SVGEN svgen1       = SVGEN_DEFAULTS;
+RMPCNTL  rc1       = RMPCNTL_DEFAULTS ;
+RAMPGEN  rg1       = RAMPGEN_DEFAULTS ;
+CLARKE   clarke1   = CLARKE_DEFAULTS  ;
+PARK     park1     = IPARK_DEFAULTS   ;
+IPARK    ipark1    = IPARK_DEFAULTS   ;
+SVGEN    svgen1    = SVGEN_DEFAULTS   ;
+float    dsRef=0,qsRef=0.2;
 //servo
 
 uint32_t getPwmPeriod(void)
@@ -58,27 +66,17 @@ void initPwm(void)/*{{{*/
    GPIO_setPinConfig ( GPIO_4_EPWM3A        );
    GPIO_setPinConfig ( GPIO_5_EPWM3B        );
 
-   // Assign the interrupt service routines to ePWM interrupts
-   Interrupt_register(INT_EPWM1, &epwm1ISR);
-
-   // Disable sync(Freeze clock to PWM as well)
-   SysCtl_disablePeripheral(SYSCTL_PERIPH_CLK_GTBCLKSYNC);
-   SysCtl_disablePeripheral(SYSCTL_PERIPH_CLK_TBCLKSYNC);
 
    // Initialize PWM1 without phase shift as master
-//   initEPWM(EPWM2_BASE);
+   // initEPWM(EPWM2_BASE);
    configurePWM();
+   //
+   // Assign the interrupt service routines to ePWM interrupts
 
-   // Enable sync and clock to PWM
-   SysCtl_enablePeripheral(SYSCTL_PERIPH_CLK_TBCLKSYNC);
-
-   // Enable ePWM interrupts
-   Interrupt_enable(INT_EPWM1);
-
-   rc1.TargetValue=0.5;
+   rc1.TargetValue=0.01;
    rc1.RampDelayMax=0;
 
-   rg1.StepAngleMax = 0.01;
+   rg1.StepAngleMax = 0.001;
    rg1.Angle        = 0;
    rg1.Out          = 0;
 }/*}}}*/
@@ -86,11 +84,18 @@ void initPwm(void)/*{{{*/
 // epwm1ISR - ePWM 1 ISR
 __interrupt void epwm1ISR(void)
 {
+   led1Toogle (  );
    // Clear INT flag for this timer
+   motorISR();
    EPWM_clearEventTriggerInterruptFlag(EPWM1_BASE);
    // Acknowledge interrupt group
    Interrupt_clearACKGroup(INTERRUPT_ACK_GROUP3);
 }
+float readDsRef  ( void      ) { return dsRef;}
+float readQsRef  ( void      ) { return qsRef;}
+void  writeDsRef ( float ref ) { dsRef=ref   ;}
+void  writeQsRef ( float ref ) { qsRef=ref   ;}
+
 
 void initEPWM(uint32_t base)/*{{{*/
 {
@@ -127,15 +132,16 @@ void initEPWM(uint32_t base)/*{{{*/
     // Interrupt where we will change the Compare Values
     // Select INT on Time base counter zero event,
     // Enable INT, generate INT on 1rd event
-//    EPWM_setInterruptSource     ( base, EPWM_INT_TBCTR_ZERO );
-//    EPWM_enableInterrupt        ( base                      );
-//    EPWM_setInterruptEventCount ( base, 1U                  );
+    EPWM_setInterruptSource     ( base, EPWM_INT_TBCTR_ZERO );
+    EPWM_enableInterrupt        ( base                      );
+    EPWM_setInterruptEventCount ( base, 1U                  );
 }/*}}}*/
 void configurePWM(void)/*{{{*/
 {
    uint16_t base;
    uint32_t pwmHandle[3] = {EPWM1_BASE, EPWM2_BASE, EPWM3_BASE};
 
+   SysCtl_disablePeripheral(SYSCTL_PERIPH_CLK_GTBCLKSYNC);
    SysCtl_disablePeripheral(SYSCTL_PERIPH_CLK_TBCLKSYNC);
 
    // *****************************************
@@ -187,11 +193,15 @@ void configurePWM(void)/*{{{*/
 
    SysCtl_disablePeripheral   ( SYSCTL_PERIPH_CLK_TBCLKSYNC                    );
 
-   EPWM_clearEventTriggerInterruptFlag ( EPWM1_BASE         ); // clear pending INT event
-   Interrupt_enable                    ( INT_EPWM1          ); // Enable PWM1INT in PIE group 3
+   EPWM_setInterruptSource             ( EPWM1_BASE, EPWM_INT_TBCTR_PERIOD );
+   EPWM_enableInterrupt                ( EPWM1_BASE                        ); // Fnable Interrupt Generation from the PWM module
+   EPWM_setInterruptEventCount         ( EPWM1_BASE, 1                     ); // This needs to be 1 for the INTFRC to work
+   EPWM_clearEventTriggerInterruptFlag ( EPWM1_BASE                        ); // Clear ePWM Interrupt flag
+   Interrupt_register                  ( INT_EPWM1, &epwm1ISR              );
 
-   // Enable group 3 interrupts - EPWM1 is here
-   Interrupt_enableInCPU               ( INTERRUPT_CPU_INT3 );
+   Interrupt_enable        ( INT_EPWM1                   ); // Enable PWM1INT in PIE group 3
+   Interrupt_enableInCPU   ( INTERRUPT_CPU_INT3          ); // Enable group 3 interrupts - EPWM1 is here
+   SysCtl_enablePeripheral ( SYSCTL_PERIPH_CLK_TBCLKSYNC ); // Enable sync and clock to PWM
    return;
 }/*}}}*/
 void printRampCtl(void)/*{{{*/
@@ -204,7 +214,7 @@ void printRampCtl(void)/*{{{*/
    "RampDelayCount=%d\n" // Variable: Incremental delay (Q0) - independently with global Q
    "SetpointValue =%f\n" // Output: Target output (pu)
    "EqualFlag     =%d\n" // Output: Flag output (Q0) - independently with global Q
-   "Tmp           =%f\n", // Variable: Temp variable
+   "Tmp           =%f\n\n", // Variable: Temp variable
    rc1.TargetValue,
    rc1.RampDelayMax,
    rc1.RampLowLimit,
@@ -222,7 +232,8 @@ void printRampGen(void)/*{{{*/
          "Angle        =%f\n"  // Variable: Step angle (pu)
          "Gain-        =%f\n"  // Input: Ramp gain (pu)
          "Out          =%f\n"  // Output: Ramp signal (pu)
-         "Offset       =%f\n", // Input: Ramp offset (pu)
+         "Offset       =%f\n\n", // Input: Ramp offset (pu)
+         rg1.Freq,
          rg1.StepAngleMax,
          rg1.Angle,
          rg1.Gain,
@@ -238,7 +249,25 @@ void printPark(void)/*{{{*/
          "Ds      =%f\n"  // Input: rotating d-axis stator variable
          "Qs      =%f\n"  // Input: rotating q-axis stator variable
          "Sine    =%f\n"  // Input: Sine term
-         "Cosine  =%f\n",  // Input: Cosine term
+         "Cosine  =%f\n\n",  // Input: Cosine term
+         park1.Alpha,
+         park1.Beta,
+         park1.Angle,
+         park1.Ds,
+         park1.Qs,
+         park1.Sine,
+         park1.Cosine);
+}/*}}}*/
+void printIPark(void)/*{{{*/
+{
+   sciPrintf("park \r"
+         "Alpha   =%f\n"  // Output: stationary d-axis stator variable
+         "Beta    =%f\n"  // Output: stationary q-axis stator variable
+         "Angle   =%f\n"  // Input: rotating angle (pu)
+         "Ds      =%f\n"  // Input: rotating d-axis stator variable
+         "Qs      =%f\n"  // Input: rotating q-axis stator variable
+         "Sine    =%f\n"  // Input: Sine term
+         "Cosine  =%f\n\n",  // Input: Cosine term
          ipark1.Alpha,
          ipark1.Beta,
          ipark1.Angle,
@@ -246,6 +275,21 @@ void printPark(void)/*{{{*/
          ipark1.Qs,
          ipark1.Sine,
          ipark1.Cosine);
+}/*}}}*/
+void printClarke(void)/*{{{*/
+{
+   sciPrintf("park \r"
+         "As      =%f\n"  // corrientes
+         "Bs      =%f\n"  //
+         "Cs      =%f\n"  //
+         "Alpha   =%f\n"  // Output: stationary d-axis stator variable
+         "Beta    =%f\n\n", // Output: stationary q-axis stator variable
+         clarke1.As,
+         clarke1.Bs,
+         clarke1.Cs,
+         clarke1.Alpha,
+         clarke1.Beta
+         );
 }/*}}}*/
 void printSvGen(void)/*{{{*/
 {
@@ -258,7 +302,7 @@ void printSvGen(void)/*{{{*/
          "tmp1     =%f\n"  // Variable: temp variable
          "tmp2     =%f\n"  // Variable: temp variable
          "tmp3     =%f\n"  // Variable: temp variable
-         "VecSector=%d\n", // Space vector sector
+         "VecSector=%d\n\n", // Space vector sector
          svgen1.Ualpha,
          svgen1.Ubeta,
          svgen1.Ta,
@@ -280,10 +324,32 @@ void motorISR(void)
 // -----------------------------------------------------------------------------
 // Connect inputs of the INV_PARK module and call the inverse park module
 // -----------------------------------------------------------------------------
-    ipark1.Ds     = 0.0;//VdTesting;
-    ipark1.Qs     = 0.2;//VqTesting;
-    ipark1.Sine   = __sinpuf32(rg1.Out); //TMU call
-    ipark1.Cosine = __cospuf32(rg1.Out);
+//
+    clarke1.As = readLemV();
+    clarke1.Bs = readLemW();
+    runClarke(&clarke1);
+
+//// ----------------------------------------------------------------------------
+//// Connect inputs of the PARK module and call the park module
+//// ----------------------------------------------------------------------------
+    speedFastCalc();
+    park1.Alpha  = clarke1.Alpha;
+    park1.Beta   = clarke1.Beta;
+    //park1.Angle  = rg1.Out;
+    park1.Angle  = readAngle();
+    park1.Sine   = __sinpuf32(park1.Angle);
+    park1.Cosine = __cospuf32(park1.Angle);
+    runPark(&park1);
+//
+//// ----------------------------------------------------------------------------
+//// Connect inputs of the INV_PARK module and call the inverse park module
+//// ----------------------------------------------------------------------------
+
+    ipark1.Ds     = readDsRef();//-park1.Ds;//0.2;//02-park1.Ds/2;
+    ipark1.Qs     = readQsRef();//-park1.Qs;
+    ipark1.Angle  = park1.Angle;
+    ipark1.Sine   = __sinpuf32(park1.Angle); //TMU call
+    ipark1.Cosine = __cospuf32(park1.Angle);
     runIPark(&ipark1);
 
 // -----------------------------------------------------------------------------

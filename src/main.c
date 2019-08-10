@@ -17,8 +17,8 @@ void main(void)
     Init_Events               ( );
     Init_everythings          ( );
     initTimer2                ( );
-    EINT;                          // Enable Global Interrupt (INTM) and realtime interrupt (DBGM)
-    ERTM;
+    EINT; // Enable Global Interrupt (INTM) and realtime interrupt (DBGM)
+    ERTM; // Enable Global realtime interrupt DBGM
     for(;;) {
        State_Machine();
     }
