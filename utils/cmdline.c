@@ -11,28 +11,33 @@
 #include "eqep_.h"
 #include "pwm.h"
 #include "schedule.h"
+#include "pid.h"
 
-tCmdLineEntry Login_Cmd_Table[ ];
-tCmdLineEntry adcCmdTable    [ ];
-tCmdLineEntry pwmCmdTable    [ ];
-tCmdLineEntry eqepCmdTable   [ ];
-tCmdLineEntry rampGenCmdTable[ ];
+tCmdLineEntry Login_Cmd_Table [ ];
+tCmdLineEntry adcCmdTable     [ ];
+tCmdLineEntry pwmCmdTable     [ ];
+tCmdLineEntry eqepCmdTable    [ ];
+tCmdLineEntry rampGenCmdTable [ ];
+tCmdLineEntry speedPidCmdTable[ ];
+tCmdLineEntry posPidCmdTable  [ ];
 
 char *         g_ppcArgv[CMDLINE_MAX_ARGS + 1];
 tCmdLineEntry* actualCmdTable=Login_Cmd_Table;
 //--------------------------------------------------------------------------------
 tCmdLineEntry Login_Cmd_Table[] =
 {
-   { "login"  ,Cmd_login         ,": login"          },
-   { "adc"    ,Cmd_login2adc     ,": adc setup"      },
-   { "pwm"    ,Cmd_login2pwm     ,": pwm setup"      },
-   { "ramp"   ,Cmd_login2rampGen ,": ramp Generator" },
-   { "eqep"   ,Cmd_login2eqep    ,": eqep setup"     },
-   { "uptime" ,Cmd_Uptime        ,": upteim"         },
-   { "p"      ,Cmd_readEqepPos   ,": read posx"      },//debug
-   { "v"      ,Cmd_version       ,": version"        },
-   { "?"      ,Cmd_Help          ,": help"           },
-   { 0        ,0                 ,0                  }
+   { "login"     ,Cmd_login         ,": login"                },
+   { "adc"       ,Cmd_login2adc     ,": adc setup"            },
+   { "pwm"       ,Cmd_login2pwm     ,": pwm setup"            },
+   { "ramp"      ,Cmd_login2rampGen ,": ramp Generator"       },
+   { "eqep"      ,Cmd_login2eqep    ,": eqep setup"           },
+   { "uptime"    ,Cmd_Uptime        ,": uptime"               },
+   { "p"         ,Cmd_readEqepPos   ,": read posx"            }, // debug
+   { "speed pid" ,Cmd_speedPid      ,": speed PID parameters" },
+   { "pos pid"   ,Cmd_posPid        ,": speed PID parameters" },
+   { "v"         ,Cmd_version       ,": version"              },
+   { "?"         ,Cmd_Help          ,": help"                 },
+   { 0           ,0                 ,0                        }
 };
 
 void Cmd_login         ( uint16_t argc, char *argv[] ) { sciPrintf("login\r\n")                          ;}
@@ -41,6 +46,8 @@ void Cmd_login2adc     ( uint16_t argc, char *argv[] ) { actualCmdTable=adcCmdTa
 void Cmd_login2pwm     ( uint16_t argc, char *argv[] ) { actualCmdTable=pwmCmdTable                      ;}
 void Cmd_login2rampGen ( uint16_t argc, char *argv[] ) { actualCmdTable=rampGenCmdTable                  ;}
 void Cmd_login2eqep    ( uint16_t argc, char *argv[] ) { actualCmdTable=eqepCmdTable                     ;}
+void Cmd_speedPid      ( uint16_t argc, char *argv[] ) { actualCmdTable=speedPidCmdTable                 ;}
+void Cmd_posPid        ( uint16_t argc, char *argv[] ) { actualCmdTable=posPidCmdTable                   ;}
 //--------------------------------------------------------------------------------
 tCmdLineEntry adcCmdTable[] =/*{{{*/
 {
@@ -246,8 +253,59 @@ void Cmd_decDeltaAngle(uint16_t argc, char *argv[])
    printPosSpeed();
 }
 /*}}}*/
-
-
+//--------------------------------------------------------------------------------
+void printPidParams(PID_Handle pid)/*{{{*/
+{
+   sciPrintf (
+    "Kp               =%f\r\n"    //the proportional gain for the PID //!< controller
+    "Ki               =%f\r\n"    //the integral gain for the PID //!< controller
+    "Kd               =%f\r\n"    //the derivative gain for the PID //!< controller
+    "Ui               =%f\r\n"    //the integrator start value for the //!< PID controller
+    "refValue         =%f\r\n"    //the reference input value
+    "fbackValue       =%f\r\n"    //the feedback input value
+    "ffwdValue        =%f\r\n"    //the feedforward input value
+    "outMin           =%f\r\n"    //the minimum output value allowed for //!< the PID controller
+    "outMax           =%f\r\n",    //the maximum output value allowed for //!< the PID controller
+    //FILTER_FO_Handle    "derFilterHandle  =%f\r\n"    //the derivative filter handle
+    //FILTER_FO_Obj       "derFilter        =%f\r\n"    //the derivative filter object
+    pid->Kp,
+    pid->Ki,
+    pid->Kd,
+    pid->Ui,
+    pid->refValue,
+    pid->fbackValue,
+    pid->ffwdValue,
+    pid->outMin,
+    pid->outMax
+    //derFilterHandle,
+    //derFilter,
+    );
+}/*}}}*/
+//--------------------------------------------------------------------------------
+tCmdLineEntry speedPidCmdTable[] =/*{{{*/
+{
+   { "r" ,Cmd_readSpeedPidParams ,": read speed PID params" },
+   { "<" ,Cmd_back2login        ,": back to login table"   },
+   { "?" ,Cmd_Help              ,": help"                  },
+   { 0   ,0                     ,0                         }
+};
+void Cmd_readSpeedPidParams(uint16_t argc, char *argv[])
+{
+   printPidParams(NULL);
+}
+/*}}}*/
+//--------------------------------------------------------------------------------
+tCmdLineEntry posPidCmdTable[] =/*{{{*/
+{
+   { "r" ,Cmd_readposPidParams ,": read pos PID params" },
+   { "<" ,Cmd_back2login        ,": back to login table"   },
+   { "?" ,Cmd_Help              ,": help"                  },
+   { 0   ,0                     ,0                         }
+};
+void Cmd_readposPidParams(uint16_t argc, char *argv[])
+{
+   printPidParams(NULL);
+}
 /*}}}*/
 //--------------------------------------------------------------------------------
 void Cmd_back2login(uint16_t argc, char *argv[])/*{{{*/
@@ -308,4 +366,4 @@ void CmdLineProcess(char* originalLine)/*{{{*/
    }
 prompt:                                                    // Fall through to here means that no matching command was found, so return an error.
    sciPrintf("> ");
-}/*}}}*/
+}

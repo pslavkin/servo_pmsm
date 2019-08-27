@@ -18,9 +18,9 @@ uint16_t adc2Temperature(uint16_t sensorSample)
 
 uint16_t readAdc(uint16_t base,uint16_t ch)
 {
-   uint32_t adcList[]={ADCA_BASE,ADCB_BASE,ADCC_BASE,ADCD_BASE};
+   //uint32_t adcList[]={ADCA_BASE,ADCB_BASE,ADCC_BASE,ADCD_BASE};
    uint32_t adcResultList[]={ADCARESULT_BASE,ADCBRESULT_BASE,ADCCRESULT_BASE,ADCDRESULT_BASE};
-   uint32_t adcBase=adcList[base];
+   //uint32_t adcBase=adcList[base];
 
 //   ADC_setupSOC             ( adcBase ,ADC_SOC_NUMBER0 ,ADC_TRIGGER_SW_ONLY ,(ADC_Channel)ch ,140 );
 //   ADC_setInterruptSource   ( adcBase ,ADC_INT_NUMBER1 ,ADC_SOC_NUMBER0              );
@@ -31,6 +31,13 @@ uint16_t readAdc(uint16_t base,uint16_t ch)
 //   }
 //   ADC_clearInterruptStatus(adcBase, ADC_INT_NUMBER1);
    return  ADC_readResult(adcResultList[base], ADC_SOC_NUMBER0);
+}
+
+void linkPwm2Adc(void)
+{
+   EPWM_setADCTriggerSource        ( EPWM1_BASE, EPWM_SOC_A, EPWM_SOC_TBCTR_PERIOD );
+   EPWM_setADCTriggerEventPrescale ( EPWM1_BASE, EPWM_SOC_A, 1                     ); // Generate pulse on 1st event
+   EPWM_enableADCTrigger           ( EPWM1_BASE, EPWM_SOC_A                        ); // Enable SOC on A group
 }
 
 void initAdc(void)
@@ -75,14 +82,6 @@ float readLemW(void)
    last=(i+last)/2;
    return i;
 }
-
-void linkPwm2Adc(void)
-{
-   EPWM_setADCTriggerSource        ( EPWM1_BASE, EPWM_SOC_A, EPWM_SOC_TBCTR_PERIOD );
-   EPWM_setADCTriggerEventPrescale ( EPWM1_BASE, EPWM_SOC_A, 1                     ); // Generate pulse on 1st event
-   EPWM_enableADCTrigger           ( EPWM1_BASE, EPWM_SOC_A                        ); // Enable SOC on A group
-}
-
 
 
 void initSigmaDelta(void)

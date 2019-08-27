@@ -20,6 +20,8 @@ void Cmd_login2adc     ( uint16_t argc, char *argv[] );
 void Cmd_login2rampGen ( uint16_t argc, char *argv[] );
 void Cmd_login2pwm     ( uint16_t argc, char *argv[] );
 void Cmd_login2eqep    ( uint16_t argc, char *argv[] );
+void Cmd_speedPid      ( uint16_t argc, char *argv[] );
+void Cmd_posPid        ( uint16_t argc, char *argv[] );
 
 void Cmd_readAdc         ( uint16_t argc, char *argv[] );
 void Cmd_readLemV        ( uint16_t argc, char *argv[] );
@@ -44,6 +46,9 @@ void Cmd_printClarke ( uint16_t argc, char *argv[] );
 void Cmd_printSvGen  ( uint16_t argc, char *argv[] );
 void Cmd_writeQsRef  ( uint16_t argc, char *argv[] );
 void Cmd_writeDsRef  ( uint16_t argc, char *argv[] );
+
+void Cmd_readSpeedPidParams ( uint16_t argc, char *argv[] );
+void Cmd_readposPidParams   ( uint16_t argc, char *argv[] );
 
 void Cmd_motorIsr(uint16_t argc, char *argv[]);
 

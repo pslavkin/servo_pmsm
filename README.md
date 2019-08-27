@@ -33,12 +33,15 @@ https://gist.github.com/rxaviers/7360908
 - :heavy_check_mark: controlBoard closed loop with LEM fitst aproach! (see video)
 - :heavy_check_mark: PWM callibrate using ipark and svgen
 - :heavy_check_mark: PWM follows mechanical angle 'current loop' at 5k
+- :heavy_check_mark: Iq inchoate PI closed loop, but works
 - :construction:     Testing current loop parameters
+- :construction:     Speed loop
 - :red_circle:       Sigma delta ADC decoder
 - :red_circle:       Shunt current close loop
 - :red_circle:       IQMath ROM math library for math acceleration on C2000 ROM
 - :red_circle:       Dual core compilation
 - :red_circle:       Dual core interconnect IPC
+- :heavy_check_mark: MOLDOVA here I'm!
 
 
 ---
@@ -47,6 +50,7 @@ https://gist.github.com/rxaviers/7360908
 > If you're `README` has a lot of info, section headers might be nice.
 
 - [Installation](#installation)
+- [motorsszch](#motorsszch)
 - [Features](#features)
 - [Contributing](#contributing)
 - [Team](#team)
@@ -72,6 +76,34 @@ https://gist.github.com/rxaviers/7360908
 
 ## First Motor Spin, closed loop, with blue board first aproach
 <img src="doc/videos/level5closed_loop.gif" width="600" height="300"/>
+
+## moldova
+### here I'm
+
+<img src="doc/pics/moldova.jpg" width="250" height="300"/>
+
+
+## motorsszch
+### layout
+
+I'm beggining the test using this motor
+
+<img src="doc/pics/motor_szgh.jpg" width="300" height="150"/>
+
+### pinout qep
+
+Take care about the pinout of CN2, it's refered as in the driver not regarding the pinout
+indicating in the DB15 connector
+
+<img src="doc/pics/pinout_motor_szgh.jpg" width="300" height="150"/>
+
+### szgh13380CC in action
+
+There it's a big motor in actiion to test if the encoder work as we suspect:
+
+<img src="doc/videos/szgh13380cc_runnning.gif" width="300" height="150"/>
+
+
 
 ## Hierarchy
 
