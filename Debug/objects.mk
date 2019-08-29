@@ -4,5 +4,5 @@
 
 USER_OBJS :=
 
-LIBS := -l"/home/pslavkin/workspace_v9/servo_pmsm/lib/rts2800_fpu32.lib"
+LIBS := -l"/home/pslavkin/workspace_v9/servo_pmsm/lib/rts2800_fpu32.lib" -l"/home/pslavkin/workspace_v9/servo_pmsm/libraries/fcl/lib/fcl_cpu_cla.lib"
 

@@ -13,7 +13,6 @@ C_SRCS += \
 ../src/eqep_.c \
 ../src/events.c \
 ../src/everythings.c \
-../src/fcl_qep_f2837x_tmdxiddk.c \
 ../src/leds.c \
 ../src/main.c \
 ../src/parser.c \
@@ -31,7 +30,6 @@ C_DEPS += \
 ./src/eqep_.d \
 ./src/events.d \
 ./src/everythings.d \
-./src/fcl_qep_f2837x_tmdxiddk.d \
 ./src/leds.d \
 ./src/main.d \
 ./src/parser.d \
@@ -50,7 +48,6 @@ OBJS += \
 ./src/eqep_.obj \
 ./src/events.obj \
 ./src/everythings.obj \
-./src/fcl_qep_f2837x_tmdxiddk.obj \
 ./src/leds.obj \
 ./src/main.obj \
 ./src/parser.obj \
@@ -72,7 +69,6 @@ OBJS__QUOTED += \
 "src/eqep_.obj" \
 "src/events.obj" \
 "src/everythings.obj" \
-"src/fcl_qep_f2837x_tmdxiddk.obj" \
 "src/leds.obj" \
 "src/main.obj" \
 "src/parser.obj" \
@@ -90,7 +86,6 @@ C_DEPS__QUOTED += \
 "src/eqep_.d" \
 "src/events.d" \
 "src/everythings.d" \
-"src/fcl_qep_f2837x_tmdxiddk.d" \
 "src/leds.d" \
 "src/main.d" \
 "src/parser.d" \
@@ -114,7 +109,6 @@ C_SRCS__QUOTED += \
 "../src/eqep_.c" \
 "../src/events.c" \
 "../src/everythings.c" \
-"../src/fcl_qep_f2837x_tmdxiddk.c" \
 "../src/leds.c" \
 "../src/main.c" \
 "../src/parser.c" \
