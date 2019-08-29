@@ -8,40 +8,17 @@ GEN_OPTS__FLAG :=
 GEN_CMDS__FLAG := 
 
 ORDERED_OBJS += \
-"./driverlib/adc.obj" \
-"./driverlib/asysctl.obj" \
-"./driverlib/can.obj" \
-"./driverlib/cla.obj" \
-"./driverlib/cmpss.obj" \
-"./driverlib/cputimer.obj" \
-"./driverlib/dac.obj" \
-"./driverlib/dcsm.obj" \
-"./driverlib/dma.obj" \
-"./driverlib/ecap.obj" \
-"./driverlib/emif.obj" \
-"./driverlib/epwm.obj" \
-"./driverlib/eqep.obj" \
-"./driverlib/flash.obj" \
-"./driverlib/gpio.obj" \
-"./driverlib/hrpwm.obj" \
-"./driverlib/i2c.obj" \
-"./driverlib/interrupt.obj" \
-"./driverlib/mcbsp.obj" \
-"./driverlib/memcfg.obj" \
-"./driverlib/sci.obj" \
-"./driverlib/sdfm.obj" \
-"./driverlib/spi.obj" \
-"./driverlib/sysctl.obj" \
-"./driverlib/upp.obj" \
-"./driverlib/version.obj" \
-"./driverlib/xbar.obj" \
+"./sources/F2837xD_GlobalVariableDefs.obj" \
 "./sources/device.obj" \
 "./sources/fcl_qep_f2837x_tmdxiddk.obj" \
 "./sources/fcl_qep_f2837x_tmdxiddk_cla_tasks.obj" \
-"../2837xD_RAM_lnk_cpu1.cmd" \
+"../cmd/2837xD_RAM_lnk_cpu1.cmd" \
+"../cmd/F2837xD_Headers_nonBIOS_cpu1.cmd" \
 $(GEN_CMDS__FLAG) \
+-l"/home/pslavkin/workspace_v9/servo_pmsm/lib/driverlib/ccs/Debug/driverlib.lib" \
 -l"/home/pslavkin/workspace_v9/servo_pmsm/lib/rts2800_fpu32.lib" \
--l"/home/pslavkin/workspace_v9/servo_pmsm/libraries/fcl/lib/fcl_cpu_cla.lib" \
+-l"/home/pslavkin/workspace_v9/servo_pmsm/lib/fcl/lib/fcl_cpu_cla.lib" \
+-l"/home/pslavkin/workspace_v9/servo_pmsm/lib/rts2800_fpu32.lib" \
 
 -include ../makefile.init
 
@@ -50,11 +27,9 @@ RMDIR := rm -rf
 
 # All of the sources participating in the build are defined here
 -include sources.mk
--include subdir_vars.mk
--include driverlib/subdir_vars.mk
+-include cmd/subdir_vars.mk
 -include sources/subdir_vars.mk
--include subdir_rules.mk
--include driverlib/subdir_rules.mk
+-include cmd/subdir_rules.mk
 -include sources/subdir_rules.mk
 -include objects.mk
 
@@ -165,14 +140,14 @@ BIN_OUTPUTS__QUOTED += \
 
 
 # All Target
-all: $(OBJS) $(CMD_SRCS) $(LIB_SRCS) $(A_SRCS) $(GEN_CMDS)
+all: $(OBJS) $(CMD_SRCS) $(LIB_SRCS) $(GEN_CMDS)
 	@$(MAKE) --no-print-directory -Onone "servo_pmsm.out"
 
 # Tool invocations
-servo_pmsm.out: $(OBJS) $(CMD_SRCS) $(LIB_SRCS) $(A_SRCS) $(GEN_CMDS)
+servo_pmsm.out: $(OBJS) $(CMD_SRCS) $(LIB_SRCS) $(GEN_CMDS)
 	@echo 'Building target: "$@"'
 	@echo 'Invoking: C2000 Linker'
-	"/opt/ti/ccs901/ccs/tools/compiler/ti-cgt-c2000_18.12.1.LTS/bin/cl2000" -v28 -ml -mt --cla_support=cla1 --float_support=fpu32 --tmu_support=tmu0 --vcu_support=vcu2 -O4 --opt_for_speed=5 --fp_mode=relaxed --advice:performance=all --define=CPU1 -g --diag_warning=225 --diag_wrap=off --display_error_number --abi=coffabi -z -m"servo_pmsm.map" --stack_size=0x200 --warn_sections -i"/opt/ti/ccs901/ccs/tools/compiler/ti-cgt-c2000_18.12.1.LTS/lib" -i"/opt/ti/C2000Ware_MotorControl_SDK_2_00_00_00/c2000ware/libraries/math/IQmath/c28/lib" -i"/opt/ti/C2000Ware_MotorControl_SDK_2_00_00_00/c2000ware/libraries/dsp/VCU/c28/lib" -i"/opt/ti/ccs901/ccs/tools/compiler/ti-cgt-c2000_18.12.1.LTS/include" --reread_libs --diag_wrap=off --display_error_number --xml_link_info="servo_pmsm_linkInfo.xml" --rom_model -o "servo_pmsm.out" $(ORDERED_OBJS) $(A_SRCS)
+	"/opt/ti/ccs901/ccs/tools/compiler/ti-cgt-c2000_18.12.1.LTS/bin/cl2000" -v28 -ml -mt --cla_support=cla1 --float_support=fpu32 --tmu_support=tmu0 --vcu_support=vcu2 -O4 --opt_for_speed=5 --fp_mode=relaxed --advice:performance=all --define=LARGE_MODEL --define=CPU1 -g --diag_warning=225 --diag_wrap=off --display_error_number --abi=coffabi -z -m"servo_pmsm.map" --stack_size=0x200 --warn_sections --reread_libs --diag_wrap=off --display_error_number --xml_link_info="servo_pmsm_linkInfo.xml" --rom_model -o "servo_pmsm.out" $(ORDERED_OBJS)
 	@echo 'Finished building target: "$@"'
 	@echo ' '
 
@@ -186,8 +161,8 @@ servo_pmsm.hex: $(EXE_OUTPUTS)
 # Other Targets
 clean:
 	-$(RM) $(BIN_OUTPUTS__QUOTED)$(EXE_OUTPUTS__QUOTED)
-	-$(RM) "driverlib/adc.obj" "driverlib/asysctl.obj" "driverlib/can.obj" "driverlib/cla.obj" "driverlib/cmpss.obj" "driverlib/cputimer.obj" "driverlib/dac.obj" "driverlib/dcsm.obj" "driverlib/dma.obj" "driverlib/ecap.obj" "driverlib/emif.obj" "driverlib/epwm.obj" "driverlib/eqep.obj" "driverlib/flash.obj" "driverlib/gpio.obj" "driverlib/hrpwm.obj" "driverlib/i2c.obj" "driverlib/interrupt.obj" "driverlib/mcbsp.obj" "driverlib/memcfg.obj" "driverlib/sci.obj" "driverlib/sdfm.obj" "driverlib/spi.obj" "driverlib/sysctl.obj" "driverlib/upp.obj" "driverlib/version.obj" "driverlib/xbar.obj" "sources/device.obj" "sources/fcl_qep_f2837x_tmdxiddk.obj" "sources/fcl_qep_f2837x_tmdxiddk_cla_tasks.obj" 
-	-$(RM) "driverlib/adc.d" "driverlib/asysctl.d" "driverlib/can.d" "driverlib/cla.d" "driverlib/cmpss.d" "driverlib/cputimer.d" "driverlib/dac.d" "driverlib/dcsm.d" "driverlib/dma.d" "driverlib/ecap.d" "driverlib/emif.d" "driverlib/epwm.d" "driverlib/eqep.d" "driverlib/flash.d" "driverlib/gpio.d" "driverlib/hrpwm.d" "driverlib/i2c.d" "driverlib/interrupt.d" "driverlib/mcbsp.d" "driverlib/memcfg.d" "driverlib/sci.d" "driverlib/sdfm.d" "driverlib/spi.d" "driverlib/sysctl.d" "driverlib/upp.d" "driverlib/version.d" "driverlib/xbar.d" "sources/device.d" "sources/fcl_qep_f2837x_tmdxiddk.d" 
+	-$(RM) "sources/F2837xD_GlobalVariableDefs.obj" "sources/device.obj" "sources/fcl_qep_f2837x_tmdxiddk.obj" "sources/fcl_qep_f2837x_tmdxiddk_cla_tasks.obj" 
+	-$(RM) "sources/F2837xD_GlobalVariableDefs.d" "sources/device.d" "sources/fcl_qep_f2837x_tmdxiddk.d" 
 	-$(RM) "sources/fcl_qep_f2837x_tmdxiddk_cla_tasks.d" 
 	-@echo 'Finished clean'
 	-@echo ' '

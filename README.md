@@ -38,6 +38,7 @@ https://gist.github.com/rxaviers/7360908
 - :heavy_check_mark: fanuc servomotor experimetation
 - :heavy_check_mark: mitsubishi servomotor experimetation
 - :construction:     scratch materplan
+- :construction:     merging example fcl with my own code
 - :construction:     trying to manage BiA128 fanuc encoder
 - :construction:     Testing current loop parameters
 - :construction:     Speed loop

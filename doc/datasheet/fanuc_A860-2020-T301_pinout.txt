@@ -1,0 +1,11 @@
+1  = xsd
+2  = sd
+3  = -
+4  = battery+
+5  = xreq
+6  = req
+7  = 0v
+8  = 5v
+9  = 5v
+10 = 0v
+
