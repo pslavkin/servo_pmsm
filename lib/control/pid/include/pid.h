@@ -63,8 +63,8 @@ extern "C"
 //*****************************************************************************
 
 #include "types.h"
-#include "libraries/filter/filter_fo/include/filter_fo.h"
-#include "libraries/math/include/math.h"
+#include "../lib/filter/filter_fo/include/filter_fo.h"
+#include "../lib/math/include/math.h"
 
 //*****************************************************************************
 //

@@ -35,12 +35,12 @@ const State**  everythings    ( void )
 }
 void Init_everythings(void)
 {
-   initLeds      ( );
-   initAdc       ( );
+//   initLeds      ( );
+//   initAdc       ( );
    initParser    ( );
-   initEqep      ( );
+//   initEqep      ( );
    Init_Schedule ( );
-   initPwm       ( );
+//   initPwm       ( );
 }
 //--------------------------------------------------------------------------------
 const State idle1 [ ] =

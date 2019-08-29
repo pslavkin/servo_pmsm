@@ -27,12 +27,12 @@ __interrupt void epwm1ISR(void);
 
 
 uint32_t pwmPeriod = EPWM_TIMER_PERIOD;
-RMPCNTL  rc1       = RMPCNTL_DEFAULTS ;
-RAMPGEN  rg1       = RAMPGEN_DEFAULTS ;
-CLARKE   clarke1   = CLARKE_DEFAULTS  ;
-PARK     park1     = IPARK_DEFAULTS   ;
-IPARK    ipark1    = IPARK_DEFAULTS   ;
-SVGEN    svgen1    = SVGEN_DEFAULTS   ;
+RMPCNTL  rc2       = RMPCNTL_DEFAULTS ;
+RAMPGEN  rg2       = RAMPGEN_DEFAULTS ;
+CLARKE   clarke2   = CLARKE_DEFAULTS  ;
+PARK     park2     = IPARK_DEFAULTS   ;
+IPARK    ipark2    = IPARK_DEFAULTS   ;
+SVGEN    svgen2    = SVGEN_DEFAULTS   ;
 float    dsRef=0,qsRef=0.2;
 //servo
 
@@ -69,16 +69,16 @@ void initPwm(void)/*{{{*/
 
    // Initialize PWM1 without phase shift as master
    // initEPWM(EPWM2_BASE);
-   configurePWM();
+   configurePWM2();
    //
    // Assign the interrupt service routines to ePWM interrupts
 
-   rc1.TargetValue=0.01;
-   rc1.RampDelayMax=0;
+   rc2.TargetValue=0.01;
+   rc2.RampDelayMax=0;
 
-   rg1.StepAngleMax = 0.001;
-   rg1.Angle        = 0;
-   rg1.Out          = 0;
+   rg2.StepAngleMax = 0.001;
+   rg2.Angle        = 0;
+   rg2.Out          = 0;
 }/*}}}*/
 
 // epwm1ISR - ePWM 1 ISR
@@ -136,7 +136,7 @@ void initEPWM(uint32_t base)/*{{{*/
     EPWM_enableInterrupt        ( base                      );
     EPWM_setInterruptEventCount ( base, 1U                  );
 }/*}}}*/
-void configurePWM(void)/*{{{*/
+void configurePWM2(void)/*{{{*/
 {
    uint16_t base;
    uint32_t pwmHandle[3] = {EPWM1_BASE, EPWM2_BASE, EPWM3_BASE};
@@ -215,14 +215,14 @@ void printRampCtl(void)/*{{{*/
    "SetpointValue =%f\n" // Output: Target output (pu)
    "EqualFlag     =%d\n" // Output: Flag output (Q0) - independently with global Q
    "Tmp           =%f\n\n", // Variable: Temp variable
-   rc1.TargetValue,
-   rc1.RampDelayMax,
-   rc1.RampLowLimit,
-   rc1.RampHighLimit,
-   rc1.RampDelayCount,
-   rc1.SetpointValue,
-   rc1.EqualFlag,
-   rc1.Tmp);
+   rc2.TargetValue,
+   rc2.RampDelayMax,
+   rc2.RampLowLimit,
+   rc2.RampHighLimit,
+   rc2.RampDelayCount,
+   rc2.SetpointValue,
+   rc2.EqualFlag,
+   rc2.Tmp);
 }/*}}}*/
 void printRampGen(void)/*{{{*/
 {
@@ -233,12 +233,12 @@ void printRampGen(void)/*{{{*/
          "Gain-        =%f\n"  // Input: Ramp gain (pu)
          "Out          =%f\n"  // Output: Ramp signal (pu)
          "Offset       =%f\n\n", // Input: Ramp offset (pu)
-         rg1.Freq,
-         rg1.StepAngleMax,
-         rg1.Angle,
-         rg1.Gain,
-         rg1.Out,
-         rg1.Offset);
+         rg2.Freq,
+         rg2.StepAngleMax,
+         rg2.Angle,
+         rg2.Gain,
+         rg2.Out,
+         rg2.Offset);
 }/*}}}*/
 void printPark(void)/*{{{*/
 {
@@ -250,13 +250,13 @@ void printPark(void)/*{{{*/
          "Qs      =%f\n"  // Input: rotating q-axis stator variable
          "Sine    =%f\n"  // Input: Sine term
          "Cosine  =%f\n\n",  // Input: Cosine term
-         park1.Alpha,
-         park1.Beta,
-         park1.Angle,
-         park1.Ds,
-         park1.Qs,
-         park1.Sine,
-         park1.Cosine);
+         park2.Alpha,
+         park2.Beta,
+         park2.Angle,
+         park2.Ds,
+         park2.Qs,
+         park2.Sine,
+         park2.Cosine);
 }/*}}}*/
 void printIPark(void)/*{{{*/
 {
@@ -268,13 +268,13 @@ void printIPark(void)/*{{{*/
          "Qs      =%f\n"  // Input: rotating q-axis stator variable
          "Sine    =%f\n"  // Input: Sine term
          "Cosine  =%f\n\n",  // Input: Cosine term
-         ipark1.Alpha,
-         ipark1.Beta,
-         ipark1.Angle,
-         ipark1.Ds,
-         ipark1.Qs,
-         ipark1.Sine,
-         ipark1.Cosine);
+         ipark2.Alpha,
+         ipark2.Beta,
+         ipark2.Angle,
+         ipark2.Ds,
+         ipark2.Qs,
+         ipark2.Sine,
+         ipark2.Cosine);
 }/*}}}*/
 void printClarke(void)/*{{{*/
 {
@@ -284,11 +284,11 @@ void printClarke(void)/*{{{*/
          "Cs      =%f\n"  //
          "Alpha   =%f\n"  // Output: stationary d-axis stator variable
          "Beta    =%f\n\n", // Output: stationary q-axis stator variable
-         clarke1.As,
-         clarke1.Bs,
-         clarke1.Cs,
-         clarke1.Alpha,
-         clarke1.Beta
+         clarke2.As,
+         clarke2.Bs,
+         clarke2.Cs,
+         clarke2.Alpha,
+         clarke2.Beta
          );
 }/*}}}*/
 void printSvGen(void)/*{{{*/
@@ -303,31 +303,31 @@ void printSvGen(void)/*{{{*/
          "tmp2     =%f\n"  // Variable: temp variable
          "tmp3     =%f\n"  // Variable: temp variable
          "VecSector=%d\n\n", // Space vector sector
-         svgen1.Ualpha,
-         svgen1.Ubeta,
-         svgen1.Ta,
-         svgen1.Tb,
-         svgen1.Tc,
-         svgen1.tmp1,
-         svgen1.tmp2,
-         svgen1.tmp3,
-         (uint32_t)svgen1.VecSector);
+         svgen2.Ualpha,
+         svgen2.Ubeta,
+         svgen2.Ta,
+         svgen2.Tb,
+         svgen2.Tc,
+         svgen2.tmp1,
+         svgen2.tmp2,
+         svgen2.tmp3,
+         (uint32_t)svgen2.VecSector);
 }/*}}}*/
 void motorISR(void)
 {
-    fclRampControl(&rc1);
+    fclRampControl(&rc2);
 // -----------------------------------------------------------------------------
 // Connect inputs of the RAMP GEN module and call the ramp generator module
 // -----------------------------------------------------------------------------
-    rg1.Freq = rc1.SetpointValue;
-    fclRampGen(&rg1);
+    rg2.Freq = rc2.SetpointValue;
+    fclRampGen(&rg2);
 // -----------------------------------------------------------------------------
 // Connect inputs of the INV_PARK module and call the inverse park module
 // -----------------------------------------------------------------------------
 //
-    clarke1.As = readLemV();
-    clarke1.Bs = readLemW();
-    runClarke(&clarke1);
+    clarke2.As = readLemV();
+    clarke2.Bs = readLemW();
+    runClarke(&clarke2);
 
 //// ----------------------------------------------------------------------------
 //// Connect inputs of the PARK module and call the park module
@@ -335,48 +335,48 @@ void motorISR(void)
 //
     speedFastCalc();
 
-    park1.Alpha  = clarke1.Alpha;
-    park1.Beta   = clarke1.Beta;
-    //park1.Angle  = rg1.Out;
-    park1.Angle  = readAngle();
-    park1.Sine   = __sinpuf32(park1.Angle);
-    park1.Cosine = __cospuf32(park1.Angle);
-    runPark(&park1);
+    park2.Alpha  = clarke2.Alpha;
+    park2.Beta   = clarke2.Beta;
+    //park2.Angle  = rg2.Out;
+    park2.Angle  = readAngle();
+    park2.Sine   = __sinpuf32(park2.Angle);
+    park2.Cosine = __cospuf32(park2.Angle);
+    runPark(&park2);
 //
 //// ----------------------------------------------------------------------------
 //// Connect inputs of the INV_PARK module and call the inverse park module
 //// ----------------------------------------------------------------------------
     static float integratorQ =0;
-    float errorQ =readQsRef()-park1.Qs;
+    float errorQ =readQsRef()-park2.Qs;
     integratorQ += errorQ * 0.001;
 
     static float integratorD =0;
-    float errorD =readDsRef()-park1.Ds;
+    float errorD =readDsRef()-park2.Ds;
     integratorD += errorD * 0.001;
 
-    ipark1.Qs     = errorQ * 1 + integratorQ;
-         if(ipark1.Qs> 0.4) ipark1.Qs= 0.4;
-    else if(ipark1.Qs<-0.4) ipark1.Qs=-0.4;
+    ipark2.Qs     = errorQ * 1 + integratorQ;
+         if(ipark2.Qs> 0.4) ipark2.Qs= 0.4;
+    else if(ipark2.Qs<-0.4) ipark2.Qs=-0.4;
 
-    ipark1.Ds     =0;// errorD * 1 + integratorD;
-    ipark1.Angle  = park1.Angle;
-    ipark1.Sine   = __sinpuf32(park1.Angle); //TMU call
-    ipark1.Cosine = __cospuf32(park1.Angle);
-    runIPark(&ipark1);
+    ipark2.Ds     =0;// errorD * 1 + integratorD;
+    ipark2.Angle  = park2.Angle;
+    ipark2.Sine   = __sinpuf32(park2.Angle); //TMU call
+    ipark2.Cosine = __cospuf32(park2.Angle);
+    runIPark(&ipark2);
 
 // -----------------------------------------------------------------------------
 // Connect inputs of the SVGEN_DQ module and call the space-vector gen. module
 // -----------------------------------------------------------------------------
-    svgen1.Ualpha = ipark1.Alpha;
-    svgen1.Ubeta  = ipark1.Beta;
-    runSVGenDQ(&svgen1);
+    svgen2.Ualpha = ipark2.Alpha;
+    svgen2.Ubeta  = ipark2.Beta;
+    runSVGenDQ(&svgen2);
 
 // -----------------------------------------------------------------------------
 // Computed Duty and Write to CMPA register
 // -----------------------------------------------------------------------------
-   EPWM_setCounterCompareValue(EPWM1_BASE, EPWM_COUNTER_COMPARE_A, (uint16_t)((pwmPeriod*svgen1.Tc) + pwmPeriod/2));
-   EPWM_setCounterCompareValue(EPWM2_BASE, EPWM_COUNTER_COMPARE_A, (uint16_t)((pwmPeriod*svgen1.Ta) + pwmPeriod/2));
-   EPWM_setCounterCompareValue(EPWM3_BASE, EPWM_COUNTER_COMPARE_A, (uint16_t)((pwmPeriod*svgen1.Tb) + pwmPeriod/2));
+   EPWM_setCounterCompareValue(EPWM1_BASE, EPWM_COUNTER_COMPARE_A, (uint16_t)((pwmPeriod*svgen2.Tc) + pwmPeriod/2));
+   EPWM_setCounterCompareValue(EPWM2_BASE, EPWM_COUNTER_COMPARE_A, (uint16_t)((pwmPeriod*svgen2.Ta) + pwmPeriod/2));
+   EPWM_setCounterCompareValue(EPWM3_BASE, EPWM_COUNTER_COMPARE_A, (uint16_t)((pwmPeriod*svgen2.Tb) + pwmPeriod/2));
 
    return;
 }
@@ -686,7 +686,7 @@ void motorISR(void)
 //                                    // of QEP index pulse
 //
 //// Instance a few transform objects
-//IPARK  ipark1  = IPARK_DEFAULTS;
+//IPARK  ipark2  = IPARK_DEFAULTS;
 //
 //// Instance PI(D) regulators to regulate the d and q  axis currents,
 //// speed and position
@@ -697,7 +697,7 @@ void motorISR(void)
 //                           PID_DATA_DEFAULTS};
 //
 //// Instance a ramp controller to smoothly ramp the frequency
-//RMPCNTL rc1 = RMPCNTL_DEFAULTS;
+//RMPCNTL rc2 = RMPCNTL_DEFAULTS;
 //
 //// Instance a phase voltage calculation
 //PHASEVOLTAGE volt1 = PHASEVOLTAGE_DEFAULTS;
@@ -1082,11 +1082,11 @@ void motorISR(void)
 //    FCL_resetController();
 //
 //    // Initialize the RAMPGEN module
-//    rg1.StepAngleMax = BASE_FREQ*T;
-//    rg1.Angle = 0;
-//    rg1.Out = 0;
-//    rg1.Gain = 1.0;
-//    rg1.Offset = 1.0;
+//    rg2.StepAngleMax = BASE_FREQ*T;
+//    rg2.Angle = 0;
+//    rg2.Out = 0;
+//    rg2.Gain = 1.0;
+//    rg2.Offset = 1.0;
 //
 //    // set mock REFERENCES for Speed and current loops
 //    speedRef  = 0.05;
@@ -1536,33 +1536,33 @@ void motorISR(void)
 //// -------------------------------------------------------------------------
 //    if(runMotor == MOTOR_STOP)
 //    {
-//        rc1.TargetValue = 0;
-//        rc1.SetpointValue = 0;
+//        rc2.TargetValue = 0;
+//        rc2.SetpointValue = 0;
 //    }
 //    else
 //    {
-//        rc1.TargetValue = speedRef;
+//        rc2.TargetValue = speedRef;
 //    }
 //
 //// -----------------------------------------------------------------------------
 //// Connect inputs of the RMP module and call the ramp control module
 //// -----------------------------------------------------------------------------
-//    fclRampControl(&rc1);
+//    fclRampControl(&rc2);
 //
 //// -----------------------------------------------------------------------------
 //// Connect inputs of the RAMP GEN module and call the ramp generator module
 //// -----------------------------------------------------------------------------
-//    rg1.Freq = rc1.SetpointValue;
-//    fclRampGen((RAMPGEN *)&rg1);
+//    rg2.Freq = rc2.SetpointValue;
+//    fclRampGen((RAMPGEN *)&rg2);
 //
 //// -----------------------------------------------------------------------------
 //// Connect inputs of the INV_PARK module and call the inverse park module
 //// -----------------------------------------------------------------------------
-//    ipark1.Ds = VdTesting;
-//    ipark1.Qs = VqTesting;
-//    ipark1.Sine = __sinpuf32(rg1.Out);
-//    ipark1.Cosine = __cospuf32(rg1.Out);
-//    runIPark(&ipark1);
+//    ipark2.Ds = VdTesting;
+//    ipark2.Qs = VqTesting;
+//    ipark2.Sine = __sinpuf32(rg2.Out);
+//    ipark2.Cosine = __cospuf32(rg2.Out);
+//    runIPark(&ipark2);
 //
 //// -----------------------------------------------------------------------------
 //// Position encoder suite module
@@ -1572,36 +1572,36 @@ void motorISR(void)
 //// -----------------------------------------------------------------------------
 //// Connect inputs of the SVGEN_DQ module and call the space-vector gen. module
 //// -----------------------------------------------------------------------------
-//    svgen1.Ualpha = ipark1.Alpha;
-//    svgen1.Ubeta  = ipark1.Beta;
-//    runSVGenDQ(&svgen1);
+//    svgen2.Ualpha = ipark2.Alpha;
+//    svgen2.Ubeta  = ipark2.Beta;
+//    runSVGenDQ(&svgen2);
 //
 //// -----------------------------------------------------------------------------
 //// Computed Duty and Write to CMPA register
 //// -----------------------------------------------------------------------------
 //    EPWM_setCounterCompareValue(EPWM1_BASE, EPWM_COUNTER_COMPARE_A,
-//                        (uint16_t)((INV_PWM_HALF_TBPRD*svgen1.Tc) +
+//                        (uint16_t)((INV_PWM_HALF_TBPRD*svgen2.Tc) +
 //                                    INV_PWM_HALF_TBPRD));
 //    EPWM_setCounterCompareValue(EPWM2_BASE, EPWM_COUNTER_COMPARE_A,
-//                        (uint16_t)((INV_PWM_HALF_TBPRD*svgen1.Ta) +
+//                        (uint16_t)((INV_PWM_HALF_TBPRD*svgen2.Ta) +
 //                                    INV_PWM_HALF_TBPRD));
 //    EPWM_setCounterCompareValue(EPWM3_BASE, EPWM_COUNTER_COMPARE_A,
-//                        (uint16_t)((INV_PWM_HALF_TBPRD*svgen1.Tb) +
+//                        (uint16_t)((INV_PWM_HALF_TBPRD*svgen2.Tb) +
 //                                    INV_PWM_HALF_TBPRD));
 //
 //// -----------------------------------------------------------------------------
 //// Connect inputs of the DATALOG module
 //// -----------------------------------------------------------------------------
-//    dlogCh1 = rg1.Out;
-//    dlogCh2 = svgen1.Ta;
-//    dlogCh3 = svgen1.Tb;
-//    dlogCh4 = svgen1.Tc;
+//    dlogCh1 = rg2.Out;
+//    dlogCh2 = svgen2.Ta;
+//    dlogCh3 = svgen2.Tb;
+//    dlogCh4 = svgen2.Tc;
 //
 ////------------------------------------------------------------------------------
 //// Variable display on DACs B and C
 ////------------------------------------------------------------------------------
-//    DAC_setShadowValue(DACB_BASE, DAC_MACRO_PU(svgen1.Ta));
-//    DAC_setShadowValue(DACC_BASE, DAC_MACRO_PU(svgen1.Tb));
+//    DAC_setShadowValue(DACB_BASE, DAC_MACRO_PU(svgen2.Ta));
+//    DAC_setShadowValue(DACC_BASE, DAC_MACRO_PU(svgen2.Tb));
 //
 //    return;
 //}
@@ -1639,8 +1639,8 @@ void motorISR(void)
 //    else if(lsw == QEP_ALIGNMENT)
 //    {
 //        // for restarting from (runMotor = STOP)
-//        rc1.TargetValue = 0;
-//        rc1.SetpointValue = 0;
+//        rc2.TargetValue = 0;
+//        rc2.SetpointValue = 0;
 //
 //#if POSITION_ENCODER==QEP_POS_ENCODER
 //        // for QEP, spin the motor to find the index pulse
@@ -1656,20 +1656,20 @@ void motorISR(void)
 //// ----------------------------------------------------------------------------
 //    if(lsw == QEP_ALIGNMENT)
 //    {
-//        rc1.TargetValue = 0;
+//        rc2.TargetValue = 0;
 //    }
 //    else
 //    {
-//        rc1.TargetValue = speedRef;
+//        rc2.TargetValue = speedRef;
 //    }
 //
-//    fclRampControl(&rc1);
+//    fclRampControl(&rc2);
 //
 //// ----------------------------------------------------------------------------
 ////  Connect inputs of the RAMP GEN module and call the ramp generator module
 //// ----------------------------------------------------------------------------
-//    rg1.Freq = rc1.SetpointValue;
-//    fclRampGen((RAMPGEN *)&rg1);
+//    rg2.Freq = rc2.SetpointValue;
+//    fclRampGen((RAMPGEN *)&rg2);
 //
 //// ----------------------------------------------------------------------------
 ////  Measure phase currents, subtract the offset and normalize from (-0.5,+0.5)
@@ -1681,9 +1681,9 @@ void motorISR(void)
 //    while(ADC_getInterruptStatus(ADCA_BASE, ADC_INT_NUMBER1) == 0);
 //    NOP;    //1 cycle delay for ADC PPB result
 //
-//    clarke1.As = (float32_t)IFB_LEMV_PPB * FCL_params.adcScale;
-//    clarke1.Bs = (float32_t)IFB_LEMW_PPB * FCL_params.adcScale;
-//    runClarke(&clarke1);
+//    clarke2.As = (float32_t)IFB_LEMV_PPB * FCL_params.adcScale;
+//    clarke2.Bs = (float32_t)IFB_LEMW_PPB * FCL_params.adcScale;
+//    runClarke(&clarke2);
 //
 //// ----------------------------------------------------------------------------
 ////  Measure DC Bus voltage using SDFM Filter3
@@ -1693,21 +1693,21 @@ void motorISR(void)
 //// ----------------------------------------------------------------------------
 //// Connect inputs of the PARK module and call the park module
 //// ----------------------------------------------------------------------------
-//    park1.Alpha  = clarke1.Alpha;
-//    park1.Beta   = clarke1.Beta;
-//    park1.Angle  = rg1.Out;
-//    park1.Sine   = __sinpuf32(park1.Angle);
-//    park1.Cosine = __cospuf32(park1.Angle);
-//    runPark(&park1);
+//    park2.Alpha  = clarke2.Alpha;
+//    park2.Beta   = clarke2.Beta;
+//    park2.Angle  = rg2.Out;
+//    park2.Sine   = __sinpuf32(park2.Angle);
+//    park2.Cosine = __cospuf32(park2.Angle);
+//    runPark(&park2);
 //
 //// ----------------------------------------------------------------------------
 //// Connect inputs of the INV_PARK module and call the inverse park module
 //// ----------------------------------------------------------------------------
-//    ipark1.Ds = VdTesting;
-//    ipark1.Qs = VqTesting;
-//    ipark1.Sine = park1.Sine;
-//    ipark1.Cosine = park1.Cosine;
-//    runIPark(&ipark1);
+//    ipark2.Ds = VdTesting;
+//    ipark2.Qs = VqTesting;
+//    ipark2.Sine = park2.Sine;
+//    ipark2.Cosine = park2.Cosine;
+//    runIPark(&ipark2);
 //
 //// ----------------------------------------------------------------------------
 //// Position encoder suite module
@@ -1727,35 +1727,35 @@ void motorISR(void)
 //// ----------------------------------------------------------------------------
 //// Connect inputs of the SVGEN_DQ module and call the space-vector gen. module
 //// ----------------------------------------------------------------------------
-//    svgen1.Ualpha = ipark1.Alpha;
-//    svgen1.Ubeta  = ipark1.Beta;
-//    runSVGenDQ(&svgen1);
+//    svgen2.Ualpha = ipark2.Alpha;
+//    svgen2.Ubeta  = ipark2.Beta;
+//    runSVGenDQ(&svgen2);
 //
 //// ----------------------------------------------------------------------------
 ////  Computed Duty and Write to CMPA register
 //// ----------------------------------------------------------------------------
 //    EPWM_setCounterCompareValue(EPWM1_BASE, EPWM_COUNTER_COMPARE_A,
-//                        (uint16_t)((INV_PWM_HALF_TBPRD*svgen1.Tc) +
+//                        (uint16_t)((INV_PWM_HALF_TBPRD*svgen2.Tc) +
 //                                    INV_PWM_HALF_TBPRD));
 //    EPWM_setCounterCompareValue(EPWM2_BASE, EPWM_COUNTER_COMPARE_A,
-//                        (uint16_t)((INV_PWM_HALF_TBPRD*svgen1.Ta) +
+//                        (uint16_t)((INV_PWM_HALF_TBPRD*svgen2.Ta) +
 //                                    INV_PWM_HALF_TBPRD));
 //    EPWM_setCounterCompareValue(EPWM3_BASE, EPWM_COUNTER_COMPARE_A,
-//                        (uint16_t)((INV_PWM_HALF_TBPRD*svgen1.Tb) +
+//                        (uint16_t)((INV_PWM_HALF_TBPRD*svgen2.Tb) +
 //                                    INV_PWM_HALF_TBPRD));
 //
 //// ----------------------------------------------------------------------------
 ////    Connect inputs of the DATALOG module
 //// ----------------------------------------------------------------------------
-//    dlogCh1 = rg1.Out;
+//    dlogCh1 = rg2.Out;
 //    dlogCh2 = speed1.ElecTheta;
-//    dlogCh3 = clarke1.As;
-//    dlogCh4 = clarke1.Bs;
+//    dlogCh3 = clarke2.As;
+//    dlogCh4 = clarke2.Bs;
 //
 ////-----------------------------------------------------------------------------
 //// Variable display on DACs B and C
 ////-----------------------------------------------------------------------------
-//    DAC_setShadowValue(DACB_BASE, DAC_MACRO_PU(rg1.Out));
+//    DAC_setShadowValue(DACB_BASE, DAC_MACRO_PU(rg2.Out));
 //    DAC_setShadowValue(DACC_BASE,
 //                       DAC_MACRO_PU(posEncElecTheta[POSITION_ENCODER]));
 //
@@ -1780,7 +1780,7 @@ void motorISR(void)
 ////         better to ensure the motor is loaded during this test. Otherwise,
 ////         the motor will run at higher speeds where it can saturate.
 ////         It may be typically around the rated speed of the motor or higher.
-////      2. clarke1.As and clarke1.Bs are not brought out from the FCL library
+////      2. clarke2.As and clarke2.Bs are not brought out from the FCL library
 ////         as of library release version 0x02
 //// ============================================================================
 //
@@ -1861,20 +1861,20 @@ void motorISR(void)
 //// ----------------------------------------------------------------------------
 //    if(lsw == QEP_ALIGNMENT)
 //    {
-//        rc1.TargetValue = 0;
-//        rc1.SetpointValue = 0;
+//        rc2.TargetValue = 0;
+//        rc2.SetpointValue = 0;
 //    }
 //    else
 //    {
-//        rc1.TargetValue = speedRef;
+//        rc2.TargetValue = speedRef;
 //    }
-//    fclRampControl(&rc1);
+//    fclRampControl(&rc2);
 //
 //// ----------------------------------------------------------------------------
 //// Connect inputs of the RAMP GEN module and call the ramp generator module
 //// ----------------------------------------------------------------------------
-//    rg1.Freq = rc1.SetpointValue;
-//    fclRampGen((RAMPGEN *)&rg1);
+//    rg2.Freq = rc2.SetpointValue;
+//    fclRampGen((RAMPGEN *)&rg2);
 //
 //    posEncElecTheta[POSITION_ENCODER] = qep1.ElecTheta;
 //    speed1.ElecTheta = posEncElecTheta[POSITION_ENCODER];
@@ -1883,7 +1883,7 @@ void motorISR(void)
 ////-----------------------------------------------------------------------------
 //// Variable display on DACs B and C
 ////-----------------------------------------------------------------------------
-//    DAC_setShadowValue(DACB_BASE, DAC_MACRO_PU(pi_iq.ref)); //rg1.Out*4096;
+//    DAC_setShadowValue(DACB_BASE, DAC_MACRO_PU(pi_iq.ref)); //rg2.Out*4096;
 //
 //    //posEncElecTheta[POSITION_ENCODER]*4096;
 //    DAC_setShadowValue(DACC_BASE, DAC_MACRO_PU(pi_iq.fbk));
@@ -1902,7 +1902,7 @@ void motorISR(void)
 //// Connect inputs of the DATALOG module
 //// ----------------------------------------------------------------------------
 //    dlogCh1 = posEncElecTheta[POSITION_ENCODER];
-//    dlogCh2 = rg1.Out;
+//    dlogCh2 = rg2.Out;
 //    dlogCh3 = pi_iq.ref;
 //    dlogCh4 = pi_iq.fbk;
 //
@@ -2009,25 +2009,25 @@ void motorISR(void)
 //// -----------------------------------------------------------------------------
 //    if(lsw == QEP_ALIGNMENT)
 //    {
-//        rc1.TargetValue = 0;
-//        rc1.SetpointValue = 0;
+//        rc2.TargetValue = 0;
+//        rc2.SetpointValue = 0;
 //    }
 //    else if(lsw == QEP_WAIT_FOR_INDEX)
 //    {
-//        rc1.TargetValue = lsw1Speed * (speedRef > 0 ? 1 : -1);
+//        rc2.TargetValue = lsw1Speed * (speedRef > 0 ? 1 : -1);
 //    }
 //    else
 //    {
-//        rc1.TargetValue = speedRef;
+//        rc2.TargetValue = speedRef;
 //    }
 //
-//    fclRampControl(&rc1);
+//    fclRampControl(&rc2);
 //
 //// -----------------------------------------------------------------------------
 ////  Connect inputs of the RAMP GEN module and call the ramp generator module
 //// -----------------------------------------------------------------------------
-//    rg1.Freq = rc1.SetpointValue;
-//    fclRampGen((RAMPGEN *)&rg1);
+//    rg2.Freq = rc2.SetpointValue;
+//    fclRampGen((RAMPGEN *)&rg2);
 //
 //// -----------------------------------------------------------------------------
 ////  Connect inputs of the SPEED_FR module and call the speed calculation module
@@ -2058,7 +2058,7 @@ void motorISR(void)
 //// -----------------------------------------------------------------------------
 //    if (++speedLoopCount >= speedLoopPrescaler)
 //    {
-//           pid_spd.term.Ref = rc1.SetpointValue  //speedRef;
+//           pid_spd.term.Ref = rc2.SetpointValue  //speedRef;
 //#if (BUILDLEVEL == FCL_LEVEL6)
 //                   + sfraNoiseW           // SFRA Noise injection in speed loop
 //#endif
@@ -2110,7 +2110,7 @@ void motorISR(void)
 ////------------------------------------------------------------------------------
 //// Variable display on DACs B and C
 ////------------------------------------------------------------------------------
-//   DAC_setShadowValue(DACB_BASE, DAC_MACRO_PU(rg1.Out));
+//   DAC_setShadowValue(DACB_BASE, DAC_MACRO_PU(rg2.Out));
 //   DAC_setShadowValue(DACC_BASE,
 //                      DAC_MACRO_PU(posEncElecTheta[POSITION_ENCODER]));
 //
@@ -2135,7 +2135,7 @@ void motorISR(void)
 ////  lsw = QEP_GOT_INDEX      : close all loops, position/ speed/ currents Id/Iq
 ////
 ////    NOTE:-
-////       clarke1.As and clarke1.Bs are not brought out from the FCL library
+////       clarke2.As and clarke2.Bs are not brought out from the FCL library
 ////       as of library release version 0x02
 ////
 //// =============================================================================
@@ -2194,8 +2194,8 @@ void motorISR(void)
 //        IdRef = IdRef_start;  //(0.1);
 //
 //        // for restarting from (runMotor = STOP)
-//        rc1.TargetValue = 0;
-//        rc1.SetpointValue = 0;
+//        rc2.TargetValue = 0;
+//        rc2.SetpointValue = 0;
 //
 //        // set up an alignment and hold time for shaft to settle down
 //        if(pi_id.ref >= IdRef)
@@ -2222,8 +2222,8 @@ void motorISR(void)
 //// -----------------------------------------------------------------------------
 ////  Connect inputs of the RAMP GEN module and call the ramp generator module
 //// -----------------------------------------------------------------------------
-//    rg1.Freq = speedRef*0.1;
-//    fclRampGen((RAMPGEN *)&rg1);
+//    rg2.Freq = speedRef*0.1;
+//    fclRampGen((RAMPGEN *)&rg2);
 //
 //// -----------------------------------------------------------------------------
 ////    Connect inputs of the SPEED_FR module and call the speed calculation module
@@ -2243,8 +2243,8 @@ void motorISR(void)
 //            if(!lsw2EntryFlag)
 //            {
 //                lsw2EntryFlag = 1;
-//                rc1.TargetValue = posEncMechTheta[POSITION_ENCODER];
-//                pi_pos.Fbk = rc1.TargetValue;
+//                rc2.TargetValue = posEncMechTheta[POSITION_ENCODER];
+//                pi_pos.Fbk = rc2.TargetValue;
 //                pi_pos.Ref = pi_pos.Fbk;
 //            }
 //            else
@@ -2253,24 +2253,24 @@ void motorISR(void)
 //#if BUILDLEVEL == FCL_LEVEL5
 //                // choose between 1 of 2 position commands
 //                // The user can choose between a position reference table
-//                // used within refPosGen() or feed it in from rg1.Out
+//                // used within refPosGen() or feed it in from rg2.Out
 //                // Position command read from a table
-//                rc1.TargetValue = refPosGen(rc1.TargetValue);
+//                rc2.TargetValue = refPosGen(rc2.TargetValue);
 //                // Position command generated as integral of speedRef
-////              rc1.TargetValue = rg1.Out;
+////              rc2.TargetValue = rg2.Out;
 //
 //#endif
 //
-//                rc1.SetpointValue = rc1.TargetValue -
-//                                    (float32_t)((int32_t)rc1.TargetValue);
+//                rc2.SetpointValue = rc2.TargetValue -
+//                                    (float32_t)((int32_t)rc2.TargetValue);
 //
 //                // Rolling in angle within 0 to 1pu
-//                if(rc1.SetpointValue < 0)
+//                if(rc2.SetpointValue < 0)
 //                {
-//                    rc1.SetpointValue += 1.0;
+//                    rc2.SetpointValue += 1.0;
 //                }
 //
-//                pi_pos.Ref = rc1.SetpointValue;
+//                pi_pos.Ref = rc2.SetpointValue;
 //                pi_pos.Fbk = posEncMechTheta[POSITION_ENCODER];
 //            }
 //
@@ -2286,7 +2286,7 @@ void motorISR(void)
 //
 //    if(lsw == QEP_ALIGNMENT)
 //    {
-//       rc1.SetpointValue = 0;  // position = 0 deg
+//       rc2.SetpointValue = 0;  // position = 0 deg
 //       pid_spd.data.d1 = 0;
 //       pid_spd.data.d2 = 0;
 //       pid_spd.data.i1 = 0;
@@ -2295,7 +2295,7 @@ void motorISR(void)
 //       pid_spd.data.up = 0;
 //       pi_pos.ui = 0;
 //       pi_pos.i1 = 0;
-//       rg1.Out = 0;
+//       rg2.Out = 0;
 //       lsw2EntryFlag = 0;
 //    }
 //

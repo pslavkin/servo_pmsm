@@ -244,22 +244,23 @@ void setupCpuTimer(uint32_t base, uint32_t periodCount)/*{{{*/
 void main(void)/*{{{*/
 {
     // Initialize device clock and peripherals
-    Device_init();
+ //   Device_init();
 
-    // Disable pin locks and enable internal pullups.
-    Device_initGPIO();
+ //   // Disable pin locks and enable internal pullups.
+ //   Device_initGPIO();
 
-    // Clear all interrupts and initialize PIE vector table:
-    // Initialize the PIE control registers to their default state.
-    // The default state is all PIE interrupts disabled and flags
-    // are cleared.
-    Interrupt_initModule();
+ //   // Clear all interrupts and initialize PIE vector table:
+ //   // Initialize the PIE control registers to their default state.
+ //   // The default state is all PIE interrupts disabled and flags
+ //   // are cleared.
+ //   Interrupt_initModule();
 
-    // Initialize the PIE vector table with pointers to the shell Interrupt
-    // Service Routines (ISR).
-    // This will populate the entire table, even if the interrupt
-    // is not used in this example.  This is useful for debug purposes.
-    Interrupt_initVectorTable();
+ //   // Initialize the PIE vector table with pointers to the shell Interrupt
+ //   // Service Routines (ISR).
+ //   // This will populate the entire table, even if the interrupt
+ //   // is not used in this example.  This is useful for debug purposes.
+ //   Interrupt_initVectorTable();
+   main2();
 
     // Timing sync for background loops
     setupCpuTimer(CPUTIMER0_BASE, MICROSEC_50);    // A tasks
@@ -467,6 +468,7 @@ void main(void)/*{{{*/
     for(;;)  //infinite loop
     {
         (*Alpha_State_Ptr)();   // jump to an Alpha state (A0,B0,...)
+        State_Machine();
     }
 } //END MAIN CODE}}}
 // state machines
@@ -1133,15 +1135,15 @@ void configureGPIO(void)/*{{{*/
     GPIO_setQualificationMode ( 23, GPIO_QUAL_3SAMPLE );
     GPIO_setPinConfig         ( GPIO_23_EQEP1I        );
 
-    // GPIO28->SCIRXDA
-    GPIO_setMasterCore ( 28, GPIO_CORE_CPU1    );
-    GPIO_setPadConfig  ( 28, GPIO_PIN_TYPE_STD );
-    GPIO_setPinConfig  ( GPIO_28_SCIRXDA       );
-
-    // GPIO29->SCITXDA
-    GPIO_setMasterCore ( 29, GPIO_CORE_CPU1    );
-    GPIO_setPadConfig  ( 29, GPIO_PIN_TYPE_STD );
-    GPIO_setPinConfig  ( GPIO_29_SCITXDA       );
+//    // GPIO28->SCIRXDA
+//    GPIO_setMasterCore ( 28, GPIO_CORE_CPU1    );
+//    GPIO_setPadConfig  ( 28, GPIO_PIN_TYPE_STD );
+//    GPIO_setPinConfig  ( GPIO_28_SCIRXDA       );
+//
+//    // GPIO29->SCITXDA
+//    GPIO_setMasterCore ( 29, GPIO_CORE_CPU1    );
+//    GPIO_setPadConfig  ( 29, GPIO_PIN_TYPE_STD );
+//    GPIO_setPinConfig  ( GPIO_29_SCITXDA       );
 
     // Configure GPIO used for Trip Mechanism
 

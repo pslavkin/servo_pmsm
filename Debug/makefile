@@ -8,14 +8,57 @@ GEN_OPTS__FLAG :=
 GEN_CMDS__FLAG := 
 
 ORDERED_OBJS += \
+"./lib/driverlib/adc.obj" \
+"./lib/driverlib/asysctl.obj" \
+"./lib/driverlib/can.obj" \
+"./lib/driverlib/cla.obj" \
+"./lib/driverlib/cmpss.obj" \
+"./lib/driverlib/cputimer.obj" \
+"./lib/driverlib/dac.obj" \
+"./lib/driverlib/dcsm.obj" \
+"./lib/driverlib/dma.obj" \
+"./lib/driverlib/ecap.obj" \
+"./lib/driverlib/emif.obj" \
+"./lib/driverlib/epwm.obj" \
+"./lib/driverlib/eqep.obj" \
+"./lib/driverlib/flash.obj" \
+"./lib/driverlib/gpio.obj" \
+"./lib/driverlib/hrpwm.obj" \
+"./lib/driverlib/i2c.obj" \
+"./lib/driverlib/interrupt.obj" \
+"./lib/driverlib/mcbsp.obj" \
+"./lib/driverlib/memcfg.obj" \
+"./lib/driverlib/sci.obj" \
+"./lib/driverlib/sdfm.obj" \
+"./lib/driverlib/spi.obj" \
+"./lib/driverlib/sysctl.obj" \
+"./lib/driverlib/upp.obj" \
+"./lib/driverlib/version.obj" \
+"./lib/driverlib/xbar.obj" \
+"./sources/F2837xD_CodeStartBranch.obj" \
 "./sources/F2837xD_GlobalVariableDefs.obj" \
 "./sources/device.obj" \
 "./sources/fcl_qep_f2837x_tmdxiddk.obj" \
 "./sources/fcl_qep_f2837x_tmdxiddk_cla_tasks.obj" \
+"./src/adc_.obj" \
+"./src/cbuffer.obj" \
+"./src/cmdline.obj" \
+"./src/eqep_.obj" \
+"./src/events.obj" \
+"./src/everythings.obj" \
+"./src/leds.obj" \
+"./src/main.obj" \
+"./src/parser.obj" \
+"./src/pwm.obj" \
+"./src/schedule.obj" \
+"./src/scia.obj" \
+"./src/sm.obj" \
+"./src/systick.obj" \
+"./src/ustdlib.obj" \
+"./src/wdog.obj" \
 "../cmd/2837xD_RAM_lnk_cpu1.cmd" \
 "../cmd/F2837xD_Headers_nonBIOS_cpu1.cmd" \
 $(GEN_CMDS__FLAG) \
--l"/home/pslavkin/workspace_v9/servo_pmsm/lib/driverlib/ccs/Debug/driverlib.lib" \
 -l"/home/pslavkin/workspace_v9/servo_pmsm/lib/rts2800_fpu32.lib" \
 -l"/home/pslavkin/workspace_v9/servo_pmsm/lib/fcl/lib/fcl_cpu_cla.lib" \
 -l"/home/pslavkin/workspace_v9/servo_pmsm/lib/rts2800_fpu32.lib" \
@@ -28,9 +71,13 @@ RMDIR := rm -rf
 # All of the sources participating in the build are defined here
 -include sources.mk
 -include cmd/subdir_vars.mk
+-include lib/driverlib/subdir_vars.mk
 -include sources/subdir_vars.mk
+-include src/subdir_vars.mk
 -include cmd/subdir_rules.mk
+-include lib/driverlib/subdir_rules.mk
 -include sources/subdir_rules.mk
+-include src/subdir_rules.mk
 -include objects.mk
 
 ifneq ($(MAKECMDGOALS),clean)
@@ -147,7 +194,7 @@ all: $(OBJS) $(CMD_SRCS) $(LIB_SRCS) $(GEN_CMDS)
 servo_pmsm.out: $(OBJS) $(CMD_SRCS) $(LIB_SRCS) $(GEN_CMDS)
 	@echo 'Building target: "$@"'
 	@echo 'Invoking: C2000 Linker'
-	"/opt/ti/ccs901/ccs/tools/compiler/ti-cgt-c2000_18.12.1.LTS/bin/cl2000" -v28 -ml -mt --cla_support=cla1 --float_support=fpu32 --tmu_support=tmu0 --vcu_support=vcu2 -O4 --opt_for_speed=5 --fp_mode=relaxed --advice:performance=all --define=LARGE_MODEL --define=CPU1 -g --diag_warning=225 --diag_wrap=off --display_error_number --abi=coffabi -z -m"servo_pmsm.map" --stack_size=0x200 --warn_sections --reread_libs --diag_wrap=off --display_error_number --xml_link_info="servo_pmsm_linkInfo.xml" --rom_model -o "servo_pmsm.out" $(ORDERED_OBJS)
+	"/opt/ti/ccs901/ccs/tools/compiler/ti-cgt-c2000_18.12.1.LTS/bin/cl2000" -v28 -ml -mt --cla_support=cla1 --float_support=fpu32 --tmu_support=tmu0 --vcu_support=vcu2 -Ooff --opt_for_speed=5 --fp_mode=relaxed --advice:performance=all --define=LARGE_MODEL --define=CPU1 -g --diag_warning=225 --diag_wrap=off --display_error_number --abi=coffabi -z -m"servo_pmsm.map" --stack_size=0x200 --warn_sections --reread_libs --diag_wrap=off --display_error_number --xml_link_info="servo_pmsm_linkInfo.xml" --rom_model -o "servo_pmsm.out" $(ORDERED_OBJS)
 	@echo 'Finished building target: "$@"'
 	@echo ' '
 
@@ -161,9 +208,11 @@ servo_pmsm.hex: $(EXE_OUTPUTS)
 # Other Targets
 clean:
 	-$(RM) $(BIN_OUTPUTS__QUOTED)$(EXE_OUTPUTS__QUOTED)
-	-$(RM) "sources/F2837xD_GlobalVariableDefs.obj" "sources/device.obj" "sources/fcl_qep_f2837x_tmdxiddk.obj" "sources/fcl_qep_f2837x_tmdxiddk_cla_tasks.obj" 
-	-$(RM) "sources/F2837xD_GlobalVariableDefs.d" "sources/device.d" "sources/fcl_qep_f2837x_tmdxiddk.d" 
+	-$(RM) "lib/driverlib/adc.obj" "lib/driverlib/asysctl.obj" "lib/driverlib/can.obj" "lib/driverlib/cla.obj" "lib/driverlib/cmpss.obj" "lib/driverlib/cputimer.obj" "lib/driverlib/dac.obj" "lib/driverlib/dcsm.obj" "lib/driverlib/dma.obj" "lib/driverlib/ecap.obj" "lib/driverlib/emif.obj" "lib/driverlib/epwm.obj" "lib/driverlib/eqep.obj" "lib/driverlib/flash.obj" "lib/driverlib/gpio.obj" "lib/driverlib/hrpwm.obj" "lib/driverlib/i2c.obj" "lib/driverlib/interrupt.obj" "lib/driverlib/mcbsp.obj" "lib/driverlib/memcfg.obj" "lib/driverlib/sci.obj" "lib/driverlib/sdfm.obj" "lib/driverlib/spi.obj" "lib/driverlib/sysctl.obj" "lib/driverlib/upp.obj" "lib/driverlib/version.obj" "lib/driverlib/xbar.obj" "sources/F2837xD_CodeStartBranch.obj" "sources/F2837xD_GlobalVariableDefs.obj" "sources/device.obj" "sources/fcl_qep_f2837x_tmdxiddk.obj" "sources/fcl_qep_f2837x_tmdxiddk_cla_tasks.obj" "src/adc_.obj" "src/cbuffer.obj" "src/cmdline.obj" "src/eqep_.obj" "src/events.obj" "src/everythings.obj" "src/leds.obj" "src/main.obj" 
+	-$(RM) "src/parser.obj" "src/pwm.obj" "src/schedule.obj" "src/scia.obj" "src/sm.obj" "src/systick.obj" "src/ustdlib.obj" "src/wdog.obj" 
+	-$(RM) "lib/driverlib/adc.d" "lib/driverlib/asysctl.d" "lib/driverlib/can.d" "lib/driverlib/cla.d" "lib/driverlib/cmpss.d" "lib/driverlib/cputimer.d" "lib/driverlib/dac.d" "lib/driverlib/dcsm.d" "lib/driverlib/dma.d" "lib/driverlib/ecap.d" "lib/driverlib/emif.d" "lib/driverlib/epwm.d" "lib/driverlib/eqep.d" "lib/driverlib/flash.d" "lib/driverlib/gpio.d" "lib/driverlib/hrpwm.d" "lib/driverlib/i2c.d" "lib/driverlib/interrupt.d" "lib/driverlib/mcbsp.d" "lib/driverlib/memcfg.d" "lib/driverlib/sci.d" "lib/driverlib/sdfm.d" "lib/driverlib/spi.d" "lib/driverlib/sysctl.d" "lib/driverlib/upp.d" "lib/driverlib/version.d" "lib/driverlib/xbar.d" "sources/F2837xD_GlobalVariableDefs.d" "sources/device.d" "sources/fcl_qep_f2837x_tmdxiddk.d" "src/adc_.d" "src/cbuffer.d" "src/cmdline.d" "src/eqep_.d" "src/events.d" "src/everythings.d" "src/leds.d" "src/main.d" "src/parser.d" "src/pwm.d" "src/schedule.d" "src/scia.d" "src/sm.d" "src/systick.d" "src/ustdlib.d" "src/wdog.d" 
 	-$(RM) "sources/fcl_qep_f2837x_tmdxiddk_cla_tasks.d" 
+	-$(RM) "sources/F2837xD_CodeStartBranch.d" 
 	-@echo 'Finished clean'
 	-@echo ' '
 

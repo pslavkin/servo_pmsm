@@ -6,7 +6,7 @@
 #include "everythings.h"
 #include "systick.h"
 
-void main(void)
+void main2(void)
 {
     Device_init               ( ); // Initialize device clock and peripherals
     Device_initGPIO           ( ); // Setup GPIO by disabling pin locks and enabling pullups
@@ -16,11 +16,13 @@ void main(void)
     initSCIAFIFO              ( );
     Init_Events               ( );
     Init_everythings          ( );
-    initTimer2                ( );
-    EINT; // Enable Global Interrupt (INTM) and realtime interrupt (DBGM)
-    ERTM; // Enable Global realtime interrupt DBGM
-    for(;;) {
-       State_Machine();
-    }
+//    initTimer2                ( );
+//    EINT; // Enable Global Interrupt (INTM) and realtime interrupt (DBGM)
+//    ERTM; // Enable Global realtime interrupt DBGM
+//    for(;;) {
+//       State_Machine();
+//    }
 }
+
+
 

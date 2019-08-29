@@ -2,7 +2,7 @@
 #define PWM
 
 void     initPwm      ( void         );
-void     configurePWM ( void         );
+void     configurePWM2 ( void         );
 void     setPwmPeriod ( uint32_t new );
 uint32_t getPwmPeriod ( void         );
 void     printRampGen ( void         );
