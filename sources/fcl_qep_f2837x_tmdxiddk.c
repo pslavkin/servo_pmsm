@@ -1,57 +1,5 @@
- //#############################################################################
-// File Name        :   fcl_qep_f2837x_tmdxiddk.c
-//#############################################################################
-//
-// Peripheral functions:
-// EPWMs
-//  - EPWM1, EPWM2, EPWM3 ---> Inverter PWMs for phases A, B, C
-//  - EPWM5  ---> clk for Sigma Delta
-//  - EPWM6  ---> Resolver feedback sampling @ 160KHz
-//  - EPWM11 ---> sync SD filter windows with motor control PWMs
-//  - EPWM4  ---> Not available for users if EnDAT / BiSS interface is active
-//
-// SPIs
-//  - SPIB  ---> Not available for users if EnDAT / BiSS interface is active
-//
-// Analog to Digital Conversion channels
-//  ADC A4/C+  --->  Ifb-SV
-//  ADC B4/C+  ---> Ifb-SW
-//  ADC A2/C+  ---> LEM V
-//  ADC B2/C+  ---> LEM W
-//  ADC D1     ---> R_SIN
-//  ADC C1     ---> R_COS
-//  ADC C3     ---> Vfb-U
-//  ADC A3     ---> Vfb-V
-//  ADC B3     ---> Vfb-W
-//  ADC B0     ---> Vfb-Bus
-//
-// Analog Signals brought in but not sampled
-//  ADC C2/C+  ---> Ifb-SU
-//  ADC A5     --->
-//  ADC C0/C+  ---> SC-A2
-//  ADC D0/C+  ---> SC-B2
-//  ADC D2/C+  ---> SC-R
-//
-// DAC-A  ---> Resolver carrier excitation
-// DAC-B  ---> General purpose display
-// DAC-C  ---> General purpose display
-//
-// Include header files used in the main function
-// define float maths and then include IQmath library
-//
-//#############################################################################
-// $TI Release: MotorControl SDK v2.00.00.00 $
-// $Release Date: Wed Jun 19 14:21:52 CDT 2019 $
-// $Copyright:
-// Copyright (C) 2017-2019 Texas Instruments Incorporated
-//
-//     http://www.ti.com/ ALL RIGHTS RESERVED
-// $
-//#############################################################################
-
 #include "../lib/fcl/include/fcl_cpu_cla.h"
 #include "fcl_qep_f2837x_tmdxiddk_settings.h"
-//#include "fcl_f2837x_sfra_settings.h"
 #include "fcl_f2837x_enum.h"
 
 // Instrumentation code for timing verifications
@@ -61,58 +9,39 @@
 // display variable A (in pu) on DAC
 #define  DAC_MACRO_PU(A)  ((1.0 + A)*2048)
 
-// **********************************************************
 // ********************* Functions **************************
-// **********************************************************
 #ifdef _FLASH
 #ifndef __cplusplus
 #pragma CODE_SECTION(motorControlISR,".TI.ramfunc");
 #endif
 #endif
 
-// **********************************************************
-// ******************* Extern Functions *********************
-// **********************************************************
-
-// **********************************************************
 // ******** Prototype statements for Local Functions ********
-// **********************************************************
 #pragma INTERRUPT (motorControlISR, LPI)
 __interrupt void motorControlISR(void);
 
-// ****************************************************************************
 // Device / peripheral config functions
 // ****************************************************************************
-void configureADC(void);
-void configureCLA(void);
-void configureCMPSS(uint32_t base, int16_t Hi, int16_t Lo);
-void configureCMPSSFilter(uint32_t base, uint16_t curHi, uint16_t curLo);
-void configureDAC(void);
-void configureGPIO(void);
-void configureHVDMCProtection(void);
-void configurePIControllers(void);
-void configurePositionSensing(void);
-void configurePWM(void);
-void configurePWM_1chUpCnt(uint32_t base, uint16_t period);
-void configurePWM_1chUpDwnCnt(uint32_t base, uint16_t period, int16_t db);
-void configureSDFM(void);
+void configureADC             ( void                                          );
+void configureCLA             ( void                                          );
+void configureCMPSS           ( uint32_t base, int16_t Hi, int16_t Lo         );
+void configureCMPSSFilter     ( uint32_t base, uint16_t curHi, uint16_t curLo );
+void configureDAC             ( void                                          );
+void configureGPIO            ( void                                          );
+void configureHVDMCProtection ( void                                          );
+void configurePIControllers   ( void                                          );
+void configurePositionSensing ( void                                          );
+void configurePWM             ( void                                          );
+void configurePWM_1chUpCnt    ( uint32_t base, uint16_t period                );
+void configurePWM_1chUpDwnCnt ( uint32_t base, uint16_t period, int16_t db    );
+void configureSDFM            ( void                                          );
 
-//*****************************************************************************
 // Motor drive utility functions
-//*****************************************************************************
 float32_t refPosGen(float32_t out);
 float32_t ramper(float32_t in, float32_t out, float32_t rampDelta);
 
 #if (BUILDLEVEL > FCL_LEVEL2)
 static inline void getFCLTime(void);
-#endif
-
-//*****************************************************************************
-// SFRA utility functions
-//*****************************************************************************
-#if (BUILDLEVEL == FCL_LEVEL6)
-void injectSFRA(void);
-void collectSFRA(void);
 #endif
 
 // State Machine function prototypes
@@ -143,43 +72,26 @@ void (*A_Task_Ptr)(void);       // State pointer A branch
 void (*B_Task_Ptr)(void);       // State pointer B branch
 void (*C_Task_Ptr)(void);       // State pointer C branch
 
-//*****************************************************************************
 // Cla1Task function externs (tasks 1-4 are owned by the FCL library)
-//*****************************************************************************
 extern __interrupt void Cla1Task5(void);
 extern __interrupt void Cla1Task6(void);
 extern __interrupt void Cla1Task7(void);
 extern __interrupt void Cla1Task8(void);
 
-//
 // These are defined by the linker file
-//
 extern uint32_t Cla1funcsLoadStart;
 extern uint32_t Cla1funcsLoadSize;
 extern uint32_t Cla1funcsRunStart;
 extern uint32_t Cla1funcsLoadEnd;   // not used in code
 
-// ****************************************************************************
 // Variables for CPU control
-// ****************************************************************************
-uint32_t adcHandle[4] = {ADCA_BASE,
-                         ADCB_BASE,
-                         ADCC_BASE,
-                         ADCD_BASE
-};
+uint32_t adcHandle[4] = {ADCA_BASE, ADCB_BASE, ADCC_BASE, ADCD_BASE };
 
 // EPWM1 - Phase U
 // EPWM2 - Phase V
 // EPWM3 - Phase W
-uint32_t pwmHandle[3] = {EPWM1_BASE,
-                         EPWM2_BASE,
-                         EPWM3_BASE
-};
-
-uint32_t dacHandle[3] = {DACA_BASE,
-                         DACB_BASE,
-                         DACC_BASE
-};
+uint32_t pwmHandle[3] = {EPWM1_BASE, EPWM2_BASE, EPWM3_BASE };
+uint32_t dacHandle[3] = {DACA_BASE, DACB_BASE, DACC_BASE };
 
 uint16_t vTimer0[4] = {0};  // Virtual Timers slaved off CPU Timer 0 (A events)
 uint16_t vTimer1[4] = {0};  // Virtual Timers slaved off CPU Timer 1 (B events)
@@ -187,18 +99,7 @@ uint16_t vTimer2[4] = {0};  // Virtual Timers slaved off CPU Timer 2 (C events)
 uint16_t serialCommsTimer = 0;
 
 //*********************** USER Variables **************************************
-// Global variables used in this system
-//*****************************************************************************
-
-#if (CNGD == HOT)
-float32_t offset_shntV = 0;    // offset in shunt current V fbk channel @ 0A
-float32_t offset_shntW = 0;    // offset in shunt current W fbk channel @ 0A
-float32_t offset_shntU = 0;    // offset in shunt current U fbk channel @ 0A
-#endif
-
-// ****************************************************************************
 // Variables for current measurement
-// ****************************************************************************
 // Offset calibration routine is run to calibrate for any offsets on the opamps
 
 float32_t offset_lemV = 0;     // offset in LEM current V fbk channel @ 0A
@@ -224,60 +125,43 @@ uint16_t sampWin     = 30;
 uint16_t thresh      = 18;
 uint16_t LEM_curHi   = LEM(8.0);
 uint16_t LEM_curLo   = LEM(8.0);
-uint16_t SHUNT_curHi = SHUNT(8.0);
-uint16_t SHUNT_curLo = SHUNT(8.0);
-
-// ****************************************************************************
 // Flag variables
 // ****************************************************************************
-volatile uint16_t enableFlag = false;
+uint32_t          isrTicker          = 0         ;
+uint16_t          backTicker         = 0         ;
+uint16_t          tripFlagDMC        = 0         ; // PWM trip status
+uint16_t          clearTripFlagDMC   = 0         ;
+MotorRunStop_e    runMotor           = MOTOR_STOP;
+uint16_t          ledCnt1            = 0         ;
+uint16_t          speedLoopPrescaler = 10        ; // Speed loop pre scalar
+uint16_t          speedLoopCount     = 1         ; // Speed loop counter
+volatile uint16_t lsw2EntryFlag      = 0         ;
 
-uint32_t isrTicker = 0;
-
-uint16_t backTicker = 0;
-uint16_t tripFlagDMC = 0;        //PWM trip status
-uint16_t clearTripFlagDMC = 0;
-MotorRunStop_e runMotor = MOTOR_STOP;
-
-uint16_t ledCnt1=0;
-
-uint16_t speedLoopPrescaler = 10;      // Speed loop pre scalar
-uint16_t speedLoopCount = 1;           // Speed loop counter
-
-volatile uint16_t lsw2EntryFlag = 0;
-
-// ****************************************************************************
 // Variables for Fast Current Loop
-// ****************************************************************************
-volatile  uint16_t FCL_cycleCount = 0;
-uint16_t  fclClrCntr = 0;
-uint16_t  fclCycleCountMax = 0;
-float32_t fclLatencyInMicroSec = 0;    // PWM update latency since sampling
-float32_t maxModIndex = 0;             // max modulation index
+volatile  uint16_t   FCL_cycleCount       = 0;
+uint16_t             fclClrCntr           = 0;
+uint16_t             fclCycleCountMax     = 0;
+float32_t            fclLatencyInMicroSec = 0; // PWM update latency since sampling
+float32_t            maxModIndex          = 0; // max modulation index
 
-// ****************************************************************************
 // Variables for Field Oriented Control
 // ****************************************************************************
-float32_t T = 0.001/ISR_FREQUENCY;  // Samping period (sec), see parameter.h
-float32_t VdTesting = 0.1;          // Vd reference (pu)
-float32_t VqTesting = 0.30;         // Vq reference (pu)
-float32_t IdRef     = 0.0;          // Id reference (pu)
-float32_t tempIdRef = 0.0;          // tempId reference (pu)
-float32_t IqRef     = 0.0;          // Iq reference (pu)
-float32_t speedRef  = 0.0;          // For Closed Loop tests
-float32_t lsw1Speed = 0.01;         // initial force rotation speed in search
-                                    // of QEP index pulse
+float32_t T         = 0.001/ISR_FREQUENCY; // Samping period (sec), see parameter.h
+float32_t VdTesting = 0.1;                 // Vd reference (pu)
+float32_t VqTesting = 0.30;                // Vq reference (pu)
+float32_t IdRef     = 0.0;                 // Id reference (pu)
+float32_t tempIdRef = 0.0;                 // tempId reference (pu)
+float32_t IqRef     = 0.0;                 // Iq reference (pu)
+float32_t speedRef  = 0.0;                 // For Closed Loop tests
+float32_t lsw1Speed = 0.01;                // initial force rotation speed in search of QEP index pulse
 
 // Instance a few transform objects
 IPARK  ipark1  = IPARK_DEFAULTS;
 
-// Instance PI(D) regulators to regulate the d and q  axis currents,
-// speed and position
-PIDREG3         pid_pos = PIDREG3_DEFAULTS;          // (optional - for eval)
+// Instance PI(D) regulators to regulate the d and q  axis currents, speed and position
+PIDREG3         pid_pos = PIDREG3_DEFAULTS;// (optional - for eval)
 PI_CONTROLLER   pi_pos  = PI_CONTROLLER_DEFAULTS;
-PID_CONTROLLER  pid_spd = {PID_TERM_DEFAULTS,
-                           PID_PARAM_DEFAULTS,
-                           PID_DATA_DEFAULTS};
+PID_CONTROLLER  pid_spd = {PID_TERM_DEFAULTS, PID_PARAM_DEFAULTS, PID_DATA_DEFAULTS};
 
 // Instance a ramp controller to smoothly ramp the frequency
 RMPCNTL rc1 = RMPCNTL_DEFAULTS;
@@ -299,162 +183,91 @@ float32_t IdRef_run = 0;
 
 // Variables for position reference generation and control
 // =========================================================
-float32_t posArray[] = {1.5, -1.5, 2.5, -2.5};
-float32_t posCntr = 0;
-float32_t posSlewRate = 0.001;
+float32_t   posArray[]  = {1.5, -1.5, 2.5, -2.5};
+float32_t   posCntr     = 0;
+float32_t   posSlewRate = 0.001;
+int16_t     posPtrMax   = 2;
+int16_t     posPtr      = 0;
 
-int16_t posPtrMax = 2;
-int16_t posPtr = 0;
 
-// ****************************************************************************
-// Variables for Datalog module
-// ****************************************************************************
-//float32_t DBUFF_4CH1[200] = {0};
-//float32_t DBUFF_4CH2[200] = {0};
-//float32_t DBUFF_4CH3[200] = {0};
-//float32_t DBUFF_4CH4[200] = {0};
-//float32_t dlogCh1 = 0;
-//float32_t dlogCh2 = 0;
-//float32_t dlogCh3 = 0;
-//float32_t dlogCh4 = 0;
-//
-//// Create an instance of DATALOG Module
-//DLOG_4CH_F dlog_4ch1;
-
-// ****************************************************************************
-// Variables for SFRA module
-// ****************************************************************************
-#if (BUILDLEVEL == FCL_LEVEL6)
-extern SFRA_F32 sfra1;
-SFRATest_e      sfraTestLoop = SFRA_TEST_D_AXIS;  //speedLoop;
-uint32_t        sfraCollectStart = 0;
-float32_t       sfraNoiseD = 0;
-float32_t       sfraNoiseQ = 0;
-float32_t       sfraNoiseW = 0;
-#endif
-
-// ****************************************************************************
 // Functions
-// ****************************************************************************
 
 //Function that initializes the variables for Fast current Loop library
 void initFCLVars()
 {
 #if (SAMPLING_METHOD == SINGLE_SAMPLING)
-    maxModIndex = (TPWM_CARRIER - (2*FCL_COMPUTATION_TIME))/TPWM_CARRIER;
+    maxModIndex           = (TPWM_CARRIER - (2*FCL_COMPUTATION_TIME))/TPWM_CARRIER;
     FCL_params.carrierMid = maxModIndex * INV_PWM_HALF_TBPRD * 0x10000L;
 #elif (SAMPLING_METHOD == DOUBLE_SAMPLING)
-    maxModIndex = (TPWM_CARRIER - (4*FCL_COMPUTATION_TIME))/TPWM_CARRIER;
+    maxModIndex           = (TPWM_CARRIER - (4*FCL_COMPUTATION_TIME))/TPWM_CARRIER;
     FCL_params.carrierMid = INV_PWM_HALF_TBPRD * 0x10000L;
 #endif
-    FCL_params.adcScale   = ADC_PU_PPB_SCALE_FACTOR * LEM_TO_SHUNT;
-    FCL_params.cmidsqrt3   = FCL_params.carrierMid * sqrt(3.0);
-
-    FCL_params.tSamp = (1.0F/SAMPLING_FREQ);
-    FCL_params.Rd    = RS;
-    FCL_params.Rq    = RS;
-    FCL_params.Ld    = LS;
-    FCL_params.Lq    = LS;
-    FCL_params.BemfK = 0.8;
-    FCL_params.Ibase = BASE_SHUNT_CURRENT; // LEM sensing is scaled to match
-                                           // with shunt sensing
-    FCL_params.Wbase = 2.0 * PI * BASE_FREQ;
-    FCL_params.wccD  = CUR_LOOP_BANDWIDTH,
-    FCL_params.wccQ  = CUR_LOOP_BANDWIDTH;
-
+    FCL_params.adcScale  = ADC_PU_PPB_SCALE_FACTOR * LEM_TO_SHUNT;
+    FCL_params.cmidsqrt3 = FCL_params.carrierMid * sqrt(3.0);
+    FCL_params.tSamp     = (1.0F/SAMPLING_FREQ);
+    FCL_params.Rd        = RS;
+    FCL_params.Rq        = RS;
+    FCL_params.Ld        = LS;
+    FCL_params.Lq        = LS;
+    FCL_params.BemfK     = 0.8;
+    FCL_params.Ibase     = BASE_SHUNT_CURRENT; // LEM sensing is scaled to match with shunt sensing
+    FCL_params.Wbase     = 2.0 * PI * BASE_FREQ;
+    FCL_params.wccD      = CUR_LOOP_BANDWIDTH,
+    FCL_params.wccQ      = CUR_LOOP_BANDWIDTH;
     return;
 }
 
-// ****************************************************************************
 // Read and update DC BUS voltage for FCL to use
-// ****************************************************************************
 float32_t getVdc(void)
 {
     float32_t vdc;
 
-    vdc = ((int32_t)SDFM_getFilterData(SDFM1_BASE, SDFM_FILTER_3) >> 16) *
-                      SD_VOLTAGE_SENSE_SCALE;
-    if(vdc < 1.0)
-    {
+    vdc = ((int32_t)SDFM_getFilterData(SDFM1_BASE, SDFM_FILTER_3) >> 16) * SD_VOLTAGE_SENSE_SCALE;
+    if(vdc < 1.0) {
         vdc = 1.0;
     }
-
     return(vdc);
 }
 
-// ****************************************************************************
 // Get FCL timing details - time stamp taken in library after PWM update
-// ****************************************************************************
-#if (BUILDLEVEL > FCL_LEVEL2)
 static inline void getFCLTime(void)
 {
     SETGPIO18_HIGH;
 
-    if(EPWM_getTimeBaseCounterValue(EPWM1_BASE) < FCL_cycleCount)
-    {
+    if(EPWM_getTimeBaseCounterValue(EPWM1_BASE) < FCL_cycleCount) {
         FCL_cycleCount = EPWM_getTimeBasePeriod(EPWM1_BASE) - FCL_cycleCount;
     }
-    if(fclCycleCountMax < FCL_cycleCount)
-    {
+    if(fclCycleCountMax < FCL_cycleCount) {
         fclCycleCountMax = FCL_cycleCount;
     }
-    if(fclClrCntr)
-    {
+    if(fclClrCntr) {
         fclCycleCountMax = 0;
-        fclClrCntr = 0;
+        fclClrCntr       = 0;
     }
-
     fclLatencyInMicroSec = (fclCycleCountMax) * 0.01; //for 100MHz PWM clock
-
     SETGPIO18_LOW;
-
     return;
 }
-#endif
 
-// ****************************************************************************
 // setup CPU Timer
-// ****************************************************************************
 void setupCpuTimer(uint32_t base, uint32_t periodCount)
 {
-    CPUTimer_setPreScaler(CPUTIMER0_BASE, 0);  // divide by 1 (SYSCLKOUT)
-    CPUTimer_setPeriod(base, periodCount);
-    CPUTimer_stopTimer(base);                  // Stop timer / reload / restart
-    CPUTimer_setEmulationMode(base,
-                              CPUTIMER_EMULATIONMODE_STOPAFTERNEXTDECREMENT);
-    CPUTimer_reloadTimerCounter(base);  // Reload counter with period value
-    CPUTimer_resumeTimer(base);
-
+    CPUTimer_setPreScaler       ( CPUTIMER0_BASE, 0                                   ); // divide by 1 (SYSCLKOUT)
+    CPUTimer_setPeriod          ( base, periodCount                                   );
+    CPUTimer_stopTimer          ( base                                                ); // Stop timer / reload / restart
+    CPUTimer_setEmulationMode   ( base, CPUTIMER_EMULATIONMODE_STOPAFTERNEXTDECREMENT );
+    CPUTimer_reloadTimerCounter ( base                                                ); // Reload counter with period value
+    CPUTimer_resumeTimer        ( base                                                );
     return;
 }
-//*****************************************************************************
-//*****************************************************************************
-//TODO main() function enter
-//*****************************************************************************
-//*****************************************************************************
+// main() function enter
 void main(void)
 {
-    //
     // Initialize device clock and peripherals
-    //
     Device_init();
 
-    //
     // Disable pin locks and enable internal pullups.
-    //
     Device_initGPIO();
-
-    // Waiting for enable flag set
-//    while(enableFlag == false)
-//    {
-//        backTicker++;
-//    }
-
-    //findout the FCL SW version information
-    while(FCL_getSwVersion() != 0x00000006)
-    {
-        backTicker++;
-    }
 
     // Clear all interrupts and initialize PIE vector table:
     // Initialize the PIE control registers to their default state.
@@ -468,33 +281,6 @@ void main(void)
     // is not used in this example.  This is useful for debug purposes.
     Interrupt_initVectorTable();
 
-    // *************** SFRA & SFRA_GUI COMM INIT CODE START *******************
-#if BUILDLEVEL == FCL_LEVEL6
-    // ************************************************************************
-    // NOTE:
-    // =====
-    // In configureSFRA() below, use 'SFRA_GUI_PLOT_GH_H' to get open loop and
-    // plant Bode plots using SFRA_GUI and open loop and closed loop Bode plots
-    // using SFRA_GUI_MC. 'SFRA_GUI_PLOT_GH_CL' gives same plots for both GUIs.
-    // The CL plot inferences shown in SFRA_GUI is not according to
-    // NEMA ICS16 or GBT-16439-2009, so it is not recommended for bandwidth
-    // determination purposes in servo drive evaluations. Use SFRA_GUI_MC for
-    // that. Recommended to use the default setting (SFRA_GUI_PLOT_GH_H).
-    // ************************************************************************
-    //
-    // configure the SFRA module. SFRA module and settings found in
-    // fcl_f2838x_sfra_gui.c/.h
-    //
-
-    // Plot GH & H plots using SFRA_GUI, GH & CL plots using SFRA_GUI_MC
-    configureSFRA(SFRA_GUI_PLOT_GH_H, SAMPLING_FREQ);
-
-    // Plot GH & CL plots using SFRA_GUI, GH & CL plots using SFRA_GUI_MC
-//    configureSFRA(SFRA_GUI_PLOT_GH_CL, SAMPLING_FREQ);
-
-#endif
-    // **************** SFRA & SFRA_GUI COMM INIT CODE END ********************
-
     // Timing sync for background loops
     setupCpuTimer(CPUTIMER0_BASE, MICROSEC_50);    // A tasks
     setupCpuTimer(CPUTIMER1_BASE, MICROSEC_100);   // B tasks
@@ -506,12 +292,7 @@ void main(void)
     B_Task_Ptr = &B1;
     C_Task_Ptr = &C1;
 
-// ****************************************************************************
-// ****************************************************************************
-// GPIO Configuration
-// ****************************************************************************
-// ****************************************************************************
-
+    // GPIO Configuration
     configureGPIO();
 
     // GPIO11 routes out ADC SOCA, which can be used for timing measurements
@@ -521,51 +302,26 @@ void main(void)
     SysCtl_enableExtADCSOCSource(SYSCTL_ADCSOC_SRC_PWM1SOCA);
 
     //select Output XBAR, OUTPUT7 MUX13 for ADCSOCAO
-    XBAR_setOutputMuxConfig(XBAR_OUTPUT7, XBAR_OUT_MUX13_ADCSOCA);
-    XBAR_enableOutputMux(XBAR_OUTPUT7, XBAR_MUX13);
+    XBAR_setOutputMuxConfig ( XBAR_OUTPUT7, XBAR_OUT_MUX13_ADCSOCA );
+    XBAR_enableOutputMux    ( XBAR_OUTPUT7, XBAR_MUX13             );
 
     // OUTPUT7 of the OutputXBar and OUTPUT7 is coming out on GPIO11
     GPIO_setPinConfig(GPIO_11_OUTPUTXBAR7);
 
-// ****************************************************************************
-// ****************************************************************************
-// PWM Configuration
-// ****************************************************************************
-// ****************************************************************************
-
+    // PWM Configuration
     configurePWM();
 
-// ****************************************************************************
-// ****************************************************************************
-// SDFM configuration
-// ****************************************************************************
-// ****************************************************************************
-
+    // SDFM configuration
     configureSDFM();
 
-// ****************************************************************************
-// ****************************************************************************
-// ADC Configuration
-// ****************************************************************************
-// ****************************************************************************
-
+    // ADC Configuration
     configureADC();
 
-// ****************************************************************************
-// ****************************************************************************
-// Initialize FCL library
-// ****************************************************************************
-// ****************************************************************************
-
-    //
+    // Initialize FCL library
     // This function initializes the ADC PPB result bases, as well as the ADC
     // module used to sample phase W. Ensure that the final argument passed
     // corresponds to the ADC base used to sample phase W on the HW board
-    //
-    FCL_initADC(ADCARESULT_BASE, ADC_PPB_NUMBER1,
-                ADCBRESULT_BASE, ADC_PPB_NUMBER1,
-                ADCA_BASE);
-
+    FCL_initADC(ADCARESULT_BASE, ADC_PPB_NUMBER1, ADCBRESULT_BASE, ADC_PPB_NUMBER1, ADCA_BASE); 
     //
     // ensure that the correct PWM base addresses are being passed to the
     // FCL library here. pwmHandle[0:2] should represent inverter phases
@@ -573,21 +329,14 @@ void main(void)
     //
     FCL_initPWM(EPWM1_BASE, EPWM2_BASE, EPWM3_BASE);
 
-    //
     // ensure the correct QEP base is being passed
-    //
     FCL_initQEP(EQEP1_BASE);
 
     // Initialize Fast current loop variables
     initFCLVars();
 
-// ****************************************************************************
-// ****************************************************************************
 // Setting up link from EPWM to ADC
 //    - EPWM1 - Inverter currents at sampling frequency (@ PRD or @ (PRD&ZRO) )
-// ****************************************************************************
-// ****************************************************************************
-
 #if (SAMPLING_METHOD == SINGLE_SAMPLING)
     // Select SOC from counter at ctr = prd
     EPWM_setADCTriggerSource(EPWM1_BASE, EPWM_SOC_A, EPWM_SOC_TBCTR_PERIOD);
@@ -602,36 +351,16 @@ void main(void)
     // Enable SOC on A group
     EPWM_enableADCTrigger(EPWM1_BASE, EPWM_SOC_A);
 
-// ****************************************************************************
-// ****************************************************************************
-// DAC Configuration
-// ****************************************************************************
-// ****************************************************************************
-
+    // DAC Configuration
     configureDAC();
 
-// ****************************************************************************
-// ****************************************************************************
-// Position sensor configuration
-// ****************************************************************************
-// ****************************************************************************
-
+    // Position sensor configuration
     configurePositionSensing();
 
-// ****************************************************************************
-// ****************************************************************************
-// Call HVDMC Protection function
-// ****************************************************************************
-// ****************************************************************************
-
+    // Call HVDMC Protection function
     configureHVDMCProtection();
 
-// ****************************************************************************
-// ****************************************************************************
-// Initialize CLA module
-// ****************************************************************************
-// ****************************************************************************
-
+    // Initialize CLA module
     // make sure QEP access is given to CLA as Secondary master
     SysCtl_selectSecMaster(SYSCTL_SEC_MASTER_CLA, SYSCTL_SEC_MASTER_CLA);
 
@@ -644,42 +373,32 @@ void main(void)
     // Enable UTO on QEP
     EQEP_enableInterrupt(EQEP1_BASE, EQEP_INT_UNIT_TIME_OUT);
 
-// ****************************************************************************
-// ****************************************************************************
-// PI control configuration
-// ****************************************************************************
-// ****************************************************************************
-
-// Note that the vectorial sum of d-q PI outputs should be less than 1.0 which
-// refers to maximum duty cycle for SVGEN. Another duty cycle limiting factor
-// is current sense through shunt resistors which depends on hardware/software
-// implementation. Depending on the application requirements 3,2 or a single
-// shunt resistor can be used for current waveform reconstruction. The higher
-// number of shunt resistors allow the higher duty cycle operation and better
-// dc bus utilization. The users should adjust the PI saturation levels
-// carefully during open loop tests (i.e pi_id.Umax, pi_iq.Umax and Umins) as
-// in project manuals. Violation of this procedure yields distorted  current
-// waveforms and unstable closed loop operations that may damage the inverter.
-
+    // PI control configuration
+    // Note that the vectorial sum of d-q PI outputs should be less than 1.0 which
+    // refers to maximum duty cycle for SVGEN. Another duty cycle limiting factor
+    // is current sense through shunt resistors which depends on hardware/software
+    // implementation. Depending on the application requirements 3,2 or a single
+    // shunt resistor can be used for current waveform reconstruction. The higher
+    // number of shunt resistors allow the higher duty cycle operation and better
+    // dc bus utilization. The users should adjust the PI saturation levels
+    // carefully during open loop tests (i.e pi_id.Umax, pi_iq.Umax and Umins) as
+    // in project manuals. Violation of this procedure yields distorted  current
+    // waveforms and unstable closed loop operations that may damage the inverter.
     configurePIControllers();
     FCL_resetController();
 
     // Initialize the RAMPGEN module
     rg1.StepAngleMax = BASE_FREQ*T;
-    rg1.Angle = 0;
-    rg1.Out = 0;
-    rg1.Gain = 1.0;
-    rg1.Offset = 1.0;
+    rg1.Angle        = 0;
+    rg1.Out          = 0;
+    rg1.Gain         = 1.0;
+    rg1.Offset       = 1.0;
 
     // set mock REFERENCES for Speed and current loops
-    speedRef  = 0.05;
-    IdRef     = 0;
+    speedRef = 0.05;
+    IdRef    = 0;
 
-#if (BUILDLEVEL==FCL_LEVEL5)
     IqRef = 0.05;
-#else
-    IqRef = 0.03;
-#endif
 
     // Init FLAGS
     lsw      = QEP_ALIGNMENT;
@@ -915,20 +634,12 @@ void C0(void)
 void A1(void) // SPARE (not used)
 //--------------------------------------------------------
 {
-    // *******************************************************
     // Current limit setting / tuning in Debug environment
-    // *******************************************************
     LEM_curHi = 2048 + LEM(curLimit);
     LEM_curLo = 2048 - LEM(curLimit);
-    SHUNT_curHi = 2048 + SHUNT(curLimit);
-    SHUNT_curLo = 2048 - SHUNT(curLimit);
 
     configureCMPSSFilter(CMPSS1_BASE, LEM_curHi, LEM_curLo);      // LEM - V
     configureCMPSSFilter(CMPSS3_BASE, LEM_curHi, LEM_curLo);      // LEM - W
-#if (CGND == HOT)
-    configureCMPSSFilter(CMPSS2_BASE, SHUNT_curHi, SHUNT_curLo);  // SHUNT - V
-    configureCMPSSFilter(CMPSS6_BASE, SHUNT_curHi, SHUNT_curLo);  // SHUNT - U
-#endif
 
     // Check for PWM trip due to over current
     if((EPWM_getTripZoneFlagStatus(EPWM1_BASE) & EPWM_TZ_FLAG_OST) ||
@@ -948,7 +659,7 @@ void A1(void) // SPARE (not used)
     {
         // clear the ocp latch in macro M6
         GPIO_writePin(41, 0);
-        tripFlagDMC = 0;
+        tripFlagDMC      = 0;
         clearTripFlagDMC = 0;
         GPIO_writePin(41, 1);
 
@@ -956,12 +667,9 @@ void A1(void) // SPARE (not used)
         DEVICE_DELAY_US(1L);
 
         // clear OST & DCAEVT1 flags
-        EPWM_clearTripZoneFlag(EPWM1_BASE, (EPWM_TZ_FLAG_OST |
-                                            EPWM_TZ_FLAG_DCAEVT1));
-        EPWM_clearTripZoneFlag(EPWM2_BASE, (EPWM_TZ_FLAG_OST |
-                                            EPWM_TZ_FLAG_DCAEVT1));
-        EPWM_clearTripZoneFlag(EPWM3_BASE, (EPWM_TZ_FLAG_OST |
-                                            EPWM_TZ_FLAG_DCAEVT1));
+        EPWM_clearTripZoneFlag(EPWM1_BASE, (EPWM_TZ_FLAG_OST | EPWM_TZ_FLAG_DCAEVT1));
+        EPWM_clearTripZoneFlag(EPWM2_BASE, (EPWM_TZ_FLAG_OST | EPWM_TZ_FLAG_DCAEVT1));
+        EPWM_clearTripZoneFlag(EPWM3_BASE, (EPWM_TZ_FLAG_OST | EPWM_TZ_FLAG_DCAEVT1));
 
         // clear HLATCH - (not in TRIP gen path)
         CMPSS_clearFilterLatchHigh(CMPSS1_BASE);
@@ -976,17 +684,14 @@ void A1(void) // SPARE (not used)
         CMPSS_clearFilterLatchLow(CMPSS6_BASE);
     }
 
-    //-------------------
     //the next time CpuTimer0 'counter' reaches Period value go to A2
     A_Task_Ptr = &A2;
-    //-------------------
 }
 
 //-----------------------------------------------------------------
 void A2(void) // SPARE (not used)
 //-----------------------------------------------------------------
 {
-
     //-------------------
     //the next time CpuTimer0 'counter' reaches Period value go to A3
     A_Task_Ptr = &A3;
@@ -997,7 +702,6 @@ void A2(void) // SPARE (not used)
 void A3(void) // SPARE (not used)
 //-----------------------------------------
 {
-
     //-----------------
     //the next time CpuTimer0 'counter' reaches Period value go to A1
     A_Task_Ptr = &A1;
@@ -1007,944 +711,205 @@ void A3(void) // SPARE (not used)
 //==============================================================================
 //  B - TASKS (executed in every 100 usec)
 //==============================================================================
-
-//----------------------------------- USER -------------------------------------
-
-//----------------------------------------
 void B1(void) // Toggle GPIO-00
-//----------------------------------------
 {
-#if BUILDLEVEL == FCL_LEVEL6
-    //
-    // SFRA test
-    //
-    SFRA_F32_runBackgroundTask(&sfra1);
-    SFRA_GUI_runSerialHostComms(&sfra1);
-#endif
-    //-----------------
     //the next time CpuTimer1 'counter' reaches Period value go to B2
     B_Task_Ptr = &B2;
-    //-----------------
 }
-
-//----------------------------------------
 void B2(void) // SPARE
-//----------------------------------------
 {
-
-    //-----------------
     //the next time CpuTimer1 'counter' reaches Period value go to B3
     B_Task_Ptr = &B3;
-    //-----------------
 }
-
-//----------------------------------------
 void B3(void) // SPARE
-//----------------------------------------
 {
-
-    //-----------------
     //the next time CpuTimer1 'counter' reaches Period value go to B1
     B_Task_Ptr = &B1;
-    //-----------------
 }
-
 //==============================================================================
 //  C - TASKS (executed in every 150 usec)
 //==============================================================================
-
-//--------------------------------- USER ---------------------------------------
-
 //----------------------------------------
 void C1(void)   // Toggle GPIO-34
 //----------------------------------------
 {
-
-    if(ledCnt1==0)
-    {
+    if(ledCnt1==0) {
         ledCnt1 = 200;
         GPIO_togglePin(34);   // LED
     }
-    else
-    {
+    else {
         ledCnt1--;
     }
-
-    //-----------------
     //the next time CpuTimer2 'counter' reaches Period value go to C2
     C_Task_Ptr = &C2;
-    //-----------------
-
 }
 
 //----------------------------------------
 void C2(void) // SPARE
 //----------------------------------------
 {
-
-    //-----------------
     //the next time CpuTimer2 'counter' reaches Period value go to C3
     C_Task_Ptr = &C3;
-    //-----------------
 }
-
 //-----------------------------------------
 void C3(void) // SPARE
-//-----------------------------------------
 {
-
-    //-----------------
     //the next time CpuTimer2 'counter' reaches Period value go to C1
     C_Task_Ptr = &C1;
-    //-----------------
 }
-
-// ****************************************************************************
-// ****************************************************************************
-//   Various Incremental Build levels
-// ****************************************************************************
-// ****************************************************************************
-
-//TODO INCRBUILD 1
-#if (BUILDLEVEL==FCL_LEVEL1)
-// =============================== FCL_LEVEL 1 =================================
-// Level 1 verifies
-//  - PWM Generation blocks and DACs
-// =============================================================================
-
-static void buildLevel1(void)
-{
-// -------------------------------------------------------------------------
-// control force angle generation based on 'runMotor'
-// -------------------------------------------------------------------------
-    if(runMotor == MOTOR_STOP)
-    {
-        rc1.TargetValue = 0;
-        rc1.SetpointValue = 0;
-    }
-    else
-    {
-        rc1.TargetValue = speedRef;
-    }
-
-// -----------------------------------------------------------------------------
-// Connect inputs of the RMP module and call the ramp control module
-// -----------------------------------------------------------------------------
-    fclRampControl(&rc1);
-
-// -----------------------------------------------------------------------------
-// Connect inputs of the RAMP GEN module and call the ramp generator module
-// -----------------------------------------------------------------------------
-    rg1.Freq = rc1.SetpointValue;
-    fclRampGen((RAMPGEN *)&rg1);
-
-// -----------------------------------------------------------------------------
-// Connect inputs of the INV_PARK module and call the inverse park module
-// -----------------------------------------------------------------------------
-    ipark1.Ds = VdTesting;
-    ipark1.Qs = VqTesting;
-    ipark1.Sine = __sinpuf32(rg1.Out);
-    ipark1.Cosine = __cospuf32(rg1.Out);
-    runIPark(&ipark1);
-
-// -----------------------------------------------------------------------------
-// Position encoder suite module
-// -----------------------------------------------------------------------------
-    FCL_runQEPWrap(); // to wrap up the CLA functions in library
-
-// -----------------------------------------------------------------------------
-// Connect inputs of the SVGEN_DQ module and call the space-vector gen. module
-// -----------------------------------------------------------------------------
-    svgen1.Ualpha = ipark1.Alpha;
-    svgen1.Ubeta  = ipark1.Beta;
-    runSVGenDQ(&svgen1);
-
-// -----------------------------------------------------------------------------
-// Computed Duty and Write to CMPA register
-// -----------------------------------------------------------------------------
-    EPWM_setCounterCompareValue(EPWM1_BASE, EPWM_COUNTER_COMPARE_A,
-                        (uint16_t)((INV_PWM_HALF_TBPRD*svgen1.Tc) +
-                                    INV_PWM_HALF_TBPRD));
-    EPWM_setCounterCompareValue(EPWM2_BASE, EPWM_COUNTER_COMPARE_A,
-                        (uint16_t)((INV_PWM_HALF_TBPRD*svgen1.Ta) +
-                                    INV_PWM_HALF_TBPRD));
-    EPWM_setCounterCompareValue(EPWM3_BASE, EPWM_COUNTER_COMPARE_A,
-                        (uint16_t)((INV_PWM_HALF_TBPRD*svgen1.Tb) +
-                                    INV_PWM_HALF_TBPRD));
-
-// -----------------------------------------------------------------------------
-// Connect inputs of the DATALOG module
-// -----------------------------------------------------------------------------
-//    dlogCh1 = rg1.Out;
-//    dlogCh2 = svgen1.Ta;
-//    dlogCh3 = svgen1.Tb;
-//    dlogCh4 = svgen1.Tc;
-
-//------------------------------------------------------------------------------
-// Variable display on DACs B and C
-//------------------------------------------------------------------------------
-    DAC_setShadowValue(DACB_BASE, DAC_MACRO_PU(svgen1.Ta));
-    DAC_setShadowValue(DACC_BASE, DAC_MACRO_PU(svgen1.Tb));
-
-    return;
-}
-
-#endif // (BUILDLEVEL==FCL_LEVEL1)
-
-// ****************************************************************************
-// ****************************************************************************
-
-//TODO INCRBUILD 2
-#if (BUILDLEVEL==FCL_LEVEL2)
-// =============================== FCL_LEVEL 2 =================================
-// Level 2 verifies
-//   - LEM current sense schems
-//     - analog-to-digital conversion (LEM)
-//   - Current Limit Settings for over current protection
-//   - Position sensor interface is taken care by FCL lib using QEP
-//     - speed estimation
-// =============================================================================
-
-static void buildLevel2(void)
-{
-    // -------------------------------------------------------------------------
-    // Alignment Routine: this routine aligns the motor to zero electrical
-    // angle and in case of QEP also finds the index location and initializes
-    // the angle w.r.t. the index location
-    // -------------------------------------------------------------------------
-    if(runMotor == MOTOR_STOP)
-    {
-        lsw = QEP_ALIGNMENT;
-        IdRef = 0;
-        pi_id.ref = IdRef;
-        FCL_resetController();
-    }
-    else if(lsw == QEP_ALIGNMENT)
-    {
-        // for restarting from (runMotor = STOP)
-        rc1.TargetValue = 0;
-        rc1.SetpointValue = 0;
-
-#if POSITION_ENCODER==QEP_POS_ENCODER
-        // for QEP, spin the motor to find the index pulse
-        lsw = QEP_WAIT_FOR_INDEX;
-#else
-        // for absolute encoders no need for lsw = QEP_WAIT_FOR_INDEX
-        lsw = QEP_GOT_INDEX;
-#endif
-    } // end else if(lsw == QEP_ALIGNMENT)
-
-// ----------------------------------------------------------------------------
-//  Connect inputs of the RMP module and call the ramp control module
-// ----------------------------------------------------------------------------
-    if(lsw == QEP_ALIGNMENT)
-    {
-        rc1.TargetValue = 0;
-    }
-    else
-    {
-        rc1.TargetValue = speedRef;
-    }
-
-    fclRampControl(&rc1);
-
-// ----------------------------------------------------------------------------
-//  Connect inputs of the RAMP GEN module and call the ramp generator module
-// ----------------------------------------------------------------------------
-    rg1.Freq = rc1.SetpointValue;
-    fclRampGen((RAMPGEN *)&rg1);
-
-// ----------------------------------------------------------------------------
-//  Measure phase currents, subtract the offset and normalize from (-0.5,+0.5)
-//  to (-1,+1). Connect inputs of the CLARKE module and call the clarke
-//  transformation module
-// ----------------------------------------------------------------------------
-
-    //wait on ADC EOC
-    while(ADC_getInterruptStatus(ADCA_BASE, ADC_INT_NUMBER1) == 0);
-    NOP;    //1 cycle delay for ADC PPB result
-
-    clarke1.As = (float32_t)IFB_LEMV_PPB * FCL_params.adcScale;
-    clarke1.Bs = (float32_t)IFB_LEMW_PPB * FCL_params.adcScale;
-    runClarke(&clarke1);
-
-// ----------------------------------------------------------------------------
-//  Measure DC Bus voltage using SDFM Filter3
-// ----------------------------------------------------------------------------
-    FCL_params.Vdcbus = getVdc();
-
-// ----------------------------------------------------------------------------
-// Connect inputs of the PARK module and call the park module
-// ----------------------------------------------------------------------------
-    park1.Alpha  = clarke1.Alpha;
-    park1.Beta   = clarke1.Beta;
-    park1.Angle  = rg1.Out;
-    park1.Sine   = __sinpuf32(park1.Angle);
-    park1.Cosine = __cospuf32(park1.Angle);
-    runPark(&park1);
-
-// ----------------------------------------------------------------------------
-// Connect inputs of the INV_PARK module and call the inverse park module
-// ----------------------------------------------------------------------------
-    ipark1.Ds = VdTesting;
-    ipark1.Qs = VqTesting;
-    ipark1.Sine = park1.Sine;
-    ipark1.Cosine = park1.Cosine;
-    runIPark(&ipark1);
-
-// ----------------------------------------------------------------------------
-// Position encoder suite module
-// ----------------------------------------------------------------------------
-    FCL_runQEPWrap();
-
-    // Position Sensing is performed in CLA
-    posEncElecTheta[QEP_POS_ENCODER] = qep1.ElecTheta;
-    posEncMechTheta[QEP_POS_ENCODER] = qep1.MechTheta;
-
-// ----------------------------------------------------------------------------
-// Connect inputs of the SPEED_FR module and call the speed calculation module
-// ----------------------------------------------------------------------------
-    speed1.ElecTheta = posEncElecTheta[POSITION_ENCODER];
-    runSpeedFR(&speed1);
-
-// ----------------------------------------------------------------------------
-// Connect inputs of the SVGEN_DQ module and call the space-vector gen. module
-// ----------------------------------------------------------------------------
-    svgen1.Ualpha = ipark1.Alpha;
-    svgen1.Ubeta  = ipark1.Beta;
-    runSVGenDQ(&svgen1);
-
-// ----------------------------------------------------------------------------
-//  Computed Duty and Write to CMPA register
-// ----------------------------------------------------------------------------
-    EPWM_setCounterCompareValue(EPWM1_BASE, EPWM_COUNTER_COMPARE_A,
-                        (uint16_t)((INV_PWM_HALF_TBPRD*svgen1.Tc) +
-                                    INV_PWM_HALF_TBPRD));
-    EPWM_setCounterCompareValue(EPWM2_BASE, EPWM_COUNTER_COMPARE_A,
-                        (uint16_t)((INV_PWM_HALF_TBPRD*svgen1.Ta) +
-                                    INV_PWM_HALF_TBPRD));
-    EPWM_setCounterCompareValue(EPWM3_BASE, EPWM_COUNTER_COMPARE_A,
-                        (uint16_t)((INV_PWM_HALF_TBPRD*svgen1.Tb) +
-                                    INV_PWM_HALF_TBPRD));
-
-// ----------------------------------------------------------------------------
-//    Connect inputs of the DATALOG module
-// ----------------------------------------------------------------------------
-//    dlogCh1 = rg1.Out;
-//    dlogCh2 = speed1.ElecTheta;
-//    dlogCh3 = clarke1.As;
-//    dlogCh4 = clarke1.Bs;
-
-//-----------------------------------------------------------------------------
-// Variable display on DACs B and C
-//-----------------------------------------------------------------------------
-    DAC_setShadowValue(DACB_BASE, DAC_MACRO_PU(rg1.Out));
-    DAC_setShadowValue(DACC_BASE,
-                       DAC_MACRO_PU(posEncElecTheta[POSITION_ENCODER]));
-
-    return;
-}
-
-#endif // (BUILDLEVEL==FCL_LEVEL2)
-
-// ****************************************************************************
-// ****************************************************************************
-
-//TODO INCRBUILD 3
-#if (BUILDLEVEL==FCL_LEVEL3)
-// =============================== FCL_LEVEL 3 ================================
-//  Level 3 verifies the dq-axis current regulation performed by PID and speed
-//  measurement modules
-//  lsw = QEP_ALIGNMENT      : lock the rotor of the motor
-//  lsw = QEP_WAIT_FOR_INDEX : close the current loop
-//  NOTE:-
-//      1. Iq loop is closed using actual QEP angle.
-//         Therefore, motor speed races to high speed with lighter load. It is
-//         better to ensure the motor is loaded during this test. Otherwise,
-//         the motor will run at higher speeds where it can saturate.
-//         It may be typically around the rated speed of the motor or higher.
-//      2. clarke1.As and clarke1.Bs are not brought out from the FCL library
-//         as of library release version 0x02
-// ============================================================================
-
-static void buildLevel3(void)
-{
-
-#if  (FCL_CNTLR ==  PI_CNTLR)
-    FCL_runPICtrl();
-#endif
-
-#if (FCL_CNTLR ==  CMPLX_CNTLR)
-    FCL_runComplexCtrl();
-#endif
-
-// ----------------------------------------------------------------------------
-// FCL_cycleCount calculations for debug
-// customer can remove the below code in final implementation
-// ----------------------------------------------------------------------------
-    getFCLTime();
-
-// ----------------------------------------------------------------------------
-// Measure DC Bus voltage using SDFM Filter3
-// ----------------------------------------------------------------------------
-    FCL_params.Vdcbus = getVdc();
-
-// ----------------------------------------------------------------------------
-// Fast current loop controller wrapper
-// ----------------------------------------------------------------------------
-    #if  (FCL_CNTLR ==  PI_CNTLR)
-        FCL_runPICtrlWrap();
-    #endif
-
-    #if (FCL_CNTLR ==  CMPLX_CNTLR)
-        FCL_runComplexCtrlWrap();
-    #endif
-
-// ----------------------------------------------------------------------------
-// Alignment Routine: this routine aligns the motor to zero electrical angle
-// and in case of QEP also finds the index location and initializes the angle
-// w.r.t. the index location
-// ----------------------------------------------------------------------------
-    if(runMotor == MOTOR_STOP)
-    {
-        lsw = QEP_ALIGNMENT;
-        pi_id.ref = 0;
-        IdRef = 0;
-        FCL_resetController();
-    }
-    else if(lsw == QEP_ALIGNMENT)
-    {
-        // alignment current
-        IdRef = IdRef_start;  //0.1;
-
-        // set up an alignment and hold time for shaft to settle down
-        if(pi_id.ref >= IdRef)
-        {
-            if(++alignCntr >= alignCnt)
-            {
-                alignCntr  = 0;
-//              IdRef = IdRef_run;
-            #if POSITION_ENCODER==QEP_POS_ENCODER
-                // for QEP, spin the motor to find the index pulse
-                lsw = QEP_WAIT_FOR_INDEX;
-            #else
-                // for absolute encoders no need for lsw = QEP_WAIT_FOR_INDEX
-                lsw = QEP_GOT_INDEX;
-            #endif
-            }
-        }
-    } // end else if(lsw == QEP_ALIGNMENT)
-    else if(lsw == QEP_GOT_INDEX)
-    {
-        IdRef = IdRef_run;
-    }
-
-// ----------------------------------------------------------------------------
-// Connect inputs of the RMP module and call the ramp control module
-// ----------------------------------------------------------------------------
-    if(lsw == QEP_ALIGNMENT)
-    {
-        rc1.TargetValue = 0;
-        rc1.SetpointValue = 0;
-        rc1.RampDelayCount=10000;
-    }
-    else
-    {
-        rc1.TargetValue = speedRef;
-    }
-    fclRampControl(&rc1);
-
-// ----------------------------------------------------------------------------
-// Connect inputs of the RAMP GEN module and call the ramp generator module
-// ----------------------------------------------------------------------------
-    rg1.Freq = rc1.SetpointValue;
-    fclRampGen((RAMPGEN *)&rg1);
-
-    posEncElecTheta[POSITION_ENCODER] = qep1.ElecTheta;
-    speed1.ElecTheta = posEncElecTheta[POSITION_ENCODER];
-    runSpeedFR(&speed1);
-
-//-----------------------------------------------------------------------------
-// Variable display on DACs B and C
-//-----------------------------------------------------------------------------
-    DAC_setShadowValue(DACB_BASE, DAC_MACRO_PU(pi_iq.ref)); //rg1.Out*4096;
-
-    //posEncElecTheta[POSITION_ENCODER]*4096;
-    DAC_setShadowValue(DACC_BASE, DAC_MACRO_PU(pi_iq.fbk));
-
-// ----------------------------------------------------------------------------
-// setup iqref for FCL
-// ----------------------------------------------------------------------------
-    pi_iq.ref = (lsw == QEP_ALIGNMENT) ? 0 : IqRef;
-
-// ----------------------------------------------------------------------------
-// setup idref for FCL
-// ----------------------------------------------------------------------------
-    pi_id.ref = ramper(IdRef, pi_id.ref, 0.00001);
-
-// ----------------------------------------------------------------------------
-// Connect inputs of the DATALOG module
-// ----------------------------------------------------------------------------
-//    dlogCh1 = posEncElecTheta[POSITION_ENCODER];
-//    dlogCh2 = rg1.Out;
-//    dlogCh3 = pi_iq.ref;
-//    dlogCh4 = pi_iq.fbk;
-
-    return;
-}
-#endif // (BUILDLEVEL==FCL_LEVEL3)
-
-// ****************************************************************************
-// ****************************************************************************
-
-//TODO INCRBUILD 4
-#if ( (BUILDLEVEL==FCL_LEVEL4) || (BUILDLEVEL == FCL_LEVEL6) )
-// =============================== FCL_LEVEL 4 ================================
-// Level 4 verifies the speed regulator performed by PID module.
-// The system speed loop is closed by using the measured speed as feedback
-//  lsw = QEP_ALIGNMENT      : lock the rotor of the motor
-//  lsw = QEP_WAIT_FOR_INDEX : - needed only with QEP encoders until first
-//                               index pulse
-//                             - Loops shown for 'lsw=QEP_GOT_INDEX' are closed
-//                               in this stage
-//  lsw = QEP_GOT_INDEX      : close speed loop and current loops Id, Iq
-//
-//  ****************************************************************
-//
-//  Level 6 verifies the SFRA functions used to verify bandwidth.
-//  This demo code uses Level 4 code to perform SFRA analysis on
-//  a current loop inside the speed loop
-//
-// ============================================================================
-
-static void buildLevel46(void)
-{
-#if  (FCL_CNTLR ==  PI_CNTLR)
-    FCL_runPICtrl();
-#endif
-
-#if (FCL_CNTLR ==  CMPLX_CNTLR)
-    FCL_runComplexCtrl();
-#endif
-
-// ----------------------------------------------------------------------------
-// FCL_cycleCount calculations for debug
-// customer can remove the below code in final implementation
-// ----------------------------------------------------------------------------
-    getFCLTime();
-
-// -----------------------------------------------------------------------------
-// Measure DC Bus voltage using SDFM Filter3
-// ----------------------------------------------------------------------------
-    FCL_params.Vdcbus = getVdc();
-
-// ----------------------------------------------------------------------------
-// Fast current loop controller wrapper
-// ----------------------------------------------------------------------------
-    #if  (FCL_CNTLR ==  PI_CNTLR)
-        FCL_runPICtrlWrap();
-    #endif
-
-    #if (FCL_CNTLR ==  CMPLX_CNTLR)
-        FCL_runComplexCtrlWrap();
-    #endif
-
-    // ------------------------------------------------------------------------
-    // Alignment Routine: this routine aligns the motor to zero electrical
-    // angle and in case of QEP also finds the index location and initializes
-    // the angle w.r.t. the index location
-    // ------------------------------------------------------------------------
-    if(runMotor == MOTOR_STOP)
-    {
-        lsw = QEP_ALIGNMENT;
-        IdRef = 0;
-        tempIdRef = IdRef;
-        FCL_resetController();
-    }
-    else if(lsw == QEP_ALIGNMENT)
-    {
-        // alignment current
-        IdRef = IdRef_start;  //(0.1);
-
-        // set up an alignment and hold time for shaft to settle down
-        if(tempIdRef >= IdRef)
-        {
-            if(++alignCntr >= alignCnt)
-            {
-                alignCntr  = 0;
-//              IdRef = IdRef_run;
-#if POSITION_ENCODER==QEP_POS_ENCODER
-                // for QEP, spin the motor to find the index pulse
-                lsw = QEP_WAIT_FOR_INDEX;
-#else
-                // for absolute encoders no need for lsw = QEP_WAIT_FOR_INDEX
-                lsw = QEP_GOT_INDEX;
-#endif
-            }
-        }
-    } // end else if(lsw == QEP_ALIGNMENT)
-    else if(lsw == QEP_GOT_INDEX)
-    {
-        IdRef = IdRef_run;
-    }
-
-// -----------------------------------------------------------------------------
-//  Connect inputs of the RMP module and call the ramp control module
-// -----------------------------------------------------------------------------
-    if(lsw == QEP_ALIGNMENT)
-    {
-        rc1.TargetValue = 0;
-        rc1.SetpointValue = 0;
-    }
-    else if(lsw == QEP_WAIT_FOR_INDEX)
-    {
-        rc1.TargetValue = lsw1Speed * (speedRef > 0 ? 1 : -1);
-    }
-    else
-    {
-        rc1.TargetValue = speedRef;
-    }
-
-    fclRampControl(&rc1);
-
-// -----------------------------------------------------------------------------
-//  Connect inputs of the RAMP GEN module and call the ramp generator module
-// -----------------------------------------------------------------------------
-    rg1.Freq = rc1.SetpointValue;
-    fclRampGen((RAMPGEN *)&rg1);
-
-// -----------------------------------------------------------------------------
-//  Connect inputs of the SPEED_FR module and call the speed calculation module
-// -----------------------------------------------------------------------------
-    posEncElecTheta[QEP_POS_ENCODER] = qep1.ElecTheta;
-    posEncMechTheta[QEP_POS_ENCODER] = qep1.MechTheta;
-    speed1.ElecTheta = posEncElecTheta[POSITION_ENCODER];
-    runSpeedFR(&speed1);
-
-#if (BUILDLEVEL == FCL_LEVEL6)
-// -----------------------------------------------------------------------------
-//    SFRA collect routine, only to be called after SFRA inject has occurred 1st
-// -----------------------------------------------------------------------------
-    if(sfraCollectStart)
-    {
-        collectSFRA();    // Collect noise feedback from loop
-    }
-
-// -----------------------------------------------------------------------------
-//  SFRA injection
-// -----------------------------------------------------------------------------
-    injectSFRA();               // create SFRA Noise per 'sfraTestLoop'
-    sfraCollectStart = 1;       // enable SFRA data collection
-#endif
-
-// -----------------------------------------------------------------------------
-//    Connect inputs of the PI module and call the PID speed controller module
-// -----------------------------------------------------------------------------
-    if (++speedLoopCount >= speedLoopPrescaler)
-    {
-           pid_spd.term.Ref = rc1.SetpointValue  //speedRef;
-#if (BUILDLEVEL == FCL_LEVEL6)
-                   + sfraNoiseW           // SFRA Noise injection in speed loop
-#endif
-                   ;
-           pid_spd.term.Fbk = speed1.Speed;
-           runPID(&pid_spd);
-
-           speedLoopCount = 1;
-    }
-
-    if((lsw == QEP_ALIGNMENT) || (lsw == QEP_WAIT_FOR_INDEX))
-    {
-           pid_spd.data.d1 = 0;
-           pid_spd.data.d2 = 0;
-           pid_spd.data.i1 = 0;
-           pid_spd.data.ud = 0;
-           pid_spd.data.ui = 0;
-           pid_spd.data.up = 0;
-    }
-
-// -----------------------------------------------------------------------------
-//    setup iqref and idref
-// -----------------------------------------------------------------------------
-    pi_iq.ref = (lsw == QEP_ALIGNMENT) ? 0 :
-                (lsw == QEP_WAIT_FOR_INDEX) ? IqRef :
-                pid_spd.term.Out
-#if (BUILDLEVEL == FCL_LEVEL6)
-                   + sfraNoiseQ           // SFRA Noise injection in Q axis
-#endif
-                   ;
-
-// -----------------------------------------------------------------------------
-//  setup idref for FCL
-// -----------------------------------------------------------------------------
-    tempIdRef = ramper(IdRef, tempIdRef, 0.00001);
-    pi_id.ref = tempIdRef
-#if (BUILDLEVEL == FCL_LEVEL6)
-                   + sfraNoiseD           // SFRA Noise injection in D axis
-#endif
-                   ;
-// -----------------------------------------------------------------------------
-//    Connect inputs of the DATALOG module
-// -----------------------------------------------------------------------------
-//    dlogCh1 = posEncElecTheta[POSITION_ENCODER];
-//    dlogCh2 = speed1.Speed;
-//    dlogCh3 = pi_id.fbk;
-//    dlogCh4 = pi_iq.fbk;
-
-//------------------------------------------------------------------------------
-// Variable display on DACs B and C
-//------------------------------------------------------------------------------
-   DAC_setShadowValue(DACB_BASE, DAC_MACRO_PU(rg1.Out));
-   DAC_setShadowValue(DACC_BASE,
-                      DAC_MACRO_PU(posEncElecTheta[POSITION_ENCODER]));
-
-   return;
-}
-
-#endif // ( (BUILDLEVEL==FCL_LEVEL4) || (BUILDLEVEL == FCL_LEVEL6) )
-
-// ****************************************************************************
-// ****************************************************************************
-
-//TODO INCRBUILD 5
-#if (BUILDLEVEL==FCL_LEVEL5)
-// =============================== FCL_LEVEL 5 =================================
-//  Level 5 verifies the position control
-//  Position references generated locally from a posArray
-//  lsw = QEP_ALIGNMENT      : lock the rotor of the motor
-//  lsw = QEP_WAIT_FOR_INDEX : - needed only with QEP encoders until first
-//                               index pulse
-//                             - Loops shown for 'lsw=QEP_GOT_INDEX' are closed
-//                               in this stage
-//  lsw = QEP_GOT_INDEX      : close all loops, position/ speed/ currents Id/Iq
-//
-//    NOTE:-
-//       clarke1.As and clarke1.Bs are not brought out from the FCL library
-//       as of library release version 0x02
-//
-// =============================================================================
 
 static void buildLevel5(void)
 {
 #if  (FCL_CNTLR ==  PI_CNTLR)
-    FCL_runPICtrl();
+   FCL_runPICtrl();
 #endif
 
 #if (FCL_CNTLR ==  CMPLX_CNTLR)
-    FCL_runComplexCtrl();
+   FCL_runComplexCtrl();
 #endif
 
-// -----------------------------------------------------------------------------
-//    FCL_cycleCount calculations for debug
-//    customer can remove the below code in final implementation
-// -----------------------------------------------------------------------------
-    getFCLTime();
+   //    FCL_cycleCount calculations for debug
+   //    customer can remove the below code in final implementation
+   getFCLTime();
 
-// -----------------------------------------------------------------------------
-//  Measure DC Bus voltage using SDFM Filter3
-// -----------------------------------------------------------------------------
-    FCL_params.Vdcbus = getVdc();
+   //  Measure DC Bus voltage using SDFM Filter3
+   FCL_params.Vdcbus = getVdc();
 
-// -----------------------------------------------------------------------------
-// Fast current loop controller wrapper
-// -----------------------------------------------------------------------------
-   #if  (FCL_CNTLR ==  PI_CNTLR)
-       FCL_runPICtrlWrap();
-   #endif
-
-   #if (FCL_CNTLR ==  CMPLX_CNTLR)
-       FCL_runComplexCtrlWrap();
-   #endif
-
-// -----------------------------------------------------------------------------
-//  Alignment Routine: this routine aligns the motor to zero electrical angle
-//  and in case of QEP also finds the index location and initializes the angle
-//  w.r.t. the index location
-// -----------------------------------------------------------------------------
-    if(runMotor == MOTOR_STOP)
-    {
-        lsw = QEP_ALIGNMENT;
-        lsw2EntryFlag = 0;
-        alignCntr = 0;
-        posCntr = 0;
-        posPtr = 0;
-        IdRef = 0;
-        pi_id.ref = IdRef;
-        FCL_resetController();
-    }
-    else if(lsw == QEP_ALIGNMENT)
-    {
-        // alignment curretnt
-        IdRef = IdRef_start;  //(0.1);
-
-        // for restarting from (runMotor = STOP)
-        rc1.TargetValue = 0;
-        rc1.SetpointValue = 0;
-
-        // set up an alignment and hold time for shaft to settle down
-        if(pi_id.ref >= IdRef)
-        {
-            if(++alignCntr >= alignCnt)
-            {
-                alignCntr  = 0;
-//              IdRef = IdRef_run;
-        #if POSITION_ENCODER==QEP_POS_ENCODER
-                // for QEP, spin the motor to find the index pulse
-                lsw = QEP_WAIT_FOR_INDEX;
-        #else
-                // for absolute encoders no need for lsw = QEP_WAIT_FOR_INDEX
-                lsw = QEP_GOT_INDEX;
-        #endif
-            }
-        }
-    } // end else if(lsw == QEP_ALIGNMENT)
-    else if(lsw == QEP_GOT_INDEX)
-    {
-        IdRef = IdRef_run;
-    }
-
-// -----------------------------------------------------------------------------
-//  Connect inputs of the RAMP GEN module and call the ramp generator module
-// -----------------------------------------------------------------------------
-    rg1.Freq = speedRef*0.1;
-    fclRampGen((RAMPGEN *)&rg1);
-
-// -----------------------------------------------------------------------------
-//    Connect inputs of the SPEED_FR module and call the speed calculation module
-// -----------------------------------------------------------------------------
-    posEncElecTheta[QEP_POS_ENCODER] = qep1.ElecTheta;
-    posEncMechTheta[QEP_POS_ENCODER] = qep1.MechTheta;
-    speed1.ElecTheta = posEncElecTheta[POSITION_ENCODER];
-    runSpeedFR(&speed1);
-
-// -----------------------------------------------------------------------------
-//    Connect inputs of the PID module and call the PID speed controller module
-// -----------------------------------------------------------------------------
-    if(++speedLoopCount >= speedLoopPrescaler)
-    {
-        if(lsw == QEP_GOT_INDEX)
-        {
-            if(!lsw2EntryFlag)
-            {
-                lsw2EntryFlag = 1;
-                rc1.TargetValue = posEncMechTheta[POSITION_ENCODER];
-                pi_pos.Fbk = rc1.TargetValue;
-                pi_pos.Ref = pi_pos.Fbk;
-            }
-            else
-            {
-                // ========== reference position setting =========
-#if BUILDLEVEL == FCL_LEVEL5
-                // choose between 1 of 2 position commands
-                // The user can choose between a position reference table
-                // used within refPosGen() or feed it in from rg1.Out
-                // Position command read from a table
-                rc1.TargetValue = refPosGen(rc1.TargetValue);
-                // Position command generated as integral of speedRef
-//              rc1.TargetValue = rg1.Out;
-
+   // Fast current loop controller wrapper
+#if  (FCL_CNTLR ==  PI_CNTLR)
+   FCL_runPICtrlWrap();
 #endif
 
-                rc1.SetpointValue = rc1.TargetValue -
-                                    (float32_t)((int32_t)rc1.TargetValue);
+#if (FCL_CNTLR ==  CMPLX_CNTLR)
+   FCL_runComplexCtrlWrap();
+#endif
 
-                // Rolling in angle within 0 to 1pu
-                if(rc1.SetpointValue < 0)
-                {
-                    rc1.SetpointValue += 1.0;
-                }
+   // -----------------------------------------------------------------------------
+   //  Alignment Routine: this routine aligns the motor to zero electrical angle
+   //  and in case of QEP also finds the index location and initializes the angle
+   //  w.r.t. the index location
+   // -----------------------------------------------------------------------------
+   if(runMotor == MOTOR_STOP)
+   {
+      lsw           = QEP_ALIGNMENT;
+      lsw2EntryFlag = 0;
+      alignCntr     = 0;
+      posCntr       = 0;
+      posPtr        = 0;
+      IdRef         = 0;
+      pi_id.ref     = IdRef;
+      FCL_resetController();
+   }
+   else if(lsw == QEP_ALIGNMENT)
+   {
+      // alignment curretnt
+      IdRef = IdRef_start;  //(0.1);
 
-                pi_pos.Ref = rc1.SetpointValue;
-                pi_pos.Fbk = posEncMechTheta[POSITION_ENCODER];
+      // for restarting from (runMotor = STOP)
+      rc1.TargetValue   = 0;
+      rc1.SetpointValue = 0;
+
+      // set up an alignment and hold time for shaft to settle down
+      if(pi_id.ref >= IdRef)
+      {
+         if(++alignCntr >= alignCnt)
+         {
+            alignCntr  = 0;
+            //              IdRef = IdRef_run;
+#if POSITION_ENCODER==QEP_POS_ENCODER
+            // for QEP, spin the motor to find the index pulse
+            lsw = QEP_WAIT_FOR_INDEX;
+#else
+            // for absolute encoders no need for lsw = QEP_WAIT_FOR_INDEX
+            lsw = QEP_GOT_INDEX;
+#endif
+         }
+      }
+   } // end else if(lsw == QEP_ALIGNMENT)
+   else 
+      if(lsw == QEP_GOT_INDEX) {
+         IdRef = IdRef_run;
+      }
+
+   //  Connect inputs of the RAMP GEN module and call the ramp generator module
+   rg1.Freq = speedRef*0.1;
+   fclRampGen((RAMPGEN *)&rg1);
+
+   //    Connect inputs of the SPEED_FR module and call the speed calculation module
+   posEncElecTheta[QEP_POS_ENCODER] = qep1.ElecTheta;
+   posEncMechTheta[QEP_POS_ENCODER] = qep1.MechTheta;
+   speed1.ElecTheta = posEncElecTheta[POSITION_ENCODER];
+   runSpeedFR(&speed1);
+
+   //    Connect inputs of the PID module and call the PID speed controller module
+   if(++speedLoopCount >= speedLoopPrescaler) {
+      if(lsw == QEP_GOT_INDEX) {
+         if(!lsw2EntryFlag) {
+            lsw2EntryFlag   = 1;
+            rc1.TargetValue = posEncMechTheta[POSITION_ENCODER];
+            pi_pos.Fbk      = rc1.TargetValue;
+            pi_pos.Ref      = pi_pos.Fbk;
+         }
+         else {
+            // ========== reference position setting =========
+            // choose between 1 of 2 position commands
+            // The user can choose between a position reference table
+            // used within refPosGen() or feed it in from rg1.Out
+            // Position command read from a table
+            rc1.TargetValue = refPosGen(rc1.TargetValue);
+            // Position command generated as integral of speedRef
+            //              rc1.TargetValue = rg1.Out;
+            rc1.SetpointValue = rc1.TargetValue - (float32_t)((int32_t)rc1.TargetValue);
+
+            // Rolling in angle within 0 to 1pu
+            if(rc1.SetpointValue < 0) {
+               rc1.SetpointValue += 1.0;
             }
+            pi_pos.Ref = rc1.SetpointValue;
+            pi_pos.Fbk = posEncMechTheta[POSITION_ENCODER];
+         }
+         runPIPos(&pi_pos);
 
-            runPIPos(&pi_pos);
+         // speed PI regulator
+         pid_spd.term.Ref = pi_pos.Out;
+         pid_spd.term.Fbk = speed1.Speed;
+         runPID(&pid_spd);
+      }
+      speedLoopCount=0;
+   }
 
-            // speed PI regulator
-            pid_spd.term.Ref = pi_pos.Out;
-            pid_spd.term.Fbk = speed1.Speed;
-            runPID(&pid_spd);
-        }
-        speedLoopCount=0;
-    }
+   if(lsw == QEP_ALIGNMENT) {
+      rc1.SetpointValue = 0;// position = 0 deg
+      pid_spd.data.d1   = 0;
+      pid_spd.data.d2   = 0;
+      pid_spd.data.i1   = 0;
+      pid_spd.data.ud   = 0;
+      pid_spd.data.ui   = 0;
+      pid_spd.data.up   = 0;
+      pi_pos.ui         = 0;
+      pi_pos.i1         = 0;
+      rg1.Out           = 0;
+      lsw2EntryFlag     = 0;
+   }
 
-    if(lsw == QEP_ALIGNMENT)
-    {
-       rc1.SetpointValue = 0;  // position = 0 deg
-       pid_spd.data.d1 = 0;
-       pid_spd.data.d2 = 0;
-       pid_spd.data.i1 = 0;
-       pid_spd.data.ud = 0;
-       pid_spd.data.ui = 0;
-       pid_spd.data.up = 0;
-       pi_pos.ui = 0;
-       pi_pos.i1 = 0;
-       rg1.Out = 0;
-       lsw2EntryFlag = 0;
-    }
+   //  Setup iqref for FCL
+   pi_iq.ref = (lsw == QEP_ALIGNMENT) ? 0 :
+      (lsw == QEP_WAIT_FOR_INDEX) ? IqRef : pid_spd.term.Out;
 
-// -----------------------------------------------------------------------------
-//  Setup iqref for FCL
-// -----------------------------------------------------------------------------
-    pi_iq.ref = (lsw == QEP_ALIGNMENT) ? 0 :
-                (lsw == QEP_WAIT_FOR_INDEX) ? IqRef : pid_spd.term.Out;
+   //  Setup idref for FCL
+   pi_id.ref = ramper(IdRef, pi_id.ref, 0.00001);
 
-// -----------------------------------------------------------------------------
-//  Setup idref for FCL
-// -----------------------------------------------------------------------------
-    pi_id.ref = ramper(IdRef, pi_id.ref, 0.00001);
-
-// -----------------------------------------------------------------------------
-//  Connect inputs of the DATALOG module
-// -----------------------------------------------------------------------------
-//    dlogCh1 = pi_pos.Ref;
-//    dlogCh2 = pi_pos.Fbk;
-//    dlogCh3 = pi_id.fbk;
-//    dlogCh4 = pi_iq.fbk;
-
-//------------------------------------------------------------------------------
-// Variable display on DACs B and C
-//------------------------------------------------------------------------------
-    DAC_setShadowValue(DACB_BASE, DAC_MACRO_PU(pi_pos.Ref));
-    DAC_setShadowValue(DACC_BASE, DAC_MACRO_PU(pi_pos.Fbk));
-
-    return;
+   // Variable display on DACs B and C
+   DAC_setShadowValue(DACB_BASE, DAC_MACRO_PU(pi_pos.Ref));
+   DAC_setShadowValue(DACC_BASE, DAC_MACRO_PU(pi_pos.Fbk));
+   return;
 }
 
-#endif // (BUILDLEVEL==FCL_LEVEL5)
-
-// ****************************************************************************
 // ****************************************************************************
 //TODO  Motor Control ISR
-// ****************************************************************************
-// ****************************************************************************
 __interrupt void motorControlISR(void)
 {
-
-#if   (BUILDLEVEL == FCL_LEVEL1)
-    buildLevel1();
-
-#elif (BUILDLEVEL == FCL_LEVEL2)
-    buildLevel2();
-
-#elif (BUILDLEVEL == FCL_LEVEL3)
-    buildLevel3();
-
-#elif (BUILDLEVEL == FCL_LEVEL4)
-    buildLevel46();
-
-#elif (BUILDLEVEL == FCL_LEVEL5)
     buildLevel5();
-
-#elif (BUILDLEVEL == FCL_LEVEL6)
-    buildLevel46();
-
-#endif
-
-// ----------------------------------------------------------------------------
-//    Call the DATALOG update function.
-// ----------------------------------------------------------------------------
-//    DLOG_4CH_F_FUNC(&dlog_4ch1);
 
     EPWM_clearEventTriggerInterruptFlag(EPWM1_BASE);
 
@@ -1962,16 +927,7 @@ __interrupt void motorControlISR(void)
 
 } // motorControlISR Ends Here
 
-// ****************************************************************************
-// ****************************************************************************
-// ****************************************************************************
-// ****************************************************************************
-
-// ****************************************************************************
-// ****************************************************************************
 // Configure ADC
-// ****************************************************************************
-// ****************************************************************************
 void configureADC()
 {
     // Analog signals that are sampled
@@ -1996,11 +952,9 @@ void configureADC()
 
     uint16_t base;
 
-    for(base = 0; base < 3; base++)
-    {
+    for(base = 0; base < 3; base++) {
         // Set 12-bit single ended conversion mode
-        ADC_setMode(adcHandle[base], ADC_RESOLUTION_12BIT,
-                    ADC_MODE_SINGLE_ENDED);
+        ADC_setMode(adcHandle[base], ADC_RESOLUTION_12BIT, ADC_MODE_SINGLE_ENDED);
 
         // Set main clock scaling factor (100MHz max clock for the ADC module)
         ADC_setPrescaler(adcHandle[base], ADC_CLK_DIV_4_0);
@@ -2023,8 +977,7 @@ void configureADC()
     // ********************************
     // SOC0 will convert pin A2, sample window in SYSCLK cycles,
     // trigger on ePWM1 SOCA/C
-    ADC_setupSOC(ADCA_BASE, ADC_SOC_NUMBER0, ADC_TRIGGER_EPWM1_SOCA,
-                 ADC_CH_ADCIN2, 25);
+    ADC_setupSOC(ADCA_BASE, ADC_SOC_NUMBER0, ADC_TRIGGER_EPWM1_SOCA, ADC_CH_ADCIN2, 25);
 
     // Configure the post processing block (PPB) to eliminate subtraction
     // related calculation
@@ -2038,8 +991,7 @@ void configureADC()
     // ********************************
     // SOC0 will convert pin B2, sample window in SYSCLK cycles,
     // trigger on ePWM1 SOCA/C
-    ADC_setupSOC(ADCB_BASE, ADC_SOC_NUMBER0, ADC_TRIGGER_EPWM1_SOCA,
-                 ADC_CH_ADCIN2, 25);
+    ADC_setupSOC(ADCB_BASE, ADC_SOC_NUMBER0, ADC_TRIGGER_EPWM1_SOCA, ADC_CH_ADCIN2, 25);
 
     // Configure PPB to eliminate subtraction related calculation
     // PPB is associated with SOC0
@@ -2048,80 +1000,12 @@ void configureADC()
     // Write zero to this for now till offset ISR is run
     ADC_setPPBCalibrationOffset(ADCB_BASE, ADC_PPB_NUMBER1, 0);
 
-#if (CGND == HOT)
-    // ********************************
-    // Shunt Motor Currents (SV) @ A4
-    // ********************************
-    // SOC0 will convert pin A4, sample window in SYSCLK cycles
-    // trigger on ePWM1 SOCA/C
-    ADC_setupSOC(ADCA_BASE, ADC_SOC_NUMBER0, ADC_TRIGGER_EPWM1_SOCA,
-                 ADC_CH_ADCIN4, 14);
-    // Configure PPB to eliminate subtraction related calculation
-    // PPB is associated with SOC1
-    ADC_setupPPB(ADCA_BASE, ADC_PPB_NUMBER2, ADC_SOC_NUMBER1);
-    // Write zero to this for now till offset ISR is run
-    ADC_setPPBCalibrationOffset(ADCA_BASE, ADC_PPB_NUMBER2, 0);
-
-    // ********************************
-    // Shunt Motor Currents (SW) @ B4
-    // ********************************
-    // SOC0 will convert pin B4, sample window in SYSCLK cycles
-    // trigger on ePWM1 SOCA/C
-    ADC_setupSOC(ADCB_BASE, ADC_SOC_NUMBER0, ADC_TRIGGER_EPWM1_SOCA,
-                 ADC_CH_ADCIN4, 14);
-    // Configure PPB to eliminate subtraction related calculation
-    // PPB is associated with SOC1
-    ADC_setupPPB(ADCB_BASE, ADC_PPB_NUMBER2, ADC_SOC_NUMBER1);
-    // Write zero to this for now till offset ISR is run
-    ADC_setPPBCalibrationOffset(ADCB_BASE, ADC_PPB_NUMBER2, 0);
-
-    // ***************************
-    // Phase Voltage Vfb-V @ A3
-    // ***************************
-    // SOC2 will convert pin A3, sample window in SYSCLK cycles
-    // trigger on ePWM1 SOCA/C
-    ADC_setupSOC(ADCA_BASE, ADC_SOC_NUMBER2, ADC_TRIGGER_EPWM1_SOCA,
-                 ADC_CH_ADCIN3, 14);
-    // Configure PPB to eliminate subtraction related calculation
-    ADC_setupPPB(ADCA_BASE, ADC_PPB_NUMBER3, ADC_SOC_NUMBER2);
-    // Write zero to this for now till offset ISR is run
-    ADC_setPPBCalibrationOffset(ADCA_BASE, ADC_PPB_NUMBER3, 0);
-
-    // Phase Voltage Vfb-W @ B3
-    // ***************************
-    // SOC2 will convert pin B3, sample window in SYSCLK cycles
-    // trigger on ePWM1 SOCA/C
-    ADC_setupSOC(ADCB_BASE, ADC_SOC_NUMBER2, ADC_TRIGGER_EPWM1_SOCA,
-                 ADC_CH_ADCIN3, 14);
-    ADC_setupPPB(ADCB_BASE, ADC_PPB_NUMBER3, ADC_SOC_NUMBER2);
-    // Write zero to this for now till offset ISR is run
-    ADC_setPPBCalibrationOffset(ADCB_BASE, ADC_PPB_NUMBER3, 0)
-
-    // ****************************
-    // Phase Voltage Vfb-U @ C3
-    // ****************************
-    // SOC2 will convert pin C3, sample window in SYSCLK cycles
-    // trigger on ePWM1 SOCA/C
-    ADC_setupSOC(ADCC_BASE, ADC_SOC_NUMBER2, ADC_TRIGGER_EPWM1_SOCA,
-                 ADC_CH_ADCIN3, 14);
-    // Configure PPB to eliminate subtraction related calculation
-    ADC_setupPPB(ADCC_BASE, ADC_PPB_NUMBER3, ADC_SOC_NUMBER2);
-    // Write zero to this for now till offset ISR is run
-    ADC_setPPBCalibrationOffset(ADCC_BASE, ADC_PPB_NUMBER3, 0)
-
-#endif
-
     return;
 }
 
-// ****************************************************************************
-// ****************************************************************************
 // Configure CLA
-// ****************************************************************************
-// ****************************************************************************
 void configureCLA()
 {
-
 #ifdef _FLASH
     //
     // Copy CLA code from its load address (FLASH) to CLA program RAM
@@ -2140,31 +1024,31 @@ void configureCLA()
     // Initialize and wait for CLA1ToCPUMsgRAM
 
     MemCfg_initSections(MEMCFG_SECT_MSGCLA1TOCPU);
-    while(MemCfg_getInitStatus(MEMCFG_SECT_MSGCLA1TOCPU) != 1);
+    while(MemCfg_getInitStatus(MEMCFG_SECT_MSGCLA1TOCPU) != 1)
+       ;
 
     // Initialize and wait for CPUToCLA1MsgRAM
-
     MemCfg_initSections(MEMCFG_SECT_MSGCPUTOCLA1);
-    while(MemCfg_getInitStatus(MEMCFG_SECT_MSGCPUTOCLA1) != 1);
+    while(MemCfg_getInitStatus(MEMCFG_SECT_MSGCPUTOCLA1) != 1)
+       ;
 
     // Select LS5RAM to be the programming space for the CLA
     // First configure the CLA to be the master for LS5 and then
     // set the space to be a program block
+    MemCfg_setLSRAMMasterSel ( MEMCFG_SECT_LS4, MEMCFG_LSRAMMASTER_CPU_CLA1 );
+    MemCfg_setCLAMemType     ( MEMCFG_SECT_LS4, MEMCFG_CLA_MEM_PROGRAM      );
 
-    MemCfg_setLSRAMMasterSel(MEMCFG_SECT_LS4, MEMCFG_LSRAMMASTER_CPU_CLA1);
-    MemCfg_setCLAMemType(MEMCFG_SECT_LS4, MEMCFG_CLA_MEM_PROGRAM);
-
-    MemCfg_setLSRAMMasterSel(MEMCFG_SECT_LS5, MEMCFG_LSRAMMASTER_CPU_CLA1);
-    MemCfg_setCLAMemType(MEMCFG_SECT_LS5, MEMCFG_CLA_MEM_PROGRAM);
+    MemCfg_setLSRAMMasterSel ( MEMCFG_SECT_LS5, MEMCFG_LSRAMMASTER_CPU_CLA1 );
+    MemCfg_setCLAMemType     ( MEMCFG_SECT_LS5, MEMCFG_CLA_MEM_PROGRAM      );
 
     // Next configure LS2RAM and LS3RAM as data spaces for the CLA
     // First configure the CLA to be the master and then
     // set the spaces to be code blocks
-    MemCfg_setLSRAMMasterSel(MEMCFG_SECT_LS2, MEMCFG_LSRAMMASTER_CPU_CLA1);
-    MemCfg_setCLAMemType(MEMCFG_SECT_LS2, MEMCFG_CLA_MEM_DATA);
+    MemCfg_setLSRAMMasterSel ( MEMCFG_SECT_LS2, MEMCFG_LSRAMMASTER_CPU_CLA1 );
+    MemCfg_setCLAMemType     ( MEMCFG_SECT_LS2, MEMCFG_CLA_MEM_DATA         );
 
-    MemCfg_setLSRAMMasterSel(MEMCFG_SECT_LS3, MEMCFG_LSRAMMASTER_CPU_CLA1);
-    MemCfg_setCLAMemType(MEMCFG_SECT_LS3, MEMCFG_CLA_MEM_DATA);
+    MemCfg_setLSRAMMasterSel ( MEMCFG_SECT_LS3, MEMCFG_LSRAMMASTER_CPU_CLA1 );
+    MemCfg_setCLAMemType     ( MEMCFG_SECT_LS3, MEMCFG_CLA_MEM_DATA         );
 
     // Compute all CLA task vectors
     // On Type-1 CLAs the MVECT registers accept full 16-bit task addresses as
@@ -2184,17 +1068,13 @@ void configureCLA()
     // for all  8 CLA tasks. Also, globally enable all 8 tasks (or a
     // subset of tasks) by writing to their respective bits in the
     // MIER register
-    CLA_enableIACK(CLA1_BASE);
-    CLA_enableTasks(CLA1_BASE, CLA_TASKFLAG_ALL);
+    CLA_enableIACK  ( CLA1_BASE                   );
+    CLA_enableTasks ( CLA1_BASE, CLA_TASKFLAG_ALL );
 
     return;
 }
 
-// ****************************************************************************
-// ****************************************************************************
 // CMPSS Configuration
-// ****************************************************************************
-// ****************************************************************************
 void configureCMPSS(uint32_t base, int16_t Hi, int16_t Lo)
 {
     // Set up COMPCTL register
@@ -2215,45 +1095,41 @@ void configureCMPSS(uint32_t base, int16_t Hi, int16_t Lo)
 
     // set up COMPDACCTL register
     // VDDA is REF for CMPSS DACs, DAC updated on sysclock, Ramp bypassed
-    CMPSS_configDAC(base,
-                   CMPSS_DACREF_VDDA | CMPSS_DACVAL_SYSCLK | CMPSS_DACSRC_SHDW);
+    CMPSS_configDAC(base, CMPSS_DACREF_VDDA | CMPSS_DACVAL_SYSCLK | CMPSS_DACSRC_SHDW);
 
     // Load DACs - High and Low
-    CMPSS_setDACValueHigh(base, Hi);    // Set DAC-H to allowed MAX +ve current
-    CMPSS_setDACValueLow(base, Lo);     // Set DAC-L to allowed MAX -ve current
+    CMPSS_setDACValueHigh ( base, Hi ); // Set DAC-H to allowed MAX +ve current
+    CMPSS_setDACValueLow  ( base, Lo ); // Set DAC-L to allowed MAX -ve current
 
     // digital filter settings - HIGH side
     // set time between samples, max : 1023, # of samples in window,
     // max : 31, recommended : thresh > sampWin/2
-    CMPSS_configFilterHigh(base, clkPrescale, sampWin, thresh);
-    CMPSS_initFilterHigh(base); // Init samples to filter input value
+    CMPSS_configFilterHigh ( base, clkPrescale, sampWin, thresh );
+    CMPSS_initFilterHigh   ( base                               ); // Init samples to filter input value
 
     // digital filter settings - LOW side
     // set time between samples, max : 1023, # of samples in window,
     // max : 31, recommended : thresh > sampWin/2
-    CMPSS_configFilterLow(base, clkPrescale, sampWin, thresh);
-    CMPSS_initFilterLow(base); // Init samples to filter input value
+    CMPSS_configFilterLow ( base, clkPrescale, sampWin, thresh );
+    CMPSS_initFilterLow   ( base                               ); // Init samples to filter input value
 
     // Clear the status register for latched comparator events
-    CMPSS_clearFilterLatchHigh(base);
-    CMPSS_clearFilterLatchLow(base);
+    CMPSS_clearFilterLatchHigh ( base );
+    CMPSS_clearFilterLatchLow  ( base );
 
     // Enable CMPSS
     CMPSS_enableModule(base);
 
     DEVICE_DELAY_US(500);
-
     return;
 }
 
-// ****************************************************************************
 // Setup OCP limits and digital filter parameters of CMPSS
-// ****************************************************************************
 void configureCMPSSFilter(uint32_t base, uint16_t curHi, uint16_t curLo)
 {
     // comparator references
-    CMPSS_setDACValueHigh(base, curHi);
-    CMPSS_setDACValueLow(base, curLo);
+    CMPSS_setDACValueHigh ( base, curHi );
+    CMPSS_setDACValueLow  ( base, curLo );
 
     // digital filter settings - HIGH side
     CMPSS_configFilterHigh(base, clkPrescale, sampWin, thresh);
@@ -2264,23 +1140,16 @@ void configureCMPSSFilter(uint32_t base, uint16_t curHi, uint16_t curLo)
     return;
 }
 
-// ****************************************************************************
-// ****************************************************************************
 // DAC Configuration
-// ****************************************************************************
-// ****************************************************************************
 void configureDAC(void)
 {
-    //
     // DAC-A  ---> Resolver carrier excitation
     // DAC-B  ---> General purpose display
     // DAC-C  ---> General purpose display
-    //
 
     uint16_t base;
 
-    for(base = 0; base < 3; base++)
-    {
+    for(base = 0; base < 3; base++) {
         // Set DAC voltage reference to VRefHi
         DAC_setReferenceVoltage(dacHandle[base], DAC_REF_ADC_VREFHI);
 
@@ -2291,9 +1160,7 @@ void configureDAC(void)
         DAC_enableOutput(dacHandle[base]);
     }
 
-    //
     // Resolver carrier excitation signal additional initialization
-    //
 
     // enable value change only on sync signal
     DAC_setLoadMode(DACA_BASE, DAC_LOAD_PWMSYNC);
@@ -2304,146 +1171,138 @@ void configureDAC(void)
     return;
 }
 
-// ****************************************************************************
-// ****************************************************************************
 // GPIO Configuration
-// ****************************************************************************
-// ****************************************************************************
 void configureGPIO(void)
 {
     uint16_t pin;
 
-    //
     // main inverter PWM GPIO init
     // PWM1 - U
     // PWM2 - V
     // PWM3 - W
     //
-    GPIO_setMasterCore(0, GPIO_CORE_CPU1);
-    GPIO_setPinConfig(GPIO_0_EPWM1A);
-    GPIO_setPadConfig(0, GPIO_PIN_TYPE_STD);
+    GPIO_setMasterCore ( 0, GPIO_CORE_CPU1    );
+    GPIO_setPinConfig  ( GPIO_0_EPWM1A        );
+    GPIO_setPadConfig  ( 0, GPIO_PIN_TYPE_STD );
 
     // EPWM1B->UL
-    GPIO_setMasterCore(1, GPIO_CORE_CPU1);
-    GPIO_setPinConfig(GPIO_1_EPWM1B);
-    GPIO_setPadConfig(1, GPIO_PIN_TYPE_STD);
+    GPIO_setMasterCore ( 1, GPIO_CORE_CPU1    );
+    GPIO_setPinConfig  ( GPIO_1_EPWM1B        );
+    GPIO_setPadConfig  ( 1, GPIO_PIN_TYPE_STD );
 
     // EPWM2A->VH
-    GPIO_setMasterCore(2, GPIO_CORE_CPU1);
-    GPIO_setPinConfig(GPIO_2_EPWM2A);
-    GPIO_setPadConfig(2, GPIO_PIN_TYPE_STD);
+    GPIO_setMasterCore ( 2, GPIO_CORE_CPU1    );
+    GPIO_setPinConfig  ( GPIO_2_EPWM2A        );
+    GPIO_setPadConfig  ( 2, GPIO_PIN_TYPE_STD );
 
     // EPWM2B->VL
-    GPIO_setMasterCore(3, GPIO_CORE_CPU1);
-    GPIO_setPinConfig(GPIO_3_EPWM2B);
-    GPIO_setPadConfig(3, GPIO_PIN_TYPE_STD);
+    GPIO_setMasterCore ( 3, GPIO_CORE_CPU1    );
+    GPIO_setPinConfig  ( GPIO_3_EPWM2B        );
+    GPIO_setPadConfig  ( 3, GPIO_PIN_TYPE_STD );
 
     // EPWM3A->WH
-    GPIO_setMasterCore(4, GPIO_CORE_CPU1);
-    GPIO_setPinConfig(GPIO_4_EPWM3A);
-    GPIO_setPadConfig(4, GPIO_PIN_TYPE_STD);
+    GPIO_setMasterCore ( 4, GPIO_CORE_CPU1    );
+    GPIO_setPinConfig  ( GPIO_4_EPWM3A        );
+    GPIO_setPadConfig  ( 4, GPIO_PIN_TYPE_STD );
 
     // EPWM3B->WL
-    GPIO_setMasterCore(5, GPIO_CORE_CPU1);
-    GPIO_setPinConfig(GPIO_5_EPWM3B);
-    GPIO_setPadConfig(5, GPIO_PIN_TYPE_STD);
+    GPIO_setMasterCore ( 5, GPIO_CORE_CPU1    );
+    GPIO_setPinConfig  ( GPIO_5_EPWM3B        );
+    GPIO_setPadConfig  ( 5, GPIO_PIN_TYPE_STD );
 
     //
     // Configure GPIO8 as ePWM5A for SD1, Ch1/2 clock
     // Configure GPIO9 as ePWM5B for SD1, Ch3 clock
     //
-    GPIO_setPadConfig(8, GPIO_PIN_TYPE_STD);
-    GPIO_setPinConfig(GPIO_8_EPWM5A);
-    GPIO_setPadConfig(9, GPIO_PIN_TYPE_STD);
-    GPIO_setPinConfig(GPIO_9_EPWM5B);
+    GPIO_setPadConfig ( 8, GPIO_PIN_TYPE_STD );
+    GPIO_setPinConfig ( GPIO_8_EPWM5A        );
+    GPIO_setPadConfig ( 9, GPIO_PIN_TYPE_STD );
+    GPIO_setPinConfig ( GPIO_9_EPWM5B        );
 
     //
     // GPIO18 is used as PushPull output to indicate the end of computation when
     // compared against the SOC signal
-    GPIO_setMasterCore(18, GPIO_CORE_CPU1);
-    GPIO_setPinConfig(GPIO_18_GPIO18);
-    GPIO_setPadConfig(18, GPIO_PIN_TYPE_STD);
-    GPIO_setDirectionMode(18, GPIO_DIR_MODE_OUT);
+    GPIO_setMasterCore    ( 18, GPIO_CORE_CPU1    );
+    GPIO_setPinConfig     ( GPIO_18_GPIO18        );
+    GPIO_setPadConfig     ( 18, GPIO_PIN_TYPE_STD );
+    GPIO_setDirectionMode ( 18, GPIO_DIR_MODE_OUT );
 
-    //
     // Setup GPIO for QEP operation
     //
     // QEP1A
-    GPIO_setMasterCore(20, GPIO_CORE_CPU1);
-    GPIO_setPadConfig(20, GPIO_PIN_TYPE_STD);
-    GPIO_setDirectionMode(20, GPIO_DIR_MODE_IN);
-    GPIO_setQualificationMode(20, GPIO_QUAL_3SAMPLE);
-    GPIO_setPinConfig(GPIO_20_EQEP1A);
+    GPIO_setMasterCore        ( 20, GPIO_CORE_CPU1    );
+    GPIO_setPadConfig         ( 20, GPIO_PIN_TYPE_STD );
+    GPIO_setDirectionMode     ( 20, GPIO_DIR_MODE_IN  );
+    GPIO_setQualificationMode ( 20, GPIO_QUAL_3SAMPLE );
+    GPIO_setPinConfig         ( GPIO_20_EQEP1A        );
 
     // QEP1B
-    GPIO_setMasterCore(21, GPIO_CORE_CPU1);
-    GPIO_setPadConfig(21, GPIO_PIN_TYPE_STD);
-    GPIO_setDirectionMode(21, GPIO_DIR_MODE_IN);
-    GPIO_setQualificationMode(21, GPIO_QUAL_3SAMPLE);
-    GPIO_setPinConfig(GPIO_21_EQEP1B);
+    GPIO_setMasterCore        ( 21, GPIO_CORE_CPU1    );
+    GPIO_setPadConfig         ( 21, GPIO_PIN_TYPE_STD );
+    GPIO_setDirectionMode     ( 21, GPIO_DIR_MODE_IN  );
+    GPIO_setQualificationMode ( 21, GPIO_QUAL_3SAMPLE );
+    GPIO_setPinConfig         ( GPIO_21_EQEP1B        );
 
     // QEP1I
-    GPIO_setMasterCore(23, GPIO_CORE_CPU1);
-    GPIO_setPadConfig(23, GPIO_PIN_TYPE_STD);
-    GPIO_setDirectionMode(23, GPIO_DIR_MODE_IN);
-    GPIO_setQualificationMode(23, GPIO_QUAL_3SAMPLE);
-    GPIO_setPinConfig(GPIO_23_EQEP1I);
+    GPIO_setMasterCore        ( 23, GPIO_CORE_CPU1    );
+    GPIO_setPadConfig         ( 23, GPIO_PIN_TYPE_STD );
+    GPIO_setDirectionMode     ( 23, GPIO_DIR_MODE_IN  );
+    GPIO_setQualificationMode ( 23, GPIO_QUAL_3SAMPLE );
+    GPIO_setPinConfig         ( GPIO_23_EQEP1I        );
 
     // GPIO28->SCIRXDA
-    GPIO_setMasterCore(28, GPIO_CORE_CPU1);
-    GPIO_setPadConfig(28, GPIO_PIN_TYPE_STD);
-    GPIO_setPinConfig(GPIO_28_SCIRXDA);
+    GPIO_setMasterCore ( 28, GPIO_CORE_CPU1    );
+    GPIO_setPadConfig  ( 28, GPIO_PIN_TYPE_STD );
+    GPIO_setPinConfig  ( GPIO_28_SCIRXDA       );
 
     // GPIO29->SCITXDA
-    GPIO_setMasterCore(29, GPIO_CORE_CPU1);
-    GPIO_setPadConfig(29, GPIO_PIN_TYPE_STD);
-    GPIO_setPinConfig(GPIO_29_SCITXDA);
+    GPIO_setMasterCore ( 29, GPIO_CORE_CPU1    );
+    GPIO_setPadConfig  ( 29, GPIO_PIN_TYPE_STD );
+    GPIO_setPinConfig  ( GPIO_29_SCITXDA       );
 
     // Configure GPIO used for Trip Mechanism
 
     // GPIO input for reading the status of the LEM-overcurrent macro block
     // (active low), GPIO40 could trip PWM based on this, if desired
     // Configure as Input
-    GPIO_setPinConfig(GPIO_40_GPIO40);           // choose GPIO for mux option
-    GPIO_setDirectionMode(40, GPIO_DIR_MODE_IN); // set as input
-    GPIO_setPadConfig(40, GPIO_PIN_TYPE_INVERT); // invert the input
+    GPIO_setPinConfig     ( GPIO_40_GPIO40           ); // choose GPIO for mux option
+    GPIO_setDirectionMode ( 40, GPIO_DIR_MODE_IN     ); // set as input
+    GPIO_setPadConfig     ( 40, GPIO_PIN_TYPE_INVERT ); // invert the input
 
     //Select GPIO40 as INPUTXBAR2
     XBAR_setInputPin(XBAR_INPUT2, 40);
 
     // Clearing the Fault(active low), GPIO41
     // Configure as Output
-    GPIO_setPinConfig(GPIO_41_GPIO41);            // choose GPIO for mux option
-    GPIO_setDirectionMode(41, GPIO_DIR_MODE_OUT); // set as output
-    GPIO_writePin(41, 1);
+    GPIO_setPinConfig     ( GPIO_41_GPIO41        ); // choose GPIO for mux option
+    GPIO_setDirectionMode ( 41, GPIO_DIR_MODE_OUT ); // set as output
+    GPIO_writePin         ( 41, 1                 );
 
     // Forcing IPM Shutdown (Trip) using GPIO58 (Active high)
     // Configure as Output
-    GPIO_setPinConfig(GPIO_58_GPIO58);            // choose GPIO for mux option
-    GPIO_setDirectionMode(58, GPIO_DIR_MODE_OUT); // set as output
-    GPIO_writePin(58, 0);
+    GPIO_setPinConfig     ( GPIO_58_GPIO58        ); // choose GPIO for mux option
+    GPIO_setDirectionMode ( 58, GPIO_DIR_MODE_OUT ); // set as output
+    GPIO_writePin         ( 58, 0                 );
 
     // GPIO31->LED
-    GPIO_setMasterCore(31, GPIO_CORE_CPU1);
-    GPIO_setPadConfig(31, GPIO_PIN_TYPE_STD);
-    GPIO_setPinConfig(GPIO_31_GPIO31);
-    GPIO_setDirectionMode(31, GPIO_DIR_MODE_OUT);
+    GPIO_setMasterCore    ( 31, GPIO_CORE_CPU1    );
+    GPIO_setPadConfig     ( 31, GPIO_PIN_TYPE_STD );
+    GPIO_setPinConfig     ( GPIO_31_GPIO31        );
+    GPIO_setDirectionMode ( 31, GPIO_DIR_MODE_OUT );
 
     // GPIO34->LED
-    GPIO_setMasterCore(34, GPIO_CORE_CPU1);
-    GPIO_setPadConfig(34, GPIO_PIN_TYPE_STD);
-    GPIO_setPinConfig(GPIO_34_GPIO34);
-    GPIO_setDirectionMode(34, GPIO_DIR_MODE_OUT);
+    GPIO_setMasterCore    ( 34, GPIO_CORE_CPU1    );
+    GPIO_setPadConfig     ( 34, GPIO_PIN_TYPE_STD );
+    GPIO_setPinConfig     ( GPIO_34_GPIO34        );
+    GPIO_setDirectionMode ( 34, GPIO_DIR_MODE_OUT );
 
-    //
     // SDFM GPIO configurations
-    //
     for(pin = 48; pin <= 53; pin++)
     {
-        GPIO_setMasterCore(pin, GPIO_CORE_CPU1);
-        GPIO_setDirectionMode(pin, GPIO_DIR_MODE_IN);
-        GPIO_setPadConfig(pin, GPIO_PIN_TYPE_STD);
-        GPIO_setQualificationMode(pin, GPIO_QUAL_ASYNC);
+        GPIO_setMasterCore        ( pin, GPIO_CORE_CPU1    );
+        GPIO_setDirectionMode     ( pin, GPIO_DIR_MODE_IN  );
+        GPIO_setPadConfig         ( pin, GPIO_PIN_TYPE_STD );
+        GPIO_setQualificationMode ( pin, GPIO_QUAL_ASYNC   );
     }
 
     // SD1 Ch1 - Ishunt - V
@@ -2458,11 +1317,7 @@ void configureGPIO(void)
 
     return;
 }
-// ****************************************************************************
-// ****************************************************************************
 // Configure HVDMC Protection Against Over Current
-// ****************************************************************************
-// ****************************************************************************
 void configureHVDMCProtection(void)
 {
     uint16_t base;
@@ -2480,22 +1335,10 @@ void configureHVDMCProtection(void)
     configureCMPSS(CMPSS1_BASE, LEM_curHi, LEM_curLo);  //Enable CMPSS1 - LEM V
     configureCMPSS(CMPSS3_BASE, LEM_curHi, LEM_curLo);  //Enable CMPSS3 - LEM W
 
-#if (CNGD == HOT)
-    // Shunt Current phase V(ADC A4, COMP2) and W(ADC C2, COMP6),
-    // High Low Compare event trips
-    SHUNT_curHi = 2048 + SHUNT(curLimit);
-    SHUNT_curLo = 2048 - SHUNT(curLimit);
-
-    //Enable CMPSS2 - Shunt V
-    configureCMPSS(CMPSS2_BASE, SHUNT_curHi, SHUNT_curLo);
-    //Enable CMPSS6 - Shunt U
-    configureCMPSS(CMPSS6_BASE, SHUNT_curHi, SHUNT_curLo);
-#endif
-
     // Configure TRIP 4 to OR the High and Low trips from both comparator 1 & 3
     // Clear everything first
     EALLOW;
-    HWREG(XBAR_EPWM_CFG_REG_BASE + XBAR_O_TRIP4MUX0TO15CFG) = 0;
+    HWREG(XBAR_EPWM_CFG_REG_BASE + XBAR_O_TRIP4MUX0TO15CFG)  = 0;
     HWREG(XBAR_EPWM_CFG_REG_BASE + XBAR_O_TRIP4MUX16TO31CFG) = 0;
     EDIS;
 
@@ -2519,28 +1362,16 @@ void configureHVDMCProtection(void)
     XBAR_disableEPWMMux(XBAR_TRIP4, 0xFFFF);
 
     // Enable Mux 0  OR Mux 4 to generate TRIP4
-    XBAR_enableEPWMMux(XBAR_TRIP4, XBAR_MUX00 | XBAR_MUX04 | XBAR_MUX02 |
-                                   XBAR_MUX10 | XBAR_MUX03);
+    XBAR_enableEPWMMux(XBAR_TRIP4, XBAR_MUX00 | XBAR_MUX04 | XBAR_MUX02 | XBAR_MUX10 | XBAR_MUX03);
 
-    //
     // Configure TRIP for motor inverter phases
-    //
-    for(base = 0; base < 3; base++)
-    {
+    for(base = 0; base < 3; base++) {
         //Trip 4 is the input to the DCAHCOMPSEL
-        EPWM_selectDigitalCompareTripInput(pwmHandle[base],
-                                           EPWM_DC_TRIP_TRIPIN4,
-                                           EPWM_DC_TYPE_DCAH);
-        EPWM_setTripZoneDigitalCompareEventCondition(pwmHandle[base],
-                                                     EPWM_TZ_DC_OUTPUT_A1,
-                                                     EPWM_TZ_EVENT_DCXH_HIGH);
-        EPWM_setDigitalCompareEventSource(pwmHandle[base], EPWM_DC_MODULE_A,
-                                          EPWM_DC_EVENT_1,
-                                          EPWM_DC_EVENT_SOURCE_ORIG_SIGNAL);
-        EPWM_setDigitalCompareEventSyncMode(pwmHandle[base], EPWM_DC_MODULE_A,
-                                            EPWM_DC_EVENT_1,
-                                            EPWM_DC_EVENT_INPUT_NOT_SYNCED);
-        EPWM_enableTripZoneSignals(pwmHandle[base], EPWM_TZ_SIGNAL_DCAEVT1);
+        EPWM_selectDigitalCompareTripInput           ( pwmHandle[base] ,EPWM_DC_TRIP_TRIPIN4 ,EPWM_DC_TYPE_DCAH                             );
+        EPWM_setTripZoneDigitalCompareEventCondition ( pwmHandle[base] ,EPWM_TZ_DC_OUTPUT_A1 ,EPWM_TZ_EVENT_DCXH_HIGH                       );
+        EPWM_setDigitalCompareEventSource            ( pwmHandle[base] ,EPWM_DC_MODULE_A     ,EPWM_DC_EVENT_1 ,EPWM_DC_EVENT_SOURCE_ORIG_SIGNAL );
+        EPWM_setDigitalCompareEventSyncMode          ( pwmHandle[base] ,EPWM_DC_MODULE_A     ,EPWM_DC_EVENT_1 ,EPWM_DC_EVENT_INPUT_NOT_SYNCED   );
+        EPWM_enableTripZoneSignals                   ( pwmHandle[base] ,EPWM_TZ_SIGNAL_DCAEVT1                                              );
 
         // Emulator Stop
         EPWM_enableTripZoneSignals(pwmHandle[base], EPWM_TZ_SIGNAL_CBC6);
@@ -2551,48 +1382,37 @@ void configureHVDMCProtection(void)
 
         // EPWMxA will go low
         // EPWMxB will go low
-        EPWM_setTripZoneAction(pwmHandle[base], EPWM_TZ_ACTION_EVENT_TZA,
-                               EPWM_TZ_ACTION_LOW);
-        EPWM_setTripZoneAction(pwmHandle[base], EPWM_TZ_ACTION_EVENT_TZB,
-                               EPWM_TZ_ACTION_LOW);
+        EPWM_setTripZoneAction ( pwmHandle[base], EPWM_TZ_ACTION_EVENT_TZA, EPWM_TZ_ACTION_LOW );
+        EPWM_setTripZoneAction ( pwmHandle[base], EPWM_TZ_ACTION_EVENT_TZB, EPWM_TZ_ACTION_LOW );
 
         // Clear any spurious OV trip
-        EPWM_clearTripZoneFlag(pwmHandle[base], EPWM_TZ_FLAG_DCAEVT1);
-        EPWM_clearTripZoneFlag(pwmHandle[base], EPWM_TZ_FLAG_OST);
-        EPWM_clearTripZoneFlag(pwmHandle[base], EPWM_TZ_FLAG_CBC);
+        EPWM_clearTripZoneFlag ( pwmHandle[base], EPWM_TZ_FLAG_DCAEVT1 );
+        EPWM_clearTripZoneFlag ( pwmHandle[base], EPWM_TZ_FLAG_OST     );
+        EPWM_clearTripZoneFlag ( pwmHandle[base], EPWM_TZ_FLAG_CBC     );
     }
-
     return;
 }
 
-// ****************************************************************************
-// ****************************************************************************
 // Position Sensing Configuration
-// ****************************************************************************
-// ****************************************************************************
 void configurePositionSensing(void)
 {
     // Init QEP parameters
-    qep1.LineEncoder = 2500; // these are the number of slots in the encoder
-    qep1.MechScaler  = 0.25/qep1.LineEncoder;
-    qep1.PolePairs   = POLES/2;
+    qep1.LineEncoder     = 2500;// these are the number of slots in the encoder
+    qep1.MechScaler      = 0.25/qep1.LineEncoder;
+    qep1.PolePairs       = POLES/2;
     qep1.CalibratedAngle = 0;
 
     // Configure the decoder for quadrature count mode, counting both
     // rising and falling edges (that is, 2x resolution)
-    EQEP_setDecoderConfig(EQEP1_BASE, (EQEP_CONFIG_2X_RESOLUTION |
-                                       EQEP_CONFIG_QUADRATURE |
-                                       EQEP_CONFIG_NO_SWAP));
-    EQEP_setEmulationMode(EQEP1_BASE, EQEP_EMULATIONMODE_RUNFREE);
+    EQEP_setDecoderConfig ( EQEP1_BASE, (EQEP_CONFIG_2X_RESOLUTION | EQEP_CONFIG_QUADRATURE | EQEP_CONFIG_NO_SWAP ));
+    EQEP_setEmulationMode ( EQEP1_BASE, EQEP_EMULATIONMODE_RUNFREE                                                ) ;
 
     // Configure the position counter to be latched on a unit time out
     // and latch on rising edge of index pulse
-    EQEP_setLatchMode(EQEP1_BASE, (EQEP_LATCH_RISING_INDEX |
-                                   EQEP_LATCH_UNIT_TIME_OUT));
+    EQEP_setLatchMode(EQEP1_BASE, (EQEP_LATCH_RISING_INDEX | EQEP_LATCH_UNIT_TIME_OUT));
 
     // Configure the position counter to reset on a maximum position
-    EQEP_setPositionCounterConfig(EQEP1_BASE, EQEP_POSITION_RESET_MAX_POS,
-                                              (4 * qep1.LineEncoder) - 1);
+    EQEP_setPositionCounterConfig(EQEP1_BASE, EQEP_POSITION_RESET_MAX_POS, (4 * qep1.LineEncoder) - 1);
 
     // Disables the eQEP module position-compare unit
     EQEP_disableCompare(EQEP1_BASE);
@@ -2602,26 +1422,21 @@ void configurePositionSensing(void)
 
     // Configure and enable the edge-capture unit. The capture clock divider is
     // SYSCLKOUT/128. The unit-position event divider is QCLK/32.
-    EQEP_setCaptureConfig(EQEP1_BASE, EQEP_CAPTURE_CLK_DIV_128,
-                                      EQEP_UNIT_POS_EVNT_DIV_32);
+    EQEP_setCaptureConfig(EQEP1_BASE, EQEP_CAPTURE_CLK_DIV_128, EQEP_UNIT_POS_EVNT_DIV_32);
 
     // Enable QEP edge-capture unit
     EQEP_enableCapture(EQEP1_BASE);
 
     // Initialize the Speed module for speed calculation from QEP/RESOLVER
-    speed1.K1 = 1/(BASE_FREQ*T);
-    speed1.K2 = 1/(1+2*PI*T*5);      // Low-pass cut-off frequency
-    speed1.K3 = 1-speed1.K2;
+    speed1.K1      = 1/(BASE_FREQ*T);
+    speed1.K2      = 1/(1+2*PI*T*5);      // Low-pass cut-off frequency
+    speed1.K3      = 1-speed1.K2;
     speed1.BaseRpm = 120*(BASE_FREQ/POLES);
 
     return;
 }
 
-// ****************************************************************************
-// ****************************************************************************
 // PWM Configuration
-// ****************************************************************************
-// ****************************************************************************
 void configurePWM(void)
 {
     uint16_t base;
@@ -2631,60 +1446,51 @@ void configurePWM(void)
     // *****************************************
     // Inverter PWM configuration - PWM 1, 2, 3
     // *****************************************
-    for(base = 0; base < 3; base++)
-    {
+    for(base = 0; base < 3; base++) {
         // Time Base SubModule Registers
         // set Immediate load
-        EPWM_setPeriodLoadMode(pwmHandle[base], EPWM_PERIOD_DIRECT_LOAD);
-        EPWM_setTimeBasePeriod(pwmHandle[base], INV_PWM_TICKS / 2);
-        EPWM_setPhaseShift(pwmHandle[base], 0);
-        EPWM_setTimeBaseCounter(pwmHandle[base], 0);
-        EPWM_setTimeBaseCounterMode(pwmHandle[base], EPWM_COUNTER_MODE_UP_DOWN);
-        EPWM_setClockPrescaler(pwmHandle[base], EPWM_CLOCK_DIVIDER_1,
-                               EPWM_HSCLOCK_DIVIDER_1);
+        EPWM_setPeriodLoadMode      ( pwmHandle[base], EPWM_PERIOD_DIRECT_LOAD                      );
+        EPWM_setTimeBasePeriod      ( pwmHandle[base], INV_PWM_TICKS / 2                            );
+        EPWM_setPhaseShift          ( pwmHandle[base], 0                                            );
+        EPWM_setTimeBaseCounter     ( pwmHandle[base], 0                                            );
+        EPWM_setTimeBaseCounterMode ( pwmHandle[base], EPWM_COUNTER_MODE_UP_DOWN                    );
+        EPWM_setClockPrescaler      ( pwmHandle[base], EPWM_CLOCK_DIVIDER_1, EPWM_HSCLOCK_DIVIDER_1 );
 
-        EPWM_disablePhaseShiftLoad(pwmHandle[base]);
+        EPWM_disablePhaseShiftLoad ( pwmHandle[base]                                      );
 
         // sync "down-stream"
-        EPWM_setSyncOutPulseMode(pwmHandle[base],
-                                      EPWM_SYNC_OUT_PULSE_ON_COUNTER_ZERO);
+        EPWM_setSyncOutPulseMode   ( pwmHandle[base], EPWM_SYNC_OUT_PULSE_ON_COUNTER_ZERO );
 
         // Counter Compare Submodule Registers
         // set duty 0% initially
-        EPWM_setCounterCompareValue(pwmHandle[base], EPWM_COUNTER_COMPARE_A, 0);
-        EPWM_setCounterCompareShadowLoadMode(pwmHandle[base],
-                                             EPWM_COUNTER_COMPARE_A,
-                                             EPWM_COMP_LOAD_ON_CNTR_ZERO);
+        EPWM_setCounterCompareValue          ( pwmHandle[base], EPWM_COUNTER_COMPARE_A, 0                           );
+        EPWM_setCounterCompareShadowLoadMode ( pwmHandle[base], EPWM_COUNTER_COMPARE_A, EPWM_COMP_LOAD_ON_CNTR_ZERO );
 
         // Action Qualifier SubModule Registers
-        EPWM_setActionQualifierActionComplete(pwmHandle[base], EPWM_AQ_OUTPUT_A,
-                (EPWM_ActionQualifierEventAction)(EPWM_AQ_OUTPUT_LOW_UP_CMPA |
-                                                  EPWM_AQ_OUTPUT_HIGH_DOWN_CMPA));
+        EPWM_setActionQualifierActionComplete(pwmHandle[base], EPWM_AQ_OUTPUT_A, (EPWM_ActionQualifierEventAction)(EPWM_AQ_OUTPUT_LOW_UP_CMPA | EPWM_AQ_OUTPUT_HIGH_DOWN_CMPA));
 
         // Active high complementary PWMs - Set up the deadband
-        EPWM_setRisingEdgeDeadBandDelayInput(pwmHandle[base], EPWM_DB_INPUT_EPWMA);
-        EPWM_setFallingEdgeDeadBandDelayInput(pwmHandle[base], EPWM_DB_INPUT_EPWMA);
+        EPWM_setRisingEdgeDeadBandDelayInput  ( pwmHandle[base], EPWM_DB_INPUT_EPWMA );
+        EPWM_setFallingEdgeDeadBandDelayInput ( pwmHandle[base], EPWM_DB_INPUT_EPWMA );
 
-        EPWM_setDeadBandDelayMode(pwmHandle[base], EPWM_DB_RED, true);
-        EPWM_setDeadBandDelayMode(pwmHandle[base], EPWM_DB_FED, true);
-        EPWM_setDeadBandDelayPolarity(pwmHandle[base], EPWM_DB_RED,
-                                      EPWM_DB_POLARITY_ACTIVE_HIGH);
-        EPWM_setDeadBandDelayPolarity(pwmHandle[base],
-                                      EPWM_DB_FED, EPWM_DB_POLARITY_ACTIVE_LOW);
-        EPWM_setRisingEdgeDelayCount(pwmHandle[base], 200);
-        EPWM_setFallingEdgeDelayCount(pwmHandle[base], 200);
+        EPWM_setDeadBandDelayMode     ( pwmHandle[base], EPWM_DB_RED, true                         );
+        EPWM_setDeadBandDelayMode     ( pwmHandle[base], EPWM_DB_FED, true                         );
+        EPWM_setDeadBandDelayPolarity ( pwmHandle[base], EPWM_DB_RED, EPWM_DB_POLARITY_ACTIVE_HIGH );
+        EPWM_setDeadBandDelayPolarity ( pwmHandle[base], EPWM_DB_FED, EPWM_DB_POLARITY_ACTIVE_LOW  );
+        EPWM_setRisingEdgeDelayCount  ( pwmHandle[base], 200                                       );
+        EPWM_setFallingEdgeDelayCount ( pwmHandle[base], 200                                       );
     }
 
     // configure 2 and 3 as slaves
-    EPWM_setSyncOutPulseMode(EPWM2_BASE, EPWM_SYNC_OUT_PULSE_ON_EPWMxSYNCIN);
-    EPWM_enablePhaseShiftLoad(EPWM2_BASE);
-    EPWM_setPhaseShift(EPWM2_BASE, 2);
-    EPWM_setCountModeAfterSync(EPWM2_BASE, EPWM_COUNT_MODE_UP_AFTER_SYNC);
+    EPWM_setSyncOutPulseMode   ( EPWM2_BASE, EPWM_SYNC_OUT_PULSE_ON_EPWMxSYNCIN );
+    EPWM_enablePhaseShiftLoad  ( EPWM2_BASE                                     );
+    EPWM_setPhaseShift         ( EPWM2_BASE, 2                                  );
+    EPWM_setCountModeAfterSync ( EPWM2_BASE, EPWM_COUNT_MODE_UP_AFTER_SYNC      );
 
-    EPWM_setSyncOutPulseMode(EPWM3_BASE, EPWM_SYNC_OUT_PULSE_ON_EPWMxSYNCIN);
-    EPWM_enablePhaseShiftLoad(EPWM3_BASE);
-    EPWM_setPhaseShift(EPWM3_BASE, 2);
-    EPWM_setCountModeAfterSync(EPWM3_BASE, EPWM_COUNT_MODE_UP_AFTER_SYNC);
+    EPWM_setSyncOutPulseMode   ( EPWM3_BASE, EPWM_SYNC_OUT_PULSE_ON_EPWMxSYNCIN );
+    EPWM_enablePhaseShiftLoad  ( EPWM3_BASE                                     );
+    EPWM_setPhaseShift         ( EPWM3_BASE, 2                                  );
+    EPWM_setCountModeAfterSync ( EPWM3_BASE, EPWM_COUNT_MODE_UP_AFTER_SYNC      );
 
     // **********************************************
     // Sigma Delta clock set up - pwm5
@@ -2696,12 +1502,11 @@ void configurePWM(void)
     // set Immediate load
     EPWM_setPeriodLoadMode(EPWM5_BASE, EPWM_PERIOD_DIRECT_LOAD);
     // PWM frequency = 1 / period
-    EPWM_setTimeBasePeriod(EPWM5_BASE, SDFM_TICKS-1);
-    EPWM_setPhaseShift(EPWM5_BASE, 0);
-    EPWM_setTimeBaseCounter(EPWM5_BASE, 0);
-    EPWM_setTimeBaseCounterMode(EPWM5_BASE, EPWM_COUNTER_MODE_UP);
-    EPWM_setClockPrescaler(EPWM5_BASE, EPWM_CLOCK_DIVIDER_1,
-                           EPWM_HSCLOCK_DIVIDER_1);
+    EPWM_setTimeBasePeriod      ( EPWM5_BASE, SDFM_TICKS-1                                 );
+    EPWM_setPhaseShift          ( EPWM5_BASE, 0                                            );
+    EPWM_setTimeBaseCounter     ( EPWM5_BASE, 0                                            );
+    EPWM_setTimeBaseCounterMode ( EPWM5_BASE, EPWM_COUNTER_MODE_UP                         );
+    EPWM_setClockPrescaler      ( EPWM5_BASE, EPWM_CLOCK_DIVIDER_1, EPWM_HSCLOCK_DIVIDER_1 );
 
     EPWM_disablePhaseShiftLoad(EPWM5_BASE);
 
@@ -2710,29 +1515,20 @@ void configurePWM(void)
 
     // Counter Compare Submodule Registers
     // set duty 0% initially
-    EPWM_setCounterCompareValue(EPWM5_BASE, EPWM_COUNTER_COMPARE_A, 0);
-    EPWM_setCounterCompareShadowLoadMode(EPWM5_BASE, EPWM_COUNTER_COMPARE_A,
-                                         EPWM_COMP_LOAD_ON_CNTR_ZERO);
+    EPWM_setCounterCompareValue          ( EPWM5_BASE, EPWM_COUNTER_COMPARE_A, 0                           );
+    EPWM_setCounterCompareShadowLoadMode ( EPWM5_BASE, EPWM_COUNTER_COMPARE_A, EPWM_COMP_LOAD_ON_CNTR_ZERO );
 
     // Action Qualifier SubModule Registers
-    EPWM_setActionQualifierActionComplete(EPWM5_BASE, EPWM_AQ_OUTPUT_A,
-            (EPWM_ActionQualifierEventAction)(EPWM_AQ_OUTPUT_LOW_UP_CMPA |
-                                              EPWM_AQ_OUTPUT_HIGH_ZERO));
-
-    EPWM_setActionQualifierActionComplete(EPWM5_BASE, EPWM_AQ_OUTPUT_B,
-            (EPWM_ActionQualifierEventAction)(EPWM_AQ_OUTPUT_LOW_UP_CMPA |
-                                              EPWM_AQ_OUTPUT_HIGH_ZERO));
-    EPWM_setCounterCompareValue(EPWM5_BASE,
-                                EPWM_COUNTER_COMPARE_A,
-                           (uint16_t)(EPWM_getTimeBasePeriod(EPWM5_BASE) >> 1));
-    EPWM_setSyncOutPulseMode(EPWM5_BASE, EPWM_SYNC_OUT_PULSE_ON_EPWMxSYNCIN);
+    EPWM_setActionQualifierActionComplete ( EPWM5_BASE ,EPWM_AQ_OUTPUT_A       ,(EPWM_ActionQualifierEventAction )(EPWM_AQ_OUTPUT_LOW_UP_CMPA | EPWM_AQ_OUTPUT_HIGH_ZERO));
+    EPWM_setActionQualifierActionComplete ( EPWM5_BASE ,EPWM_AQ_OUTPUT_B       ,(EPWM_ActionQualifierEventAction )(EPWM_AQ_OUTPUT_LOW_UP_CMPA | EPWM_AQ_OUTPUT_HIGH_ZERO));
+    EPWM_setCounterCompareValue           ( EPWM5_BASE ,EPWM_COUNTER_COMPARE_A ,(uint16_t                  )(EPWM_getTimeBasePeriod(EPWM5_BASE) >> 1))              ;
+    EPWM_setSyncOutPulseMode              ( EPWM5_BASE ,EPWM_SYNC_OUT_PULSE_ON_EPWMxSYNCIN                 )                                                        ;
 
     // ****************************************************************
     // pwm10 is used to passover pwm1 sync to pwm11 for SDFM sync
     // ****************************************************************
-    SysCtl_setSyncInputConfig(SYSCTL_SYNC_IN_EPWM10,
-                              SYSCTL_SYNC_IN_SRC_EPWM1SYNCOUT);
-    EPWM_setSyncOutPulseMode(EPWM10_BASE, EPWM_SYNC_OUT_PULSE_ON_EPWMxSYNCIN);
+    SysCtl_setSyncInputConfig ( SYSCTL_SYNC_IN_EPWM10, SYSCTL_SYNC_IN_SRC_EPWM1SYNCOUT );
+    EPWM_setSyncOutPulseMode  ( EPWM10_BASE, EPWM_SYNC_OUT_PULSE_ON_EPWMxSYNCIN        );
 
     // ****************************************************************
     // sync SDFM filter windows with motor control PWMs - pwm11
@@ -2743,69 +1539,54 @@ void configurePWM(void)
     configurePWM_1chUpCnt(EPWM11_BASE, INV_PWM_TICKS / 2);
 #endif
 
-    EPWM_enablePhaseShiftLoad(EPWM11_BASE);
-    EPWM_setPhaseShift(EPWM11_BASE, 2);
-    EPWM_setCountModeAfterSync(EPWM11_BASE, EPWM_COUNT_MODE_UP_AFTER_SYNC);
+    EPWM_enablePhaseShiftLoad  ( EPWM11_BASE                                );
+    EPWM_setPhaseShift         ( EPWM11_BASE, 2                             );
+    EPWM_setCountModeAfterSync ( EPWM11_BASE, EPWM_COUNT_MODE_UP_AFTER_SYNC );
 
     //for current sensing (not used)
-    EPWM_setCounterCompareValue(EPWM11_BASE,
-                                EPWM_COUNTER_COMPARE_C,
-                                (uint16_t)(EPWM_getTimeBasePeriod(EPWM11_BASE) -
-                                           SDFM_TICKS*(OSR_RATE+1)*3/2));
-    //for voltage sensing
-    EPWM_setCounterCompareValue(EPWM11_BASE,
-                                EPWM_COUNTER_COMPARE_D,
-                                (uint16_t)(EPWM_getTimeBasePeriod(EPWM11_BASE) -
-                                           SDFM_TICKS*(OSR_RATE+1)*3/2));
+    EPWM_setCounterCompareValue ( EPWM11_BASE, EPWM_COUNTER_COMPARE_C, (uint16_t )(EPWM_getTimeBasePeriod(EPWM11_BASE) - SDFM_TICKS*(OSR_RATE+1)*3/2));
+    // for voltage sensing
+    EPWM_setCounterCompareValue ( EPWM11_BASE, EPWM_COUNTER_COMPARE_D, (uint16_t )(EPWM_getTimeBasePeriod(EPWM11_BASE) - SDFM_TICKS*(OSR_RATE+1)*3/2));
 
     // 500 is arbitrary - to call motorISR (not used)
-    EPWM_setCounterCompareValue(EPWM11_BASE,
-                                EPWM_COUNTER_COMPARE_A,
-                               (uint16_t)((SDFM_TICKS*(OSR_RATE+1)*3/2) + 500));
-    SysCtl_disablePeripheral(SYSCTL_PERIPH_CLK_TBCLKSYNC);
+    EPWM_setCounterCompareValue ( EPWM11_BASE, EPWM_COUNTER_COMPARE_A, (uint16_t )((SDFM_TICKS*(OSR_RATE+1)*3/2) + 500))                              ;
+    SysCtl_disablePeripheral    ( SYSCTL_PERIPH_CLK_TBCLKSYNC                    )                                                                    ;
 
     return;
 }
 
-// ****************************************************************************
 // Specific PWM configuration - 1 channel, up count
-// ****************************************************************************
 void configurePWM_1chUpCnt(uint32_t base, uint16_t period)
 {
-    // Time Base SubModule Registers
-    EPWM_setPeriodLoadMode(base, EPWM_PERIOD_DIRECT_LOAD); // set Immediate load
-    EPWM_setTimeBasePeriod(base, period-1); // PWM frequency = 1 / period
-    EPWM_setPhaseShift(base, 0);
-    EPWM_setTimeBaseCounter(base, 0);
-    EPWM_setTimeBaseCounterMode(base, EPWM_COUNTER_MODE_UP);
-    EPWM_setClockPrescaler(base, EPWM_CLOCK_DIVIDER_1, EPWM_HSCLOCK_DIVIDER_1);
+                                                                                                                                                                 // Time Base SubModule Registers
+    EPWM_setPeriodLoadMode                ( base, EPWM_PERIOD_DIRECT_LOAD                             )                                                        ; // set Immediate load
+    EPWM_setTimeBasePeriod                ( base, period-1                                            )                                                        ; // PWM frequency = 1 / period
+    EPWM_setPhaseShift                    ( base, 0                                                   )                                                        ;
+    EPWM_setTimeBaseCounter               ( base, 0                                                   )                                                        ;
+    EPWM_setTimeBaseCounterMode           ( base, EPWM_COUNTER_MODE_UP                                )                                                        ;
+    EPWM_setClockPrescaler                ( base, EPWM_CLOCK_DIVIDER_1, EPWM_HSCLOCK_DIVIDER_1        )                                                        ;
+    EPWM_disablePhaseShiftLoad            ( base                                                      )                                                        ;
+                                                                                                                                                                 // sync "down-stream"
+    EPWM_setSyncOutPulseMode              ( base, EPWM_SYNC_OUT_PULSE_ON_COUNTER_ZERO                 )                                                        ;
 
-    EPWM_disablePhaseShiftLoad(base);
-    // sync "down-stream"
-    EPWM_setSyncOutPulseMode(base, EPWM_SYNC_OUT_PULSE_ON_COUNTER_ZERO);
+                                                                                                                                                                 // Counter Compare Submodule Registers
+                                                                                                                                                                 // set duty 0% initially
+    EPWM_setCounterCompareValue           ( base, EPWM_COUNTER_COMPARE_A, 0                           )                                                        ;
+    EPWM_setCounterCompareShadowLoadMode  ( base, EPWM_COUNTER_COMPARE_A, EPWM_COMP_LOAD_ON_CNTR_ZERO )                                                        ;
 
-    // Counter Compare Submodule Registers
-    // set duty 0% initially
-    EPWM_setCounterCompareValue(base, EPWM_COUNTER_COMPARE_A, 0);
-    EPWM_setCounterCompareShadowLoadMode(base, EPWM_COUNTER_COMPARE_A,
-                                         EPWM_COMP_LOAD_ON_CNTR_ZERO);
+                                                                                                                                                                 // Action Qualifier SubModule Registers
+    EPWM_setActionQualifierActionComplete ( base, EPWM_AQ_OUTPUT_A,
+                                          ( EPWM_ActionQualifierEventAction                           )(EPWM_AQ_OUTPUT_LOW_UP_CMPA | EPWM_AQ_OUTPUT_HIGH_ZERO));
 
-    // Action Qualifier SubModule Registers
-    EPWM_setActionQualifierActionComplete(base, EPWM_AQ_OUTPUT_A,
-            (EPWM_ActionQualifierEventAction)(EPWM_AQ_OUTPUT_LOW_UP_CMPA |
-                                              EPWM_AQ_OUTPUT_HIGH_ZERO));
-
-    // Active high complementary PWMs - Set up the deadband
-    EPWM_setRisingEdgeDeadBandDelayInput(base, EPWM_DB_INPUT_EPWMA);
-    EPWM_setFallingEdgeDeadBandDelayInput(base, EPWM_DB_INPUT_EPWMA);
-    EPWM_setDeadBandDelayMode(base, EPWM_DB_RED, true);
-    EPWM_setDeadBandDelayMode(base, EPWM_DB_FED, true);
-    EPWM_setDeadBandDelayPolarity(base, EPWM_DB_RED,
-                                  EPWM_DB_POLARITY_ACTIVE_HIGH);
-    EPWM_setDeadBandDelayPolarity(base, EPWM_DB_FED,
-                                  EPWM_DB_POLARITY_ACTIVE_LOW);
-    EPWM_setRisingEdgeDelayCount(base, 0);
-    EPWM_setFallingEdgeDelayCount(base, 0);
+                                                                                                                                                                 // Active high complementary PWMs - Set up the deadband
+    EPWM_setRisingEdgeDeadBandDelayInput  ( base, EPWM_DB_INPUT_EPWMA                                 )                                                        ;
+    EPWM_setFallingEdgeDeadBandDelayInput ( base, EPWM_DB_INPUT_EPWMA                                 )                                                        ;
+    EPWM_setDeadBandDelayMode             ( base, EPWM_DB_RED, true                                   )                                                        ;
+    EPWM_setDeadBandDelayMode             ( base, EPWM_DB_FED, true                                   )                                                        ;
+    EPWM_setDeadBandDelayPolarity         ( base, EPWM_DB_RED, EPWM_DB_POLARITY_ACTIVE_HIGH           )                                                        ;
+    EPWM_setDeadBandDelayPolarity         ( base, EPWM_DB_FED, EPWM_DB_POLARITY_ACTIVE_LOW            )                                                        ;
+    EPWM_setRisingEdgeDelayCount          ( base, 0                                                   )                                                        ;
+    EPWM_setFallingEdgeDelayCount         ( base, 0                                                   )                                                        ;
 
     return;
 }
@@ -2817,74 +1598,58 @@ void configurePWM_1chUpDwnCnt(uint32_t base, uint16_t period, int16_t db)
 {
     // Time Base SubModule Registers
     // set Immediate load
-    EPWM_setPeriodLoadMode(base, EPWM_PERIOD_DIRECT_LOAD);
-    EPWM_setTimeBasePeriod(base, period / 2);
-    EPWM_setPhaseShift(base, 0);
-    EPWM_setTimeBaseCounter(base, 0);
-    EPWM_setTimeBaseCounterMode(base, EPWM_COUNTER_MODE_UP_DOWN);
-    EPWM_setClockPrescaler(base, EPWM_CLOCK_DIVIDER_1, EPWM_HSCLOCK_DIVIDER_1);
+    EPWM_setPeriodLoadMode               ( base, EPWM_PERIOD_DIRECT_LOAD                             );
+    EPWM_setTimeBasePeriod               ( base, period / 2                                          );
+    EPWM_setPhaseShift                   ( base, 0                                                   );
+    EPWM_setTimeBaseCounter              ( base, 0                                                   );
+    EPWM_setTimeBaseCounterMode          ( base, EPWM_COUNTER_MODE_UP_DOWN                           );
+    EPWM_setClockPrescaler               ( base, EPWM_CLOCK_DIVIDER_1, EPWM_HSCLOCK_DIVIDER_1        );
 
-    EPWM_disablePhaseShiftLoad(base);
+    EPWM_disablePhaseShiftLoad           ( base                                                      );
     // sync "down-stream"
-    EPWM_setSyncOutPulseMode(base, EPWM_SYNC_OUT_PULSE_ON_COUNTER_ZERO);
+    EPWM_setSyncOutPulseMode             ( base, EPWM_SYNC_OUT_PULSE_ON_COUNTER_ZERO                 );
 
     // Counter Compare Submodule Registers
     // set duty 0% initially
-    EPWM_setCounterCompareValue(base, EPWM_COUNTER_COMPARE_A, 0);
-    EPWM_setCounterCompareShadowLoadMode(base, EPWM_COUNTER_COMPARE_A,
-                                         EPWM_COMP_LOAD_ON_CNTR_ZERO);
+    EPWM_setCounterCompareValue          ( base, EPWM_COUNTER_COMPARE_A, 0                           );
+    EPWM_setCounterCompareShadowLoadMode ( base, EPWM_COUNTER_COMPARE_A, EPWM_COMP_LOAD_ON_CNTR_ZERO );
 
     // Action Qualifier SubModule Registers
-    EPWM_setActionQualifierActionComplete(base, EPWM_AQ_OUTPUT_A,
-            (EPWM_ActionQualifierEventAction)(EPWM_AQ_OUTPUT_LOW_UP_CMPA |
-                                              EPWM_AQ_OUTPUT_HIGH_DOWN_CMPA));
+    EPWM_setActionQualifierActionComplete(base, EPWM_AQ_OUTPUT_A, (EPWM_ActionQualifierEventAction)(EPWM_AQ_OUTPUT_LOW_UP_CMPA | EPWM_AQ_OUTPUT_HIGH_DOWN_CMPA));
 
     // Active high complementary PWMs - Set up the deadband
-    EPWM_setRisingEdgeDeadBandDelayInput(base, EPWM_DB_INPUT_EPWMA);
-    EPWM_setFallingEdgeDeadBandDelayInput(base, EPWM_DB_INPUT_EPWMA);
-    EPWM_setDeadBandDelayMode(base, EPWM_DB_RED, true);
-    EPWM_setDeadBandDelayMode(base, EPWM_DB_FED, true);
-    EPWM_setDeadBandDelayPolarity(base, EPWM_DB_RED,
-                                  EPWM_DB_POLARITY_ACTIVE_HIGH);
-    EPWM_setDeadBandDelayPolarity(base,
-                                  EPWM_DB_FED, EPWM_DB_POLARITY_ACTIVE_LOW);
-    EPWM_setRisingEdgeDelayCount(base, db);
-    EPWM_setFallingEdgeDelayCount(base, db);
+    EPWM_setRisingEdgeDeadBandDelayInput  ( base, EPWM_DB_INPUT_EPWMA                       );
+    EPWM_setFallingEdgeDeadBandDelayInput ( base, EPWM_DB_INPUT_EPWMA                       );
+    EPWM_setDeadBandDelayMode             ( base, EPWM_DB_RED, true                         );
+    EPWM_setDeadBandDelayMode             ( base, EPWM_DB_FED, true                         );
+    EPWM_setDeadBandDelayPolarity         ( base, EPWM_DB_RED, EPWM_DB_POLARITY_ACTIVE_HIGH );
+    EPWM_setDeadBandDelayPolarity         ( base, EPWM_DB_FED, EPWM_DB_POLARITY_ACTIVE_LOW  );
+    EPWM_setRisingEdgeDelayCount          ( base, db                                        );
+    EPWM_setFallingEdgeDelayCount         ( base, db                                        );
 
     return;
 }
 
-//******************************************************************************
-//******************************************************************************
 // SDFM Configuration for current shunts V/W and DC bus voltage
-//******************************************************************************
-//******************************************************************************
 void configureSDFM(void)
 {
     uint16_t flt;
 
-    for (flt = 0; flt <= 3; flt++)
-    {
+    for (flt = 0; flt <= 3; flt++) {
         // Configure Input Control Mode: Modulator Clock rate = Modulator data
         // rate
-        SDFM_setupModulatorClock(SDFM1_BASE, (SDFM_FilterNumber)flt,
-                                 SDFM_MODULATOR_CLK_EQUAL_DATA_RATE);
+        SDFM_setupModulatorClock(SDFM1_BASE, (SDFM_FilterNumber)flt, SDFM_MODULATOR_CLK_EQUAL_DATA_RATE);
 
-        // ******************************************************
         // Comparator Module
         // ******************************************************
         // Comparator HLT and LLT
         // Configure Comparator module's comparator filter type and
         // comparator's OSR value, high level threshold, low level threshold
-        SDFM_setComparatorFilterType(SDFM1_BASE, (SDFM_FilterNumber)flt,
-                                     SDFM_FILTER_SINC_3);
-        SDFM_setCompFilterOverSamplingRatio(SDFM1_BASE, (SDFM_FilterNumber)flt,
-                                            31);
-        SDFM_setCompFilterHighThreshold(SDFM1_BASE, (SDFM_FilterNumber)flt,
-                                        hlt);
-        SDFM_setCompFilterLowThreshold(SDFM1_BASE, (SDFM_FilterNumber)flt, llt);
+        SDFM_setComparatorFilterType        ( SDFM1_BASE, (SDFM_FilterNumber )flt, SDFM_FILTER_SINC_3);
+        SDFM_setCompFilterOverSamplingRatio ( SDFM1_BASE, (SDFM_FilterNumber )flt, 31)                ;
+        SDFM_setCompFilterHighThreshold     ( SDFM1_BASE, (SDFM_FilterNumber )flt, hlt)               ;
+        SDFM_setCompFilterLowThreshold      ( SDFM1_BASE, (SDFM_FilterNumber )flt, llt)               ;
 
-        // ******************************************************
         // Sinc filter Module
         // ******************************************************
         // Configure Data filter module's filter type, OSR value and enable /
@@ -2895,14 +1660,11 @@ void configureSDFM(void)
         // is +/-2097152 i.e. 2^21.
         // To represent this in 16 bit format where the first bit is
         // sign shift by 6 bits.
-        SDFM_enableFilter(SDFM1_BASE, (SDFM_FilterNumber)flt);
-        SDFM_setFilterType(SDFM1_BASE, (SDFM_FilterNumber)flt,
-                           SDFM_FILTER_SINC_3);
-        SDFM_setFilterOverSamplingRatio(SDFM1_BASE, (SDFM_FilterNumber)flt,
-                                        127);
-        SDFM_setOutputDataFormat(SDFM1_BASE, (SDFM_FilterNumber)flt,
-                                 SDFM_DATA_FORMAT_16_BIT);
-        SDFM_setDataShiftValue(SDFM1_BASE, (SDFM_FilterNumber)flt, 6);
+        SDFM_enableFilter               ( SDFM1_BASE, (SDFM_FilterNumber )flt)                         ;
+        SDFM_setFilterType              ( SDFM1_BASE, (SDFM_FilterNumber )flt, SDFM_FILTER_SINC_3)     ;
+        SDFM_setFilterOverSamplingRatio ( SDFM1_BASE, (SDFM_FilterNumber )flt, 127)                    ;
+        SDFM_setOutputDataFormat        ( SDFM1_BASE, (SDFM_FilterNumber )flt, SDFM_DATA_FORMAT_16_BIT);
+        SDFM_setDataShiftValue          ( SDFM1_BASE, (SDFM_FilterNumber )flt, 6)                      ;
     }
 
     // PWM11.CMPC, PWM11.CMPD, PWM12.CMPC and PWM12.CMPD signals cannot
@@ -2924,10 +1686,7 @@ void configureSDFM(void)
 }
 
 // ****************************************************************************
-// ****************************************************************************
 // POSITION LOOP UTILITY FUNCTIONS
-// ****************************************************************************
-// ****************************************************************************
 
 // slew programmable ramper
 float32_t ramper(float32_t in, float32_t out, float32_t rampDelta)
@@ -2936,76 +1695,60 @@ float32_t ramper(float32_t in, float32_t out, float32_t rampDelta)
 
     err = in - out;
 
-    if(err > rampDelta)
-    {
+    if(err > rampDelta) {
         return(out + rampDelta);
     }
-    else if(err < -rampDelta)
-    {
+    else if(err < -rampDelta) {
         return(out - rampDelta);
     }
-    else
-    {
+    else {
         return(in);
     }
 }
 
-// ****************************************************************************
-// ****************************************************************************
 // Reference Position Generator for position loop
-// ****************************************************************************
-// ****************************************************************************
 float32_t refPosGen(float32_t out)
 {
     float32_t in = posArray[posPtr];
 
     out = ramper(in, out, posSlewRate);
 
-    if(in == out)
-    {
-        if(++posCntr > 1000)
-        {
+    if(in == out) {
+        if(++posCntr > 1000) {
             posCntr = 0;
-            if(++posPtr >= posPtrMax)
-            {
+            if(++posPtr >= posPtrMax) {
                 posPtr = 0;
             }
         }
     }
-
     return(out);
 }
 
-
-// ****************************************************************************
-// ****************************************************************************
 // PI Controller Configuration
-// ****************************************************************************
-// ****************************************************************************
 void configurePIControllers(void)
 {
     // Initialize the PI module for position
-    pi_pos.Kp = 1.0;            //10.0;
-    pi_pos.Ki = 0.001;          //T*speedLoopPrescaler/0.3;
+    pi_pos.Kp   = 1.0;   // 10.0;
+    pi_pos.Ki   = 0.001; // T*speedLoopPrescaler/0.3;
     pi_pos.Umax = 1.0;
     pi_pos.Umin = -1.0;
 
     // Initialize the PID module for position (alternative option for eval)
-    pid_pos.Ref = 0;
-    pid_pos.Fdb = 0;
-    pid_pos.OutMin = -0.5;
-    pid_pos.OutMax = 0.5;
-    pid_pos.Out = 0;
+    pid_pos.Ref       = 0;
+    pid_pos.Fdb       = 0;
+    pid_pos.OutMin    = -0.5;
+    pid_pos.OutMax    = 0.5;
+    pid_pos.Out       = 0;
 
-    pid_pos.Kp = 1.0;
-    pid_pos.Ki = 0;
-    pid_pos.Kd = 0;
-    pid_pos.Kc = 0.9;
+    pid_pos.Kp        = 1.0;
+    pid_pos.Ki        = 0;
+    pid_pos.Kd        = 0;
+    pid_pos.Kc        = 0.9;
 
-    pid_pos.Up1 = 0;
-    pid_pos.Up  = 0;
-    pid_pos.Ui  = 0;
-    pid_pos.Ud  = 0;
+    pid_pos.Up1       = 0;
+    pid_pos.Up        = 0;
+    pid_pos.Ui        = 0;
+    pid_pos.Ud        = 0;
     pid_pos.SatErr    = 0;
     pid_pos.OutPreSat = 0;
 
@@ -3018,83 +1761,24 @@ void configurePIControllers(void)
     pid_spd.param.Umin = -0.95;
 
     // Init PI module for ID loop
-    pi_id.Kp = 1.0;      //LS * CUR_LOOP_BW;
-    pi_id.Ki = T/0.04;   //(RS * T) * CUR_LOOP_BW;
-    pi_id.Kerr = (pi_id.Ki*0.5) + pi_id.Kp,
+    pi_id.Kp      = 1.0;//LS * CUR_LOOP_BW;
+    pi_id.Ki      = T/0.04;   //(RS * T) * CUR_LOOP_BW;
+    pi_id.Kerr    = (pi_id.Ki*0.5) + pi_id.Kp,
     pi_id.KerrOld = (pi_id.Ki*0.5) - pi_id.Kp;
-    pi_id.Umax = 0.5 * maxModIndex;
-    pi_id.Umin = -0.5 * maxModIndex;
-    pi_id.ref = 0;
-    pi_id.err = 0;
-    pi_id.out = 0;
+    pi_id.Umax    = 0.5 * maxModIndex;
+    pi_id.Umin    = -0.5 * maxModIndex;
+    pi_id.ref     = 0;
+    pi_id.err     = 0;
+    pi_id.out     = 0;
 
     // Init PI module for IQ loop
-    pi_iq.Kp = pi_id.Kp;
-    pi_iq.Ki = pi_id.Ki;
-    pi_iq.Kerr = (pi_iq.Ki*0.5) + pi_iq.Kp,
+    pi_iq.Kp      = pi_id.Kp;
+    pi_iq.Ki      = pi_id.Ki;
+    pi_iq.Kerr    = (pi_iq.Ki*0.5) + pi_iq.Kp,
     pi_iq.KerrOld = (pi_iq.Ki*0.5) - pi_iq.Kp;
-    pi_iq.Umax = 0.8 * maxModIndex;
-    pi_iq.Umin = -0.8 * maxModIndex;
-    pi_iq.ref = 0;
-    pi_iq.err = 0;
-    pi_iq.out = 0;
+    pi_iq.Umax    = 0.8 * maxModIndex;
+    pi_iq.Umin    = -0.8 * maxModIndex;
+    pi_iq.ref     = 0;
+    pi_iq.err     = 0;
+    pi_iq.out     = 0;
 }
-
-//*****************************************************************************
-//*****************************************************************************
-// Build level 6 : SFRA support functions
-//*****************************************************************************
-//*****************************************************************************
-#if BUILDLEVEL == FCL_LEVEL6
-// *************************************************************************
-// Using SFRA tool :
-// =================
-//      - INJECT noise
-//      - RUN the controller
-//      - CAPTURE or COLLECT the controller output
-// From a controller analysis standpoint, this sequence will reveal the
-// output of controller for a given input, and therefore, good for analysis
-// *************************************************************************
-void injectSFRA(void)
-{
-    if(sfraTestLoop == SFRA_TEST_D_AXIS)
-    {
-        sfraNoiseD = SFRA_F32_inject(0.0);
-    }
-    else if(sfraTestLoop == SFRA_TEST_Q_AXIS)
-    {
-        sfraNoiseQ = SFRA_F32_inject(0.0);
-    }
-    else if(sfraTestLoop == SFRA_TEST_SPEEDLOOP)
-    {
-        sfraNoiseW = SFRA_F32_inject(0.0);
-    }
-
-    return;
-}
-
-// ****************************************************************************
-void collectSFRA(void)
-{
-    if(sfraTestLoop == SFRA_TEST_D_AXIS)
-    {
-        SFRA_F32_collect(&pi_id.out, &pi_id.fbk);
-    }
-    else if(sfraTestLoop == SFRA_TEST_Q_AXIS)
-    {
-        SFRA_F32_collect(&pi_iq.out, &pi_iq.fbk);
-    }
-    else if(sfraTestLoop == SFRA_TEST_SPEEDLOOP)
-    {
-        SFRA_F32_collect(&pid_spd.term.Out, &pid_spd.term.Fbk);
-    }
-
-    return;
-}
-#endif
-
-// ****************************************************************************
-// ****************************************************************************
-// End of Code
-// ****************************************************************************
-// ****************************************************************************
