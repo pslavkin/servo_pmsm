@@ -235,6 +235,12 @@
 #define  LEM_TO_SHUNT    1.206637   // (12.0/9.945)
 #define  SDFM_TO_SHUNT   1.41131    // (12.5/0.8906)/9.945
 
+#ifdef _FLASH
+#pragma CODE_SECTION(motorControlISR,".TI.ramfunc");
+#endif
+#pragma INTERRUPT (motorControlISR, LPI)
+__interrupt void motorControlISR(void);
+
 void initFcl(void);
 
 typedef enum

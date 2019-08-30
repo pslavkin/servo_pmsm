@@ -8,72 +8,33 @@
 #include "dac_.h"
 #include "pwm.h"
 #include "sm.h"
+#include "events.h"
 #include "sigmadelta.h"
+#include "adc_.h"
 #include "pid_.h"
-
-// ********************* Functions **************************
-#ifdef _FLASH
-#ifndef __cplusplus
-#pragma CODE_SECTION(motorControlISR,".TI.ramfunc");
-#endif
-#endif
-
-// ******** Prototype statements for Local Functions ********
-#pragma INTERRUPT (motorControlISR, LPI)
-__interrupt void motorControlISR(void);
-
-// Device / peripheral config functions
-void configurePIControllers   ( void                                          );
-
-// Motor drive utility functions
-float32_t refPosGen ( float32_t out                                    );
-float32_t ramper    ( float32_t in, float32_t out, float32_t rampDelta );
+#include "ramper_.h"
+#include "position.h"
 
 // Flag variables
 uint32_t          isrTicker          = 0         ;
-uint16_t          backTicker         = 0         ;
 MotorRunStop_e    runMotor           = MOTOR_STOP;
-//uint16_t          ledCnt1            = 0         ;
 uint16_t          speedLoopPrescaler = 10        ; // Speed loop pre scalar
 uint16_t          speedLoopCount     = 1         ; // Speed loop counter
 volatile uint16_t lsw2EntryFlag      = 0         ;
 
 // Variables for Fast Current Loop
 volatile  uint16_t   FCL_cycleCount       = 0;
-//uint16_t             fclClrCntr           = 0;
-//uint16_t             fclCycleCountMax     = 0;
-//float32_t            fclLatencyInMicroSec = 0; // PWM update latency since sampling
-//float32_t            maxModIndex          = 0; // max modulation index
 
-// Variables for Field Oriented Control
-//float32_t T         = 0.001/ISR_FREQUENCY; // Samping period (sec), see parameter.h
-
-float32_t VdTesting = 0.1;                 // Vd reference (pu)
-float32_t VqTesting = 0.30;                // Vq reference (pu)
 float32_t IdRef     = 0.0;                 // Id reference (pu)
-float32_t tempIdRef = 0.0;                 // tempId reference (pu)
 float32_t IqRef     = 0.0;                 // Iq reference (pu)
 float32_t speedRef  = 0.0;                 // For Closed Loop tests
-float32_t lsw1Speed = 0.01;                // initial force rotation speed in search of QEP index pulse
-
-// Instance a few transform objects
-IPARK  ipark1  = IPARK_DEFAULTS;
 
 // Instance a ramp controller to smoothly ramp the frequency
 RMPCNTL rc1 = RMPCNTL_DEFAULTS;
 
-// Instance a phase voltage calculation
-//PHASEVOLTAGE volt1 = PHASEVOLTAGE_DEFAULTS;
-
 // Instance a speed measurement calc
 SPEED_MEAS_QEP  speed1;
 
-// Variables for position reference generation and control
-float32_t   posArray[]  = {1.5, -1.5, 2.5, -2.5};
-float32_t   posCntr     = 0;
-float32_t   posSlewRate = 0.001;
-int16_t     posPtrMax   = 2;
-int16_t     posPtr      = 0;/*}}}*/
 //Function that initializes the variables for Fast current Loop library
 void initFCLVars()/*{{{*/
 {
@@ -110,11 +71,10 @@ void initFcl(void)/*{{{*/
    FCL_initQEP(EQEP1_BASE);
 
    // Initialize Fast current loop variables
-   initFCLVars();
-
-   initDac  ( );
-   initQep  ( );
-   initCLA1 ( );
+   initFCLVars ( );
+   initDac     ( );
+   initQep     ( );
+   initCLA1    ( );
 
    // PI control configuration
    // Note that the vectorial sum of d-q PI outputs should be less than 1.0 which
@@ -145,8 +105,6 @@ void initFcl(void)/*{{{*/
    // Init FLAGS
    lsw        = QEP_ALIGNMENT;
    runMotor   = MOTOR_RUN;
-//   ledCnt1    = 0;
-   //fclClrCntr = 1;
 
    // Read and update DC BUS voltage for FCL to use
    FCL_params.Vdcbus = getVdc();
@@ -161,25 +119,11 @@ void initFcl(void)/*{{{*/
 // build level 5
 static void buildLevel5(void)/*{{{*/
 {
-#if  (FCL_CNTLR ==  PI_CNTLR)
    FCL_runPICtrl();
-#endif
-
-#if (FCL_CNTLR ==  CMPLX_CNTLR)
-   FCL_runComplexCtrl();
-#endif
-
    //  Measure DC Bus voltage using SDFM Filter3
    FCL_params.Vdcbus = getVdc();
-
    // Fast current loop controller wrapper
-#if  (FCL_CNTLR ==  PI_CNTLR)
    FCL_runPICtrlWrap();
-#endif
-
-#if (FCL_CNTLR ==  CMPLX_CNTLR)
-   FCL_runComplexCtrlWrap();
-#endif
 
    // -----------------------------------------------------------------------------
    //  Alignment Routine: this routine aligns the motor to zero electrical angle
@@ -313,37 +257,42 @@ __interrupt void motorControlISR(void)/*{{{*/
     isrTicker++;
 
 } // motorControlISR Ends Here}}}
-// slew programmable ramper
-float32_t ramper(float32_t in, float32_t out, float32_t rampDelta)/*{{{*/
+
+
+//----------------------------------------------------------------------------------------
+const State
+   adcCalib[],
+   stopped[],
+   control[];
+
+const State*   fclSm=adcCalib;
+const State**  fcl ( void )
 {
-    float32_t err;
+   return &fclSm;
+}
 
-    err = in - out;
 
-    if(err > rampDelta) {
-        return(out + rampDelta);
-    }
-    else if(err < -rampDelta) {
-        return(out - rampDelta);
-    }
-    else {
-        return(in);
-    }
-}/*}}}*/
-// Reference Position Generator for position loop
-float32_t refPosGen(float32_t out)/*{{{*/
+const State adcCalib [ ] =
 {
-    float32_t in = posArray[posPtr];
+    ANY_Event ,currentCalibrate ,stopped  ,
+};
 
-    out = ramper(in, out, posSlewRate);
+const State stopped [ ] =
+{
+    ANY_Event ,Rien ,stopped  ,
+};
 
-    if(in == out) {
-        if(++posCntr > 1000) {
-            posCntr = 0;
-            if(++posPtr >= posPtrMax) {
-                posPtr = 0;
-            }
-        }
-    }
-    return(out);
-}/*}}}*/
+const State control [ ] =
+{
+    ANY_Event ,Rien ,control  ,
+};
+
+
+
+
+
+
+
+
+
+
