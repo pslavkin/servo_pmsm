@@ -42,8 +42,10 @@ void Init_everythings(void)
    initParser    ( );
 //   initEqep      ( );
    Init_Schedule ( );
-   configureHVDMCProtection();
-//   initPwm       ( );
+   configureHVDMCProtection ( ); // overcurren protection
+   configureGPIO            ( ); // GPIO Configuration
+   initPwm                  ( ); // PWM Configuration
+   initSigmaDelta           ( ); // SDFM configuration
 }
 //--------------------------------------------------------------------------------
 const State idle1 [ ] =

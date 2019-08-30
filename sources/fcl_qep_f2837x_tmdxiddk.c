@@ -36,14 +36,6 @@ float32_t ramper    ( float32_t in, float32_t out, float32_t rampDelta );
 
 static inline void getFCLTime(void);
 
-// Variables for CPU control
-
-
-uint16_t vTimer0[4]       = {0}; // Virtual Timers slaved off CPU Timer 0 (A events)
-uint16_t vTimer1[4]       = {0}; // Virtual Timers slaved off CPU Timer 1 (B events)
-uint16_t vTimer2[4]       = {0}; // Virtual Timers slaved off CPU Timer 2 (C events)
-uint16_t serialCommsTimer = 0;
-
 // Variables for current measurement
 // Offset calibration routine is run to calibrate for any offsets on the opamps
 float32_t            offset_lemV      = 0;        // offset in LEM current V fbk channel @ 0A
@@ -155,42 +147,20 @@ static inline void getFCLTime(void)/*{{{*/
     SETGPIO18_LOW;
     return;
 }/*}}}*/
-// setup CPU Timer
-void setupCpuTimer(uint32_t base, uint32_t periodCount)/*{{{*/
-{
-    CPUTimer_setPreScaler       ( CPUTIMER0_BASE, 0                                   ); // divide by 1 (SYSCLKOUT)
-    CPUTimer_setPeriod          ( base, periodCount                                   );
-    CPUTimer_stopTimer          ( base                                                ); // Stop timer / reload / restart
-    CPUTimer_setEmulationMode   ( base, CPUTIMER_EMULATIONMODE_STOPAFTERNEXTDECREMENT );
-    CPUTimer_reloadTimerCounter ( base                                                ); // Reload counter with period value
-    CPUTimer_resumeTimer        ( base                                                );
-    return;
-}/*}}}*/
 // main()
 void main(void)/*{{{*/
 {
    main2();
-
-   // GPIO Configuration
-   configureGPIO();
-
-   // PWM Configuration
-   initPwm();
-
-   // SDFM configuration
-   initSigmaDelta();
-
 
    // Initialize FCL library
    // This function initializes the ADC PPB result bases, as well as the ADC
    // module used to sample phase W. Ensure that the final argument passed
    // corresponds to the ADC base used to sample phase W on the HW board
    FCL_initADC(ADCARESULT_BASE, ADC_PPB_NUMBER1, ADCBRESULT_BASE, ADC_PPB_NUMBER1, ADCA_BASE); 
-   //
+
    // ensure that the correct PWM base addresses are being passed to the
    // FCL library here. pwmHandle[0:2] should represent inverter phases
    // U/V/W in the hardware
-   //
    FCL_initPWM(EPWM1_BASE, EPWM2_BASE, EPWM3_BASE);
 
    // ensure the correct QEP base is being passed
@@ -198,21 +168,6 @@ void main(void)/*{{{*/
 
    // Initialize Fast current loop variables
    initFCLVars();
-
-   // Setting up link from EPWM to ADC
-   //    - EPWM1 - Inverter currents at sampling frequency (@ PRD or @ (PRD&ZRO) )
-#if (SAMPLING_METHOD == SINGLE_SAMPLING)
-   // Select SOC from counter at ctr = prd
-   EPWM_setADCTriggerSource(EPWM1_BASE, EPWM_SOC_A, EPWM_SOC_TBCTR_PERIOD);
-#elif (SAMPLING_METHOD == DOUBLE_SAMPLING)
-   // Select SOC from counter at ctr = 0 or ctr = prd
-   EPWM_setADCTriggerSource(EPWM1_BASE, EPWM_SOC_A, EPWM_SOC_TBCTR_ZERO_OR_PERIOD);
-#endif
-   // Generate pulse on 1st event
-   EPWM_setADCTriggerEventPrescale(EPWM1_BASE, EPWM_SOC_A, 1);
-
-   // Enable SOC on A group
-   EPWM_enableADCTrigger(EPWM1_BASE, EPWM_SOC_A);
 
    initDac  ( );
    initQep  ( );
@@ -250,41 +205,6 @@ void main(void)/*{{{*/
    ledCnt1    = 0;
    fclClrCntr = 1;
 
-   // Configure INTerrupts
-
-   // Enable EPWM11 INT to reset SDFM in sync with control PWMs
-   // Select INT @ ctr = CMPA up
-   EPWM_setInterruptSource             ( EPWM11_BASE, EPWM_INT_TBCTR_U_CMPA );
-   // Enable INT
-   EPWM_enableInterrupt                ( EPWM11_BASE                        );
-   // Generate INT on every event
-   EPWM_setInterruptEventCount         ( EPWM11_BASE, 1                     );
-   EPWM_clearEventTriggerInterruptFlag ( EPWM11_BASE                        );
-
-   // Enable EPWM1 INT to generate MotorControlISR
-#if (SAMPLING_METHOD == SINGLE_SAMPLING)
-   // Select INT @ ctr = 0
-   EPWM_setInterruptSource(EPWM1_BASE, EPWM_INT_TBCTR_PERIOD);
-#elif (SAMPLING_METHOD == DOUBLE_SAMPLING)
-   // Select INT @ ctr = 0 or ctr = prd
-   EPWM_setInterruptSource(EPWM1_BASE, EPWM_INT_TBCTR_ZERO_OR_PERIOD);
-#endif
-   // Enable Interrupt Generation from the PWM module
-   EPWM_enableInterrupt                ( EPWM1_BASE                  );
-   // This needs to be 1 for the INTFRC to work
-   EPWM_setInterruptEventCount         ( EPWM1_BASE, 1               );
-   // Clear ePWM Interrupt flag
-   EPWM_clearEventTriggerInterruptFlag ( EPWM1_BASE                  );
-   Interrupt_register                  ( INT_EPWM1, &motorControlISR );
-
-   // Enable AdcA-ADCINT1- to help verify EoC before result data read
-   ADC_setInterruptSource   ( ADCA_BASE, ADC_INT_NUMBER1, ADC_SOC_NUMBER0 );
-   ADC_enableContinuousMode ( ADCA_BASE, ADC_INT_NUMBER1                  );
-   ADC_enableInterrupt      ( ADCA_BASE, ADC_INT_NUMBER1                  );
-
-   // PWM Clocks Enable
-   SysCtl_enablePeripheral ( SYSCTL_PERIPH_CLK_TBCLKSYNC );
-   EQEP_enableModule       ( EQEP1_BASE                  );
 
    // Feedbacks OFFSET Calibration Routine
    offset_lemW  = 0;

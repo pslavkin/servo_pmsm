@@ -77,7 +77,8 @@ void initQep(void)/*{{{*/
    speed1.BaseRpm = 120*(BASE_FREQ/POLES);
 
    // Enable UTO on QEP
-   EQEP_enableInterrupt(EQEP1_BASE, EQEP_INT_UNIT_TIME_OUT);
+   EQEP_enableInterrupt ( EQEP1_BASE, EQEP_INT_UNIT_TIME_OUT );
+   EQEP_enableModule    ( EQEP1_BASE                         );
 
    return;
 }/*}}}*/
