@@ -1,20 +1,9 @@
 #ifndef PWM
 #define PWM
 
-//void     initPwm      ( void         );
-//void     configurePWM2 ( void         );
-//void     setPwmPeriod ( uint32_t new );
-//uint32_t getPwmPeriod ( void         );
-//void     printRampGen ( void         );
-//void     printRampCtl ( void         );
-//void     printSvGen   ( void         );
-//void     printPark    ( void         );
-//void     printIPark   ( void         );
-//void     printClarke  ( void         );
-//void     motorISR     ( void         );
-//float    readDsRef    ( void         );
-//float    readQsRef    ( void         );
-//void     writeDsRef   ( float ref    );
-//void     writeQsRef   ( float ref    );
+void initPwm                  ( void                                       );
+void configurePWM_1chUpCnt    ( uint32_t base, uint16_t period             );
+void configurePWM_1chUpDwnCnt ( uint32_t base, uint16_t period, int16_t db );
+
 #endif
 

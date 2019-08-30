@@ -38,7 +38,7 @@ const State**  everythings    ( void )
 void Init_everythings(void)
 {
    initLeds      ( );
-//   initAdc       ( );
+   initAdc       ( );
    initParser    ( );
 //   initEqep      ( );
    Init_Schedule ( );

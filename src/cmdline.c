@@ -62,37 +62,37 @@ tCmdLineEntry adcCmdTable[] =/*{{{*/
 
 void Cmd_readAdc(uint16_t argc, char *argv[])
 {
-   if(argc>2) {
-      uint32_t base    = atoi(argv[1]);
-      uint32_t channel = atoi(argv[2]);
-      uint32_t r=readAdc(base,(ADC_Channel)channel);
-      sciPrintf("adc base %d channel %d = %i\r\n",base,channel,r);
-   }
+//   if(argc>2) {
+//      uint32_t base    = atoi(argv[1]);
+//      uint32_t channel = atoi(argv[2]);
+//      uint32_t r=readAdc(base,(ADC_Channel)channel);
+//      sciPrintf("adc base %d channel %d = %i\r\n",base,channel,r);
+//   }
 }
 void Cmd_readLemV(uint16_t argc, char *argv[])
 {
-   float V=readLemV();
-   sciPrintf("LemV %f\r\n",V);
+//   float V=readLemV();
+//   sciPrintf("LemV %f\r\n",V);
 }
 
 void Cmd_readLemW(uint16_t argc, char *argv[])
 {
-   sciPrintf("LemW %f\r\n",readLemW());
+//   sciPrintf("LemW %f\r\n",readLemW());
 }
 void printTemp(void)
 {
-   uint16_t t=adc2Temperature(readAdc(0,13));
-   sciPrintf("adc temperature = %i\r\n",t);
+//   uint16_t t=adc2Temperature(readAdc(0,13));
+//   sciPrintf("adc temperature = %i\r\n",t);
 }
 
 void Cmd_readTemperature(uint16_t argc, char *argv[])
 {
-   if(!Free_Func_Schedule(printTemp)) {
-      if(argc>1)
-         New_Periodic_Func_Schedule(atoi(argv[1]),printTemp);
-      else
-         printTemp();
-   }
+//   if(!Free_Func_Schedule(printTemp)) {
+//      if(argc>1)
+//         New_Periodic_Func_Schedule(atoi(argv[1]),printTemp);
+//      else
+//         printTemp();
+//   }
 }/*}}}*/
 //--------------------------------------------------------------------------------
 tCmdLineEntry rampGenCmdTable[] =/*{{{*/
