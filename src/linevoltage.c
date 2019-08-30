@@ -5,8 +5,7 @@
 #include "scia.h"
 #include "overcurrent.h"
 #include "opt.h"
-#include "fcl_qep_f2837x_tmdxiddk_settings.h"
-#include "fcl_f2837x_enum.h"
+#include "fcl.h"
 
 // Read and update DC BUS voltage for FCL to use
 float32_t getVdc(void)/*{{{*/

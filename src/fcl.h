@@ -13,8 +13,8 @@
 // $
 //#############################################################################
 
-#ifndef FCL_QEP_F2837X_TMDXIDDK_SETTINGS_H
-#define FCL_QEP_F2837X_TMDXIDDK_SETTINGS_H
+#ifndef FCL
+#define FCL
 
 //
 // Include project specific include files.
@@ -147,10 +147,13 @@
 #define PWM_FREQUENCY           10   // in KHz
 
 #if (SAMPLING_METHOD == SINGLE_SAMPLING)
-#define ISR_FREQUENCY           (PWM_FREQUENCY)
+   #define maxModIndex             ((TPWM_CARRIER - (2*FCL_COMPUTATION_TIME))/TPWM_CARRIER)
+   #define ISR_FREQUENCY           (PWM_FREQUENCY)
 #elif (SAMPLING_METHOD == DOUBLE_SAMPLING)
-#define ISR_FREQUENCY           (2*PWM_FREQUENCY)
+   #define maxModIndex             ((TPWM_CARRIER - (4*FCL_COMPUTATION_TIME))/TPWM_CARRIER)
+   #define ISR_FREQUENCY           (2*PWM_FREQUENCY)
 #endif
+#define T (0.001/ISR_FREQUENCY) // Samping period (sec), see parameter.h
 
 // Keep PWM Period same between single sampling and double sampling
 #define INV_PWM_TICKS           (((SYSTEM_FREQUENCY/2.0)/(PWM_FREQUENCY))*1000)
@@ -231,5 +234,62 @@
 // ************************************************************************
 #define  LEM_TO_SHUNT    1.206637   // (12.0/9.945)
 #define  SDFM_TO_SHUNT   1.41131    // (12.5/0.8906)/9.945
+
+void initFcl(void);
+
+typedef enum
+{
+    QEP_CALIB_LOOPFLUSH = 0,
+    QEP_CALIB_EQP1,
+    QEP_CALIB_QEP2,
+    QEP_CALIB_DONE
+} QEPCalibSM_e;
+
+//
+//! \brief Enumeration for Motor run/ stop command
+//
+typedef enum
+{
+    MOTOR_STOP = 0,
+    MOTOR_RUN
+} MotorRunStop_e;
+
+//
+//! \brief Enumeration for Load motor selection/ reset
+//
+typedef enum
+{
+    LOAD_NONE = 0,
+    LOAD_MOTOR1,
+    LOAD_MOTOR2
+} LoadMotor_e;
+
+//
+//! \brief Enumeration for FCL controller --> PI/ FCL
+//
+typedef enum
+{
+    CNTLR_CPI = 0,
+    CNTLR_CMPLX
+} CurrentCntlr_e;
+
+//
+//! \brief Enumeration for SFRA test axis
+//
+typedef enum
+{
+    SFRA_TEST_D_AXIS = 0,
+    SFRA_TEST_Q_AXIS,
+    SFRA_TEST_SPEEDLOOP
+} SFRATest_e;
+
+//
+//! \brief Enumeration for PWM update mode
+//
+typedef enum
+{
+    PWM_UPDATE_IMMEDIATE = 0,
+    PWM_UPDATE_SHADOW
+} PWMUpdateType_e;
 
 #endif

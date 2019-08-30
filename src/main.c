@@ -4,9 +4,10 @@
 #include "sm.h"
 #include "events.h"
 #include "everythings.h"
-#include "systick.h"
+#include "systick.h" 
+#include "fcl.h"
 
-void main2(void)
+void main(void)
 {
     Device_init               ( ); // Initialize device clock and peripherals
     Device_initGPIO           ( ); // Setup GPIO by disabling pin locks and enabling pullups
@@ -17,11 +18,12 @@ void main2(void)
     Init_Events               ( );
     Init_everythings          ( );
     initTimer2                ( );
-//    EINT; // Enable Global Interrupt (INTM) and realtime interrupt (DBGM)
-//    ERTM; // Enable Global realtime interrupt DBGM
-//    for(;;) {
-//       State_Machine();
-//    }
+    initFcl                   ( );
+    EINT; // Enable Global Interrupt (INTM) and realtime interrupt (DBGM)
+    ERTM; // Enable Global realtime interrupt DBGM
+    for(;;) {
+       State_Machine();
+    }
 }
 
 

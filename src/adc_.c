@@ -1,12 +1,9 @@
 #include "driverlib.h"
+#include "fcl.h"
 #include "device.h"
 #include "scia.h"
-#include "sm.h"
-#include "events.h"
-#include "everythings.h"
 #include "adc.h"
-#include "sysctl.h"
-#include "opt.h"
+#include "adc_.h"
 
 
 uint32_t adcHandle[4] = {ADCA_BASE, ADCB_BASE, ADCC_BASE, ADCD_BASE };
@@ -88,8 +85,40 @@ void initAdc()/*{{{*/
    ADC_setInterruptSource   ( ADCA_BASE, ADC_INT_NUMBER1, ADC_SOC_NUMBER0 );
    ADC_enableContinuousMode ( ADCA_BASE, ADC_INT_NUMBER1                  );
    ADC_enableInterrupt      ( ADCA_BASE, ADC_INT_NUMBER1                  );
+
+   currentCalibrate();
    return;
 }/*}}}*/
 
+
+void currentCalibrate(void)/*{{{*/
+{
+   // Variables for current measurement
+   // Offset calibration routine is run to calibrate for any offsets on the opamps
+   float32_t            offset_lemV      = 0;        // offset in LEM current V fbk channel @ 0A
+   float32_t            offset_lemW      = 0;        // offset in LEM current W fbk channel @ 0A
+   float32_t            K1               = 0.998;    // Offset filter coefficient K1: 0.05/(T+0.05);
+   float32_t            K2               = 0.001999; // Offset filter coefficient K2: T/(T+0.05);
+   uint16_t             offsetCalCounter = 0;
+   // Feedbacks OFFSET Calibration Routine
+   offset_lemW  = 0;
+   offset_lemV  = 0;
+
+   for(offsetCalCounter=0; offsetCalCounter < 20000; ) {
+      EPWM_clearEventTriggerInterruptFlag(EPWM11_BASE);
+      while(EPWM_getEventTriggerInterruptStatus(EPWM11_BASE) == false)
+         ;
+      if(offsetCalCounter > 1000) {
+         offset_lemV  = K1*offset_lemV + K2*(IFB_LEMV)*ADC_PU_SCALE_FACTOR;
+         offset_lemW  = K1*offset_lemW + K2*(IFB_LEMW)*ADC_PU_SCALE_FACTOR;
+      }
+      offsetCalCounter++;
+   }
+   // Init OFFSET regs with identified values
+   // setting LEM Iv offset
+   ADC_setPPBReferenceOffset(ADCA_BASE, ADC_PPB_NUMBER1, (uint16_t)(offset_lemV*4096.0));
+   // setting LEM Iw offset
+   ADC_setPPBReferenceOffset(ADCB_BASE, ADC_PPB_NUMBER1, (uint16_t)(offset_lemW*4096.0));
+}/*}}}*/
 
 

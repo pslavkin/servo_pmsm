@@ -113,6 +113,5 @@ PDE_DEPS__QUOTED :=
 SUBDIRS := \
 cmd \
 lib/driverlib \
-sources \
 src \
 

@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <stdint.h>
 #include <stdbool.h>
-#include "fcl_qep_f2837x_tmdxiddk_settings.h"
+#include "fcl.h"
 #include "driverlib.h"
 #include "pwm.h"
 #include "F2837xD_device.h"
@@ -216,6 +216,7 @@ void initPwm(void)/*{{{*/
 
    // PWM Clocks Enable
    SysCtl_enablePeripheral ( SYSCTL_PERIPH_CLK_TBCLKSYNC );
+
    return;
 }/*}}}*/
 // Specific PWM configuration - 1 channel, up count

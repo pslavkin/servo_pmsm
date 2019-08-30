@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <stdint.h>
 #include <stdbool.h>
-#include "fcl_qep_f2837x_tmdxiddk_settings.h"
+#include "fcl.h"
 #include "driverlib.h"
 #include "sigmadelta.h"
 #include "F2837xD_device.h"

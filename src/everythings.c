@@ -17,6 +17,7 @@
 #include "eqep_.h"
 #include "schedule.h"
 #include "overcurrent.h"
+#include "sigmadelta.h"
 //--------------------------------------------------------------------------------
 const State
    idle1[],
@@ -38,14 +39,13 @@ const State**  everythings    ( void )
 void Init_everythings(void)
 {
    initLeds      ( );
-   initAdc       ( );
    initParser    ( );
 //   initEqep      ( );
-   Init_Schedule ( );
-   configureHVDMCProtection ( ); // overcurren protection
-   configureGPIO            ( ); // GPIO Configuration
-   initPwm                  ( ); // PWM Configuration
-   initSigmaDelta           ( ); // SDFM configuration
+   Init_Schedule   ( );
+   initOvercurrent ( ); // overcurren protection
+   initPwm         ( ); // PWM Configuration
+   initAdc         ( );
+   initSigmaDelta  ( ); // SDFM configuration
 }
 //--------------------------------------------------------------------------------
 const State idle1 [ ] =

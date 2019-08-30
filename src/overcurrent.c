@@ -5,8 +5,7 @@
 #include "scia.h"
 #include "overcurrent.h"
 #include "opt.h"
-#include "fcl_qep_f2837x_tmdxiddk_settings.h"
-#include "fcl_f2837x_enum.h"
+#include "fcl.h"
 
 extern MotorRunStop_e    runMotor;
 uint16_t                 tripFlagDMC      = 0         ; // PWM trip status
@@ -86,7 +85,7 @@ void configureCMPSS(uint32_t base, int16_t Hi, int16_t Lo)/*{{{*/
     return;
 }/*}}}*/
 // Configure HVDMC Protection Against Over Current
-void configureHVDMCProtection(void)/*{{{*/
+void initOvercurrent(void)/*{{{*/
 {
     uint16_t base;
 

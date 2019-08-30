@@ -36,7 +36,7 @@
 
 #ifndef FCL_LIB
 #pragma DATA_SECTION(lsw,     "ClaData");
-#pragma DATA_SECTION(pi_iq,   "ClaData")
+//#pragma DATA_SECTION(pi_iq,   "ClaData")
 //#pragma DATA_SECTION(qep1,    "ClaData");
 #pragma DATA_SECTION(pangle,  "ClaData");
 #pragma DATA_SECTION(rg1,     "ClaData");
@@ -83,10 +83,10 @@ float32_t       pangle;
 //#endif
 //QEP             qep1;
 
-#ifdef FCL_LIB
-extern
-#endif
-FCL_PIController_t   pi_id, pi_iq;
+//#ifdef FCL_LIB
+//extern
+//#endif
+//FCL_PIController_t   pi_id, pi_iq;
 
 //  Instance a ramp generator to simulate an Angle
 #ifdef FCL_LIB

@@ -5,17 +5,19 @@
 #include "scia.h"
 #include "overcurrent.h"
 #include "opt.h"
-#include "fcl_f2837x_enum.h"
+#include "cla1.h"
+#include "fcl.h"
 
 // Cla1Task function externs (tasks 1-4 are owned by the FCL library)
 extern __interrupt void Cla1Task1(void);
 extern __interrupt void Cla1Task2(void);
 extern __interrupt void Cla1Task3(void);
 extern __interrupt void Cla1Task4(void);
-extern __interrupt void Cla1Task5(void);
-extern __interrupt void Cla1Task6(void);
-extern __interrupt void Cla1Task7(void);
-extern __interrupt void Cla1Task8(void);
+
+interrupt void Cla1Task5 ( void ) { }
+interrupt void Cla1Task6 ( void ) { }
+interrupt void Cla1Task7 ( void ) { }
+interrupt void Cla1Task8 ( void ) { }
 
 // These are defined by the linker file
 extern uint32_t Cla1funcsLoadStart;
@@ -37,7 +39,7 @@ void initCLA1(void)/*{{{*/
    CLA_setTriggerSource(CLA_TASK_1, CLA_TRIGGER_EPWM1INT);
 }/*}}}*/
 // Configure CLA
-void configureCLA()/*{{{*/
+void configureCLA(void)/*{{{*/
 {
 #ifdef _FLASH
     //
@@ -106,3 +108,5 @@ void configureCLA()/*{{{*/
 
     return;
 }/*}}}*/
+
+

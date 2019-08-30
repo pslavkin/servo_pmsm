@@ -3,7 +3,6 @@
 
 void configureCLA ( void );
 void initCLA1     ( void );
-void configureCLA ( void );
 
 #endif
 

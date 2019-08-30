@@ -49,13 +49,6 @@
 using std::memcpy;
 #endif
 
-#define PASS 0
-#define FAIL 1
-
-uint32_t Example_Result = FAIL;
-uint32_t Example_PassCount = 0;
-uint32_t Example_Fail = 0;
-
 //*****************************************************************************
 //
 // Function to initialize the device. Primarily initializes system control to a
@@ -111,11 +104,6 @@ void Device_init(void)
     // Turn on all peripherals
     //
     Device_enableAllPeripherals();
-	
-	//
-	// Initialize result parameter as FAIL
-	//
-	Example_Result = FAIL;
 }
 
 //*****************************************************************************
@@ -339,17 +327,3 @@ void __error__(char *filename, uint32_t line)
     ESTOP0;
 }
 
-void Example_setResultPass(void)
-{
-	Example_Result = PASS;
-}
-
-void Example_setResultFail(void)
-{
-	Example_Result = FAIL;
-}
-
-void Example_done(void)
-{
-	while(1);
-}

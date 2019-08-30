@@ -3,7 +3,7 @@
 #include "IQmathLib.h"
 #include "F2837xD_device.h"
 #include "opt.h"
-#include "fcl_qep_f2837x_tmdxiddk_settings.h"
+#include "fcl.h"
 #include "qep_defs.h"
 #include "speed_fr.h"
 #include "eqep_.h"

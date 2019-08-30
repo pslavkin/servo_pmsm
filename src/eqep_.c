@@ -3,7 +3,7 @@
 #include "IQmathLib.h"
 #include "F2837xD_device.h"
 #include "opt.h"
-#include "fcl_qep_f2837x_tmdxiddk_settings.h"
+#include "fcl.h"
 #include "qep_defs.h"
 #include "speed_fr.h"
 #include "eqep_.h"
@@ -11,8 +11,16 @@
 #pragma DATA_SECTION(qep1,    "ClaData");
 QEP             qep1;
 
+// Variables for Position Sensor Suite
+float32_t posEncElecTheta[6] = {0};
+float32_t posEncMechTheta[6] = {0};
+float32_t alignCntr          = 0;
+float32_t alignCnt           = 20000;
+float32_t IdRef_start        = 0.1;
+float32_t IdRef_run          = 0;
+
 extern SPEED_MEAS_QEP  speed1;
-extern float32_t       T;
+//extern float32_t       T;
 
 // Position Sensing Configuration
 void initQep(void)/*{{{*/

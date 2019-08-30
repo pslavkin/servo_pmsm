@@ -35,24 +35,24 @@ ORDERED_OBJS += \
 "./lib/driverlib/upp.obj" \
 "./lib/driverlib/version.obj" \
 "./lib/driverlib/xbar.obj" \
-"./sources/F2837xD_CodeStartBranch.obj" \
-"./sources/F2837xD_GlobalVariableDefs.obj" \
-"./sources/device.obj" \
-"./sources/fcl_qep_f2837x_tmdxiddk.obj" \
-"./sources/fcl_qep_f2837x_tmdxiddk_cla_tasks.obj" \
+"./src/F2837xD_CodeStartBranch.obj" \
+"./src/F2837xD_GlobalVariableDefs.obj" \
 "./src/adc_.obj" \
 "./src/cbuffer.obj" \
 "./src/cla1.obj" \
 "./src/cmdline.obj" \
 "./src/dac_.obj" \
+"./src/device.obj" \
 "./src/eqep_.obj" \
 "./src/events.obj" \
 "./src/everythings.obj" \
+"./src/fcl.obj" \
 "./src/leds.obj" \
 "./src/linevoltage.obj" \
 "./src/main.obj" \
 "./src/overcurrent.obj" \
 "./src/parser.obj" \
+"./src/pid_.obj" \
 "./src/pwm.obj" \
 "./src/schedule.obj" \
 "./src/scia.obj" \
@@ -77,11 +77,9 @@ RMDIR := rm -rf
 -include sources.mk
 -include cmd/subdir_vars.mk
 -include lib/driverlib/subdir_vars.mk
--include sources/subdir_vars.mk
 -include src/subdir_vars.mk
 -include cmd/subdir_rules.mk
 -include lib/driverlib/subdir_rules.mk
--include sources/subdir_rules.mk
 -include src/subdir_rules.mk
 -include objects.mk
 
@@ -213,12 +211,11 @@ servo_pmsm.hex: $(EXE_OUTPUTS)
 # Other Targets
 clean:
 	-$(RM) $(BIN_OUTPUTS__QUOTED)$(EXE_OUTPUTS__QUOTED)
-	-$(RM) "lib/driverlib/adc.obj" "lib/driverlib/asysctl.obj" "lib/driverlib/can.obj" "lib/driverlib/cla.obj" "lib/driverlib/cmpss.obj" "lib/driverlib/cputimer.obj" "lib/driverlib/dac.obj" "lib/driverlib/dcsm.obj" "lib/driverlib/dma.obj" "lib/driverlib/ecap.obj" "lib/driverlib/emif.obj" "lib/driverlib/epwm.obj" "lib/driverlib/eqep.obj" "lib/driverlib/flash.obj" "lib/driverlib/gpio.obj" "lib/driverlib/hrpwm.obj" "lib/driverlib/i2c.obj" "lib/driverlib/interrupt.obj" "lib/driverlib/mcbsp.obj" "lib/driverlib/memcfg.obj" "lib/driverlib/sci.obj" "lib/driverlib/sdfm.obj" "lib/driverlib/spi.obj" "lib/driverlib/sysctl.obj" "lib/driverlib/upp.obj" "lib/driverlib/version.obj" "lib/driverlib/xbar.obj" "sources/F2837xD_CodeStartBranch.obj" "sources/F2837xD_GlobalVariableDefs.obj" "sources/device.obj" "sources/fcl_qep_f2837x_tmdxiddk.obj" "sources/fcl_qep_f2837x_tmdxiddk_cla_tasks.obj" "src/adc_.obj" "src/cbuffer.obj" "src/cla1.obj" "src/cmdline.obj" "src/dac_.obj" "src/eqep_.obj" "src/events.obj" "src/everythings.obj" 
-	-$(RM) "src/leds.obj" "src/linevoltage.obj" "src/main.obj" "src/overcurrent.obj" "src/parser.obj" "src/pwm.obj" "src/schedule.obj" "src/scia.obj" "src/sigmadelta.obj" "src/sm.obj" "src/systick.obj" "src/ustdlib.obj" "src/wdog.obj" 
-	-$(RM) "lib/driverlib/adc.d" "lib/driverlib/asysctl.d" "lib/driverlib/can.d" "lib/driverlib/cla.d" "lib/driverlib/cmpss.d" "lib/driverlib/cputimer.d" "lib/driverlib/dac.d" "lib/driverlib/dcsm.d" "lib/driverlib/dma.d" "lib/driverlib/ecap.d" "lib/driverlib/emif.d" "lib/driverlib/epwm.d" "lib/driverlib/eqep.d" "lib/driverlib/flash.d" "lib/driverlib/gpio.d" "lib/driverlib/hrpwm.d" "lib/driverlib/i2c.d" "lib/driverlib/interrupt.d" "lib/driverlib/mcbsp.d" "lib/driverlib/memcfg.d" "lib/driverlib/sci.d" "lib/driverlib/sdfm.d" "lib/driverlib/spi.d" "lib/driverlib/sysctl.d" "lib/driverlib/upp.d" "lib/driverlib/version.d" "lib/driverlib/xbar.d" "sources/F2837xD_GlobalVariableDefs.d" "sources/device.d" "sources/fcl_qep_f2837x_tmdxiddk.d" "src/adc_.d" "src/cbuffer.d" "src/cla1.d" "src/cmdline.d" "src/dac_.d" "src/eqep_.d" "src/events.d" "src/everythings.d" "src/leds.d" "src/linevoltage.d" "src/main.d" "src/overcurrent.d" "src/parser.d" "src/pwm.d" "src/schedule.d" "src/scia.d" "src/sigmadelta.d" "src/sm.d" 
-	-$(RM) "src/systick.d" "src/ustdlib.d" "src/wdog.d" 
-	-$(RM) "sources/fcl_qep_f2837x_tmdxiddk_cla_tasks.d" 
-	-$(RM) "sources/F2837xD_CodeStartBranch.d" 
+	-$(RM) "lib/driverlib/adc.obj" "lib/driverlib/asysctl.obj" "lib/driverlib/can.obj" "lib/driverlib/cla.obj" "lib/driverlib/cmpss.obj" "lib/driverlib/cputimer.obj" "lib/driverlib/dac.obj" "lib/driverlib/dcsm.obj" "lib/driverlib/dma.obj" "lib/driverlib/ecap.obj" "lib/driverlib/emif.obj" "lib/driverlib/epwm.obj" "lib/driverlib/eqep.obj" "lib/driverlib/flash.obj" "lib/driverlib/gpio.obj" "lib/driverlib/hrpwm.obj" "lib/driverlib/i2c.obj" "lib/driverlib/interrupt.obj" "lib/driverlib/mcbsp.obj" "lib/driverlib/memcfg.obj" "lib/driverlib/sci.obj" "lib/driverlib/sdfm.obj" "lib/driverlib/spi.obj" "lib/driverlib/sysctl.obj" "lib/driverlib/upp.obj" "lib/driverlib/version.obj" "lib/driverlib/xbar.obj" "src/F2837xD_CodeStartBranch.obj" "src/F2837xD_GlobalVariableDefs.obj" "src/adc_.obj" "src/cbuffer.obj" "src/cla1.obj" "src/cmdline.obj" "src/dac_.obj" "src/device.obj" "src/eqep_.obj" "src/events.obj" "src/everythings.obj" "src/fcl.obj" "src/leds.obj" "src/linevoltage.obj" "src/main.obj" "src/overcurrent.obj" 
+	-$(RM) "src/parser.obj" "src/pid_.obj" "src/pwm.obj" "src/schedule.obj" "src/scia.obj" "src/sigmadelta.obj" "src/sm.obj" "src/systick.obj" "src/ustdlib.obj" "src/wdog.obj" 
+	-$(RM) "lib/driverlib/adc.d" "lib/driverlib/asysctl.d" "lib/driverlib/can.d" "lib/driverlib/cla.d" "lib/driverlib/cmpss.d" "lib/driverlib/cputimer.d" "lib/driverlib/dac.d" "lib/driverlib/dcsm.d" "lib/driverlib/dma.d" "lib/driverlib/ecap.d" "lib/driverlib/emif.d" "lib/driverlib/epwm.d" "lib/driverlib/eqep.d" "lib/driverlib/flash.d" "lib/driverlib/gpio.d" "lib/driverlib/hrpwm.d" "lib/driverlib/i2c.d" "lib/driverlib/interrupt.d" "lib/driverlib/mcbsp.d" "lib/driverlib/memcfg.d" "lib/driverlib/sci.d" "lib/driverlib/sdfm.d" "lib/driverlib/spi.d" "lib/driverlib/sysctl.d" "lib/driverlib/upp.d" "lib/driverlib/version.d" "lib/driverlib/xbar.d" "src/F2837xD_GlobalVariableDefs.d" "src/adc_.d" "src/cbuffer.d" "src/cla1.d" "src/cmdline.d" "src/dac_.d" "src/device.d" "src/eqep_.d" "src/events.d" "src/everythings.d" "src/fcl.d" "src/leds.d" "src/linevoltage.d" "src/main.d" "src/overcurrent.d" "src/parser.d" "src/pid_.d" "src/pwm.d" "src/schedule.d" "src/scia.d" "src/sigmadelta.d" "src/sm.d" "src/systick.d" "src/ustdlib.d" 
+	-$(RM) "src/wdog.d" 
+	-$(RM) "src/F2837xD_CodeStartBranch.d" 
 	-@echo 'Finished clean'
 	-@echo ' '
 
