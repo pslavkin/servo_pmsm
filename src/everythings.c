@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <stdint.h>
 #include <stdbool.h>
+#include "F2837xD_device.h"
 #include "scia.h"
 #include "events.h"
 #include "sm.h"
@@ -15,6 +16,7 @@
 #include "parser.h"
 #include "eqep_.h"
 #include "schedule.h"
+#include "overcurrent.h"
 //--------------------------------------------------------------------------------
 const State
    idle1[],
@@ -35,11 +37,12 @@ const State**  everythings    ( void )
 }
 void Init_everythings(void)
 {
-//   initLeds      ( );
+   initLeds      ( );
 //   initAdc       ( );
    initParser    ( );
 //   initEqep      ( );
    Init_Schedule ( );
+   configureHVDMCProtection();
 //   initPwm       ( );
 }
 //--------------------------------------------------------------------------------

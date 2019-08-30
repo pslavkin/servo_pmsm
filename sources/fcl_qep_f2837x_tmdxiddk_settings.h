@@ -21,7 +21,9 @@
 //
 
 // define math type as float(1)
+#ifndef   MATH_TYPE
 #define   MATH_TYPE      1
+#endif
 
 #include "IQmathLib.h"
 #include "device.h"

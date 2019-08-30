@@ -24,7 +24,7 @@
 <stringAttribute key="com.ti.ccstudio.debug.debugModel.ATTR_PROGRAM./home/pslavkin/workspace_v9/servo_pmsm/targetConfigs/TMS320F28379D.ccxml.Texas Instruments XDS100v2 USB Debug Probe/C28xx_CPU1" value="${build_artifact:servo_pmsm}"/>
 <stringAttribute key="com.ti.ccstudio.debug.debugModel.ATTR_PROJECT./home/pslavkin/workspace_v9/servo_pmsm/targetConfigs/TMS320F28379D.ccxml.Texas Instruments XDS100v2 USB Debug Probe/C28xx_CPU1" value="servo_pmsm"/>
 <stringAttribute key="com.ti.ccstudio.debug.debugModel.ATTR_TARGET_CONFIG" value="${target_config_active_default:servo_pmsm}"/>
-<stringAttribute key="com.ti.ccstudio.debug.debugModel.MRU_PROGRAM./home/pslavkin/workspace_v9/servo_pmsm/targetConfigs/TMS320F28379D.ccxml.Texas Instruments XDS100v2 USB Debug Probe/C28xx_CPU1" value="/home/pslavkin/workspace_v9/servo_pmsm/Release/servo_pmsm.out"/>
+<stringAttribute key="com.ti.ccstudio.debug.debugModel.MRU_PROGRAM./home/pslavkin/workspace_v9/servo_pmsm/targetConfigs/TMS320F28379D.ccxml.Texas Instruments XDS100v2 USB Debug Probe/C28xx_CPU1" value="/home/pslavkin/workspace_v9/servo_pmsm/Debug/servo_pmsm.out"/>
 <listAttribute key="org.eclipse.debug.core.MAPPED_RESOURCE_PATHS">
 <listEntry value="/servo_pmsm"/>
 </listAttribute>

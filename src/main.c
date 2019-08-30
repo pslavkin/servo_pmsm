@@ -16,7 +16,7 @@ void main2(void)
     initSCIAFIFO              ( );
     Init_Events               ( );
     Init_everythings          ( );
-//    initTimer2                ( );
+    initTimer2                ( );
 //    EINT; // Enable Global Interrupt (INTM) and realtime interrupt (DBGM)
 //    ERTM; // Enable Global realtime interrupt DBGM
 //    for(;;) {

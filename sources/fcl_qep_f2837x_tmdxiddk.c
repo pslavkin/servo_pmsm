@@ -1,6 +1,8 @@
 #include "../lib/fcl/include/fcl_cpu_cla.h"
 #include "fcl_qep_f2837x_tmdxiddk_settings.h"
 #include "fcl_f2837x_enum.h"
+#include "scia.h"
+#include "linevoltage.h"
 
 // Instrumentation code for timing verifications{{{
 #define SETGPIO18_HIGH  GPIO_writePin(18, 1);
@@ -22,12 +24,10 @@ __interrupt void motorControlISR(void);
 
 // Device / peripheral config functions
 void configureADC             ( void                                          );
-void configureCLA             ( void                                          );
 void configureCMPSS           ( uint32_t base, int16_t Hi, int16_t Lo         );
 void configureCMPSSFilter     ( uint32_t base, uint16_t curHi, uint16_t curLo );
 void configureDAC             ( void                                          );
 void configureGPIO            ( void                                          );
-void configureHVDMCProtection ( void                                          );
 void configurePIControllers   ( void                                          );
 void configurePositionSensing ( void                                          );
 void configurePWM             ( void                                          );
@@ -40,45 +40,6 @@ float32_t refPosGen ( float32_t out                                    );
 float32_t ramper    ( float32_t in, float32_t out, float32_t rampDelta );
 
 static inline void getFCLTime(void);
-
-// State Machine function prototypes
-// Alpha states
-void A0(void);  //state A0
-void B0(void);  //state B0
-void C0(void);  //state C0
-
-// A branch states
-void A1(void);  //state A1
-void A2(void);  //state A2
-void A3(void);  //state A3
-
-// B branch states
-void B1(void);  //state B1
-void B2(void);  //state B2
-void B3(void);  //state B3
-
-// C branch states
-void C1(void);  //state C1
-void C2(void);  //state C2
-void C3(void);  //state C3
-
-// Variable declarations
-void ( *Alpha_State_Ptr )(void); // Base States pointer
-void ( *A_Task_Ptr      )(void); // State pointer A branch
-void ( *B_Task_Ptr      )(void); // State pointer B branch
-void ( *C_Task_Ptr      )(void); // State pointer C branch
-
-// Cla1Task function externs (tasks 1-4 are owned by the FCL library)
-extern __interrupt void Cla1Task5(void);
-extern __interrupt void Cla1Task6(void);
-extern __interrupt void Cla1Task7(void);
-extern __interrupt void Cla1Task8(void);
-
-// These are defined by the linker file
-extern uint32_t Cla1funcsLoadStart;
-extern uint32_t Cla1funcsLoadSize;
-extern uint32_t Cla1funcsRunStart;
-extern uint32_t Cla1funcsLoadEnd;   // not used in code
 
 // Variables for CPU control
 uint32_t adcHandle[4] = {ADCA_BASE, ADCB_BASE, ADCC_BASE, ADCD_BASE };
@@ -107,20 +68,10 @@ uint16_t             offsetCalCounter = 0;
 //SD Trip Level - scope for additional work
 uint16_t   hlt       = 0x7FFF;
 uint16_t   llt       = 0x0;
-float32_t  curLimit = 4.0;
-
-// CMPSS parameters for Over Current Protection
-uint16_t clkPrescale = 20;
-uint16_t sampWin     = 30;
-uint16_t thresh      = 18;
-uint16_t LEM_curHi   = LEM(8.0);
-uint16_t LEM_curLo   = LEM(8.0);
 
 // Flag variables
 uint32_t          isrTicker          = 0         ;
 uint16_t          backTicker         = 0         ;
-uint16_t          tripFlagDMC        = 0         ; // PWM trip status
-uint16_t          clearTripFlagDMC   = 0         ;
 MotorRunStop_e    runMotor           = MOTOR_STOP;
 uint16_t          ledCnt1            = 0         ;
 uint16_t          speedLoopPrescaler = 10        ; // Speed loop pre scalar
@@ -199,17 +150,6 @@ void initFCLVars()/*{{{*/
     FCL_params.wccQ      = CUR_LOOP_BANDWIDTH;
     return;
 }/*}}}*/
-// Read and update DC BUS voltage for FCL to use
-float32_t getVdc(void)/*{{{*/
-{
-    float32_t vdc;
-
-    vdc = ((int32_t)SDFM_getFilterData(SDFM1_BASE, SDFM_FILTER_3) >> 16) * SD_VOLTAGE_SENSE_SCALE;
-    if(vdc < 1.0) {
-        vdc = 1.0;
-    }
-    return(vdc);
-}/*}}}*/
 // Get FCL timing details - time stamp taken in library after PWM update
 static inline void getFCLTime(void)/*{{{*/
 {
@@ -243,412 +183,204 @@ void setupCpuTimer(uint32_t base, uint32_t periodCount)/*{{{*/
 // main()
 void main(void)/*{{{*/
 {
-    // Initialize device clock and peripherals
- //   Device_init();
-
- //   // Disable pin locks and enable internal pullups.
- //   Device_initGPIO();
-
- //   // Clear all interrupts and initialize PIE vector table:
- //   // Initialize the PIE control registers to their default state.
- //   // The default state is all PIE interrupts disabled and flags
- //   // are cleared.
- //   Interrupt_initModule();
-
- //   // Initialize the PIE vector table with pointers to the shell Interrupt
- //   // Service Routines (ISR).
- //   // This will populate the entire table, even if the interrupt
- //   // is not used in this example.  This is useful for debug purposes.
- //   Interrupt_initVectorTable();
    main2();
 
-    // Timing sync for background loops
-    setupCpuTimer(CPUTIMER0_BASE, MICROSEC_50);    // A tasks
-    setupCpuTimer(CPUTIMER1_BASE, MICROSEC_100);   // B tasks
-    setupCpuTimer(CPUTIMER2_BASE, MICROSEC_150);   // C tasks
+   // GPIO Configuration
+   configureGPIO();
 
-    // Tasks State-machine init
-    Alpha_State_Ptr = &A0;
-    A_Task_Ptr = &A1;
-    B_Task_Ptr = &B1;
-    C_Task_Ptr = &C1;
+//   // GPIO11 routes out ADC SOCA, which can be used for timing measurements
+//   // enable ADCSOCAEN in Sync SOC Regs, this will be linked to
+//   // OUTPUT7 of the OutputXBar and OUTPUT7 is coming out on
+//   // GPIO11, GPIO Peripheral mux 3
+//   SysCtl_enableExtADCSOCSource(SYSCTL_ADCSOC_SRC_PWM1SOCA);
+//
+//   //select Output XBAR, OUTPUT7 MUX13 for ADCSOCAO
+//   XBAR_setOutputMuxConfig ( XBAR_OUTPUT7, XBAR_OUT_MUX13_ADCSOCA );
+//   XBAR_enableOutputMux    ( XBAR_OUTPUT7, XBAR_MUX13             );
+//
+//   // OUTPUT7 of the OutputXBar and OUTPUT7 is coming out on GPIO11
+//   GPIO_setPinConfig(GPIO_11_OUTPUTXBAR7);
 
-    // GPIO Configuration
-    configureGPIO();
+   // PWM Configuration
+   configurePWM();
 
-    // GPIO11 routes out ADC SOCA, which can be used for timing measurements
-    // enable ADCSOCAEN in Sync SOC Regs, this will be linked to
-    // OUTPUT7 of the OutputXBar and OUTPUT7 is coming out on
-    // GPIO11, GPIO Peripheral mux 3
-    SysCtl_enableExtADCSOCSource(SYSCTL_ADCSOC_SRC_PWM1SOCA);
+   // SDFM configuration
+   configureSDFM();
 
-    //select Output XBAR, OUTPUT7 MUX13 for ADCSOCAO
-    XBAR_setOutputMuxConfig ( XBAR_OUTPUT7, XBAR_OUT_MUX13_ADCSOCA );
-    XBAR_enableOutputMux    ( XBAR_OUTPUT7, XBAR_MUX13             );
+   // ADC Configuration
+   configureADC();
 
-    // OUTPUT7 of the OutputXBar and OUTPUT7 is coming out on GPIO11
-    GPIO_setPinConfig(GPIO_11_OUTPUTXBAR7);
+   // Initialize FCL library
+   // This function initializes the ADC PPB result bases, as well as the ADC
+   // module used to sample phase W. Ensure that the final argument passed
+   // corresponds to the ADC base used to sample phase W on the HW board
+   FCL_initADC(ADCARESULT_BASE, ADC_PPB_NUMBER1, ADCBRESULT_BASE, ADC_PPB_NUMBER1, ADCA_BASE); 
+   //
+   // ensure that the correct PWM base addresses are being passed to the
+   // FCL library here. pwmHandle[0:2] should represent inverter phases
+   // U/V/W in the hardware
+   //
+   FCL_initPWM(EPWM1_BASE, EPWM2_BASE, EPWM3_BASE);
 
-    // PWM Configuration
-    configurePWM();
+   // ensure the correct QEP base is being passed
+   FCL_initQEP(EQEP1_BASE);
 
-    // SDFM configuration
-    configureSDFM();
+   // Initialize Fast current loop variables
+   initFCLVars();
 
-    // ADC Configuration
-    configureADC();
-
-    // Initialize FCL library
-    // This function initializes the ADC PPB result bases, as well as the ADC
-    // module used to sample phase W. Ensure that the final argument passed
-    // corresponds to the ADC base used to sample phase W on the HW board
-    FCL_initADC(ADCARESULT_BASE, ADC_PPB_NUMBER1, ADCBRESULT_BASE, ADC_PPB_NUMBER1, ADCA_BASE); 
-    //
-    // ensure that the correct PWM base addresses are being passed to the
-    // FCL library here. pwmHandle[0:2] should represent inverter phases
-    // U/V/W in the hardware
-    //
-    FCL_initPWM(EPWM1_BASE, EPWM2_BASE, EPWM3_BASE);
-
-    // ensure the correct QEP base is being passed
-    FCL_initQEP(EQEP1_BASE);
-
-    // Initialize Fast current loop variables
-    initFCLVars();
-
-// Setting up link from EPWM to ADC
-//    - EPWM1 - Inverter currents at sampling frequency (@ PRD or @ (PRD&ZRO) )
+   // Setting up link from EPWM to ADC
+   //    - EPWM1 - Inverter currents at sampling frequency (@ PRD or @ (PRD&ZRO) )
 #if (SAMPLING_METHOD == SINGLE_SAMPLING)
-    // Select SOC from counter at ctr = prd
-    EPWM_setADCTriggerSource(EPWM1_BASE, EPWM_SOC_A, EPWM_SOC_TBCTR_PERIOD);
+   // Select SOC from counter at ctr = prd
+   EPWM_setADCTriggerSource(EPWM1_BASE, EPWM_SOC_A, EPWM_SOC_TBCTR_PERIOD);
 #elif (SAMPLING_METHOD == DOUBLE_SAMPLING)
-    // Select SOC from counter at ctr = 0 or ctr = prd
-    EPWM_setADCTriggerSource(EPWM1_BASE, EPWM_SOC_A,
-                             EPWM_SOC_TBCTR_ZERO_OR_PERIOD);
+   // Select SOC from counter at ctr = 0 or ctr = prd
+   EPWM_setADCTriggerSource(EPWM1_BASE, EPWM_SOC_A,
+         EPWM_SOC_TBCTR_ZERO_OR_PERIOD);
 #endif
-    // Generate pulse on 1st event
-    EPWM_setADCTriggerEventPrescale(EPWM1_BASE, EPWM_SOC_A, 1);
+   // Generate pulse on 1st event
+   EPWM_setADCTriggerEventPrescale(EPWM1_BASE, EPWM_SOC_A, 1);
 
-    // Enable SOC on A group
-    EPWM_enableADCTrigger(EPWM1_BASE, EPWM_SOC_A);
+   // Enable SOC on A group
+   EPWM_enableADCTrigger(EPWM1_BASE, EPWM_SOC_A);
 
-    // DAC Configuration
-    configureDAC();
+   // DAC Configuration
+   configureDAC();
 
-    // Position sensor configuration
-    configurePositionSensing();
+   // Position sensor configuration
+   configurePositionSensing();
 
-    // Call HVDMC Protection function
-    configureHVDMCProtection();
+//   // Call HVDMC Protection function
+//   configureHVDMCProtection();
 
-    // Initialize CLA module
-    // make sure QEP access is given to CLA as Secondary master
-    SysCtl_selectSecMaster(SYSCTL_SEC_MASTER_CLA, SYSCTL_SEC_MASTER_CLA);
+//   // Initialize CLA module
+//   // make sure QEP access is given to CLA as Secondary master
+//   SysCtl_selectSecMaster(SYSCTL_SEC_MASTER_CLA, SYSCTL_SEC_MASTER_CLA);
+//
+//   // initialize CLA, QEP for FCL library
+//   configureCLA();
+//
+//   // Enable EPWM1 INT trigger for CLA TASK1
+//   CLA_setTriggerSource(CLA_TASK_1, CLA_TRIGGER_EPWM1INT);
+    initCLA1();
 
-    // initialize CLA, QEP for FCL library
-    configureCLA();
+   // Enable UTO on QEP
+   EQEP_enableInterrupt(EQEP1_BASE, EQEP_INT_UNIT_TIME_OUT);
 
-    // Enable EPWM1 INT trigger for CLA TASK1
-    CLA_setTriggerSource(CLA_TASK_1, CLA_TRIGGER_EPWM1INT);
+   // PI control configuration
+   // Note that the vectorial sum of d-q PI outputs should be less than 1.0 which
+   // refers to maximum duty cycle for SVGEN. Another duty cycle limiting factor
+   // is current sense through shunt resistors which depends on hardware/software
+   // implementation. Depending on the application requirements 3,2 or a single
+   // shunt resistor can be used for current waveform reconstruction. The higher
+   // number of shunt resistors allow the higher duty cycle operation and better
+   // dc bus utilization. The users should adjust the PI saturation levels
+   // carefully during open loop tests (i.e pi_id.Umax, pi_iq.Umax and Umins) as
+   // in project manuals. Violation of this procedure yields distorted  current
+   // waveforms and unstable closed loop operations that may damage the inverter.
+   configurePIControllers();
+   FCL_resetController();
 
-    // Enable UTO on QEP
-    EQEP_enableInterrupt(EQEP1_BASE, EQEP_INT_UNIT_TIME_OUT);
+   // Initialize the RAMPGEN module
+   rg1.StepAngleMax = BASE_FREQ*T;
+   rg1.Angle        = 0;
+   rg1.Out          = 0;
+   rg1.Gain         = 1.0;
+   rg1.Offset       = 1.0;
 
-    // PI control configuration
-    // Note that the vectorial sum of d-q PI outputs should be less than 1.0 which
-    // refers to maximum duty cycle for SVGEN. Another duty cycle limiting factor
-    // is current sense through shunt resistors which depends on hardware/software
-    // implementation. Depending on the application requirements 3,2 or a single
-    // shunt resistor can be used for current waveform reconstruction. The higher
-    // number of shunt resistors allow the higher duty cycle operation and better
-    // dc bus utilization. The users should adjust the PI saturation levels
-    // carefully during open loop tests (i.e pi_id.Umax, pi_iq.Umax and Umins) as
-    // in project manuals. Violation of this procedure yields distorted  current
-    // waveforms and unstable closed loop operations that may damage the inverter.
-    configurePIControllers();
-    FCL_resetController();
+   // set mock REFERENCES for Speed and current loops
+   speedRef   = 0.05;
+   IdRef      = 0;
+   IqRef      = 0.05;
 
-    // Initialize the RAMPGEN module
-    rg1.StepAngleMax = BASE_FREQ*T;
-    rg1.Angle        = 0;
-    rg1.Out          = 0;
-    rg1.Gain         = 1.0;
-    rg1.Offset       = 1.0;
+   // Init FLAGS
+   lsw        = QEP_ALIGNMENT;
+   runMotor   = MOTOR_RUN;
+   ledCnt1    = 0;
+   fclClrCntr = 1;
 
-    // set mock REFERENCES for Speed and current loops
-    speedRef   = 0.05;
-    IdRef      = 0;
-    IqRef      = 0.05;
+   // Configure INTerrupts
 
-    // Init FLAGS
-    lsw        = QEP_ALIGNMENT;
-    runMotor   = MOTOR_RUN;
-    ledCnt1    = 0;
-    fclClrCntr = 1;
+   // Enable EPWM11 INT to reset SDFM in sync with control PWMs
+   // Select INT @ ctr = CMPA up
+   EPWM_setInterruptSource             ( EPWM11_BASE, EPWM_INT_TBCTR_U_CMPA );
+   // Enable INT
+   EPWM_enableInterrupt                ( EPWM11_BASE                        );
+   // Generate INT on every event
+   EPWM_setInterruptEventCount         ( EPWM11_BASE, 1                     );
+   EPWM_clearEventTriggerInterruptFlag ( EPWM11_BASE                        );
 
-    // Configure INTerrupts
-
-    // Enable EPWM11 INT to reset SDFM in sync with control PWMs
-    // Select INT @ ctr = CMPA up
-    EPWM_setInterruptSource             ( EPWM11_BASE, EPWM_INT_TBCTR_U_CMPA );
-    // Enable INT
-    EPWM_enableInterrupt                ( EPWM11_BASE                        );
-    // Generate INT on every event
-    EPWM_setInterruptEventCount         ( EPWM11_BASE, 1                     );
-    EPWM_clearEventTriggerInterruptFlag ( EPWM11_BASE                        );
-
-    // Enable EPWM1 INT to generate MotorControlISR
+   // Enable EPWM1 INT to generate MotorControlISR
 #if (SAMPLING_METHOD == SINGLE_SAMPLING)
-    // Select INT @ ctr = 0
-    EPWM_setInterruptSource(EPWM1_BASE, EPWM_INT_TBCTR_PERIOD);
+   // Select INT @ ctr = 0
+   EPWM_setInterruptSource(EPWM1_BASE, EPWM_INT_TBCTR_PERIOD);
 #elif (SAMPLING_METHOD == DOUBLE_SAMPLING)
-    // Select INT @ ctr = 0 or ctr = prd
-    EPWM_setInterruptSource(EPWM1_BASE, EPWM_INT_TBCTR_ZERO_OR_PERIOD);
+   // Select INT @ ctr = 0 or ctr = prd
+   EPWM_setInterruptSource(EPWM1_BASE, EPWM_INT_TBCTR_ZERO_OR_PERIOD);
 #endif
-    // Enable Interrupt Generation from the PWM module
-    EPWM_enableInterrupt                ( EPWM1_BASE                  );
-    // This needs to be 1 for the INTFRC to work
-    EPWM_setInterruptEventCount         ( EPWM1_BASE, 1               );
-    // Clear ePWM Interrupt flag
-    EPWM_clearEventTriggerInterruptFlag ( EPWM1_BASE                  );
-    Interrupt_register                  ( INT_EPWM1, &motorControlISR );
+   // Enable Interrupt Generation from the PWM module
+   EPWM_enableInterrupt                ( EPWM1_BASE                  );
+   // This needs to be 1 for the INTFRC to work
+   EPWM_setInterruptEventCount         ( EPWM1_BASE, 1               );
+   // Clear ePWM Interrupt flag
+   EPWM_clearEventTriggerInterruptFlag ( EPWM1_BASE                  );
+   Interrupt_register                  ( INT_EPWM1, &motorControlISR );
 
-    // Enable AdcA-ADCINT1- to help verify EoC before result data read
-    ADC_setInterruptSource   ( ADCA_BASE, ADC_INT_NUMBER1, ADC_SOC_NUMBER0 );
-    ADC_enableContinuousMode ( ADCA_BASE, ADC_INT_NUMBER1                  );
-    ADC_enableInterrupt      ( ADCA_BASE, ADC_INT_NUMBER1                  );
+   // Enable AdcA-ADCINT1- to help verify EoC before result data read
+   ADC_setInterruptSource   ( ADCA_BASE, ADC_INT_NUMBER1, ADC_SOC_NUMBER0 );
+   ADC_enableContinuousMode ( ADCA_BASE, ADC_INT_NUMBER1                  );
+   ADC_enableInterrupt      ( ADCA_BASE, ADC_INT_NUMBER1                  );
 
-    // PWM Clocks Enable
-    SysCtl_enablePeripheral ( SYSCTL_PERIPH_CLK_TBCLKSYNC );
-    EQEP_enableModule       ( EQEP1_BASE                  );
+   // PWM Clocks Enable
+   SysCtl_enablePeripheral ( SYSCTL_PERIPH_CLK_TBCLKSYNC );
+   EQEP_enableModule       ( EQEP1_BASE                  );
 
-    // Feedbacks OFFSET Calibration Routine
-    offset_lemW  = 0;
-    offset_lemV  = 0;
-    offset_SDFM1 = 0;
-    offset_SDFM2 = 0;
+   // Feedbacks OFFSET Calibration Routine
+   offset_lemW  = 0;
+   offset_lemV  = 0;
+   offset_SDFM1 = 0;
+   offset_SDFM2 = 0;
 
-    for(offsetCalCounter=0; offsetCalCounter < 20000; ) {
-        EPWM_clearEventTriggerInterruptFlag(EPWM11_BASE);
-        while(EPWM_getEventTriggerInterruptStatus(EPWM11_BASE) == false)
-           ;
+   for(offsetCalCounter=0; offsetCalCounter < 20000; ) {
+      EPWM_clearEventTriggerInterruptFlag(EPWM11_BASE);
+      while(EPWM_getEventTriggerInterruptStatus(EPWM11_BASE) == false)
+         ;
 
-        if(offsetCalCounter > 1000) {
-            // Offsets in phase current sensing using SDFM are obtained
-            // below. In the current example project, this is not used.
-            // The user can use it for their projects using SDFM.
-            offset_SDFM1 = K1*offset_SDFM1 + K2*(SDFM_getFilterData(SDFM1_BASE, SDFM_FILTER_1)) *SD_PU_SCALE_FACTOR;
-            offset_SDFM2 = K1*offset_SDFM2 + K2*(SDFM_getFilterData(SDFM1_BASE, SDFM_FILTER_2)) *SD_PU_SCALE_FACTOR;
-            offset_lemV  = K1*offset_lemV + K2*(IFB_LEMV)*ADC_PU_SCALE_FACTOR;
-            offset_lemW  = K1*offset_lemW + K2*(IFB_LEMW)*ADC_PU_SCALE_FACTOR;
-        }
-        offsetCalCounter++;
-    }
+      if(offsetCalCounter > 1000) {
+         // Offsets in phase current sensing using SDFM are obtained
+         // below. In the current example project, this is not used.
+         // The user can use it for their projects using SDFM.
+         offset_SDFM1 = K1*offset_SDFM1 + K2*(SDFM_getFilterData(SDFM1_BASE, SDFM_FILTER_1)) *SD_PU_SCALE_FACTOR;
+         offset_SDFM2 = K1*offset_SDFM2 + K2*(SDFM_getFilterData(SDFM1_BASE, SDFM_FILTER_2)) *SD_PU_SCALE_FACTOR;
+         offset_lemV  = K1*offset_lemV + K2*(IFB_LEMV)*ADC_PU_SCALE_FACTOR;
+         offset_lemW  = K1*offset_lemW + K2*(IFB_LEMW)*ADC_PU_SCALE_FACTOR;
+      }
+      offsetCalCounter++;
+   }
 
-    // Read and update DC BUS voltage for FCL to use
-    FCL_params.Vdcbus = getVdc();
+   // Read and update DC BUS voltage for FCL to use
+   FCL_params.Vdcbus = getVdc();
 
-    // Init OFFSET regs with identified values
-    // setting LEM Iv offset
-    ADC_setPPBReferenceOffset(ADCA_BASE, ADC_PPB_NUMBER1, (uint16_t)(offset_lemV*4096.0));
-    // setting LEM Iw offset
-    ADC_setPPBReferenceOffset(ADCB_BASE, ADC_PPB_NUMBER1, (uint16_t)(offset_lemW*4096.0));
+   // Init OFFSET regs with identified values
+   // setting LEM Iv offset
+   ADC_setPPBReferenceOffset(ADCA_BASE, ADC_PPB_NUMBER1, (uint16_t)(offset_lemV*4096.0));
+   // setting LEM Iw offset
+   ADC_setPPBReferenceOffset(ADCB_BASE, ADC_PPB_NUMBER1, (uint16_t)(offset_lemW*4096.0));
 
-    // Enable all mapped INTerrupts
+   // Enable all mapped INTerrupts
 
-    EPWM_clearEventTriggerInterruptFlag ( EPWM1_BASE ); // clear pending INT event
-    Interrupt_enable                    ( INT_EPWM1  ); // Enable PWM1INT in PIE group 3
+   EPWM_clearEventTriggerInterruptFlag ( EPWM1_BASE ); // clear pending INT event
+   Interrupt_enable                    ( INT_EPWM1  ); // Enable PWM1INT in PIE group 3
 
-    // Enable group 3 interrupts - EPWM1 is here
-    Interrupt_enableInCPU(INTERRUPT_CPU_INT3);
+   // Enable group 3 interrupts - EPWM1 is here
+   Interrupt_enableInCPU(INTERRUPT_CPU_INT3);
 
-    EINT;          // Enable Global interrupt INTM
-    ERTM;          // Enable Global realtime interrupt DBGM
+   EINT;          // Enable Global interrupt INTM
+   ERTM;          // Enable Global realtime interrupt DBGM
 
-    for(;;)  //infinite loop
-    {
-        (*Alpha_State_Ptr)();   // jump to an Alpha state (A0,B0,...)
-        State_Machine();
-    }
-} //END MAIN CODE}}}
-// state machines
-void A0(void)/*{{{*/
-{
-    // loop rate synchronizer for A-tasks
-    if(CPUTimer_getTimerOverflowStatus(CPUTIMER0_BASE))
-    {
-        CPUTimer_clearOverflowFlag(CPUTIMER0_BASE);  // clear flag
-
-        //-----------------------------------------------------------
-        (*A_Task_Ptr)();        // jump to an A Task (A1,A2,A3,...)
-        //-----------------------------------------------------------
-
-        vTimer0[0]++;           // virtual timer 0, instance 0 (spare)
-        serialCommsTimer++;
-    }
-
-    Alpha_State_Ptr = &B0;      // Comment out to allow only A tasks
-}
-void B0(void)
-{
-    // loop rate synchronizer for B-tasks
-    if(CPUTimer_getTimerOverflowStatus(CPUTIMER1_BASE))
-    {
-        CPUTimer_clearOverflowFlag(CPUTIMER1_BASE);  // clear flag
-
-        //-----------------------------------------------------------
-        (*B_Task_Ptr)();        // jump to a B Task (B1,B2,B3,...)
-        //-----------------------------------------------------------
-        vTimer1[0]++;           // virtual timer 1, instance 0 (spare)
-    }
-
-    Alpha_State_Ptr = &C0;      // Allow C state tasks
-}
-void C0(void)
-{
-    // loop rate synchronizer for C-tasks
-    if(CPUTimer_getTimerOverflowStatus(CPUTIMER2_BASE))
-    {
-        CPUTimer_clearOverflowFlag(CPUTIMER2_BASE);  // clear flag
-
-        //-----------------------------------------------------------
-        (*C_Task_Ptr)();        // jump to a C Task (C1,C2,C3,...)
-        //-----------------------------------------------------------
-        vTimer2[0]++;           //virtual timer 2, instance 0 (spare)
-    }
-
-    Alpha_State_Ptr = &A0;  // Back to State A0
-}
-
-//==============================================================================
-//  A - TASKS (executed in every 50 usec)
-//==============================================================================
-//--------------------------------------------------------
-void A1(void) // SPARE (not used)
-//--------------------------------------------------------
-{
-    // Current limit setting / tuning in Debug environment
-    LEM_curHi = 2048 + LEM(curLimit);
-    LEM_curLo = 2048 - LEM(curLimit);
-
-    configureCMPSSFilter(CMPSS1_BASE, LEM_curHi, LEM_curLo);      // LEM - V
-    configureCMPSSFilter(CMPSS3_BASE, LEM_curHi, LEM_curLo);      // LEM - W
-
-    // Check for PWM trip due to over current
-    if((EPWM_getTripZoneFlagStatus(EPWM1_BASE) & EPWM_TZ_FLAG_OST) ||
-       (EPWM_getTripZoneFlagStatus(EPWM2_BASE) & EPWM_TZ_FLAG_OST) ||
-       (EPWM_getTripZoneFlagStatus(EPWM3_BASE) & EPWM_TZ_FLAG_OST))
-    {
-        // if any EPwm's OST is set, force OST on all three to DISABLE inverter
-        EPWM_forceTripZoneEvent(EPWM1_BASE, EPWM_TZ_FORCE_EVENT_OST);
-        EPWM_forceTripZoneEvent(EPWM2_BASE, EPWM_TZ_FORCE_EVENT_OST);
-        EPWM_forceTripZoneEvent(EPWM3_BASE, EPWM_TZ_FORCE_EVENT_OST);
-        tripFlagDMC = 1;      // Trip on DMC (halt and IPM fault trip )
-        runMotor = MOTOR_STOP;
-    }
-
-    // If clear cmd received, reset PWM trip
-    if(clearTripFlagDMC)
-    {
-        // clear the ocp latch in macro M6
-        GPIO_writePin(41, 0);
-        tripFlagDMC      = 0;
-        clearTripFlagDMC = 0;
-        GPIO_writePin(41, 1);
-
-        // clear EPWM trip flags
-        DEVICE_DELAY_US(1L);
-
-        // clear OST & DCAEVT1 flags
-        EPWM_clearTripZoneFlag(EPWM1_BASE, (EPWM_TZ_FLAG_OST | EPWM_TZ_FLAG_DCAEVT1));
-        EPWM_clearTripZoneFlag(EPWM2_BASE, (EPWM_TZ_FLAG_OST | EPWM_TZ_FLAG_DCAEVT1));
-        EPWM_clearTripZoneFlag(EPWM3_BASE, (EPWM_TZ_FLAG_OST | EPWM_TZ_FLAG_DCAEVT1));
-
-        // clear HLATCH - (not in TRIP gen path)
-        CMPSS_clearFilterLatchHigh(CMPSS1_BASE);
-        CMPSS_clearFilterLatchHigh(CMPSS3_BASE);
-        CMPSS_clearFilterLatchHigh(CMPSS2_BASE);
-        CMPSS_clearFilterLatchHigh(CMPSS6_BASE);
-
-        // clear LLATCH - (not in TRIP gen path)
-        CMPSS_clearFilterLatchLow(CMPSS1_BASE);
-        CMPSS_clearFilterLatchLow(CMPSS3_BASE);
-        CMPSS_clearFilterLatchLow(CMPSS2_BASE);
-        CMPSS_clearFilterLatchLow(CMPSS6_BASE);
-    }
-
-    //the next time CpuTimer0 'counter' reaches Period value go to A2
-    A_Task_Ptr = &A2;
-}
-
-//-----------------------------------------------------------------
-void A2(void) // SPARE (not used)
-//-----------------------------------------------------------------
-{
-    //-------------------
-    //the next time CpuTimer0 'counter' reaches Period value go to A3
-    A_Task_Ptr = &A3;
-    //-------------------
-}
-
-//-----------------------------------------
-void A3(void) // SPARE (not used)
-//-----------------------------------------
-{
-    //-----------------
-    //the next time CpuTimer0 'counter' reaches Period value go to A1
-    A_Task_Ptr = &A1;
-    //-----------------
-}
-
-//==============================================================================
-//  B - TASKS (executed in every 100 usec)
-//==============================================================================
-void B1(void) // Toggle GPIO-00
-{
-    //the next time CpuTimer1 'counter' reaches Period value go to B2
-    B_Task_Ptr = &B2;
-}
-void B2(void) // SPARE
-{
-    //the next time CpuTimer1 'counter' reaches Period value go to B3
-    B_Task_Ptr = &B3;
-}
-void B3(void) // SPARE
-{
-    //the next time CpuTimer1 'counter' reaches Period value go to B1
-    B_Task_Ptr = &B1;
-}
-//==============================================================================
-//  C - TASKS (executed in every 150 usec)
-//==============================================================================
-//----------------------------------------
-void C1(void)   // Toggle GPIO-34
-//----------------------------------------
-{
-    if(ledCnt1==0) {
-        ledCnt1 = 200;
-        GPIO_togglePin(34);   // LED
-    }
-    else {
-        ledCnt1--;
-    }
-    //the next time CpuTimer2 'counter' reaches Period value go to C2
-    C_Task_Ptr = &C2;
-}
-
-//----------------------------------------
-void C2(void) // SPARE
-//----------------------------------------
-{
-    //the next time CpuTimer2 'counter' reaches Period value go to C3
-    C_Task_Ptr = &C3;
-}
-//-----------------------------------------
-void C3(void) // SPARE
-{
-    //the next time CpuTimer2 'counter' reaches Period value go to C1
-    C_Task_Ptr = &C1;
+   for(;;) {
+      State_Machine();
+   }
 }/*}}}*/
 // build level 5
 static void buildLevel5(void)/*{{{*/
@@ -892,140 +624,6 @@ void configureADC()/*{{{*/
 
     return;
 }/*}}}*/
-// Configure CLA
-void configureCLA()/*{{{*/
-{
-#ifdef _FLASH
-    //
-    // Copy CLA code from its load address (FLASH) to CLA program RAM
-    //
-    // Note: during debug the load and run addresses can be
-    // the same as Code Composer Studio can load the CLA program
-    // RAM directly.
-    //
-    // The ClafuncsLoadStart, ClafuncsLoadEnd, and ClafuncsRunStart
-    // symbols are created by the linker.
-    //
-    memcpy((uint32_t *)&Cla1funcsRunStart, (uint32_t *)&Cla1funcsLoadStart,
-            (uint32_t)&Cla1funcsLoadSize);
-#endif //_FLASH
-
-    // Initialize and wait for CLA1ToCPUMsgRAM
-
-    MemCfg_initSections(MEMCFG_SECT_MSGCLA1TOCPU);
-    while(MemCfg_getInitStatus(MEMCFG_SECT_MSGCLA1TOCPU) != 1)
-       ;
-
-    // Initialize and wait for CPUToCLA1MsgRAM
-    MemCfg_initSections(MEMCFG_SECT_MSGCPUTOCLA1);
-    while(MemCfg_getInitStatus(MEMCFG_SECT_MSGCPUTOCLA1) != 1)
-       ;
-
-    // Select LS5RAM to be the programming space for the CLA
-    // First configure the CLA to be the master for LS5 and then
-    // set the space to be a program block
-    MemCfg_setLSRAMMasterSel ( MEMCFG_SECT_LS4, MEMCFG_LSRAMMASTER_CPU_CLA1 );
-    MemCfg_setCLAMemType     ( MEMCFG_SECT_LS4, MEMCFG_CLA_MEM_PROGRAM      );
-
-    MemCfg_setLSRAMMasterSel ( MEMCFG_SECT_LS5, MEMCFG_LSRAMMASTER_CPU_CLA1 );
-    MemCfg_setCLAMemType     ( MEMCFG_SECT_LS5, MEMCFG_CLA_MEM_PROGRAM      );
-
-    // Next configure LS2RAM and LS3RAM as data spaces for the CLA
-    // First configure the CLA to be the master and then
-    // set the spaces to be code blocks
-    MemCfg_setLSRAMMasterSel ( MEMCFG_SECT_LS2, MEMCFG_LSRAMMASTER_CPU_CLA1 );
-    MemCfg_setCLAMemType     ( MEMCFG_SECT_LS2, MEMCFG_CLA_MEM_DATA         );
-
-    MemCfg_setLSRAMMasterSel ( MEMCFG_SECT_LS3, MEMCFG_LSRAMMASTER_CPU_CLA1 );
-    MemCfg_setCLAMemType     ( MEMCFG_SECT_LS3, MEMCFG_CLA_MEM_DATA         );
-
-    // Compute all CLA task vectors
-    // On Type-1 CLAs the MVECT registers accept full 16-bit task addresses as
-    // opposed to offsets used on older Type-0 CLAs
-#pragma diag_suppress=770
-    CLA_mapTaskVector(CLA1_BASE, CLA_MVECT_1, (uint16_t)(&Cla1Task1));
-    CLA_mapTaskVector(CLA1_BASE, CLA_MVECT_2, (uint16_t)(&Cla1Task2));
-    CLA_mapTaskVector(CLA1_BASE, CLA_MVECT_3, (uint16_t)(&Cla1Task3));
-    CLA_mapTaskVector(CLA1_BASE, CLA_MVECT_4, (uint16_t)(&Cla1Task4));
-    CLA_mapTaskVector(CLA1_BASE, CLA_MVECT_5, (uint16_t)(&Cla1Task5));
-    CLA_mapTaskVector(CLA1_BASE, CLA_MVECT_6, (uint16_t)(&Cla1Task6));
-    CLA_mapTaskVector(CLA1_BASE, CLA_MVECT_7, (uint16_t)(&Cla1Task7));
-    CLA_mapTaskVector(CLA1_BASE, CLA_MVECT_8, (uint16_t)(&Cla1Task8));
-#pragma diag_suppress=770
-
-    // Enable the IACK instruction to start a task on CLA in software
-    // for all  8 CLA tasks. Also, globally enable all 8 tasks (or a
-    // subset of tasks) by writing to their respective bits in the
-    // MIER register
-    CLA_enableIACK  ( CLA1_BASE                   );
-    CLA_enableTasks ( CLA1_BASE, CLA_TASKFLAG_ALL );
-
-    return;
-}/*}}}*/
-// CMPSS Configuration
-void configureCMPSS(uint32_t base, int16_t Hi, int16_t Lo)/*{{{*/
-{
-    // Set up COMPCTL register
-    // NEG signal from DAC for COMP-H
-    CMPSS_configHighComparator(base, CMPSS_INSRC_DAC);
-
-    // NEG signal from DAC for COMP-L, COMP-L output is inverted
-    CMPSS_configLowComparator(base, CMPSS_INSRC_DAC | CMPSS_INV_INVERTED);
-
-    // Dig filter output ==> CTRIPH, Dig filter output ==> CTRIPOUTH
-    CMPSS_configOutputsHigh(base, CMPSS_TRIP_FILTER | CMPSS_TRIPOUT_FILTER);
-
-    // Dig filter output ==> CTRIPL, Dig filter output ==> CTRIPOUTL
-    CMPSS_configOutputsLow(base, CMPSS_TRIP_FILTER | CMPSS_TRIPOUT_FILTER);
-
-    // Set up COMPHYSCTL register
-    CMPSS_setHysteresis(base, 2); // COMP hysteresis set to 2x typical value
-
-    // set up COMPDACCTL register
-    // VDDA is REF for CMPSS DACs, DAC updated on sysclock, Ramp bypassed
-    CMPSS_configDAC(base, CMPSS_DACREF_VDDA | CMPSS_DACVAL_SYSCLK | CMPSS_DACSRC_SHDW);
-
-    // Load DACs - High and Low
-    CMPSS_setDACValueHigh ( base, Hi ); // Set DAC-H to allowed MAX +ve current
-    CMPSS_setDACValueLow  ( base, Lo ); // Set DAC-L to allowed MAX -ve current
-
-    // digital filter settings - HIGH side
-    // set time between samples, max : 1023, # of samples in window,
-    // max : 31, recommended : thresh > sampWin/2
-    CMPSS_configFilterHigh ( base, clkPrescale, sampWin, thresh );
-    CMPSS_initFilterHigh   ( base                               ); // Init samples to filter input value
-
-    // digital filter settings - LOW side
-    // set time between samples, max : 1023, # of samples in window,
-    // max : 31, recommended : thresh > sampWin/2
-    CMPSS_configFilterLow ( base, clkPrescale, sampWin, thresh );
-    CMPSS_initFilterLow   ( base                               ); // Init samples to filter input value
-
-    // Clear the status register for latched comparator events
-    CMPSS_clearFilterLatchHigh ( base );
-    CMPSS_clearFilterLatchLow  ( base );
-
-    // Enable CMPSS
-    CMPSS_enableModule(base);
-
-    DEVICE_DELAY_US(500);
-    return;
-}/*}}}*/
-// Setup OCP limits and digital filter parameters of CMPSS
-void configureCMPSSFilter(uint32_t base, uint16_t curHi, uint16_t curLo)/*{{{*/
-{
-    // comparator references
-    CMPSS_setDACValueHigh ( base, curHi );
-    CMPSS_setDACValueLow  ( base, curLo );
-
-    // digital filter settings - HIGH side
-    CMPSS_configFilterHigh(base, clkPrescale, sampWin, thresh);
-
-    // digital filter settings - LOW side
-    CMPSS_configFilterLow(base, clkPrescale, sampWin, thresh);
-
-    return;
-}/*}}}*/
 // DAC Configuration
 void configureDAC(void)/*{{{*/
 {
@@ -1135,52 +733,6 @@ void configureGPIO(void)/*{{{*/
     GPIO_setQualificationMode ( 23, GPIO_QUAL_3SAMPLE );
     GPIO_setPinConfig         ( GPIO_23_EQEP1I        );
 
-//    // GPIO28->SCIRXDA
-//    GPIO_setMasterCore ( 28, GPIO_CORE_CPU1    );
-//    GPIO_setPadConfig  ( 28, GPIO_PIN_TYPE_STD );
-//    GPIO_setPinConfig  ( GPIO_28_SCIRXDA       );
-//
-//    // GPIO29->SCITXDA
-//    GPIO_setMasterCore ( 29, GPIO_CORE_CPU1    );
-//    GPIO_setPadConfig  ( 29, GPIO_PIN_TYPE_STD );
-//    GPIO_setPinConfig  ( GPIO_29_SCITXDA       );
-
-    // Configure GPIO used for Trip Mechanism
-
-    // GPIO input for reading the status of the LEM-overcurrent macro block
-    // (active low), GPIO40 could trip PWM based on this, if desired
-    // Configure as Input
-    GPIO_setPinConfig     ( GPIO_40_GPIO40           ); // choose GPIO for mux option
-    GPIO_setDirectionMode ( 40, GPIO_DIR_MODE_IN     ); // set as input
-    GPIO_setPadConfig     ( 40, GPIO_PIN_TYPE_INVERT ); // invert the input
-
-    //Select GPIO40 as INPUTXBAR2
-    XBAR_setInputPin(XBAR_INPUT2, 40);
-
-    // Clearing the Fault(active low), GPIO41
-    // Configure as Output
-    GPIO_setPinConfig     ( GPIO_41_GPIO41        ); // choose GPIO for mux option
-    GPIO_setDirectionMode ( 41, GPIO_DIR_MODE_OUT ); // set as output
-    GPIO_writePin         ( 41, 1                 );
-
-    // Forcing IPM Shutdown (Trip) using GPIO58 (Active high)
-    // Configure as Output
-    GPIO_setPinConfig     ( GPIO_58_GPIO58        ); // choose GPIO for mux option
-    GPIO_setDirectionMode ( 58, GPIO_DIR_MODE_OUT ); // set as output
-    GPIO_writePin         ( 58, 0                 );
-
-    // GPIO31->LED
-    GPIO_setMasterCore    ( 31, GPIO_CORE_CPU1    );
-    GPIO_setPadConfig     ( 31, GPIO_PIN_TYPE_STD );
-    GPIO_setPinConfig     ( GPIO_31_GPIO31        );
-    GPIO_setDirectionMode ( 31, GPIO_DIR_MODE_OUT );
-
-    // GPIO34->LED
-    GPIO_setMasterCore    ( 34, GPIO_CORE_CPU1    );
-    GPIO_setPadConfig     ( 34, GPIO_PIN_TYPE_STD );
-    GPIO_setPinConfig     ( GPIO_34_GPIO34        );
-    GPIO_setDirectionMode ( 34, GPIO_DIR_MODE_OUT );
-
     // SDFM GPIO configurations
     for(pin = 48; pin <= 53; pin++)
     {
@@ -1200,81 +752,6 @@ void configureGPIO(void)/*{{{*/
     GPIO_setPinConfig(GPIO_52_SD1_D3);
     GPIO_setPinConfig(GPIO_53_SD1_C3);
 
-    return;
-}/*}}}*/
-// Configure HVDMC Protection Against Over Current
-void configureHVDMCProtection(void)/*{{{*/
-{
-    uint16_t base;
-
-    // GPIO40 - input, used to read status of the LEM overcurrent macro block
-    // GPIO41 - output, used to clear the LEM overcurrent fault
-    // GPIO58 - output, used to force IPM shutdown on TRIP
-    // These GPIO are initialized in configureGPIO()
-
-    // LEM Current phase V(ADC A2, COMP1) and W(ADC B2, COMP3),
-    // High Low Compare event trips
-    LEM_curHi = 2048 + LEM(curLimit);
-    LEM_curLo = 2048 - LEM(curLimit);
-
-    configureCMPSS(CMPSS1_BASE, LEM_curHi, LEM_curLo);  //Enable CMPSS1 - LEM V
-    configureCMPSS(CMPSS3_BASE, LEM_curHi, LEM_curLo);  //Enable CMPSS3 - LEM W
-
-    // Configure TRIP 4 to OR the High and Low trips from both comparator 1 & 3
-    // Clear everything first
-    EALLOW;
-    HWREG(XBAR_EPWM_CFG_REG_BASE + XBAR_O_TRIP4MUX0TO15CFG)  = 0;
-    HWREG(XBAR_EPWM_CFG_REG_BASE + XBAR_O_TRIP4MUX16TO31CFG) = 0;
-    EDIS;
-
-    // Enable Muxes for ored input of CMPSS1H and 1L, i.e. .1 mux for Mux0
-    //cmpss1 - tripH or tripL
-    XBAR_setEPWMMuxConfig(XBAR_TRIP4, XBAR_EPWM_MUX00_CMPSS1_CTRIPH_OR_L);
-
-    //cmpss3 - tripH or tripL
-    XBAR_setEPWMMuxConfig(XBAR_TRIP4, XBAR_EPWM_MUX04_CMPSS3_CTRIPH_OR_L);
-
-    //cmpss2 - tripH or tripL
-    XBAR_setEPWMMuxConfig(XBAR_TRIP4, XBAR_EPWM_MUX02_CMPSS2_CTRIPH_OR_L);
-
-    //cmpss6 - tripH or tripL
-    XBAR_setEPWMMuxConfig(XBAR_TRIP4, XBAR_EPWM_MUX10_CMPSS6_CTRIPH_OR_L);
-
-    //inputxbar2 trip
-    XBAR_setEPWMMuxConfig(XBAR_TRIP4, XBAR_EPWM_MUX03_INPUTXBAR2);
-
-    // Disable all the muxes first
-    XBAR_disableEPWMMux(XBAR_TRIP4, 0xFFFF);
-
-    // Enable Mux 0  OR Mux 4 to generate TRIP4
-    XBAR_enableEPWMMux(XBAR_TRIP4, XBAR_MUX00 | XBAR_MUX04 | XBAR_MUX02 | XBAR_MUX10 | XBAR_MUX03);
-
-    // Configure TRIP for motor inverter phases
-    for(base = 0; base < 3; base++) {
-        //Trip 4 is the input to the DCAHCOMPSEL
-        EPWM_selectDigitalCompareTripInput           ( pwmHandle[base] ,EPWM_DC_TRIP_TRIPIN4 ,EPWM_DC_TYPE_DCAH                             );
-        EPWM_setTripZoneDigitalCompareEventCondition ( pwmHandle[base] ,EPWM_TZ_DC_OUTPUT_A1 ,EPWM_TZ_EVENT_DCXH_HIGH                       );
-        EPWM_setDigitalCompareEventSource            ( pwmHandle[base] ,EPWM_DC_MODULE_A     ,EPWM_DC_EVENT_1 ,EPWM_DC_EVENT_SOURCE_ORIG_SIGNAL );
-        EPWM_setDigitalCompareEventSyncMode          ( pwmHandle[base] ,EPWM_DC_MODULE_A     ,EPWM_DC_EVENT_1 ,EPWM_DC_EVENT_INPUT_NOT_SYNCED   );
-        EPWM_enableTripZoneSignals                   ( pwmHandle[base] ,EPWM_TZ_SIGNAL_DCAEVT1                                              );
-
-        // Emulator Stop
-        EPWM_enableTripZoneSignals(pwmHandle[base], EPWM_TZ_SIGNAL_CBC6);
-
-        // What do we want the OST/CBC events to do?
-        // TZA events can force EPWMxA
-        // TZB events can force EPWMxB
-
-        // EPWMxA will go low
-        // EPWMxB will go low
-        EPWM_setTripZoneAction ( pwmHandle[base], EPWM_TZ_ACTION_EVENT_TZA, EPWM_TZ_ACTION_LOW );
-        EPWM_setTripZoneAction ( pwmHandle[base], EPWM_TZ_ACTION_EVENT_TZB, EPWM_TZ_ACTION_LOW );
-
-        // Clear any spurious OV trip
-        EPWM_clearTripZoneFlag ( pwmHandle[base], EPWM_TZ_FLAG_DCAEVT1 );
-        EPWM_clearTripZoneFlag ( pwmHandle[base], EPWM_TZ_FLAG_OST     );
-        EPWM_clearTripZoneFlag ( pwmHandle[base], EPWM_TZ_FLAG_CBC     );
-    }
     return;
 }/*}}}*/
 // Position Sensing Configuration

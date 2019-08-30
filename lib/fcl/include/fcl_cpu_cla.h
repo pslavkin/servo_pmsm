@@ -141,9 +141,9 @@ extern void FCL_initQEP(uint32_t baseA);
 extern void FCL_resetController(void);
 extern uint32_t FCL_getSwVersion(void);
 
-extern __interrupt void Cla1Task1(void);
-extern __interrupt void Cla1Task2(void);
-extern __interrupt void Cla1Task3(void);
-extern __interrupt void Cla1Task4(void);
+//extern __interrupt void Cla1Task1(void);
+//extern __interrupt void Cla1Task2(void);
+//extern __interrupt void Cla1Task3(void);
+//extern __interrupt void Cla1Task4(void);
 
 #endif

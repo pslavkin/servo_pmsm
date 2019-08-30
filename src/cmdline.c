@@ -112,52 +112,52 @@ tCmdLineEntry rampGenCmdTable[] =/*{{{*/
 };
 void Cmd_motorIsr(uint16_t argc, char *argv[])
 {
-   if(!Free_Func_Schedule(motorISR)) {
-      if(argc>1)
-         New_Periodic_Func_Schedule(atoi(argv[1]),motorISR);
-      else
-         motorISR();
-   }
+//   if(!Free_Func_Schedule(motorISR)) {
+//      if(argc>1)
+//         New_Periodic_Func_Schedule(atoi(argv[1]),motorISR);
+//      else
+//         motorISR();
+//   }
 }
 void Cmd_writeQsRef(uint16_t argc, char *argv[])
 {
-   if(argc>1) {
-      float ref=atof(argv[1]);
-      writeQsRef(ref);
-      sciPrintf("Qs =%f\r\n",readQsRef());
-   }
+//   if(argc>1) {
+//      float ref=atof(argv[1]);
+//      writeQsRef(ref);
+//      sciPrintf("Qs =%f\r\n",readQsRef());
+//   }
 }
 void Cmd_writeDsRef(uint16_t argc, char *argv[])
 {
-   if(argc>1) {
-      float ref=atof(argv[1]);
-      writeDsRef(ref);
-      sciPrintf("Ds =%f\r\n",readDsRef());
-   }
+//   if(argc>1) {
+//      float ref=atof(argv[1]);
+//      writeDsRef(ref);
+//      sciPrintf("Ds =%f\r\n",readDsRef());
+//   }
 }
 void Cmd_printPark(uint16_t argc, char *argv[])
 {
-   printPark();
+//   printPark();
 }
 void Cmd_printIPark(uint16_t argc, char *argv[])
 {
-   printIPark();
+ //  printIPark();
 }
 void Cmd_printClarke(uint16_t argc, char *argv[])
 {
-   printClarke();
+//   printClarke();
 }
 void Cmd_printSvGen(uint16_t argc, char *argv[])
 {
-   printSvGen();
+//   printSvGen();
 }
 void Cmd_printRampCtl(uint16_t argc, char *argv[])
 {
-   printRampCtl();
+//   printRampCtl();
 }
 void Cmd_printRampGen(uint16_t argc, char *argv[])
 {
-   printRampGen();
+//   printRampGen();
 }/*}}}*/
 //--------------------------------------------------------------------------------
 tCmdLineEntry pwmCmdTable[] =/*{{{*/
@@ -173,21 +173,21 @@ tCmdLineEntry pwmCmdTable[] =/*{{{*/
 
 void Cmd_setPwmPeriod(uint16_t argc, char *argv[])
 {
-   if(argc>1) {
-      uint32_t newPeriod=atoi(argv[1]);
-      setPwmPeriod(newPeriod);
-      sciPrintf("pwm period=%10d\r\n",getPwmPeriod());
-   }
+//   if(argc>1) {
+//      uint32_t newPeriod=atoi(argv[1]);
+//      setPwmPeriod(newPeriod);
+//      sciPrintf("pwm period=%10d\r\n",getPwmPeriod());
+//   }
 }
 void Cmd_incPwmPeriod(uint16_t argc, char *argv[])
 {
-   setPwmPeriod(getPwmPeriod()+109);
-   sciPrintf("pwm period=%10d\r\n",getPwmPeriod());
+//   setPwmPeriod(getPwmPeriod()+109);
+//   sciPrintf("pwm period=%10d\r\n",getPwmPeriod());
 }
 void Cmd_decPwmPeriod(uint16_t argc, char *argv[])
 {
-   setPwmPeriod(getPwmPeriod()-100);
-   sciPrintf("pwm period=%10d\r\n",getPwmPeriod());
+//   setPwmPeriod(getPwmPeriod()-100);
+//   sciPrintf("pwm period=%10d\r\n",getPwmPeriod());
 }/*}}}*/
 //--------------------------------------------------------------------------------
 tCmdLineEntry eqepCmdTable[] =/*{{{*/
@@ -202,36 +202,36 @@ tCmdLineEntry eqepCmdTable[] =/*{{{*/
 
 void printPosSpeed(void)
 {
-   posCalc      ( );
-   speedLowCalc ( );
-   sciPrintf (
-         "posActual       =%10d\r\n"
-         "dirActual       =%10d\r\n"
-         "pos             =%10d\r\n"
-         "dir             =%10d\r\n"
-         "possDiff        =%10d\r\n"
-         "angle           =%f\r\n"
-         "deltaAngle      =%f\r\n"
-         "speedFastLinear =%f\r\n"
-         "speedFastRps    =%f\r\n"
-         "speedFastRpm    =%f\r\n"
-         "speedLowPeriod  =%10d\r\n"
-         "speedLowRps     =%f\r\n"
-         "speedLowRpm     =%f\r\n",
-         posSpeed.posActual,
-         posSpeed.dirActual,
-         posSpeed.pos,
-         posSpeed.dir,
-         posSpeed.posDiff,
-         posSpeed.angle,
-         posSpeed.deltaAngle,
-         posSpeed.speedFastLinear,
-         posSpeed.speedFastRps,
-         posSpeed.speedFastRpm,
-         posSpeed.speedLowPeriod,
-         posSpeed.speedLowRps,
-         posSpeed.speedLowRpm
-         );
+//   posCalc      ( );
+//   speedLowCalc ( );
+//   sciPrintf (
+//         "posActual       =%10d\r\n"
+//         "dirActual       =%10d\r\n"
+//         "pos             =%10d\r\n"
+//         "dir             =%10d\r\n"
+//         "possDiff        =%10d\r\n"
+//         "angle           =%f\r\n"
+//         "deltaAngle      =%f\r\n"
+//         "speedFastLinear =%f\r\n"
+//         "speedFastRps    =%f\r\n"
+//         "speedFastRpm    =%f\r\n"
+//         "speedLowPeriod  =%10d\r\n"
+//         "speedLowRps     =%f\r\n"
+//         "speedLowRpm     =%f\r\n",
+//         posSpeed.posActual,
+//         posSpeed.dirActual,
+//         posSpeed.pos,
+//         posSpeed.dir,
+//         posSpeed.posDiff,
+//         posSpeed.angle,
+//         posSpeed.deltaAngle,
+//         posSpeed.speedFastLinear,
+//         posSpeed.speedFastRps,
+//         posSpeed.speedFastRpm,
+//         posSpeed.speedLowPeriod,
+//         posSpeed.speedLowRps,
+//         posSpeed.speedLowRpm
+//         );
 }
 void Cmd_readEqepPos(uint16_t argc, char *argv[])
 {
@@ -244,13 +244,13 @@ void Cmd_readEqepPos(uint16_t argc, char *argv[])
 }
 void Cmd_incDeltaAngle(uint16_t argc, char *argv[])
 {
-   incDeltaAngle();
-   printPosSpeed();
+//   incDeltaAngle();
+//   printPosSpeed();
 }
 void Cmd_decDeltaAngle(uint16_t argc, char *argv[])
 {
-   decDeltaAngle();
-   printPosSpeed();
+//   decDeltaAngle();
+//   printPosSpeed();
 }
 /*}}}*/
 //--------------------------------------------------------------------------------
