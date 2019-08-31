@@ -12,6 +12,7 @@
 #include "pwm.h"
 #include "schedule.h"
 #include "pid.h"
+#include "position.h"
 
 tCmdLineEntry Login_Cmd_Table [ ];
 tCmdLineEntry adcCmdTable     [ ];
@@ -20,6 +21,7 @@ tCmdLineEntry eqepCmdTable    [ ];
 tCmdLineEntry rampGenCmdTable [ ];
 tCmdLineEntry speedPidCmdTable[ ];
 tCmdLineEntry posPidCmdTable  [ ];
+tCmdLineEntry stepDirCmdTable [ ];
 
 char *         g_ppcArgv[CMDLINE_MAX_ARGS + 1];
 tCmdLineEntry* actualCmdTable=Login_Cmd_Table;
@@ -35,6 +37,7 @@ tCmdLineEntry Login_Cmd_Table[] =
    { "p"         ,Cmd_readEqepPos   ,": read posx"            }, // debug
    { "speed pid" ,Cmd_speedPid      ,": speed PID parameters" },
    { "pos pid"   ,Cmd_posPid        ,": speed PID parameters" },
+   { "stepdir"   ,Cmd_stepDir       ,": step dire emulation"  },
    { "v"         ,Cmd_version       ,": version"              },
    { "?"         ,Cmd_Help          ,": help"                 },
    { 0           ,0                 ,0                        }
@@ -48,6 +51,7 @@ void Cmd_login2rampGen ( uint16_t argc, char *argv[] ) { actualCmdTable=rampGenC
 void Cmd_login2eqep    ( uint16_t argc, char *argv[] ) { actualCmdTable=eqepCmdTable                     ;}
 void Cmd_speedPid      ( uint16_t argc, char *argv[] ) { actualCmdTable=speedPidCmdTable                 ;}
 void Cmd_posPid        ( uint16_t argc, char *argv[] ) { actualCmdTable=posPidCmdTable                   ;}
+void Cmd_stepDir       ( uint16_t argc, char *argv[] ) { actualCmdTable=stepDirCmdTable                  ;}
 //--------------------------------------------------------------------------------
 tCmdLineEntry adcCmdTable[] =/*{{{*/
 {
@@ -305,6 +309,32 @@ tCmdLineEntry posPidCmdTable[] =/*{{{*/
 void Cmd_readposPidParams(uint16_t argc, char *argv[])
 {
    printPidParams(NULL);
+}
+/*}}}*/
+//--------------------------------------------------------------------------------
+tCmdLineEntry stepDirCmdTable[] =/*{{{*/
+{
+   { "a" ,Cmd_setDirUp   ,": set dir up"          },
+   { "b" ,Cmd_setDirDown ,": set dir up"          },
+   { "c" ,Cmd_pulse      ,": pulse"               },
+   { "<" ,Cmd_back2login ,": back to login table" },
+   { "?" ,Cmd_Help       ,": help"                },
+   { 0   ,0              ,0                       }
+};
+void Cmd_setDirUp(uint16_t argc, char *argv[])
+{
+   posDir=0;
+   sciPrintf("dir to up\r\n");
+}
+void Cmd_setDirDown(uint16_t argc, char *argv[])
+{
+   posDir=1;
+   sciPrintf("dir to down\r\n");
+}
+void Cmd_pulse(uint16_t argc, char *argv[])
+{
+   stepPos();
+   sciPrintf("absPos=%f relPos=%f\r\n",absPos,relPos);
 }
 /*}}}*/
 //--------------------------------------------------------------------------------

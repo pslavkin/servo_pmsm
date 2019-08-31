@@ -245,6 +245,8 @@
 #pragma INTERRUPT (motorControlISR, LPI)
 __interrupt void motorControlISR(void);
 
+extern uint16_t fclDir  ;
+extern uint32_t fclStep ;
 const State**  fcl   ( void );
 void initFcl         ( void );
 void electricalInit  ( void );
