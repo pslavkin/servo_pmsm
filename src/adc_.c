@@ -89,10 +89,9 @@ void initAdc()/*{{{*/
    currentCalibrate();
    return;
 }/*}}}*/
-
-
 void currentCalibrate(void)/*{{{*/
 {
+   sciPrintf("begin adc calib\r\n");
    // Variables for current measurement
    // Offset calibration routine is run to calibrate for any offsets on the opamps
    float32_t            offset_lemV      = 0;        // offset in LEM current V fbk channel @ 0A
@@ -119,6 +118,7 @@ void currentCalibrate(void)/*{{{*/
    ADC_setPPBReferenceOffset(ADCA_BASE, ADC_PPB_NUMBER1, (uint16_t)(offset_lemV*4096.0));
    // setting LEM Iw offset
    ADC_setPPBReferenceOffset(ADCB_BASE, ADC_PPB_NUMBER1, (uint16_t)(offset_lemW*4096.0));
+   sciPrintf("end adc calib\r\n");
 }/*}}}*/
 
 

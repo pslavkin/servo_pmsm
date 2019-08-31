@@ -14,13 +14,8 @@ QEP             qep1;
 // Variables for Position Sensor Suite
 float32_t posEncElecTheta[6] = {0};
 float32_t posEncMechTheta[6] = {0};
-float32_t alignCntr          = 0;
-float32_t alignCnt           = 20000;
-float32_t IdRef_start        = 0.1;
-float32_t IdRef_run          = 0;
 
 extern SPEED_MEAS_QEP  speed1;
-//extern float32_t       T;
 
 // Position Sensing Configuration
 void initQep(void)/*{{{*/

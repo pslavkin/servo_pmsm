@@ -14,6 +14,7 @@
 #include "pid_.h"
 #include "ramper_.h"
 #include "position.h"
+#include "schedule.h"
 
 // Flag variables
 uint32_t          isrTicker          = 0         ;
@@ -24,6 +25,10 @@ volatile uint16_t lsw2EntryFlag      = 0         ;
 
 // Variables for Fast Current Loop
 volatile  uint16_t   FCL_cycleCount       = 0;
+float32_t alignCntr          = 0;
+float32_t alignCnt           = 20000;
+float32_t IdRef_start        = 0.1;
+float32_t IdRef_run          = 0;
 
 float32_t IdRef     = 0.0;                 // Id reference (pu)
 float32_t IqRef     = 0.0;                 // Iq reference (pu)
@@ -34,6 +39,8 @@ RMPCNTL rc1 = RMPCNTL_DEFAULTS;
 
 // Instance a speed measurement calc
 SPEED_MEAS_QEP  speed1;
+
+void (*isrSm)(void);
 
 //Function that initializes the variables for Fast current Loop library
 void initFCLVars()/*{{{*/
@@ -104,67 +111,66 @@ void initFcl(void)/*{{{*/
 
    // Init FLAGS
    lsw        = QEP_ALIGNMENT;
-   runMotor   = MOTOR_RUN;
+   runMotor   = MOTOR_STOP;
 
    // Read and update DC BUS voltage for FCL to use
    FCL_params.Vdcbus = getVdc();
 
+   New_Periodic_Schedule(10,ANY_Event,fcl());
+   isrSm=electricalInit;
    // Enable all mapped INTerrupts
    EPWM_clearEventTriggerInterruptFlag ( EPWM1_BASE ); // clear pending INT event
    Interrupt_enable                    ( INT_EPWM1  ); // Enable PWM1INT in PIE group 3
 
    // Enable group 3 interrupts - EPWM1 is here
    Interrupt_enableInCPU(INTERRUPT_CPU_INT3);
+
 }/*}}}*/
 // build level 5
 static void buildLevel5(void)/*{{{*/
 {
-   FCL_runPICtrl();
-   //  Measure DC Bus voltage using SDFM Filter3
-   FCL_params.Vdcbus = getVdc();
-   // Fast current loop controller wrapper
-   FCL_runPICtrlWrap();
+//   FCL_runPICtrl();
+//   FCL_params.Vdcbus = getVdc(); // Measure DC Bus voltage using SDFM Filter3
+//   FCL_runPICtrlWrap();          // Fast current loop controller wrapper
 
    // -----------------------------------------------------------------------------
    //  Alignment Routine: this routine aligns the motor to zero electrical angle
    //  and in case of QEP also finds the index location and initializes the angle
    //  w.r.t. the index location
    // -----------------------------------------------------------------------------
-   if(runMotor == MOTOR_STOP)
-   {
-      lsw           = QEP_ALIGNMENT;
-      lsw2EntryFlag = 0;
-      alignCntr     = 0;
-      posCntr       = 0;
-      posPtr        = 0;
-      IdRef         = 0;
-      pi_id.ref     = IdRef;
-      FCL_resetController();
-   }
-   else if(lsw == QEP_ALIGNMENT)
-   {
-      // alignment curretnt
-      IdRef = IdRef_start;  //(0.1);
+//   if(runMotor == MOTOR_STOP)
+//   {
+//      lsw           = QEP_ALIGNMENT;
+//      lsw2EntryFlag = 0;
+//      alignCntr     = 0;
+//      posCntr       = 0;
+//      posPtr        = 0;
+//      IdRef         = 0;
+//      pi_id.ref     = IdRef;
+//      FCL_resetController();
+//   }
+//   else 
+      if(lsw == QEP_ALIGNMENT) {
+         // alignment curretnt
+         IdRef = IdRef_start;  //(0.1);
 
-      // for restarting from (runMotor = STOP)
-      rc1.TargetValue   = 0;
-      rc1.SetpointValue = 0;
+         // for restarting from (runMotor = STOP)
+         rc1.TargetValue   = 0;
+         rc1.SetpointValue = 0;
 
-      // set up an alignment and hold time for shaft to settle down
-      if(pi_id.ref >= IdRef)
-      {
-         if(++alignCntr >= alignCnt)
-         {
-            alignCntr  = 0;
-            //              IdRef = IdRef_run;
-            lsw = QEP_WAIT_FOR_INDEX;
+         // set up an alignment and hold time for shaft to settle down
+         if(pi_id.ref >= IdRef) {
+            if(++alignCntr >= alignCnt) {
+               alignCntr  = 0;
+               //              IdRef = IdRef_run;
+               lsw = QEP_WAIT_FOR_INDEX;
+            }
          }
-      }
-   } // end else if(lsw == QEP_ALIGNMENT)
-   else 
-      if(lsw == QEP_GOT_INDEX) {
-         IdRef = IdRef_run;
-      }
+      } // end else if(lsw == QEP_ALIGNMENT)
+      else 
+         if(lsw == QEP_GOT_INDEX) {
+            IdRef = IdRef_run;
+         }
 
    //  Connect inputs of the RAMP GEN module and call the ramp generator module
    rg1.Freq = speedRef*0.1;
@@ -240,7 +246,11 @@ static void buildLevel5(void)/*{{{*/
 // Motor Control ISR
 __interrupt void motorControlISR(void)/*{{{*/
 {
-    buildLevel5();
+   FCL_runPICtrl();
+   FCL_params.Vdcbus = getVdc(); // Measure DC Bus voltage using SDFM Filter3
+   FCL_runPICtrlWrap();          // Fast current loop controller wrapper
+//    buildLevel5();
+    isrSm();
 
     EPWM_clearEventTriggerInterruptFlag(EPWM1_BASE);
 
@@ -257,42 +267,54 @@ __interrupt void motorControlISR(void)/*{{{*/
     isrTicker++;
 
 } // motorControlISR Ends Here}}}
-
-
 //----------------------------------------------------------------------------------------
 const State
-   adcCalib[],
-   stopped[],
-   control[];
+   adcCalib  [ ];
 
 const State*   fclSm=adcCalib;
-const State**  fcl ( void )
+const State**  fcl ( void ) { return &fclSm; }
+
+
+void electricalInit(void)
 {
-   return &fclSm;
+   lsw           = QEP_ALIGNMENT;
+   lsw2EntryFlag = 0;
+   alignCntr     = 0;
+   posCntr       = 0;
+   posPtr        = 0;
+   IdRef         = 0;
+   pi_id.ref     = IdRef;
+   FCL_resetController();
+   runMotor   = MOTOR_RUN;
+   isrSm=electricalAlign;
+}
+void electricalAlign(void)
+{
+   buildLevel5();
+}
+void mechanicalAlign(void)
+{
+}
+void running(void)
+{
 }
 
 
+
+
+
+
+void align(void)
+{
+   sciPrintf("motor run\r\n");
+   runMotor = MOTOR_RUN;
+}
+
+void controlling(void)
+{
+}
+
 const State adcCalib [ ] =
 {
-    ANY_Event ,currentCalibrate ,stopped  ,
+    ANY_Event ,Rien ,adcCalib  ,
 };
-
-const State stopped [ ] =
-{
-    ANY_Event ,Rien ,stopped  ,
-};
-
-const State control [ ] =
-{
-    ANY_Event ,Rien ,control  ,
-};
-
-
-
-
-
-
-
-
-
-

@@ -6,10 +6,6 @@
 // Variables for Position Sensor Suite
 extern float32_t posEncElecTheta[6];
 extern float32_t posEncMechTheta[6];
-extern float32_t alignCntr         ;
-extern float32_t alignCnt          ;
-extern float32_t IdRef_start       ;
-extern float32_t IdRef_run         ;
 extern QEP             qep1;
 
 void     initQep       ( void );
