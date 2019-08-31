@@ -7,7 +7,6 @@
 #include "opt.h"
 #include "fcl.h"
 
-extern MotorRunStop_e    runMotor;
 uint16_t                 tripFlagDMC      = 0         ; // PWM trip status
 uint16_t                 clearTripFlagDMC = 0         ;
 
@@ -203,7 +202,6 @@ void testOvercurrent(void)/*{{{*/
         EPWM_forceTripZoneEvent(EPWM2_BASE, EPWM_TZ_FORCE_EVENT_OST);
         EPWM_forceTripZoneEvent(EPWM3_BASE, EPWM_TZ_FORCE_EVENT_OST);
         tripFlagDMC = 1;      // Trip on DMC (halt and IPM fault trip )
-        runMotor = MOTOR_STOP;
         sciPrintf("overcurrent protection!\r\n");
     }
 
@@ -235,6 +233,5 @@ void testOvercurrent(void)/*{{{*/
         CMPSS_clearFilterLatchLow(CMPSS3_BASE);
         CMPSS_clearFilterLatchLow(CMPSS2_BASE);
         CMPSS_clearFilterLatchLow(CMPSS6_BASE);
-        runMotor = MOTOR_RUN;
     }
 }/*}}}*/

@@ -18,7 +18,6 @@
 
 // Flag variables
 uint32_t          isrTicker          = 0         ;
-MotorRunStop_e    runMotor           = MOTOR_STOP;
 uint16_t          speedLoopPrescaler = 10        ; // Speed loop pre scalar
 uint16_t          speedLoopCount     = 1         ; // Speed loop counter
 volatile uint16_t lsw2EntryFlag      = 0         ;
@@ -111,7 +110,6 @@ void initFcl(void)/*{{{*/
 
    // Init FLAGS
    lsw        = QEP_ALIGNMENT;
-   runMotor   = MOTOR_STOP;
 
    // Read and update DC BUS voltage for FCL to use
    FCL_params.Vdcbus = getVdc();
@@ -126,145 +124,27 @@ void initFcl(void)/*{{{*/
    Interrupt_enableInCPU(INTERRUPT_CPU_INT3);
 
 }/*}}}*/
-// build level 5
-static void buildLevel5(void)/*{{{*/
-{
-//   FCL_runPICtrl();
-//   FCL_params.Vdcbus = getVdc(); // Measure DC Bus voltage using SDFM Filter3
-//   FCL_runPICtrlWrap();          // Fast current loop controller wrapper
-
-   // -----------------------------------------------------------------------------
-   //  Alignment Routine: this routine aligns the motor to zero electrical angle
-   //  and in case of QEP also finds the index location and initializes the angle
-   //  w.r.t. the index location
-   // -----------------------------------------------------------------------------
-//   if(runMotor == MOTOR_STOP)
-//   {
-//      lsw           = QEP_ALIGNMENT;
-//      lsw2EntryFlag = 0;
-//      alignCntr     = 0;
-//      posCntr       = 0;
-//      posPtr        = 0;
-//      IdRef         = 0;
-//      pi_id.ref     = IdRef;
-//      FCL_resetController();
-//   }
-//   else 
-      if(lsw == QEP_ALIGNMENT) {
-         // alignment curretnt
-         IdRef = IdRef_start;  //(0.1);
-
-         // for restarting from (runMotor = STOP)
-         rc1.TargetValue   = 0;
-         rc1.SetpointValue = 0;
-
-         // set up an alignment and hold time for shaft to settle down
-         if(pi_id.ref >= IdRef) {
-            if(++alignCntr >= alignCnt) {
-               alignCntr  = 0;
-               //              IdRef = IdRef_run;
-               lsw = QEP_WAIT_FOR_INDEX;
-            }
-         }
-      } // end else if(lsw == QEP_ALIGNMENT)
-      else 
-         if(lsw == QEP_GOT_INDEX) {
-            IdRef = IdRef_run;
-         }
-
-   //  Connect inputs of the RAMP GEN module and call the ramp generator module
-   rg1.Freq = speedRef*0.1;
-   fclRampGen((RAMPGEN *)&rg1);
-
-   //    Connect inputs of the SPEED_FR module and call the speed calculation module
-   posEncElecTheta[QEP_POS_ENCODER] = qep1ElecTheta();
-   posEncMechTheta[QEP_POS_ENCODER] = qep1MechTheta();
-   speed1.ElecTheta = posEncElecTheta[POSITION_ENCODER];
-   runSpeedFR(&speed1);
-
-   //    Connect inputs of the PID module and call the PID speed controller module
-   if(++speedLoopCount >= speedLoopPrescaler) {
-      if(lsw == QEP_GOT_INDEX) {
-         if(!lsw2EntryFlag) {
-            lsw2EntryFlag   = 1;
-            rc1.TargetValue = posEncMechTheta[POSITION_ENCODER];
-            pi_pos.Fbk      = rc1.TargetValue;
-            pi_pos.Ref      = pi_pos.Fbk;
-         }
-         else {
-            // ========== reference position setting =========
-            // choose between 1 of 2 position commands
-            // The user can choose between a position reference table
-            // used within refPosGen() or feed it in from rg1.Out
-            // Position command read from a table
-            rc1.TargetValue = refPosGen(rc1.TargetValue);
-            // Position command generated as integral of speedRef
-            //              rc1.TargetValue = rg1.Out;
-            rc1.SetpointValue = rc1.TargetValue - (float32_t)((int32_t)rc1.TargetValue);
-
-            // Rolling in angle within 0 to 1pu
-            if(rc1.SetpointValue < 0) {
-               rc1.SetpointValue += 1.0;
-            }
-            pi_pos.Ref = rc1.SetpointValue;
-            pi_pos.Fbk = posEncMechTheta[POSITION_ENCODER];
-         }
-         runPIPos(&pi_pos);
-
-         // speed PI regulator
-         pid_spd.term.Ref = pi_pos.Out;
-         pid_spd.term.Fbk = speed1.Speed;
-         runPID(&pid_spd);
-      }
-      speedLoopCount=0;
-   }
-
-   if(lsw == QEP_ALIGNMENT) {
-      rc1.SetpointValue = 0;// position = 0 deg
-      pid_spd.data.d1   = 0;
-      pid_spd.data.d2   = 0;
-      pid_spd.data.i1   = 0;
-      pid_spd.data.ud   = 0;
-      pid_spd.data.ui   = 0;
-      pid_spd.data.up   = 0;
-      pi_pos.ui         = 0;
-      pi_pos.i1         = 0;
-      rg1.Out           = 0;
-      lsw2EntryFlag     = 0;
-   }
-
-   //  Setup iqref for FCL
-   pi_iq.ref = (lsw == QEP_ALIGNMENT) ? 0 :
-      (lsw == QEP_WAIT_FOR_INDEX) ? IqRef : pid_spd.term.Out;
-
-   //  Setup idref for FCL
-   pi_id.ref = ramper(IdRef, pi_id.ref, 0.00001);
-
-   updateDac();
-   return;
-}/*}}}*/
 // Motor Control ISR
 __interrupt void motorControlISR(void)/*{{{*/
 {
    FCL_runPICtrl();
    FCL_params.Vdcbus = getVdc(); // Measure DC Bus voltage using SDFM Filter3
    FCL_runPICtrlWrap();          // Fast current loop controller wrapper
-//    buildLevel5();
-    isrSm();
+   isrSm();
 
-    EPWM_clearEventTriggerInterruptFlag(EPWM1_BASE);
+   EPWM_clearEventTriggerInterruptFlag(EPWM1_BASE);
 
-    // clear ADCINT1 INT and ack PIE INT
-    ADC_clearInterruptStatus(ADCA_BASE, ADC_INT_NUMBER1);
+   // clear ADCINT1 INT and ack PIE INT
+   ADC_clearInterruptStatus(ADCA_BASE, ADC_INT_NUMBER1);
 
-    // ACK PIE for CLA INT GROUP
-    // FCL is not clearing the ACK bit for CLA group
-    // because the example might have other CLA Tasks
+   // ACK PIE for CLA INT GROUP
+   // FCL is not clearing the ACK bit for CLA group
+   // because the example might have other CLA Tasks
 
-    // ACK the PWM, ADC and CLA interrupts
-    Interrupt_clearACKGroup(INTERRUPT_ACK_GROUP3 | INTERRUPT_ACK_GROUP11);
+   // ACK the PWM, ADC and CLA interrupts
+   Interrupt_clearACKGroup(INTERRUPT_ACK_GROUP3 | INTERRUPT_ACK_GROUP11);
 
-    isrTicker++;
+   isrTicker++;
 
 } // motorControlISR Ends Here}}}
 //----------------------------------------------------------------------------------------
@@ -285,29 +165,114 @@ void electricalInit(void)
    IdRef         = 0;
    pi_id.ref     = IdRef;
    FCL_resetController();
-   runMotor   = MOTOR_RUN;
-   isrSm=electricalAlign;
+   isrSm         = electricalAlign;
+   sciPrintf("electrical align\r\n");
 }
 void electricalAlign(void)
 {
-   buildLevel5();
+   IdRef             = IdRef_start;//(0.1);
+   rc1.TargetValue   = 0;
+   rc1.SetpointValue = 0;
+
+   // set up an alignment and hold time for shaft to settle down
+   if(pi_id.ref >= IdRef) {
+      if(++alignCntr >= alignCnt) {
+         alignCntr = 0;
+         //              IdRef = IdRef_run;
+         lsw       = QEP_WAIT_FOR_INDEX;
+         isrSm     = mechanicalAlign;
+         sciPrintf("mechanical align\r\n");
+      }
+   }
+   //  Connect inputs of the RAMP GEN module and call the ramp generator module
+   rg1.Freq = speedRef*0.1;
+   fclRampGen((RAMPGEN *)&rg1);
+
+   //    Connect inputs of the SPEED_FR module and call the speed calculation module
+   posEncElecTheta[QEP_POS_ENCODER] = qep1ElecTheta();
+   posEncMechTheta[QEP_POS_ENCODER] = qep1MechTheta();
+   speed1.ElecTheta = posEncElecTheta[POSITION_ENCODER];
+   runSpeedFR(&speed1);
+
+   rc1.SetpointValue = 0;// position = 0 deg
+   pid_spd.data.d1   = 0;
+   pid_spd.data.d2   = 0;
+   pid_spd.data.i1   = 0;
+   pid_spd.data.ud   = 0;
+   pid_spd.data.ui   = 0;
+   pid_spd.data.up   = 0;
+   pi_pos.ui         = 0;
+   pi_pos.i1         = 0;
+   rg1.Out           = 0;
+   lsw2EntryFlag     = 0;
+   pi_iq.ref         = 0 ;
+   pi_id.ref         = ramper(IdRef, pi_id.ref, 0.00001);
+   updateDac();
 }
 void mechanicalAlign(void)
 {
+   IdRef    = IdRef_run;
+   rg1.Freq = speedRef*0.1;
+   fclRampGen((RAMPGEN *)&rg1);
+
+   //    Connect inputs of the SPEED_FR module and call the speed calculation module
+   posEncElecTheta[QEP_POS_ENCODER] = qep1ElecTheta();
+   posEncMechTheta[QEP_POS_ENCODER] = qep1MechTheta();
+   speed1.ElecTheta                 = posEncElecTheta[POSITION_ENCODER];
+   runSpeedFR(&speed1);
+   pi_iq.ref = IqRef;
+   pi_id.ref = ramper(IdRef, pi_id.ref, 0.00001);
+
+   if(lsw == QEP_GOT_INDEX) {
+      rc1.TargetValue = posEncMechTheta[POSITION_ENCODER];
+      pi_pos.Fbk      = rc1.TargetValue;
+      pi_pos.Ref      = pi_pos.Fbk;
+      isrSm=running;
+      sciPrintf("running\r\n");
+   }
+   lsw = QEP_GOT_INDEX; //TODO
+   updateDac();
 }
 void running(void)
 {
+   IdRef    = IdRef_run;
+   rg1.Freq = speedRef*0.1;
+   fclRampGen((RAMPGEN *)&rg1);
+
+   //    Connect inputs of the SPEED_FR module and call the speed calculation module
+   posEncElecTheta[QEP_POS_ENCODER] = qep1ElecTheta();
+   posEncMechTheta[QEP_POS_ENCODER] = qep1MechTheta();
+   speed1.ElecTheta                 = posEncElecTheta[POSITION_ENCODER];
+   runSpeedFR(&speed1);
+
+   //    Connect inputs of the PID module and call the PID speed controller module
+   if(++speedLoopCount >= speedLoopPrescaler) {
+      rc1.TargetValue   = refPosGen(rc1.TargetValue);
+      rc1.SetpointValue = rc1.TargetValue - (float32_t)((int32_t)rc1.TargetValue);
+
+      // Rolling in angle within 0 to 1pu
+      if(rc1.SetpointValue < 0) {
+         rc1.SetpointValue += 1.0;
+      }
+      pi_pos.Ref = rc1.SetpointValue;
+      pi_pos.Fbk = posEncMechTheta[POSITION_ENCODER];
+      runPIPos(&pi_pos);
+
+      // speed PI regulator
+      pid_spd.term.Ref = pi_pos.Out;
+      pid_spd.term.Fbk = speed1.Speed;
+      runPID(&pid_spd);
+      speedLoopCount=0;
+   }
+   pi_iq.ref = pid_spd.term.Out;
+   pi_id.ref = ramper(IdRef, pi_id.ref, 0.00001);
 }
-
-
 
 
 
 
 void align(void)
 {
-   sciPrintf("motor run\r\n");
-   runMotor = MOTOR_RUN;
 }
 
 void controlling(void)

@@ -19,14 +19,16 @@ float32_t refPosGen(float32_t out)/*{{{*/
     float32_t in = posArray[posPtr];
 
     out = ramper(in, out, posSlewRate);
+ //   out=in;
 
-    if(in == out) {
-        if(++posCntr > 1000) {
+//    if(in == out) {
+        if(++posCntr > 5000) {
             posCntr = 0;
             if(++posPtr >= posPtrMax) {
                 posPtr = 0;
             }
+            sciPrintf("in pos=%f\r\n",posArray[posPtr]);
         }
-    }
+ //   }
     return(out);
 }/*}}}*/
