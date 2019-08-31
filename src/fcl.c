@@ -100,12 +100,16 @@ void initFcl(void)/*{{{*/
 
    // Init FLAGS
    lsw        = QEP_ALIGNMENT;
+   alignCntr = 0;
+   pi_id.ref = 0;
+   pi_iq.ref = 0;
+   isrSm     = electricalAlign;
+   FCL_resetController();
 
    // Read and update DC BUS voltage for FCL to use
    FCL_params.Vdcbus = getVdc();
 
    New_Periodic_Schedule(10,ANY_Event,fcl());
-   isrSm=electricalInit;
    // Enable all mapped INTerrupts
    EPWM_clearEventTriggerInterruptFlag ( EPWM1_BASE ); // clear pending INT event
    Interrupt_enable                    ( INT_EPWM1  ); // Enable PWM1INT in PIE group 3
@@ -117,8 +121,8 @@ __interrupt void motorControlISR(void)/*{{{*/
 {
    FCL_runPICtrl();
    FCL_params.Vdcbus = getVdc(); // Measure DC Bus voltage using SDFM Filter3
-   FCL_runPICtrlWrap();          // Fast current loop controller wrapper
-   isrSm();
+   FCL_runPICtrlWrap ( ); // Fast current loop controller wrapper
+   isrSm             ( );
 
    EPWM_clearEventTriggerInterruptFlag(EPWM1_BASE);
 
@@ -136,23 +140,6 @@ __interrupt void motorControlISR(void)/*{{{*/
 
 } // motorControlISR Ends Here}}}
 //----------------------------------------------------------------------------------------
-const State
-   adcCalib  [ ];
-
-const State*   fclSm=adcCalib;
-const State**  fcl ( void ) { return &fclSm; }
-
-
-void electricalInit(void)/*{{{*/
-{
-   lsw       = QEP_ALIGNMENT;
-   alignCntr = 0;
-   pi_id.ref = 0;
-   pi_iq.ref = 0;
-   isrSm     = electricalAlign;
-   FCL_resetController();
-   sciPrintf("electrical align\r\n");
-}/*}}}*/
 void electricalAlign(void)/*{{{*/
 {
    if(pi_id.ref >= IdRef_start) {
@@ -176,7 +163,6 @@ void electricalAlign(void)/*{{{*/
    }
    pi_id.ref = ramper ( IdRef_start, pi_id.ref, 0.00001 );
 }/*}}}*/
-
 void running(void)
 {
    speed1.ElecTheta = qep1ElecTheta();
@@ -185,9 +171,10 @@ void running(void)
    //    Connect inputs of the PID module and call the PID speed controller module
    if(++speedLoopCount >= speedLoopPrescaler) {
       speedLoopCount    = 0;
-      pi_pos.Ref = relPos;
+      pi_pos.Ref = getPosRel();
       pi_pos.Fbk = qep1MechTheta();
       runPIPos(&pi_pos);
+      incPos();
 
       // speed PI regulator
       pid_spd.term.Ref = pi_pos.Out;
@@ -197,17 +184,12 @@ void running(void)
    pi_iq.ref = pid_spd.term.Out;
 }
 
+//----------------------------------------------------------------------------------------
+const State
+   adcCalib  [ ];
 
-
-
-
-void align(void)
-{
-}
-
-void controlling(void)
-{
-}
+const State*   fclSm=adcCalib;
+const State**  fcl ( void ) { return &fclSm; }
 
 const State adcCalib [ ] =
 {

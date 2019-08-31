@@ -37,6 +37,7 @@ https://gist.github.com/rxaviers/7360908
 - :heavy_check_mark: MOLDOVA here I'm! spinning szgh13380CC motors
 - :heavy_check_mark: fanuc servomotor experimetation
 - :heavy_check_mark: mitsubishi servomotor experimetation
+- :heavy_check_mark: step/dir emulation from console works!
 - :construction:     scratch materplan
 - :construction:     merging example fcl with my own code
 - :construction:     trying to manage BiA128 fanuc encoder

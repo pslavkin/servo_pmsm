@@ -317,24 +317,33 @@ tCmdLineEntry stepDirCmdTable[] =/*{{{*/
    { "a" ,Cmd_setDirUp   ,": set dir up"          },
    { "b" ,Cmd_setDirDown ,": set dir up"          },
    { "c" ,Cmd_pulse      ,": pulse"               },
+   { "s" ,Cmd_step       ,": set step angle"      },
    { "<" ,Cmd_back2login ,": back to login table" },
    { "?" ,Cmd_Help       ,": help"                },
    { 0   ,0              ,0                       }
 };
 void Cmd_setDirUp(uint16_t argc, char *argv[])
 {
-   posDir=0;
+   setPosDir(CLOCK);
    sciPrintf("dir to up\r\n");
 }
 void Cmd_setDirDown(uint16_t argc, char *argv[])
 {
-   posDir=1;
+   setPosDir(ANTICLOCK);
    sciPrintf("dir to down\r\n");
 }
 void Cmd_pulse(uint16_t argc, char *argv[])
 {
-   stepPos();
-   sciPrintf("absPos=%f relPos=%f\r\n",absPos,relPos);
+   incPos();
+   sciPrintf("absPos=%f relPos=%f\r\n",getPosAbs(),getPosRel());
+}
+void Cmd_step(uint16_t argc, char *argv[])
+{
+   if(argc>1) {
+      float step=atof(argv[1]);
+      setPosStep(step);
+   }
+   sciPrintf("stepAngle=%f\r\n",getPosStep());
 }
 /*}}}*/
 //--------------------------------------------------------------------------------

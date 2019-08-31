@@ -6,53 +6,20 @@
 #include "ramper_.h"
 #include "position.h"
 
-// Variables for position reference generation and control
-float32_t   posArray[]  = {1, 0, 2, 0};
-float32_t   posCntr     = 0;
-float32_t   posSlewRate = 0.002;
-int16_t     posPtrMax   = 4;
-int16_t     posPtr      = 0;
-
-uint16_t  posDir     = 0;
-float32_t absPos  = 0;
-float32_t relPos = 0;
 #define STEP_ANGLE 0.001
 
+pos_t pos={CLOCK,0,0,STEP_ANGLE};
 
-void stepPos(void)
+void        setPosDir  ( enum POSDIR d  ) { pos.dir=d      ;}
+float32_t   getPosRel  ( void           ) { return pos.rel ;}
+float32_t   getPosAbs  ( void           ) { return pos.abs ;}
+void        setPosStep ( float32_t step ) { pos.step=step  ;}
+float32_t   getPosStep ( void           ) { return pos.step;}
+
+void incPos(void)
 {
-   if (posDir==0) {
-      absPos+=STEP_ANGLE;
-   }
-   else  {
-      absPos-=STEP_ANGLE;
-   }
-   relPos = absPos - (float32_t)((int32_t)absPos);
-
-   // Rolling in angle within 0 to 1pu
-   if(relPos < 0) {
-      relPos += 1.0;
-   }
+   pos.abs = pos.abs + ((pos.dir == CLOCK)?pos.step:(-pos.step));
+   pos.rel = pos.abs - (float32_t)((int32_t)pos.abs);
+   if(pos.rel < 0) pos.rel += 1.0;
 }
-
-// Reference Position Generator for position loop
-float32_t refPosGen(float32_t out)/*{{{*/
-{
-    float32_t in = posArray[posPtr];
-
-    out = ramper(in, out, posSlewRate);
-
-    if(in == out) {
-        if(++posCntr > 1000) {
-            posCntr = 0;
-            if(++posPtr >= posPtrMax) {
-                posPtr = 0;
-            }
-            sciPrintf("in pos=%f\r\n",posArray[posPtr]);
-        }
-    }
-    return(out);
-}/*}}}*/
-
-
 

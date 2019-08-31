@@ -54,6 +54,7 @@ void Cmd_readposPidParams   ( uint16_t argc, char *argv[] );
 void Cmd_setDirUp   ( uint16_t argc, char *argv[] );
 void Cmd_setDirDown ( uint16_t argc, char *argv[] );
 void Cmd_pulse      ( uint16_t argc, char *argv[] );
+void Cmd_step       ( uint16_t argc, char *argv[] );
 
 void Cmd_motorIsr(uint16_t argc, char *argv[]);
 
