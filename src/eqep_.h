@@ -4,8 +4,6 @@
 #include "qep_defs.h"
 
 // Variables for Position Sensor Suite
-extern float32_t posEncElecTheta[6];
-extern float32_t posEncMechTheta[6];
 extern QEP             qep1;
 
 void     initQep       ( void );

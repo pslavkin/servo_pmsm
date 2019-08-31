@@ -9,7 +9,7 @@
 // Variables for position reference generation and control
 float32_t   posArray[]  = {1.5, -1.5, 2.5, -2.5};
 float32_t   posCntr     = 0;
-float32_t   posSlewRate = 0.001;
+float32_t   posSlewRate = 0.002;
 int16_t     posPtrMax   = 4;
 int16_t     posPtr      = 0;
 
