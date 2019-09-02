@@ -248,9 +248,10 @@ __interrupt void motorControlISR(void);
 extern uint16_t fclDir  ;
 extern uint32_t fclStep ;
 const State**  fcl   ( void );
-void initFcl         ( void );
-void electricalAlign ( void );
-void running         ( void );
+void setLog          ( bool state );
+void initFcl         ( void       );
+void electricalAlign ( void       );
+void running         ( void       );
 
 typedef enum
 {

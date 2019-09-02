@@ -18,8 +18,9 @@
 #include "schedule.h"
 
 // Flag variables
-uint32_t          isrTicker          = 0    ;
-uint32_t          speedPidTicker     = 0    ;
+uint32_t          isrTicker      = 0    ;
+uint32_t          speedPidTicker = 0    ;
+bool              logEnable      = false;
 
 uint16_t          speedLoopPrescaler = 200 ; // Speed loop pre scalar
 uint16_t          speedLoopCount     = 1    ; // Speed loop counter
@@ -36,8 +37,11 @@ RMPCNTL rc1 = RMPCNTL_DEFAULTS;
 // Instance a speed measurement calc
 SPEED_MEAS_QEP  speed1;
 
-
 void (*isrSm)(void);
+void setLog(bool state) {
+   logEnable=state;
+}
+
 
 //Function that initializes the variables for Fast current Loop library
 void initFCLVars()/*{{{*/
@@ -124,7 +128,7 @@ __interrupt void motorControlISR(void)/*{{{*/
 {
    FCL_runPICtrl();
    FCL_params.Vdcbus = getVdc(); // Measure DC Bus voltage using SDFM Filter3
-   FCL_runPICtrlWrap ( ); // Fast current loop controller wrapper
+   FCL_runPICtrlWrap ( );        // Fast current loop controller wrapper
    isrSm             ( );
 
    EPWM_clearEventTriggerInterruptFlag(EPWM1_BASE);
@@ -160,6 +164,7 @@ void electricalAlign(void)/*{{{*/
          pi_pos.ui       = 0;
          pi_pos.i1       = 0;
          pi_id.ref       = 0;
+         pi_iq.ref = 0.1; //pid_spd.term.Out; //debug
          isrSm           = running;
          sciPrintf("running\r\n");
       }
@@ -175,18 +180,19 @@ void running(void)
    pi_pos.Ref = getPosRel();
    pi_pos.Fbk = qep1MechTheta();
    runPIPos(&pi_pos);
-   incPos();
+//   incPos();
 
    // speed PI regulator
-   pid_spd.term.Ref = 0.01;//pi_pos.Out;
+   pid_spd.term.Ref = pi_pos.Out;
    pid_spd.term.Fbk = speed1.Speed;
    runPID(&pid_spd);
-   pi_iq.ref = pid_spd.term.Out;
+   pi_iq.ref        = pid_spd.term.Out;
 
    if(++speedLoopCount >= speedLoopPrescaler) {
       speedLoopCount    = 0;
       speedPidTicker++;
-      sciPrintf("%i %f %f %f\r\n",speedPidTicker, pi_iq.fbk,speed1.Speed,pi_pos.Out);
+      if (logEnable==true)
+         sciPrintf("%i %f %f %f\r\n",speedPidTicker, pi_iq.fbk,speed1.Speed,pi_pos.Fbk);
    }
 }
 
@@ -199,5 +205,5 @@ const State**  fcl ( void ) { return &fclSm; }
 
 const State adcCalib [ ] =
 {
-    ANY_Event ,Rien ,adcCalib  ,
+    ANY_Event ,incPos ,adcCalib  ,
 };

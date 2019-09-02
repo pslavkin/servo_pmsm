@@ -62,8 +62,8 @@ void initPid(void)/*{{{*/
     pi_id.out     = 0;
 
     // Init PI module for IQ loop
-    pi_iq.Kp      = pi_id.Kp;
-    pi_iq.Ki      = pi_id.Ki;
+    pi_iq.Kp      = 1.0;    // LS * CUR_LOOP_BW;
+    pi_iq.Ki      = T/0.04; // (RS * T) * CUR_LOOP_BW;
     pi_iq.Kerr    = (pi_iq.Ki*0.5) + pi_iq.Kp,
     pi_iq.KerrOld = (pi_iq.Ki*0.5) - pi_iq.Kp;
     pi_iq.Umax    = 0.8 * maxModIndex;

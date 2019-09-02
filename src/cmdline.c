@@ -12,19 +12,15 @@
 #include "wdog.h"
 #include "adc_.h"
 #include "eqep_.h"
-#include "pwm.h"
 #include "schedule.h"
 #include "position.h"
 
 tCmdLineEntry Login_Cmd_Table [ ];
-tCmdLineEntry adcCmdTable     [ ];
-tCmdLineEntry pwmCmdTable     [ ];
-tCmdLineEntry eqepCmdTable    [ ];
-tCmdLineEntry rampGenCmdTable [ ];
 tCmdLineEntry iqPidCmdTable   [ ];
 tCmdLineEntry speedPidCmdTable[ ];
 tCmdLineEntry posPidCmdTable  [ ];
 tCmdLineEntry stepDirCmdTable [ ];
+tCmdLineEntry logCmdTable     [ ];
 
 char *         g_ppcArgv[CMDLINE_MAX_ARGS + 1];
 tCmdLineEntry* actualCmdTable=Login_Cmd_Table;
@@ -32,243 +28,87 @@ tCmdLineEntry* actualCmdTable=Login_Cmd_Table;
 tCmdLineEntry Login_Cmd_Table[] =
 {
    { "login"   ,Cmd_login         ,": login"                },
-   { "adc"     ,Cmd_login2adc     ,": adc setup"            },
-   { "pwm"     ,Cmd_login2pwm     ,": pwm setup"            },
-   { "ramp"    ,Cmd_login2rampGen ,": ramp Generator"       },
-   { "eqep"    ,Cmd_login2eqep    ,": eqep setup"           },
-   { "uptime"  ,Cmd_Uptime        ,": uptime"               },
-   { "p"       ,Cmd_readEqepPos   ,": read posx"            },// debug
    { "iq"      ,Cmd_iqPid         ,": iq PID parameters"    },
    { "speed"   ,Cmd_speedPid      ,": speed PID parameters" },
    { "pos"     ,Cmd_posPid        ,": speed PID parameters" },
-   { "stepdir" ,Cmd_stepDir       ,": step dire emulation"  },
+   { "stepdir" ,Cmd_stepDir       ,": step dir emulation"   },
+   { "log"     ,Cmd_log           ,": log on/off"           },
    { "v"       ,Cmd_version       ,": version"              },
    { "?"       ,Cmd_Help          ,": help"                 },
    { 0         ,0                 ,0                        }
                                                             };
-
 void Cmd_login         ( uint16_t argc, char *argv[] ) { sciPrintf("login\r\n")                          ;}
 void Cmd_version       ( uint16_t argc, char *argv[] ) { sciPrintf("PMSM C2000 V1.0 - Pablo Slavkin\r\n");}
-void Cmd_login2adc     ( uint16_t argc, char *argv[] ) { actualCmdTable=adcCmdTable                      ;}
-void Cmd_login2pwm     ( uint16_t argc, char *argv[] ) { actualCmdTable=pwmCmdTable                      ;}
-void Cmd_login2rampGen ( uint16_t argc, char *argv[] ) { actualCmdTable=rampGenCmdTable                  ;}
-void Cmd_login2eqep    ( uint16_t argc, char *argv[] ) { actualCmdTable=eqepCmdTable                     ;}
 void Cmd_iqPid         ( uint16_t argc, char *argv[] ) { actualCmdTable=iqPidCmdTable                    ;}
 void Cmd_speedPid      ( uint16_t argc, char *argv[] ) { actualCmdTable=speedPidCmdTable                 ;}
 void Cmd_posPid        ( uint16_t argc, char *argv[] ) { actualCmdTable=posPidCmdTable                   ;}
 void Cmd_stepDir       ( uint16_t argc, char *argv[] ) { actualCmdTable=stepDirCmdTable                  ;}
-//--------------------------------------------------------------------------------
-tCmdLineEntry adcCmdTable[] =/*{{{*/
-{
-    { "a" ,Cmd_readAdc         ,": print adc channel x" },
-    { "v" ,Cmd_readLemV        ,": read Iv"             },
-    { "w" ,Cmd_readLemW        ,": read Iw"             },
-    { "t" ,Cmd_readTemperature ,": print temperature"   },
-    { "<" ,Cmd_back2login      ,": back to login table" },
-    { "?" ,Cmd_Help            ,": help"                },
-    { 0   ,0                   ,0                       }
-};
-
-void Cmd_readAdc(uint16_t argc, char *argv[])
-{
-//   if(argc>2) {
-//      uint32_t base    = atoi(argv[1]);
-//      uint32_t channel = atoi(argv[2]);
-//      uint32_t r=readAdc(base,(ADC_Channel)channel);
-//      sciPrintf("adc base %d channel %d = %i\r\n",base,channel,r);
-//   }
-}
-void Cmd_readLemV(uint16_t argc, char *argv[])
-{
-//   float V=readLemV();
-//   sciPrintf("LemV %f\r\n",V);
-}
-
-void Cmd_readLemW(uint16_t argc, char *argv[])
-{
-//   sciPrintf("LemW %f\r\n",readLemW());
-}
-void printTemp(void)
-{
-//   uint16_t t=adc2Temperature(readAdc(0,13));
-//   sciPrintf("adc temperature = %i\r\n",t);
-}
-
-void Cmd_readTemperature(uint16_t argc, char *argv[])
-{
-//   if(!Free_Func_Schedule(printTemp)) {
-//      if(argc>1)
-//         New_Periodic_Func_Schedule(atoi(argv[1]),printTemp);
-//      else
-//         printTemp();
-//   }
-}/*}}}*/
-//--------------------------------------------------------------------------------
-tCmdLineEntry rampGenCmdTable[] =/*{{{*/
-{
-    { "r" ,Cmd_printRampCtl    ,": print rampCtl structure"    },
-    { "g" ,Cmd_printRampGen    ,": print rampGen structure"    },
-    { "c" ,Cmd_printClarke     ,": print clarke structure"     },
-    { "p" ,Cmd_printPark       ,": print park structure"       },
-    { "i" ,Cmd_printIPark      ,": print ipark structure"      },
-    { "s" ,Cmd_printSvGen      ,": print svGen structure"      },
-    { "m" ,Cmd_motorIsr        ,": execute motor ise one time" },
-    { "d" ,Cmd_writeDsRef      ,": set Ds ref"                 },
-    { "q" ,Cmd_writeQsRef      ,": set Qs ref"                 },
-    { "<" ,Cmd_back2login      ,": back to login table"        },
-    { "?" ,Cmd_Help            ,": help"                       },
-    { 0   ,0                   ,0                              }
-};
-void Cmd_motorIsr(uint16_t argc, char *argv[])
-{
-//   if(!Free_Func_Schedule(motorISR)) {
-//      if(argc>1)
-//         New_Periodic_Func_Schedule(atoi(argv[1]),motorISR);
-//      else
-//         motorISR();
-//   }
-}
-void Cmd_writeQsRef(uint16_t argc, char *argv[])
-{
-//   if(argc>1) {
-//      float ref=atof(argv[1]);
-//      writeQsRef(ref);
-//      sciPrintf("Qs =%f\r\n",readQsRef());
-//   }
-}
-void Cmd_writeDsRef(uint16_t argc, char *argv[])
-{
-//   if(argc>1) {
-//      float ref=atof(argv[1]);
-//      writeDsRef(ref);
-//      sciPrintf("Ds =%f\r\n",readDsRef());
-//   }
-}
-void Cmd_printPark(uint16_t argc, char *argv[])
-{
-//   printPark();
-}
-void Cmd_printIPark(uint16_t argc, char *argv[])
-{
- //  printIPark();
-}
-void Cmd_printClarke(uint16_t argc, char *argv[])
-{
-//   printClarke();
-}
-void Cmd_printSvGen(uint16_t argc, char *argv[])
-{
-//   printSvGen();
-}
-void Cmd_printRampCtl(uint16_t argc, char *argv[])
-{
-//   printRampCtl();
-}
-void Cmd_printRampGen(uint16_t argc, char *argv[])
-{
-//   printRampGen();
-}/*}}}*/
-//--------------------------------------------------------------------------------
-tCmdLineEntry pwmCmdTable[] =/*{{{*/
-{
-    { "pwm" ,Cmd_setPwmPeriod ,": set pwm period for eqep simulation" },
-    { "+"   ,Cmd_incPwmPeriod ,": inc pwm period for eqep simulation" },
-    { "-"   ,Cmd_decPwmPeriod ,": dec pwm period for eqep simulation" },
-    { "p"   ,Cmd_readEqepPos  ,": read posx"                          },
-    { "<"   ,Cmd_back2login   ,": back to login table"                },
-    { "?"   ,Cmd_Help         ,": help"                               },
-    { 0     ,0                ,0                                      }
-};
-
-void Cmd_setPwmPeriod(uint16_t argc, char *argv[])
-{
-//   if(argc>1) {
-//      uint32_t newPeriod=atoi(argv[1]);
-//      setPwmPeriod(newPeriod);
-//      sciPrintf("pwm period=%10d\r\n",getPwmPeriod());
-//   }
-}
-void Cmd_incPwmPeriod(uint16_t argc, char *argv[])
-{
-//   setPwmPeriod(getPwmPeriod()+109);
-//   sciPrintf("pwm period=%10d\r\n",getPwmPeriod());
-}
-void Cmd_decPwmPeriod(uint16_t argc, char *argv[])
-{
-//   setPwmPeriod(getPwmPeriod()-100);
-//   sciPrintf("pwm period=%10d\r\n",getPwmPeriod());
-}/*}}}*/
-//--------------------------------------------------------------------------------
-tCmdLineEntry eqepCmdTable[] =/*{{{*/
-{
-   { "p" ,Cmd_readEqepPos   ,": read posx"                       },
-   { "+" ,Cmd_incDeltaAngle ,": inc angle btw elec and mech pos" },
-   { "-" ,Cmd_decDeltaAngle ,": dec angle btw elec and mech pos" },
-   { "<" ,Cmd_back2login    ,": back to login table"             },
-   { "?" ,Cmd_Help          ,": help"                            },
-   { 0   ,0                 ,0                                   }
-};
-
-void printPosSpeed(void)
-{
-}
-void Cmd_readEqepPos(uint16_t argc, char *argv[])
-{
-   if(!Free_Func_Schedule(printPosSpeed)) {
-      if(argc>1)
-         New_Periodic_Func_Schedule(atoi(argv[1]),printPosSpeed);
-      else
-         printPosSpeed();
-   }
-}
-void Cmd_incDeltaAngle(uint16_t argc, char *argv[])
-{
-//   incDeltaAngle();
-//   printPosSpeed();
-}
-void Cmd_decDeltaAngle(uint16_t argc, char *argv[])
-{
-//   decDeltaAngle();
-//   printPosSpeed();
-}
-/*}}}*/
+void Cmd_log           ( uint16_t argc, char *argv[] ) { actualCmdTable=logCmdTable                      ;}
 //--------------------------------------------------------------------------------
 tCmdLineEntry iqPidCmdTable[] =/*{{{*/
 {
-   { "r" ,Cmd_readiqPid      ,": read iq PID" },
-   { "<" ,Cmd_back2login        ,": back to login table"   },
-   { "?" ,Cmd_Help              ,": help"                  },
-   { 0   ,0                     ,0                         }
+   { "r" ,Cmd_readIqPid  ,": read iq PID"         },
+   { "w" ,Cmd_writeIqPid ,": read iq PID"         },
+   { "<" ,Cmd_back2login ,": back to login table" },
+   { "?" ,Cmd_Help       ,": help"                },
+   { 0   ,0              ,0                       }
 };
-void Cmd_readiqPid(uint16_t argc, char *argv[])
+void Cmd_readIqPid(uint16_t argc, char *argv[])
 {
    printFclPi(&pi_iq);
+}
+void Cmd_writeIqPid(uint16_t argc, char *argv[])
+{
+   if(argc>5) {
+      if(argv[1][0]!=',') pi_iq.ref  = atof(argv[1]);
+      if(argv[2][0]!=',') pi_iq.Kp   = atof(argv[2]);
+      if(argv[3][0]!=',') pi_iq.Ki   = atof(argv[3]);
+      if(argv[4][0]!=',') pi_iq.Umax = atof(argv[4]);
+      if(argv[5][0]!=',') pi_iq.Umin = atof(argv[5]);
+   }
 }
 /*}}}*/
 //--------------------------------------------------------------------------------
 tCmdLineEntry speedPidCmdTable[] =/*{{{*/
 {
-   { "r" ,Cmd_readSpeedPid      ,": read speed PID" },
-   { "<" ,Cmd_back2login        ,": back to login table"   },
-   { "?" ,Cmd_Help              ,": help"                  },
-   { 0   ,0                     ,0                         }
+   { "r" ,Cmd_readSpeedPid  ,": read speed PID"      },
+   { "w" ,Cmd_writeSpeedPid ,": write speed PID"     },
+   { "<" ,Cmd_back2login    ,": back to login table" },
+   { "?" ,Cmd_Help          ,": help"                },
+   { 0   ,0                 ,0                       }
 };
 void Cmd_readSpeedPid(uint16_t argc, char *argv[])
 {
    printPid(&pid_spd);
 }
+void Cmd_writeSpeedPid(uint16_t argc, char *argv[])
+{
+   if(argc>3) {
+      if(argv[1][0]!=',') pid_spd.param.Kp   = atof(argv[1]);
+      if(argv[2][0]!=',') pid_spd.param.Ki   = atof(argv[2]);
+      if(argv[3][0]!=',') pid_spd.param.Kd   = atof(argv[3]);
+   }
+}
 /*}}}*/
 //--------------------------------------------------------------------------------
 tCmdLineEntry posPidCmdTable[] =/*{{{*/
 {
-   { "r" ,Cmd_readposPid ,": read pos PID "       },
-   { "<" ,Cmd_back2login ,": back to login table" },
-   { "?" ,Cmd_Help       ,": help"                },
-   { 0   ,0              ,0                       }
+   { "r" ,Cmd_readPosPid  ,": read pos PID "       },
+   { "w" ,Cmd_writePosPid ,": write pos PID "      },
+   { "<" ,Cmd_back2login  ,": back to login table" },
+   { "?" ,Cmd_Help        ,": help"                },
+   { 0   ,0               ,0                       }
 };
-void Cmd_readposPid(uint16_t argc, char *argv[])
+void Cmd_readPosPid(uint16_t argc, char *argv[])
 {
    printPi(&pi_pos);
+}
+void Cmd_writePosPid(uint16_t argc, char *argv[])
+{
+   if(argc>2) {
+      if(argv[1][0]!=',') pi_pos.Kp   = atof(argv[1]);
+      if(argv[2][0]!=',') pi_pos.Ki   = atof(argv[2]);
+   }
 }
 /*}}}*/
 //--------------------------------------------------------------------------------
@@ -304,6 +144,24 @@ void Cmd_step(uint16_t argc, char *argv[])
       setPosStep(step);
    }
    sciPrintf("stepAngle=%f\r\n",getPosStep());
+}
+/*}}}*/
+//--------------------------------------------------------------------------------
+tCmdLineEntry logCmdTable[] =/*{{{*/
+{
+   { "l" ,Cmd_logOn      ,": set log on"          },
+   { "x" ,Cmd_logOff     ,": set log off"         },
+   { "<" ,Cmd_back2login ,": back to login table" },
+   { "?" ,Cmd_Help       ,": help"                },
+   { 0   ,0              ,0                       }
+};
+void Cmd_logOn(uint16_t argc, char *argv[])
+{
+   setLog(true);
+}
+void Cmd_logOff(uint16_t argc, char *argv[])
+{
+   setLog(false);
 }
 /*}}}*/
 //--------------------------------------------------------------------------------

@@ -6,7 +6,7 @@
 #include "ramper_.h"
 #include "position.h"
 
-#define STEP_ANGLE 0.001
+#define STEP_ANGLE 0.0002
 
 pos_t pos={CLOCK,0,0,STEP_ANGLE};
 

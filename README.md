@@ -38,6 +38,7 @@ https://gist.github.com/rxaviers/7360908
 - :heavy_check_mark: fanuc servomotor experimetation
 - :heavy_check_mark: mitsubishi servomotor experimetation
 - :heavy_check_mark: step/dir emulation from console works!
+- :heavy_check_mark: first set of curves controlling pos+vel+iq
 - :construction:     scratch materplan
 - :construction:     merging example fcl with my own code
 - :construction:     trying to manage BiA128 fanuc encoder
@@ -59,6 +60,7 @@ https://gist.github.com/rxaviers/7360908
 - [motorsszch](#motorsszch)
 - [fanuc](#fanuc)
 - [mitsubishi](#mitsubishi)
+- [gnuplot](#gnuplot)
 - [Features](#features)
 - [Contributing](#contributing)
 - [Team](#team)
@@ -139,6 +141,14 @@ pictures:
 <img src="doc/pics/mitsubishi_encoder1.jpg" width="400" height="200"/>
 <img src="doc/pics/mitsubishi_encoder2.jpg" width="400" height="200"/>
 <img src="doc/pics/mitsubishi_motor.jpg"    width="400" height="200"/>
+
+## gnuplot
+
+I've addedd gnuplot dir to visualize the data from servodriver using a set of log and also
+recompile picocomo to add log functionality. There are a first curves:
+
+<img src="doc/pics/step1.png"    width="800" height="400"/>
+<img src="doc/videos/step1.gif"  width="300" height="400"/>
 
 ## masterplan
 
