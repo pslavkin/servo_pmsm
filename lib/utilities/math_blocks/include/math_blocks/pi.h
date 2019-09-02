@@ -42,7 +42,8 @@ File name:       PI.H
 #ifndef __PI_H__
 #define __PI_H__
 
-typedef struct {  float32_t  Ref;   			// Input: reference set-point
+typedef struct {  
+              float32_t  Ref;   			// Input: reference set-point
 				  float32_t  Fbk;   			// Input: feedback
 				  float32_t  Out;   			// Output: controller output
 				  float32_t  Kp;				// Parameter: proportional loop gain

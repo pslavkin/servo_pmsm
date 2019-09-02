@@ -47,7 +47,6 @@
 extern "C" {
 #endif
 
-
 //---------------------------------------------------------------------------
 // UPP Individual Register Bit Definitions:
 

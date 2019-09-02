@@ -249,9 +249,7 @@ extern uint16_t fclDir  ;
 extern uint32_t fclStep ;
 const State**  fcl   ( void );
 void initFcl         ( void );
-void electricalInit  ( void );
 void electricalAlign ( void );
-void mechanicalAlign ( void );
 void running         ( void );
 
 typedef enum

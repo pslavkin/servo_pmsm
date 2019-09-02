@@ -17,7 +17,7 @@ uint16_t thresh      = 18;
 
 uint16_t    LEM_curHi;//   = LEM(8.0);
 uint16_t    LEM_curLo;//   = LEM(8.0);
-float32_t   curLimit = 1.9;
+float32_t   curLimit = 4;
 
 // Setup OCP limits and digital filter parameters of CMPSS
 void configureCMPSSFilter(uint32_t base, uint16_t curHi, uint16_t curLo)/*{{{*/

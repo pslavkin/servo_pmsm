@@ -11,6 +11,7 @@
 #include "events.h"
 #include "sigmadelta.h"
 #include "adc_.h"
+#include "fcl_pi.h"
 #include "pid_.h"
 #include "ramper_.h"
 #include "position.h"
@@ -18,7 +19,9 @@
 
 // Flag variables
 uint32_t          isrTicker          = 0    ;
-uint16_t          speedLoopPrescaler = 10   ; // Speed loop pre scalar
+uint32_t          speedPidTicker     = 0    ;
+
+uint16_t          speedLoopPrescaler = 200 ; // Speed loop pre scalar
 uint16_t          speedLoopCount     = 1    ; // Speed loop counter
 
 // Variables for Fast Current Loop
@@ -169,19 +172,22 @@ void running(void)
    runSpeedFR(&speed1);
 
    //    Connect inputs of the PID module and call the PID speed controller module
+   pi_pos.Ref = getPosRel();
+   pi_pos.Fbk = qep1MechTheta();
+   runPIPos(&pi_pos);
+   incPos();
+
+   // speed PI regulator
+   pid_spd.term.Ref = 0.01;//pi_pos.Out;
+   pid_spd.term.Fbk = speed1.Speed;
+   runPID(&pid_spd);
+   pi_iq.ref = pid_spd.term.Out;
+
    if(++speedLoopCount >= speedLoopPrescaler) {
       speedLoopCount    = 0;
-      pi_pos.Ref = getPosRel();
-      pi_pos.Fbk = qep1MechTheta();
-      runPIPos(&pi_pos);
-      incPos();
-
-      // speed PI regulator
-      pid_spd.term.Ref = pi_pos.Out;
-      pid_spd.term.Fbk = speed1.Speed;
-      runPID(&pid_spd);
+      speedPidTicker++;
+      sciPrintf("%i %f %f %f\r\n",speedPidTicker, pi_iq.fbk,speed1.Speed,pi_pos.Out);
    }
-   pi_iq.ref = pid_spd.term.Out;
 }
 
 //----------------------------------------------------------------------------------------

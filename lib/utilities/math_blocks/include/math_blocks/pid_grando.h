@@ -42,7 +42,8 @@ File name:       PID_GRANDO.H
 #ifndef __PID_H__
 #define __PID_H__
 
-typedef struct {  float32_t  Ref;   			// Input: reference set-point
+typedef struct { 
+              float32_t  Ref;   			// Input: reference set-point
 				  float32_t  Fbk;   			// Input: feedback
 				  float32_t  Out;   			// Output: controller output
 				  float32_t  c1;   			// Internal: derivative filter coefficient 1
@@ -50,7 +51,8 @@ typedef struct {  float32_t  Ref;   			// Input: reference set-point
 				} PID_TERMINALS;
 				// note: c1 & c2 placed here to keep structure size under 8 words
 
-typedef struct {  float32_t  Kr;				// Parameter: reference set-point weighting
+typedef struct {  
+              float32_t  Kr;				// Parameter: reference set-point weighting
 				  float32_t  Kp;				// Parameter: proportional loop gain
 				  float32_t  Ki;			    // Parameter: integral gain
 				  float32_t  Kd; 		        // Parameter: derivative gain
@@ -59,7 +61,8 @@ typedef struct {  float32_t  Kr;				// Parameter: reference set-point weighting
 				  float32_t  Umin;			// Parameter: lower saturation limit
 				} PID_PARAMETERS;
 
-typedef struct {  float32_t  up;				// Data: proportional term
+typedef struct {  
+              float32_t  up;				// Data: proportional term
 				  float32_t  ui;				// Data: integral term
 				  float32_t  ud;				// Data: derivative term
 				  float32_t  v1;				// Data: pre-saturated controller output

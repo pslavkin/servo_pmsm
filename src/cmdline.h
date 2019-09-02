@@ -20,6 +20,7 @@ void Cmd_login2adc     ( uint16_t argc, char *argv[] );
 void Cmd_login2rampGen ( uint16_t argc, char *argv[] );
 void Cmd_login2pwm     ( uint16_t argc, char *argv[] );
 void Cmd_login2eqep    ( uint16_t argc, char *argv[] );
+void Cmd_iqPid      ( uint16_t argc, char *argv[] );
 void Cmd_speedPid      ( uint16_t argc, char *argv[] );
 void Cmd_posPid        ( uint16_t argc, char *argv[] );
 void Cmd_stepDir       ( uint16_t argc, char *argv[] );
@@ -48,8 +49,9 @@ void Cmd_printSvGen  ( uint16_t argc, char *argv[] );
 void Cmd_writeQsRef  ( uint16_t argc, char *argv[] );
 void Cmd_writeDsRef  ( uint16_t argc, char *argv[] );
 
-void Cmd_readSpeedPidParams ( uint16_t argc, char *argv[] );
-void Cmd_readposPidParams   ( uint16_t argc, char *argv[] );
+void Cmd_readiqPid ( uint16_t argc, char *argv[] );
+void Cmd_readSpeedPid ( uint16_t argc, char *argv[] );
+void Cmd_readposPid   ( uint16_t argc, char *argv[] );
 
 void Cmd_setDirUp   ( uint16_t argc, char *argv[] );
 void Cmd_setDirDown ( uint16_t argc, char *argv[] );

@@ -5,13 +5,15 @@
 #include "scia.h"
 #include "opt.h"
 #include "sm.h"
+#include "pi.h"
+#include "fcl.h"
+#include "pid_.h"
 #include "cmdline.h"
 #include "wdog.h"
 #include "adc_.h"
 #include "eqep_.h"
 #include "pwm.h"
 #include "schedule.h"
-#include "pid.h"
 #include "position.h"
 
 tCmdLineEntry Login_Cmd_Table [ ];
@@ -19,6 +21,7 @@ tCmdLineEntry adcCmdTable     [ ];
 tCmdLineEntry pwmCmdTable     [ ];
 tCmdLineEntry eqepCmdTable    [ ];
 tCmdLineEntry rampGenCmdTable [ ];
+tCmdLineEntry iqPidCmdTable   [ ];
 tCmdLineEntry speedPidCmdTable[ ];
 tCmdLineEntry posPidCmdTable  [ ];
 tCmdLineEntry stepDirCmdTable [ ];
@@ -28,20 +31,21 @@ tCmdLineEntry* actualCmdTable=Login_Cmd_Table;
 //--------------------------------------------------------------------------------
 tCmdLineEntry Login_Cmd_Table[] =
 {
-   { "login"     ,Cmd_login         ,": login"                },
-   { "adc"       ,Cmd_login2adc     ,": adc setup"            },
-   { "pwm"       ,Cmd_login2pwm     ,": pwm setup"            },
-   { "ramp"      ,Cmd_login2rampGen ,": ramp Generator"       },
-   { "eqep"      ,Cmd_login2eqep    ,": eqep setup"           },
-   { "uptime"    ,Cmd_Uptime        ,": uptime"               },
-   { "p"         ,Cmd_readEqepPos   ,": read posx"            }, // debug
-   { "speed pid" ,Cmd_speedPid      ,": speed PID parameters" },
-   { "pos pid"   ,Cmd_posPid        ,": speed PID parameters" },
-   { "stepdir"   ,Cmd_stepDir       ,": step dire emulation"  },
-   { "v"         ,Cmd_version       ,": version"              },
-   { "?"         ,Cmd_Help          ,": help"                 },
-   { 0           ,0                 ,0                        }
-};
+   { "login"   ,Cmd_login         ,": login"                },
+   { "adc"     ,Cmd_login2adc     ,": adc setup"            },
+   { "pwm"     ,Cmd_login2pwm     ,": pwm setup"            },
+   { "ramp"    ,Cmd_login2rampGen ,": ramp Generator"       },
+   { "eqep"    ,Cmd_login2eqep    ,": eqep setup"           },
+   { "uptime"  ,Cmd_Uptime        ,": uptime"               },
+   { "p"       ,Cmd_readEqepPos   ,": read posx"            },// debug
+   { "iq"      ,Cmd_iqPid         ,": iq PID parameters"    },
+   { "speed"   ,Cmd_speedPid      ,": speed PID parameters" },
+   { "pos"     ,Cmd_posPid        ,": speed PID parameters" },
+   { "stepdir" ,Cmd_stepDir       ,": step dire emulation"  },
+   { "v"       ,Cmd_version       ,": version"              },
+   { "?"       ,Cmd_Help          ,": help"                 },
+   { 0         ,0                 ,0                        }
+                                                            };
 
 void Cmd_login         ( uint16_t argc, char *argv[] ) { sciPrintf("login\r\n")                          ;}
 void Cmd_version       ( uint16_t argc, char *argv[] ) { sciPrintf("PMSM C2000 V1.0 - Pablo Slavkin\r\n");}
@@ -49,6 +53,7 @@ void Cmd_login2adc     ( uint16_t argc, char *argv[] ) { actualCmdTable=adcCmdTa
 void Cmd_login2pwm     ( uint16_t argc, char *argv[] ) { actualCmdTable=pwmCmdTable                      ;}
 void Cmd_login2rampGen ( uint16_t argc, char *argv[] ) { actualCmdTable=rampGenCmdTable                  ;}
 void Cmd_login2eqep    ( uint16_t argc, char *argv[] ) { actualCmdTable=eqepCmdTable                     ;}
+void Cmd_iqPid         ( uint16_t argc, char *argv[] ) { actualCmdTable=iqPidCmdTable                    ;}
 void Cmd_speedPid      ( uint16_t argc, char *argv[] ) { actualCmdTable=speedPidCmdTable                 ;}
 void Cmd_posPid        ( uint16_t argc, char *argv[] ) { actualCmdTable=posPidCmdTable                   ;}
 void Cmd_stepDir       ( uint16_t argc, char *argv[] ) { actualCmdTable=stepDirCmdTable                  ;}
@@ -206,36 +211,6 @@ tCmdLineEntry eqepCmdTable[] =/*{{{*/
 
 void printPosSpeed(void)
 {
-//   posCalc      ( );
-//   speedLowCalc ( );
-//   sciPrintf (
-//         "posActual       =%10d\r\n"
-//         "dirActual       =%10d\r\n"
-//         "pos             =%10d\r\n"
-//         "dir             =%10d\r\n"
-//         "possDiff        =%10d\r\n"
-//         "angle           =%f\r\n"
-//         "deltaAngle      =%f\r\n"
-//         "speedFastLinear =%f\r\n"
-//         "speedFastRps    =%f\r\n"
-//         "speedFastRpm    =%f\r\n"
-//         "speedLowPeriod  =%10d\r\n"
-//         "speedLowRps     =%f\r\n"
-//         "speedLowRpm     =%f\r\n",
-//         posSpeed.posActual,
-//         posSpeed.dirActual,
-//         posSpeed.pos,
-//         posSpeed.dir,
-//         posSpeed.posDiff,
-//         posSpeed.angle,
-//         posSpeed.deltaAngle,
-//         posSpeed.speedFastLinear,
-//         posSpeed.speedFastRps,
-//         posSpeed.speedFastRpm,
-//         posSpeed.speedLowPeriod,
-//         posSpeed.speedLowRps,
-//         posSpeed.speedLowRpm
-//         );
 }
 void Cmd_readEqepPos(uint16_t argc, char *argv[])
 {
@@ -258,57 +233,42 @@ void Cmd_decDeltaAngle(uint16_t argc, char *argv[])
 }
 /*}}}*/
 //--------------------------------------------------------------------------------
-void printPidParams(PID_Handle pid)/*{{{*/
+tCmdLineEntry iqPidCmdTable[] =/*{{{*/
 {
-   sciPrintf (
-    "Kp               =%f\r\n"    //the proportional gain for the PID //!< controller
-    "Ki               =%f\r\n"    //the integral gain for the PID //!< controller
-    "Kd               =%f\r\n"    //the derivative gain for the PID //!< controller
-    "Ui               =%f\r\n"    //the integrator start value for the //!< PID controller
-    "refValue         =%f\r\n"    //the reference input value
-    "fbackValue       =%f\r\n"    //the feedback input value
-    "ffwdValue        =%f\r\n"    //the feedforward input value
-    "outMin           =%f\r\n"    //the minimum output value allowed for //!< the PID controller
-    "outMax           =%f\r\n",    //the maximum output value allowed for //!< the PID controller
-    //FILTER_FO_Handle    "derFilterHandle  =%f\r\n"    //the derivative filter handle
-    //FILTER_FO_Obj       "derFilter        =%f\r\n"    //the derivative filter object
-    pid->Kp,
-    pid->Ki,
-    pid->Kd,
-    pid->Ui,
-    pid->refValue,
-    pid->fbackValue,
-    pid->ffwdValue,
-    pid->outMin,
-    pid->outMax
-    //derFilterHandle,
-    //derFilter,
-    );
-}/*}}}*/
-//--------------------------------------------------------------------------------
-tCmdLineEntry speedPidCmdTable[] =/*{{{*/
-{
-   { "r" ,Cmd_readSpeedPidParams ,": read speed PID params" },
+   { "r" ,Cmd_readiqPid      ,": read iq PID" },
    { "<" ,Cmd_back2login        ,": back to login table"   },
    { "?" ,Cmd_Help              ,": help"                  },
    { 0   ,0                     ,0                         }
 };
-void Cmd_readSpeedPidParams(uint16_t argc, char *argv[])
+void Cmd_readiqPid(uint16_t argc, char *argv[])
 {
-   printPidParams(NULL);
+   printFclPi(&pi_iq);
+}
+/*}}}*/
+//--------------------------------------------------------------------------------
+tCmdLineEntry speedPidCmdTable[] =/*{{{*/
+{
+   { "r" ,Cmd_readSpeedPid      ,": read speed PID" },
+   { "<" ,Cmd_back2login        ,": back to login table"   },
+   { "?" ,Cmd_Help              ,": help"                  },
+   { 0   ,0                     ,0                         }
+};
+void Cmd_readSpeedPid(uint16_t argc, char *argv[])
+{
+   printPid(&pid_spd);
 }
 /*}}}*/
 //--------------------------------------------------------------------------------
 tCmdLineEntry posPidCmdTable[] =/*{{{*/
 {
-   { "r" ,Cmd_readposPidParams ,": read pos PID params" },
-   { "<" ,Cmd_back2login        ,": back to login table"   },
-   { "?" ,Cmd_Help              ,": help"                  },
-   { 0   ,0                     ,0                         }
+   { "r" ,Cmd_readposPid ,": read pos PID "       },
+   { "<" ,Cmd_back2login ,": back to login table" },
+   { "?" ,Cmd_Help       ,": help"                },
+   { 0   ,0              ,0                       }
 };
-void Cmd_readposPidParams(uint16_t argc, char *argv[])
+void Cmd_readposPid(uint16_t argc, char *argv[])
 {
-   printPidParams(NULL);
+   printPi(&pi_pos);
 }
 /*}}}*/
 //--------------------------------------------------------------------------------

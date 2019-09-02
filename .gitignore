@@ -2,3 +2,4 @@
 /Release/
 *.mp4
 .*.swp
+gnuplot/log.txt
