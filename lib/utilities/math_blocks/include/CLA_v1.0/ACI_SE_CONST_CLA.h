@@ -56,7 +56,7 @@ typedef struct 	{ float32  Rr;				// Input: Rotor resistance (ohm)
 ------------------------------------------------------------------------------*/
 
 
-#define PI 3.14159265358979  
+#define PI 3.14159265358979
 
 #define ACI_SE_CONST_CLA_MACRO(v)				\
 											\

@@ -29,7 +29,7 @@ uint16_t          speedLoopCount     = 1    ; // Speed loop counter
 volatile  uint16_t   FCL_cycleCount  = 0    ;
 float32_t            alignCntr       = 0    ;
 float32_t            alignCnt        = 10000;
-float32_t            IdRef_start     = 0.2  ;
+float32_t            IdRef_start     = 0.1  ;
 
 // Instance a ramp controller to smoothly ramp the frequency
 RMPCNTL rc1 = RMPCNTL_DEFAULTS;
@@ -37,11 +37,8 @@ RMPCNTL rc1 = RMPCNTL_DEFAULTS;
 // Instance a speed measurement calc
 SPEED_MEAS_QEP  speed1;
 
-void (*isrSm)(void);
-void setLog(bool state) {
-   logEnable=state;
-}
-
+void ( *isrSm )(void)=stopIsr;
+void setLog ( bool state ) { logEnable=state;}
 
 //Function that initializes the variables for Fast current Loop library
 void initFCLVars()/*{{{*/
@@ -110,7 +107,6 @@ void initFcl(void)/*{{{*/
    alignCntr = 0;
    pi_id.ref = 0;
    pi_iq.ref = 0;
-   isrSm     = electricalAlign;
    FCL_resetController();
 
    // Read and update DC BUS voltage for FCL to use
@@ -118,10 +114,10 @@ void initFcl(void)/*{{{*/
 
    New_Periodic_Schedule(10,ANY_Event,fcl());
    // Enable all mapped INTerrupts
-   EPWM_clearEventTriggerInterruptFlag ( EPWM1_BASE ); // clear pending INT event
-   Interrupt_enable                    ( INT_EPWM1  ); // Enable PWM1INT in PIE group 3
-   // Enable group 3 interrupts - EPWM1 is here
-   Interrupt_enableInCPU(INTERRUPT_CPU_INT3);
+//   EPWM_clearEventTriggerInterruptFlag ( EPWM1_BASE ); // clear pending INT event
+//   Interrupt_enable                    ( INT_EPWM1  ); // Enable PWM1INT in PIE group 3
+//   // Enable group 3 interrupts - EPWM1 is here
+//   Interrupt_enableInCPU(INTERRUPT_CPU_INT3);
 }/*}}}*/
 // print log
 void logPrint(void)/*{{{*/
@@ -162,8 +158,14 @@ __interrupt void motorControlISR(void)/*{{{*/
    isrTicker++;
 
 } // motorControlISR Ends Here}}}
+// stop 
+void stopIsr(void)/*{{{*/
+{
+   setAbsMech(qep1MechTheta());
+   logPrint();
+}/*}}}*/
 // electrical align
-void electricalAlign(void)/*{{{*/
+void alignIsr(void)/*{{{*/
 {
    if(pi_id.ref >= IdRef_start) {
       if(++alignCntr >= alignCnt) {
@@ -180,24 +182,21 @@ void electricalAlign(void)/*{{{*/
          pi_pos.ui       = 0;
          pi_pos.i1       = 0;
          pi_id.ref       = 0;
-         pi_iq.ref = 0.1; //pid_spd.term.Out; //debug
-         isrSm           = running;
-         sciPrintf("running\r\n");
+         pi_iq.ref       = 0.1;
+         atomicSendEvent(alignEndEvent,fcl());
       }
    }
    pi_id.ref = ramper ( IdRef_start, pi_id.ref, 0.00001 );
 }/*}}}*/
 // running
-void running(void)
+void runIsr(void)/*{{{*/
 {
    speed1.ElecTheta = qep1ElecTheta();
    runSpeedFR(&speed1);
 
+   setAbsMech(qep1MechTheta());
    pi_pos.Ref = getPosAbs();
    pi_pos.Fbk = getPosAbsMech();
-//   pi_pos.Ref = getPosRel();
-//   pi_pos.Fbk = qep1MechTheta();
-   setAbsMech(qep1MechTheta());
    runPIPos(&pi_pos);
    sinPosGenerator();
 
@@ -208,17 +207,74 @@ void running(void)
    pi_iq.ref        = pid_spd.term.Out;
 
    logPrint();
-}
+}/*}}}*/
 
 //----------------------------------------------------------------------------------------
 const State
-   adcCalib  [ ];
+   stopped       [ ],
+   adcCalibrating[ ],
+   aligning      [ ],
+   running       [ ],
+   overCurrenting[ ];
 
-const State*   fclSm=adcCalib;
+const State*   fclSm=stopped;
 const State**  fcl ( void ) { return &fclSm; }
 
-const State adcCalib [ ] =
+void sendRunEvent         ( void ) { atomicSendEvent(runEvent         ,fcl());}
+void sendStopEvent        ( void ) { atomicSendEvent(stopEvent        ,fcl());}
+void sendAdcCalibEndEvent ( void ) { atomicSendEvent(adcCalibEndEvent ,fcl());}
+void sendOvercurrentEvent ( void ) { atomicSendEvent(overcurrentEvent ,fcl());}
+
+void align(void)
 {
-    ANY_Event ,Rien ,adcCalib  ,
-    ANY_Event ,incPos ,adcCalib  ,
+   EPWM_clearEventTriggerInterruptFlag ( EPWM1_BASE ); // clear pending INT event
+   Interrupt_enable                    ( INT_EPWM1  ); // Enable PWM1INT in PIE group 3
+   // Enable group 3 interrupts - EPWM1 is here
+   Interrupt_enableInCPU(INTERRUPT_CPU_INT3);
+   isrSm     = alignIsr;
+   sciPrintf("aligning\r\n");
+}
+void stop(void)
+{
+   pi_id.ref       = 0;
+   pi_iq.ref       = 0;
+   isrSm     = stopIsr;
+   sciPrintf("stopped\r\n");
+}
+void run(void)
+{
+   isrSm     = runIsr;
+   sciPrintf("running\r\n");
+}
+void overCurrent(void)
+{
+   isrSm     = stopIsr;
+   sciPrintf("overcurrent\r\n");
+}
+//----------------------------------------------------------------------------------------------------
+const State stopped       [ ] =
+{
+    runEvent                ,currentCalibrate ,adcCalibrating ,
+    ANY_Event               ,Rien             ,stopped        ,
+};
+const State adcCalibrating[ ] =
+{
+    adcCalibEndEvent        ,align            ,aligning       ,
+    ANY_Event               ,Rien             ,adcCalibrating ,
+};
+const State aligning      [ ] =
+{
+    alignEndEvent           ,run              ,running        ,
+    ANY_Event               ,Rien             ,aligning       ,
+};
+const State running       [ ] =
+{
+    overcurrentEvent        ,overCurrent      ,overCurrenting ,
+    stopEvent               ,stop             ,stopped        ,
+    ANY_Event               ,Rien             ,running        ,
+};
+const State overCurrenting[ ] =
+{
+    overcurrentClearedEvent ,stop             ,stopped        ,
+    ANY_Event               ,Rien             ,overCurrenting ,
 };

@@ -1,14 +1,13 @@
 #include <stdio.h>
 #include <stdint.h>
 #include <stdbool.h>
+#include "types.h"
 #include "schedule.h"
 #include "scia.h"
 #include "overcurrent.h"
 #include "opt.h"
 #include "fcl.h"
-
-uint16_t                 tripFlagDMC      = 0         ; // PWM trip status
-uint16_t                 clearTripFlagDMC = 0         ;
+#include "events.h"
 
 // CMPSS parameters for Over Current Protection
 uint16_t clkPrescale = 20;
@@ -179,19 +178,12 @@ void initOvercurrent(void)/*{{{*/
         EPWM_clearTripZoneFlag ( pwmHandle[base], EPWM_TZ_FLAG_OST     );
         EPWM_clearTripZoneFlag ( pwmHandle[base], EPWM_TZ_FLAG_CBC     );
     }
-    New_Periodic_Func_Schedule(10,testOvercurrent);
+    Update_Or_New_Periodic_Func_Schedule(10,testOvercurrent);
     return;
 }/*}}}*/
 // test overcurrent periodically
 void testOvercurrent(void)/*{{{*/
 {
-//    // Current limit setting / tuning in Debug environment
-//    LEM_curHi = 2048 + LEM(curLimit);
-//    LEM_curLo = 2048 - LEM(curLimit);
-//
-//    configureCMPSSFilter(CMPSS1_BASE, LEM_curHi, LEM_curLo);      // LEM - V
-//    configureCMPSSFilter(CMPSS3_BASE, LEM_curHi, LEM_curLo);      // LEM - W
-
     // Check for PWM trip due to over current
     if((EPWM_getTripZoneFlagStatus(EPWM1_BASE) & EPWM_TZ_FLAG_OST) ||
        (EPWM_getTripZoneFlagStatus(EPWM2_BASE) & EPWM_TZ_FLAG_OST) ||
@@ -201,37 +193,51 @@ void testOvercurrent(void)/*{{{*/
         EPWM_forceTripZoneEvent(EPWM1_BASE, EPWM_TZ_FORCE_EVENT_OST);
         EPWM_forceTripZoneEvent(EPWM2_BASE, EPWM_TZ_FORCE_EVENT_OST);
         EPWM_forceTripZoneEvent(EPWM3_BASE, EPWM_TZ_FORCE_EVENT_OST);
-        tripFlagDMC = 1;      // Trip on DMC (halt and IPM fault trip )
+        atomicSendEvent(overcurrentEvent,fcl());
         sciPrintf("overcurrent protection!\r\n");
     }
+}/*}}}*/
+void setOvercurrent(float32_t c)/*{{{*/
+{
+   curLimit=c;
+   if(curLimit>8)   curLimit=8;
+   if(curLimit<0.2) curLimit=0.2;
+   initOvercurrent();
+}/*}}}*/
+float32_t getOvercurrent(void)/*{{{*/
+{
+   return curLimit;
+}/*}}}*/
+void resetOvercurrent(void)/*{{{*/
+{
+   // clear the ocp latch in macro M6
+   GPIO_writePin   ( 41, 0 );
+   DEVICE_DELAY_US ( 10L   );
+   GPIO_writePin   ( 41, 1 );
 
-    // If clear cmd received, reset PWM trip
-    if(clearTripFlagDMC)
-    {
-        // clear the ocp latch in macro M6
-        GPIO_writePin(41, 0);
-        tripFlagDMC      = 0;
-        clearTripFlagDMC = 0;
-        GPIO_writePin(41, 1);
+   // clear EPWM trip flags
+   DEVICE_DELAY_US(1L);
 
-        // clear EPWM trip flags
-        DEVICE_DELAY_US(1L);
+   // clear OST & DCAEVT1 flags
+   EPWM_clearTripZoneFlag(EPWM1_BASE, (EPWM_TZ_FLAG_OST | EPWM_TZ_FLAG_DCAEVT1));
+   EPWM_clearTripZoneFlag(EPWM2_BASE, (EPWM_TZ_FLAG_OST | EPWM_TZ_FLAG_DCAEVT1));
+   EPWM_clearTripZoneFlag(EPWM3_BASE, (EPWM_TZ_FLAG_OST | EPWM_TZ_FLAG_DCAEVT1));
 
-        // clear OST & DCAEVT1 flags
-        EPWM_clearTripZoneFlag(EPWM1_BASE, (EPWM_TZ_FLAG_OST | EPWM_TZ_FLAG_DCAEVT1));
-        EPWM_clearTripZoneFlag(EPWM2_BASE, (EPWM_TZ_FLAG_OST | EPWM_TZ_FLAG_DCAEVT1));
-        EPWM_clearTripZoneFlag(EPWM3_BASE, (EPWM_TZ_FLAG_OST | EPWM_TZ_FLAG_DCAEVT1));
+   // clear HLATCH - (not in TRIP gen path)
+   CMPSS_clearFilterLatchHigh(CMPSS1_BASE);
+   CMPSS_clearFilterLatchHigh(CMPSS3_BASE);
+   CMPSS_clearFilterLatchHigh(CMPSS2_BASE);
+   CMPSS_clearFilterLatchHigh(CMPSS6_BASE);
 
-        // clear HLATCH - (not in TRIP gen path)
-        CMPSS_clearFilterLatchHigh(CMPSS1_BASE);
-        CMPSS_clearFilterLatchHigh(CMPSS3_BASE);
-        CMPSS_clearFilterLatchHigh(CMPSS2_BASE);
-        CMPSS_clearFilterLatchHigh(CMPSS6_BASE);
+   // clear LLATCH - (not in TRIP gen path)
+   CMPSS_clearFilterLatchLow(CMPSS1_BASE);
+   CMPSS_clearFilterLatchLow(CMPSS3_BASE);
+   CMPSS_clearFilterLatchLow(CMPSS2_BASE);
+   CMPSS_clearFilterLatchLow(CMPSS6_BASE);
 
-        // clear LLATCH - (not in TRIP gen path)
-        CMPSS_clearFilterLatchLow(CMPSS1_BASE);
-        CMPSS_clearFilterLatchLow(CMPSS3_BASE);
-        CMPSS_clearFilterLatchLow(CMPSS2_BASE);
-        CMPSS_clearFilterLatchLow(CMPSS6_BASE);
-    }
+    LEM_curHi = 2048 + LEM(curLimit);
+    LEM_curLo = 2048 - LEM(curLimit);
+
+    configureCMPSS(CMPSS1_BASE, LEM_curHi, LEM_curLo);  //Enable CMPSS1 - LEM V
+    configureCMPSS(CMPSS3_BASE, LEM_curHi, LEM_curLo);  //Enable CMPSS3 - LEM W
 }/*}}}*/

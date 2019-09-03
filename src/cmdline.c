@@ -14,36 +14,43 @@
 #include "eqep_.h"
 #include "schedule.h"
 #include "position.h"
+#include "overcurrent.h"
 
-tCmdLineEntry Login_Cmd_Table [ ];
-tCmdLineEntry iqPidCmdTable   [ ];
-tCmdLineEntry speedPidCmdTable[ ];
-tCmdLineEntry posPidCmdTable  [ ];
-tCmdLineEntry stepDirCmdTable [ ];
-tCmdLineEntry logCmdTable     [ ];
+tCmdLineEntry Login_Cmd_Table    [ ];
+tCmdLineEntry iqPidCmdTable      [ ];
+tCmdLineEntry speedPidCmdTable   [ ];
+tCmdLineEntry posPidCmdTable     [ ];
+tCmdLineEntry stepDirCmdTable    [ ];
+tCmdLineEntry overcurrentCmdTable[ ];
+tCmdLineEntry fclCmdTable        [ ];
+tCmdLineEntry logCmdTable        [ ];
 
 char *         g_ppcArgv[CMDLINE_MAX_ARGS + 1];
 tCmdLineEntry* actualCmdTable=Login_Cmd_Table;
 //--------------------------------------------------------------------------------
 tCmdLineEntry Login_Cmd_Table[] =
 {
-   { "login"   ,Cmd_login         ,": login"                },
-   { "iq"      ,Cmd_iqPid         ,": iq PID parameters"    },
-   { "speed"   ,Cmd_speedPid      ,": speed PID parameters" },
-   { "pos"     ,Cmd_posPid        ,": speed PID parameters" },
-   { "stepdir" ,Cmd_stepDir       ,": step dir emulation"   },
-   { "log"     ,Cmd_log           ,": log on/off"           },
-   { "v"       ,Cmd_version       ,": version"              },
-   { "?"       ,Cmd_Help          ,": help"                 },
-   { 0         ,0                 ,0                        }
-                                                            };
-void Cmd_login         ( uint16_t argc, char *argv[] ) { sciPrintf("login\r\n")                          ;}
-void Cmd_version       ( uint16_t argc, char *argv[] ) { sciPrintf("PMSM C2000 V1.0 - Pablo Slavkin\r\n");}
-void Cmd_iqPid         ( uint16_t argc, char *argv[] ) { actualCmdTable=iqPidCmdTable                    ;}
-void Cmd_speedPid      ( uint16_t argc, char *argv[] ) { actualCmdTable=speedPidCmdTable                 ;}
-void Cmd_posPid        ( uint16_t argc, char *argv[] ) { actualCmdTable=posPidCmdTable                   ;}
-void Cmd_stepDir       ( uint16_t argc, char *argv[] ) { actualCmdTable=stepDirCmdTable                  ;}
-void Cmd_log           ( uint16_t argc, char *argv[] ) { actualCmdTable=logCmdTable                      ;}
+   { "login"       ,Cmd_login       ,": login"                },
+   { "iq"          ,Cmd_iqPid       ,": iq PID parameters"    },
+   { "speed"       ,Cmd_speedPid    ,": speed PID parameters" },
+   { "pos"         ,Cmd_posPid      ,": speed PID parameters" },
+   { "stepdir"     ,Cmd_stepDir     ,": step dir emulation"   },
+   { "overcurrent" ,Cmd_overcurrent ,": set overcurrent"      },
+   { "fcl"         ,Cmd_fcl         ,": fcl management"       },
+   { "log"         ,Cmd_log         ,": log on/off"           },
+   { "v"           ,Cmd_version     ,": version"              },
+   { "?"           ,Cmd_Help        ,": help"                 },
+   { 0             ,0               ,0                        }
+};
+void Cmd_login       ( uint16_t argc, char *argv[] ) { sciPrintf("login\r\n")                          ;}
+void Cmd_version     ( uint16_t argc, char *argv[] ) { sciPrintf("PMSM C2000 V1.0 - Pablo Slavkin\r\n");}
+void Cmd_iqPid       ( uint16_t argc, char *argv[] ) { actualCmdTable=iqPidCmdTable                    ;}
+void Cmd_speedPid    ( uint16_t argc, char *argv[] ) { actualCmdTable=speedPidCmdTable                 ;}
+void Cmd_posPid      ( uint16_t argc, char *argv[] ) { actualCmdTable=posPidCmdTable                   ;}
+void Cmd_stepDir     ( uint16_t argc, char *argv[] ) { actualCmdTable=stepDirCmdTable                  ;}
+void Cmd_overcurrent ( uint16_t argc, char *argv[] ) { actualCmdTable=overcurrentCmdTable              ;}
+void Cmd_fcl         ( uint16_t argc, char *argv[] ) { actualCmdTable=fclCmdTable                      ;}
+void Cmd_log         ( uint16_t argc, char *argv[] ) { actualCmdTable=logCmdTable                      ;}
 //--------------------------------------------------------------------------------
 tCmdLineEntry iqPidCmdTable[] =/*{{{*/
 {
@@ -161,6 +168,44 @@ void Cmd_step(uint16_t argc, char *argv[])
       setPosStep(step);
    }
    sciPrintf("stepAngle=%f\r\n",getPosStep());
+}
+/*}}}*/
+//--------------------------------------------------------------------------------
+tCmdLineEntry overcurrentCmdTable[] =/*{{{*/
+{
+   { "o" ,Cmd_setOvercurrent   ,": set overcurrent"     },
+   { "b" ,Cmd_resetOvercurrent ,": reset overcurrent"   },
+   { "<" ,Cmd_back2login       ,": back to login table" },
+   { "?" ,Cmd_Help             ,": help"                },
+   { 0   ,0                    ,0                       }
+};
+void Cmd_setOvercurrent(uint16_t argc, char *argv[])
+{
+   if(argc>1)
+      setOvercurrent(atof(argv[1]));
+   sciPrintf("overcurrent=%f\r\n",getOvercurrent());
+}
+void Cmd_resetOvercurrent(uint16_t argc, char *argv[])
+{
+   sciPrintf("reseting overcurrent\r\n");
+}
+/*}}}*/
+//--------------------------------------------------------------------------------
+tCmdLineEntry fclCmdTable[] =/*{{{*/
+{
+   { "r" ,Cmd_runFcl     ,": run motor"           },
+   { "s" ,Cmd_stopFcl    ,": stop motor"          },
+   { "<" ,Cmd_back2login ,": back to login table" },
+   { "?" ,Cmd_Help       ,": help"                },
+   { 0   ,0              ,0                       }
+};
+void Cmd_runFcl(uint16_t argc, char *argv[])
+{
+   sendRunEvent();
+}
+void Cmd_stopFcl(uint16_t argc, char *argv[])
+{
+   sendStopEvent();
 }
 /*}}}*/
 //--------------------------------------------------------------------------------

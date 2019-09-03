@@ -103,15 +103,15 @@ static inline void runPIPos(PI_CONTROLLER * in)
 {
 	// proportional term
 	in->up = in->Ref - in->Fbk;
-	if(in->up >= 0.5)
-	{
-		in->up -= 1.0;
-	}
-	else if(in->up <= -0.5)
-	{
-		in->up += 1.0;
-	}
-
+//	if(in->up >= 0.5)
+//	{
+//		in->up -= 1.0;
+//	}
+//	else if(in->up <= -0.5)
+//	{
+//		in->up += 1.0;
+//	}
+//
 	// integral term
 	in->up = in->Kp * in->up;
 	in->ui = (in->Out == in->v1) ? (in->Ki * in->up + in->i1) : in->i1;

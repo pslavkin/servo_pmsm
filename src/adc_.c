@@ -5,6 +5,7 @@
 #include "adc.h"
 #include "adc_.h"
 
+extern void F28x_usDelay(long LoopCount);
 
 uint32_t adcHandle[4] = {ADCA_BASE, ADCB_BASE, ADCC_BASE, ADCD_BASE };
 
@@ -81,12 +82,18 @@ void initAdc()/*{{{*/
    // Write zero to this for now till offset ISR is run
    ADC_setPPBCalibrationOffset(ADCB_BASE, ADC_PPB_NUMBER1, 0);
 
+
    // Enable AdcA-ADCINT1- to help verify EoC before result data read
    ADC_setInterruptSource   ( ADCA_BASE, ADC_INT_NUMBER1, ADC_SOC_NUMBER0 );
    ADC_enableContinuousMode ( ADCA_BASE, ADC_INT_NUMBER1                  );
    ADC_enableInterrupt      ( ADCA_BASE, ADC_INT_NUMBER1                  );
 
-   currentCalibrate();
+   // setting LEM Iv offset
+   ADC_setPPBReferenceOffset(ADCA_BASE, ADC_PPB_NUMBER1, 2048);
+   // setting LEM Iw offset
+   ADC_setPPBReferenceOffset(ADCB_BASE, ADC_PPB_NUMBER1, 2048);
+
+   DEVICE_DELAY_US ( 100L ); //hay que esperar un cacho.. no se porque, pero si no pum.. TODO
    return;
 }/*}}}*/
 void currentCalibrate(void)/*{{{*/
@@ -118,7 +125,7 @@ void currentCalibrate(void)/*{{{*/
    ADC_setPPBReferenceOffset(ADCA_BASE, ADC_PPB_NUMBER1, (uint16_t)(offset_lemV*4096.0));
    // setting LEM Iw offset
    ADC_setPPBReferenceOffset(ADCB_BASE, ADC_PPB_NUMBER1, (uint16_t)(offset_lemW*4096.0));
-   sciPrintf("end adc calib\r\n");
+   sciPrintf("end adc calib lemv=%f lenw=%f\r\n",offset_lemV,offset_lemW);
+   sendAdcCalibEndEvent();
 }/*}}}*/
-
 

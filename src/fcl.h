@@ -245,14 +245,26 @@
 #pragma INTERRUPT (motorControlISR, LPI)
 __interrupt void motorControlISR(void);
 
-extern uint16_t fclDir  ;
-extern uint32_t fclStep ;
-const State**  fcl   ( void );
-void setLog          ( bool state );
-void initFcl         ( void       );
-void logPrint        ( void       );
-void electricalAlign ( void       );
-void running         ( void       );
+enum fclEvents_enum {
+    adcCalibEndEvent        = 0x0010,
+    alignEndEvent           = 0x0011,
+    overcurrentEvent        = 0x0012,
+    overcurrentClearedEvent = 0x0013,
+    stopEvent               = 0x0014,
+    runEvent                = 0x0015
+};
+const State**  fcl                  ( void       );
+void           setLog               ( bool state );
+void           initFcl              ( void       );
+void           logPrint             ( void       );
+void           electricalAlign      ( void       );
+void           sendRunEvent         ( void       );
+void           sendStopEvent        ( void       );
+void           sendAdcCalibEndEvent ( void       );
+void           sendOvercurrentEvent ( void       );
+void           stopIsr              ( void       );
+void           alignIsr             ( void       );
+void           runIsr               ( void       );
 
 typedef enum
 {

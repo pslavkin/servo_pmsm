@@ -8,7 +8,7 @@
 
 #define STEP_ANGLE 0.0002
 
-pos_t pos={CLOCK,0,0,STEP_ANGLE,0,0,1};
+pos_t pos={CLOCK,0,0,STEP_ANGLE,0,0,0.01,0.01};
 
 void        setPosDir     ( enum POSDIR d  ) { pos.dir=d         ;}
 float32_t   getPosRel     ( void           ) { return pos.rel    ;}
@@ -34,8 +34,13 @@ void normalizeRelPos(float32_t abs)
 void sinPosGenerator(void)
 {
    static float32_t t=0;
-   t+=T;
-   pos.abs=sin(2*PI*pos.frec*t);
+   if(pos.frec!=pos.frec2) {
+      t=(pos.frec2*t)/pos.frec;
+      pos.frec2=pos.frec;
+   }
+   else
+      t+=T;
+   pos.abs=sin(2.0*PI*pos.frec2*t);
 }
 
 void setAbsMech ( float32_t mech )

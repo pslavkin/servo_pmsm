@@ -40,7 +40,6 @@ void Init_everythings(void)
 {
    initLeds      ( );
    initParser    ( );
-//   initEqep      ( );
    Init_Schedule   ( );
    initOvercurrent ( ); // overcurren protection
    initPwm         ( ); // PWM Configuration

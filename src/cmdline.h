@@ -14,13 +14,15 @@ typedef struct Cmd_Table_Struct{ // ! Structure for an entry in the command list
 void     CmdLineProcess ( char* line );
 void     Parser_Process ( void       );
 
-void Cmd_login         ( uint16_t argc, char *argv[] );
-void Cmd_version       ( uint16_t argc, char *argv[] );
-void Cmd_iqPid         ( uint16_t argc, char *argv[] );
-void Cmd_speedPid      ( uint16_t argc, char *argv[] );
-void Cmd_posPid        ( uint16_t argc, char *argv[] );
-void Cmd_stepDir       ( uint16_t argc, char *argv[] );
-void Cmd_log           ( uint16_t argc, char *argv[] );
+void Cmd_login       ( uint16_t argc ,char *argv[] );
+void Cmd_version     ( uint16_t argc ,char *argv[] );
+void Cmd_iqPid       ( uint16_t argc ,char *argv[] );
+void Cmd_speedPid    ( uint16_t argc ,char *argv[] );
+void Cmd_posPid      ( uint16_t argc ,char *argv[] );
+void Cmd_stepDir     ( uint16_t argc ,char *argv[] );
+void Cmd_overcurrent ( uint16_t argc ,char *argv[] );
+void Cmd_fcl         ( uint16_t argc ,char *argv[] );
+void Cmd_log         ( uint16_t argc ,char *argv[] );
 
 void Cmd_readLemV        ( uint16_t argc, char *argv[] );
 void Cmd_readLemW        ( uint16_t argc, char *argv[] );
@@ -59,7 +61,11 @@ void Cmd_step       ( uint16_t argc, char *argv[] );
 void Cmd_logOn  ( uint16_t argc, char *argv[] );
 void Cmd_logOff ( uint16_t argc, char *argv[] );
 
-void Cmd_motorIsr(uint16_t argc, char *argv[]);
+void Cmd_setOvercurrent   ( uint16_t argc, char *argv[] );
+void Cmd_resetOvercurrent ( uint16_t argc, char *argv[] );
+
+void Cmd_runFcl  ( uint16_t argc, char *argv[] );
+void Cmd_stopFcl ( uint16_t argc, char *argv[] );
 
 void Cmd_back2login   ( uint16_t argc, char *argv[] );
 void Cmd_Help         ( uint16_t argc, char *argv[] );

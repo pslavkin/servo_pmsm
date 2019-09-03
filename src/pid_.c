@@ -18,8 +18,8 @@ FCL_PIController_t   pi_id, pi_iq;
 void initPid(void)/*{{{*/
 {
     // Initialize the PI module for position
-    pi_pos.Kp   = 3;     // 1.0;   // 10.0;
-    pi_pos.Ki   = 0.001; // T*speedLoopPrescaler/0.3;
+    pi_pos.Kp   = 3;      // 1.0;   // 10.0;
+    pi_pos.Ki   = 0.0015; // T*speedLoopPrescaler/0.3;
     pi_pos.Umax = 0.5;
     pi_pos.Umin = -0.5;
 
@@ -43,12 +43,13 @@ void initPid(void)/*{{{*/
 //    pid_pos.OutPreSat = 0;
 //
     // Initialize the PID module for speed
-    pid_spd.param.Kp   = 1.0;
-    pid_spd.param.Ki   = 0.001;
-    pid_spd.param.Kd   = 0.0;
-    pid_spd.param.Kr   = 1.0;
+    pid_spd.param.Kp   = 3.0;
+    pid_spd.param.Ki   = 0.0015;
+    pid_spd.param.Kd   = 0.0015;
     pid_spd.param.Umax = 0.95;
     pid_spd.param.Umin = -0.95;
+    pid_spd.term.c1    = 1.0;
+    pid_spd.term.c2    = 1.0;
 
     // Init PI module for ID loop
     pi_id.Kp      = 1.0;//LS * CUR_LOOP_BW;

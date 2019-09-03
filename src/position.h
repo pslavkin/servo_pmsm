@@ -13,6 +13,7 @@ typedef struct pos_struct {
    float32_t    absMech;
    float32_t    lastAbsMech;
    float32_t    frec;
+   float32_t    frec2;
 } pos_t;
 
 extern void       incPos          ( void           );
