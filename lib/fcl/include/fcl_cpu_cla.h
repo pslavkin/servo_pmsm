@@ -94,10 +94,10 @@ extern
 #endif
 RAMP_GEN_CLA    rg1;
 
-#ifdef FCL_LIB
-extern
-#endif
-SPEED_MEAS_QEP  speed1;
+//#ifdef FCL_LIB
+//extern
+//#endif
+//SPEED_MEAS_QEP  speed1;
 
 // ==============================================================
 typedef struct _FCL_Parameters_ {

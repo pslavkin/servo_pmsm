@@ -34,8 +34,6 @@ float32_t            IdRef_start     = 0.1  ;
 // Instance a ramp controller to smoothly ramp the frequency
 RMPCNTL rc1 = RMPCNTL_DEFAULTS;
 
-// Instance a speed measurement calc
-SPEED_MEAS_QEP  speed1;
 
 void ( *isrSm )(void)=stopIsr;
 void setLog ( bool state ) { logEnable=state;}
@@ -138,9 +136,9 @@ void logPrint(void)/*{{{*/
 // Motor Control ISR
 __interrupt void motorControlISR(void)/*{{{*/
 {
-   FCL_runPICtrl();
-   FCL_params.Vdcbus = getVdc(); // Measure DC Bus voltage using SDFM Filter3
-   FCL_runPICtrlWrap ( );        // Fast current loop controller wrapper
+//   FCL_runPICtrl();
+//   FCL_params.Vdcbus = getVdc(); // Measure DC Bus voltage using SDFM Filter3
+//   FCL_runPICtrlWrap ( );        // Fast current loop controller wrapper
    isrSm             ( );
 
    EPWM_clearEventTriggerInterruptFlag(EPWM1_BASE);
@@ -162,6 +160,7 @@ __interrupt void motorControlISR(void)/*{{{*/
 void stopIsr(void)/*{{{*/
 {
    setAbsMech(qep1MechTheta());
+   setPosAbs (qep1MechTheta());
    logPrint();
 }/*}}}*/
 // electrical align
@@ -182,7 +181,7 @@ void alignIsr(void)/*{{{*/
          pi_pos.ui       = 0;
          pi_pos.i1       = 0;
          pi_id.ref       = 0;
-         pi_iq.ref       = 0.1;
+         pi_iq.ref       = 0;
          atomicSendEvent(alignEndEvent,fcl());
       }
    }
@@ -191,6 +190,9 @@ void alignIsr(void)/*{{{*/
 // running
 void runIsr(void)/*{{{*/
 {
+   FCL_runPICtrl();
+//   FCL_params.Vdcbus = getVdc(); // Measure DC Bus voltage using SDFM Filter3
+   FCL_runPICtrlWrap ( );        // Fast current loop controller wrapper
    speed1.ElecTheta = qep1ElecTheta();
    runSpeedFR(&speed1);
 
@@ -220,10 +222,11 @@ const State
 const State*   fclSm=stopped;
 const State**  fcl ( void ) { return &fclSm; }
 
-void sendRunEvent         ( void ) { atomicSendEvent(runEvent         ,fcl());}
-void sendStopEvent        ( void ) { atomicSendEvent(stopEvent        ,fcl());}
-void sendAdcCalibEndEvent ( void ) { atomicSendEvent(adcCalibEndEvent ,fcl());}
-void sendOvercurrentEvent ( void ) { atomicSendEvent(overcurrentEvent ,fcl());}
+void sendRunEvent                ( void ) { atomicSendEvent(runEvent         ,fcl())       ;}
+void sendStopEvent               ( void ) { atomicSendEvent(stopEvent        ,fcl())       ;}
+void sendAdcCalibEndEvent        ( void ) { atomicSendEvent(adcCalibEndEvent ,fcl())       ;}
+void sendOvercurrentEvent        ( void ) { atomicSendEvent(overcurrentEvent ,fcl())       ;}
+void sendOvercurrentClearedEvent ( void ) { atomicSendEvent(overcurrentClearedEvent ,fcl());}
 
 void align(void)
 {
@@ -243,11 +246,14 @@ void stop(void)
 }
 void run(void)
 {
+   initSinPosGenerator();
    isrSm     = runIsr;
    sciPrintf("running\r\n");
 }
 void overCurrent(void)
 {
+   pi_id.ref       = 0;
+   pi_iq.ref       = 0;
    isrSm     = stopIsr;
    sciPrintf("overcurrent\r\n");
 }
@@ -275,6 +281,7 @@ const State running       [ ] =
 };
 const State overCurrenting[ ] =
 {
+    overcurrentEvent        ,overCurrent      ,overCurrenting ,
     overcurrentClearedEvent ,stop             ,stopped        ,
     ANY_Event               ,Rien             ,overCurrenting ,
 };

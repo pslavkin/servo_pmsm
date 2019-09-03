@@ -253,18 +253,19 @@ enum fclEvents_enum {
     stopEvent               = 0x0014,
     runEvent                = 0x0015
 };
-const State**  fcl                  ( void       );
-void           setLog               ( bool state );
-void           initFcl              ( void       );
-void           logPrint             ( void       );
-void           electricalAlign      ( void       );
-void           sendRunEvent         ( void       );
-void           sendStopEvent        ( void       );
-void           sendAdcCalibEndEvent ( void       );
-void           sendOvercurrentEvent ( void       );
-void           stopIsr              ( void       );
-void           alignIsr             ( void       );
-void           runIsr               ( void       );
+const State**  fcl                         ( void       );
+void           setLog                      ( bool state );
+void           initFcl                     ( void       );
+void           logPrint                    ( void       );
+void           electricalAlign             ( void       );
+void           sendRunEvent                ( void       );
+void           sendStopEvent               ( void       );
+void           sendAdcCalibEndEvent        ( void       );
+void           sendOvercurrentEvent        ( void       );
+void           sendOvercurrentClearedEvent ( void       );
+void           stopIsr                     ( void       );
+void           alignIsr                    ( void       );
+void           runIsr                      ( void       );
 
 typedef enum
 {

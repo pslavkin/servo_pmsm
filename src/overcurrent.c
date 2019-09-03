@@ -193,9 +193,10 @@ void testOvercurrent(void)/*{{{*/
         EPWM_forceTripZoneEvent(EPWM1_BASE, EPWM_TZ_FORCE_EVENT_OST);
         EPWM_forceTripZoneEvent(EPWM2_BASE, EPWM_TZ_FORCE_EVENT_OST);
         EPWM_forceTripZoneEvent(EPWM3_BASE, EPWM_TZ_FORCE_EVENT_OST);
-        atomicSendEvent(overcurrentEvent,fcl());
-        sciPrintf("overcurrent protection!\r\n");
+        sendOvercurrentEvent();
     }
+    else
+        sendOvercurrentClearedEvent();
 }/*}}}*/
 void setOvercurrent(float32_t c)/*{{{*/
 {
@@ -208,6 +209,9 @@ float32_t getOvercurrent(void)/*{{{*/
 {
    return curLimit;
 }/*}}}*/
+//no funciona.. pero si inicializo con init anda de lujo.. no hace falta esta funcion o hay
+//que analizarla, lo quel es raaaro porque por el flip flop deberia mover el pin 41 para
+//resetear pero parece que no hace falta o se hace de otra manera... TODO.
 void resetOvercurrent(void)/*{{{*/
 {
    // clear the ocp latch in macro M6
@@ -235,9 +239,9 @@ void resetOvercurrent(void)/*{{{*/
    CMPSS_clearFilterLatchLow(CMPSS2_BASE);
    CMPSS_clearFilterLatchLow(CMPSS6_BASE);
 
-    LEM_curHi = 2048 + LEM(curLimit);
-    LEM_curLo = 2048 - LEM(curLimit);
+   LEM_curHi = 2048 + LEM(curLimit);
+   LEM_curLo = 2048 - LEM(curLimit);
 
-    configureCMPSS(CMPSS1_BASE, LEM_curHi, LEM_curLo);  //Enable CMPSS1 - LEM V
-    configureCMPSS(CMPSS3_BASE, LEM_curHi, LEM_curLo);  //Enable CMPSS3 - LEM W
+   configureCMPSS(CMPSS1_BASE, LEM_curHi, LEM_curLo);  //Enable CMPSS1 - LEM V
+   configureCMPSS(CMPSS3_BASE, LEM_curHi, LEM_curLo);  //Enable CMPSS3 - LEM W
 }/*}}}*/

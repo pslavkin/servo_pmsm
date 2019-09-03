@@ -14,7 +14,11 @@ QEP             qep1;
 float32_t posEncElecTheta[6] = {0};
 float32_t posEncMechTheta[6] = {0};
 
-extern SPEED_MEAS_QEP  speed1;
+// Instance a speed measurement calc
+#ifdef FCL_LIB
+extern
+#endif
+SPEED_MEAS_QEP  speed1;
 
 // Position Sensing Configuration
 void initQep(void)/*{{{*/
