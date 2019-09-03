@@ -20,8 +20,8 @@ void initPid(void)/*{{{*/
     // Initialize the PI module for position
     pi_pos.Kp   = 3;     // 1.0;   // 10.0;
     pi_pos.Ki   = 0.001; // T*speedLoopPrescaler/0.3;
-    pi_pos.Umax = 1.0;
-    pi_pos.Umin = -1.0;
+    pi_pos.Umax = 0.5;
+    pi_pos.Umin = -0.5;
 
 //    // Initialize the PID module for position (alternative option for eval)
 //    pid_pos.Ref       = 0;

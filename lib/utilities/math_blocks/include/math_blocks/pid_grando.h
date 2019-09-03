@@ -119,7 +119,9 @@ Default initalisation values for the PID objects
 static inline void runPID(PID_CONTROLLER * in)
 {
 	// proportional term
-	in->data.up = in->param.Kr * in->term.Ref - in->term.Fbk;
+   // ofiginakmente multiplicaba por la referencia y LUEGO restaba el feedback.. eso no esta
+   // bien... lo cambio y pruebo.
+	in->data.up = in->param.Kr * (in->term.Ref - in->term.Fbk);
 
 	// integral term
 	in->data.ui = in->param.Ki * (in->data.w1 * (in->term.Ref - in->term.Fbk)) + in->data.i1;

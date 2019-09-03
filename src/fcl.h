@@ -250,6 +250,7 @@ extern uint32_t fclStep ;
 const State**  fcl   ( void );
 void setLog          ( bool state );
 void initFcl         ( void       );
+void logPrint        ( void       );
 void electricalAlign ( void       );
 void running         ( void       );
 

@@ -10,7 +10,6 @@
 
 #pragma DATA_SECTION(qep1,    "ClaData");
 QEP             qep1;
-
 // Variables for Position Sensor Suite
 float32_t posEncElecTheta[6] = {0};
 float32_t posEncMechTheta[6] = {0};

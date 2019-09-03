@@ -93,11 +93,14 @@ void Cmd_writeSpeedPid(uint16_t argc, char *argv[])
 //--------------------------------------------------------------------------------
 tCmdLineEntry posPidCmdTable[] =/*{{{*/
 {
-   { "r" ,Cmd_readPosPid  ,": read pos PID "       },
-   { "w" ,Cmd_writePosPid ,": write pos PID "      },
-   { "<" ,Cmd_back2login  ,": back to login table" },
-   { "?" ,Cmd_Help        ,": help"                },
-   { 0   ,0               ,0                       }
+   { "r" ,Cmd_readPosPid   ,": read pos PID "          },
+   { "w" ,Cmd_writePosPid  ,": write pos PID "         },
+   { "a" ,Cmd_printAbs     ,": print abs pos "         },
+   { "m" ,Cmd_printAbsMech ,": print abs mech pos "    },
+   { "f" ,Cmd_setFrec      ,": set frec pos generator" },
+   { "<" ,Cmd_back2login   ,": back to login table"    },
+   { "?" ,Cmd_Help         ,": help"                   },
+   { 0   ,0                ,0                          }
 };
 void Cmd_readPosPid(uint16_t argc, char *argv[])
 {
@@ -109,6 +112,20 @@ void Cmd_writePosPid(uint16_t argc, char *argv[])
       if(argv[1][0]!=',') pi_pos.Kp   = atof(argv[1]);
       if(argv[2][0]!=',') pi_pos.Ki   = atof(argv[2]);
    }
+}
+void Cmd_printAbsMech(uint16_t argc, char *argv[])
+{
+   sciPrintf("absMech=%f\r\n",getPosAbsMech());
+}
+void Cmd_printAbs(uint16_t argc, char *argv[])
+{
+   sciPrintf("abs=%f\r\n",getPosAbs());
+}
+void Cmd_setFrec(uint16_t argc, char *argv[])
+{
+   if(argc>1)
+      setPosFrec(atof(argv[1]));
+   sciPrintf("pos generator Frec=%f\r\n",getPosFrec());
 }
 /*}}}*/
 //--------------------------------------------------------------------------------

@@ -123,6 +123,22 @@ void initFcl(void)/*{{{*/
    // Enable group 3 interrupts - EPWM1 is here
    Interrupt_enableInCPU(INTERRUPT_CPU_INT3);
 }/*}}}*/
+// print log
+void logPrint(void)/*{{{*/
+{
+   if (logEnable==true) {
+      if(++speedLoopCount >= speedLoopPrescaler) {
+         speedLoopCount    = 0;
+         speedPidTicker++;
+         sciPrintf("%i %f %f %f %f\r\n",speedPidTicker,
+               pi_iq.fbk,
+               speed1.Speed,
+               pi_pos.Fbk,
+               getPosAbs()
+               );
+      }
+   }
+}/*}}}*/
 // Motor Control ISR
 __interrupt void motorControlISR(void)/*{{{*/
 {
@@ -146,7 +162,7 @@ __interrupt void motorControlISR(void)/*{{{*/
    isrTicker++;
 
 } // motorControlISR Ends Here}}}
-//----------------------------------------------------------------------------------------
+// electrical align
 void electricalAlign(void)/*{{{*/
 {
    if(pi_id.ref >= IdRef_start) {
@@ -171,16 +187,19 @@ void electricalAlign(void)/*{{{*/
    }
    pi_id.ref = ramper ( IdRef_start, pi_id.ref, 0.00001 );
 }/*}}}*/
+// running
 void running(void)
 {
    speed1.ElecTheta = qep1ElecTheta();
    runSpeedFR(&speed1);
 
-   //    Connect inputs of the PID module and call the PID speed controller module
-   pi_pos.Ref = getPosRel();
-   pi_pos.Fbk = qep1MechTheta();
+   pi_pos.Ref = getPosAbs();
+   pi_pos.Fbk = getPosAbsMech();
+//   pi_pos.Ref = getPosRel();
+//   pi_pos.Fbk = qep1MechTheta();
+   setAbsMech(qep1MechTheta());
    runPIPos(&pi_pos);
-//   incPos();
+   sinPosGenerator();
 
    // speed PI regulator
    pid_spd.term.Ref = pi_pos.Out;
@@ -188,12 +207,7 @@ void running(void)
    runPID(&pid_spd);
    pi_iq.ref        = pid_spd.term.Out;
 
-   if(++speedLoopCount >= speedLoopPrescaler) {
-      speedLoopCount    = 0;
-      speedPidTicker++;
-      if (logEnable==true)
-         sciPrintf("%i %f %f %f\r\n",speedPidTicker, pi_iq.fbk,speed1.Speed,pi_pos.Fbk);
-   }
+   logPrint();
 }
 
 //----------------------------------------------------------------------------------------
@@ -205,5 +219,6 @@ const State**  fcl ( void ) { return &fclSm; }
 
 const State adcCalib [ ] =
 {
+    ANY_Event ,Rien ,adcCalib  ,
     ANY_Event ,incPos ,adcCalib  ,
 };
