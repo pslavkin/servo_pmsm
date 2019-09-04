@@ -20,7 +20,7 @@
 // Flag variables
 uint32_t          isrTicker      = 0    ;
 uint32_t          speedPidTicker = 0    ;
-bool              logEnable      = false;
+bool              logEnable      = true;
 
 uint16_t          speedLoopPrescaler = 200 ; // Speed loop pre scalar
 uint16_t          speedLoopCount     = 1    ; // Speed loop counter
@@ -59,18 +59,8 @@ void initFCLVars()/*{{{*/
 // initFcl()
 void initFcl(void)/*{{{*/
 {
-   // Initialize FCL library
-   // This function initializes the ADC PPB result bases, as well as the ADC
-   // module used to sample phase W. Ensure that the final argument passed
-   // corresponds to the ADC base used to sample phase W on the HW board
    FCL_initADC(ADCARESULT_BASE, ADC_PPB_NUMBER1, ADCBRESULT_BASE, ADC_PPB_NUMBER1, ADCA_BASE); 
-
-   // ensure that the correct PWM base addresses are being passed to the
-   // FCL library here. pwmHandle[0:2] should represent inverter phases
-   // U/V/W in the hardware
    FCL_initPWM(EPWM1_BASE, EPWM2_BASE, EPWM3_BASE);
-
-   // ensure the correct QEP base is being passed
    FCL_initQEP(EQEP1_BASE);
 
    // Initialize Fast current loop variables
@@ -78,20 +68,7 @@ void initFcl(void)/*{{{*/
    initDac     ( );
    initQep     ( );
    initCLA1    ( );
-
-   // PI control configuration
-   // Note that the vectorial sum of d-q PI outputs should be less than 1.0 which
-   // refers to maximum duty cycle for SVGEN. Another duty cycle limiting factor
-   // is current sense through shunt resistors which depends on hardware/software
-   // implementation. Depending on the application requirements 3,2 or a single
-   // shunt resistor can be used for current waveform reconstruction. The higher
-   // number of shunt resistors allow the higher duty cycle operation and better
-   // dc bus utilization. The users should adjust the PI saturation levels
-   // carefully during open loop tests (i.e pi_id.Umax, pi_iq.Umax and Umins) as
-   // in project manuals. Violation of this procedure yields distorted  current
-   // waveforms and unstable closed loop operations that may damage the inverter.
-   initPid             ( );
-   FCL_resetController ( );
+   initPid     ( );
 
    // Initialize the RAMPGEN module
    rg1.StepAngleMax = BASE_FREQ*T;
@@ -102,20 +79,16 @@ void initFcl(void)/*{{{*/
 
    // Init FLAGS
    lsw        = QEP_ALIGNMENT;
-   alignCntr = 0;
    pi_id.ref = 0;
    pi_iq.ref = 0;
    FCL_resetController();
-
-   // Read and update DC BUS voltage for FCL to use
-   FCL_params.Vdcbus = getVdc();
-
-   New_Periodic_Schedule(10,ANY_Event,fcl());
+   readVdc();
+   New_Periodic_Schedule                ( 10,ANY_Event,fcl( ));
+   Update_Or_New_Periodic_Func_Schedule ( 100,readVdc       ) ;
    // Enable all mapped INTerrupts
-//   EPWM_clearEventTriggerInterruptFlag ( EPWM1_BASE ); // clear pending INT event
-//   Interrupt_enable                    ( INT_EPWM1  ); // Enable PWM1INT in PIE group 3
-//   // Enable group 3 interrupts - EPWM1 is here
-//   Interrupt_enableInCPU(INTERRUPT_CPU_INT3);
+//   EPWM_clearEventTriggerInterruptFlag ( EPWM1_BASE         ); // clear pending INT event
+//   Interrupt_enable                    ( INT_EPWM1          ); // Enable PWM1INT in PIE group 3
+//   Interrupt_enableInCPU               ( INTERRUPT_CPU_INT3 ); // Enable group 3 interrupts - EPWM1 is here
 }/*}}}*/
 // print log
 void logPrint(void)/*{{{*/
@@ -123,23 +96,27 @@ void logPrint(void)/*{{{*/
    if (logEnable==true) {
       if(++speedLoopCount >= speedLoopPrescaler) {
          speedLoopCount    = 0;
+//   sciPrintf("ref=%f\r\n",pi_pos.Ref);
+//   sciPrintf("fbk=%f\r\n",pi_pos.Fbk);
+//   sciPrintf("abs=%f\r\n",getPosAbsMech());
+//   sciPrintf("mec=%f\r\n",qep1MechTheta());
          speedPidTicker++;
-         sciPrintf("%i %f %f %f %f\r\n",speedPidTicker,
-               pi_iq.fbk,
-               speed1.Speed,
-               pi_pos.Fbk,
-               getPosAbs()
-               );
+   //      sciPrintf("%i %f %f %f %f\r\n",speedPidTicker,
+   //            pi_iq.fbk,
+   //            speed1.Speed,
+   //            pi_pos.Fbk,
+   //            getPosAbs()
+   //            );
       }
    }
 }/*}}}*/
 // Motor Control ISR
 __interrupt void motorControlISR(void)/*{{{*/
 {
-//   FCL_runPICtrl();
-//   FCL_params.Vdcbus = getVdc(); // Measure DC Bus voltage using SDFM Filter3
-//   FCL_runPICtrlWrap ( );        // Fast current loop controller wrapper
-   isrSm             ( );
+   FCL_runPICtrl     (                ) ;
+   FCL_runPICtrlWrap (                ) ; // Fast current loop controller wrapper
+   addPosAbsMech     ( qep1MechTheta( ));
+   isrSm             (                ) ;
 
    EPWM_clearEventTriggerInterruptFlag(EPWM1_BASE);
 
@@ -159,8 +136,6 @@ __interrupt void motorControlISR(void)/*{{{*/
 // stop 
 void stopIsr(void)/*{{{*/
 {
-   setAbsMech(qep1MechTheta());
-   setPosAbs (qep1MechTheta());
    logPrint();
 }/*}}}*/
 // electrical align
@@ -169,38 +144,22 @@ void alignIsr(void)/*{{{*/
    if(pi_id.ref >= IdRef_start) {
       if(++alignCntr >= alignCnt) {
          lsw             = QEP_GOT_INDEX;
-         alignCntr       = 0;
-         pi_pos.Fbk      = 0;
-         pi_pos.Ref      = 0;
-         pid_spd.data.d1 = 0;
-         pid_spd.data.d2 = 0;
-         pid_spd.data.i1 = 0;
-         pid_spd.data.ud = 0;
-         pid_spd.data.ui = 0;
-         pid_spd.data.up = 0;
-         pi_pos.ui       = 0;
-         pi_pos.i1       = 0;
-         pi_id.ref       = 0;
-         pi_iq.ref       = 0;
+         initPid();
          atomicSendEvent(alignEndEvent,fcl());
       }
    }
-   pi_id.ref = ramper ( IdRef_start, pi_id.ref, 0.00001 );
+   else
+      pi_id.ref = ramper ( IdRef_start, pi_id.ref, 0.00001 );
 }/*}}}*/
 // running
 void runIsr(void)/*{{{*/
 {
-   FCL_runPICtrl();
-//   FCL_params.Vdcbus = getVdc(); // Measure DC Bus voltage using SDFM Filter3
-   FCL_runPICtrlWrap ( );        // Fast current loop controller wrapper
    speed1.ElecTheta = qep1ElecTheta();
    runSpeedFR(&speed1);
 
-   setAbsMech(qep1MechTheta());
    pi_pos.Ref = getPosAbs();
    pi_pos.Fbk = getPosAbsMech();
    runPIPos(&pi_pos);
-   sinPosGenerator();
 
    // speed PI regulator
    pid_spd.term.Ref = pi_pos.Out;
@@ -208,6 +167,7 @@ void runIsr(void)/*{{{*/
    runPID(&pid_spd);
    pi_iq.ref        = pid_spd.term.Out;
 
+   sinPosGenerator();
    logPrint();
 }/*}}}*/
 
@@ -230,23 +190,32 @@ void sendOvercurrentClearedEvent ( void ) { atomicSendEvent(overcurrentClearedEv
 
 void align(void)
 {
-   EPWM_clearEventTriggerInterruptFlag ( EPWM1_BASE ); // clear pending INT event
-   Interrupt_enable                    ( INT_EPWM1  ); // Enable PWM1INT in PIE group 3
-   // Enable group 3 interrupts - EPWM1 is here
-   Interrupt_enableInCPU(INTERRUPT_CPU_INT3);
+   //FCL_resetController();
+   lsw       = QEP_ALIGNMENT;
+   alignCntr = 0;
+   pi_id.ref = 0;
+   pi_iq.ref = 0;
    isrSm     = alignIsr;
    sciPrintf("aligning\r\n");
+   EPWM_clearEventTriggerInterruptFlag ( EPWM1_BASE         ); // clear pending INT event
+   Interrupt_enable                    ( INT_EPWM1          ); // Enable PWM1INT in PIE group 3
+   Interrupt_enableInCPU               ( INTERRUPT_CPU_INT3 ); // Enable group 3 interrupts - EPWM1 is here
 }
 void stop(void)
 {
-   pi_id.ref       = 0;
-   pi_iq.ref       = 0;
+   pi_id.ref = 0;
+   pi_iq.ref = 0;
    isrSm     = stopIsr;
    sciPrintf("stopped\r\n");
 }
 void run(void)
 {
-   initSinPosGenerator();
+   //FCL_resetController();
+   setPosAbs       ( getPosAbsMech()); //la referencia
+   setPosAbsMech   ( getPosAbsMech()); //no deberia ser necesario, pero lo es.. TODO 
+   setPosAbsOffset ( getPosAbsMech()); //este si se necesita
+   pi_id.ref = 0;
+   pi_iq.ref = 0;
    isrSm     = runIsr;
    sciPrintf("running\r\n");
 }

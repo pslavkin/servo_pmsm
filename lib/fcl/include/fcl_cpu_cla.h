@@ -42,6 +42,8 @@
 #pragma DATA_SECTION(rg1,     "ClaData");
 #endif
 
+#include "fcl.h"
+
 /* ****************************************************************************
  * The following variables are brought into library but not used as they take
  * few more cycles - (svgen1 seemed to take similar time as local def -
@@ -98,27 +100,6 @@ RAMP_GEN_CLA    rg1;
 //extern
 //#endif
 //SPEED_MEAS_QEP  speed1;
-
-// ==============================================================
-typedef struct _FCL_Parameters_ {
-    float32_t   carrierMid;     // Mid point value of carrier count
-    float32_t   adcScale;       // ADC conversion scale to pu
-    float32_t   cmidsqrt3;      // internal variable
-
-    float32_t   tSamp;           // sampling time
-    float32_t   Rd;              // Motor resistance in D axis
-    float32_t   Rq;              // Motor resistance in Q axis
-    float32_t   Ld;              // Motor inductance in D axis
-    float32_t   Lq;              // Motor inductance in Q axis
-    float32_t   Vbase;           // Base voltage for the controller
-    float32_t   Ibase;           // Base current for the controller
-    float32_t   wccD;            // D axis current controller bandwidth
-    float32_t   wccQ;            // Q axis current controller bandwidth
-    float32_t   Vdcbus;          // DC bus voltage
-    float32_t   BemfK;           // Motor Bemf constant
-    float32_t   Wbase;           // Controller base frequency (Motor) in rad/sec
-} FCL_Parameters_t;
-
 
 // ==============================================================
 #ifdef FCL_LIB

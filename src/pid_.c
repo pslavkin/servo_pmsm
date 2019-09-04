@@ -8,8 +8,8 @@
 
 // Instance PI(D) regulators to regulate the d and q  axis currents, speed and position
 //PIDREG3         pid_pos = PIDREG3_DEFAULTS;// (optional - for eval)
-PI_CONTROLLER   pi_pos  = PI_CONTROLLER_DEFAULTS;
-PID_CONTROLLER  pid_spd = {PID_TERM_DEFAULTS, PID_PARAM_DEFAULTS, PID_DATA_DEFAULTS};
+PI_CONTROLLER   pi_pos,pi_pos_def    = PI_CONTROLLER_DEFAULTS;
+PID_CONTROLLER  pid_spd, pid_spd_def = {PID_TERM_DEFAULTS, PID_PARAM_DEFAULTS, PID_DATA_DEFAULTS};
 
 #pragma DATA_SECTION(pi_iq,   "ClaData")
 FCL_PIController_t   pi_id, pi_iq;
@@ -17,6 +17,7 @@ FCL_PIController_t   pi_id, pi_iq;
 // PI Controller Configuration
 void initPid(void)/*{{{*/
 {
+    pi_pos = pi_pos_def;
     // Initialize the PI module for position
     pi_pos.Kp   = 3;      // 1.0;   // 10.0;
     pi_pos.Ki   = 0.0015; // T*speedLoopPrescaler/0.3;
@@ -43,6 +44,7 @@ void initPid(void)/*{{{*/
 //    pid_pos.OutPreSat = 0;
 //
     // Initialize the PID module for speed
+    pid_spd = pid_spd_def;
     pid_spd.param.Kp   = 3.0;
     pid_spd.param.Ki   = 0.0015;
     pid_spd.param.Kd   = 0.0015;
@@ -103,6 +105,7 @@ void printFclPi(FCL_PIController_t* pi)/*{{{*/
 void printPi(PI_CONTROLLER* pi)/*{{{*/
 {
    sciPrintf (
+         "Ref   =%f\r\n" // Input: reference set-point
          "Fbk   =%f\r\n" // Input: feedback
          "Out   =%f\r\n" // Output: controller output
          "Kp    =%f\r\n" // Parameter: proportional loop gain
@@ -114,6 +117,7 @@ void printPi(PI_CONTROLLER* pi)/*{{{*/
          "v1    =%f\r\n" // Data: pre-saturated controller output
          "i1    =%f\r\n" // Data: integrator storage: ui(k-1)
          "w1    =%f\r\n", // Data: saturation record: [u(k-1) - v(k-1)]
+         pi->Ref,
          pi->Fbk,
          pi->Out,
          pi->Kp,

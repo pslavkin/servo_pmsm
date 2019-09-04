@@ -1,7 +1,8 @@
 #ifndef LINEVOLTAGE
 #define LINEVOLTAGE
 
-float32_t getVdc(void);
+float32_t getVdc  ( void );
+void      readVdc ( void );
 
 #endif
 

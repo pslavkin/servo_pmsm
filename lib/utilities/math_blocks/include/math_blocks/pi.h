@@ -120,7 +120,7 @@ static inline void runPIPos(PI_CONTROLLER * in)
 	// control output
 	in->v1 = in->up + in->ui;
 	in->Out = __fmax(__fmin(in->v1, in->Umax), in->Umin);
-//	in->w1 = (in->Out == in->v1) ? 1.0 : 0.0;
+	in->w1 = (in->Out == in->v1) ? 1.0 : 0.0;
 }
 
 

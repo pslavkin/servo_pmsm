@@ -45,13 +45,16 @@ void Cmd_writeDsRef  ( uint16_t argc, char *argv[] );
 void Cmd_readIqPid ( uint16_t argc, char *argv[] );
 void Cmd_writeIqPid ( uint16_t argc, char *argv[] );
 
-void Cmd_readSpeedPid  ( uint16_t argc, char *argv[] );
-void Cmd_writeSpeedPid ( uint16_t argc, char *argv[] );
-void Cmd_readPosPid    ( uint16_t argc, char *argv[] );
-void Cmd_writePosPid   ( uint16_t argc, char *argv[] );
-void Cmd_printAbsMech  ( uint16_t argc, char *argv[] );
-void Cmd_printAbs      ( uint16_t argc, char *argv[] );
-void Cmd_setFrec       ( uint16_t argc, char *argv[] );
+void Cmd_readSpeedPid       ( uint16_t argc, char *argv[] );
+void Cmd_writeSpeedPid      ( uint16_t argc, char *argv[] );
+void Cmd_readPosPid         ( uint16_t argc, char *argv[] );
+void Cmd_writePosPid        ( uint16_t argc, char *argv[] );
+void Cmd_printAbsMech       ( uint16_t argc, char *argv[] );
+void Cmd_printAbs           ( uint16_t argc, char *argv[] );
+void Cmd_setFrec            ( uint16_t argc, char *argv[] );
+void Cmd_initSinGenerator   ( uint16_t argc, char *argv[] );
+void Cmd_sinGenerator       ( uint16_t argc, char *argv[] );
+void Cmd_toggleSinGenerator ( uint16_t argc, char *argv[] );
 
 void Cmd_setDirUp   ( uint16_t argc, char *argv[] );
 void Cmd_setDirDown ( uint16_t argc, char *argv[] );
