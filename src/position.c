@@ -8,7 +8,22 @@
 
 #define STEP_ANGLE 0.0002
 
-pos_t pos={CLOCK,0,0,STEP_ANGLE,0,0,0,0.01,0,false,0};
+pos_t pos={
+   .dir          = CLOCK,
+   .abs          = 0,
+   .rel          = 0,
+   .step         = STEP_ANGLE,
+   .absMech      = 0,
+   .absOffset    = 0, 
+   .lastAbsMech  = 0,
+   .frec         = 0.1,
+   .sinOffset    = 0,
+   .sinEnable    = false,
+   .sinAmpWished = 1,
+   .sinAmp       = 1,
+   .t            = 0,
+};
+
 
 void        setPosDir       ( enum POSDIR d  ) { pos.dir=d               ;}
 float32_t   getPosRel       ( void           ) { return pos.rel          ;}
@@ -17,6 +32,13 @@ void        setPosAbs       ( float32_t abs  ) { pos.abs=abs             ;}
 void        setPosStep      ( float32_t step ) { pos.step=step           ;}
 float32_t   getPosStep      ( void           ) { return pos.step         ;}
 void        setPosAbsOffset ( float32_t mech ) { pos.absOffset     = mech;}
+void        setSinAmp       ( float32_t amp  ) 
+{
+   pos.sinAmpWished = amp;
+   if(pos.sinEnable==false)
+      pos.sinAmp = pos.sinAmpWished;
+}
+float32_t   getSinAmp       ( void           ) { return pos.sinAmp       ;}
 void        setPosAbsMech   ( float32_t mech ) {
    pos.absMech     = mech;
    pos.lastAbsMech = mech;
@@ -44,7 +66,14 @@ void normalizeRelPos(float32_t abs)
 
 void toggleSinGenerator(void)
 {
-   pos.sinEnable=pos.sinEnable?false:true;
+   if(pos.sinEnable==false) {
+      pos.t         = 0;
+      pos.sinEnable = true;
+      pos.sinOffset = pos.abs;
+   }
+   else
+      pos.sinEnable = false;
+   sciPrintf("sin generator=%s\r\n",pos.sinEnable?"on":"off");
 }
 void initSinOffset(void)
 {
@@ -56,7 +85,8 @@ void sinPosGenerator(void)
 {
    if(pos.sinEnable==true) {
       pos.t++;
-      pos.abs=sin(2.0*PI*pos.frec*pos.t*T)+pos.sinOffset;
+      pos.sinAmp = ramper(pos.sinAmpWished,pos.sinAmp,0.00001);
+      pos.abs    = pos.sinAmp*sin(2.0*PI*pos.frec*pos.t*T)+pos.sinOffset;
    }
 }
 

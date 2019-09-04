@@ -18,11 +18,13 @@
 #include "schedule.h"
 
 // Flag variables
-uint32_t          isrTicker      = 0    ;
-uint32_t          speedPidTicker = 0    ;
-bool              logEnable      = true;
+uint32_t          isrTicker          = 0    ;
+uint32_t          logTicker          = 0    ;
+bool              logEnable          = false;
+uint16_t          logPrescaler       = 200  ; // Speed loop pre scalar
+uint16_t          logCount           = 1    ; // Speed loop counter
 
-uint16_t          speedLoopPrescaler = 200 ; // Speed loop pre scalar
+uint16_t          speedLoopPrescaler = 10   ; // Speed loop pre scalar
 uint16_t          speedLoopCount     = 1    ; // Speed loop counter
 
 // Variables for Fast Current Loop
@@ -78,35 +80,24 @@ void initFcl(void)/*{{{*/
    rg1.Offset       = 1.0;
 
    // Init FLAGS
-   lsw        = QEP_ALIGNMENT;
-   pi_id.ref = 0;
-   pi_iq.ref = 0;
-   FCL_resetController();
-   readVdc();
-   New_Periodic_Schedule                ( 10,ANY_Event,fcl( ));
-   Update_Or_New_Periodic_Func_Schedule ( 100,readVdc       ) ;
-   // Enable all mapped INTerrupts
-//   EPWM_clearEventTriggerInterruptFlag ( EPWM1_BASE         ); // clear pending INT event
-//   Interrupt_enable                    ( INT_EPWM1          ); // Enable PWM1INT in PIE group 3
-//   Interrupt_enableInCPU               ( INTERRUPT_CPU_INT3 ); // Enable group 3 interrupts - EPWM1 is here
+   lsw = QEP_ALIGNMENT;
+   FCL_resetController   (                   ) ;
+   setFclVdc             (                   ) ; // Measure DC Bus voltage using SDFM Filter3
+   New_Periodic_Schedule ( 10,ANY_Event,fcl( ));
 }/*}}}*/
 // print log
 void logPrint(void)/*{{{*/
 {
    if (logEnable==true) {
-      if(++speedLoopCount >= speedLoopPrescaler) {
-         speedLoopCount    = 0;
-//   sciPrintf("ref=%f\r\n",pi_pos.Ref);
-//   sciPrintf("fbk=%f\r\n",pi_pos.Fbk);
-//   sciPrintf("abs=%f\r\n",getPosAbsMech());
-//   sciPrintf("mec=%f\r\n",qep1MechTheta());
-         speedPidTicker++;
-   //      sciPrintf("%i %f %f %f %f\r\n",speedPidTicker,
-   //            pi_iq.fbk,
-   //            speed1.Speed,
-   //            pi_pos.Fbk,
-   //            getPosAbs()
-   //            );
+      if(++logCount >= logPrescaler) {
+         logCount    = 0;
+         logTicker++;
+         sciPrintf("%i %f %f %f %f\r\n",logTicker,
+               pi_iq.fbk,
+               speed1.Speed,
+               pi_pos.Fbk,
+               getPosAbs()
+               );
       }
    }
 }/*}}}*/
@@ -114,22 +105,13 @@ void logPrint(void)/*{{{*/
 __interrupt void motorControlISR(void)/*{{{*/
 {
    FCL_runPICtrl     (                ) ;
+   setFclVdc         (                ) ; // Measure DC Bus voltage using SDFM Filter3
    FCL_runPICtrlWrap (                ) ; // Fast current loop controller wrapper
    addPosAbsMech     ( qep1MechTheta( ));
    isrSm             (                ) ;
-
    EPWM_clearEventTriggerInterruptFlag(EPWM1_BASE);
-
-   // clear ADCINT1 INT and ack PIE INT
    ADC_clearInterruptStatus(ADCA_BASE, ADC_INT_NUMBER1);
-
-   // ACK PIE for CLA INT GROUP
-   // FCL is not clearing the ACK bit for CLA group
-   // because the example might have other CLA Tasks
-
-   // ACK the PWM, ADC and CLA interrupts
    Interrupt_clearACKGroup(INTERRUPT_ACK_GROUP3 | INTERRUPT_ACK_GROUP11);
-
    isrTicker++;
 
 } // motorControlISR Ends Here}}}
@@ -157,15 +139,18 @@ void runIsr(void)/*{{{*/
    speed1.ElecTheta = qep1ElecTheta();
    runSpeedFR(&speed1);
 
-   pi_pos.Ref = getPosAbs();
-   pi_pos.Fbk = getPosAbsMech();
-   runPIPos(&pi_pos);
+   if (++speedLoopCount >= speedLoopPrescaler)
+   {
+      speedLoopCount = 1;
+      pi_pos.Ref = getPosAbs();
+      pi_pos.Fbk = getPosAbsMech();
+      runPIPos(&pi_pos);
 
-   // speed PI regulator
-   pid_spd.term.Ref = pi_pos.Out;
-   pid_spd.term.Fbk = speed1.Speed;
-   runPID(&pid_spd);
-   pi_iq.ref        = pid_spd.term.Out;
+      pid_spd.term.Ref = pi_pos.Out;
+      pid_spd.term.Fbk = speed1.Speed;
+      runPID(&pid_spd);
+      pi_iq.ref        = pid_spd.term.Out;
+   }
 
    sinPosGenerator();
    logPrint();
@@ -190,7 +175,7 @@ void sendOvercurrentClearedEvent ( void ) { atomicSendEvent(overcurrentClearedEv
 
 void align(void)
 {
-   //FCL_resetController();
+   FCL_resetController();
    lsw       = QEP_ALIGNMENT;
    alignCntr = 0;
    pi_id.ref = 0;
@@ -210,7 +195,6 @@ void stop(void)
 }
 void run(void)
 {
-   //FCL_resetController();
    setPosAbs       ( getPosAbsMech()); //la referencia
    setPosAbsMech   ( getPosAbsMech()); //no deberia ser necesario, pero lo es.. TODO 
    setPosAbsOffset ( getPosAbsMech()); //este si se necesita

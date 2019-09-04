@@ -16,6 +16,8 @@ typedef struct pos_struct {
    float32_t    frec;
    float32_t    sinOffset;
    float32_t    sinEnable;
+   float32_t    sinAmpWished;
+   float32_t    sinAmp;
    uint32_t     t;
 } pos_t;
 
@@ -37,6 +39,8 @@ float32_t   getPosFrec         ( void           );
 void        setPosAbsOffset    ( float32_t mech );
 float32_t   getPost            ( void           );
 void        toggleSinGenerator ( void           );
+void        setSinAmp          ( float32_t amp  );
+float32_t   getSinAmp          ( void           );
 
 
 #endif

@@ -15,6 +15,7 @@
 #include "schedule.h"
 #include "position.h"
 #include "overcurrent.h"
+#include "linevoltage.h"
 
 tCmdLineEntry Login_Cmd_Table    [ ];
 tCmdLineEntry iqPidCmdTable      [ ];
@@ -100,17 +101,18 @@ void Cmd_writeSpeedPid(uint16_t argc, char *argv[])
 //--------------------------------------------------------------------------------
 tCmdLineEntry posPidCmdTable[] =/*{{{*/
 {
-   { "r" ,Cmd_readPosPid       ,": read pos PID "          },
-   { "w" ,Cmd_writePosPid      ,": write pos PID "         },
-   { "a" ,Cmd_printAbs         ,": print abs pos "         },
-   { "m" ,Cmd_printAbsMech     ,": print abs mech pos "    },
-   { "f" ,Cmd_setFrec          ,": set frec pos generator" },
-   { "s" ,Cmd_sinGenerator     ,": send sinc generator"    },
-   { "i" ,Cmd_initSinGenerator ,": set sin center"         },
-   { "t" ,Cmd_toggleSinGenerator ,": enable/disable sin"         },
-   { "<" ,Cmd_back2login       ,": back to login table"    },
-   { "?" ,Cmd_Help             ,": help"                   },
-   { 0   ,0                    ,0                          }
+   { "r"   ,Cmd_readPosPid         ,": read pos PID "          } ,
+   { "w"   ,Cmd_writePosPid        ,": write pos PID "         } ,
+   { "a"   ,Cmd_printAbs           ,": print abs pos "         } ,
+   { "m"   ,Cmd_printAbsMech       ,": print abs mech pos "    } ,
+   { "f"   ,Cmd_setFrec            ,": set frec pos generator" } ,
+   { "s"   ,Cmd_sinGenerator       ,": send sinc generator"    } ,
+   { "i"   ,Cmd_initSinGenerator   ,": set sin center"         } ,
+   { "t"   ,Cmd_toggleSinGenerator ,": enable/disable sin"     } ,
+   { "amp" ,Cmd_setSinAmp          ,": sin amplitude"          } ,
+   { "<"   ,Cmd_back2login         ,": back to login table"    } ,
+   { "?"   ,Cmd_Help               ,": help"                   } ,
+   { 0     ,0                      ,0                          }
 };
 void Cmd_readPosPid(uint16_t argc, char *argv[])
 {
@@ -137,18 +139,14 @@ void Cmd_setFrec(uint16_t argc, char *argv[])
       setPosFrec(atof(argv[1]));
    sciPrintf("pos generator Frec=%f\r\n",getPosFrec());
 }
-void Cmd_initSinGenerator(uint16_t argc, char *argv[])
+void Cmd_initSinGenerator   ( uint16_t argc, char *argv[] ) { initSinOffset()     ;}
+void Cmd_toggleSinGenerator ( uint16_t argc, char *argv[] ) { toggleSinGenerator();}
+void Cmd_sinGenerator       ( uint16_t argc, char *argv[] ) { sinPosGenerator()   ;}
+void Cmd_setSinAmp(uint16_t argc, char *argv[])
 {
-   initSinOffset();
-}
-void Cmd_toggleSinGenerator(uint16_t argc, char *argv[])
-{
-   toggleSinGenerator();
-}
-void Cmd_sinGenerator(uint16_t argc, char *argv[])
-{
-   sinPosGenerator();
-   sciPrintf("sin generator t=%f\r\n",getPost());
+   if(argc>1)
+      setSinAmp(atof(argv[1]));
+   sciPrintf("sin amplitude=%f\r\n",getSinAmp());
 }
 /*}}}*/
 //--------------------------------------------------------------------------------
@@ -191,6 +189,7 @@ tCmdLineEntry overcurrentCmdTable[] =/*{{{*/
 {
    { "o" ,Cmd_setOvercurrent   ,": set overcurrent"     },
    { "b" ,Cmd_resetOvercurrent ,": reset overcurrent"   },
+   { "v" ,Cmd_getVdc           ,": read actual VDC"     },
    { "<" ,Cmd_back2login       ,": back to login table" },
    { "?" ,Cmd_Help             ,": help"                },
    { 0   ,0                    ,0                       }
@@ -204,6 +203,10 @@ void Cmd_setOvercurrent(uint16_t argc, char *argv[])
 void Cmd_resetOvercurrent(uint16_t argc, char *argv[])
 {
    sciPrintf("reseting overcurrent\r\n");
+}
+void Cmd_getVdc(uint16_t argc, char *argv[])
+{
+   sciPrintf("actual vdc=%f\r\n",readFclVdc());
 }
 /*}}}*/
 //--------------------------------------------------------------------------------

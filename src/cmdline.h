@@ -55,6 +55,7 @@ void Cmd_setFrec            ( uint16_t argc, char *argv[] );
 void Cmd_initSinGenerator   ( uint16_t argc, char *argv[] );
 void Cmd_sinGenerator       ( uint16_t argc, char *argv[] );
 void Cmd_toggleSinGenerator ( uint16_t argc, char *argv[] );
+void Cmd_setSinAmp          ( uint16_t argc, char *argv[] );
 
 void Cmd_setDirUp   ( uint16_t argc, char *argv[] );
 void Cmd_setDirDown ( uint16_t argc, char *argv[] );
@@ -66,6 +67,7 @@ void Cmd_logOff ( uint16_t argc, char *argv[] );
 
 void Cmd_setOvercurrent   ( uint16_t argc, char *argv[] );
 void Cmd_resetOvercurrent ( uint16_t argc, char *argv[] );
+void Cmd_getVdc           ( uint16_t argc, char *argv[] );
 
 void Cmd_runFcl  ( uint16_t argc, char *argv[] );
 void Cmd_stopFcl ( uint16_t argc, char *argv[] );

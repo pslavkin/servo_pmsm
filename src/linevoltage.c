@@ -9,11 +9,8 @@
 #include "fcl.h"
 
 
-void readVdc(void)/*{{{*/
-{
-   FCL_params.Vdcbus = getVdc(); // Measure DC Bus voltage using SDFM Filter3
-}/*}}}*/
-// Read and update DC BUS voltage for FCL to use
+void        setFclVdc  ( void ) { FCL_params.Vdcbus = getVdc();}
+float32_t   readFclVdc ( void ) { return FCL_params.Vdcbus    ;}
 float32_t getVdc(void)/*{{{*/
 {
     float32_t vdc;
