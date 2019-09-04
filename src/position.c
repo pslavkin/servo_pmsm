@@ -21,6 +21,7 @@ pos_t pos={
    .sinEnable    = false,
    .sinAmpWished = 1,
    .sinAmp       = 1,
+   .wave         = SIN,
    .t            = 0,
 };
 
@@ -81,12 +82,24 @@ void initSinOffset(void)
    pos.t         = 0;
 }
 
+void setWave(enum WAVE w)
+{
+   pos.wave=w;
+}
+
 void sinPosGenerator(void)
 {
    if(pos.sinEnable==true) {
       pos.t++;
       pos.sinAmp = ramper(pos.sinAmpWished,pos.sinAmp,0.00001);
-      pos.abs    = pos.sinAmp*sin(2.0*PI*pos.frec*pos.t*T)+pos.sinOffset;
+      switch (pos.wave) {
+         case SIN:
+            pos.abs    = pos.sinAmp*sin(2.0*PI*pos.frec*pos.t*T)+pos.sinOffset;
+            break;
+         case STEP:
+            pos.abs    = pos.sinAmp*((int32_t)(pos.frec*pos.t*T)%2-1) +pos.sinOffset;
+            break;
+      }
    }
 }
 

@@ -54,6 +54,7 @@ void Cmd_printAbs           ( uint16_t argc, char *argv[] );
 void Cmd_setFrec            ( uint16_t argc, char *argv[] );
 void Cmd_initSinGenerator   ( uint16_t argc, char *argv[] );
 void Cmd_sinGenerator       ( uint16_t argc, char *argv[] );
+void Cmd_stepGenerator      ( uint16_t argc, char *argv[] );
 void Cmd_toggleSinGenerator ( uint16_t argc, char *argv[] );
 void Cmd_setSinAmp          ( uint16_t argc, char *argv[] );
 

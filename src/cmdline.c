@@ -101,18 +101,19 @@ void Cmd_writeSpeedPid(uint16_t argc, char *argv[])
 //--------------------------------------------------------------------------------
 tCmdLineEntry posPidCmdTable[] =/*{{{*/
 {
-   { "r"   ,Cmd_readPosPid         ,": read pos PID "          } ,
-   { "w"   ,Cmd_writePosPid        ,": write pos PID "         } ,
-   { "a"   ,Cmd_printAbs           ,": print abs pos "         } ,
-   { "m"   ,Cmd_printAbsMech       ,": print abs mech pos "    } ,
-   { "f"   ,Cmd_setFrec            ,": set frec pos generator" } ,
-   { "s"   ,Cmd_sinGenerator       ,": send sinc generator"    } ,
-   { "i"   ,Cmd_initSinGenerator   ,": set sin center"         } ,
-   { "t"   ,Cmd_toggleSinGenerator ,": enable/disable sin"     } ,
-   { "amp" ,Cmd_setSinAmp          ,": sin amplitude"          } ,
-   { "<"   ,Cmd_back2login         ,": back to login table"    } ,
-   { "?"   ,Cmd_Help               ,": help"                   } ,
-   { 0     ,0                      ,0                          }
+   { "r"    ,Cmd_readPosPid         ,": read pos PID "          },
+   { "w"    ,Cmd_writePosPid        ,": write pos PID "         },
+   { "a"    ,Cmd_printAbs           ,": print abs pos "         },
+   { "m"    ,Cmd_printAbsMech       ,": print abs mech pos "    },
+   { "f"    ,Cmd_setFrec            ,": set frec pos generator" },
+   { "sin"  ,Cmd_sinGenerator       ,": set sin generator"      },
+   { "step" ,Cmd_stepGenerator      ,": set step generator"     },
+   { "i"    ,Cmd_initSinGenerator   ,": set sin center"         },
+   { "t"    ,Cmd_toggleSinGenerator ,": enable/disable sin"     },
+   { "amp"  ,Cmd_setSinAmp          ,": sin amplitude"          },
+   { "<"    ,Cmd_back2login         ,": back to login table"    },
+   { "?"    ,Cmd_Help               ,": help"                   },
+   { 0      ,0                      ,0                          }
 };
 void Cmd_readPosPid(uint16_t argc, char *argv[])
 {
@@ -141,7 +142,16 @@ void Cmd_setFrec(uint16_t argc, char *argv[])
 }
 void Cmd_initSinGenerator   ( uint16_t argc, char *argv[] ) { initSinOffset()     ;}
 void Cmd_toggleSinGenerator ( uint16_t argc, char *argv[] ) { toggleSinGenerator();}
-void Cmd_sinGenerator       ( uint16_t argc, char *argv[] ) { sinPosGenerator()   ;}
+void Cmd_sinGenerator       ( uint16_t argc, char *argv[] ) 
+{
+   setWave(SIN);
+   sciPrintf("wave sin\r\n");
+}
+void Cmd_stepGenerator      ( uint16_t argc, char *argv[] ) 
+{
+   setWave(STEP);
+   sciPrintf("wave step\r\n");
+}
 void Cmd_setSinAmp(uint16_t argc, char *argv[])
 {
    if(argc>1)
