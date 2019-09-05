@@ -2,10 +2,7 @@
 
 > development of a customized high precision microcontrolled permament magnet embedded servo motor
 
-<a href="https://github.com/pslavkin/servo_pmsm"><img src="doc/pics/TMDXIDDK379D.jpeg" title="servo pmsm"  width="400" height="200" alt="TMDXIDDK379D"></a>
-<a href="https://github.com/pslavkin/servo_pmsm"><img src="doc/pics/controlcard.jpeg"  title="controlcard" width="200" height="150" alt="controlcard"></a>
-<a href="https://github.com/pslavkin/servo_pmsm"><img src="doc/pics/launchpad.jpeg"    title="launchpad"   width="200" height="150" alt="launchpad"></a>
-<img src="doc/pics/lab1.jpg"    width="300" height="200"/>
+<img src = "doc/pics/TMDXIDDK379D.jpeg" width = "400" height = "200"/> <img src = "doc/pics/controlcard.jpeg"  width = "200" height = "150"/> <img src = "doc/pics/launchpad.jpeg"    width = "200" height = "150"/> <img src = "doc/pics/lab1.jpg"          width = "300" height = "200"/>
 ---
 ## Progress
 <!--- 

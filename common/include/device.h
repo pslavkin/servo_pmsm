@@ -65,8 +65,10 @@ a single CPU should be defined."
 //
 #define DEVICE_GPIO_PIN_LED1        31U  // GPIO number for LD2
 #define DEVICE_GPIO_PIN_LED2        34U  // GPIO number for LD3
+#define DEVICE_GPIO_PIN_LED45       45U  // GPIO number for LD45
 #define DEVICE_GPIO_CFG_LED1        GPIO_31_GPIO31  // "pinConfig" for LD2
 #define DEVICE_GPIO_CFG_LED2        GPIO_34_GPIO34  // "pinConfig" for LD3
+#define DEVICE_GPIO_CFG_LED45       GPIO_45_GPIO45  // "pinConfig" for LD45
 
 //
 // SCI for USB-to-UART adapter on FTDI chip
@@ -196,10 +198,3 @@ extern void Device_enableUnbondedGPIOPullupsFor176Pin(void);
 extern void Device_enableUnbondedGPIOPullupsFor100Pin(void);
 extern void Device_enableUnbondedGPIOPullups(void);
 extern void __error__(char *filename, uint32_t line);
-extern void Example_setResultPass(void);
-extern void Example_setResultFail(void);
-extern void Example_done(void);
-
-//
-// End of file
-//

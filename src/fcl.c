@@ -17,9 +17,8 @@
 #include "position.h"
 #include "wave.h"
 #include "log.h"
+#include "leds.h"
 #include "schedule.h"/*}}}*/
-// Flag variables{{{
-uint32_t          isrTicker          = 0    ;
 
 uint16_t          speedLoopPrescaler = 10   ; // Speed loop pre scalar
 uint16_t          speedLoopCount     = 1    ; // Speed loop counter
@@ -75,23 +74,23 @@ void initFcl(void)/*{{{*/
    // Init FLAGS
    lsw = QEP_ALIGNMENT;
    FCL_resetController   (                   ) ;
-   setFclVdc             (                   ) ; // Measure DC Bus voltage using SDFM Filter3
+   getVdc                (                   ) ; // Measure DC Bus voltage using SDFM Filter3
    New_Periodic_Schedule ( 10,ANY_Event,fcl( ));
 }/*}}}*/
 // Motor Control ISR
 __interrupt void motorControlISR(void)/*{{{*/
 {
-   FCL_runPICtrl     (                ) ;
-   setFclVdc         (                ) ; // Measure DC Bus voltage using SDFM Filter3
-   FCL_runPICtrlWrap (                ) ; // Fast current loop controller wrapper
-   addPosAbsMech     ( qep1MechTheta( ));
-   isrSm             (                ) ;
-   EPWM_clearEventTriggerInterruptFlag(EPWM1_BASE);
-   ADC_clearInterruptStatus(ADCA_BASE, ADC_INT_NUMBER1);
-   Interrupt_clearACKGroup(INTERRUPT_ACK_GROUP3 | INTERRUPT_ACK_GROUP11);
-   isrTicker++;
-
-} // motorControlISR Ends Here}}}
+   led45On(); //debug
+      FCL_runPICtrl     (                ) ;
+      getVdc            (                ) ; // Measure DC Bus voltage using SDFM Filter3
+      FCL_runPICtrlWrap (                ) ; // Fast current loop controller wrapper
+      addPosAbsMech     ( qep1MechTheta( ));
+      isrSm             (                ) ;
+      EPWM_clearEventTriggerInterruptFlag ( EPWM1_BASE                                   );
+      ADC_clearInterruptStatus            ( ADCA_BASE, ADC_INT_NUMBER1                   );
+      Interrupt_clearACKGroup             ( INTERRUPT_ACK_GROUP3 | INTERRUPT_ACK_GROUP11 );
+   led45Off(); //debug
+}/*}}}*/
 // stop 
 void stopIsr(void)/*{{{*/
 {
@@ -125,11 +124,10 @@ void runIsr(void)/*{{{*/
       runPIPos(&pi_pos);
 
       pid_spd.term.Ref = pi_pos.Out;
-      pid_spd.term.Fbk = speed1.Speed;
+      pid_spd.term.Fbk = getSpeed1Speed();
       runPID(&pid_spd);
       pi_iq.ref        = pid_spd.term.Out;
    }
-
    waveGenerator();
    sendPrintLogEvent();
 }/*}}}*/

@@ -38,8 +38,8 @@ const State**  everythings    ( void )
 }
 void Init_everythings(void)
 {
-   initLeds      ( );
-   initParser    ( );
+   initLeds        ( );
+   initParser      ( );
    Init_Schedule   ( );
    initOvercurrent ( ); // overcurren protection
    initPwm         ( ); // PWM Configuration
@@ -53,7 +53,7 @@ const State idle1 [ ] =
 };
 const State idle2 [ ] =
 {
-    ANY_Event , Rien ,idle3  ,
+    ANY_Event ,Rien           ,idle3  ,
 };
 const State idle3 [ ] =
 {
@@ -65,8 +65,7 @@ const State idle4 [ ] =
 };
 const State idle5 [ ] =
 {
-    ANY_Event ,Rien  ,idle6  ,
-//    ANY_Event ,speedFastCalc  ,idle6  ,
+    ANY_Event ,Rien           ,idle6  ,
 };
 const State idle6 [ ] =
 {

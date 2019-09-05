@@ -8,7 +8,6 @@
 #include "wave.h"
 #include "eqep_.h"
 
-
 wave_t wave={
    .dir       = CLOCK,
    .stepAngle = 0.0002,
@@ -42,7 +41,6 @@ void        setWaveFrec ( float32_t f )
    wave.frec = f;
 }
 float32_t   getWaveFrec    ( void        ) { return wave.frec   ;}
-
 
 void enableWave(void)
 {

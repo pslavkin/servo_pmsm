@@ -14,11 +14,7 @@ QEP             qep1;
 // Variables for Position Sensor Suite
 float32_t posEncElecTheta[6] = {0};
 float32_t posEncMechTheta[6] = {0};
-bool      qepSimEnable       = false;
 
-
-bool getQepSimEnable ( void   ) { return qepSimEnable;}
-void setQepSimEnable ( bool e ) { qepSimEnable=e     ;}
 
 // Instance a speed measurement calc
 #ifdef FCL_LIB
@@ -95,7 +91,4 @@ void initQep(void)/*{{{*/
    return;
 }/*}}}*/
 
-float32     qep1ElecTheta  ( void ) { return qep1.ElecTheta;}
-float32     qep1MechTheta  ( void ) { return qep1.MechTheta;}
-float32_t   getSpeed1Speed ( void ) { return speed1.Speed  ;}
 
