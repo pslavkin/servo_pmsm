@@ -222,11 +222,12 @@ void Cmd_getVdc(uint16_t argc, char *argv[])
 //--------------------------------------------------------------------------------
 tCmdLineEntry fclCmdTable[] =/*{{{*/
 {
-   { "r" ,Cmd_runFcl     ,": run motor"           },
-   { "s" ,Cmd_stopFcl    ,": stop motor"          },
-   { "<" ,Cmd_back2login ,": back to login table" },
-   { "?" ,Cmd_Help       ,": help"                },
-   { 0   ,0              ,0                       }
+   { "r"   ,Cmd_runFcl     ,": run motor"                         },
+   { "s"   ,Cmd_stopFcl    ,": stop motor"                        },
+   { "sim" ,Cmd_setQepSim  ,": set qep simulation 1=true 0=false" },
+   { "<"   ,Cmd_back2login ,": back to login table"               },
+   { "?"   ,Cmd_Help       ,": help"                              },
+   { 0     ,0              ,0                                     }
 };
 void Cmd_runFcl(uint16_t argc, char *argv[])
 {
@@ -235,6 +236,12 @@ void Cmd_runFcl(uint16_t argc, char *argv[])
 void Cmd_stopFcl(uint16_t argc, char *argv[])
 {
    sendStopEvent();
+}
+void Cmd_setQepSim(uint16_t argc, char *argv[])
+{
+   if(argc>1)
+      setQepSimEnable(atoi(argv[1])!=0?true:false);
+   sciPrintf("qep simulation=%s\r\n",getQepSimEnable()?"on":"off");
 }
 /*}}}*/
 //--------------------------------------------------------------------------------

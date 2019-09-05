@@ -92,7 +92,7 @@ void logPrint(void)/*{{{*/
       if(++logCount >= logPrescaler) {
          logCount    = 0;
          logTicker++;
-         sciPrintf("%i %f %f %f %f\r\n",logTicker,
+         sciPrintf("%i %f %f %f %f\r\n",T*logTicker,
                pi_iq.fbk,
                speed1.Speed,
                pi_pos.Fbk,
@@ -213,7 +213,7 @@ void overCurrent(void)
 //----------------------------------------------------------------------------------------------------
 const State stopped       [ ] =
 {
-    runEvent                ,currentCalibrate ,adcCalibrating ,
+    runEvent                ,sendCalibEvent   ,adcCalibrating ,
     ANY_Event               ,Rien             ,stopped        ,
 };
 const State adcCalibrating[ ] =

@@ -5,6 +5,7 @@
 #include "adc.h"
 #include "ramper_.h"
 #include "position.h"
+#include "eqep_.h"
 
 #define STEP_ANGLE 0.0002
 
@@ -105,12 +106,16 @@ void sinPosGenerator(void)
 
 void addPosAbsMech ( float32_t mech )
 {
-   float32_t diff;
-   mech += pos.absOffset;
-   diff  = mech-pos.lastAbsMech;
-   if(diff<-0.5) diff=1.0+diff;
-   else if(diff> 0.5) diff=diff-1.0;
-   pos.lastAbsMech  = mech;
-   pos.absMech     += diff;
+   if(getQepSimEnable()==false) {
+      float32_t diff;
+      mech += pos.absOffset;
+      diff  = mech-pos.lastAbsMech;
+      if(diff<-0.5) diff=1.0+diff;
+      else if(diff> 0.5) diff=diff-1.0;
+      pos.lastAbsMech  = mech;
+      pos.absMech     += diff;
+   }
+   else
+      pos.absMech = getPosAbs();
 }
 

@@ -7,12 +7,18 @@
 #include "qep_defs.h"
 #include "speed_fr.h"
 #include "eqep_.h"
+#include "position.h"
 
 #pragma DATA_SECTION(qep1,    "ClaData");
 QEP             qep1;
 // Variables for Position Sensor Suite
 float32_t posEncElecTheta[6] = {0};
 float32_t posEncMechTheta[6] = {0};
+bool qepSimEnable=false;
+
+
+bool getQepSimEnable ( void   ) { return qepSimEnable;}
+void setQepSimEnable ( bool e ) { qepSimEnable=e     ;}
 
 // Instance a speed measurement calc
 #ifdef FCL_LIB
@@ -91,3 +97,4 @@ void initQep(void)/*{{{*/
 
 float32 qep1ElecTheta ( void ) { return qep1.ElecTheta;}
 float32 qep1MechTheta ( void ) { return qep1.MechTheta;}
+

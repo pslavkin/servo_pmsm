@@ -4,10 +4,26 @@
 #include "scia.h"
 #include "adc.h"
 #include "adc_.h"
+#include "events.h"
+#include "sm.h"
 
 extern void F28x_usDelay(long LoopCount);
-
 uint32_t adcHandle[4] = {ADCA_BASE, ADCB_BASE, ADCC_BASE, ADCD_BASE };
+// Variables for current measurement
+// Offset calibration routine is run to calibrate for any offsets on the opamps
+float32_t            offset_lemV      = 0;        // offset in LEM current V fbk channel @ 0A
+float32_t            offset_lemW      = 0;        // offset in LEM current W fbk channel @ 0A
+float32_t            K1               = 0.998;    // Offset filter coefficient K1: 0.05/(T+0.05);
+float32_t            K2               = 0.001999; // Offset filter coefficient K2: T/(T+0.05);
+uint16_t             offsetCalCounter = 0;
+
+const State
+   uncalib    [ ],
+   calibrating[ ],
+   calibrated [ ];
+
+const State*   adcSm=uncalib;
+const State**  adc ( void ) { return &adcSm; }
 
 // Configure ADC
 void initAdc()/*{{{*/
@@ -96,21 +112,17 @@ void initAdc()/*{{{*/
    DEVICE_DELAY_US ( 100L ); //hay que esperar un cacho.. no se porque, pero si no pum.. TODO
    return;
 }/*}}}*/
-void currentCalibrate(void)/*{{{*/
+void initCurrentCalibrate(void)/*{{{*/
 {
    sciPrintf("begin adc calib\r\n");
-   // Variables for current measurement
-   // Offset calibration routine is run to calibrate for any offsets on the opamps
-   float32_t            offset_lemV      = 0;        // offset in LEM current V fbk channel @ 0A
-   float32_t            offset_lemW      = 0;        // offset in LEM current W fbk channel @ 0A
-   float32_t            K1               = 0.998;    // Offset filter coefficient K1: 0.05/(T+0.05);
-   float32_t            K2               = 0.001999; // Offset filter coefficient K2: T/(T+0.05);
-   uint16_t             offsetCalCounter = 0;
-   // Feedbacks OFFSET Calibration Routine
-   offset_lemW  = 0;
-   offset_lemV  = 0;
-
-   for(offsetCalCounter=0; offsetCalCounter < 20000; ) {
+   offset_lemW      = 0;
+   offset_lemV      = 0;
+   offsetCalCounter = 0;
+   sendNextTryEvent();
+}/*}}}*/
+void currentCalibrate(void)/*{{{*/
+{
+   if ( offsetCalCounter < 20000 ) {
       EPWM_clearEventTriggerInterruptFlag(EPWM11_BASE);
       while(EPWM_getEventTriggerInterruptStatus(EPWM11_BASE) == false)
          ;
@@ -119,7 +131,13 @@ void currentCalibrate(void)/*{{{*/
          offset_lemW  = K1*offset_lemW + K2*(IFB_LEMW)*ADC_PU_SCALE_FACTOR;
       }
       offsetCalCounter++;
+      sendNextTryEvent();
    }
+   else
+      sendCalibFinishedEvent();
+}/*}}}*/
+void calibFinished(void)/*{{{*/
+{
    // Init OFFSET regs with identified values
    // setting LEM Iv offset
    ADC_setPPBReferenceOffset(ADCA_BASE, ADC_PPB_NUMBER1, (uint16_t)(offset_lemV*4096.0));
@@ -129,3 +147,23 @@ void currentCalibrate(void)/*{{{*/
    sendAdcCalibEndEvent();
 }/*}}}*/
 
+void sendCalibEvent         ( void ) { atomicSendEvent(calibEvent         ,adc());}
+void sendNextTryEvent       ( void ) { atomicSendEvent(nextTryEvent       ,adc());}
+void sendCalibFinishedEvent ( void ) { atomicSendEvent(calibFinishedEvent ,adc());}
+//----------------------------------------------------------------------------------------------------
+const State uncalib    [ ] =
+{
+    calibEvent         ,initCurrentCalibrate ,calibrating ,
+    ANY_Event          ,Rien                 ,uncalib     ,
+};
+const State calibrating[ ] =
+{
+    nextTryEvent       ,currentCalibrate     ,calibrating ,
+    calibFinishedEvent ,calibFinished        ,calibrated  ,
+    ANY_Event          ,Rien                 ,calibrating ,
+};
+const State calibrated [ ] =
+{
+    calibEvent         ,initCurrentCalibrate ,calibrating ,
+    ANY_Event          ,Rien                 ,calibrated  ,
+};

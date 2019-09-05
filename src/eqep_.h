@@ -8,8 +8,10 @@
 extern QEP             qep1;
 extern SPEED_MEAS_QEP  speed1;
 
-void     initQep       ( void );
-float32  qep1ElecTheta ( void );
-float32  qep1MechTheta ( void );
+void     initQep         ( void   );
+float32  qep1ElecTheta   ( void   );
+float32  qep1MechTheta   ( void   );
+void     setQepSimEnable ( bool e );
+bool     getQepSimEnable ( void   );
 
 #endif
