@@ -1,4 +1,4 @@
-#include "../lib/fcl/include/fcl_cpu_cla.h"
+#include "../lib/fcl/include/fcl_cpu_cla.h"/*{{{*/
 #include "fcl.h"
 #include "scia.h"
 #include "linevoltage.h"
@@ -15,14 +15,11 @@
 #include "pid_.h"
 #include "ramper_.h"
 #include "position.h"
-#include "schedule.h"
-
-// Flag variables
+#include "wave.h"
+#include "log.h"
+#include "schedule.h"/*}}}*/
+// Flag variables{{{
 uint32_t          isrTicker          = 0    ;
-uint32_t          logTicker          = 0    ;
-bool              logEnable          = false;
-uint16_t          logPrescaler       = 200  ; // Speed loop pre scalar
-uint16_t          logCount           = 1    ; // Speed loop counter
 
 uint16_t          speedLoopPrescaler = 10   ; // Speed loop pre scalar
 uint16_t          speedLoopCount     = 1    ; // Speed loop counter
@@ -35,11 +32,7 @@ float32_t            IdRef_start     = 0.1  ;
 
 // Instance a ramp controller to smoothly ramp the frequency
 RMPCNTL rc1 = RMPCNTL_DEFAULTS;
-
-
-void ( *isrSm )(void)=stopIsr;
-void setLog ( bool state ) { logEnable=state;}
-
+void ( *isrSm )(void)=stopIsr;/*}}}*/
 //Function that initializes the variables for Fast current Loop library
 void initFCLVars()/*{{{*/
 {
@@ -85,22 +78,6 @@ void initFcl(void)/*{{{*/
    setFclVdc             (                   ) ; // Measure DC Bus voltage using SDFM Filter3
    New_Periodic_Schedule ( 10,ANY_Event,fcl( ));
 }/*}}}*/
-// print log
-void logPrint(void)/*{{{*/
-{
-   if (logEnable==true) {
-      if(++logCount >= logPrescaler) {
-         logCount    = 0;
-         logTicker++;
-         sciPrintf("%i %f %f %f %f\r\n",T*logTicker,
-               pi_iq.fbk,
-               speed1.Speed,
-               pi_pos.Fbk,
-               getPosAbs()
-               );
-      }
-   }
-}/*}}}*/
 // Motor Control ISR
 __interrupt void motorControlISR(void)/*{{{*/
 {
@@ -118,7 +95,7 @@ __interrupt void motorControlISR(void)/*{{{*/
 // stop 
 void stopIsr(void)/*{{{*/
 {
-   logPrint();
+   sendPrintLogEvent();
 }/*}}}*/
 // electrical align
 void alignIsr(void)/*{{{*/
@@ -127,11 +104,12 @@ void alignIsr(void)/*{{{*/
       if(++alignCntr >= alignCnt) {
          lsw             = QEP_GOT_INDEX;
          initPid();
-         atomicSendEvent(alignEndEvent,fcl());
+         sendEvent(alignEndEvent,fcl());
       }
    }
    else
       pi_id.ref = ramper ( IdRef_start, pi_id.ref, 0.00001 );
+   sendPrintLogEvent();
 }/*}}}*/
 // running
 void runIsr(void)/*{{{*/
@@ -152,10 +130,9 @@ void runIsr(void)/*{{{*/
       pi_iq.ref        = pid_spd.term.Out;
    }
 
-   sinPosGenerator();
-   logPrint();
+   waveGenerator();
+   sendPrintLogEvent();
 }/*}}}*/
-
 //----------------------------------------------------------------------------------------
 const State
    stopped       [ ],
@@ -173,7 +150,7 @@ void sendAdcCalibEndEvent        ( void ) { atomicSendEvent(adcCalibEndEvent ,fc
 void sendOvercurrentEvent        ( void ) { atomicSendEvent(overcurrentEvent ,fcl())       ;}
 void sendOvercurrentClearedEvent ( void ) { atomicSendEvent(overcurrentClearedEvent ,fcl());}
 
-void align(void)
+void align(void)/*{{{*/
 {
    FCL_resetController();
    lsw       = QEP_ALIGNMENT;
@@ -209,32 +186,32 @@ void overCurrent(void)
    pi_iq.ref       = 0;
    isrSm     = stopIsr;
    sciPrintf("overcurrent\r\n");
-}
+}/*}}}*/
 //----------------------------------------------------------------------------------------------------
 const State stopped       [ ] =
 {
-    runEvent                ,sendCalibEvent   ,adcCalibrating ,
-    ANY_Event               ,Rien             ,stopped        ,
+    runEvent                ,sendCalibEvent ,adcCalibrating ,
+    ANY_Event               ,Rien           ,stopped        ,
 };
 const State adcCalibrating[ ] =
 {
-    adcCalibEndEvent        ,align            ,aligning       ,
-    ANY_Event               ,Rien             ,adcCalibrating ,
+    adcCalibEndEvent        ,align          ,aligning       ,
+    ANY_Event               ,Rien           ,adcCalibrating ,
 };
 const State aligning      [ ] =
 {
-    alignEndEvent           ,run              ,running        ,
-    ANY_Event               ,Rien             ,aligning       ,
+    alignEndEvent           ,run            ,running        ,
+    ANY_Event               ,Rien           ,aligning       ,
 };
 const State running       [ ] =
 {
-    overcurrentEvent        ,overCurrent      ,overCurrenting ,
-    stopEvent               ,stop             ,stopped        ,
-    ANY_Event               ,Rien             ,running        ,
+    overcurrentEvent        ,overCurrent    ,overCurrenting ,
+    stopEvent               ,stop           ,stopped        ,
+    ANY_Event               ,Rien           ,running        ,
 };
 const State overCurrenting[ ] =
 {
-    overcurrentEvent        ,overCurrent      ,overCurrenting ,
-    overcurrentClearedEvent ,stop             ,stopped        ,
-    ANY_Event               ,Rien             ,overCurrenting ,
+    overcurrentEvent        ,overCurrent    ,overCurrenting ,
+    overcurrentClearedEvent ,stop           ,stopped        ,
+    ANY_Event               ,Rien           ,overCurrenting ,
 };

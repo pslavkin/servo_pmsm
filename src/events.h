@@ -10,10 +10,10 @@ typedef struct Events_struct {
     const State**    Machine;
 }  Events;
 //-----------------------------------------------------------
-void     Init_Events     ( void                                 );
-bool     Read_Event      ( Events* E                            );
+void     initEvents      ( void                                 );
+bool     readEvent       ( Events* E                            );
 bool     atomicSendEvent ( uint16_t Event,const State** Machine );
-bool     Send_Event      ( uint16_t Event,const State** Machine );
+bool     sendEvent       ( uint16_t Event,const State** Machine );
 bool     atomicReadEvent ( Events* E                            );
 //-------------------------------------------------------------
 #endif

@@ -97,7 +97,6 @@ void systickFunc(void)
 {
    if(systickFlag==true) {
       systickFlag=false;
-      Send_Event(ANY_Event,everythings());
+      sendEvent(ANY_Event,everythings());
    }
-//   motorISR();
 }

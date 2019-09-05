@@ -14,15 +14,18 @@
 #include "eqep_.h"
 #include "schedule.h"
 #include "position.h"
+#include "wave.h"
 #include "overcurrent.h"
 #include "linevoltage.h"
+#include "log.h"
+#include "wave.h"
 
 tCmdLineEntry Login_Cmd_Table    [ ];
 tCmdLineEntry iqPidCmdTable      [ ];
 tCmdLineEntry speedPidCmdTable   [ ];
 tCmdLineEntry posPidCmdTable     [ ];
-tCmdLineEntry stepDirCmdTable    [ ];
 tCmdLineEntry overcurrentCmdTable[ ];
+tCmdLineEntry waveCmdTable       [ ];
 tCmdLineEntry fclCmdTable        [ ];
 tCmdLineEntry logCmdTable        [ ];
 
@@ -31,26 +34,26 @@ tCmdLineEntry* actualCmdTable=Login_Cmd_Table;
 //--------------------------------------------------------------------------------
 tCmdLineEntry Login_Cmd_Table[] =
 {
-   { "login"       ,Cmd_login       ,": login"                },
-   { "iq"          ,Cmd_iqPid       ,": iq PID parameters"    },
-   { "speed"       ,Cmd_speedPid    ,": speed PID parameters" },
-   { "pos"         ,Cmd_posPid      ,": speed PID parameters" },
-   { "sd"          ,Cmd_stepDir     ,": step dir emulation"   },
-   { "oc"          ,Cmd_overcurrent ,": set overcurrent"      },
-   { "fcl"         ,Cmd_fcl         ,": fcl management"       },
-   { "log"         ,Cmd_log         ,": log on/off"           },
-   { "v"           ,Cmd_version     ,": version"              },
-   { "?"           ,Cmd_Help        ,": help"                 },
-   { 0             ,0               ,0                        }
+   { "login" ,Cmd_login       ,": login"                },
+   { "iq"    ,Cmd_iqPid       ,": iq PID parameters"    },
+   { "speed" ,Cmd_speedPid    ,": speed PID parameters" },
+   { "pos"   ,Cmd_posPid      ,": speed PID parameters" },
+   { "oc"    ,Cmd_overcurrent ,": set overcurrent"      },
+   { "fcl"   ,Cmd_fcl         ,": fcl management"       },
+   { "log"   ,Cmd_log         ,": log on/off"           },
+   { "wave"  ,Cmd_wave        ,": wave generator"       },
+   { "v"     ,Cmd_version     ,": version"              },
+   { "?"     ,Cmd_Help        ,": help"                 },
+   { 0       ,0               ,0                        }
 };
 void Cmd_login       ( uint16_t argc, char *argv[] ) { sciPrintf("login\r\n")                          ;}
 void Cmd_version     ( uint16_t argc, char *argv[] ) { sciPrintf("PMSM C2000 V1.0 - Pablo Slavkin\r\n");}
 void Cmd_iqPid       ( uint16_t argc, char *argv[] ) { actualCmdTable=iqPidCmdTable                    ;}
 void Cmd_speedPid    ( uint16_t argc, char *argv[] ) { actualCmdTable=speedPidCmdTable                 ;}
 void Cmd_posPid      ( uint16_t argc, char *argv[] ) { actualCmdTable=posPidCmdTable                   ;}
-void Cmd_stepDir     ( uint16_t argc, char *argv[] ) { actualCmdTable=stepDirCmdTable                  ;}
 void Cmd_overcurrent ( uint16_t argc, char *argv[] ) { actualCmdTable=overcurrentCmdTable              ;}
 void Cmd_fcl         ( uint16_t argc, char *argv[] ) { actualCmdTable=fclCmdTable                      ;}
+void Cmd_wave        ( uint16_t argc, char *argv[] ) { actualCmdTable=waveCmdTable                     ;}
 void Cmd_log         ( uint16_t argc, char *argv[] ) { actualCmdTable=logCmdTable                      ;}
 //--------------------------------------------------------------------------------
 tCmdLineEntry iqPidCmdTable[] =/*{{{*/
@@ -105,12 +108,6 @@ tCmdLineEntry posPidCmdTable[] =/*{{{*/
    { "w"    ,Cmd_writePosPid        ,": write pos PID "         },
    { "a"    ,Cmd_printAbs           ,": print abs pos "         },
    { "m"    ,Cmd_printAbsMech       ,": print abs mech pos "    },
-   { "f"    ,Cmd_setFrec            ,": set frec pos generator" },
-   { "sin"  ,Cmd_sinGenerator       ,": set sin generator"      },
-   { "step" ,Cmd_stepGenerator      ,": set step generator"     },
-   { "i"    ,Cmd_initSinGenerator   ,": set sin center"         },
-   { "t"    ,Cmd_toggleSinGenerator ,": enable/disable sin"     },
-   { "amp"  ,Cmd_setSinAmp          ,": sin amplitude"          },
    { "<"    ,Cmd_back2login         ,": back to login table"    },
    { "?"    ,Cmd_Help               ,": help"                   },
    { 0      ,0                      ,0                          }
@@ -133,65 +130,6 @@ void Cmd_printAbsMech(uint16_t argc, char *argv[])
 void Cmd_printAbs(uint16_t argc, char *argv[])
 {
    sciPrintf("abs=%f\r\n",getPosAbs());
-}
-void Cmd_setFrec(uint16_t argc, char *argv[])
-{
-   if(argc>1)
-      setPosFrec(atof(argv[1]));
-   sciPrintf("pos generator Frec=%f\r\n",getPosFrec());
-}
-void Cmd_initSinGenerator   ( uint16_t argc, char *argv[] ) { initSinOffset()     ;}
-void Cmd_toggleSinGenerator ( uint16_t argc, char *argv[] ) { toggleSinGenerator();}
-void Cmd_sinGenerator       ( uint16_t argc, char *argv[] ) 
-{
-   setWave(SIN);
-   sciPrintf("wave sin\r\n");
-}
-void Cmd_stepGenerator      ( uint16_t argc, char *argv[] ) 
-{
-   setWave(STEP);
-   sciPrintf("wave step\r\n");
-}
-void Cmd_setSinAmp(uint16_t argc, char *argv[])
-{
-   if(argc>1)
-      setSinAmp(atof(argv[1]));
-   sciPrintf("sin amplitude=%f\r\n",getSinAmp());
-}
-/*}}}*/
-//--------------------------------------------------------------------------------
-tCmdLineEntry stepDirCmdTable[] =/*{{{*/
-{
-   { "a" ,Cmd_setDirUp   ,": set dir up"          },
-   { "b" ,Cmd_setDirDown ,": set dir up"          },
-   { "c" ,Cmd_pulse      ,": pulse"               },
-   { "s" ,Cmd_step       ,": set step angle"      },
-   { "<" ,Cmd_back2login ,": back to login table" },
-   { "?" ,Cmd_Help       ,": help"                },
-   { 0   ,0              ,0                       }
-};
-void Cmd_setDirUp(uint16_t argc, char *argv[])
-{
-   setPosDir(CLOCK);
-   sciPrintf("dir to up\r\n");
-}
-void Cmd_setDirDown(uint16_t argc, char *argv[])
-{
-   setPosDir(ANTICLOCK);
-   sciPrintf("dir to down\r\n");
-}
-void Cmd_pulse(uint16_t argc, char *argv[])
-{
-   incPos();
-   sciPrintf("absPos=%f relPos=%f\r\n",getPosAbs(),getPosRel());
-}
-void Cmd_step(uint16_t argc, char *argv[])
-{
-   if(argc>1) {
-      float step=atof(argv[1]);
-      setPosStep(step);
-   }
-   sciPrintf("stepAngle=%f\r\n",getPosStep());
 }
 /*}}}*/
 //--------------------------------------------------------------------------------
@@ -245,21 +183,91 @@ void Cmd_setQepSim(uint16_t argc, char *argv[])
 }
 /*}}}*/
 //--------------------------------------------------------------------------------
+tCmdLineEntry waveCmdTable[] =/*{{{*/
+{
+   { "frec"  ,Cmd_setWaveFrec      ,": set frec pos generator" } ,
+   { "amp"   ,Cmd_setWaveAmp       ,": amplitude"              } ,
+   { "sin"   ,Cmd_setWaveShapeSin  ,": set sin generator"      } ,
+   { "step"  ,Cmd_setWaveShapeStep ,": set step generator"     } ,
+   { "ena"   ,Cmd_enableWave       ,": enable wave"            } ,
+   { "dis"   ,Cmd_disableWave      ,": disable wave"           } ,
+   { "clk"   ,Cmd_setWaveDirClk    ,": set dir clk wise"       } ,
+   { "aclk"  ,Cmd_setWaveDirAclk   ,": set dir anti clk wise"  } ,
+   { "angle" ,Cmd_setWaveStepAngle ,": set step angle"         } ,
+   { "pulse" ,Cmd_advanceWaveStep  ,": advance one step"       } ,
+   { "<"     ,Cmd_back2login       ,": back to login table"    } ,
+   { "?"     ,Cmd_Help             ,": help"                   } ,
+   { 0       ,0                    ,0                          }
+};
+void Cmd_setWaveFrec(uint16_t argc, char *argv[])
+{
+   if(argc>1)
+      setWaveFrec(atof(argv[1]));
+   sciPrintf("wave frec=%f\r\n",getWaveFrec());
+}
+void Cmd_setWaveAmp(uint16_t argc, char *argv[])
+{
+   if(argc>1)
+      setWaveAmp(atof(argv[1]));
+   sciPrintf("wave amplitude=%f\r\n",getWaveAmp());
+}
+void Cmd_setWaveShapeSin       ( uint16_t argc, char *argv[] ) 
+{
+   setWaveShape(SIN);
+   sciPrintf("wave sin\r\n");
+}
+void Cmd_setWaveShapeStep( uint16_t argc, char *argv[] ) 
+{
+   setWaveShape(STEP);
+   sciPrintf("wave step\r\n");
+}
+void Cmd_enableWave     ( uint16_t argc, char *argv[] ) { enableWave()    ;}
+void Cmd_disableWave    ( uint16_t argc, char *argv[] ) { disableWave()   ;}
+void Cmd_advanceWaveStep(uint16_t argc, char *argv[])
+{
+   advanceWaveStep();
+   sciPrintf("absPos=%f\r\n",getPosAbs());
+}
+void Cmd_setWaveDirClk(uint16_t argc, char *argv[])
+{
+   setWaveDir(CLOCK);
+   sciPrintf("clk wise\r\n");
+}
+void Cmd_setWaveDirAclk(uint16_t argc, char *argv[])
+{
+   setWaveDir(ANTICLOCK);
+   sciPrintf("anti clk wise\r\n");
+}
+void Cmd_setWaveStepAngle(uint16_t argc, char *argv[])
+{
+   if(argc>1)
+      setWaveStepAngle(atof(argv[1]));
+   sciPrintf("stepAngle=%f\r\n",getWaveStepAngle());
+}
+/*}}}*/
+//--------------------------------------------------------------------------------
 tCmdLineEntry logCmdTable[] =/*{{{*/
 {
-   { "l" ,Cmd_logOn      ,": set log on"          },
-   { "x" ,Cmd_logOff     ,": set log off"         },
-   { "<" ,Cmd_back2login ,": back to login table" },
-   { "?" ,Cmd_Help       ,": help"                },
-   { 0   ,0              ,0                       }
+   { "l"    ,Cmd_logOn           ,": set log on"          }       ,
+   { "x"    ,Cmd_logOff          ,": set log off"         }       ,
+   { "pres" ,Cmd_setLogPrescaler ,": set log prescaler"         } ,
+   { "<"    ,Cmd_back2login      ,": back to login table" }       ,
+   { "?"    ,Cmd_Help            ,": help"                }       ,
+   { 0      ,0                   ,0                       }
 };
 void Cmd_logOn(uint16_t argc, char *argv[])
 {
-   setLog(true);
+   setLogEnable();
 }
 void Cmd_logOff(uint16_t argc, char *argv[])
 {
-   setLog(false);
+   setLogDisable();
+}
+void Cmd_setLogPrescaler(uint16_t argc, char *argv[])
+{
+   if(argc>1)
+      setLogPrescaler(atoi(argv[1]));
+   sciPrintf("log prescaler=%i\r\n",getLogPrescaler());
 }
 /*}}}*/
 //--------------------------------------------------------------------------------

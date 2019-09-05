@@ -30,7 +30,7 @@ __interrupt void sciaRXFIFOISR(void)
    uint16_t len= SCI_getRxFIFOStatus ( SCIA_BASE               );
    SCI_readCharArrayNoneBlocking     ( SCIA_BASE ,rData ,len   );
    for ( i=0;i<len;i++ )
-      Send_Event(rData[0],parser());
+      sendEvent(rData[0],parser());
    SCI_clearOverflowStatus           ( SCIA_BASE               );
    SCI_clearInterruptStatus          ( SCIA_BASE ,SCI_INT_RXFF );
    Interrupt_clearACKGroup           ( INTERRUPT_ACK_GROUP9    );

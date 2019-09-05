@@ -63,9 +63,6 @@ typedef struct _FCL_Parameters_ {
 
 extern FCL_Parameters_t FCL_params;
 
-//#include "dlog_4ch_f.h"
-
-
 //
 // List of control GND configurations - COLD or HOT
 //
@@ -191,7 +188,7 @@ extern FCL_Parameters_t FCL_params;
 
 // FCL Computation time predetermined from library
 // tests on F2837xD
-#define FCL_COMPUTATION_TIME    (1.00)  //in uS
+#define FCL_COMPUTATION_TIME    (5.00)  //in uS //original decia 1.0u. me cubro para las pruebas
 
 //
 // set the motor parameters to the one available
@@ -275,9 +272,7 @@ enum fclEvents_enum {
     runEvent                = 0x0015
 };
 const State**  fcl                         ( void       );
-void           setLog                      ( bool state );
 void           initFcl                     ( void       );
-void           logPrint                    ( void       );
 void           electricalAlign             ( void       );
 void           sendRunEvent                ( void       );
 void           sendStopEvent               ( void       );

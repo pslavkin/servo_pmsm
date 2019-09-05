@@ -3,8 +3,9 @@
 > development of a customized high precision microcontrolled permament magnet embedded servo motor
 
 <a href="https://github.com/pslavkin/servo_pmsm"><img src="doc/pics/TMDXIDDK379D.jpeg" title="servo pmsm"  width="400" height="200" alt="TMDXIDDK379D"></a>
-<a href="https://github.com/pslavkin/servo_pmsm"><img src="doc/pics/controlcard.jpeg"  title="controlcard" width="300" height="200" alt="controlcard"></a>
-<a href="https://github.com/pslavkin/servo_pmsm"><img src="doc/pics/launchpad.jpeg"    title="launchpad"   width="300" height="200" alt="launchpad"></a>
+<a href="https://github.com/pslavkin/servo_pmsm"><img src="doc/pics/controlcard.jpeg"  title="controlcard" width="200" height="150" alt="controlcard"></a>
+<a href="https://github.com/pslavkin/servo_pmsm"><img src="doc/pics/launchpad.jpeg"    title="launchpad"   width="200" height="150" alt="launchpad"></a>
+<img src="doc/pics/lab1.jpg"    width="300" height="200"/>
 ---
 ## Progress
 <!--- 
@@ -40,7 +41,8 @@ https://gist.github.com/rxaviers/7360908
 - :heavy_check_mark: step/dir emulation from console works!
 - :heavy_check_mark: first set of curves controlling pos+vel+iq
 - :heavy_check_mark: absolute position calc from realative in feedback
-- :construction:     sin generator and bode plots
+- :heavy_check_mark: sin generator sinusoidal and step function work
+- :construction:     bode plot
 - :construction:     scratch materplan
 - :construction:     merging example fcl with my own code
 - :construction:     trying to manage BiA128 fanuc encoder
@@ -151,6 +153,15 @@ recompile picocomo to add log functionality. There are a first curves:
 
 <img src="doc/pics/step1.png"    width="800" height="400"/>
 <img src="doc/videos/step1.gif"  width="300" height="400"/>
+
+I've added sinusoidal and step function generator to test the response, see the videos and
+figures:
+
+<img src="doc/pics/step2.png"    width="800" height="400"/>
+<img src="doc/videos/step2.gif"  width="500" height="400"/>
+
+<img src="doc/pics/sin1.png"    width="800" height="400"/>
+<img src="doc/videos/sin1.gif"  width="500" height="400"/>
 
 ## masterplan
 

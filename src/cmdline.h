@@ -21,6 +21,7 @@ void Cmd_speedPid           ( uint16_t argc ,char *argv[]   );
 void Cmd_posPid             ( uint16_t argc ,char *argv[]   );
 void Cmd_stepDir            ( uint16_t argc ,char *argv[]   );
 void Cmd_overcurrent        ( uint16_t argc ,char *argv[]   );
+void Cmd_wave               ( uint16_t argc ,char *argv[]   );
 void Cmd_fcl                ( uint16_t argc ,char *argv[]   );
 void Cmd_log                ( uint16_t argc ,char *argv[]   );
 
@@ -63,8 +64,9 @@ void Cmd_setDirDown         ( uint16_t argc, char *argv[]   );
 void Cmd_pulse              ( uint16_t argc, char *argv[]   );
 void Cmd_step               ( uint16_t argc, char *argv[]   );
 
-void Cmd_logOn              ( uint16_t argc, char *argv[]   );
-void Cmd_logOff             ( uint16_t argc, char *argv[]   );
+void Cmd_logOn           ( uint16_t argc, char *argv[] );
+void Cmd_logOff          ( uint16_t argc, char *argv[] );
+void Cmd_setLogPrescaler ( uint16_t argc, char *argv[] );
 
 void Cmd_setOvercurrent     ( uint16_t argc, char *argv[]   );
 void Cmd_resetOvercurrent   ( uint16_t argc, char *argv[]   );
@@ -73,6 +75,17 @@ void Cmd_getVdc             ( uint16_t argc, char *argv[]   );
 void Cmd_runFcl             ( uint16_t argc, char *argv[]   );
 void Cmd_stopFcl            ( uint16_t argc, char *argv[]   );
 void Cmd_setQepSim          ( uint16_t argc, char *argv[]   );
+
+void Cmd_setWaveFrec      ( uint16_t argc, char *argv[] );
+void Cmd_setWaveAmp       ( uint16_t argc, char *argv[] );
+void Cmd_setWaveShapeSin  ( uint16_t argc, char *argv[] );
+void Cmd_setWaveShapeStep ( uint16_t argc, char *argv[] );
+void Cmd_enableWave       ( uint16_t argc, char *argv[] );
+void Cmd_disableWave      ( uint16_t argc, char *argv[] );
+void Cmd_advanceWaveStep  ( uint16_t argc, char *argv[] );
+void Cmd_setWaveDirClk    ( uint16_t argc, char *argv[] );
+void Cmd_setWaveDirAclk   ( uint16_t argc, char *argv[] );
+void Cmd_setWaveStepAngle ( uint16_t argc, char *argv[] );
 
 void Cmd_back2login         ( uint16_t argc, char *argv[]   );
 void Cmd_Help               ( uint16_t argc, char *argv[]   );

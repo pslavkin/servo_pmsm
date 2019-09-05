@@ -15,7 +15,7 @@ void main(void)
     Interrupt_initModule      ( ); // Initialize PIE and clear PIE registers. Disables CPU interrupts.
     Interrupt_initVectorTable ( ); // Initialize the PIE vector table with pointers to the shell Interrupt // Service Routines (ISR).
     initSCIAFIFO              ( );
-    Init_Events               ( );
+    initEvents                ( );
     Init_everythings          ( );
     initTimer2                ( );
     initFcl                   ( );

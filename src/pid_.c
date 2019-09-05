@@ -48,8 +48,8 @@ void initPid(void)/*{{{*/
     pid_spd.param.Kp   = 3.0;
     pid_spd.param.Ki   = 0.0015;
     pid_spd.param.Kd   = 0.0015;
-    pid_spd.param.Umax = 0.95;
-    pid_spd.param.Umin = -0.95;
+    pid_spd.param.Umax = 0.5;//0.95;
+    pid_spd.param.Umin = -0.5;//-0.95;
     pid_spd.term.c1    = 1.0;
     pid_spd.term.c2    = 1.0;
 
@@ -186,3 +186,5 @@ void printPid(PID_CONTROLLER* pid)/*{{{*/
          );
 }/*}}}*/
 
+float32_t getPiIqFbk  ( void ) { return pi_iq.fbk  ;}
+float32_t getPiPosFbk ( void ) { return pi_pos.Fbk ;}

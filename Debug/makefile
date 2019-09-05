@@ -49,6 +49,7 @@ ORDERED_OBJS += \
 "./src/fcl.obj" \
 "./src/leds.obj" \
 "./src/linevoltage.obj" \
+"./src/log.obj" \
 "./src/main.obj" \
 "./src/overcurrent.obj" \
 "./src/parser.obj" \
@@ -62,13 +63,13 @@ ORDERED_OBJS += \
 "./src/sm.obj" \
 "./src/systick.obj" \
 "./src/ustdlib.obj" \
+"./src/wave.obj" \
 "./src/wdog.obj" \
 "../cmd/2837xD_RAM_lnk_cpu1.cmd" \
 "../cmd/F2837xD_Headers_nonBIOS_cpu1.cmd" \
 $(GEN_CMDS__FLAG) \
 -l"/home/pslavkin/workspace_v9/servo_pmsm/lib/rts2800_fpu32.lib" \
 -l"/home/pslavkin/workspace_v9/servo_pmsm/lib/fcl/lib/fcl_cpu_cla.lib" \
--l"/home/pslavkin/workspace_v9/servo_pmsm/lib/rts2800_fpu32.lib" \
 
 -include ../makefile.init
 
@@ -199,7 +200,7 @@ all: $(OBJS) $(CMD_SRCS) $(LIB_SRCS) $(GEN_CMDS)
 servo_pmsm.out: $(OBJS) $(CMD_SRCS) $(LIB_SRCS) $(GEN_CMDS)
 	@echo 'Building target: "$@"'
 	@echo 'Invoking: C2000 Linker'
-	"/opt/ti/ccs901/ccs/tools/compiler/ti-cgt-c2000_18.12.1.LTS/bin/cl2000" -v28 -ml -mt --cla_support=cla1 --float_support=fpu32 --tmu_support=tmu0 --vcu_support=vcu2 -O4 --opt_for_speed=5 --fp_mode=relaxed --advice:performance=all --define=LARGE_MODEL --define=CPU1 -g --diag_warning=225 --diag_wrap=off --display_error_number --abi=coffabi -z -m"servo_pmsm.map" --stack_size=0x200 --warn_sections --reread_libs --diag_wrap=off --display_error_number --xml_link_info="servo_pmsm_linkInfo.xml" --rom_model -o "servo_pmsm.out" $(ORDERED_OBJS)
+	"/opt/ti/ccs901/ccs/tools/compiler/ti-cgt-c2000_18.12.1.LTS/bin/cl2000" -v28 -ml -mt --cla_support=cla1 --float_support=fpu32 --tmu_support=tmu0 --vcu_support=vcu2 -O4 --opt_for_speed=5 --fp_mode=relaxed --advice:performance=all --define=_DUAL_HEADERS --define=LARGE_MODEL --define=CPU1 -g --diag_warning=225 --diag_wrap=off --display_error_number --abi=coffabi -z -m"servo_pmsm.map" --stack_size=0x200 --warn_sections --reread_libs --diag_wrap=off --display_error_number --xml_link_info="servo_pmsm_linkInfo.xml" --rom_model -o "servo_pmsm.out" $(ORDERED_OBJS)
 	@echo 'Finished building target: "$@"'
 	@echo ' '
 
@@ -213,10 +214,10 @@ servo_pmsm.hex: $(EXE_OUTPUTS)
 # Other Targets
 clean:
 	-$(RM) $(BIN_OUTPUTS__QUOTED)$(EXE_OUTPUTS__QUOTED)
-	-$(RM) "lib/driverlib/adc.obj" "lib/driverlib/asysctl.obj" "lib/driverlib/can.obj" "lib/driverlib/cla.obj" "lib/driverlib/cmpss.obj" "lib/driverlib/cputimer.obj" "lib/driverlib/dac.obj" "lib/driverlib/dcsm.obj" "lib/driverlib/dma.obj" "lib/driverlib/ecap.obj" "lib/driverlib/emif.obj" "lib/driverlib/epwm.obj" "lib/driverlib/eqep.obj" "lib/driverlib/flash.obj" "lib/driverlib/gpio.obj" "lib/driverlib/hrpwm.obj" "lib/driverlib/i2c.obj" "lib/driverlib/interrupt.obj" "lib/driverlib/mcbsp.obj" "lib/driverlib/memcfg.obj" "lib/driverlib/sci.obj" "lib/driverlib/sdfm.obj" "lib/driverlib/spi.obj" "lib/driverlib/sysctl.obj" "lib/driverlib/upp.obj" "lib/driverlib/version.obj" "lib/driverlib/xbar.obj" "src/F2837xD_CodeStartBranch.obj" "src/F2837xD_GlobalVariableDefs.obj" "src/adc_.obj" "src/cbuffer.obj" "src/cla1.obj" "src/cmdline.obj" "src/dac_.obj" "src/device.obj" "src/eqep_.obj" "src/events.obj" "src/everythings.obj" "src/fcl.obj" "src/leds.obj" "src/linevoltage.obj" "src/main.obj" "src/overcurrent.obj" 
-	-$(RM) "src/parser.obj" "src/pid_.obj" "src/position.obj" "src/pwm.obj" "src/ramper_.obj" "src/schedule.obj" "src/scia.obj" "src/sigmadelta.obj" "src/sm.obj" "src/systick.obj" "src/ustdlib.obj" "src/wdog.obj" 
-	-$(RM) "lib/driverlib/adc.d" "lib/driverlib/asysctl.d" "lib/driverlib/can.d" "lib/driverlib/cla.d" "lib/driverlib/cmpss.d" "lib/driverlib/cputimer.d" "lib/driverlib/dac.d" "lib/driverlib/dcsm.d" "lib/driverlib/dma.d" "lib/driverlib/ecap.d" "lib/driverlib/emif.d" "lib/driverlib/epwm.d" "lib/driverlib/eqep.d" "lib/driverlib/flash.d" "lib/driverlib/gpio.d" "lib/driverlib/hrpwm.d" "lib/driverlib/i2c.d" "lib/driverlib/interrupt.d" "lib/driverlib/mcbsp.d" "lib/driverlib/memcfg.d" "lib/driverlib/sci.d" "lib/driverlib/sdfm.d" "lib/driverlib/spi.d" "lib/driverlib/sysctl.d" "lib/driverlib/upp.d" "lib/driverlib/version.d" "lib/driverlib/xbar.d" "src/F2837xD_GlobalVariableDefs.d" "src/adc_.d" "src/cbuffer.d" "src/cla1.d" "src/cmdline.d" "src/dac_.d" "src/device.d" "src/eqep_.d" "src/events.d" "src/everythings.d" "src/fcl.d" "src/leds.d" "src/linevoltage.d" "src/main.d" "src/overcurrent.d" "src/parser.d" "src/pid_.d" "src/position.d" "src/pwm.d" "src/ramper_.d" "src/schedule.d" "src/scia.d" "src/sigmadelta.d" 
-	-$(RM) "src/sm.d" "src/systick.d" "src/ustdlib.d" "src/wdog.d" 
+	-$(RM) "lib/driverlib/adc.obj" "lib/driverlib/asysctl.obj" "lib/driverlib/can.obj" "lib/driverlib/cla.obj" "lib/driverlib/cmpss.obj" "lib/driverlib/cputimer.obj" "lib/driverlib/dac.obj" "lib/driverlib/dcsm.obj" "lib/driverlib/dma.obj" "lib/driverlib/ecap.obj" "lib/driverlib/emif.obj" "lib/driverlib/epwm.obj" "lib/driverlib/eqep.obj" "lib/driverlib/flash.obj" "lib/driverlib/gpio.obj" "lib/driverlib/hrpwm.obj" "lib/driverlib/i2c.obj" "lib/driverlib/interrupt.obj" "lib/driverlib/mcbsp.obj" "lib/driverlib/memcfg.obj" "lib/driverlib/sci.obj" "lib/driverlib/sdfm.obj" "lib/driverlib/spi.obj" "lib/driverlib/sysctl.obj" "lib/driverlib/upp.obj" "lib/driverlib/version.obj" "lib/driverlib/xbar.obj" "src/F2837xD_CodeStartBranch.obj" "src/F2837xD_GlobalVariableDefs.obj" "src/adc_.obj" "src/cbuffer.obj" "src/cla1.obj" "src/cmdline.obj" "src/dac_.obj" "src/device.obj" "src/eqep_.obj" "src/events.obj" "src/everythings.obj" "src/fcl.obj" "src/leds.obj" "src/linevoltage.obj" "src/log.obj" "src/main.obj" "src/overcurrent.obj" 
+	-$(RM) "src/parser.obj" "src/pid_.obj" "src/position.obj" "src/pwm.obj" "src/ramper_.obj" "src/schedule.obj" "src/scia.obj" "src/sigmadelta.obj" "src/sm.obj" "src/systick.obj" "src/ustdlib.obj" "src/wave.obj" "src/wdog.obj" 
+	-$(RM) "lib/driverlib/adc.d" "lib/driverlib/asysctl.d" "lib/driverlib/can.d" "lib/driverlib/cla.d" "lib/driverlib/cmpss.d" "lib/driverlib/cputimer.d" "lib/driverlib/dac.d" "lib/driverlib/dcsm.d" "lib/driverlib/dma.d" "lib/driverlib/ecap.d" "lib/driverlib/emif.d" "lib/driverlib/epwm.d" "lib/driverlib/eqep.d" "lib/driverlib/flash.d" "lib/driverlib/gpio.d" "lib/driverlib/hrpwm.d" "lib/driverlib/i2c.d" "lib/driverlib/interrupt.d" "lib/driverlib/mcbsp.d" "lib/driverlib/memcfg.d" "lib/driverlib/sci.d" "lib/driverlib/sdfm.d" "lib/driverlib/spi.d" "lib/driverlib/sysctl.d" "lib/driverlib/upp.d" "lib/driverlib/version.d" "lib/driverlib/xbar.d" "src/F2837xD_GlobalVariableDefs.d" "src/adc_.d" "src/cbuffer.d" "src/cla1.d" "src/cmdline.d" "src/dac_.d" "src/device.d" "src/eqep_.d" "src/events.d" "src/everythings.d" "src/fcl.d" "src/leds.d" "src/linevoltage.d" "src/log.d" "src/main.d" "src/overcurrent.d" "src/parser.d" "src/pid_.d" "src/position.d" "src/pwm.d" "src/ramper_.d" "src/schedule.d" "src/scia.d" "src/sigmadelta.d" 
+	-$(RM) "src/sm.d" "src/systick.d" "src/ustdlib.d" "src/wave.d" "src/wdog.d" 
 	-$(RM) "src/F2837xD_CodeStartBranch.d" 
 	-@echo 'Finished clean'
 	-@echo ' '

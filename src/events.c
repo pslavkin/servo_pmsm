@@ -9,7 +9,7 @@ Events      eventsBuffPool[MAX_EVENTS+1];
 cBuffer_t   eventsBuff;
 
 //-----------------------------------------------------------------
-void Init_Events(void)
+void initEvents(void)
 {
    eventsBuff.pool     = (uint16_t*)eventsBuffPool;
    eventsBuff.dataSize = sizeof(eventsBuffPool[0]);
@@ -18,7 +18,7 @@ void Init_Events(void)
    eventsBuff.wIndex   = 0;
 }
 //-----------------------------------------------------------------
-bool Send_Event(uint16_t Event,const State** Machine)
+bool sendEvent(uint16_t Event,const State** Machine)
 {
    Events E={Event,Machine};
    return writeCBuffer(&eventsBuff,(uint16_t*)&E);
@@ -26,9 +26,9 @@ bool Send_Event(uint16_t Event,const State** Machine)
 bool atomicSendEvent(uint16_t Event,const State** Machine)
 {
    Events E={Event,Machine};
-   //DINT;                          // Disable Global Interrupt (INTM) and realtime interrupt (DBGM)
-   bool ans= writeCBuffer(&eventsBuff,(uint16_t*)&E);
-   //EINT;                          // Enable Global Interrupt (INTM) and realtime interrupt (DBGM)
+   DINT;                          // Disable Global Interrupt (INTM) and realtime interrupt (DBGM)
+      bool ans= writeCBuffer(&eventsBuff,(uint16_t*)&E);
+   EINT;                          // Enable Global Interrupt (INTM) and realtime interrupt (DBGM)
    return ans;
 }
 bool readEvent(Events* E)
@@ -38,9 +38,9 @@ bool readEvent(Events* E)
 bool atomicReadEvent(Events* E)
 {
    bool ans;
-   //DINT;                          // Disable Global Interrupt (INTM) and realtime interrupt (DBGM)
+   DINT;                          // Disable Global Interrupt (INTM) and realtime interrupt (DBGM)
       ans = readCBuffer ( &eventsBuff,(uint16_t* )E);
-   //EINT;                          // Enable Global Interrupt (INTM) and realtime interrupt (DBGM)
+   EINT;                          // Enable Global Interrupt (INTM) and realtime interrupt (DBGM)
    return ans;
 }
 //-------------------------------------------------------------------------------------
