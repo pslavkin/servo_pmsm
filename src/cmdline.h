@@ -14,16 +14,17 @@ typedef struct Cmd_Table_Struct{ // ! Structure for an entry in the command list
 void     CmdLineProcess     ( char* line                    );
 void     Parser_Process     ( void                          );
 
-void Cmd_login              ( uint16_t argc ,char *argv[]   );
-void Cmd_version            ( uint16_t argc ,char *argv[]   );
-void Cmd_iqPid              ( uint16_t argc ,char *argv[]   );
-void Cmd_speedPid           ( uint16_t argc ,char *argv[]   );
-void Cmd_posPid             ( uint16_t argc ,char *argv[]   );
-void Cmd_stepDir            ( uint16_t argc ,char *argv[]   );
-void Cmd_overcurrent        ( uint16_t argc ,char *argv[]   );
-void Cmd_wave               ( uint16_t argc ,char *argv[]   );
-void Cmd_fcl                ( uint16_t argc ,char *argv[]   );
-void Cmd_log                ( uint16_t argc ,char *argv[]   );
+void Cmd_login       ( uint16_t argc ,char *argv[] );
+void Cmd_version     ( uint16_t argc ,char *argv[] );
+void Cmd_iqPid       ( uint16_t argc ,char *argv[] );
+void Cmd_speedPid    ( uint16_t argc ,char *argv[] );
+void Cmd_posPid      ( uint16_t argc ,char *argv[] );
+void Cmd_stepDir     ( uint16_t argc ,char *argv[] );
+void Cmd_overcurrent ( uint16_t argc ,char *argv[] );
+void Cmd_wave        ( uint16_t argc ,char *argv[] );
+void Cmd_gcode       ( uint16_t argc, char *argv[] );
+void Cmd_fcl         ( uint16_t argc ,char *argv[] );
+void Cmd_log         ( uint16_t argc ,char *argv[] );
 
 void Cmd_readLemV           ( uint16_t argc, char *argv[]   );
 void Cmd_readLemW           ( uint16_t argc, char *argv[]   );
@@ -80,13 +81,18 @@ void Cmd_setWaveFrec      ( uint16_t argc, char *argv[] );
 void Cmd_setWaveAmp       ( uint16_t argc, char *argv[] );
 void Cmd_setWaveShapeSin  ( uint16_t argc, char *argv[] );
 void Cmd_setWaveShapeStep ( uint16_t argc, char *argv[] );
-void Cmd_setWaveShapeRamp ( uint16_t argc, char *argv[] );
+void Cmd_setWaveShapeGcode( uint16_t argc, char *argv[] );
 void Cmd_enableWave       ( uint16_t argc, char *argv[] );
 void Cmd_disableWave      ( uint16_t argc, char *argv[] );
 void Cmd_advanceWaveStep  ( uint16_t argc, char *argv[] );
 void Cmd_setWaveDirClk    ( uint16_t argc, char *argv[] );
 void Cmd_setWaveDirAclk   ( uint16_t argc, char *argv[] );
 void Cmd_setWaveStepAngle ( uint16_t argc, char *argv[] );
+
+void Cmd_setgcodeG0  ( uint16_t argc, char *argv[] );
+void Cmd_setgcodeF   ( uint16_t argc, char *argv[] );
+void Cmd_setgcodeAcc ( uint16_t argc, char *argv[] );
+void Cmd_setgcodeDec ( uint16_t argc, char *argv[] );
 
 void Cmd_back2login         ( uint16_t argc, char *argv[]   );
 void Cmd_Help               ( uint16_t argc, char *argv[]   );

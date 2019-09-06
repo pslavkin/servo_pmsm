@@ -6,6 +6,7 @@
 #include "ramper_.h"
 #include "position.h"
 #include "wave.h"
+#include "gcode.h"
 #include "eqep_.h"
 
 wave_t wave={
@@ -18,29 +19,16 @@ wave_t wave={
    .amp       = 1,
    .shape     = SIN,
    .t         = 0,
-   .p         = {
-      .x0      = 0,
-      .x1      = 0,
-      .v0      = 0,
-      .v1      = 0,
-      .acc     = 0,
-      .decc    = 0,
-      .actualX = 0,
-      .actualV = 0,
-      .actualA = 0,
-      .t       = 0,
-      .period  = 0,
-   }
 };
 void advanceWaveStep(void)
 {
    setPosAbs( getPosAbs() + ((wave.dir == CLOCK)?wave.stepAngle:(-wave.stepAngle)));
 }
 
-void        setWaveDir       ( enum WAVE_DIR d ) { wave.dir       = d   ;}
-void        setWaveStepAngle ( float32_t step  ) { wave.stepAngle = step;}
-float32_t   getWaveStepAngle ( void            ) { return wave.stepAngle;}
-void        setWaveAmp       ( float32_t amp   )
+void        setWaveDir       ( enum WAVE_DIR_ENUM d ) { wave.dir       = d   ;}
+void        setWaveStepAngle ( float32_t step       ) { wave.stepAngle = step;}
+float32_t   getWaveStepAngle ( void                 ) { return wave.stepAngle;}
+void        setWaveAmp       ( float32_t amp        )
 {
    wave.ampWished = amp;
    if(wave.enable==false)
@@ -67,7 +55,7 @@ void disableWave(void)
    wave.enable = false;
    sciPrintf("wave generator=off\r\n");
 }
-void setWaveShape(enum SHAPE s)
+void setWaveShape(enum SHAPE_ENUM s)
 {
    if(wave.shape!=s) {
       wave.shape=s;
@@ -78,30 +66,6 @@ void setWaveShape(enum SHAPE s)
 }
 
 
-void setAccelProfile(void)
-{
-   wave.p.center  = getPosAbs();
-   wave.p.x0      = getPosAbs();
-   wave.p.x1      = wave.p.x0-30;
-   wave.p.v0      = 0;
-   wave.p.v1      = 200.0/((2*60*BASE_FREQ)/POLES);
-   wave.p.acc     = 0.01;
-   wave.p.decc    = 0.01;
-   wave.p.actualX = wave.p.x0;
-   wave.p.actualV = 0;
-   wave.p.actualA = 0;
-   wave.p.t       = 0;
-   wave.p.period  = T;
-   wave.p.deltaX = (wave.p.v1*wave.p.v1*KK)/(2*wave.p.decc);
-
-   if(wave.p.x1<wave.p.x0) {
-      wave.p.x1  = wave.p.x0+(wave.p.x0-wave.p.x1);
-      wave.p.dir = ACLK;
-   }
-   else 
-      wave.p.dir=CLK;
-   wave.p.state   = RISE;
-}
 
 void waveGenerator(void)
 {
@@ -115,8 +79,8 @@ void waveGenerator(void)
          case STEP:
             setPosAbs(wave.amp*(((int32_t)(wave.frec*wave.t*T)%2)?1:-1) +wave.offset);
             break;
-         case RAMP:
-            setPosAbs ( accel ( &wave.p ));
+         case GCODES:
+            advanceGcode();
             break;
       }
    }

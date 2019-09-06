@@ -19,6 +19,7 @@
 #include "linevoltage.h"
 #include "log.h"
 #include "wave.h"
+#include "gcode.h"
 
 tCmdLineEntry Login_Cmd_Table    [ ];
 tCmdLineEntry iqPidCmdTable      [ ];
@@ -26,6 +27,7 @@ tCmdLineEntry speedPidCmdTable   [ ];
 tCmdLineEntry posPidCmdTable     [ ];
 tCmdLineEntry overcurrentCmdTable[ ];
 tCmdLineEntry waveCmdTable       [ ];
+tCmdLineEntry gcodeCmdTable      [ ];
 tCmdLineEntry fclCmdTable        [ ];
 tCmdLineEntry logCmdTable        [ ];
 
@@ -42,6 +44,7 @@ tCmdLineEntry Login_Cmd_Table[] =
    { "fcl"   ,Cmd_fcl         ,": fcl management"       },
    { "log"   ,Cmd_log         ,": log on/off"           },
    { "wave"  ,Cmd_wave        ,": wave generator"       },
+   { "gcode" ,Cmd_gcode       ,": gcode parser"         },
    { "v"     ,Cmd_version     ,": version"              },
    { "?"     ,Cmd_Help        ,": help"                 },
    { 0       ,0               ,0                        }
@@ -54,6 +57,7 @@ void Cmd_posPid      ( uint16_t argc, char *argv[] ) { actualCmdTable=posPidCmdT
 void Cmd_overcurrent ( uint16_t argc, char *argv[] ) { actualCmdTable=overcurrentCmdTable              ;}
 void Cmd_fcl         ( uint16_t argc, char *argv[] ) { actualCmdTable=fclCmdTable                      ;}
 void Cmd_wave        ( uint16_t argc, char *argv[] ) { actualCmdTable=waveCmdTable                     ;}
+void Cmd_gcode       ( uint16_t argc, char *argv[] ) { actualCmdTable=gcodeCmdTable                     ;}
 void Cmd_log         ( uint16_t argc, char *argv[] ) { actualCmdTable=logCmdTable                      ;}
 //--------------------------------------------------------------------------------
 tCmdLineEntry iqPidCmdTable[] =/*{{{*/
@@ -182,7 +186,7 @@ tCmdLineEntry waveCmdTable[] =/*{{{*/
    { "amp"   ,Cmd_setWaveAmp       ,": amplitude"              } ,
    { "sin"   ,Cmd_setWaveShapeSin  ,": set sin generator"      } ,
    { "step"  ,Cmd_setWaveShapeStep ,": set step generator"     } ,
-   { "ramp"  ,Cmd_setWaveShapeRamp ,": set ramp generator"     } ,
+   { "gcode" ,Cmd_setWaveShapeGcode,": set code proccesor"     } ,
    { "ena"   ,Cmd_enableWave       ,": enable wave"            } ,
    { "dis"   ,Cmd_disableWave      ,": disable wave"           } ,
    { "clk"   ,Cmd_setWaveDirClk    ,": set dir clk wise"       } ,
@@ -215,11 +219,10 @@ void Cmd_setWaveShapeStep( uint16_t argc, char *argv[] )
    setWaveShape(STEP);
    sciPrintf("wave step\r\n");
 }
-void Cmd_setWaveShapeRamp( uint16_t argc, char *argv[] )
+void Cmd_setWaveShapeGcode( uint16_t argc, char *argv[] )
 {
-   setAccelProfile (                 );
-   setWaveShape    ( RAMP            );
-   sciPrintf       ( "wave ramp\r\n" );
+   setWaveShape    ( GCODES           );
+   sciPrintf       ( "wave gcode\r\n" );
 }
 void Cmd_enableWave     ( uint16_t argc, char *argv[] ) { enableWave()    ;}
 void Cmd_disableWave    ( uint16_t argc, char *argv[] ) { disableWave()   ;}
@@ -243,6 +246,38 @@ void Cmd_setWaveStepAngle(uint16_t argc, char *argv[])
    if(argc>1)
       setWaveStepAngle(atof(argv[1]));
    sciPrintf("stepAngle=%f\r\n",getWaveStepAngle());
+}
+/*}}}*/
+//--------------------------------------------------------------------------------
+tCmdLineEntry gcodeCmdTable[] =/*{{{*/
+{
+   { "g0"   ,Cmd_setgcodeG0      ,": G0"                  },
+   { "F"    ,Cmd_setgcodeF       ,": F"                   },
+   { "acc"  ,Cmd_setgcodeAcc     ,": set accel"           },
+   { "dec"  ,Cmd_setgcodeDec     ,": set deccel"          },
+   { "<"    ,Cmd_back2login      ,": back to login table" },
+   { "?"    ,Cmd_Help            ,": help"                },
+   { 0      ,0                   ,0                       }
+                                                          };
+void Cmd_setgcodeG0(uint16_t argc, char *argv[])
+{
+   if(argc>1)
+      setgcodeG0(atof(argv[1]));
+}
+void Cmd_setgcodeF(uint16_t argc, char *argv[])
+{
+   if(argc>1)
+      setgcodeF(atof(argv[1]));
+}
+void Cmd_setgcodeAcc(uint16_t argc, char *argv[])
+{
+   if(argc>1)
+      setgcodeAcc(atof(argv[1]));
+}
+void Cmd_setgcodeDec(uint16_t argc, char *argv[])
+{
+   if(argc>1)
+      setgcodeDec(atof(argv[1]));
 }
 /*}}}*/
 //--------------------------------------------------------------------------------

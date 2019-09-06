@@ -37,7 +37,7 @@ float32_t accel(accel_t* p)
          else {
             p->v1     = p->actualV;
             p->x0     = p->actualX;
-            p->deltaX = (p->v1*p->v1*KK)/(2*p->decc);
+            p->deltaX = (p->v1*p->v1*KK)/(2*p->dec);
             p->t      = 0;
             p->state  = CONST;
          }
@@ -53,8 +53,8 @@ float32_t accel(accel_t* p)
          }
       case FALL:
          if(p->actualV>0 && p->actualX<p->x1) {
-            p->actualX = p->x0+KK * (p->v1*p->t-0.5*p->decc*p->t*p->t);
-            p->actualV = p->v1-p->decc*p->t;
+            p->actualX = p->x0+KK * (p->v1*p->t-0.5*p->dec*p->t*p->t);
+            p->actualV = p->v1-p->dec*p->t;
             break; //mira donde te pongo el break!!
          }
          else {
