@@ -11,8 +11,9 @@ set title "torque & speed"
 set ylabel "Nm - rev/seg"
 set yrange [0:0.15];
 set autoscale
-plot '< tail -n 500 log.txt' every ::1 using 1:2 smooth acsplines linestyle 1 notitle, \
-     '< tail -n 500 log.txt' every ::1 using 1:3 smooth acsplines linestyle 2 notitle
+plot '< tail -n 500 log.txt' every ::1 using 1:3 smooth acsplines linestyle 1 notitle
+#plot '< tail -n 500 log.txt' every ::1 using 1:2 smooth acsplines linestyle 1 notitle, \
+#     '< tail -n 500 log.txt' every ::1 using 1:3 smooth acsplines linestyle 2 notitle
 
 set ylabel "phase margin"
 set title "degrees"

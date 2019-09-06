@@ -43,17 +43,17 @@ File name:        SPEED_FR.H
 #define __SPEED_FR_H__
 
 typedef struct {
-       float32_t ElecTheta;  	// Input: Electrical angle (pu)
-       uint32_t DirectionQep; 	// Variable: Direction of rotation (Q0) - independently with global Q
-       float32_t OldElecTheta;  // History: Electrical angle at previous step (pu)
-       float32_t Speed;       	// Output: Speed in per-unit  (pu)
-       uint32_t BaseRpm;      	// Parameter: Base speed in rpm (Q0) - independently with global Q
-       float32_t K1;         	// Parameter: Constant for differentiator (Q21) - independently with global Q
-       float32_t K2;         	// Parameter: Constant for low-pass filter (pu)
-       float32_t K3;         	// Parameter: Constant for low-pass filter (pu)
-       int32_t SpeedRpm;      	// Output : Speed in rpm  (Q0) - independently with global Q
-       float32_t Tmp;			//Variable: Temp variable
-       } SPEED_MEAS_QEP;   		// Data type created
+       float32_t ElecTheta;    // Input: Electrical angle (pu)
+       uint32_t  DirectionQep; // Variable: Direction of rotation (Q0) - independently with global Q
+       float32_t OldElecTheta; // History: Electrical angle at previous step (pu)
+       float32_t Speed;        // Output: Speed in per-unit  (pu)
+       uint32_t  BaseRpm;      // Parameter: Base speed in rpm (Q0) - independently with global Q
+       float32_t K1;           // Parameter: Constant for differentiator (Q21) - independently with global Q
+       float32_t K2;           // Parameter: Constant for low-pass filter (pu)
+       float32_t K3;           // Parameter: Constant for low-pass filter (pu)
+       int32_t   SpeedRpm;     // Output : Speed in rpm  (Q0) - independently with global Q
+       float32_t Tmp;          // Variable: Temp variable
+} SPEED_MEAS_QEP;              // Data type created
 
 /*-----------------------------------------------------------------------------
 Default initalizer for the SPEED_MEAS_QEP object.
@@ -68,7 +68,7 @@ Default initalizer for the SPEED_MEAS_QEP object.
                                     0, \
                                     0, \
                                     0  \
-                               	  }	
+                                   }   
 
 /*------------------------------------------------------------------------------
  SPEED_FR Macro Definition
@@ -76,48 +76,48 @@ Default initalizer for the SPEED_MEAS_QEP object.
 
 static inline void runSpeedFR(SPEED_MEAS_QEP * in)
 {
-	in->Tmp = in->ElecTheta - in->OldElecTheta;
-	if(in->Tmp < -0.5)
-	{
-		in->Tmp += 1.0;
-	}
-	else if(in->Tmp > 0.5)
-	{
-		in->Tmp -= 1.0;
-	}
-	in->Tmp *= in->K1;
-	// Low-pass filter
-	in->Tmp = (in->K2 * in->Speed) + (in->K3 * in->Tmp);
-	// Saturate the output
-	in->Tmp = __fmax(__fmin(in->Tmp,1), -1);
-	in->Speed = in->Tmp;
-	// Update the electrical angle
-	in->OldElecTheta = in->ElecTheta;
-	// Change motor speed for pu to rpm value
-	in->SpeedRpm = in->BaseRpm * in->Speed;
+   in->Tmp = in->ElecTheta - in->OldElecTheta;
+   if(in->Tmp < -0.5)
+   {
+      in->Tmp += 1.0;
+   }
+   else if(in->Tmp > 0.5)
+   {
+      in->Tmp -= 1.0;
+   }
+   in->Tmp *= in->K1;
+   // Low-pass filter
+   in->Tmp = (in->K2 * in->Speed) + (in->K3 * in->Tmp);
+   // Saturate the output
+   in->Tmp = __fmax(__fmin(in->Tmp,1), -1);
+   in->Speed = in->Tmp;
+   // Update the electrical angle
+   in->OldElecTheta = in->ElecTheta;
+   // Change motor speed for pu to rpm value
+   in->SpeedRpm = in->BaseRpm * in->Speed;
 
 }
 
 
-#define SPEED_FR_MACRO(v)											\
-   /* Differentiator */												\
-   /* Synchronous speed computation */ 								\
-   v.Tmp = v.ElecTheta - v.OldElecTheta;		                    \
-   if (v.Tmp < -_IQ(0.5))			                                \
+#define SPEED_FR_MACRO(v)                                \
+   /* Differentiator */                                  \
+   /* Synchronous speed computation */                         \
+   v.Tmp = v.ElecTheta - v.OldElecTheta;                         \
+   if (v.Tmp < -_IQ(0.5))                                        \
      v.Tmp = v.Tmp + _IQ(1.0);                                      \
-   else if (v.Tmp > _IQ(0.5))			                            \
+   else if (v.Tmp > _IQ(0.5))                                   \
      v.Tmp = v.Tmp - _IQ(1.0);                                      \
-   v.Tmp = _IQmpy(v.K1,v.Tmp);		                                \
-   /* Low-pass filter */											\
-   /* Q21 = GLOBAL_Q*Q21 + GLOBAL_Q*Q21 */							\
-   	v.Tmp = _IQmpy(v.K2,_IQtoIQ21(v.Speed))+_IQmpy(v.K3,v.Tmp);		\
-   /* Saturate the output */ 										\
-	v.Tmp=_IQsat(v.Tmp,_IQ21(1),_IQ21(-1));							\
-	v.Speed = _IQ21toIQ(v.Tmp);										\
-   /* Update the electrical angle */ 									\
-    v.OldElecTheta = v.ElecTheta;									\
-   /* Change motor speed from pu value to rpm value (GLOBAL_Q -> Q0) */	\
-   /* Q0 = Q0*GLOBAL_Q => _IQXmpy(), X = GLOBAL_Q */					\
+   v.Tmp = _IQmpy(v.K1,v.Tmp);                                      \
+   /* Low-pass filter */                                 \
+   /* Q21 = GLOBAL_Q*Q21 + GLOBAL_Q*Q21 */                     \
+      v.Tmp = _IQmpy(v.K2,_IQtoIQ21(v.Speed))+_IQmpy(v.K3,v.Tmp);    \
+   /* Saturate the output */                             \
+   v.Tmp=_IQsat(v.Tmp,_IQ21(1),_IQ21(-1));                     \
+   v.Speed = _IQ21toIQ(v.Tmp);                              \
+   /* Update the electrical angle */                           \
+    v.OldElecTheta = v.ElecTheta;                           \
+   /* Change motor speed from pu value to rpm value (GLOBAL_Q -> Q0) */ \
+   /* Q0 = Q0*GLOBAL_Q => _IQXmpy(), X = GLOBAL_Q */              \
     v.SpeedRpm = _IQmpy(v.BaseRpm,v.Speed);
 
 

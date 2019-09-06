@@ -182,6 +182,7 @@ tCmdLineEntry waveCmdTable[] =/*{{{*/
    { "amp"   ,Cmd_setWaveAmp       ,": amplitude"              } ,
    { "sin"   ,Cmd_setWaveShapeSin  ,": set sin generator"      } ,
    { "step"  ,Cmd_setWaveShapeStep ,": set step generator"     } ,
+   { "ramp"  ,Cmd_setWaveShapeRamp ,": set ramp generator"     } ,
    { "ena"   ,Cmd_enableWave       ,": enable wave"            } ,
    { "dis"   ,Cmd_disableWave      ,": disable wave"           } ,
    { "clk"   ,Cmd_setWaveDirClk    ,": set dir clk wise"       } ,
@@ -214,6 +215,12 @@ void Cmd_setWaveShapeStep( uint16_t argc, char *argv[] )
    setWaveShape(STEP);
    sciPrintf("wave step\r\n");
 }
+void Cmd_setWaveShapeRamp( uint16_t argc, char *argv[] )
+{
+   setAccelProfile (                 );
+   setWaveShape    ( RAMP            );
+   sciPrintf       ( "wave ramp\r\n" );
+}
 void Cmd_enableWave     ( uint16_t argc, char *argv[] ) { enableWave()    ;}
 void Cmd_disableWave    ( uint16_t argc, char *argv[] ) { disableWave()   ;}
 void Cmd_advanceWaveStep(uint16_t argc, char *argv[])
@@ -241,11 +248,11 @@ void Cmd_setWaveStepAngle(uint16_t argc, char *argv[])
 //--------------------------------------------------------------------------------
 tCmdLineEntry logCmdTable[] =/*{{{*/
 {
-   { "l"    ,Cmd_logOn           ,": set log on"          }       ,
-   { "x"    ,Cmd_logOff          ,": set log off"         }       ,
-   { "pres" ,Cmd_setLogPrescaler ,": set log prescaler"         } ,
-   { "<"    ,Cmd_back2login      ,": back to login table" }       ,
-   { "?"    ,Cmd_Help            ,": help"                }       ,
+   { "ena"  ,Cmd_logOn           ,": set log on"          },
+   { "dis"  ,Cmd_logOff          ,": set log off"         },
+   { "pres" ,Cmd_setLogPrescaler ,": set log prescaler"   },
+   { "<"    ,Cmd_back2login      ,": back to login table" },
+   { "?"    ,Cmd_Help            ,": help"                },
    { 0      ,0                   ,0                       }
 };
 void Cmd_logOn(uint16_t argc, char *argv[])

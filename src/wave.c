@@ -18,6 +18,19 @@ wave_t wave={
    .amp       = 1,
    .shape     = SIN,
    .t         = 0,
+   .p         = {
+      .x0      = 0,
+      .x1      = 0,
+      .v0      = 0,
+      .v1      = 0,
+      .acc     = 0,
+      .decc    = 0,
+      .actualX = 0,
+      .actualV = 0,
+      .actualA = 0,
+      .t       = 0,
+      .period  = 0,
+   }
 };
 void advanceWaveStep(void)
 {
@@ -56,8 +69,32 @@ void disableWave(void)
 }
 void setWaveShape(enum SHAPE s)
 {
-   wave.shape=s;
+   if(wave.shape!=s) {
+      wave.shape=s;
+      enableWave();
+   }
+   else 
+      wave.shape=s;
 }
+
+
+void setAccelProfile(void)
+{
+   wave.p.x0      = getPosAbs();
+   wave.p.x1      = wave.p.x0+30;
+   wave.p.v0      = 0;
+   wave.p.v1      = 200.0/((2*60*BASE_FREQ)/POLES);
+   wave.p.acc     = 0.01;
+   wave.p.decc    = 0.01;
+   wave.p.actualX = wave.p.x0;
+   wave.p.actualV = 0;
+   wave.p.actualA = 0;
+   wave.p.t       = 0;
+   wave.p.period  = T;
+   wave.p.state   = RISE;
+   wave.p.deltaX = (wave.p.v1*wave.p.v1*KK)/(2*wave.p.decc);
+}
+
 void waveGenerator(void)
 {
    if(wave.enable==true) {
@@ -69,6 +106,10 @@ void waveGenerator(void)
             break;
          case STEP:
             setPosAbs(wave.amp*(((int32_t)(wave.frec*wave.t*T)%2)?1:-1) +wave.offset);
+            break;
+         case RAMP:
+            accel     ( &wave.p        );
+            setPosAbs ( wave.p.actualX );
             break;
       }
    }

@@ -82,7 +82,7 @@ void initQep(void)/*{{{*/
    speed1.K1      = 1/(BASE_FREQ*T);
    speed1.K2      = 1/(1+2*PI*T*5);      // Low-pass cut-off frequency
    speed1.K3      = 1-speed1.K2;
-   speed1.BaseRpm = 120*(BASE_FREQ/POLES);
+   speed1.BaseRpm = (2*60*BASE_FREQ)/POLES;
 
    // Enable UTO on QEP
    EQEP_enableInterrupt ( EQEP1_BASE, EQEP_INT_UNIT_TIME_OUT );

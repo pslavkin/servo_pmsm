@@ -1,13 +1,16 @@
 #ifndef WAVE
 #define WAVE
 
+#include "ramper_.h"
+
 enum WAVE_DIR {
    CLOCK =0,
    ANTICLOCK
 };
 enum SHAPE {
    SIN=0,
-   STEP
+   STEP,
+   RAMP
 };
 typedef struct wave_struct {
    enum WAVE_DIR dir      ;
@@ -19,6 +22,7 @@ typedef struct wave_struct {
    float32_t     ampWished;
    float32_t     amp      ;
    uint32_t      t        ;
+   accel_t       p        ;
 } wave_t;
 
 void        advanceWaveStep  ( void            );
@@ -35,6 +39,7 @@ float32_t   getWaveAmp       ( void            );
 void        setWaveShape     ( enum SHAPE s    );
 void        waveGenerator    ( void            );
 
+void setAccelProfile(void);
 
 #endif
 

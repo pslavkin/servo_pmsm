@@ -19,7 +19,7 @@ void initPid(void)/*{{{*/
 {
     pi_pos = pi_pos_def;
     // Initialize the PI module for position
-    pi_pos.Kp   = 3;      // 1.0;   // 10.0;
+    pi_pos.Kp   = 1;      // 1.0;   // 10.0;
     pi_pos.Ki   = 0.0015; // T*speedLoopPrescaler/0.3;
     pi_pos.Umax = 0.5;
     pi_pos.Umin = -0.5;
@@ -45,7 +45,7 @@ void initPid(void)/*{{{*/
 //
     // Initialize the PID module for speed
     pid_spd = pid_spd_def;
-    pid_spd.param.Kp   = 3.0;
+    pid_spd.param.Kp   = 2.0;
     pid_spd.param.Ki   = 0.0015;
     pid_spd.param.Kd   = 0.0015;
     pid_spd.param.Umax = 0.5;//0.95;

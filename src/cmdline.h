@@ -80,6 +80,7 @@ void Cmd_setWaveFrec      ( uint16_t argc, char *argv[] );
 void Cmd_setWaveAmp       ( uint16_t argc, char *argv[] );
 void Cmd_setWaveShapeSin  ( uint16_t argc, char *argv[] );
 void Cmd_setWaveShapeStep ( uint16_t argc, char *argv[] );
+void Cmd_setWaveShapeRamp ( uint16_t argc, char *argv[] );
 void Cmd_enableWave       ( uint16_t argc, char *argv[] );
 void Cmd_disableWave      ( uint16_t argc, char *argv[] );
 void Cmd_advanceWaveStep  ( uint16_t argc, char *argv[] );
