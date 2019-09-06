@@ -80,8 +80,9 @@ void setWaveShape(enum SHAPE s)
 
 void setAccelProfile(void)
 {
+   wave.p.center  = getPosAbs();
    wave.p.x0      = getPosAbs();
-   wave.p.x1      = wave.p.x0+30;
+   wave.p.x1      = wave.p.x0-30;
    wave.p.v0      = 0;
    wave.p.v1      = 200.0/((2*60*BASE_FREQ)/POLES);
    wave.p.acc     = 0.01;
@@ -91,8 +92,15 @@ void setAccelProfile(void)
    wave.p.actualA = 0;
    wave.p.t       = 0;
    wave.p.period  = T;
-   wave.p.state   = RISE;
    wave.p.deltaX = (wave.p.v1*wave.p.v1*KK)/(2*wave.p.decc);
+
+   if(wave.p.x1<wave.p.x0) {
+      wave.p.x1  = wave.p.x0+(wave.p.x0-wave.p.x1);
+      wave.p.dir = ACLK;
+   }
+   else 
+      wave.p.dir=CLK;
+   wave.p.state   = RISE;
 }
 
 void waveGenerator(void)
@@ -108,8 +116,7 @@ void waveGenerator(void)
             setPosAbs(wave.amp*(((int32_t)(wave.frec*wave.t*T)%2)?1:-1) +wave.offset);
             break;
          case RAMP:
-            accel     ( &wave.p        );
-            setPosAbs ( wave.p.actualX );
+            setPosAbs ( accel ( &wave.p ));
             break;
       }
    }
