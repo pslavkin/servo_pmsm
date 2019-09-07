@@ -10,7 +10,6 @@
 #include "eqep_.h"
 
 accel_t p={
-   .center  = 0,
    .x0      = 0,
    .x1      = 0,
    .v0      = 0,
@@ -28,16 +27,17 @@ accel_t p={
 void setGcodeG0  ( float32_t x1 )
 {
    p.x0      = getPosAbs(); // este para cortar la funcion en 3 tramos, rise, const y fall
-   p.actualX = p.x0;        // y este es el que va incrementeando
    p.x1      = x1;
+   p.actualX = 0;
    p.v0      = p.actualV;   // si lanzo otro g0 con uno en curso tomo la v actual
-
    if(p.x1<p.x0) {
-      p.x1  = p.x0+(p.x0-p.x1);
+      p.deltaX  = p.x0-p.x1;
       p.dir = ACLK;
    }
-   else 
+   else  {
+      p.deltaX  = p.x1-p.x0;
       p.dir=CLK;
+   }
    p.state   = RISE;
 }
 void      setGcodeF   ( float32_t f ) { p.v1 = f    / VXM;}

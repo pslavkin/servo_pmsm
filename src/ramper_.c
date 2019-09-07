@@ -25,33 +25,36 @@ float32_t ramper(float32_t in, float32_t out, float32_t rampDelta)/*{{{*/
     }
 }/*}}}*/
 
-static inline float32_t deltaX(float32_t v, float32_t dec) { return  (v * v * VXS ) / ( 2.0 * dec ); }
+static inline float32_t x2Dec(accel_t* p)
+{
+   return  p->deltaX - ((p->actualV * p->actualV * VXS ) / ( 2.0 * p->dec ));
+}
 
 float32_t accel(accel_t* p)
 {
    switch (p->state) {
       case RISE:
-         if ( p->actualV < p->v1 && p->actualX < ( p->x1-deltaX(p->actualV,p->dec )) ) {
+         if ( p->actualV < p->v1 && p->actualX < x2Dec(p) ) {
             p->actualV += p->acc     * p->period;
             p->actualX += p->actualV * p->period * VXS;
-            break; // mira donde te pongo el break!!
+            break;                                      // mira donde te pongo el break!!
          }
          else {
             p->state  = CONST;
          }
       case CONST:
-         if(p->actualX < ( p->x1 - deltaX(p->actualV,p->dec) ) ) {
+         if(p->actualX < x2Dec(p) ) {
             p->actualX += p->actualV * p->period * VXS;
-            break; // mira donde te pongo el break!!
+            break;                                      // mira donde te pongo el break!!
          }
          else  {
             p->state = FALL;
          }
       case FALL:
-         if ( p->actualV > 0 && p->actualX < p->x1 ) {
+         if ( p->actualV > 0 && p->actualX < p->deltaX ) {
             p->actualV -= p->dec     * p->period      ;
             p->actualX += p->actualV * p->period * VXS;
-            break; // mira donde te pongo el break!!
+            break;                                      // mira donde te pongo el break!!
          }
          else {
             p->state=IDLE;
@@ -59,11 +62,10 @@ float32_t accel(accel_t* p)
       case IDLE:
          break;
    }
-                   // sciPrintf("state=%i|x=%f|v=%f|x1=%f|t=%f\r\n",(int32_t)p->state,p->actualX,p->actualV,p->x1,p->t);
    if(p->dir==CLK)
-         return p->actualX;
+      return p->x0 + p->actualX;
    else
-         return p->x0-(p->actualX-p->x0);
+      return p->x0 - p->actualX;
 }
 
 

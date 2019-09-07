@@ -21,6 +21,7 @@ typedef struct accel_struct {
    float32_t          dec    ;
    float32_t          actualX;
    float32_t          actualV;
+   float32_t          deltaX ;
    float32_t          period ;
    enum rampDir_enum  dir    ;
    enum ramp_enum     state  ;
