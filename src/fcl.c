@@ -119,8 +119,8 @@ void runIsr(void)/*{{{*/
    if (++speedLoopCount >= speedLoopPrescaler)
    {
       speedLoopCount = 1;
-      pi_pos.Ref = getPosAbs();
-      pi_pos.Fbk = getPosAbsMech();
+      pi_pos.Ref     = getPosAbs     ( );
+      pi_pos.Fbk     = getPosAbsMech ( );
       runPIPos(&pi_pos);
 
       pid_spd.term.Ref = pi_pos.Out;
@@ -128,8 +128,8 @@ void runIsr(void)/*{{{*/
       runPID(&pid_spd);
       pi_iq.ref        = pid_spd.term.Out;
    }
-   waveGenerator();
-   sendPrintLogEvent();
+   waveGenerator     ( );
+   sendPrintLogEvent ( );
 }/*}}}*/
 //----------------------------------------------------------------------------------------
 const State
@@ -209,7 +209,6 @@ const State running       [ ] =
 };
 const State overCurrenting[ ] =
 {
-    overcurrentEvent        ,overCurrent    ,overCurrenting ,
     overcurrentClearedEvent ,stop           ,stopped        ,
     ANY_Event               ,Rien           ,overCurrenting ,
 };

@@ -9,11 +9,12 @@
 #include "gcode.h"
 #include "eqep_.h"
 
+
 accel_t p={
    .x0      = 0,
    .x1      = 0,
    .v0      = 0,
-   .v1      = 200.0/((2*60*BASE_FREQ)/POLES),
+   .v1      = 200.0/VXM,
    .acc     = 0.01,
    .dec     = 0.01,
    .actualX = 0,
@@ -30,15 +31,22 @@ void setGcodeG0  ( float32_t x1 )
    p.x1      = x1;
    p.actualX = 0;
    p.v0      = p.actualV;   // si lanzo otro g0 con uno en curso tomo la v actual
-   if(p.x1<p.x0) {
-      p.deltaX  = p.x0-p.x1;
-      p.dir = ACLK;
+   if(p.x1>p.x0) {
+      if(p.dir == CLK) {
+         p.deltaX  = p.x1-p.x0;
+         p.state   = RISE;
+      }
+      else
+         p.state   = REVERSING;
    }
-   else  {
-      p.deltaX  = p.x1-p.x0;
-      p.dir=CLK;
+   else {
+      if(p.dir == ACLK) {
+         p.deltaX  = p.x0-p.x1;
+         p.state   = RISE;
+      }
+      else
+         p.state   = REVERSING;
    }
-   p.state   = RISE;
 }
 void      setGcodeF   ( float32_t f ) { p.v1 = f    / VXM;}
 float32_t getGcodeF   ( void        ) { return p.v1 * VXM;}

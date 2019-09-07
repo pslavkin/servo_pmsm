@@ -9,12 +9,13 @@ typedef struct pos_struct {
 } pos_t;
 extern pos_t pos;
 
-void                       incPos          ( void           )                 ;
-void                       setPosAbs       ( float32_t abs  )                 ;
-void                       setPosAbsMech   ( float32_t mech )                 ;
-void                       setPosAbsOffset ( float32_t mech )                 ;
-static inline float32_t    getPosAbs       ( void           ) { return pos.abs;}
-static inline float32_t    getPosAbsMech   ( void           ) { return pos.absMech  ;}
+void                       incPos          ( void           );
+void                       rstPosAbs       ( void           );
+void                       setPosAbs       ( float32_t abs  );
+void                       setPosAbsMech   ( float32_t mech );
+void                       setPosAbsOffset ( float32_t mech );
+static inline float32_t    getPosAbs       ( void           ) { return pos.abs    ;}
+static inline float32_t    getPosAbsMech   ( void           ) { return pos.absMech;}
 static inline void         addPosAbsMech   ( float32_t mech )
 {
    float32_t diff;

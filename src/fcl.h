@@ -208,7 +208,7 @@ extern FCL_Parameters_t FCL_params;
 #define BASE_LEM_CURRENT    12.0                       // ----- do -----
 #define BASE_TORQUE                                    // Base torque (N.m)
 #define BASE_FLUX                                      // Base flux linkage (volt.sec/rad)
-#define BASE_FREQ           250                        // Base electrical frequency (Hz)
+#define BASE_FREQ           50                        // Base electrical frequency (Hz)
 #define VXS                 ((2.0*   BASE_FREQ)/POLES) // sale de que para v=1 el motor gira a ((2*BASE_FREQ)/POLES)=62.5 vuelas por seg, como x esta expresado en vueltas, listo
 #define VXM                 ((2.0*60*BASE_FREQ)/POLES) // sale de que para v=1 el motor gira a ((2*BASE_FREQ)/POLES)=62.5 vuelas por seg, como x esta expresado en vueltas, listo
 

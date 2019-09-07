@@ -94,6 +94,7 @@ void Cmd_setGcodeF   ( uint16_t argc, char *argv[] );
 void Cmd_setGcodeAcc ( uint16_t argc, char *argv[] );
 void Cmd_setGcodeDec ( uint16_t argc, char *argv[] );
 void Cmd_sendOneLog  ( uint16_t argc, char *argv[] );
+void Cmd_posRst      ( uint16_t argc, char *argv[] );
 
 void Cmd_back2login         ( uint16_t argc, char *argv[]   );
 void Cmd_Help               ( uint16_t argc, char *argv[]   );

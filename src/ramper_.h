@@ -5,6 +5,7 @@ enum ramp_enum {
    RISE=0,
    CONST,
    FALL,
+   REVERSING,
    IDLE
 };
 enum rampDir_enum {

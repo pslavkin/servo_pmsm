@@ -5,6 +5,7 @@
 #include "adc.h"
 #include "wave.h"
 #include "ramper_.h"
+#include "position.h"
 #include "eqep_.h"
 
 // slew programmable ramper
@@ -51,14 +52,38 @@ float32_t accel(accel_t* p)
             p->state = FALL;
          }
       case FALL:
-         if ( p->actualV > 0 && p->actualX < p->deltaX ) {
+         if ( p->actualV > 0) {
             p->actualV -= p->dec     * p->period      ;
             p->actualX += p->actualV * p->period * VXS;
             break;                                      // mira donde te pongo el break!!
          }
          else {
-            p->state=IDLE;
+            p->state=REVERSING;
          }
+      case REVERSING:
+         if ( p->actualV > 0 ) {
+            p->actualV -= p->dec     * p->period      ;
+            p->actualX += p->actualV * p->period * VXS;
+         }
+         else {
+            if(p->dir==CLK)
+               p->x0 = p->x0 + p->actualX;
+            else
+               p->x0 = p->x0 - p->actualX;
+
+            if(p->x1 > p->x0) {
+               p->dir    = CLK;
+               p->deltaX = p->x1-p->x0;
+            }
+            else {
+               p->dir    = ACLK;
+               p->deltaX = p->x0-p->x1;
+            }
+            p->state   = RISE;
+            p->actualX = 0;
+            p->v0      = p->actualV;
+         }
+         break;
       case IDLE:
          break;
    }

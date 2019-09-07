@@ -252,15 +252,16 @@ void Cmd_setWaveStepAngle(uint16_t argc, char *argv[])
 //--------------------------------------------------------------------------------
 tCmdLineEntry gcodeCmdTable[] =/*{{{*/
 {
-   { "g0"   ,Cmd_setGcodeG0      ,": G0"                  },
-   { "F"    ,Cmd_setGcodeF       ,": F"                   },
-   { "acc"  ,Cmd_setGcodeAcc     ,": set accel"           },
-   { "dec"  ,Cmd_setGcodeDec     ,": set deccel"          },
-   { "log"  ,Cmd_sendOneLog      ,": send one line log"          },
-   { "<"    ,Cmd_back2login      ,": back to login table" },
-   { "?"    ,Cmd_Help            ,": help"                },
-   { 0      ,0                   ,0                       }
-                                                          };
+   { "g0"  ,Cmd_setGcodeG0  ,": G0"                  },
+   { "F"   ,Cmd_setGcodeF   ,": F"                   },
+   { "acc" ,Cmd_setGcodeAcc ,": set accel"           },
+   { "dec" ,Cmd_setGcodeDec ,": set deccel"          },
+   { "log" ,Cmd_sendOneLog  ,": send one line log"   },
+   { "rst" ,Cmd_posRst      ,": reset abs pos to 0"  },
+   { "<"   ,Cmd_back2login  ,": back to login table" },
+   { "?"   ,Cmd_Help        ,": help"                },
+   { 0     ,0               ,0                       }
+};
 void Cmd_setGcodeG0(uint16_t argc, char *argv[])
 {
    if(argc>1)
@@ -288,6 +289,11 @@ void Cmd_setGcodeDec(uint16_t argc, char *argv[])
 void Cmd_sendOneLog(uint16_t argc, char *argv[])
 {
    printLog();
+}
+void Cmd_posRst(uint16_t argc, char *argv[])
+{
+   rstPosAbs();
+   sciPrintf("abs pos reset\r\n");
 }
 /*}}}*/
 //--------------------------------------------------------------------------------
