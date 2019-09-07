@@ -14,10 +14,10 @@ wave_t wave={
    .stepAngle = 0.0002,
    .frec      = 0.1,
    .offset    = 0,
-   .enable    = false,
+   .enable    = true,
    .ampWished = 1,
    .amp       = 1,
-   .shape     = SIN,
+   .shape     = GCODES,
    .t         = 0,
 };
 void advanceWaveStep(void)

@@ -7,6 +7,7 @@ enum logEvents_enum {
 
 const State**     logger            ( void      );
 void              printLog          ( void      );
+void              printLogPrescaled ( void      );
 void              sendPrintLogEvent ( void      );
 void              setLogEnable      ( void      );
 void              setLogDisable     ( void      );

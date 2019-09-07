@@ -25,51 +25,45 @@ float32_t ramper(float32_t in, float32_t out, float32_t rampDelta)/*{{{*/
     }
 }/*}}}*/
 
+static inline float32_t deltaX(float32_t v, float32_t dec) { return  (v * v * VXS ) / ( 2.0 * dec ); }
+
 float32_t accel(accel_t* p)
 {
    switch (p->state) {
       case RISE:
-         if ( p->actualV<p->v1 && p->actualX < (p->x1-p->deltaX)) {
-            p->actualX = p->x0 + KK * (p->v0 *p->t + 0.5*p->acc*p->t*p->t);
-            p->actualV = p->v0 + p->acc*p->t;
-            break; //mira donde te pongo el break!!
+         if ( p->actualV < p->v1 && p->actualX < ( p->x1-deltaX(p->actualV,p->dec )) ) {
+            p->actualV += p->acc     * p->period;
+            p->actualX += p->actualV * p->period * VXS;
+            break; // mira donde te pongo el break!!
          }
          else {
-            p->v1     = p->actualV;
-            p->x0     = p->actualX;
-            p->deltaX = (p->v1*p->v1*KK)/(2*p->dec);
-            p->t      = 0;
             p->state  = CONST;
          }
       case CONST:
-         if(p->actualX < (p->x1-p->deltaX)) {
-            p->actualX = p->x0 + KK * p->v1 *p->t;
-            break; //mira donde te pongo el break!!
+         if(p->actualX < ( p->x1 - deltaX(p->actualV,p->dec) ) ) {
+            p->actualX += p->actualV * p->period * VXS;
+            break; // mira donde te pongo el break!!
          }
          else  {
-            p->x0    = p->actualX;
-            p->t     = 0;
             p->state = FALL;
          }
       case FALL:
-         if(p->actualV>0 && p->actualX<p->x1) {
-            p->actualX = p->x0+KK * (p->v1*p->t-0.5*p->dec*p->t*p->t);
-            p->actualV = p->v1-p->dec*p->t;
-            break; //mira donde te pongo el break!!
+         if ( p->actualV > 0 && p->actualX < p->x1 ) {
+            p->actualV -= p->dec     * p->period      ;
+            p->actualX += p->actualV * p->period * VXS;
+            break; // mira donde te pongo el break!!
          }
          else {
             p->state=IDLE;
          }
-         break;
       case IDLE:
          break;
    }
-//   sciPrintf("state=%i|x=%f|v=%f|x1=%f|t=%f\r\n",(int32_t)p->state,p->actualX,p->actualV,p->x1,p->t);
-   p->t+=p->period;
+                   // sciPrintf("state=%i|x=%f|v=%f|x1=%f|t=%f\r\n",(int32_t)p->state,p->actualX,p->actualV,p->x1,p->t);
    if(p->dir==CLK)
          return p->actualX;
    else
-         return p->center-(p->actualX-p->center);
+         return p->x0-(p->actualX-p->x0);
 }
 
 

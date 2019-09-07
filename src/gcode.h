@@ -1,11 +1,16 @@
 #ifndef GCODE
 #define GCODE
 
-void setgcodeG0   ( float32_t x1 );
-void setgcodeF    ( float32_t f  );
-void setgcodeAcc  ( float32_t a  );
-void setgcodeDec  ( float32_t d  );
-void advanceGcode ( void         );
+void        advanceGcode ( void         );
+void        setGcodeF    ( float32_t f  );
+float32_t   getGcodeF    ( void         );
+void        setGcodeAcc  ( float32_t a  );
+float32_t   getGcodeAcc  ( void         );
+void        setGcodeDec  ( float32_t d  );
+float32_t   getGcodeDec  ( void         );
+void        setGcodeG0   ( float32_t x1 );
+float32_t   getGcodeX0   ( void         );
+float32_t   getGcodeX1   ( void         );
 
 #endif
 

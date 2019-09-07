@@ -20,6 +20,7 @@
 #include "log.h"
 #include "wave.h"
 #include "gcode.h"
+#include "events.h"
 
 tCmdLineEntry Login_Cmd_Table    [ ];
 tCmdLineEntry iqPidCmdTable      [ ];
@@ -251,33 +252,42 @@ void Cmd_setWaveStepAngle(uint16_t argc, char *argv[])
 //--------------------------------------------------------------------------------
 tCmdLineEntry gcodeCmdTable[] =/*{{{*/
 {
-   { "g0"   ,Cmd_setgcodeG0      ,": G0"                  },
-   { "F"    ,Cmd_setgcodeF       ,": F"                   },
-   { "acc"  ,Cmd_setgcodeAcc     ,": set accel"           },
-   { "dec"  ,Cmd_setgcodeDec     ,": set deccel"          },
+   { "g0"   ,Cmd_setGcodeG0      ,": G0"                  },
+   { "F"    ,Cmd_setGcodeF       ,": F"                   },
+   { "acc"  ,Cmd_setGcodeAcc     ,": set accel"           },
+   { "dec"  ,Cmd_setGcodeDec     ,": set deccel"          },
+   { "log"  ,Cmd_sendOneLog      ,": send one line log"          },
    { "<"    ,Cmd_back2login      ,": back to login table" },
    { "?"    ,Cmd_Help            ,": help"                },
    { 0      ,0                   ,0                       }
                                                           };
-void Cmd_setgcodeG0(uint16_t argc, char *argv[])
+void Cmd_setGcodeG0(uint16_t argc, char *argv[])
 {
    if(argc>1)
-      setgcodeG0(atof(argv[1]));
+      setGcodeG0(atof(argv[1]));
+   sciPrintf("x0=%f x1=%f\r\n",getGcodeX0(),getGcodeX1());
 }
-void Cmd_setgcodeF(uint16_t argc, char *argv[])
+void Cmd_setGcodeF(uint16_t argc, char *argv[])
 {
    if(argc>1)
-      setgcodeF(atof(argv[1]));
+      setGcodeF(atof(argv[1]));
+   sciPrintf("F=%f\r\n",getGcodeF());
 }
-void Cmd_setgcodeAcc(uint16_t argc, char *argv[])
+void Cmd_setGcodeAcc(uint16_t argc, char *argv[])
 {
    if(argc>1)
-      setgcodeAcc(atof(argv[1]));
+      setGcodeAcc(atof(argv[1]));
+   sciPrintf("acc=%f\r\n",getGcodeAcc());
 }
-void Cmd_setgcodeDec(uint16_t argc, char *argv[])
+void Cmd_setGcodeDec(uint16_t argc, char *argv[])
 {
    if(argc>1)
-      setgcodeDec(atof(argv[1]));
+      setGcodeDec(atof(argv[1]));
+   sciPrintf("dec=%f\r\n",getGcodeDec());
+}
+void Cmd_sendOneLog(uint16_t argc, char *argv[])
+{
+   printLog();
 }
 /*}}}*/
 //--------------------------------------------------------------------------------

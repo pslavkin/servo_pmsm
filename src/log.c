@@ -20,18 +20,23 @@ const State*      logSm=logEnabled;
 
 const State**     logger ( void ) { return &logSm; }
 
-void printLog(void)
+void printLogPrescaled(void)
 {
    if(++logCount >= logPrescaler) {
       logCount = 0;
       logTicker+=logPrescaler;
-      sciPrintf("%f %f %f %f %f\r\n",logTicker*T,
-            getPiIqFbk     ( ),
-            getSpeed1Speed ( ),
-            getPiPosFbk    ( ),
-            getPosAbs      ( )
-            );
+      printLog();
    }
+}
+
+void printLog(void)
+{
+   sciPrintf("%f %f %f %f %f\r\n",logTicker*T,
+         getPiIqFbk     ( ),
+         getSpeed1Speed ( ),
+         getPiPosFbk    ( ),
+         getPosAbs      ( )
+         );
 }
 void sendPrintLogEvent(void)
 {
@@ -45,6 +50,6 @@ int32_t  getLogPrescaler ( void      ) { return logPrescaler ;}
 
 const State logEnabled [ ] =
 {
-    printLogEvent ,printLog ,logEnabled ,
-    ANY_Event     ,Rien     ,logEnabled ,
+    printLogEvent ,printLogPrescaled ,logEnabled ,
+    ANY_Event     ,Rien              ,logEnabled ,
 };

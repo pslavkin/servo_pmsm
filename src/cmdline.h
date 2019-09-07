@@ -89,10 +89,11 @@ void Cmd_setWaveDirClk    ( uint16_t argc, char *argv[] );
 void Cmd_setWaveDirAclk   ( uint16_t argc, char *argv[] );
 void Cmd_setWaveStepAngle ( uint16_t argc, char *argv[] );
 
-void Cmd_setgcodeG0  ( uint16_t argc, char *argv[] );
-void Cmd_setgcodeF   ( uint16_t argc, char *argv[] );
-void Cmd_setgcodeAcc ( uint16_t argc, char *argv[] );
-void Cmd_setgcodeDec ( uint16_t argc, char *argv[] );
+void Cmd_setGcodeG0  ( uint16_t argc, char *argv[] );
+void Cmd_setGcodeF   ( uint16_t argc, char *argv[] );
+void Cmd_setGcodeAcc ( uint16_t argc, char *argv[] );
+void Cmd_setGcodeDec ( uint16_t argc, char *argv[] );
+void Cmd_sendOneLog  ( uint16_t argc, char *argv[] );
 
 void Cmd_back2login         ( uint16_t argc, char *argv[]   );
 void Cmd_Help               ( uint16_t argc, char *argv[]   );
