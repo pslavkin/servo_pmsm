@@ -23,6 +23,7 @@ void Cmd_stepDir     ( uint16_t argc ,char *argv[] );
 void Cmd_overcurrent ( uint16_t argc ,char *argv[] );
 void Cmd_wave        ( uint16_t argc ,char *argv[] );
 void Cmd_gcode       ( uint16_t argc, char *argv[] );
+void Cmd_stepdir       ( uint16_t argc, char *argv[] );
 void Cmd_fcl         ( uint16_t argc ,char *argv[] );
 void Cmd_log         ( uint16_t argc ,char *argv[] );
 
@@ -49,10 +50,10 @@ void Cmd_writeIqPid         ( uint16_t argc, char *argv[]   );
 
 void Cmd_readSpeedPid       ( uint16_t argc, char *argv[]   );
 void Cmd_writeSpeedPid      ( uint16_t argc, char *argv[]   );
+
 void Cmd_readPosPid         ( uint16_t argc, char *argv[]   );
 void Cmd_writePosPid        ( uint16_t argc, char *argv[]   );
-void Cmd_printAbsMech       ( uint16_t argc, char *argv[]   );
-void Cmd_printAbs           ( uint16_t argc, char *argv[]   );
+
 void Cmd_setFrec            ( uint16_t argc, char *argv[]   );
 void Cmd_initSinGenerator   ( uint16_t argc, char *argv[]   );
 void Cmd_sinGenerator       ( uint16_t argc, char *argv[]   );
@@ -95,6 +96,8 @@ void Cmd_setGcodeAcc ( uint16_t argc, char *argv[] );
 void Cmd_setGcodeDec ( uint16_t argc, char *argv[] );
 void Cmd_sendOneLog  ( uint16_t argc, char *argv[] );
 void Cmd_posRst      ( uint16_t argc, char *argv[] );
+
+void Cmd_getStepDir(uint16_t argc, char *argv[]);
 
 void Cmd_back2login         ( uint16_t argc, char *argv[]   );
 void Cmd_Help               ( uint16_t argc, char *argv[]   );

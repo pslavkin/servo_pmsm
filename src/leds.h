@@ -13,13 +13,19 @@ void     led2On            ( void                         );
 void     led2Off           ( void                         );
 void     led45On           ( void                         );
 void     led45Off          ( void                         );
+void     led39On           ( void                         );
+void     led39Off          ( void                         );
+uint32_t getGpio39         ( void                         );
+uint32_t getGpio45         ( void                         );
 void     led2Toogle        ( void                         );
 void     led1Toogle        ( void                         );
 //---------------------------------------------------------
 enum Leds_Position
 {
    led1Index     =0,
-   led2Index
+   led2Index,
+   led39Index,
+   led45Index
 };
 struct ledEffect_struct
 {

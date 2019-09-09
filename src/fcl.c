@@ -24,10 +24,10 @@ uint16_t          speedLoopPrescaler = 10   ; // Speed loop pre scalar
 uint16_t          speedLoopCount     = 1    ; // Speed loop counter
 
 // Variables for Fast Current Loop
-volatile  uint16_t   FCL_cycleCount  = 0    ;
-float32_t            alignCntr       = 0    ;
-float32_t            alignCnt        = 10000;
-float32_t            IdRef_start     = 0.1  ;
+volatile  uint16_t   FCL_cycleCount  = 0;
+float32_t            alignCntr          ;
+float32_t            alignCnt           ;
+float32_t            IdRef_start        ;
 
 // Instance a ramp controller to smoothly ramp the frequency
 RMPCNTL rc1 = RMPCNTL_DEFAULTS;
@@ -80,7 +80,7 @@ void initFcl(void)/*{{{*/
 // Motor Control ISR
 __interrupt void motorControlISR(void)/*{{{*/
 {
-   led45On(); //debug
+//   led45On(); //debug
       FCL_runPICtrl     (                ) ;
       getVdc            (                ) ; // Measure DC Bus voltage using SDFM Filter3
       FCL_runPICtrlWrap (                ) ; // Fast current loop controller wrapper
@@ -89,7 +89,7 @@ __interrupt void motorControlISR(void)/*{{{*/
       EPWM_clearEventTriggerInterruptFlag ( EPWM1_BASE                                   );
       ADC_clearInterruptStatus            ( ADCA_BASE, ADC_INT_NUMBER1                   );
       Interrupt_clearACKGroup             ( INTERRUPT_ACK_GROUP3 | INTERRUPT_ACK_GROUP11 );
-   led45Off(); //debug
+//   led45Off(); //debug
 }/*}}}*/
 // stop 
 void stopIsr(void)/*{{{*/
@@ -151,11 +151,13 @@ void sendOvercurrentClearedEvent ( void ) { atomicSendEvent(overcurrentClearedEv
 void align(void)/*{{{*/
 {
    FCL_resetController();
-   lsw       = QEP_ALIGNMENT;
-   alignCntr = 0;
-   pi_id.ref = 0;
-   pi_iq.ref = 0;
-   isrSm     = alignIsr;
+   lsw         = QEP_ALIGNMENT;
+   alignCntr   = 0            ;
+   alignCnt    = 10000        ;
+   IdRef_start = 0.1          ;
+   pi_id.ref   = 0            ;
+   pi_iq.ref   = 0            ;
+   isrSm       = alignIsr     ;
    sciPrintf("aligning\r\n");
    EPWM_clearEventTriggerInterruptFlag ( EPWM1_BASE         ); // clear pending INT event
    Interrupt_enable                    ( INT_EPWM1          ); // Enable PWM1INT in PIE group 3

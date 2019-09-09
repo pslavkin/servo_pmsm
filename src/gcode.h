@@ -11,6 +11,7 @@ float32_t   getGcodeDec  ( void         );
 void        setGcodeG0   ( float32_t x1 );
 float32_t   getGcodeX0   ( void         );
 float32_t   getGcodeX1   ( void         );
+void        rstGcode     ( void         );
 
 #endif
 

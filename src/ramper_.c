@@ -25,13 +25,11 @@ float32_t ramper(float32_t in, float32_t out, float32_t rampDelta)/*{{{*/
         return(in);
     }
 }/*}}}*/
-
-static inline float32_t x2Dec(accel_t* p)
+static inline float32_t x2Dec(accel_t* p)/*{{{*/
 {
    return  p->deltaX - ((p->actualV * p->actualV * VXS ) / ( 2.0 * p->dec ));
-}
-
-float32_t accel(accel_t* p)
+}/*}}}*/
+float32_t accel(accel_t* p)/*{{{*/
 {
    switch (p->state) {
       case RISE:
@@ -84,13 +82,14 @@ float32_t accel(accel_t* p)
             p->v0      = p->actualV;
          }
          break;
-      case IDLE:
+      default:
+         sciPrintf("error ramper\r\n");
          break;
    }
    if(p->dir==CLK)
       return p->x0 + p->actualX;
    else
       return p->x0 - p->actualX;
-}
+}/*}}}*/
 
 

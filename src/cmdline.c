@@ -1,4 +1,4 @@
-#include <stdint.h>
+#include <stdint.h>/*{{{*/
 #include <stdbool.h>
 #include <string.h>
 #include <stdlib.h>
@@ -20,7 +20,8 @@
 #include "log.h"
 #include "wave.h"
 #include "gcode.h"
-#include "events.h"
+#include "leds.h"
+#include "events.h"/*}}}*/
 
 tCmdLineEntry Login_Cmd_Table    [ ];
 tCmdLineEntry iqPidCmdTable      [ ];
@@ -29,6 +30,7 @@ tCmdLineEntry posPidCmdTable     [ ];
 tCmdLineEntry overcurrentCmdTable[ ];
 tCmdLineEntry waveCmdTable       [ ];
 tCmdLineEntry gcodeCmdTable      [ ];
+tCmdLineEntry stepdirCmdTable      [ ];
 tCmdLineEntry fclCmdTable        [ ];
 tCmdLineEntry logCmdTable        [ ];
 
@@ -46,6 +48,7 @@ tCmdLineEntry Login_Cmd_Table[] =
    { "log"   ,Cmd_log         ,": log on/off"           },
    { "wave"  ,Cmd_wave        ,": wave generator"       },
    { "gcode" ,Cmd_gcode       ,": gcode parser"         },
+   { "sd"    ,Cmd_stepdir     ,": stepdir config"       },
    { "v"     ,Cmd_version     ,": version"              },
    { "?"     ,Cmd_Help        ,": help"                 },
    { 0       ,0               ,0                        }
@@ -59,6 +62,7 @@ void Cmd_overcurrent ( uint16_t argc, char *argv[] ) { actualCmdTable=overcurren
 void Cmd_fcl         ( uint16_t argc, char *argv[] ) { actualCmdTable=fclCmdTable                      ;}
 void Cmd_wave        ( uint16_t argc, char *argv[] ) { actualCmdTable=waveCmdTable                     ;}
 void Cmd_gcode       ( uint16_t argc, char *argv[] ) { actualCmdTable=gcodeCmdTable                     ;}
+void Cmd_stepdir       ( uint16_t argc, char *argv[] ) { actualCmdTable=stepdirCmdTable                     ;}
 void Cmd_log         ( uint16_t argc, char *argv[] ) { actualCmdTable=logCmdTable                      ;}
 //--------------------------------------------------------------------------------
 tCmdLineEntry iqPidCmdTable[] =/*{{{*/
@@ -99,11 +103,13 @@ void Cmd_readSpeedPid(uint16_t argc, char *argv[])
 }
 void Cmd_writeSpeedPid(uint16_t argc, char *argv[])
 {
-   if(argc>3) {
-      if(argv[1][0]!=',') pid_spd.param.Kp   = atof(argv[1]);
-      if(argv[2][0]!=',') pid_spd.param.Ki   = atof(argv[2]);
-      if(argv[3][0]!=',') pid_spd.param.Kd   = atof(argv[3]);
-   }
+   if(argc>1 && (argv[1][0] != ',')) pid_spd.param.Kp   = atof(argv[1]);
+   if(argc>2 && (argv[2][0] != ',')) pid_spd.param.Ki   = atof(argv[1]);
+   if(argc>3 && (argv[3][0] != ',')) pid_spd.param.Kd   = atof(argv[1]);
+   if(argc>4 && (argv[4][0] != ',')) pid_spd.param.Kr   = atof(argv[1]);
+   if(argc>5 && (argv[5][0] != ',')) pid_spd.param.Km   = atof(argv[1]);
+   if(argc>6 && (argv[6][0] != ',')) pid_spd.param.Umax = atof(argv[1]);
+   if(argc>7 && (argv[7][0] != ',')) pid_spd.param.Umin = atof(argv[1]);
 }
 /*}}}*/
 //--------------------------------------------------------------------------------
@@ -111,8 +117,6 @@ tCmdLineEntry posPidCmdTable[] =/*{{{*/
 {
    { "r"    ,Cmd_readPosPid         ,": read pos PID "          },
    { "w"    ,Cmd_writePosPid        ,": write pos PID "         },
-   { "a"    ,Cmd_printAbs           ,": print abs pos "         },
-   { "m"    ,Cmd_printAbsMech       ,": print abs mech pos "    },
    { "<"    ,Cmd_back2login         ,": back to login table"    },
    { "?"    ,Cmd_Help               ,": help"                   },
    { 0      ,0                      ,0                          }
@@ -123,18 +127,10 @@ void Cmd_readPosPid(uint16_t argc, char *argv[])
 }
 void Cmd_writePosPid(uint16_t argc, char *argv[])
 {
-   if(argc>2) {
-      if(argv[1][0]!=',') pi_pos.Kp   = atof(argv[1]);
-      if(argv[2][0]!=',') pi_pos.Ki   = atof(argv[2]);
-   }
-}
-void Cmd_printAbsMech(uint16_t argc, char *argv[])
-{
-   sciPrintf("absMech=%f\r\n",getPosAbsMech());
-}
-void Cmd_printAbs(uint16_t argc, char *argv[])
-{
-   sciPrintf("abs=%f\r\n",getPosAbs());
+   if(argc>1 && (argv[1][0] != ',')) pi_pos.Kp   = atof(argv[1]);
+   if(argc>2 && (argv[2][0] != ',')) pi_pos.Ki   = atof(argv[2]);
+   if(argc>3 && (argv[3][0] != ',')) pi_pos.Umax = atof(argv[3]);
+   if(argc>4 && (argv[4][0] != ',')) pi_pos.Umin = atof(argv[4]);
 }
 /*}}}*/
 //--------------------------------------------------------------------------------
@@ -292,8 +288,22 @@ void Cmd_sendOneLog(uint16_t argc, char *argv[])
 }
 void Cmd_posRst(uint16_t argc, char *argv[])
 {
-   rstPosAbs();
+   rstPosAbs ( );
+   rstGcode  ( );
    sciPrintf("abs pos reset\r\n");
+}
+/*}}}*/
+//--------------------------------------------------------------------------------
+tCmdLineEntry stepdirCmdTable[] =/*{{{*/
+{
+   { "r" ,Cmd_getStepDir ,": read step and dir state" },
+   { "<" ,Cmd_back2login ,": back to login table"     },
+   { "?" ,Cmd_Help       ,": help"                    },
+   { 0   ,0              ,0                           }
+};
+void Cmd_getStepDir(uint16_t argc, char *argv[])
+{
+   sciPrintf("step=%i dir=%i\r\n",getGpio39(),getGpio45());
 }
 /*}}}*/
 //--------------------------------------------------------------------------------
