@@ -10,7 +10,8 @@ enum WAVE_DIR_ENUM {
 enum SHAPE_ENUM {
    SIN=0,
    STEP,
-   GCODES
+   GCODES,
+   STEP_DIR
 };
 typedef struct wave_struct {
    enum WAVE_DIR_ENUM   dir      ;

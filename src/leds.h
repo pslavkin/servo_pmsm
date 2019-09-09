@@ -1,6 +1,10 @@
 #ifndef LEDS
 #define LEDS
 
+#define DEVICE_GPIO_PIN_LED1        31U            // GPIO number for LD2
+#define DEVICE_GPIO_PIN_LED2        34U            // GPIO number for LD3
+#define DEVICE_GPIO_CFG_LED1        GPIO_31_GPIO31 // "pinConfig" for LD2
+#define DEVICE_GPIO_CFG_LED2        GPIO_34_GPIO34 // "pinConfig" for LD3
 //---------------------------------------------------------
 void     initLeds          ( void                         );
 void     setLedEffect      ( uint16_t Led,uint16_t Effect );
@@ -11,21 +15,13 @@ void     led1On            ( void                         );
 void     led1Off           ( void                         );
 void     led2On            ( void                         );
 void     led2Off           ( void                         );
-void     led45On           ( void                         );
-void     led45Off          ( void                         );
-void     led39On           ( void                         );
-void     led39Off          ( void                         );
-uint32_t getGpio39         ( void                         );
-uint32_t getGpio45         ( void                         );
 void     led2Toogle        ( void                         );
 void     led1Toogle        ( void                         );
 //---------------------------------------------------------
 enum Leds_Position
 {
    led1Index     =0,
-   led2Index,
-   led39Index,
-   led45Index
+   led2Index
 };
 struct ledEffect_struct
 {

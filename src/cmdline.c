@@ -18,9 +18,9 @@
 #include "overcurrent.h"
 #include "linevoltage.h"
 #include "log.h"
-#include "wave.h"
 #include "gcode.h"
 #include "leds.h"
+#include "stepdir.h"
 #include "events.h"/*}}}*/
 
 tCmdLineEntry Login_Cmd_Table    [ ];
@@ -30,7 +30,7 @@ tCmdLineEntry posPidCmdTable     [ ];
 tCmdLineEntry overcurrentCmdTable[ ];
 tCmdLineEntry waveCmdTable       [ ];
 tCmdLineEntry gcodeCmdTable      [ ];
-tCmdLineEntry stepdirCmdTable      [ ];
+tCmdLineEntry stepdirCmdTable    [ ];
 tCmdLineEntry fclCmdTable        [ ];
 tCmdLineEntry logCmdTable        [ ];
 
@@ -61,8 +61,8 @@ void Cmd_posPid      ( uint16_t argc, char *argv[] ) { actualCmdTable=posPidCmdT
 void Cmd_overcurrent ( uint16_t argc, char *argv[] ) { actualCmdTable=overcurrentCmdTable              ;}
 void Cmd_fcl         ( uint16_t argc, char *argv[] ) { actualCmdTable=fclCmdTable                      ;}
 void Cmd_wave        ( uint16_t argc, char *argv[] ) { actualCmdTable=waveCmdTable                     ;}
-void Cmd_gcode       ( uint16_t argc, char *argv[] ) { actualCmdTable=gcodeCmdTable                     ;}
-void Cmd_stepdir       ( uint16_t argc, char *argv[] ) { actualCmdTable=stepdirCmdTable                     ;}
+void Cmd_gcode       ( uint16_t argc, char *argv[] ) { actualCmdTable=gcodeCmdTable                    ;}
+void Cmd_stepdir     ( uint16_t argc, char *argv[] ) { actualCmdTable=stepdirCmdTable                  ;}
 void Cmd_log         ( uint16_t argc, char *argv[] ) { actualCmdTable=logCmdTable                      ;}
 //--------------------------------------------------------------------------------
 tCmdLineEntry iqPidCmdTable[] =/*{{{*/
@@ -179,20 +179,21 @@ void Cmd_stopFcl(uint16_t argc, char *argv[])
 //--------------------------------------------------------------------------------
 tCmdLineEntry waveCmdTable[] =/*{{{*/
 {
-   { "frec"  ,Cmd_setWaveFrec      ,": set frec pos generator" } ,
-   { "amp"   ,Cmd_setWaveAmp       ,": amplitude"              } ,
-   { "sin"   ,Cmd_setWaveShapeSin  ,": set sin generator"      } ,
-   { "step"  ,Cmd_setWaveShapeStep ,": set step generator"     } ,
-   { "gcode" ,Cmd_setWaveShapeGcode,": set code proccesor"     } ,
-   { "ena"   ,Cmd_enableWave       ,": enable wave"            } ,
-   { "dis"   ,Cmd_disableWave      ,": disable wave"           } ,
-   { "clk"   ,Cmd_setWaveDirClk    ,": set dir clk wise"       } ,
-   { "aclk"  ,Cmd_setWaveDirAclk   ,": set dir anti clk wise"  } ,
-   { "angle" ,Cmd_setWaveStepAngle ,": set step angle"         } ,
-   { "pulse" ,Cmd_advanceWaveStep  ,": advance one step"       } ,
-   { "<"     ,Cmd_back2login       ,": back to login table"    } ,
-   { "?"     ,Cmd_Help             ,": help"                   } ,
-   { 0       ,0                    ,0                          }
+   { "frec"    ,Cmd_setWaveFrec         ,": set frec pos generator" },
+   { "amp"     ,Cmd_setWaveAmp          ,": amplitude"              },
+   { "sin"     ,Cmd_setWaveShapeSin     ,": set sin generator"      },
+   { "step"    ,Cmd_setWaveShapeStep    ,": set step generator"     },
+   { "gcode"   ,Cmd_setWaveShapeGcode   ,": set code proccesor"     },
+   { "stepdir" ,Cmd_setWaveShapeStepdir ,": set step dir proccesor" },
+   { "ena"     ,Cmd_enableWave          ,": enable wave"            },
+   { "dis"     ,Cmd_disableWave         ,": disable wave"           },
+   { "clk"     ,Cmd_setWaveDirClk       ,": set dir clk wise"       },
+   { "aclk"    ,Cmd_setWaveDirAclk      ,": set dir anti clk wise"  },
+   { "angle"   ,Cmd_setWaveStepAngle    ,": set step angle"         },
+   { "pulse"   ,Cmd_advanceWaveStep     ,": advance one step"       },
+   { "<"       ,Cmd_back2login          ,": back to login table"    },
+   { "?"       ,Cmd_Help                ,": help"                   },
+   { 0         ,0                       ,0                          }
 };
 void Cmd_setWaveFrec(uint16_t argc, char *argv[])
 {
@@ -220,6 +221,11 @@ void Cmd_setWaveShapeGcode( uint16_t argc, char *argv[] )
 {
    setWaveShape    ( GCODES           );
    sciPrintf       ( "wave gcode\r\n" );
+}
+void Cmd_setWaveShapeStepdir( uint16_t argc, char *argv[] )
+{
+   setWaveShape ( STEP_DIR           );
+   sciPrintf    ( "wave stepdir\r\n" );
 }
 void Cmd_enableWave     ( uint16_t argc, char *argv[] ) { enableWave()    ;}
 void Cmd_disableWave    ( uint16_t argc, char *argv[] ) { disableWave()   ;}
@@ -296,14 +302,35 @@ void Cmd_posRst(uint16_t argc, char *argv[])
 //--------------------------------------------------------------------------------
 tCmdLineEntry stepdirCmdTable[] =/*{{{*/
 {
-   { "r" ,Cmd_getStepDir ,": read step and dir state" },
-   { "<" ,Cmd_back2login ,": back to login table"     },
-   { "?" ,Cmd_Help       ,": help"                    },
-   { 0   ,0              ,0                           }
+   { "g"    ,Cmd_getStepdirPins  ,": read step and dir pins state" } ,
+   { "clk"  ,Cmd_incStepdirPulse ,": inc step and dir state"       } ,
+   { "dir"  ,Cmd_setStepdirDir   ,": set dir to 0=clk 1=aclk"      } ,
+   { "step" ,Cmd_setStepdirStep  ,": set dir to 0=clk 1=aclk"      } ,
+   { "<"    ,Cmd_back2login      ,": back to login table"          } ,
+   { "?"    ,Cmd_Help            ,": help"                         } ,
+   { 0      ,0                   ,0                                }
 };
-void Cmd_getStepDir(uint16_t argc, char *argv[])
+void Cmd_getStepdirPins(uint16_t argc, char *argv[])
 {
    sciPrintf("step=%i dir=%i\r\n",getGpio39(),getGpio45());
+}
+void Cmd_incStepdirPulse(uint16_t argc, char *argv[])
+{
+   incStepdirPulse();
+   sciPrintf("mech pos=%f actual pos=%f\r\n",getPosAbsMech(),getPosAbs());
+
+}
+void Cmd_setStepdirDir(uint16_t argc, char *argv[])
+{
+   if(argc>1)
+      setStepdirDir(atoi(argv[1])==0?false:true);
+   sciPrintf("actual dir=%s\r\n",getStepdirDir()==false?"CLK":"ACLK");
+}
+void Cmd_setStepdirStep(uint16_t argc, char *argv[])
+{
+   if(argc>1)
+      setStepdirStep(atof(argv[1]));
+   sciPrintf("stepdir Step=%f\r\n",getStepdirStep());
 }
 /*}}}*/
 //--------------------------------------------------------------------------------

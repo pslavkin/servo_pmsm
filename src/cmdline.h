@@ -78,17 +78,18 @@ void Cmd_runFcl             ( uint16_t argc, char *argv[]   );
 void Cmd_stopFcl            ( uint16_t argc, char *argv[]   );
 void Cmd_setQepSim          ( uint16_t argc, char *argv[]   );
 
-void Cmd_setWaveFrec      ( uint16_t argc, char *argv[] );
-void Cmd_setWaveAmp       ( uint16_t argc, char *argv[] );
-void Cmd_setWaveShapeSin  ( uint16_t argc, char *argv[] );
-void Cmd_setWaveShapeStep ( uint16_t argc, char *argv[] );
-void Cmd_setWaveShapeGcode( uint16_t argc, char *argv[] );
-void Cmd_enableWave       ( uint16_t argc, char *argv[] );
-void Cmd_disableWave      ( uint16_t argc, char *argv[] );
-void Cmd_advanceWaveStep  ( uint16_t argc, char *argv[] );
-void Cmd_setWaveDirClk    ( uint16_t argc, char *argv[] );
-void Cmd_setWaveDirAclk   ( uint16_t argc, char *argv[] );
-void Cmd_setWaveStepAngle ( uint16_t argc, char *argv[] );
+void Cmd_setWaveFrec         ( uint16_t argc, char *argv[] );
+void Cmd_setWaveAmp          ( uint16_t argc, char *argv[] );
+void Cmd_setWaveShapeSin     ( uint16_t argc, char *argv[] );
+void Cmd_setWaveShapeStep    ( uint16_t argc, char *argv[] );
+void Cmd_setWaveShapeGcode   ( uint16_t argc, char *argv[] );
+void Cmd_enableWave          ( uint16_t argc, char *argv[] );
+void Cmd_disableWave         ( uint16_t argc, char *argv[] );
+void Cmd_advanceWaveStep     ( uint16_t argc, char *argv[] );
+void Cmd_setWaveDirClk       ( uint16_t argc, char *argv[] );
+void Cmd_setWaveDirAclk      ( uint16_t argc, char *argv[] );
+void Cmd_setWaveStepAngle    ( uint16_t argc, char *argv[] );
+void Cmd_setWaveShapeStepdir ( uint16_t argc, char *argv[] );
 
 void Cmd_setGcodeG0  ( uint16_t argc, char *argv[] );
 void Cmd_setGcodeF   ( uint16_t argc, char *argv[] );
@@ -97,7 +98,10 @@ void Cmd_setGcodeDec ( uint16_t argc, char *argv[] );
 void Cmd_sendOneLog  ( uint16_t argc, char *argv[] );
 void Cmd_posRst      ( uint16_t argc, char *argv[] );
 
-void Cmd_getStepDir(uint16_t argc, char *argv[]);
+void Cmd_getStepdirPins  ( uint16_t argc, char *argv[] );
+void Cmd_incStepdirPulse ( uint16_t argc, char *argv[] );
+void Cmd_setStepdirDir   ( uint16_t argc, char *argv[] );
+void Cmd_setStepdirStep  ( uint16_t argc, char *argv[] );
 
 void Cmd_back2login         ( uint16_t argc, char *argv[]   );
 void Cmd_Help               ( uint16_t argc, char *argv[]   );

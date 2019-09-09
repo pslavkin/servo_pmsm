@@ -62,6 +62,7 @@ ORDERED_OBJS += \
 "./src/scia.obj" \
 "./src/sigmadelta.obj" \
 "./src/sm.obj" \
+"./src/stepdir.obj" \
 "./src/systick.obj" \
 "./src/ustdlib.obj" \
 "./src/wave.obj" \
@@ -216,9 +217,9 @@ servo_pmsm.hex: $(EXE_OUTPUTS)
 clean:
 	-$(RM) $(BIN_OUTPUTS__QUOTED)$(EXE_OUTPUTS__QUOTED)
 	-$(RM) "lib/driverlib/adc.obj" "lib/driverlib/asysctl.obj" "lib/driverlib/can.obj" "lib/driverlib/cla.obj" "lib/driverlib/cmpss.obj" "lib/driverlib/cputimer.obj" "lib/driverlib/dac.obj" "lib/driverlib/dcsm.obj" "lib/driverlib/dma.obj" "lib/driverlib/ecap.obj" "lib/driverlib/emif.obj" "lib/driverlib/epwm.obj" "lib/driverlib/eqep.obj" "lib/driverlib/flash.obj" "lib/driverlib/gpio.obj" "lib/driverlib/hrpwm.obj" "lib/driverlib/i2c.obj" "lib/driverlib/interrupt.obj" "lib/driverlib/mcbsp.obj" "lib/driverlib/memcfg.obj" "lib/driverlib/sci.obj" "lib/driverlib/sdfm.obj" "lib/driverlib/spi.obj" "lib/driverlib/sysctl.obj" "lib/driverlib/upp.obj" "lib/driverlib/version.obj" "lib/driverlib/xbar.obj" "src/F2837xD_CodeStartBranch.obj" "src/F2837xD_GlobalVariableDefs.obj" "src/adc_.obj" "src/cbuffer.obj" "src/cla1.obj" "src/cmdline.obj" "src/dac_.obj" "src/device.obj" "src/eqep_.obj" "src/events.obj" "src/everythings.obj" "src/fcl.obj" "src/gcode.obj" "src/leds.obj" "src/linevoltage.obj" "src/log.obj" "src/main.obj" 
-	-$(RM) "src/overcurrent.obj" "src/parser.obj" "src/pid_.obj" "src/position.obj" "src/pwm.obj" "src/ramper_.obj" "src/schedule.obj" "src/scia.obj" "src/sigmadelta.obj" "src/sm.obj" "src/systick.obj" "src/ustdlib.obj" "src/wave.obj" "src/wdog.obj" 
+	-$(RM) "src/overcurrent.obj" "src/parser.obj" "src/pid_.obj" "src/position.obj" "src/pwm.obj" "src/ramper_.obj" "src/schedule.obj" "src/scia.obj" "src/sigmadelta.obj" "src/sm.obj" "src/stepdir.obj" "src/systick.obj" "src/ustdlib.obj" "src/wave.obj" "src/wdog.obj" 
 	-$(RM) "lib/driverlib/adc.d" "lib/driverlib/asysctl.d" "lib/driverlib/can.d" "lib/driverlib/cla.d" "lib/driverlib/cmpss.d" "lib/driverlib/cputimer.d" "lib/driverlib/dac.d" "lib/driverlib/dcsm.d" "lib/driverlib/dma.d" "lib/driverlib/ecap.d" "lib/driverlib/emif.d" "lib/driverlib/epwm.d" "lib/driverlib/eqep.d" "lib/driverlib/flash.d" "lib/driverlib/gpio.d" "lib/driverlib/hrpwm.d" "lib/driverlib/i2c.d" "lib/driverlib/interrupt.d" "lib/driverlib/mcbsp.d" "lib/driverlib/memcfg.d" "lib/driverlib/sci.d" "lib/driverlib/sdfm.d" "lib/driverlib/spi.d" "lib/driverlib/sysctl.d" "lib/driverlib/upp.d" "lib/driverlib/version.d" "lib/driverlib/xbar.d" "src/F2837xD_GlobalVariableDefs.d" "src/adc_.d" "src/cbuffer.d" "src/cla1.d" "src/cmdline.d" "src/dac_.d" "src/device.d" "src/eqep_.d" "src/events.d" "src/everythings.d" "src/fcl.d" "src/gcode.d" "src/leds.d" "src/linevoltage.d" "src/log.d" "src/main.d" "src/overcurrent.d" "src/parser.d" "src/pid_.d" "src/position.d" "src/pwm.d" "src/ramper_.d" "src/schedule.d" "src/scia.d" 
-	-$(RM) "src/sigmadelta.d" "src/sm.d" "src/systick.d" "src/ustdlib.d" "src/wave.d" "src/wdog.d" 
+	-$(RM) "src/sigmadelta.d" "src/sm.d" "src/stepdir.d" "src/systick.d" "src/ustdlib.d" "src/wave.d" "src/wdog.d" 
 	-$(RM) "src/F2837xD_CodeStartBranch.d" 
 	-@echo 'Finished clean'
 	-@echo ' '

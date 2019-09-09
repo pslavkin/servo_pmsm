@@ -18,6 +18,7 @@
 #include "schedule.h"
 #include "overcurrent.h"
 #include "sigmadelta.h"
+#include "stepdir.h"
 //--------------------------------------------------------------------------------
 const State
    idle1[],
@@ -39,6 +40,7 @@ const State**  everythings    ( void )
 void Init_everythings(void)
 {
    initLeds        ( );
+   initStepdir     ( );
    initParser      ( );
    Init_Schedule   ( );
    initOvercurrent ( ); // overcurren protection

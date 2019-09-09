@@ -19,7 +19,6 @@ void rstPosAbs ( void )
    setPosAbsOffset ( 0 );
    setPosAbs       ( 0 );
    setPosAbsMech   ( 0 );
-
 }
 void        setPosAbsOffset ( float32_t mech ) { pos.absOffset = mech;}
 void        setPosAbs       ( float32_t abs  ) { pos.abs       = abs ;}
@@ -28,4 +27,3 @@ void        setPosAbsMech   ( float32_t mech )
    pos.absMech     = mech;
    pos.lastAbsMech = mech;
 }
-

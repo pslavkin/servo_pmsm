@@ -82,6 +82,11 @@ void waveGenerator(void)
          case GCODES:
             advanceGcode();
             break;
+         case STEP_DIR:
+            break;
+         default :
+            sciPrintf("error default waveGenerator\r\n");
+            break;
       }
    }
 }
