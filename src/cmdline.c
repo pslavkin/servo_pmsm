@@ -91,11 +91,11 @@ void Cmd_writeIqPid(uint16_t argc, char *argv[])
 //--------------------------------------------------------------------------------
 tCmdLineEntry speedPidCmdTable[] =/*{{{*/
 {
-   { "r" ,Cmd_readSpeedPid  ,": read speed PID"      },
-   { "w" ,Cmd_writeSpeedPid ,": write speed PID"     },
-   { "<" ,Cmd_back2login    ,": back to login table" },
-   { "?" ,Cmd_Help          ,": help"                },
-   { 0   ,0                 ,0                       }
+   { "r" ,Cmd_readSpeedPid       ,": read speed PID"             },
+   { "w" ,Cmd_writeSpeedPid      ,": write speed PID"            },
+   { "<" ,Cmd_back2login         ,": back to login table"        },
+   { "?" ,Cmd_Help               ,": help"                       },
+   { 0   ,0                      ,0                              }
 };
 void Cmd_readSpeedPid(uint16_t argc, char *argv[])
 {
@@ -161,11 +161,16 @@ void Cmd_getVdc(uint16_t argc, char *argv[])
 //--------------------------------------------------------------------------------
 tCmdLineEntry fclCmdTable[] =/*{{{*/
 {
-   { "run"  ,Cmd_runFcl     ,": run motor"           },
-   { "stop" ,Cmd_stopFcl    ,": stop motor"          },
-   { "<"    ,Cmd_back2login ,": back to login table" },
-   { "?"    ,Cmd_Help       ,": help"                },
-   { 0      ,0              ,0                       }
+   { "run"    ,Cmd_runFcl              ,": run motor"                   },
+   { "stop"   ,Cmd_stopFcl             ,": stop motor"                  },
+   { "pos"    ,Cmd_setControlPos       ,": position control loop"       },
+   { "speed"  ,Cmd_setControlSpeed     ,": speed control loop"          },
+   { "torque" ,Cmd_setControlTorque    ,": torque control loop"         },
+   { "cs"     ,Cmd_setControlledSpeed  ,": set controlled speed value"  },
+   { "ct"     ,Cmd_setControlledTorque ,": set controlled torque value" },
+   { "<"      ,Cmd_back2login          ,": back to login table"         },
+   { "?"      ,Cmd_Help                ,": help"                        },
+   { 0        ,0                       ,0                               }
 };
 void Cmd_runFcl(uint16_t argc, char *argv[])
 {
@@ -174,6 +179,33 @@ void Cmd_runFcl(uint16_t argc, char *argv[])
 void Cmd_stopFcl(uint16_t argc, char *argv[])
 {
    sendStopEvent();
+}
+void Cmd_setControlSpeed(uint16_t argc, char *argv[])
+{
+   setControlSpeed();
+   sciPrintf("speed control loop\r\n");
+}
+void Cmd_setControlTorque(uint16_t argc, char *argv[])
+{
+   setControlTorque();
+   sciPrintf("torque control loop\r\n");
+}
+void Cmd_setControlPos(uint16_t argc, char *argv[])
+{
+   setControlPos();
+   sciPrintf("position control loop\r\n");
+}
+void Cmd_setControlledSpeed(uint16_t argc, char *argv[])
+{
+   if(argc>1)
+      setControlledSpeed(atof(argv[1]));
+   sciPrintf("controlled speed=%f\r\n",getControlledSpeed());
+}
+void Cmd_setControlledTorque(uint16_t argc, char *argv[])
+{
+   if(argc>1)
+      setControlledTorque(atof(argv[1]));
+   sciPrintf("controlled torque=%f\r\n",getControlledTorque());
 }
 /*}}}*/
 //--------------------------------------------------------------------------------
@@ -219,8 +251,9 @@ void Cmd_setWaveShapeStep( uint16_t argc, char *argv[] )
 }
 void Cmd_setWaveShapeGcode( uint16_t argc, char *argv[] )
 {
-   setWaveShape    ( GCODES           );
-   sciPrintf       ( "wave gcode\r\n" );
+   setGcodeX02PosAbs (                  );
+   setWaveShape      ( GCODES           );
+   sciPrintf         ( "wave gcode\r\n" );
 }
 void Cmd_setWaveShapeStepdir( uint16_t argc, char *argv[] )
 {

@@ -51,17 +51,18 @@ void setGcodeG0  ( float32_t x1 )/*{{{*/
    }
 }/*}}}*/
 
-void      setGcodeF    ( float32_t f ) { p.v1 = f    / VXM   ;}
-float32_t getGcodeF    ( void        ) { return p.v1 * VXM   ;}
-void      setGcodeAcc  ( float32_t a ) { p.acc=a             ;}
-float32_t getGcodeAcc  ( void        ) { return p.acc        ;}
-void      setGcodeDec  ( float32_t d ) { p.dec=d             ;}
-float32_t getGcodeDec  ( void        ) { return p.dec        ;}
-float32_t getGcodeX0   ( void        ) { return p.x0         ;}
-float32_t getGcodeX1   ( void        ) { return p.x1         ;}
-void      advanceGcode ( void        ) { setPosAbs(accel(&p));}
-void      rstGcode     ( void        )
-{
+void      setGcodeF         ( float32_t f ) { p.v1 = f    / VXM   ;}
+float32_t getGcodeF         ( void        ) { return p.v1 * VXM   ;}
+void      setGcodeAcc       ( float32_t a ) { p.acc=a             ;}
+float32_t getGcodeAcc       ( void        ) { return p.acc        ;}
+void      setGcodeDec       ( float32_t d ) { p.dec=d             ;}
+float32_t getGcodeDec       ( void        ) { return p.dec        ;}
+float32_t getGcodeX0        ( void        ) { return p.x0         ;}
+void      setGcodeX02PosAbs ( void        ) { p.x0=getPosAbs()    ;}
+float32_t getGcodeX1        ( void        ) { return p.x1         ;}
+void      advanceGcode      ( void        ) { setPosAbs(accel(&p));}
+void      rstGcode          ( void        )
+                                            {
    p.x0      = 0   ;
    p.x1      = 0   ;
    p.v0      = 0   ;

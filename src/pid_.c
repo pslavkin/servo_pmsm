@@ -186,5 +186,7 @@ void printPid(PID_CONTROLLER* pid)/*{{{*/
          );
 }/*}}}*/
 
-float32_t getPiIqFbk  ( void ) { return pi_iq.fbk  ;}
-float32_t getPiPosFbk ( void ) { return pi_pos.Fbk ;}
+float32_t getPiIqFbk     ( void ) { return pi_iq.fbk  ;}
+float32_t getPiIqRef     ( void ) { return pi_iq.ref  ;}
+float32_t getPiPosFbk    ( void ) { return pi_pos.Fbk ;}
+float32_t getPidSpeedRef ( void ) { return pid_spd.term.Ref;}

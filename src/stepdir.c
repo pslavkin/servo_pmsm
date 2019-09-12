@@ -1,11 +1,11 @@
-#include <stdio.h>
+#include <stdio.h>/*{{{*/
 #include <stdint.h>
 #include <stdbool.h>
 #include "gpio.h"
 #include "device.h"
 #include "scia.h"
 #include "position.h"
-#include "stepdir.h"
+#include "stepdir.h"/*}}}*/
 
 stepdir_t sd={
    .step       = 0.01,
@@ -42,34 +42,32 @@ void initStepdir ( void )/*{{{*/
 }/*}}}*/
 uint32_t getGpio39 ( void ) { return GPIO_readPin(DEVICE_GPIO_PIN_LED39);}
 uint32_t getGpio45 ( void ) { return GPIO_readPin(DEVICE_GPIO_PIN_LED45);}
-
 float32_t   getStepdirStep ( void           ) { return sd.step;}
-void        setStepdirStep ( float32_t step )
+void        setStepdirStep ( float32_t step )/*{{{*/
 {
    sd.step=step;
    if(sd.actualStep>0)
       sd.actualStep = sd.step;
    else 
       sd.actualStep = -sd.step;
-}
-void        setStepdirDir ( bool dir )
+}/*}}}*/
+void        setStepdirDir ( bool dir )/*{{{*/
 {
    if(dir==false)
       sd.actualStep = sd.step;
    else 
       sd.actualStep = -sd.step;
-}
+}/*}}}*/
 bool   getStepdirDir   ( void ) { return sd.actualStep<0 ;}
 void   incStepdirPulse ( void ) { incPosAbs(sd.actualStep);}
 
-interrupt void pulseIsr(void)
+interrupt void pulseIsr(void)/*{{{*/
 {
    incStepdirPulse();
    // Acknowledge this interrupt to get more from group 1
    Interrupt_clearACKGroup(INTERRUPT_ACK_GROUP1);
-}
-
-interrupt void dirIsr(void)
+}/*}}}*/
+interrupt void dirIsr(void)/*{{{*/
 {
    if(getGpio45()==0)
       sd.actualStep = sd.step;
@@ -78,4 +76,4 @@ interrupt void dirIsr(void)
 
     // Acknowledge this interrupt to get more from group 1
    Interrupt_clearACKGroup(INTERRUPT_ACK_GROUP1);
-}
+}/*}}}*/

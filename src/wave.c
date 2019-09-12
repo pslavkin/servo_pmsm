@@ -74,10 +74,34 @@ void waveGenerator(void)
       wave.amp = ramper(wave.ampWished,wave.amp,0.00001);
       switch (wave.shape) {
          case SIN:
-            setPosAbs(wave.amp*sin(2.0*PI*wave.frec*wave.t*T)+wave.offset);
+            switch(getControlType()) {
+               case POS:
+                  setPosAbs(wave.amp*sin(2.0*PI*wave.frec*wave.t*T)+wave.offset);
+                  break;
+               case SPEED:
+                  setControlledSpeed(wave.amp*sin(2.0*PI*wave.frec*wave.t*T));
+                  break;
+               case TORQUE:
+                  setControlledTorque(wave.amp*sin(2.0*PI*wave.frec*wave.t*T));
+                  break;
+               default:
+                  break;
+            }
             break;
          case STEP:
-            setPosAbs(wave.amp*(((int32_t)(wave.frec*wave.t*T)%2)?1:-1) +wave.offset);
+            switch(getControlType()) {
+               case POS:
+                  setPosAbs(wave.amp*(((int32_t)(wave.frec*wave.t*T)%2)?1:-1) +wave.offset);
+                  break;
+               case SPEED:
+                  setControlledSpeed(wave.amp*(((int32_t)(wave.frec*wave.t*T)%2)?1:-1));
+                  break;
+               case TORQUE:
+                  setControlledTorque(wave.amp*(((int32_t)(wave.frec*wave.t*T)%2)?1:-1));
+                  break;
+               default:
+                  break;
+            }
             break;
          case GCODES:
             advanceGcode();

@@ -39,6 +39,7 @@ https://gist.github.com/rxaviers/7360908
 - :heavy_check_mark: first set of curves controlling pos+vel+iq
 - :heavy_check_mark: absolute position calc from realative in feedback
 - :heavy_check_mark: sin generator sinusoidal and step function work
+- :heavy_check_mark: step dir using isr to connect to a controller
 - :construction:     bode plot
 - :construction:     scratch materplan
 - :construction:     merging example fcl with my own code
@@ -91,7 +92,7 @@ https://gist.github.com/rxaviers/7360908
 ## moldova
 ### here I'm
 
-<img src="doc/pics/moldova.jpg" width="250" height="300"/>
+<img src="doc/pics/pablo_en_moldova.jpg" width="400" height="300"/> <img src="doc/pics/moldova.jpg" width="250" height="300"/> 
 
 
 ## motorsszch
@@ -1109,7 +1110,7 @@ $ bower install
 
 ## Team
 
-| <a href="https://github.com/pslavkin" target="_blank">**pslavkin**</a> | <a href="https://github.com/pslavkin" target="_blank">**jhon**</a> | <a href="https://github.com/pslavkin" target="_blank">**doe**</a> |
+| <a href="https://github.com/pslavkin" target="_blank">**pslavkin**</a> | <a href="https://github.com/pslavkin" target="_blank">**neo**</a> | <a href="https://github.com/pslavkin" target="_blank">**doe**</a> |
 | :---: |:---:| :---:|
 | [![pslavkin](https://avatars1.githubusercontent.com/u/8507601?s=150)](https://github.com/pslavkin)    | [<img src=https://media.metrolatam.com/2019/04/04/matrixreloadedneo01-3ec18ba895c91e664865ece4b3c9381d-600x400.jpg width="200" height="150">](https://github.com/pslavkin) | [<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcStNOGY8Cj2fH3B6L3OD91VJiuIq3iBA3FkCz0w0OJSQGuIxrsF" width="200" height="150">](https://github.com/pslavkin)  |
 | <a href="https://github.com/pslavkin" target="_blank">`github.com/pslavkin`</a> | <a href="https://github.com/pslavkin" target="_blank">`github.com/pslavkin`</a> | <a href="https://github.com/pslavkin" target="_blank">`github.com/pslavkin`</a> |

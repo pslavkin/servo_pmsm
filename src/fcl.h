@@ -265,6 +265,13 @@ extern FCL_Parameters_t FCL_params;
 #pragma INTERRUPT (motorControlISR, LPI)
 __interrupt void motorControlISR(void);
 
+typedef enum CONTROLTYPE_ENUM
+{
+   POS=0,
+   SPEED,
+   TORQUE
+} controlType_enum;
+
 enum fclEvents_enum {
     adcCalibEndEvent        = 0x0010,
     alignEndEvent           = 0x0011,
@@ -273,17 +280,25 @@ enum fclEvents_enum {
     stopEvent               = 0x0014,
     runEvent                = 0x0015
 };
-const State**  fcl                         ( void       );
-void           initFcl                     ( void       );
-void           electricalAlign             ( void       );
-void           sendRunEvent                ( void       );
-void           sendStopEvent               ( void       );
-void           sendAdcCalibEndEvent        ( void       );
-void           sendOvercurrentEvent        ( void       );
-void           sendOvercurrentClearedEvent ( void       );
-void           stopIsr                     ( void       );
-void           alignIsr                    ( void       );
-void           runIsr                      ( void       );
+const State**        fcl                         ( void        );
+void                 initFcl                     ( void        );
+void                 electricalAlign             ( void        );
+void                 sendRunEvent                ( void        );
+void                 sendStopEvent               ( void        );
+void                 sendAdcCalibEndEvent        ( void        );
+void                 sendOvercurrentEvent        ( void        );
+void                 sendOvercurrentClearedEvent ( void        );
+void                 stopIsr                     ( void        );
+void                 alignIsr                    ( void        );
+void                 runIsr                      ( void        );
+controlType_enum     getControlType              ( void        );
+void                 setControlPos               ( void        );
+void                 setControlSpeed             ( void        );
+void                 setControlTorque            ( void        );
+void                 setControlledTorque         ( float32_t s );
+float32_t            getControlledTorque         ( void        );
+void                 setControlledSpeed          ( float32_t s );
+float32_t            getControlledSpeed          ( void        );
 
 typedef enum
 {

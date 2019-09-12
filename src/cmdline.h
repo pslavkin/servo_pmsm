@@ -48,8 +48,8 @@ void Cmd_writeDsRef         ( uint16_t argc, char *argv[]   );
 void Cmd_readIqPid          ( uint16_t argc, char *argv[]   );
 void Cmd_writeIqPid         ( uint16_t argc, char *argv[]   );
 
-void Cmd_readSpeedPid       ( uint16_t argc, char *argv[]   );
-void Cmd_writeSpeedPid      ( uint16_t argc, char *argv[]   );
+void Cmd_readSpeedPid       ( uint16_t argc, char *argv[] );
+void Cmd_writeSpeedPid      ( uint16_t argc, char *argv[] );
 
 void Cmd_readPosPid         ( uint16_t argc, char *argv[]   );
 void Cmd_writePosPid        ( uint16_t argc, char *argv[]   );
@@ -70,13 +70,17 @@ void Cmd_logOn           ( uint16_t argc, char *argv[] );
 void Cmd_logOff          ( uint16_t argc, char *argv[] );
 void Cmd_setLogPrescaler ( uint16_t argc, char *argv[] );
 
-void Cmd_setOvercurrent     ( uint16_t argc, char *argv[]   );
-void Cmd_resetOvercurrent   ( uint16_t argc, char *argv[]   );
-void Cmd_getVdc             ( uint16_t argc, char *argv[]   );
+void Cmd_setOvercurrent   ( uint16_t argc, char *argv[] );
+void Cmd_resetOvercurrent ( uint16_t argc, char *argv[] );
+void Cmd_getVdc           ( uint16_t argc, char *argv[] );
 
-void Cmd_runFcl             ( uint16_t argc, char *argv[]   );
-void Cmd_stopFcl            ( uint16_t argc, char *argv[]   );
-void Cmd_setQepSim          ( uint16_t argc, char *argv[]   );
+void Cmd_runFcl              ( uint16_t argc, char *argv[] );
+void Cmd_stopFcl             ( uint16_t argc, char *argv[] );
+void Cmd_setControlSpeed     ( uint16_t argc, char *argv[] );
+void Cmd_setControlTorque    ( uint16_t argc, char *argv[] );
+void Cmd_setControlPos       ( uint16_t argc, char *argv[] );
+void Cmd_setControlledSpeed  ( uint16_t argc, char *argv[] );
+void Cmd_setControlledTorque ( uint16_t argc, char *argv[] );
 
 void Cmd_setWaveFrec         ( uint16_t argc, char *argv[] );
 void Cmd_setWaveAmp          ( uint16_t argc, char *argv[] );

@@ -28,6 +28,10 @@ volatile  uint16_t   FCL_cycleCount  = 0;
 float32_t            alignCntr          ;
 float32_t            alignCnt           ;
 float32_t            IdRef_start        ;
+float32_t            controlledSpeed  = 0;
+float32_t            controlledTorque = 0 ;
+
+controlType_enum controlType;
 
 // Instance a ramp controller to smoothly ramp the frequency
 RMPCNTL rc1 = RMPCNTL_DEFAULTS;
@@ -123,10 +127,10 @@ void runIsr(void)/*{{{*/
       pi_pos.Fbk     = getPosAbsMech ( );
       runPIPos(&pi_pos);
 
-      pid_spd.term.Ref = pi_pos.Out;
+      pid_spd.term.Ref = controlType==SPEED?controlledSpeed:pi_pos.Out;
       pid_spd.term.Fbk = getSpeed1Speed();
       runPID(&pid_spd);
-      pi_iq.ref        = pid_spd.term.Out;
+      pi_iq.ref        = controlType==TORQUE?controlledTorque:pid_spd.term.Out;
    }
    waveGenerator     ( );
    sendPrintLogEvent ( );
@@ -142,11 +146,19 @@ const State
 const State*   fclSm=stopped;
 const State**  fcl ( void ) { return &fclSm; }
 
-void sendRunEvent                ( void ) { atomicSendEvent(runEvent         ,fcl())       ;}
-void sendStopEvent               ( void ) { atomicSendEvent(stopEvent        ,fcl())       ;}
-void sendAdcCalibEndEvent        ( void ) { atomicSendEvent(adcCalibEndEvent ,fcl())       ;}
-void sendOvercurrentEvent        ( void ) { atomicSendEvent(overcurrentEvent ,fcl())       ;}
-void sendOvercurrentClearedEvent ( void ) { atomicSendEvent(overcurrentClearedEvent ,fcl());}
+void                 sendRunEvent                ( void        ) { atomicSendEvent(runEvent         ,fcl())       ;}
+void                 sendStopEvent               ( void        ) { atomicSendEvent(stopEvent        ,fcl())       ;}
+void                 sendAdcCalibEndEvent        ( void        ) { atomicSendEvent(adcCalibEndEvent ,fcl())       ;}
+void                 sendOvercurrentEvent        ( void        ) { atomicSendEvent(overcurrentEvent ,fcl())       ;}
+void                 sendOvercurrentClearedEvent ( void        ) { atomicSendEvent(overcurrentClearedEvent ,fcl());}
+controlType_enum     getControlType              ( void        ) { return controlType;                            ;};
+void                 setControlPos               ( void        ) { controlType=POS   ;initPid();                  ;};
+void                 setControlSpeed             ( void        ) { controlType=SPEED ;initPid();                  ;};
+void                 setControlTorque            ( void        ) { controlType=TORQUE;initPid();                  ;};
+void                 setControlledSpeed          ( float32_t s ) { controlledSpeed=s                              ;};
+float32_t            getControlledSpeed          ( void        ) { return controlledSpeed                         ;};
+void                 setControlledTorque         ( float32_t s ) { controlledTorque=s                             ;};
+float32_t            getControlledTorque         ( void        ) { return controlledTorque                         ;};
 
 void align(void)/*{{{*/
 {
