@@ -12,5 +12,6 @@ uint32_t       readUptimeHours  ( void                        );
 uint32_t       readUptimeDays   ( void                        );
 void           Cmd_Uptime       ( uint16_t argc, char *argv[] );
 void           wdogTask         ( void                        );
+void           wdogReset        ( void                        );
 //-----------------------------------------------
 #endif

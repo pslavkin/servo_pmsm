@@ -133,7 +133,7 @@ static inline void runPID(PID_CONTROLLER * in)
    // control output
    in->data.v1  = in->data.up + in->data.ui + in->data.ud;
    //esta multiplicando la Kp por toda la suma!! no quiero eso...!!
-//   in->data.v1  = in->param.Kp * (in->data.up + in->data.ui + in->data.ud);
+   in->data.v1  = in->param.Kp * (in->data.up + in->data.ui + in->data.ud);
    in->term.Out = __fmax(__fmin(in->data.v1, in->param.Umax), in->param.Umin);
    in->data.w1  = (in->term.Out == in->data.v1) ? 1 : 0;
 }

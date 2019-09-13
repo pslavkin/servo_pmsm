@@ -7,6 +7,7 @@
 #include "sm.h"
 #include "parser.h"
 #include "cmdline.h"
+#include "log.h"
 
 const State
    receiving[];
@@ -27,6 +28,7 @@ const State**  parser    ( void )
 void parserProcess(void)
 {
    uint16_t Char=Actual_Event()&0x00FF;
+   pauseLog();
    if(lineIndex<sizeof(lineBuff)) {
 
       if(Char=='\n' || Char=='\r') {

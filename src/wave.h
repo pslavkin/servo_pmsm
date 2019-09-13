@@ -13,31 +13,35 @@ enum SHAPE_ENUM {
    GCODES,
    STEP_DIR
 };
+
 typedef struct wave_struct {
    enum WAVE_DIR_ENUM   dir      ;
    enum SHAPE_ENUM      shape    ;
    float32_t            stepAngle;
    float32_t            frec     ;
    float32_t            offset   ;
-   float32_t            enable   ;
+   bool                 enabled  ;
    float32_t            ampWished;
    float32_t            amp      ;
    uint32_t             t        ;
 } wave_t;
 
-void        advanceWaveStep  ( void              );
-void        setWaveDir       ( enum WAVE_DIR_ENUM d   );
-void        setWaveStepAngle ( float32_t step    );
-float32_t   getWaveStepAngle ( void              );
-void        setWaveFrec      ( float32_t f       );
-float32_t   getWaveFrec      ( void              );
-float32_t   getWavet         ( void              );
-void        enableWave       ( void              );
-void        disableWave      ( void              );
-void        setWaveAmp       ( float32_t amp     );
-float32_t   getWaveAmp       ( void              );
-void        setWaveShape     ( enum SHAPE_ENUM s );
-void        waveGenerator    ( void              );
+void        advanceWaveStep  ( void                 );
+void        setWaveDir       ( enum WAVE_DIR_ENUM d );
+void        setWaveStepAngle ( float32_t step       );
+float32_t   getWaveStepAngle ( void                 );
+void        setWaveFrec      ( float32_t f          );
+void        setWaveFrecWoCompensation ( float32_t f );
+float32_t   getWaveFrec    ( void              );
+uint32_t    getWavet       ( void              );
+void        setWavet       ( uint32_t t        );
+float32_t   getWavePeriods ( void              );
+void        enableWave     ( void              );
+void        disableWave    ( void              );
+void        setWaveAmp     ( float32_t amp     );
+float32_t   getWaveAmp     ( void              );
+void        setWaveShape   ( enum SHAPE_ENUM s );
+void        waveGenerator    ( void                 );
 
 #endif
 

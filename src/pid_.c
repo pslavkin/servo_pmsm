@@ -8,8 +8,8 @@
 
 // Instance PI(D) regulators to regulate the d and q  axis currents, speed and position
 //PIDREG3         pid_pos = PIDREG3_DEFAULTS;// (optional - for eval)
-PI_CONTROLLER   pi_pos,pi_pos_def    = PI_CONTROLLER_DEFAULTS;
-PID_CONTROLLER  pid_spd, pid_spd_def = {PID_TERM_DEFAULTS, PID_PARAM_DEFAULTS, PID_DATA_DEFAULTS};
+PI_CONTROLLER   pi_pos;
+PID_CONTROLLER  pid_spd;
 
 #pragma DATA_SECTION(pi_iq,   "ClaData")
 FCL_PIController_t   pi_id, pi_iq;
@@ -17,8 +17,8 @@ FCL_PIController_t   pi_id, pi_iq;
 // PI Controller Configuration
 void initPid(void)/*{{{*/
 {
-    pi_pos = pi_pos_def;
     // Initialize the PI module for position
+    pi_pos      = (PI_CONTROLLER)PI_CONTROLLER_DEFAULTS;
     pi_pos.Kp   = 1;      // 1.0;   // 10.0;
     pi_pos.Ki   = 0.0015; // T*speedLoopPrescaler/0.3;
     pi_pos.Umax = 0.5;
@@ -44,12 +44,12 @@ void initPid(void)/*{{{*/
 //    pid_pos.OutPreSat = 0;
 //
     // Initialize the PID module for speed
-    pid_spd = pid_spd_def;
+    pid_spd = (PID_CONTROLLER){PID_TERM_DEFAULTS, PID_PARAM_DEFAULTS, PID_DATA_DEFAULTS};
     pid_spd.param.Kp   = 2.0;
     pid_spd.param.Ki   = 0.0015;
     pid_spd.param.Kd   = 0.0015;
-    pid_spd.param.Umax = 0.5;//0.95;
-    pid_spd.param.Umin = -0.5;//-0.95;
+    pid_spd.param.Umax = 0.95;//0.95;
+    pid_spd.param.Umin = -0.95;//-0.95;
     pid_spd.term.c1    = 1.0;
     pid_spd.term.c2    = 1.0;
 
@@ -69,8 +69,8 @@ void initPid(void)/*{{{*/
     pi_iq.Ki      = T/0.04; // (RS * T) * CUR_LOOP_BW;
     pi_iq.Kerr    = (pi_iq.Ki*0.5) + pi_iq.Kp,
     pi_iq.KerrOld = (pi_iq.Ki*0.5) - pi_iq.Kp;
-    pi_iq.Umax    = 0.8 * maxModIndex;
-    pi_iq.Umin    = -0.8 * maxModIndex;
+    pi_iq.Umax    = 0.9 * maxModIndex;
+    pi_iq.Umin    = -0.9 * maxModIndex;
     pi_iq.ref     = 0;
     pi_iq.err     = 0;
     pi_iq.out     = 0;

@@ -8,13 +8,14 @@
 #include "wave.h"
 #include "gcode.h"
 #include "eqep_.h"
+#include "swept.h"
 
 wave_t wave={
    .dir       = CLOCK,
    .stepAngle = 0.0002,
    .frec      = 0.1,
    .offset    = 0,
-   .enable    = true,
+   .enabled   = true,
    .ampWished = 1,
    .amp       = 1,
    .shape     = GCODES,
@@ -31,28 +32,33 @@ float32_t   getWaveStepAngle ( void                 ) { return wave.stepAngle;}
 void        setWaveAmp       ( float32_t amp        )
 {
    wave.ampWished = amp;
-   if(wave.enable==false)
+   if(wave.enabled==false)
       wave.amp = wave.ampWished;
 }
-float32_t   getWaveAmp  ( void        ) { return wave.amp;}
-float32_t   getWavet    ( void        ) { return wave.t  ;}
+float32_t   getWaveAmp ( void       ) { return wave.amp;}
+void        setWavet   ( uint32_t t ) { wave.t=t       ;}
+uint32_t    getWavet   ( void       ) { return wave.t  ;}
 void        setWaveFrec ( float32_t f )
 {
    wave.t    = (wave.frec*wave.t)/f;
    wave.frec = f;
 }
-float32_t   getWaveFrec    ( void        ) { return wave.frec   ;}
+void        setWaveFrecWoCompensation ( float32_t f )
+{
+   wave.frec = f;
+}
+float32_t   getWaveFrec ( void ) { return wave.frec;}
 
 void enableWave(void)
 {
-   wave.t      = 0;
-   wave.enable = true;
-   wave.offset = getPosAbs();
+   wave.t       = 0;
+   wave.enabled = true;
+   wave.offset  = getPosAbs();
    sciPrintf("wave generator=on\r\n");
 }
 void disableWave(void)
 {
-   wave.enable = false;
+   wave.enabled = false;
    sciPrintf("wave generator=off\r\n");
 }
 void setWaveShape(enum SHAPE_ENUM s)
@@ -65,11 +71,15 @@ void setWaveShape(enum SHAPE_ENUM s)
       wave.shape=s;
 }
 
-
+float32_t getWavePeriods(void)
+{
+   return wave.frec*wave.t*T;
+}
 
 void waveGenerator(void)
 {
-   if(wave.enable==true) {
+   if(wave.enabled==true) {
+      sweptGenerator();
       wave.t++;
       wave.amp = ramper(wave.ampWished,wave.amp,0.00001);
       switch (wave.shape) {

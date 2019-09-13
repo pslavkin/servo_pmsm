@@ -17,6 +17,7 @@ void           Rien      ( void                                         ) { }
 uint16_t       Actual_Event ( void ) { return Event.Event  ;}
 const State**  Actual_Sm    ( void ) { return Event.Machine;}
 
+
 //-----------------------------------------------------------------------
 void State_Machine(void)
 {

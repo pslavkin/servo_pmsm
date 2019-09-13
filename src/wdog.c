@@ -1,6 +1,7 @@
 #include <stdbool.h>
 #include <stdint.h>
 #include <string.h>
+#include "device.h"
 #include "scia.h"
 #include "wdog.h"
 #include "sm.h"
@@ -55,4 +56,6 @@ void initWdog(void)
 {
 }
 
-
+void wdogReset(void)
+{
+}

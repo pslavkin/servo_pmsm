@@ -353,7 +353,7 @@ union DLYCTL_REG {
 struct UPP_REGS {
 //di declaro esta variable me tira un warning que me fastidia.. creo que no pasa nada porque
 //el warning esta relacionado con que no se declara nada.. hay que investigar un poco TODO
-//    unsigned long                            PID;                          // Peripheral ID Register
+    //unsigned long                            PID;                          // Peripheral ID Register
     union   PERCTL_REG                       PERCTL;                       // Peripheral Control Register
     Uint16                                   rsvd1[4];                     // Reserved
     union   CHCTL_REG                        CHCTL;                        // General Control Register

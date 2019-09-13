@@ -19,97 +19,84 @@
 #include "linevoltage.h"
 #include "log.h"
 #include "gcode.h"
+#include "swept.h"
 #include "leds.h"
 #include "stepdir.h"
 #include "events.h"/*}}}*/
 
-tCmdLineEntry Login_Cmd_Table    [ ];
-tCmdLineEntry iqPidCmdTable      [ ];
+tCmdLineEntry loginCmdTable      [ ];
+tCmdLineEntry torquePidCmdTable  [ ];
 tCmdLineEntry speedPidCmdTable   [ ];
 tCmdLineEntry posPidCmdTable     [ ];
 tCmdLineEntry overcurrentCmdTable[ ];
 tCmdLineEntry waveCmdTable       [ ];
+tCmdLineEntry sweptCmdTable      [ ];
 tCmdLineEntry gcodeCmdTable      [ ];
 tCmdLineEntry stepdirCmdTable    [ ];
 tCmdLineEntry fclCmdTable        [ ];
 tCmdLineEntry logCmdTable        [ ];
 
 char *         g_ppcArgv[CMDLINE_MAX_ARGS + 1];
-tCmdLineEntry* actualCmdTable=Login_Cmd_Table;
+tCmdLineEntry* actualCmdTable=loginCmdTable;
 //--------------------------------------------------------------------------------
-tCmdLineEntry Login_Cmd_Table[] =
+tCmdLineEntry loginCmdTable[] =
 {
-   { "login" ,Cmd_login       ,": login"                },
-   { "iq"    ,Cmd_iqPid       ,": iq PID parameters"    },
-   { "speed" ,Cmd_speedPid    ,": speed PID parameters" },
-   { "pos"   ,Cmd_posPid      ,": speed PID parameters" },
-   { "oc"    ,Cmd_overcurrent ,": set overcurrent"      },
-   { "fcl"   ,Cmd_fcl         ,": fcl management"       },
-   { "log"   ,Cmd_log         ,": log on/off"           },
-   { "wave"  ,Cmd_wave        ,": wave generator"       },
-   { "gcode" ,Cmd_gcode       ,": gcode parser"         },
-   { "sd"    ,Cmd_stepdir     ,": stepdir config"       },
-   { "v"     ,Cmd_version     ,": version"              },
-   { "?"     ,Cmd_Help        ,": help"                 },
-   { 0       ,0               ,0                        }
+   { "pos"    ,Cmd_posPid       ,": pos PID parameters"    },
+   { "speed"  ,Cmd_speedPid     ,": speed PID parameters"  },
+   { "torque" ,Cmd_torquePid    ,": torque PID parameters" },
+   { "oc"     ,Cmd_overcurrent  ,": set overcurrent"       },
+   { "fcl"    ,Cmd_fcl          ,": fcl management"        },
+   { "log"    ,Cmd_log          ,": log on/off"            },
+   { "wave"   ,Cmd_wave         ,": wave generator"        },
+   { "swept"  ,Cmd_swept        ,": swept generator"       },
+   { "gcode"  ,Cmd_gcode        ,": gcode parser"          },
+   { "sd"     ,Cmd_stepdir      ,": stepdir config"        },
+   { "v"      ,Cmd_printVersion ,": actual version"        },
+   { "rst"    ,Cmd_rst          ,": reset system"          },
+   { "?"      ,Cmd_Help         ,": help"                  },
+   { 0        ,0                ,0                         }
 };
-void Cmd_login       ( uint16_t argc, char *argv[] ) { sciPrintf("login\r\n")                          ;}
-void Cmd_version     ( uint16_t argc, char *argv[] ) { sciPrintf("PMSM C2000 V1.0 - Pablo Slavkin\r\n");}
-void Cmd_iqPid       ( uint16_t argc, char *argv[] ) { actualCmdTable=iqPidCmdTable                    ;}
-void Cmd_speedPid    ( uint16_t argc, char *argv[] ) { actualCmdTable=speedPidCmdTable                 ;}
-void Cmd_posPid      ( uint16_t argc, char *argv[] ) { actualCmdTable=posPidCmdTable                   ;}
-void Cmd_overcurrent ( uint16_t argc, char *argv[] ) { actualCmdTable=overcurrentCmdTable              ;}
-void Cmd_fcl         ( uint16_t argc, char *argv[] ) { actualCmdTable=fclCmdTable                      ;}
-void Cmd_wave        ( uint16_t argc, char *argv[] ) { actualCmdTable=waveCmdTable                     ;}
-void Cmd_gcode       ( uint16_t argc, char *argv[] ) { actualCmdTable=gcodeCmdTable                    ;}
-void Cmd_stepdir     ( uint16_t argc, char *argv[] ) { actualCmdTable=stepdirCmdTable                  ;}
-void Cmd_log         ( uint16_t argc, char *argv[] ) { actualCmdTable=logCmdTable                      ;}
+void Cmd_torquePid   ( uint16_t argc, char *argv[] ) { actualCmdTable=torquePidCmdTable  ;}
+void Cmd_speedPid    ( uint16_t argc, char *argv[] ) { actualCmdTable=speedPidCmdTable   ;}
+void Cmd_posPid      ( uint16_t argc, char *argv[] ) { actualCmdTable=posPidCmdTable     ;}
+void Cmd_overcurrent ( uint16_t argc, char *argv[] ) { actualCmdTable=overcurrentCmdTable;}
+void Cmd_fcl         ( uint16_t argc, char *argv[] ) { actualCmdTable=fclCmdTable        ;}
+void Cmd_wave        ( uint16_t argc, char *argv[] ) { actualCmdTable=waveCmdTable       ;}
+void Cmd_swept       ( uint16_t argc, char *argv[] ) { actualCmdTable=sweptCmdTable      ;}
+void Cmd_gcode       ( uint16_t argc, char *argv[] ) { actualCmdTable=gcodeCmdTable      ;}
+void Cmd_stepdir     ( uint16_t argc, char *argv[] ) { actualCmdTable=stepdirCmdTable    ;}
+void Cmd_log         ( uint16_t argc, char *argv[] ) { actualCmdTable=logCmdTable        ;}
 //--------------------------------------------------------------------------------
-tCmdLineEntry iqPidCmdTable[] =/*{{{*/
+void Cmd_printVersion     ( uint16_t argc, char *argv[] )
 {
-   { "r" ,Cmd_readIqPid  ,": read iq PID"         },
-   { "w" ,Cmd_writeIqPid ,": read iq PID"         },
+   sciPrintf("\r\n################\r\nPMSM C2000 V1.0 \r\n Pablo Slavkin\r\nMoldova 09/2019\r\n################\r\n");
+}
+void Cmd_rst     ( uint16_t argc, char *argv[] )
+{
+   wdogReset();
+   sciPrintf("reset\r\n");
+}/*}}}*/
+//--------------------------------------------------------------------------------
+tCmdLineEntry torquePidCmdTable[] =/*{{{*/
+{
+   { "r" ,Cmd_readTorquePid  ,": read torque PID" },
+   { "w" ,Cmd_writeTorquePid ,": read torque PID" },
    { "<" ,Cmd_back2login ,": back to login table" },
    { "?" ,Cmd_Help       ,": help"                },
    { 0   ,0              ,0                       }
 };
-void Cmd_readIqPid(uint16_t argc, char *argv[])
+void Cmd_readTorquePid(uint16_t argc, char *argv[])
 {
    printFclPi(&pi_iq);
 }
-void Cmd_writeIqPid(uint16_t argc, char *argv[])
+void Cmd_writeTorquePid(uint16_t argc, char *argv[])
 {
-   if(argc>5) {
-      if(argv[1][0]!=',') pi_iq.ref  = atof(argv[1]);
-      if(argv[2][0]!=',') pi_iq.Kp   = atof(argv[2]);
-      if(argv[3][0]!=',') pi_iq.Ki   = atof(argv[3]);
-      if(argv[4][0]!=',') pi_iq.Umax = atof(argv[4]);
-      if(argv[5][0]!=',') pi_iq.Umin = atof(argv[5]);
-   }
-}
-/*}}}*/
-//--------------------------------------------------------------------------------
-tCmdLineEntry speedPidCmdTable[] =/*{{{*/
-{
-   { "r" ,Cmd_readSpeedPid       ,": read speed PID"             },
-   { "w" ,Cmd_writeSpeedPid      ,": write speed PID"            },
-   { "<" ,Cmd_back2login         ,": back to login table"        },
-   { "?" ,Cmd_Help               ,": help"                       },
-   { 0   ,0                      ,0                              }
-};
-void Cmd_readSpeedPid(uint16_t argc, char *argv[])
-{
-   printPid(&pid_spd);
-}
-void Cmd_writeSpeedPid(uint16_t argc, char *argv[])
-{
-   if(argc>1 && (argv[1][0] != ',')) pid_spd.param.Kp   = atof(argv[1]);
-   if(argc>2 && (argv[2][0] != ',')) pid_spd.param.Ki   = atof(argv[1]);
-   if(argc>3 && (argv[3][0] != ',')) pid_spd.param.Kd   = atof(argv[1]);
-   if(argc>4 && (argv[4][0] != ',')) pid_spd.param.Kr   = atof(argv[1]);
-   if(argc>5 && (argv[5][0] != ',')) pid_spd.param.Km   = atof(argv[1]);
-   if(argc>6 && (argv[6][0] != ',')) pid_spd.param.Umax = atof(argv[1]);
-   if(argc>7 && (argv[7][0] != ',')) pid_spd.param.Umin = atof(argv[1]);
+   if(argc>1 && (argv[1][0] != ',')) pi_iq.Kp       = atof(argv[1]);   // Parameter: proportional loop gain
+   if(argc>2 && (argv[2][0] != ',')) pi_iq.Ki       = atof(argv[2]);   // Parameter: integral gain
+   if(argc>3 && (argv[3][0] != ',')) pi_iq.Kerr     = atof(argv[3]);   // Parameter: gain for latest error
+   if(argc>4 && (argv[4][0] != ',')) pi_iq.KerrOld  = atof(argv[4]);   // Parameter: gain for prev error
+   if(argc>5 && (argv[5][0] != ',')) pi_iq.Umax     = atof(argv[5]);   // Parameter: upper saturation limit
+   if(argc>6 && (argv[6][0] != ',')) pi_iq.Umin     = atof(argv[6]);   // Parameter: lower saturation limit
 }
 /*}}}*/
 //--------------------------------------------------------------------------------
@@ -131,6 +118,29 @@ void Cmd_writePosPid(uint16_t argc, char *argv[])
    if(argc>2 && (argv[2][0] != ',')) pi_pos.Ki   = atof(argv[2]);
    if(argc>3 && (argv[3][0] != ',')) pi_pos.Umax = atof(argv[3]);
    if(argc>4 && (argv[4][0] != ',')) pi_pos.Umin = atof(argv[4]);
+}
+/*}}}*/
+//--------------------------------------------------------------------------------
+tCmdLineEntry speedPidCmdTable[] =/*{{{*/
+{
+   { "r" ,Cmd_readSpeedPid       ,": read speed PID"             },
+   { "w" ,Cmd_writeSpeedPid      ,": write speed PID"            },
+   { "<" ,Cmd_back2login         ,": back to login table"        },
+   { "?" ,Cmd_Help               ,": help"                       },
+   { 0   ,0                      ,0                              }
+};
+void Cmd_readSpeedPid(uint16_t argc, char *argv[])
+{
+   printPid(&pid_spd);
+}
+void Cmd_writeSpeedPid(uint16_t argc, char *argv[])
+{
+   if(argc>2 && (argv[2][0] != ',')) pid_spd.param.Ki   = atof(argv[2]);
+   if(argc>3 && (argv[3][0] != ',')) pid_spd.param.Kd   = atof(argv[3]);
+   if(argc>4 && (argv[4][0] != ',')) pid_spd.param.Kr   = atof(argv[4]);
+   if(argc>5 && (argv[5][0] != ',')) pid_spd.param.Km   = atof(argv[5]);
+   if(argc>6 && (argv[6][0] != ',')) pid_spd.param.Umax = atof(argv[6]);
+   if(argc>7 && (argv[7][0] != ',')) pid_spd.param.Umin = atof(argv[7]);
 }
 /*}}}*/
 //--------------------------------------------------------------------------------
@@ -285,6 +295,54 @@ void Cmd_setWaveStepAngle(uint16_t argc, char *argv[])
 }
 /*}}}*/
 //--------------------------------------------------------------------------------
+tCmdLineEntry sweptCmdTable[] =/*{{{*/
+{
+   { "init" ,Cmd_setSweptInit    ,": set init frec"       },
+   { "last" ,Cmd_setSweptLast    ,": set last frec"       },
+   { "step" ,Cmd_setSweptStep    ,": set step Frec"       },
+   { "per"  ,Cmd_setSweptPer     ,": set step periods"    },
+   { "ena"  ,Cmd_setSweptEnable  ,": set swep enable"     },
+   { "dis"  ,Cmd_setSweptDisable ,": set swep disable"    },
+   { "<"    ,Cmd_back2login      ,": back to login table" },
+   { "?"    ,Cmd_Help            ,": help"                },
+   { 0      ,0                   ,0                       }
+};
+void Cmd_setSweptInit(uint16_t argc, char *argv[])
+{
+   if(argc>1)
+      setSweptInit(atof(argv[1]));
+   sciPrintf("swept init frec=%f\r\n",getSweptInit());
+}
+void Cmd_setSweptLast(uint16_t argc, char *argv[])
+{
+   if(argc>1)
+      setSweptLast(atof(argv[1]));
+   sciPrintf("swept last frec=%f\r\n",getSweptLast());
+}
+void Cmd_setSweptStep(uint16_t argc, char *argv[])
+{
+   if(argc>1)
+      setSweptStep(atof(argv[1]));
+   sciPrintf("swept step frec=%f\r\n",getSweptStep());
+}
+void Cmd_setSweptPer(uint16_t argc, char *argv[])
+{
+   if(argc>1)
+      setSweptPer(atoi(argv[1]));
+   sciPrintf("swept period=%i\r\n",getSweptPer());
+}
+void Cmd_setSweptEnable(uint16_t argc, char *argv[])
+{
+   setSweptEnable();
+   sciPrintf("swept enabled\r\n");
+}
+void Cmd_setSweptDisable(uint16_t argc, char *argv[])
+{
+   setSweptDisable();
+   sciPrintf("swept disable\r\n");
+}
+/*}}}*/
+//--------------------------------------------------------------------------------
 tCmdLineEntry gcodeCmdTable[] =/*{{{*/
 {
    { "g0"  ,Cmd_setGcodeG0  ,": G0"                  },
@@ -369,12 +427,13 @@ void Cmd_setStepdirStep(uint16_t argc, char *argv[])
 //--------------------------------------------------------------------------------
 tCmdLineEntry logCmdTable[] =/*{{{*/
 {
-   { "ena"  ,Cmd_logOn           ,": set log on"          },
-   { "dis"  ,Cmd_logOff          ,": set log off"         },
-   { "pres" ,Cmd_setLogPrescaler ,": set log prescaler"   },
-   { "<"    ,Cmd_back2login      ,": back to login table" },
-   { "?"    ,Cmd_Help            ,": help"                },
-   { 0      ,0                   ,0                       }
+   { "ena"   ,Cmd_logOn           ,": set log on"                       },
+   { "dis"   ,Cmd_logOff          ,": set log off"                      },
+   { "pres"  ,Cmd_setLogPrescaler ,": set log prescaler"                },
+   { "pause" ,Cmd_setLogPauseTime ,": set log pause time when keypress" },
+   { "<"     ,Cmd_back2login      ,": back to login table"              },
+   { "?"     ,Cmd_Help            ,": help"                             },
+   { 0       ,0                   ,0                                    }
 };
 void Cmd_logOn(uint16_t argc, char *argv[])
 {
@@ -390,11 +449,17 @@ void Cmd_setLogPrescaler(uint16_t argc, char *argv[])
       setLogPrescaler(atoi(argv[1]));
    sciPrintf("log prescaler=%i\r\n",getLogPrescaler());
 }
+void Cmd_setLogPauseTime(uint16_t argc, char *argv[])
+{
+   if(argc>1)
+      setLogPauseTime(atoi(argv[1]));
+   sciPrintf("log pause time=%i\r\n",getLogPauseTime());
+}
 /*}}}*/
 //--------------------------------------------------------------------------------
 void Cmd_back2login(uint16_t argc, char *argv[])/*{{{*/
 {
-   actualCmdTable=Login_Cmd_Table;
+   actualCmdTable=loginCmdTable;
 }
 void Cmd_Help(uint16_t argc, char *argv[])
 {

@@ -18,6 +18,7 @@
 #include "wave.h"
 #include "log.h"
 #include "leds.h"
+#include "gcode.h"
 #include "schedule.h"/*}}}*/
 
 uint16_t          speedLoopPrescaler = 10   ; // Speed loop pre scalar
@@ -106,7 +107,6 @@ void alignIsr(void)/*{{{*/
    if(pi_id.ref >= IdRef_start) {
       if(++alignCntr >= alignCnt) {
          lsw             = QEP_GOT_INDEX;
-         initPid();
          sendEvent(alignEndEvent,fcl());
       }
    }
@@ -152,9 +152,9 @@ void                 sendAdcCalibEndEvent        ( void        ) { atomicSendEve
 void                 sendOvercurrentEvent        ( void        ) { atomicSendEvent(overcurrentEvent ,fcl())       ;}
 void                 sendOvercurrentClearedEvent ( void        ) { atomicSendEvent(overcurrentClearedEvent ,fcl());}
 controlType_enum     getControlType              ( void        ) { return controlType;                            ;};
-void                 setControlPos               ( void        ) { controlType=POS   ;initPid();                  ;};
-void                 setControlSpeed             ( void        ) { controlType=SPEED ;initPid();                  ;};
-void                 setControlTorque            ( void        ) { controlType=TORQUE;initPid();                  ;};
+void                 setControlPos               ( void        ) { controlType=POS   ;initPid();  ;};
+void                 setControlSpeed             ( void        ) { controlType=SPEED ;initPid();  ;};
+void                 setControlTorque            ( void        ) { controlType=TORQUE;initPid();  ;};
 void                 setControlledSpeed          ( float32_t s ) { controlledSpeed=s                              ;};
 float32_t            getControlledSpeed          ( void        ) { return controlledSpeed                         ;};
 void                 setControlledTorque         ( float32_t s ) { controlledTorque=s                             ;};
@@ -184,9 +184,10 @@ void stop(void)
 }
 void run(void)
 {
-   setPosAbs       ( getPosAbsMech()); //la referencia
-   setPosAbsMech   ( getPosAbsMech()); //no deberia ser necesario, pero lo es.. TODO 
-   setPosAbsOffset ( getPosAbsMech()); //este si se necesita
+   initPid         (                ) ;
+   setPosAbs       ( getPosAbsMech( )); // la referencia
+   setPosAbsMech   ( getPosAbsMech( )); // no deberia ser necesario, pero lo es.. TODO
+   setPosAbsOffset ( getPosAbsMech( )); // este si se necesita
    pi_id.ref = 0;
    pi_iq.ref = 0;
    isrSm     = runIsr;

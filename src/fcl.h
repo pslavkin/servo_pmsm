@@ -200,7 +200,7 @@ extern FCL_Parameters_t FCL_params;
 #define LS      0.0065                  // Stator inductance (H)
 #define LR                              // Rotor inductance (H)
 #define LM                              // Magnetizing inductance (H)
-#define POLES   8                       // Number of poles
+#define POLES   4                       // Number of poles
 
 // Define the base quantites
 #define BASE_VOLTAGE        236.14                     // Base peak phase voltage (volt), Vdc/sqrt(3)

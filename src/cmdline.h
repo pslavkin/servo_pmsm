@@ -14,18 +14,19 @@ typedef struct Cmd_Table_Struct{ // ! Structure for an entry in the command list
 void     CmdLineProcess     ( char* line                    );
 void     Parser_Process     ( void                          );
 
-void Cmd_login       ( uint16_t argc ,char *argv[] );
 void Cmd_version     ( uint16_t argc ,char *argv[] );
-void Cmd_iqPid       ( uint16_t argc ,char *argv[] );
-void Cmd_speedPid    ( uint16_t argc ,char *argv[] );
 void Cmd_posPid      ( uint16_t argc ,char *argv[] );
+void Cmd_speedPid    ( uint16_t argc ,char *argv[] );
+void Cmd_torquePid   ( uint16_t argc ,char *argv[] );
 void Cmd_stepDir     ( uint16_t argc ,char *argv[] );
 void Cmd_overcurrent ( uint16_t argc ,char *argv[] );
 void Cmd_wave        ( uint16_t argc ,char *argv[] );
+void Cmd_swept       ( uint16_t argc, char *argv[] );
 void Cmd_gcode       ( uint16_t argc, char *argv[] );
-void Cmd_stepdir       ( uint16_t argc, char *argv[] );
+void Cmd_stepdir     ( uint16_t argc, char *argv[] );
 void Cmd_fcl         ( uint16_t argc ,char *argv[] );
 void Cmd_log         ( uint16_t argc ,char *argv[] );
+void Cmd_posRst      ( uint16_t argc, char *argv[] );
 
 void Cmd_readLemV           ( uint16_t argc, char *argv[]   );
 void Cmd_readLemW           ( uint16_t argc, char *argv[]   );
@@ -45,8 +46,11 @@ void Cmd_printSvGen         ( uint16_t argc, char *argv[]   );
 void Cmd_writeQsRef         ( uint16_t argc, char *argv[]   );
 void Cmd_writeDsRef         ( uint16_t argc, char *argv[]   );
 
-void Cmd_readIqPid          ( uint16_t argc, char *argv[]   );
-void Cmd_writeIqPid         ( uint16_t argc, char *argv[]   );
+void Cmd_printVersion ( uint16_t argc, char *argv[] );
+void Cmd_rst          ( uint16_t argc, char *argv[] );
+
+void Cmd_readTorquePid          ( uint16_t argc, char *argv[]   );
+void Cmd_writeTorquePid         ( uint16_t argc, char *argv[]   );
 
 void Cmd_readSpeedPid       ( uint16_t argc, char *argv[] );
 void Cmd_writeSpeedPid      ( uint16_t argc, char *argv[] );
@@ -95,19 +99,26 @@ void Cmd_setWaveDirAclk      ( uint16_t argc, char *argv[] );
 void Cmd_setWaveStepAngle    ( uint16_t argc, char *argv[] );
 void Cmd_setWaveShapeStepdir ( uint16_t argc, char *argv[] );
 
+void Cmd_setSweptInit    ( uint16_t argc, char *argv[] );
+void Cmd_setSweptLast    ( uint16_t argc, char *argv[] );
+void Cmd_setSweptStep    ( uint16_t argc, char *argv[] );
+void Cmd_setSweptPer     ( uint16_t argc, char *argv[] );
+void Cmd_setSweptEnable  ( uint16_t argc, char *argv[] );
+void Cmd_setSweptDisable ( uint16_t argc, char *argv[] );
+
 void Cmd_setGcodeG0  ( uint16_t argc, char *argv[] );
 void Cmd_setGcodeF   ( uint16_t argc, char *argv[] );
 void Cmd_setGcodeAcc ( uint16_t argc, char *argv[] );
 void Cmd_setGcodeDec ( uint16_t argc, char *argv[] );
 void Cmd_sendOneLog  ( uint16_t argc, char *argv[] );
-void Cmd_posRst      ( uint16_t argc, char *argv[] );
+void Cmd_setLogPauseTime(uint16_t argc, char *argv[]);
 
 void Cmd_getStepdirPins  ( uint16_t argc, char *argv[] );
 void Cmd_incStepdirPulse ( uint16_t argc, char *argv[] );
 void Cmd_setStepdirDir   ( uint16_t argc, char *argv[] );
 void Cmd_setStepdirStep  ( uint16_t argc, char *argv[] );
 
-void Cmd_back2login         ( uint16_t argc, char *argv[]   );
-void Cmd_Help               ( uint16_t argc, char *argv[]   );
+void Cmd_back2login ( uint16_t argc, char *argv[] );
+void Cmd_Help       ( uint16_t argc, char *argv[] );
 
 #endif
