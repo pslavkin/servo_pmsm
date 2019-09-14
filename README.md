@@ -40,6 +40,8 @@ https://gist.github.com/rxaviers/7360908
 - :heavy_check_mark: absolute position calc from realative in feedback
 - :heavy_check_mark: sin generator sinusoidal and step function work
 - :heavy_check_mark: step dir using isr to connect to a controller
+- :heavy_check_mark: testing on a 4 poles motor and it work
+- :heavy_check_mark: prototype arrives! It's huge!
 - :construction:     bode plot
 - :construction:     scratch materplan
 - :construction:     merging example fcl with my own code
@@ -64,6 +66,7 @@ https://gist.github.com/rxaviers/7360908
 - [mitsubishi](#mitsubishi)
 - [gnuplot](#gnuplot)
 - [Features](#features)
+- [proto](#proto)
 - [Contributing](#contributing)
 - [Team](#team)
 - [FAQ](#faq)
@@ -164,6 +167,18 @@ figures:
 ## masterplan
 
 <img src="doc/pics/master_plan.svg"    width="800" height="800"/>
+
+## 4 poles motor test
+
+testing a 4 poles instead of 8  and mixing encoders
+
+<img src="doc/pics/poles4.jpg" width="400" /> 
+
+## proto
+
+...and comes the prototype!! ? It's more than a proto!
+
+<img src="doc/pics/proto2.jpg" width="400" /> <img src="doc/pics/proto1.jpg" height="400" /> <img src="doc/pics/proto3.jpg" width="400" />
 
 ## Hierarchy
 
@@ -1083,6 +1098,10 @@ $ bower install
 
 - Going into more detail on code and technologies used
 - I utilized this nifty <a href="https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet" target="_blank">Markdown Cheatsheet</a> for this sample `README`.
+
+
+
+
 
 
 
