@@ -39,7 +39,7 @@ tCmdLineEntry logCmdTable        [ ];
 char *         g_ppcArgv[CMDLINE_MAX_ARGS + 1];
 tCmdLineEntry* actualCmdTable=loginCmdTable;
 //--------------------------------------------------------------------------------
-tCmdLineEntry loginCmdTable[] =
+tCmdLineEntry loginCmdTable[] =/*{{{*/
 {
    { "pos"    ,Cmd_posPid       ,": pos PID parameters"    },
    { "speed"  ,Cmd_speedPid     ,": speed PID parameters"  },
@@ -52,6 +52,7 @@ tCmdLineEntry loginCmdTable[] =
    { "gcode"  ,Cmd_gcode        ,": gcode parser"          },
    { "sd"     ,Cmd_stepdir      ,": stepdir config"        },
    { "v"      ,Cmd_printVersion ,": actual version"        },
+   { "E"      ,Cmd_stopFcl      ,": emergency stop"        },
    { "rst"    ,Cmd_rst          ,": reset system"          },
    { "?"      ,Cmd_Help         ,": help"                  },
    { 0        ,0                ,0                         }
@@ -79,11 +80,12 @@ void Cmd_rst     ( uint16_t argc, char *argv[] )
 //--------------------------------------------------------------------------------
 tCmdLineEntry torquePidCmdTable[] =/*{{{*/
 {
-   { "r" ,Cmd_readTorquePid  ,": read torque PID" },
-   { "w" ,Cmd_writeTorquePid ,": read torque PID" },
-   { "<" ,Cmd_back2login ,": back to login table" },
-   { "?" ,Cmd_Help       ,": help"                },
-   { 0   ,0              ,0                       }
+   { "r" ,Cmd_readTorquePid  ,": read torque PID"     },
+   { "w" ,Cmd_writeTorquePid ,": read torque PID"     },
+   { "E" ,Cmd_stopFcl        ,": emergency stop"      },
+   { "<" ,Cmd_back2login     ,": back to login table" },
+   { "?" ,Cmd_Help           ,": help"                },
+   { 0   ,0                  ,0                       }
 };
 void Cmd_readTorquePid(uint16_t argc, char *argv[])
 {
@@ -102,11 +104,12 @@ void Cmd_writeTorquePid(uint16_t argc, char *argv[])
 //--------------------------------------------------------------------------------
 tCmdLineEntry posPidCmdTable[] =/*{{{*/
 {
-   { "r"    ,Cmd_readPosPid         ,": read pos PID "          },
-   { "w"    ,Cmd_writePosPid        ,": write pos PID "         },
-   { "<"    ,Cmd_back2login         ,": back to login table"    },
-   { "?"    ,Cmd_Help               ,": help"                   },
-   { 0      ,0                      ,0                          }
+   { "r" ,Cmd_readPosPid  ,": read pos PID "          } ,
+   { "w" ,Cmd_writePosPid ,": write pos PID "         } ,
+   { "E" ,Cmd_stopFcl     ,": emergency stop"         } ,
+   { "<" ,Cmd_back2login  ,": back to login table"    } ,
+   { "?" ,Cmd_Help        ,": help"                   } ,
+   { 0   ,0               ,0                          }
 };
 void Cmd_readPosPid(uint16_t argc, char *argv[])
 {
@@ -123,11 +126,12 @@ void Cmd_writePosPid(uint16_t argc, char *argv[])
 //--------------------------------------------------------------------------------
 tCmdLineEntry speedPidCmdTable[] =/*{{{*/
 {
-   { "r" ,Cmd_readSpeedPid       ,": read speed PID"             },
-   { "w" ,Cmd_writeSpeedPid      ,": write speed PID"            },
-   { "<" ,Cmd_back2login         ,": back to login table"        },
-   { "?" ,Cmd_Help               ,": help"                       },
-   { 0   ,0                      ,0                              }
+   { "r" ,Cmd_readSpeedPid  ,": read speed PID"      },
+   { "w" ,Cmd_writeSpeedPid ,": write speed PID"     },
+   { "E" ,Cmd_stopFcl       ,": emergency stop"      },
+   { "<" ,Cmd_back2login    ,": back to login table" },
+   { "?" ,Cmd_Help          ,": help"                },
+   { 0   ,0                 ,0                       }
 };
 void Cmd_readSpeedPid(uint16_t argc, char *argv[])
 {
@@ -135,6 +139,7 @@ void Cmd_readSpeedPid(uint16_t argc, char *argv[])
 }
 void Cmd_writeSpeedPid(uint16_t argc, char *argv[])
 {
+   if(argc>1 && (argv[1][0] != ',')) pid_spd.param.Kp   = atof(argv[1]);
    if(argc>2 && (argv[2][0] != ',')) pid_spd.param.Ki   = atof(argv[2]);
    if(argc>3 && (argv[3][0] != ',')) pid_spd.param.Kd   = atof(argv[3]);
    if(argc>4 && (argv[4][0] != ',')) pid_spd.param.Kr   = atof(argv[4]);
@@ -149,6 +154,7 @@ tCmdLineEntry overcurrentCmdTable[] =/*{{{*/
    { "o" ,Cmd_setOvercurrent   ,": set overcurrent"     },
    { "b" ,Cmd_resetOvercurrent ,": reset overcurrent"   },
    { "v" ,Cmd_getVdc           ,": read actual VDC"     },
+   { "E" ,Cmd_stopFcl          ,": emergency stop"      },
    { "<" ,Cmd_back2login       ,": back to login table" },
    { "?" ,Cmd_Help             ,": help"                },
    { 0   ,0                    ,0                       }
@@ -171,16 +177,18 @@ void Cmd_getVdc(uint16_t argc, char *argv[])
 //--------------------------------------------------------------------------------
 tCmdLineEntry fclCmdTable[] =/*{{{*/
 {
-   { "run"    ,Cmd_runFcl              ,": run motor"                   },
-   { "stop"   ,Cmd_stopFcl             ,": stop motor"                  },
-   { "pos"    ,Cmd_setControlPos       ,": position control loop"       },
-   { "speed"  ,Cmd_setControlSpeed     ,": speed control loop"          },
-   { "torque" ,Cmd_setControlTorque    ,": torque control loop"         },
-   { "cs"     ,Cmd_setControlledSpeed  ,": set controlled speed value"  },
-   { "ct"     ,Cmd_setControlledTorque ,": set controlled torque value" },
-   { "<"      ,Cmd_back2login          ,": back to login table"         },
-   { "?"      ,Cmd_Help                ,": help"                        },
-   { 0        ,0                       ,0                               }
+   { "run"     ,Cmd_runFcl              ,": run motor"                    },
+   { "stop"    ,Cmd_stopFcl             ,": stop motor"                   },
+   { "restart" ,Cmd_restartFcl          ,": restart fcl from overcurrent" },
+   { "pos"     ,Cmd_setControlPos       ,": position control loop"        },
+   { "speed"   ,Cmd_setControlSpeed     ,": speed control loop"           },
+   { "torque"  ,Cmd_setControlTorque    ,": torque control loop"          },
+   { "cs"      ,Cmd_setControlledSpeed  ,": set controlled speed value"   },
+   { "ct"      ,Cmd_setControlledTorque ,": set controlled torque value"  },
+   { "E"       ,Cmd_stopFcl             ,": emergency stop"               },
+   { "<"       ,Cmd_back2login          ,": back to login table"          },
+   { "?"       ,Cmd_Help                ,": help"                         },
+   { 0         ,0                       ,0                                }
 };
 void Cmd_runFcl(uint16_t argc, char *argv[])
 {
@@ -189,6 +197,10 @@ void Cmd_runFcl(uint16_t argc, char *argv[])
 void Cmd_stopFcl(uint16_t argc, char *argv[])
 {
    sendStopEvent();
+}
+void Cmd_restartFcl(uint16_t argc, char *argv[])
+{
+   sendRestartEvent();
 }
 void Cmd_setControlSpeed(uint16_t argc, char *argv[])
 {
@@ -233,6 +245,7 @@ tCmdLineEntry waveCmdTable[] =/*{{{*/
    { "aclk"    ,Cmd_setWaveDirAclk      ,": set dir anti clk wise"  },
    { "angle"   ,Cmd_setWaveStepAngle    ,": set step angle"         },
    { "pulse"   ,Cmd_advanceWaveStep     ,": advance one step"       },
+   { "E"       ,Cmd_stopFcl             ,": emergency stop"         },
    { "<"       ,Cmd_back2login          ,": back to login table"    },
    { "?"       ,Cmd_Help                ,": help"                   },
    { 0         ,0                       ,0                          }
@@ -303,6 +316,7 @@ tCmdLineEntry sweptCmdTable[] =/*{{{*/
    { "per"  ,Cmd_setSweptPer     ,": set step periods"    },
    { "ena"  ,Cmd_setSweptEnable  ,": set swep enable"     },
    { "dis"  ,Cmd_setSweptDisable ,": set swep disable"    },
+   { "E"    ,Cmd_stopFcl         ,": emergency stop"      },
    { "<"    ,Cmd_back2login      ,": back to login table" },
    { "?"    ,Cmd_Help            ,": help"                },
    { 0      ,0                   ,0                       }
@@ -345,15 +359,17 @@ void Cmd_setSweptDisable(uint16_t argc, char *argv[])
 //--------------------------------------------------------------------------------
 tCmdLineEntry gcodeCmdTable[] =/*{{{*/
 {
-   { "g0"  ,Cmd_setGcodeG0  ,": G0"                  },
-   { "F"   ,Cmd_setGcodeF   ,": F"                   },
-   { "acc" ,Cmd_setGcodeAcc ,": set accel"           },
-   { "dec" ,Cmd_setGcodeDec ,": set deccel"          },
-   { "log" ,Cmd_sendOneLog  ,": send one line log"   },
-   { "rst" ,Cmd_posRst      ,": reset abs pos to 0"  },
-   { "<"   ,Cmd_back2login  ,": back to login table" },
-   { "?"   ,Cmd_Help        ,": help"                },
-   { 0     ,0               ,0                       }
+   { "g0"   ,Cmd_setGcodeG0  ,": G0"                              },
+   { "F"    ,Cmd_setGcodeF   ,": F"                               },
+   { "acc"  ,Cmd_setGcodeAcc ,": set accel"                       },
+   { "dec"  ,Cmd_setGcodeDec ,": set deccel"                      },
+   { "log"  ,Cmd_sendOneLog  ,": send one line log"               },
+   { "rst"  ,Cmd_posRst      ,": reset abs pos to 0"              },
+   { "wait" ,Cmd_gcodeWait   ,": wait until movement is finished" },
+   { "E"    ,Cmd_stopFcl     ,": emergency stop"                  },
+   { "<"    ,Cmd_back2login  ,": back to login table"             },
+   { "?"    ,Cmd_Help        ,": help"                            },
+   { 0      ,0               ,0                                   }
 };
 void Cmd_setGcodeG0(uint16_t argc, char *argv[])
 {
@@ -389,16 +405,21 @@ void Cmd_posRst(uint16_t argc, char *argv[])
    rstGcode  ( );
    sciPrintf("abs pos reset\r\n");
 }
+void Cmd_gcodeWait(uint16_t argc, char *argv[])
+{
+   gcodeWait  ( );
+}
 /*}}}*/
 //--------------------------------------------------------------------------------
 tCmdLineEntry stepdirCmdTable[] =/*{{{*/
 {
-   { "g"    ,Cmd_getStepdirPins  ,": read step and dir pins state" } ,
-   { "clk"  ,Cmd_incStepdirPulse ,": inc step and dir state"       } ,
-   { "dir"  ,Cmd_setStepdirDir   ,": set dir to 0=clk 1=aclk"      } ,
-   { "step" ,Cmd_setStepdirStep  ,": set dir to 0=clk 1=aclk"      } ,
-   { "<"    ,Cmd_back2login      ,": back to login table"          } ,
-   { "?"    ,Cmd_Help            ,": help"                         } ,
+   { "g"    ,Cmd_getStepdirPins  ,": read step and dir pins state" },
+   { "clk"  ,Cmd_incStepdirPulse ,": inc step and dir state"       },
+   { "dir"  ,Cmd_setStepdirDir   ,": set dir to 0=clk 1=aclk"      },
+   { "step" ,Cmd_setStepdirStep  ,": set dir to 0=clk 1=aclk"      },
+   { "E"    ,Cmd_stopFcl         ,": emergency stop"               },
+   { "<"    ,Cmd_back2login      ,": back to login table"          },
+   { "?"    ,Cmd_Help            ,": help"                         },
    { 0      ,0                   ,0                                }
 };
 void Cmd_getStepdirPins(uint16_t argc, char *argv[])
@@ -431,17 +452,22 @@ tCmdLineEntry logCmdTable[] =/*{{{*/
    { "dis"   ,Cmd_logOff          ,": set log off"                      },
    { "pres"  ,Cmd_setLogPrescaler ,": set log prescaler"                },
    { "pause" ,Cmd_setLogPauseTime ,": set log pause time when keypress" },
+   { "abs"   ,Cmd_setLogAbs       ,": set log absolute values"          },
+   { "bode"  ,Cmd_setLogBode      ,": set log bode values"              },
+   { "log"   ,Cmd_sendOneLog      ,": send one line log"                },
+   { "E"     ,Cmd_stopFcl         ,": emergency stop"                   },
    { "<"     ,Cmd_back2login      ,": back to login table"              },
    { "?"     ,Cmd_Help            ,": help"                             },
    { 0       ,0                   ,0                                    }
 };
 void Cmd_logOn(uint16_t argc, char *argv[])
 {
-   setLogEnable();
+   sendLogEnableEvent();
 }
 void Cmd_logOff(uint16_t argc, char *argv[])
 {
-   setLogDisable();
+   sendLogDisableEvent();
+   sciPrintf("log disabled\r\n");
 }
 void Cmd_setLogPrescaler(uint16_t argc, char *argv[])
 {
@@ -454,6 +480,16 @@ void Cmd_setLogPauseTime(uint16_t argc, char *argv[])
    if(argc>1)
       setLogPauseTime(atoi(argv[1]));
    sciPrintf("log pause time=%i\r\n",getLogPauseTime());
+}
+void Cmd_setLogAbs(uint16_t argc, char *argv[])
+{
+   logBodeDisable();
+   sciPrintf("log absolute\r\n");
+}
+void Cmd_setLogBode(uint16_t argc, char *argv[])
+{
+   logBodeEnable();
+   sciPrintf("log bode\r\n");
 }
 /*}}}*/
 //--------------------------------------------------------------------------------

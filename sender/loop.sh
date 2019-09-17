@@ -1,4 +1,4 @@
 while [ true ]
 do
-   cat g.nc  | ./sender.sh 1 > /dev/ttyUSB0
+   cat g.nc  | ./sender.sh 1
 done

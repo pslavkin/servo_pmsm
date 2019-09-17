@@ -89,21 +89,20 @@ ustrncpy(char * restrict s1, const char * restrict s2, size_t n)
 //
 char* ftostr  (float fVal,char* str,uint16_t size)
 {
-    int32_t Entera, Dec;
-    uint16_t  Len;
-    char Sign[]="+";
+#define PRECISION 10000
 
-    Entera = fVal;
-    Dec = (int32_t)(fVal * 1000);
-    Dec %= 1000;
+    int32_t Entera, Dec;
+    Entera  = fVal;
+    Dec     = (int32_t)(fVal * PRECISION);
+    Dec    %= PRECISION;
     if(fVal<0) {
-       Dec=-Dec;
-       Entera=-Entera;
-       Sign[0]='-';
+       Dec    = -Dec;
+       Entera = -Entera;
+       str[0] = '-';
     }
-    Len=usnprintf(str,size-6,"%s%03d",Sign,Entera);
-    str[Len++] = '.';
-    usnprintf(str+Len,size-Len-6,"%03d",Dec);
+    else
+       str[0] = '+';
+    usnprintf(str+1,size-1,"%01d.%04d",Entera,Dec);
     return str;
 }
 

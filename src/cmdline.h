@@ -73,6 +73,8 @@ void Cmd_step               ( uint16_t argc, char *argv[]   );
 void Cmd_logOn           ( uint16_t argc, char *argv[] );
 void Cmd_logOff          ( uint16_t argc, char *argv[] );
 void Cmd_setLogPrescaler ( uint16_t argc, char *argv[] );
+void Cmd_setLogAbs       ( uint16_t argc, char *argv[] );
+void Cmd_setLogBode      ( uint16_t argc, char *argv[] );
 
 void Cmd_setOvercurrent   ( uint16_t argc, char *argv[] );
 void Cmd_resetOvercurrent ( uint16_t argc, char *argv[] );
@@ -80,6 +82,7 @@ void Cmd_getVdc           ( uint16_t argc, char *argv[] );
 
 void Cmd_runFcl              ( uint16_t argc, char *argv[] );
 void Cmd_stopFcl             ( uint16_t argc, char *argv[] );
+void Cmd_restartFcl          ( uint16_t argc, char *argv[] );
 void Cmd_setControlSpeed     ( uint16_t argc, char *argv[] );
 void Cmd_setControlTorque    ( uint16_t argc, char *argv[] );
 void Cmd_setControlPos       ( uint16_t argc, char *argv[] );
@@ -106,12 +109,13 @@ void Cmd_setSweptPer     ( uint16_t argc, char *argv[] );
 void Cmd_setSweptEnable  ( uint16_t argc, char *argv[] );
 void Cmd_setSweptDisable ( uint16_t argc, char *argv[] );
 
-void Cmd_setGcodeG0  ( uint16_t argc, char *argv[] );
-void Cmd_setGcodeF   ( uint16_t argc, char *argv[] );
-void Cmd_setGcodeAcc ( uint16_t argc, char *argv[] );
-void Cmd_setGcodeDec ( uint16_t argc, char *argv[] );
-void Cmd_sendOneLog  ( uint16_t argc, char *argv[] );
-void Cmd_setLogPauseTime(uint16_t argc, char *argv[]);
+void Cmd_setGcodeG0      ( uint16_t argc, char *argv[] );
+void Cmd_setGcodeF       ( uint16_t argc, char *argv[] );
+void Cmd_setGcodeAcc     ( uint16_t argc, char *argv[] );
+void Cmd_setGcodeDec     ( uint16_t argc, char *argv[] );
+void Cmd_sendOneLog      ( uint16_t argc, char *argv[] );
+void Cmd_setLogPauseTime ( uint16_t argc, char *argv[] );
+void Cmd_gcodeWait       ( uint16_t argc, char *argv[] );
 
 void Cmd_getStepdirPins  ( uint16_t argc, char *argv[] );
 void Cmd_incStepdirPulse ( uint16_t argc, char *argv[] );

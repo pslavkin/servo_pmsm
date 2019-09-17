@@ -9,15 +9,16 @@
 #include "gcode.h"
 #include "eqep_.h"
 #include "swept.h"
+#include "bode.h"
 
 wave_t wave={
    .dir       = CLOCK,
    .stepAngle = 0.0002,
-   .frec      = 0.1,
+   .frec      = 0.5,
    .offset    = 0,
    .enabled   = true,
-   .ampWished = 1,
-   .amp       = 1,
+   .ampWished = 0.3,
+   .amp       = 0.3,
    .shape     = GCODES,
    .t         = 0,
 };
@@ -35,9 +36,9 @@ void        setWaveAmp       ( float32_t amp        )
    if(wave.enabled==false)
       wave.amp = wave.ampWished;
 }
-float32_t   getWaveAmp ( void       ) { return wave.amp;}
-void        setWavet   ( uint32_t t ) { wave.t=t       ;}
-uint32_t    getWavet   ( void       ) { return wave.t  ;}
+float32_t   getWaveAmp  ( void        ) { return wave.amp;}
+void        setWavet    ( uint32_t t  ) { wave.t=t       ;}
+uint32_t    getWavet    ( void        ) { return wave.t  ;}
 void        setWaveFrec ( float32_t f )
 {
    wave.t    = (wave.frec*wave.t)/f;
@@ -76,14 +77,16 @@ float32_t getWavePeriods(void)
    return wave.frec*wave.t*T;
 }
 
+
 void waveGenerator(void)
 {
    if(wave.enabled==true) {
       sweptGenerator();
       wave.t++;
-      wave.amp = ramper(wave.ampWished,wave.amp,0.00001);
+      wave.amp = ramper(wave.ampWished,wave.amp,WAVE_RAMP_STEP);
       switch (wave.shape) {
          case SIN:
+            bodeAcc(T);
             switch(getControlType()) {
                case POS:
                   setPosAbs(wave.amp*sin(2.0*PI*wave.frec*wave.t*T)+wave.offset);
@@ -104,10 +107,10 @@ void waveGenerator(void)
                   setPosAbs(wave.amp*(((int32_t)(wave.frec*wave.t*T)%2)?1:-1) +wave.offset);
                   break;
                case SPEED:
-                  setControlledSpeed(wave.amp*(((int32_t)(wave.frec*wave.t*T)%2)?1:-1));
+                  setControlledSpeed(wave.amp*(((int32_t)(2*wave.frec*wave.t*T)%2)?1:-1));
                   break;
                case TORQUE:
-                  setControlledTorque(wave.amp*(((int32_t)(wave.frec*wave.t*T)%2)?1:-1));
+                  setControlledTorque(wave.amp*(((int32_t)(2*wave.frec*wave.t*T)%2)?1:-1));
                   break;
                default:
                   break;
@@ -124,3 +127,4 @@ void waveGenerator(void)
       }
    }
 }
+

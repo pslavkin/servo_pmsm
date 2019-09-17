@@ -54,6 +54,7 @@ void initPid(void)/*{{{*/
     pid_spd.term.c2    = 1.0;
 
     // Init PI module for ID loop
+    pi_id = (FCL_PIController_t)FCL_PICONTROLLER_DEFAULTS;
     pi_id.Kp      = 1.0;//LS * CUR_LOOP_BW;
     pi_id.Ki      = T/0.04;   //(RS * T) * CUR_LOOP_BW;
     pi_id.Kerr    = (pi_id.Ki*0.5) + pi_id.Kp,
@@ -65,6 +66,7 @@ void initPid(void)/*{{{*/
     pi_id.out     = 0;
 
     // Init PI module for IQ loop
+    pi_iq = (FCL_PIController_t)FCL_PICONTROLLER_DEFAULTS;
     pi_iq.Kp      = 1.0;    // LS * CUR_LOOP_BW;
     pi_iq.Ki      = T/0.04; // (RS * T) * CUR_LOOP_BW;
     pi_iq.Kerr    = (pi_iq.Ki*0.5) + pi_iq.Kp,
@@ -149,17 +151,17 @@ void printPid(PID_CONTROLLER* pid)/*{{{*/
 
    sciPrintf (
          "PID parameters\r\n"
-         "Kr          =%f\r\n"  // Parameter: reference set-point weighting
          "Kp          =%f\r\n"  // Parameter: proportional loop gain
          "Ki          =%f\r\n"  // Parameter: integral gain
          "Kd          =%f\r\n"  // Parameter: derivative gain
+         "Kr          =%f\r\n"  // Parameter: reference set-point weighting
          "Km          =%f\r\n"  // Parameter: derivative weighting
          "Umax        =%f\r\n"  // Parameter: upper saturation limit
          "Umin        =%f\r\n", // Parameter: lower saturation limit
-         pid->param.Kr,
          pid->param.Kp,
          pid->param.Ki,
          pid->param.Kd,
+         pid->param.Kr,
          pid->param.Km,
          pid->param.Umax,
          pid->param.Umin

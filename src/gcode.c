@@ -8,6 +8,7 @@
 #include "wave.h"
 #include "gcode.h"
 #include "eqep_.h"
+#include "schedule.h"
 
 accel_t p={
    .x0      = 0,
@@ -71,4 +72,15 @@ void      rstGcode          ( void        )
    p.deltaX  = 0   ;
    p.dir     = CLK ;
    p.state   = RISE;
+}
+void      testIfStall      ( void        )
+{
+   if(p.actualV<0.01) {
+      Free_Func_Schedule ( testIfStall );
+      sciPrintf          ( "stall\r\n" );
+   }
+}
+void      gcodeWait      ( void        )
+{
+   Update_Or_New_Periodic_Func_Schedule(10,testIfStall);
 }

@@ -200,7 +200,7 @@ extern FCL_Parameters_t FCL_params;
 #define LS      0.0065                  // Stator inductance (H)
 #define LR                              // Rotor inductance (H)
 #define LM                              // Magnetizing inductance (H)
-#define POLES   4                       // Number of poles
+#define POLES   8                       // Number of poles
 
 // Define the base quantites
 #define BASE_VOLTAGE        236.14                     // Base peak phase voltage (volt), Vdc/sqrt(3)
@@ -208,7 +208,7 @@ extern FCL_Parameters_t FCL_params;
 #define BASE_LEM_CURRENT    12.0                       // ----- do -----
 #define BASE_TORQUE                                    // Base torque (N.m)
 #define BASE_FLUX                                      // Base flux linkage (volt.sec/rad)
-#define BASE_FREQ           50                        // Base electrical frequency (Hz)
+#define BASE_FREQ           250                        // Base electrical frequency (Hz)
 #define VXS                 ((2.0*   BASE_FREQ)/POLES) // sale de que para v=1 el motor gira a ((2*BASE_FREQ)/POLES)=62.5 vuelas por seg, como x esta expresado en vueltas, listo
 #define VXM                 ((2.0*60*BASE_FREQ)/POLES) // sale de que para v=1 el motor gira a ((2*BASE_FREQ)/POLES)=62.5 vuelas por seg, como x esta expresado en vueltas, listo
 
@@ -273,18 +273,20 @@ typedef enum CONTROLTYPE_ENUM
 } controlType_enum;
 
 enum fclEvents_enum {
-    adcCalibEndEvent        = 0x0010,
-    alignEndEvent           = 0x0011,
-    overcurrentEvent        = 0x0012,
-    overcurrentClearedEvent = 0x0013,
-    stopEvent               = 0x0014,
-    runEvent                = 0x0015
+   adcCalibEndEvent        = 0x0010,
+   alignEndEvent           = 0x0011,
+   overcurrentEvent        = 0x0012,
+   overcurrentClearedEvent = 0x0013,
+   stopEvent               = 0x0014,
+   runEvent                = 0x0015,
+   restartEvent            = 0x0016
 };
 const State**        fcl                         ( void        );
 void                 initFcl                     ( void        );
 void                 electricalAlign             ( void        );
 void                 sendRunEvent                ( void        );
 void                 sendStopEvent               ( void        );
+void                 sendRestartEvent            ( void        );
 void                 sendAdcCalibEndEvent        ( void        );
 void                 sendOvercurrentEvent        ( void        );
 void                 sendOvercurrentClearedEvent ( void        );

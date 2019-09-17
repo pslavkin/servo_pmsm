@@ -28,7 +28,7 @@ const State**  parser    ( void )
 void parserProcess(void)
 {
    uint16_t Char=Actual_Event()&0x00FF;
-   pauseLog();
+   sendLogPauseEvent();
    if(lineIndex<sizeof(lineBuff)) {
 
       if(Char=='\n' || Char=='\r') {

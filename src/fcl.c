@@ -19,6 +19,8 @@
 #include "log.h"
 #include "leds.h"
 #include "gcode.h"
+#include "overcurrent.h"
+#include "swept.h"
 #include "schedule.h"/*}}}*/
 
 uint16_t          speedLoopPrescaler = 10   ; // Speed loop pre scalar
@@ -99,7 +101,7 @@ __interrupt void motorControlISR(void)/*{{{*/
 // stop 
 void stopIsr(void)/*{{{*/
 {
-   sendPrintLogEvent();
+   sendlogPrintEvent();
 }/*}}}*/
 // electrical align
 void alignIsr(void)/*{{{*/
@@ -112,7 +114,7 @@ void alignIsr(void)/*{{{*/
    }
    else
       pi_id.ref = ramper ( IdRef_start, pi_id.ref, 0.00001 );
-   sendPrintLogEvent();
+   sendlogPrintEvent();
 }/*}}}*/
 // running
 void runIsr(void)/*{{{*/
@@ -133,7 +135,7 @@ void runIsr(void)/*{{{*/
       pi_iq.ref        = controlType==TORQUE?controlledTorque:pid_spd.term.Out;
    }
    waveGenerator     ( );
-   sendPrintLogEvent ( );
+   sendlogPrintEvent ( );
 }/*}}}*/
 //----------------------------------------------------------------------------------------
 const State
@@ -148,13 +150,14 @@ const State**  fcl ( void ) { return &fclSm; }
 
 void                 sendRunEvent                ( void        ) { atomicSendEvent(runEvent         ,fcl())       ;}
 void                 sendStopEvent               ( void        ) { atomicSendEvent(stopEvent        ,fcl())       ;}
+void                 sendRestartEvent            ( void        ) { atomicSendEvent(restartEvent     ,fcl())       ;}
 void                 sendAdcCalibEndEvent        ( void        ) { atomicSendEvent(adcCalibEndEvent ,fcl())       ;}
 void                 sendOvercurrentEvent        ( void        ) { atomicSendEvent(overcurrentEvent ,fcl())       ;}
 void                 sendOvercurrentClearedEvent ( void        ) { atomicSendEvent(overcurrentClearedEvent ,fcl());}
 controlType_enum     getControlType              ( void        ) { return controlType;                            ;};
-void                 setControlPos               ( void        ) { controlType=POS   ;initPid();  ;};
-void                 setControlSpeed             ( void        ) { controlType=SPEED ;initPid();  ;};
-void                 setControlTorque            ( void        ) { controlType=TORQUE;initPid();  ;};
+void                 setControlPos               ( void        ) { controlType=POS   ;      ;};
+void                 setControlSpeed             ( void        ) { controlType=SPEED ;      ;};
+void                 setControlTorque            ( void        ) { controlType=TORQUE;      ;};
 void                 setControlledSpeed          ( float32_t s ) { controlledSpeed=s                              ;};
 float32_t            getControlledSpeed          ( void        ) { return controlledSpeed                         ;};
 void                 setControlledTorque         ( float32_t s ) { controlledTorque=s                             ;};
@@ -169,8 +172,14 @@ void align(void)/*{{{*/
    IdRef_start = 0.1          ;
    pi_id.ref   = 0            ;
    pi_iq.ref   = 0            ;
-   isrSm       = alignIsr     ;
-   sciPrintf("aligning\r\n");
+      speed1 =        ( SPEED_MEAS_QEP )SPEED_MEAS_QEP_DEFAULTS;
+      initQep         (                ) ;
+      initPid         (                ) ;
+      setPosAbs       ( getPosAbsMech( )); // la referencia
+      setPosAbsMech   ( getPosAbsMech( )); // no deberia ser necesario, pero lo es.. TODO
+      setPosAbsOffset ( getPosAbsMech( )); // este si se necesita
+   isrSm       = alignIsr                ;
+   sciPrintf("fcl aligning\r\n");
    EPWM_clearEventTriggerInterruptFlag ( EPWM1_BASE         ); // clear pending INT event
    Interrupt_enable                    ( INT_EPWM1          ); // Enable PWM1INT in PIE group 3
    Interrupt_enableInCPU               ( INTERRUPT_CPU_INT3 ); // Enable group 3 interrupts - EPWM1 is here
@@ -180,30 +189,38 @@ void stop(void)
    pi_id.ref = 0;
    pi_iq.ref = 0;
    isrSm     = stopIsr;
-   sciPrintf("stopped\r\n");
+   sciPrintf("fcl stopped\r\n");
 }
 void run(void)
 {
-   initPid         (                ) ;
-   setPosAbs       ( getPosAbsMech( )); // la referencia
-   setPosAbsMech   ( getPosAbsMech( )); // no deberia ser necesario, pero lo es.. TODO
-   setPosAbsOffset ( getPosAbsMech( )); // este si se necesita
+   controlledSpeed = 0;//esta la usa wave y podria tener algo
    pi_id.ref = 0;
    pi_iq.ref = 0;
    isrSm     = runIsr;
-   sciPrintf("running\r\n");
+   sciPrintf("fcl running\r\n");
 }
 void overCurrent(void)
 {
-   pi_id.ref       = 0;
-   pi_iq.ref       = 0;
+   pi_id.ref = 0;
+   pi_iq.ref = 0;
    isrSm     = stopIsr;
-   sciPrintf("overcurrent\r\n");
+   sciPrintf("fcl overcurrent\r\n");
 }/*}}}*/
+
+void restart(void)
+{
+   sciPrintf        ( "fcl restarting\r\n" ) ;
+   resetOvercurrent (                      ) ;
+   disableWave      (                      ) ;
+   setSweptDisable  (                      ) ;
+   setWaveFrec      ( 0.2                  ) ;
+   atomicSendEvent  ( runEvent,fcl(        ));
+}
 //----------------------------------------------------------------------------------------------------
 const State stopped       [ ] =
 {
     runEvent                ,sendCalibEvent ,adcCalibrating ,
+    restartEvent            ,restart        ,stopped        ,
     ANY_Event               ,Rien           ,stopped        ,
 };
 const State adcCalibrating[ ] =
@@ -225,5 +242,6 @@ const State running       [ ] =
 const State overCurrenting[ ] =
 {
     overcurrentClearedEvent ,stop           ,stopped        ,
+    restartEvent            ,restart        ,stopped        ,
     ANY_Event               ,Rien           ,overCurrenting ,
 };

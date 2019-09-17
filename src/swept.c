@@ -6,25 +6,26 @@
 #include "ramper_.h"
 #include "position.h"
 #include "wave.h"
+#include "bode.h"
 #include "swept.h"
 
 swept_t swept={
    .enabled = false,
-   .step    = 0.01,
-   .init    = 0.01,
-   .last    = 1,
-   .per     = 10,
+   .step    = 0.2,
+   .init    = 0.2,
+   .last    = 3,
+   .per     = 2,
 };
 
 void        setSweptEnable ( void )
 {
    setWavet                  ( 0          );
    setWaveFrecWoCompensation ( swept.init );
-   swept.enabled=true        ;
+   swept.enabled=true;
 }
 void        setSweptDisable ( void )
 {
-   swept.enabled=false       ;
+   swept.enabled=false;
 }
 void        setSweptInit ( float32_t f ) { swept.init=f     ;}
 void        setSweptLast ( float32_t f ) { swept.last=f     ;}
@@ -39,6 +40,7 @@ void sweptGenerator(void)
 {
    if(swept.enabled==true) {
       if(getWavePeriods()>swept.per) {
+         calcBode(swept.per*(1/getWaveFrec()));
          setWavet(0);
          if((getWaveFrec()+swept.step) < swept.last) {
             setWaveFrecWoCompensation(getWaveFrec()+swept.step);

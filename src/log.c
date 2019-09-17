@@ -9,19 +9,22 @@
 #include "eqep_.h"
 #include "schedule.h"
 #include "position.h"
+#include "wave.h"
 
 const State
-   logEnabled       [ ];
+   logDisabled[ ],
+   logEnabled [ ],
+   logPaused  [ ];
 
-log_t logm    = {
-   .state     = DISABLED,
-   .pauseTime = 30   ,
-   .ticker    = 0    ,
-   .prescaler = 500  , // Speed loop pre scalar
-   .count     = 1    , // Speed loop counter
+log_t logm = {
+   .pauseTime  = 15  ,
+   .ticker     = 0   ,
+   .prescaler  = 500 , // Speed loop pre scalar
+   .count      = 1   , // Speed loop counter
+   .bodeEnable = 0   ,
 };
 
-const State*      logSm=logEnabled;
+const State*      logSm=logDisabled;
 const State**     logger ( void ) { return &logSm; }
 
 void printLogPrescaled(void)
@@ -29,7 +32,10 @@ void printLogPrescaled(void)
    if(++logm.count >= logm.prescaler) {
       logm.count = 0;
       logm.ticker+=logm.prescaler;
-      printLog();
+      if(logm.bodeEnable==false)
+         printLog();
+      else
+         printBode();
    }
 }
 
@@ -45,40 +51,38 @@ void printLog(void)
          );
 }
 
-void     setLogPauseTime ( uint32_t p ) { logm.pauseTime=p     ;}
-uint32_t getLogPauseTime ( void       ) { return logm.pauseTime;}
+void     sendlogPrintEvent   ( void       ) { if (logSm!=logDisabled) sendEvent(logPrintEvent,logger())        ;}
+void     createLogTimer      ( void       ) { New_Periodic_Schedule(logm.pauseTime,logUnpauseEvent,logger())   ;}
+void     freeLogTimer        ( void       ) { Free_Schedule(logUnpauseEvent,logger())                          ;}
+void     logUpdateTimer      ( void       ) { Update_Periodic_Schedule(logm.pauseTime,logUnpauseEvent,logger());}
+void     sendLogEnableEvent  ( void       ) { atomicSendEvent(logEnableEvent,logger())                         ;}
+void     sendLogDisableEvent ( void       ) { atomicSendEvent(logDisableEvent,logger())                        ;}
+void     sendLogPauseEvent   ( void       ) { atomicSendEvent(logPauseEvent,logger())                          ;}
+void     setLogPrescaler     ( int32_t p  ) { logm.prescaler = p                                               ;}
+void     logBodeEnable       (            ) { logm.bodeEnable = true                                           ;}
+void     logBodeDisable      (            ) { logm.bodeEnable = false                                          ;}
+int32_t  getLogPrescaler     ( void       ) { return logm.prescaler                                            ;}
+void     setLogPauseTime     ( uint32_t p ) { logm.pauseTime=p                                                 ;}
+uint32_t getLogPauseTime     ( void       ) { return logm.pauseTime                                            ;}
+bool     getLogBodeState     (            ) { return logm.bodeEnable;}
 
-void sendPrintLogEvent(void)
+const State logDisabled[ ] =
 {
-   if (logm.state==ENABLED)
-      sendEvent(printLogEvent,logger());
-}
-//bool     getLogState    ( void      ) { return logm.state;}
-
-void     pauseLog(void)
-{
-   switch(logm.state) {
-      case ENABLED:
-         logm.state=PAUSED;
-         Update_Or_New_None_Periodic_Func_Schedule(logm.pauseTime,setLogEnable);
-         break;
-      case DISABLED:
-         Free_Func_Schedule(setLogEnable);
-         break;
-      case PAUSED:
-         Update_Or_New_None_Periodic_Func_Schedule(logm.pauseTime,setLogEnable);
-         break;
-      default:
-         break;
-   }
-}
-void     setLogEnable    ( void      ) { logm.state = ENABLED    ;}
-void     setLogDisable   ( void      ) { logm.state    = DISABLED;}
-void     setLogPrescaler ( int32_t p ) { logm.prescaler = p      ;}
-int32_t  getLogPrescaler ( void      ) { return logm.prescaler   ;}
-
+    logEnableEvent  ,createLogTimer    ,logEnabled  ,
+    ANY_Event       ,Rien              ,logDisabled ,
+};
 const State logEnabled [ ] =
 {
-    printLogEvent ,printLogPrescaled ,logEnabled ,
-    ANY_Event     ,Rien              ,logEnabled ,
+    logPrintEvent   ,printLogPrescaled ,logEnabled  ,
+    logPauseEvent   ,logUpdateTimer    ,logPaused   ,
+    logDisableEvent ,freeLogTimer      ,logDisabled ,
+    ANY_Event       ,Rien              ,logEnabled  ,
 };
+const State logPaused  [ ] =
+{
+    logPauseEvent   ,logUpdateTimer    ,logPaused   ,
+    logDisableEvent ,freeLogTimer      ,logDisabled ,
+    logUnpauseEvent ,Rien              ,logEnabled  ,
+    ANY_Event       ,Rien              ,logPaused   ,
+};
+

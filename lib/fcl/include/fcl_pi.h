@@ -33,5 +33,19 @@ typedef struct {
     float32_t  Umin;            // Parameter: lower saturation limit
 } FCL_PIController_t;
 
+#define FCL_PICONTROLLER_DEFAULTS { \
+    0,\
+    0,\
+    0,\
+    0,\
+    0,\
+    0,\
+    0,\
+    0,\
+    0,\
+    0,\
+    0,\
+}
+
 
 #endif // FCL_PI_H

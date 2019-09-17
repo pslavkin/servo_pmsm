@@ -214,34 +214,36 @@ float32_t getOvercurrent(void)/*{{{*/
 //resetear pero parece que no hace falta o se hace de otra manera... TODO.
 void resetOvercurrent(void)/*{{{*/
 {
-   // clear the ocp latch in macro M6
-   GPIO_writePin   ( 41, 0 );
-   DEVICE_DELAY_US ( 10L   );
-   GPIO_writePin   ( 41, 1 );
+//   // clear the ocp latch in macro M6
+//   GPIO_writePin   ( 41, 0 );
+//   DEVICE_DELAY_US ( 10L   );
+//   GPIO_writePin   ( 41, 1 );
+//
+//   // clear EPWM trip flags
+//   DEVICE_DELAY_US(1L);
+//
+//   // clear OST & DCAEVT1 flags
+//   EPWM_clearTripZoneFlag(EPWM1_BASE, (EPWM_TZ_FLAG_OST | EPWM_TZ_FLAG_DCAEVT1));
+//   EPWM_clearTripZoneFlag(EPWM2_BASE, (EPWM_TZ_FLAG_OST | EPWM_TZ_FLAG_DCAEVT1));
+//   EPWM_clearTripZoneFlag(EPWM3_BASE, (EPWM_TZ_FLAG_OST | EPWM_TZ_FLAG_DCAEVT1));
+//
+//   // clear HLATCH - (not in TRIP gen path)
+//   CMPSS_clearFilterLatchHigh(CMPSS1_BASE);
+//   CMPSS_clearFilterLatchHigh(CMPSS3_BASE);
+//   CMPSS_clearFilterLatchHigh(CMPSS2_BASE);
+//   CMPSS_clearFilterLatchHigh(CMPSS6_BASE);
+//
+//   // clear LLATCH - (not in TRIP gen path)
+//   CMPSS_clearFilterLatchLow(CMPSS1_BASE);
+//   CMPSS_clearFilterLatchLow(CMPSS3_BASE);
+//   CMPSS_clearFilterLatchLow(CMPSS2_BASE);
+//   CMPSS_clearFilterLatchLow(CMPSS6_BASE);
+//
+//   LEM_curHi = 2048 + LEM(curLimit);
+//   LEM_curLo = 2048 - LEM(curLimit);
+//
+//   configureCMPSS(CMPSS1_BASE, LEM_curHi, LEM_curLo);  //Enable CMPSS1 - LEM V
+//   configureCMPSS(CMPSS3_BASE, LEM_curHi, LEM_curLo);  //Enable CMPSS3 - LEM W
+   initOvercurrent();
 
-   // clear EPWM trip flags
-   DEVICE_DELAY_US(1L);
-
-   // clear OST & DCAEVT1 flags
-   EPWM_clearTripZoneFlag(EPWM1_BASE, (EPWM_TZ_FLAG_OST | EPWM_TZ_FLAG_DCAEVT1));
-   EPWM_clearTripZoneFlag(EPWM2_BASE, (EPWM_TZ_FLAG_OST | EPWM_TZ_FLAG_DCAEVT1));
-   EPWM_clearTripZoneFlag(EPWM3_BASE, (EPWM_TZ_FLAG_OST | EPWM_TZ_FLAG_DCAEVT1));
-
-   // clear HLATCH - (not in TRIP gen path)
-   CMPSS_clearFilterLatchHigh(CMPSS1_BASE);
-   CMPSS_clearFilterLatchHigh(CMPSS3_BASE);
-   CMPSS_clearFilterLatchHigh(CMPSS2_BASE);
-   CMPSS_clearFilterLatchHigh(CMPSS6_BASE);
-
-   // clear LLATCH - (not in TRIP gen path)
-   CMPSS_clearFilterLatchLow(CMPSS1_BASE);
-   CMPSS_clearFilterLatchLow(CMPSS3_BASE);
-   CMPSS_clearFilterLatchLow(CMPSS2_BASE);
-   CMPSS_clearFilterLatchLow(CMPSS6_BASE);
-
-   LEM_curHi = 2048 + LEM(curLimit);
-   LEM_curLo = 2048 - LEM(curLimit);
-
-   configureCMPSS(CMPSS1_BASE, LEM_curHi, LEM_curLo);  //Enable CMPSS1 - LEM V
-   configureCMPSS(CMPSS3_BASE, LEM_curHi, LEM_curLo);  //Enable CMPSS3 - LEM W
 }/*}}}*/

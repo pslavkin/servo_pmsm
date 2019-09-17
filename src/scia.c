@@ -54,7 +54,7 @@ void initSCIAGpio(void)
 
 void initSCIAFIFO(void)
 {
-    SCI_setConfig(SCIA_BASE, DEVICE_LSPCLK_FREQ, 115200, (SCI_CONFIG_WLEN_8 |
+    SCI_setConfig(SCIA_BASE, DEVICE_LSPCLK_FREQ, 500000, (SCI_CONFIG_WLEN_8 |
                                                         SCI_CONFIG_STOP_ONE |
                                                         SCI_CONFIG_PAR_NONE));
     SCI_enableModule          ( SCIA_BASE                                                         );
