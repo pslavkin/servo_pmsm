@@ -116,6 +116,28 @@ Default initalisation values for the PID objects
    PID Macro Definition
 ------------------------------------------------------------------------------*/
 
+static inline void runPablosPID(PID_CONTROLLER * in)
+{
+   // proportional term
+   in->data.up = in->param.Kp * (in->param.Kr * in->term.Ref - in->term.Fbk);
+
+//   // integral term
+   in->data.ui = in->param.Ki * (in->data.w1 * (in->term.Ref - in->term.Fbk)) + in->data.i1;
+   in->data.i1 = in->data.ui;
+//
+//   // derivative term
+   in->data.ud = in->param.Km * (in->data.d1 - in->param.Kd * (in->term.Fbk - in->data.d2));
+   in->data.d2 = in->term.Fbk;
+   in->data.d1 = in->data.ud;
+//
+//   // control output
+//   //esta multiplicando la Kp por toda la suma!! no quiero eso...!!
+//   in->data.v1  = in->param.Kp * (in->data.up + in->data.ui + in->data.ud);
+//   in->term.Out = __fmax(__fmin(in->data.v1, in->param.Umax), in->param.Umin);
+   in->data.v1  = in->data.up + in->data.ui + in->data.ud;
+   in->term.Out = __fmax(__fmin(in->data.v1, in->param.Umax), in->param.Umin);
+   in->data.w1  = (in->term.Out == in->data.v1) ? 1 : 0;
+}
 static inline void runPID(PID_CONTROLLER * in)
 {
    // proportional term

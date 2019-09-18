@@ -99,6 +99,21 @@ Default initalisation values for the PI_GRANDO objects
 //   This macro works with angles as inputs, hence error is rolled within -pi to +pi
 // ***********************************************************************************
 
+static inline void runPIPablosPos(PI_CONTROLLER * in)
+{
+	in->up = in->Ref - in->Fbk;
+   //
+	// integral term
+	in->ui = (in->Out == in->v1) ? (in->Ki * in->up + in->i1) : in->i1;
+	in->i1 = in->ui;
+   //
+	// proportional term
+	in->up = in->Kp * in->up;
+
+	// control output
+	in->v1 = in->up + in->ui;
+	in->Out = __fmax(__fmin(in->v1, in->Umax), in->Umin);
+}
 static inline void runPIPos(PI_CONTROLLER * in)
 {
 	// proportional term

@@ -44,7 +44,7 @@ void printLog(void)
    sciPrintf("%f %f %f %f %f %f %f\r\n",
          logm.ticker*T,
          getPosAbs      ( ), // posicion pedida de referencia
-         getPiPosFbk    ( ), // posicion que consigo
+         getPidPosFbk    ( ), // posicion que consigo
          getPidSpeedRef ( ), // velocidad de referencia, que puede ser fija en el caso de control de speed o sale del pi de posicion
          getSpeed1Speed ( ), // velocidad que consigo
          getPiIqRef     ( ), // valor de referencia de iq que puede ser fijo en el caso de control de torque o sale del pid de speed

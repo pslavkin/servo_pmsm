@@ -8,7 +8,7 @@
 
 // Instance PI(D) regulators to regulate the d and q  axis currents, speed and position
 //PIDREG3         pid_pos = PIDREG3_DEFAULTS;// (optional - for eval)
-PI_CONTROLLER   pi_pos;
+PID_CONTROLLER  pid_pos;
 PID_CONTROLLER  pid_spd;
 
 #pragma DATA_SECTION(pi_iq,   "ClaData")
@@ -18,36 +18,32 @@ FCL_PIController_t   pi_id, pi_iq;
 void initPid(void)/*{{{*/
 {
     // Initialize the PI module for position
-    pi_pos      = (PI_CONTROLLER)PI_CONTROLLER_DEFAULTS;
-    pi_pos.Kp   = 3.0;      // 1.0;   // 10.0;
-    pi_pos.Ki   = 0.0015  ; // T*speedLoopPrescaler/0.3;
-    pi_pos.Umax = 1;//1;
-    pi_pos.Umin = -1;//-1;
+//    pi_pos      = (PI_CONTROLLER)PI_CONTROLLER_DEFAULTS;
+//    pi_pos.Kp   = 2.1;      // 1.0;   // 10.0;
+//    pi_pos.Ki   = 0.0001  ; // T*speedLoopPrescaler/0.3;
+//    pi_pos.Umax = 1;//1;
+//    pi_pos.Umin = -1;//-1;
 
 //    // Initialize the PID module for position (alternative option for eval)
-//    pid_pos.Ref       = 0;
-//    pid_pos.Fdb       = 0;
-//    pid_pos.OutMin    = -0.5;
-//    pid_pos.OutMax    = 0.5;
-//    pid_pos.Out       = 0;
-//
-//    pid_pos.Kp        = 1.0;
-//    pid_pos.Ki        = 0;
-//    pid_pos.Kd        = 0;
-//    pid_pos.Kc        = 0.9;
-//
-//    pid_pos.Up1       = 0;
-//    pid_pos.Up        = 0;
-//    pid_pos.Ui        = 0;
-//    pid_pos.Ud        = 0;
-//    pid_pos.SatErr    = 0;
-//    pid_pos.OutPreSat = 0;
+    pid_pos = (PID_CONTROLLER){PID_TERM_DEFAULTS, PID_PARAM_DEFAULTS, PID_DATA_DEFAULTS};
+    pid_pos.param.Kp   = 4.0;
+    pid_pos.param.Ki   = 0.01;
+    pid_pos.param.Kd   = 2.000;
+    pid_pos.param.Kr   = 1.1000;
+    pid_pos.param.Km   = 1.0000;
+    pid_pos.param.Umax = 1;//0.95;
+    pid_pos.param.Umin = -1;//-0.95;
+    pid_pos.term.c1    = 1.0;
+    pid_pos.term.c2    = 1.0;
+
 //
     // Initialize the PID module for speed
     pid_spd = (PID_CONTROLLER){PID_TERM_DEFAULTS, PID_PARAM_DEFAULTS, PID_DATA_DEFAULTS};
-    pid_spd.param.Kp   = 0.8;
-    pid_spd.param.Ki   = 0.0015;
-    pid_spd.param.Kd   = 0.0015;
+    pid_spd.param.Kp   = 3.0;
+    pid_spd.param.Ki   = 0.02;
+    pid_spd.param.Kd   = 7.0000;
+    pid_spd.param.Kr   = 1.1000;
+    pid_spd.param.Km   = 1.0000;
     pid_spd.param.Umax = 0.95;//0.95;
     pid_spd.param.Umin = -0.95;//-0.95;
     pid_spd.term.c1    = 1.0;
@@ -190,5 +186,5 @@ void printPid(PID_CONTROLLER* pid)/*{{{*/
 
 float32_t getPiIqFbk     ( void ) { return pi_iq.fbk       ;}
 float32_t getPiIqRef     ( void ) { return pi_iq.ref       ;}
-float32_t getPiPosFbk    ( void ) { return pi_pos.Fbk      ;}
+float32_t getPidPosFbk   ( void ) { return pid_pos.term.Fbk ;}
 float32_t getPidSpeedRef ( void ) { return pid_spd.term.Ref;}

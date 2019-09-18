@@ -35,7 +35,7 @@ void printBode(void)
 }
 void bodePosAcc(float32_t p)
 {
-   float32_t a  = getPiPosFbk();
+   float32_t a  = getPidPosFbk();
    bode.posAcc += a*a*p;
 }
 void calcBodePos  ( float32_t per ) 

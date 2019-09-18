@@ -4,6 +4,7 @@
 
 typedef struct swept_struct {
    bool                 enabled ;
+   bool                 incDec ;
    float32_t            step;
    uint32_t             per;
    float32_t            init;

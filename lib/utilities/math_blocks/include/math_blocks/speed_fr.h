@@ -86,11 +86,13 @@ static inline void runSpeedFR(SPEED_MEAS_QEP * in)
       in->Tmp -= 1.0;
    }
    in->Tmp *= in->K1;
-   // Low-pass filter
-   in->Tmp = (in->K2 * in->Speed) + (in->K3 * in->Tmp);
-   // Saturate the output
-   in->Tmp = __fmax(__fmin(in->Tmp,1), -1);
-   in->Speed = in->Tmp;
+
+//   // Low-pass filter
+//   in->Tmp = (in->K2 * in->Speed) + (in->K3 * in->Tmp);
+//   // Saturate the output
+//   in->Tmp = __fmax(__fmin(in->Tmp,1), -1);
+   in->Speed = (in->Speed + in->Tmp)/2;
+
    // Update the electrical angle
    in->OldElecTheta = in->ElecTheta;
    // Change motor speed for pu to rpm value

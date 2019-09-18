@@ -11,6 +11,7 @@
 
 swept_t swept={
    .enabled = false,
+   .incDec  = true,
    .step    = 0.2,
    .init    = 0.2,
    .last    = 3,
@@ -42,13 +43,18 @@ void sweptGenerator(void)
       if(getWavePeriods()>swept.per) {
          calcBode(swept.per*(1/getWaveFrec()));
          setWavet(0);
-         if((getWaveFrec()+swept.step) < swept.last) {
-            setWaveFrecWoCompensation(getWaveFrec()+swept.step);
+         if(swept.incDec==true) {
+            if((getWaveFrec()+swept.step) < swept.last)
+               setWaveFrecWoCompensation(getWaveFrec()+swept.step);
+            else
+               swept.incDec=false;
          }
          else {
-            setWaveFrecWoCompensation(swept.init);
+            if((getWaveFrec()-swept.step) > swept.init)
+               setWaveFrecWoCompensation(getWaveFrec()-swept.step);
+            else
+               swept.incDec=true;
          }
       }
    }
 }
-

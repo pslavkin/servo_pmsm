@@ -23,7 +23,7 @@
 #include "swept.h"
 #include "schedule.h"/*}}}*/
 
-uint16_t          speedLoopPrescaler = 10   ; // Speed loop pre scalar
+uint16_t          speedLoopPrescaler = 1   ; // Speed loop pre scalar
 uint16_t          speedLoopCount     = 1    ; // Speed loop counter
 
 // Variables for Fast Current Loop
@@ -91,7 +91,7 @@ __interrupt void motorControlISR(void)/*{{{*/
       FCL_runPICtrl     (                ) ;
       getVdc            (                ) ; // Measure DC Bus voltage using SDFM Filter3
       FCL_runPICtrlWrap (                ) ; // Fast current loop controller wrapper
-      addPosAbsMech     ( qep1MechTheta( ));
+       addPosAbsMech     ( qep1MechTheta( ));
       isrSm             (                ) ;
       EPWM_clearEventTriggerInterruptFlag ( EPWM1_BASE                                   );
       ADC_clearInterruptStatus            ( ADCA_BASE, ADC_INT_NUMBER1                   );
@@ -120,23 +120,24 @@ void alignIsr(void)/*{{{*/
 void runIsr(void)/*{{{*/
 {
    speed1.ElecTheta = qep1ElecTheta();
-   runSpeedFR(&speed1);
+  runSpeedFR(&speed1);
    //SPEED_FR_MACRO(speed1);
 
-   if (++speedLoopCount >= speedLoopPrescaler)
-   {
-      speedLoopCount = 1;
-      pi_pos.Ref     = getPosAbs     ( );
-      pi_pos.Fbk     = getPosAbsMech ( );
-      runPIPos(&pi_pos);
-      //PI_MACRO(pi_pos);
+ //  if (++speedLoopCount >= speedLoopPrescaler)
+ //  {
+//      speedLoopCount = 1;
+      pid_pos.term.Ref     = getPosAbs     ( );
+      pid_pos.term.Fbk     = getPosAbsMech ( );
+      runPablosPID(&pid_pos);
+      //PI_MACRO(pid_pos);
 
-      pid_spd.term.Ref = controlType==SPEED?controlledSpeed:pi_pos.Out;
+      pid_spd.term.Ref = controlType==SPEED?controlledSpeed:pid_pos.term.Out;
       pid_spd.term.Fbk = getSpeed1Speed();
       //PID_MACRO(pid_spd);
-      runPID(&pid_spd);
+      runPablosPID(&pid_spd);
+//      runPID(&pid_spd);
       pi_iq.ref        = controlType==TORQUE?controlledTorque:pid_spd.term.Out;
-   }
+//   }
    waveGenerator     ( );
    sendlogPrintEvent ( );
 }/*}}}*/
@@ -176,11 +177,9 @@ void align(void)/*{{{*/
    pi_id.ref   = 0            ;
    pi_iq.ref   = 0            ;
    speed1 =        ( SPEED_MEAS_QEP )SPEED_MEAS_QEP_DEFAULTS;
-   initQep         (                ) ;
-   initPid         (                ) ;
-   setPosAbs       ( getPosAbsMech( )); // la referencia
-   setPosAbsMech   ( getPosAbsMech( )); // no deberia ser necesario, pero lo es.. TODO
-   setPosAbsOffset ( getPosAbsMech( )); // este si se necesita
+   initQep   ( );
+   initPid   ( );
+   rstPosAbs ( );
    isrSm       = alignIsr                ;
    sciPrintf("fcl aligning\r\n");
    EPWM_clearEventTriggerInterruptFlag ( EPWM1_BASE         ); // clear pending INT event
@@ -213,6 +212,7 @@ void overCurrent(void)
 void restart(void)
 {
    sciPrintf        ( "fcl restarting\r\n" ) ;
+   rstGcode ( );
    resetOvercurrent (                      ) ;
    disableWave      (                      ) ;
    setSweptDisable  (                      ) ;

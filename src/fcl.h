@@ -177,7 +177,7 @@ extern FCL_Parameters_t FCL_params;
 // Keep PWM Period same between single sampling and double sampling
 #define INV_PWM_TICKS           (((SYSTEM_FREQUENCY/2.0)/(PWM_FREQUENCY))*1000)
 #define INV_PWM_DB              (200.0)
-#define QEP_UNIT_TIMER_TICKS    ((SYSTEM_FREQUENCY)/(2*PWM_FREQUENCY)*1000)
+#define QEP_UNIT_TIMER_TICKS    ((SYSTEM_FREQUENCY)/(1*PWM_FREQUENCY)*1000) //modifico..algo aca no esta ok.. creo que en vez de pwm deberia ser isr
 
 #define INV_PWM_TBPRD           (INV_PWM_TICKS/2)
 #define INV_PWM_HALF_TBPRD      (INV_PWM_TBPRD/2)

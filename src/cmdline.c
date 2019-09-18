@@ -113,14 +113,17 @@ tCmdLineEntry posPidCmdTable[] =/*{{{*/
 };
 void Cmd_readPosPid(uint16_t argc, char *argv[])
 {
-   printPi(&pi_pos);
+   printPid(&pid_pos);
 }
 void Cmd_writePosPid(uint16_t argc, char *argv[])
 {
-   if(argc>1 && (argv[1][0] != ',')) pi_pos.Kp   = atof(argv[1]);
-   if(argc>2 && (argv[2][0] != ',')) pi_pos.Ki   = atof(argv[2]);
-   if(argc>3 && (argv[3][0] != ',')) pi_pos.Umax = atof(argv[3]);
-   if(argc>4 && (argv[4][0] != ',')) pi_pos.Umin = atof(argv[4]);
+   if(argc>1 && (argv[1][0] != ',')) pid_pos.param.Kp   = atof(argv[1]);
+   if(argc>2 && (argv[2][0] != ',')) pid_pos.param.Ki   = atof(argv[2]);
+   if(argc>3 && (argv[3][0] != ',')) pid_pos.param.Kd   = atof(argv[3]);
+   if(argc>4 && (argv[4][0] != ',')) pid_pos.param.Kr   = atof(argv[4]);
+   if(argc>5 && (argv[5][0] != ',')) pid_pos.param.Km   = atof(argv[5]);
+   if(argc>6 && (argv[6][0] != ',')) pid_pos.param.Umax = atof(argv[6]);
+   if(argc>7 && (argv[7][0] != ',')) pid_pos.param.Umin = atof(argv[7]);
 }
 /*}}}*/
 //--------------------------------------------------------------------------------
@@ -179,7 +182,7 @@ tCmdLineEntry fclCmdTable[] =/*{{{*/
 {
    { "run"     ,Cmd_runFcl              ,": run motor"                    },
    { "stop"    ,Cmd_stopFcl             ,": stop motor"                   },
-   { "restart" ,Cmd_restartFcl          ,": restart fcl from overcurrent" },
+   { "rst"     ,Cmd_restartFcl          ,": restart fcl from overcurrent" },
    { "pos"     ,Cmd_setControlPos       ,": position control loop"        },
    { "speed"   ,Cmd_setControlSpeed     ,": speed control loop"           },
    { "torque"  ,Cmd_setControlTorque    ,": torque control loop"          },
