@@ -96,7 +96,7 @@ https://gist.github.com/rxaviers/7360908
 ## moldova
 ### here I'm
 
-<img src="doc/pics/pablo_en_moldova.jpg" width="400" height="300"/> <img src="doc/pics/moldova.jpg" width="250" height="300"/> 
+<img src="doc/pics/moldova1.jpg" width="220" height="300"/><img src="doc/pics/moldova2.jpg" width="220" /><img src="doc/pics/moldova3.jpg" width="220" /><img src="doc/pics/moldova4.jpg" width="220" /><img src="doc/pics/moldova5.jpg" width="220" /><img src="doc/pics/moldova6.jpg" width="220" /><img src="doc/pics/moldova7.jpg" width="220" /> 
 
 
 ## motorsszch
@@ -181,6 +181,11 @@ testing a 4 poles instead of 8  and mixing encoders
 
 <img src="doc/pics/proto2.jpg" width="400" /> <img src="doc/pics/proto1.jpg" height="400" /> <img src="doc/pics/proto3.jpg" width="400" />
 <img src="doc/pics/proto4.jpg" width="400" /> <img src="doc/pics/proto1.jpg" height="400" /> <img src="doc/pics/proto3.jpg" width="400" />
+
+testing the prototype at full speed full length and full voltage:
+
+<img src="doc/videos/proto1.gif"  width="500" height="400"/>
+
 
 
 ## Hierarchy
