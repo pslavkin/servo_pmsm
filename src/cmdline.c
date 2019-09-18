@@ -417,9 +417,9 @@ void Cmd_gcodeWait(uint16_t argc, char *argv[])
 tCmdLineEntry stepdirCmdTable[] =/*{{{*/
 {
    { "g"    ,Cmd_getStepdirPins  ,": read step and dir pins state" },
-   { "clk"  ,Cmd_incStepdirPulse ,": inc step and dir state"       },
+   { "clk"  ,Cmd_incStepdirPulse ,": inc step"                     },
    { "dir"  ,Cmd_setStepdirDir   ,": set dir to 0=clk 1=aclk"      },
-   { "step" ,Cmd_setStepdirStep  ,": set dir to 0=clk 1=aclk"      },
+   { "step" ,Cmd_setStepdirStep  ,": set step size"                },
    { "E"    ,Cmd_stopFcl         ,": emergency stop"               },
    { "<"    ,Cmd_back2login      ,": back to login table"          },
    { "?"    ,Cmd_Help            ,": help"                         },
