@@ -42,6 +42,7 @@ https://gist.github.com/rxaviers/7360908
 - :heavy_check_mark: step dir using isr to connect to a controller
 - :heavy_check_mark: testing on a 4 poles motor and it work
 - :heavy_check_mark: prototype arrives! It's huge!
+- :heavy_check_mark: prototype works! 0.2m/seg max until now, but works
 - :construction:     bode plot
 - :construction:     scratch materplan
 - :construction:     merging example fcl with my own code
@@ -179,6 +180,8 @@ testing a 4 poles instead of 8  and mixing encoders
 ...and comes the prototype!! ? It's more than a proto!
 
 <img src="doc/pics/proto2.jpg" width="400" /> <img src="doc/pics/proto1.jpg" height="400" /> <img src="doc/pics/proto3.jpg" width="400" />
+<img src="doc/pics/proto4.jpg" width="400" /> <img src="doc/pics/proto1.jpg" height="400" /> <img src="doc/pics/proto3.jpg" width="400" />
+
 
 ## Hierarchy
 

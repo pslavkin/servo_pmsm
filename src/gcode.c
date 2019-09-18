@@ -9,6 +9,7 @@
 #include "gcode.h"
 #include "eqep_.h"
 #include "schedule.h"
+#include "log.h"
 
 accel_t p={
    .x0      = 0,
@@ -77,6 +78,7 @@ void      testIfStall      ( void        )
 {
    if(p.actualV<0.01) {
       Free_Func_Schedule ( testIfStall );
+      sendLogPauseEvent  (             );
       sciPrintf          ( "stall\r\n" );
    }
 }

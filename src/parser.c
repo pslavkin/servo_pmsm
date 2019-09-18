@@ -42,8 +42,10 @@ proc:
       if(Char!=0x7F)
          lineBuff[lineIndex++]=Char;
       else
-         if(lineIndex>0)
+         if(lineIndex>0) {
             lineIndex--;
+            lineBuff[lineIndex]='\0';
+         }
    }
    else
       goto proc;

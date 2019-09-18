@@ -121,6 +121,7 @@ void runIsr(void)/*{{{*/
 {
    speed1.ElecTheta = qep1ElecTheta();
    runSpeedFR(&speed1);
+   //SPEED_FR_MACRO(speed1);
 
    if (++speedLoopCount >= speedLoopPrescaler)
    {
@@ -128,9 +129,11 @@ void runIsr(void)/*{{{*/
       pi_pos.Ref     = getPosAbs     ( );
       pi_pos.Fbk     = getPosAbsMech ( );
       runPIPos(&pi_pos);
+      //PI_MACRO(pi_pos);
 
       pid_spd.term.Ref = controlType==SPEED?controlledSpeed:pi_pos.Out;
       pid_spd.term.Fbk = getSpeed1Speed();
+      //PID_MACRO(pid_spd);
       runPID(&pid_spd);
       pi_iq.ref        = controlType==TORQUE?controlledTorque:pid_spd.term.Out;
    }
@@ -172,12 +175,12 @@ void align(void)/*{{{*/
    IdRef_start = 0.1          ;
    pi_id.ref   = 0            ;
    pi_iq.ref   = 0            ;
-      speed1 =        ( SPEED_MEAS_QEP )SPEED_MEAS_QEP_DEFAULTS;
-      initQep         (                ) ;
-      initPid         (                ) ;
-      setPosAbs       ( getPosAbsMech( )); // la referencia
-      setPosAbsMech   ( getPosAbsMech( )); // no deberia ser necesario, pero lo es.. TODO
-      setPosAbsOffset ( getPosAbsMech( )); // este si se necesita
+   speed1 =        ( SPEED_MEAS_QEP )SPEED_MEAS_QEP_DEFAULTS;
+   initQep         (                ) ;
+   initPid         (                ) ;
+   setPosAbs       ( getPosAbsMech( )); // la referencia
+   setPosAbsMech   ( getPosAbsMech( )); // no deberia ser necesario, pero lo es.. TODO
+   setPosAbsOffset ( getPosAbsMech( )); // este si se necesita
    isrSm       = alignIsr                ;
    sciPrintf("fcl aligning\r\n");
    EPWM_clearEventTriggerInterruptFlag ( EPWM1_BASE         ); // clear pending INT event

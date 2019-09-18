@@ -3,7 +3,7 @@ while IFS='' read -r line || [[ -n "$line" ]]; do
     echo "$line" > /dev/ttyUSB0;
     echo "wait" > /dev/ttyUSB0;
     stall=""
-    sleep 0.2
+    sleep 0.1
     echo 'waiting until stop'
     while [ "$stall" == "" ]
     do

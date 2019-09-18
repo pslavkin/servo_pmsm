@@ -19,10 +19,10 @@ void initPid(void)/*{{{*/
 {
     // Initialize the PI module for position
     pi_pos      = (PI_CONTROLLER)PI_CONTROLLER_DEFAULTS;
-    pi_pos.Kp   = 1;      // 1.0;   // 10.0;
-    pi_pos.Ki   = 0.0015; // T*speedLoopPrescaler/0.3;
-    pi_pos.Umax = 0.5;
-    pi_pos.Umin = -0.5;
+    pi_pos.Kp   = 3.0;      // 1.0;   // 10.0;
+    pi_pos.Ki   = 0.0015  ; // T*speedLoopPrescaler/0.3;
+    pi_pos.Umax = 1;//1;
+    pi_pos.Umin = -1;//-1;
 
 //    // Initialize the PID module for position (alternative option for eval)
 //    pid_pos.Ref       = 0;
@@ -45,7 +45,7 @@ void initPid(void)/*{{{*/
 //
     // Initialize the PID module for speed
     pid_spd = (PID_CONTROLLER){PID_TERM_DEFAULTS, PID_PARAM_DEFAULTS, PID_DATA_DEFAULTS};
-    pid_spd.param.Kp   = 2.0;
+    pid_spd.param.Kp   = 0.8;
     pid_spd.param.Ki   = 0.0015;
     pid_spd.param.Kd   = 0.0015;
     pid_spd.param.Umax = 0.95;//0.95;
@@ -188,7 +188,7 @@ void printPid(PID_CONTROLLER* pid)/*{{{*/
          );
 }/*}}}*/
 
-float32_t getPiIqFbk     ( void ) { return pi_iq.fbk  ;}
-float32_t getPiIqRef     ( void ) { return pi_iq.ref  ;}
-float32_t getPiPosFbk    ( void ) { return pi_pos.Fbk ;}
+float32_t getPiIqFbk     ( void ) { return pi_iq.fbk       ;}
+float32_t getPiIqRef     ( void ) { return pi_iq.ref       ;}
+float32_t getPiPosFbk    ( void ) { return pi_pos.Fbk      ;}
 float32_t getPidSpeedRef ( void ) { return pid_spd.term.Ref;}
