@@ -427,7 +427,7 @@ tCmdLineEntry stepdirCmdTable[] =/*{{{*/
 };
 void Cmd_getStepdirPins(uint16_t argc, char *argv[])
 {
-   sciPrintf("step=%i dir=%i\r\n",getGpio39(),getGpio45());
+   sciPrintf("step cmd gnd=%i dir cmd gnd=%i step dif=%i dir diff=%i\r\n",getGpio39(),getGpio45(),getGpio24(), getGpio31());
 }
 void Cmd_incStepdirPulse(uint16_t argc, char *argv[])
 {

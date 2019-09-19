@@ -17,16 +17,18 @@ void     led2Toogle ( void ) { (GPIO_readPin(DEVICE_GPIO_PIN_LED2)!=0)?led2On():
 //-------------------------------------------------------------------------------------
 struct ledEffect_struct ledEffects[]=
 {
- { 0x8080 ,0x8080 ,led1On ,led1Off },
- { 0xAAAA ,0XAAAA ,led2On ,led2Off },
+// { 0x8080 ,0x8080 ,led1On ,led1Off },
+ { 0xFFFF ,0XAAAA ,led2On ,led2Off },
 };
 //-------------------------------------------------------------------------------------
 void initLeds ( void )
 {
-   GPIO_setPinConfig     ( DEVICE_GPIO_CFG_LED1                    );
-   GPIO_setPadConfig     ( DEVICE_GPIO_PIN_LED1 ,GPIO_PIN_TYPE_STD );
-   GPIO_setDirectionMode ( DEVICE_GPIO_PIN_LED1 ,GPIO_DIR_MODE_OUT );
+//pin 31 shadred with can rx from board
+//   GPIO_setPinConfig     ( DEVICE_GPIO_CFG_LED1                    );
+//   GPIO_setPadConfig     ( DEVICE_GPIO_PIN_LED1 ,GPIO_PIN_TYPE_STD );
+//   GPIO_setDirectionMode ( DEVICE_GPIO_PIN_LED1 ,GPIO_DIR_MODE_OUT );
 
+//pin 32 encoder power enable also
    GPIO_setPinConfig     ( DEVICE_GPIO_CFG_LED2                    );
    GPIO_setPadConfig     ( DEVICE_GPIO_PIN_LED2 ,GPIO_PIN_TYPE_STD );
    GPIO_setDirectionMode ( DEVICE_GPIO_PIN_LED2 ,GPIO_DIR_MODE_OUT );

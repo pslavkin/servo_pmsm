@@ -82,7 +82,7 @@ void initFcl(void)/*{{{*/
    lsw = QEP_ALIGNMENT;
    FCL_resetController   (                   ) ;
    getVdc                (                   ) ; // Measure DC Bus voltage using SDFM Filter3
-   New_Periodic_Schedule ( 10,ANY_Event,fcl( ));
+   New_None_Periodic_Schedule( 10,runEvent,fcl( )); //autostart
 }/*}}}*/
 // Motor Control ISR
 __interrupt void motorControlISR(void)/*{{{*/
@@ -120,24 +120,18 @@ void alignIsr(void)/*{{{*/
 void runIsr(void)/*{{{*/
 {
    speed1.ElecTheta = qep1ElecTheta();
-  runSpeedFR(&speed1);
-   //SPEED_FR_MACRO(speed1);
+   runSpeedFR(&speed1);
+      //pi_id.ref = ramper ( 0, pi_id.ref, 0.00001 );
 
- //  if (++speedLoopCount >= speedLoopPrescaler)
- //  {
-//      speedLoopCount = 1;
-      pid_pos.term.Ref     = getPosAbs     ( );
-      pid_pos.term.Fbk     = getPosAbsMech ( );
-      runPablosPID(&pid_pos);
-      //PI_MACRO(pid_pos);
+   pid_pos.term.Ref     = getPosAbs     ( );
+   pid_pos.term.Fbk     = getPosAbsMech ( );
+   runPablosPID(&pid_pos);
 
-      pid_spd.term.Ref = controlType==SPEED?controlledSpeed:pid_pos.term.Out;
-      pid_spd.term.Fbk = getSpeed1Speed();
-      //PID_MACRO(pid_spd);
-      runPablosPID(&pid_spd);
-//      runPID(&pid_spd);
-      pi_iq.ref        = controlType==TORQUE?controlledTorque:pid_spd.term.Out;
-//   }
+   pid_spd.term.Ref = controlType==SPEED?controlledSpeed:pid_pos.term.Out;
+   pid_spd.term.Fbk = getSpeed1Speed();
+   runPablosPID(&pid_spd);
+
+   pi_iq.ref        = controlType==TORQUE?controlledTorque:pid_spd.term.Out;
    waveGenerator     ( );
    sendlogPrintEvent ( );
 }/*}}}*/

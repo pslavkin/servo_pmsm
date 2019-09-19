@@ -19,7 +19,7 @@ wave_t wave={
    .enabled   = true,
    .ampWished = 0.3,
    .amp       = 0.3,
-   .shape     = GCODES,
+   .shape     = STEP_DIR,
    .t         = 0,
 };
 void advanceWaveStep(void)

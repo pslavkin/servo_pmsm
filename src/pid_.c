@@ -26,9 +26,9 @@ void initPid(void)/*{{{*/
 
 //    // Initialize the PID module for position (alternative option for eval)
     pid_pos = (PID_CONTROLLER){PID_TERM_DEFAULTS, PID_PARAM_DEFAULTS, PID_DATA_DEFAULTS};
-    pid_pos.param.Kp   = 4.0;
-    pid_pos.param.Ki   = 0.01;
-    pid_pos.param.Kd   = 2.000;
+    pid_pos.param.Kp   = 4.5;
+    pid_pos.param.Ki   = 0.007;
+    pid_pos.param.Kd   = 1.500;
     pid_pos.param.Kr   = 1.1000;
     pid_pos.param.Km   = 1.0000;
     pid_pos.param.Umax = 1;//0.95;
@@ -39,9 +39,9 @@ void initPid(void)/*{{{*/
 //
     // Initialize the PID module for speed
     pid_spd = (PID_CONTROLLER){PID_TERM_DEFAULTS, PID_PARAM_DEFAULTS, PID_DATA_DEFAULTS};
-    pid_spd.param.Kp   = 3.0;
-    pid_spd.param.Ki   = 0.02;
-    pid_spd.param.Kd   = 7.0000;
+    pid_spd.param.Kp   = 3.5;
+    pid_spd.param.Ki   = 0.015;
+    pid_spd.param.Kd   = 4.0000;
     pid_spd.param.Kr   = 1.1000;
     pid_spd.param.Km   = 1.0000;
     pid_spd.param.Umax = 0.95;//0.95;

@@ -3,6 +3,7 @@
 
 #define DEVICE_GPIO_PIN_LED1        31U            // GPIO number for LD2
 #define DEVICE_GPIO_PIN_LED2        34U            // GPIO number for LD3
+//pin 31 shadred with can rx from board
 #define DEVICE_GPIO_CFG_LED1        GPIO_31_GPIO31 // "pinConfig" for LD2
 #define DEVICE_GPIO_CFG_LED2        GPIO_34_GPIO34 // "pinConfig" for LD3
 //---------------------------------------------------------

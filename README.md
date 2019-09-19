@@ -43,6 +43,7 @@ https://gist.github.com/rxaviers/7360908
 - :heavy_check_mark: testing on a 4 poles motor and it work
 - :heavy_check_mark: prototype arrives! It's huge!
 - :heavy_check_mark: prototype works! 0.2m/seg max until now, but works
+- :heavy_check_mark: connected to a chinise CNC works!
 - :construction:     bode plot
 - :construction:     scratch materplan
 - :construction:     merging example fcl with my own code
@@ -68,6 +69,7 @@ https://gist.github.com/rxaviers/7360908
 - [gnuplot](#gnuplot)
 - [Features](#features)
 - [proto](#proto)
+- [cnc](#cnc)
 - [Contributing](#contributing)
 - [Team](#team)
 - [FAQ](#faq)
@@ -186,6 +188,20 @@ testing the prototype at full speed full length and full voltage:
 
 <img src="doc/videos/proto1.gif"  width="500" height="400"/>
 
+## cnc
+
+connected to a CNC with pulse and direction:
+
+<img src="doc/videos/servo_plus_cnc1.gif"  width="500" height="400"/>
+
+sasha force test (don't try by youserlf!):
+
+<img src="doc/videos/sasha_test.gif"  width="500" height="400"/>
+
+I've used internal transceivers to receive pulse and dir diferential signalign from cnc. I've
+use a CAN transceiver for pulse and a rs485 from encoder , both isolated
+
+<img src="doc/pics/cnc_connection1.jpg" width="400" /><img src="doc/pics/cnc_connection2.jpg" width="400" /><img src="doc/pics/cnc_connection3.jpg" width="400" />
 
 
 ## Hierarchy

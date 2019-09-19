@@ -58,11 +58,11 @@ PAGE 0 :
 
    BEGIN       : origin = 0x080000, length = 0x000002
    RAMLS0LS1   : origin = 0x008000, length = 0x001000
-   RAMLS4LS5		   : origin = 0x00A000, length = 0x001000
+   RAMLS4LS5         : origin = 0x00A000, length = 0x001000
    RESET       : origin = 0x3FFFC0, length = 0x000002
    IQTABLES    : origin = 0x3FE000, length = 0x000B50     /* IQ Math Tables in Boot ROM */
    IQTABLES2   : origin = 0x3FEB50, length = 0x00008C     /* IQ Math Tables in Boot ROM */
-   IQTABLES3   : origin = 0x3FEBDC, length = 0x0000AA	  /* IQ Math Tables in Boot ROM */
+   IQTABLES3   : origin = 0x3FEBDC, length = 0x0000AA   /* IQ Math Tables in Boot ROM */
 
    FLASHN      : origin = 0x80002, length = 0x001FFD     /* on-chip FLASH */
    FLASHML      : origin = 0x82000, length = 0x004000     /* on-chip FLASH */
@@ -148,7 +148,7 @@ SECTIONS
                      RUN_START(_RamfuncsRunStart),
                      RUN_SIZE(_RamfuncsRunSize),
                      RUN_END(_RamfuncsRunEnd),
-					 PAGE = 0, ALIGN(4)
+                PAGE = 0, ALIGN(4)
    #else
     ramfuncs : {} LOAD = FLASHML,
                      RUN = RAMLS0LS1,
@@ -158,20 +158,22 @@ SECTIONS
                      RUN_START(_RamfuncsRunStart),
                      RUN_SIZE(_RamfuncsRunSize),
                      RUN_END(_RamfuncsRunEnd),
-					 PAGE = 0, ALIGN(4)
+                PAGE = 0, ALIGN(4)
    #endif
 #endif
 
-   .text            : > FLASHML,    PAGE = 0
-   .cinit           : > FLASHN|FLASHML,     PAGE = 0
-   .pinit           : > FLASHN,     PAGE = 0
-   .switch          : > FLASHML,     PAGE = 0
-   .reset           : > RESET,     PAGE = 0, TYPE = DSECT /* not used, */
+   .text            : > FLASHML           ,PAGE = 0
+   .cinit           : > FLASHN|FLASHML    ,PAGE = 0
+   .pinit           : > FLASHN            ,PAGE = 0
+   .switch          : > FLASHML           ,PAGE = 0
+   .reset           : > RESET             ,PAGE = 0 ,TYPE = DSECT /* not used ,*/
 
-   .stack           : > RAMM1,     PAGE = 1
-   .ebss            : > RAMD0D1|RAMGS0GS1,     PAGE = 1
-   .econst          : > FLASHML,     PAGE = 0
-   .esysmem         : > RAMGS0GS1,     PAGE = 1
+   .stack           : > RAMM1             ,PAGE = 1
+   .ebss            : > RAMD0D1|RAMGS0GS1 ,PAGE = 1
+   /*.econst          : > FLASHML           ,PAGE = 0
+   */
+   .econst          : > FLASHK           ,PAGE = 0
+   .esysmem         : > RAMGS0GS1         ,PAGE = 1
 
     /* CLA specific sections */
    Cla1Prog         : LOAD = FLASHD,
@@ -200,8 +202,8 @@ SECTIONS
                         *.obj(CLAscratch_end) } >  RAMLS2,  PAGE = 1, ALIGN=2
 
    .scratchpad      : > RAMLS2,       PAGE = 1
-   .bss_cla		    : > RAMLS2,       PAGE = 1
-   .const_cla	    :  LOAD = FLASHB,
+   .bss_cla        : > RAMLS2,       PAGE = 1
+   .const_cla      :  LOAD = FLASHB,
                        RUN = RAMLS2,
                        RUN_START(_Cla1ConstRunStart),
                        LOAD_START(_Cla1ConstLoadStart),
