@@ -14,16 +14,12 @@ stepdir_t sd={
 };
 // -----------------------------------------------------------------------------------
 
-static inline void inlineUpdateStepdirDir   ( void )
+static inline void updateStepdirDir   ( void )
 {
    if(getGpio24()==0)   //TODO I have to read the irq state to decide if it was fall or rise not like these
       sd.actualStep = sd.step;
    else
       sd.actualStep = -sd.step;
-}
-void  updateStepdirDir   ( void )
-{
-   inlineUpdateStepdirDir ( );
 }
 void initStepdir ( void )/*{{{*/
 {
@@ -113,7 +109,7 @@ interrupt void pulseIsr(void)/*{{{*/
 }/*}}}*/
 interrupt void dirIsr(void)/*{{{*/
 {
-   inlineUpdateStepdirDir();
+   updateStepdirDir();
     // Acknowledge this interrupt to get more from group 1
    Interrupt_clearACKGroup(INTERRUPT_ACK_GROUP1);
 }/*}}}*/
