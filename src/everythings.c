@@ -39,10 +39,10 @@ const State**  everythings    ( void )
 }
 void Init_everythings(void)
 {
+   Init_Schedule   ( );
    initLeds        ( );
    initStepdir     ( );
    initParser      ( );
-   Init_Schedule   ( );
    initOvercurrent ( ); // overcurren protection
    initPwm         ( ); // PWM Configuration
    initAdc         ( );
