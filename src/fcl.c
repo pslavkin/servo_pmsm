@@ -82,7 +82,7 @@ void initFcl(void)/*{{{*/
    lsw = QEP_ALIGNMENT;
    FCL_resetController   (                   ) ;
    getVdc                (                   ) ; // Measure DC Bus voltage using SDFM Filter3
-   New_None_Periodic_Schedule( 10,runEvent,fcl( )); //autostart
+//   New_None_Periodic_Schedule( 10,runEvent,fcl( )); //autostart
 }/*}}}*/
 // Motor Control ISR
 __interrupt void motorControlISR(void)/*{{{*/
