@@ -62,11 +62,12 @@ Default initalizer for the SVGEN object.
 /*------------------------------------------------------------------------------
 	Space Vector  Generator (SVGEN) Macro Definition
 ------------------------------------------------------------------------------*/
+#define  SQRT3   1.73205080757    /* sqrt(3) */
 
 static inline void runSVGenDQ(SVGEN * in)
 {
 	in->tmp1 = in->Ubeta;
-	in->tmp2 = (in->Ubeta / 2) + (0.866 * in->Ualpha);
+	in->tmp2 = (in->Ubeta + SQRT3 * in->Ualpha)/2;
 	in->tmp3 = in->tmp2 - in->tmp1;
 
 	in->VecSector = 3;

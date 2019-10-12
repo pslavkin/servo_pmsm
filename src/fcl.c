@@ -142,7 +142,7 @@ void runIsr(void)/*{{{*/
    pi_iq.ref        = controlType==TORQUE?controlledTorque:pid_spd.term.Out;
 
    Lems2Iq();
-   runPablosPID(&pid_iq);
+//   runPablosPID(&pid_iq);
    iq2Pwm();
 
 

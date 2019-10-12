@@ -229,27 +229,38 @@ void Lems2Iq(void)
    pid_iq.term.Fbk=parkData.Qs;
 }
 
+uint32_t pwms[3];
+
 void iq2Pwm(void)
 {
-   iparkData.Qs     = pid_iq.term.Out;
+   iparkData.Qs     = pi_iq.ref;//pid_iq.term.Out;
    iparkData.Ds     = 0;
-   iparkData.Angle  = parkData.Angle;
-   iparkData.Sine   = __sinpuf32(parkData.Angle);
-   iparkData.Cosine = __cospuf32(parkData.Angle);
+//   iparkData.Angle  = parkData.Angle;
+   //iparkData.Sine   = __sinpuf32(parkData.Angle);
+   //iparkData.Cosine = __cospuf32(parkData.Angle);
+   iparkData.Sine   = parkData.Sine;
+   iparkData.Cosine = parkData.Cosine;
    runIPark(&iparkData);
 
    svgenData.Ualpha = iparkData.Alpha;
    svgenData.Ubeta  = iparkData.Beta;
    runSVGenDQ(&svgenData);
 
-   EPWM_setCounterCompareValue(EPWM1_BASE, EPWM_COUNTER_COMPARE_A, (uint16_t)((INV_PWM_TICKS*svgenData.Tc) + INV_PWM_TICKS/2));
-   EPWM_setCounterCompareValue(EPWM2_BASE, EPWM_COUNTER_COMPARE_A, (uint16_t)((INV_PWM_TICKS*svgenData.Ta) + INV_PWM_TICKS/2));
-   EPWM_setCounterCompareValue(EPWM3_BASE, EPWM_COUNTER_COMPARE_A, (uint16_t)((INV_PWM_TICKS*svgenData.Tb) + INV_PWM_TICKS/2));
+   pwms[0]= ((INV_PWM_HALF_TBPRD*svgenData.Tc) + INV_PWM_HALF_TBPRD);
+   pwms[1]= ((INV_PWM_HALF_TBPRD*svgenData.Ta) + INV_PWM_HALF_TBPRD);
+   pwms[2]= ((INV_PWM_HALF_TBPRD*svgenData.Tb) + INV_PWM_HALF_TBPRD);
+
+   EPWM_setCounterCompareValue(EPWM1_BASE, EPWM_COUNTER_COMPARE_A, pwms[0]);
+   EPWM_setCounterCompareValue(EPWM2_BASE, EPWM_COUNTER_COMPARE_A, pwms[1]);
+   EPWM_setCounterCompareValue(EPWM3_BASE, EPWM_COUNTER_COMPARE_A, pwms[2]);
 }
 void printIq(void)
 {
 //   Lems2Iq();
-   sciPrintf("angle=%f Iq=%f Id=%f\r\n",parkData.Angle,parkData.Qs,parkData.Ds);
+//   sciPrintf("angle=%f Iq=%f Id=%f\r\n",parkData.Angle,parkData.Qs,parkData.Ds);
+   sciPrintf("ta=%f tb=%f tc=%f\r\n",svgenData.Ta,svgenData.Tb,svgenData.Tc);
+   //sciPrintf("alpha=%f beta=%f sin=%f cos=%f\r\n",iparkData.Alpha,iparkData.Beta,iparkData.Sine,iparkData.Cosine);
+   sciPrintf("period=%i, pwm0=%i pwm1=%i pwm2=%i\r\n",INV_PWM_TICKS,pwms[0],pwms[1],pwms[2]);
 }
 
 

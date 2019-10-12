@@ -179,9 +179,9 @@ void Cmd_getVdc(uint16_t argc, char *argv[])
 }
 void Cmd_getLems(uint16_t argc, char *argv[])
 {
-   sciPrintf("LEMv=%f LEMw=%f\r\n",readLemV(),readLemW());
+   //sciPrintf("LEMv=%f LEMw=%f\r\n",readLemV(),readLemW());
    printIq();
-   printPid(&pid_iq);
+   //printPid(&pid_iq);
 }
 /*}}}*/
 //--------------------------------------------------------------------------------
