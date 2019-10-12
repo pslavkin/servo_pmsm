@@ -88,10 +88,10 @@ void initFcl(void)/*{{{*/
 __interrupt void motorControlISR(void)/*{{{*/
 {
 //   led45On(); //debug
-      FCL_runPICtrl     (                ) ;
-      getVdc            (                ) ; // Measure DC Bus voltage using SDFM Filter3
-      FCL_runPICtrlWrap (                ) ; // Fast current loop controller wrapper
-      addPosAbsMech     ( qep1MechTheta( ));
+//      FCL_runPICtrl     (                ) ;
+//      getVdc            (                ) ; // Measure DC Bus voltage using SDFM Filter3
+//      FCL_runPICtrlWrap (                ) ; // Fast current loop controller wrapper
+//      addPosAbsMech     ( qep1MechTheta( ));
       isrSm             (                ) ;
       EPWM_clearEventTriggerInterruptFlag ( EPWM1_BASE                                   );
       ADC_clearInterruptStatus            ( ADCA_BASE, ADC_INT_NUMBER1                   );
@@ -106,6 +106,10 @@ void stopIsr(void)/*{{{*/
 // electrical align
 void alignIsr(void)/*{{{*/
 {
+   FCL_runPICtrl     (                ) ;
+   getVdc            (                ) ; // Measure DC Bus voltage using SDFM Filter3
+   FCL_runPICtrlWrap (                ) ; // Fast current loop controller wrapper
+   addPosAbsMech     ( qep1MechTheta( ));
    if(pi_id.ref >= IdRef_start) {
       if(++alignCntr >= alignCnt) {
          lsw             = QEP_GOT_INDEX;
@@ -119,9 +123,13 @@ void alignIsr(void)/*{{{*/
 // running
 void runIsr(void)/*{{{*/
 {
+   //FCL_runPICtrl     (                ) ;
+   getVdc            (                ) ; // Measure DC Bus voltage using SDFM Filter3
+   FCL_runPICtrlWrap (                ) ; // Fast current loop controller wrapper
+   addPosAbsMech     ( qep1MechTheta( ));
+
    speed1.ElecTheta = qep1ElecTheta();
    runSpeedFR(&speed1);
-      //pi_id.ref = ramper ( 0, pi_id.ref, 0.00001 );
 
    pid_pos.term.Ref     = getPosAbs     ( );
    pid_pos.term.Fbk     = getPosAbsMech ( );
@@ -132,6 +140,12 @@ void runIsr(void)/*{{{*/
    runPablosPID(&pid_spd);
 
    pi_iq.ref        = controlType==TORQUE?controlledTorque:pid_spd.term.Out;
+
+   Lems2Iq();
+   runPablosPID(&pid_iq);
+   iq2Pwm();
+
+
    waveGenerator     ( );
    sendlogPrintEvent ( );
 }/*}}}*/

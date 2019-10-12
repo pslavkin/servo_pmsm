@@ -83,7 +83,7 @@ SECTIONS
    .TI.ramfunc 		: > RAMGS2GS3      PAGE = 0
 
    .text            : >>RAMLS0LS1|RAMGS456789,   PAGE = 0
-   .cinit           : > RAMM0,     PAGE = 0
+   .cinit           : > RAMM0|RAMGS456789,     PAGE = 0  /*meti mano porque ya no entraba.. estudiar TODO*/
    .pinit           : > RAMM0,     PAGE = 0
    .switch          : > RAMM0,     PAGE = 0
    .reset           : > RESET,     PAGE = 0, TYPE = DSECT /* not used, */

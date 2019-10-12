@@ -11,6 +11,7 @@
 //PIDREG3         pid_pos = PIDREG3_DEFAULTS;// (optional - for eval)
 PID_CONTROLLER  pid_pos;
 PID_CONTROLLER  pid_spd;
+PID_CONTROLLER  pid_iq; //pablo's iq implementation
 
 #pragma DATA_SECTION(pi_iq,   "ClaData")
 FCL_PIController_t   pi_id, pi_iq;
@@ -73,6 +74,19 @@ void initPid(void)/*{{{*/
     pi_iq.ref     = 0;
     pi_iq.err     = 0;
     pi_iq.out     = 0;
+    //
+    // Pablo IQ PID
+    // Initialize the PID module for speed
+    pid_iq            = (PID_CONTROLLER){PID_TERM_DEFAULTS, PID_PARAM_DEFAULTS, PID_DATA_DEFAULTS};
+    pid_iq.param.Kp   = 1.0;
+    pid_iq.param.Ki   = 0.1;
+    pid_iq.param.Kd   = 0;
+    pid_iq.param.Kr   = 1.0000;
+    pid_iq.param.Km   = 1.0000;
+    pid_iq.param.Umax = 0.9*maxModIndex;
+    pid_iq.param.Umin = -0.9*maxModIndex;
+    pid_iq.term.c1    = 1.0;
+    pid_iq.term.c2    = 1.0;
 }/*}}}*/
 void printFclPi(FCL_PIController_t* pi)/*{{{*/
 {
@@ -197,6 +211,8 @@ float32_t getPidSpeedRef ( void ) { return pid_spd.term.Ref;}
 
 CLARKE clarkeData = CLARKE_DEFAULTS;
 PARK   parkData   = PARK_DEFAULTS;
+IPARK  iparkData  = IPARK_DEFAULTS;
+SVGEN  svgenData  = SVGEN_DEFAULTS;
 
 void Lems2Iq(void)
 {
@@ -209,11 +225,30 @@ void Lems2Iq(void)
    parkData.Sine     = __sinpuf32(parkData.Angle);
    parkData.Cosine   = __cospuf32(parkData.Angle);
    runPark(&parkData);
+   pid_iq.term.Ref=pi_iq.ref;
+   pid_iq.term.Fbk=parkData.Qs;
 }
 
+void iq2Pwm(void)
+{
+   iparkData.Qs     = pid_iq.term.Out;
+   iparkData.Ds     = 0;
+   iparkData.Angle  = parkData.Angle;
+   iparkData.Sine   = __sinpuf32(parkData.Angle);
+   iparkData.Cosine = __cospuf32(parkData.Angle);
+   runIPark(&iparkData);
+
+   svgenData.Ualpha = iparkData.Alpha;
+   svgenData.Ubeta  = iparkData.Beta;
+   runSVGenDQ(&svgenData);
+
+   EPWM_setCounterCompareValue(EPWM1_BASE, EPWM_COUNTER_COMPARE_A, (uint16_t)((INV_PWM_TICKS*svgenData.Tc) + INV_PWM_TICKS/2));
+   EPWM_setCounterCompareValue(EPWM2_BASE, EPWM_COUNTER_COMPARE_A, (uint16_t)((INV_PWM_TICKS*svgenData.Ta) + INV_PWM_TICKS/2));
+   EPWM_setCounterCompareValue(EPWM3_BASE, EPWM_COUNTER_COMPARE_A, (uint16_t)((INV_PWM_TICKS*svgenData.Tb) + INV_PWM_TICKS/2));
+}
 void printIq(void)
 {
-   Lems2Iq();
+//   Lems2Iq();
    sciPrintf("angle=%f Iq=%f Id=%f\r\n",parkData.Angle,parkData.Qs,parkData.Ds);
 }
 
