@@ -150,6 +150,9 @@ void calibFinished(void)/*{{{*/
 void sendCalibEvent         ( void ) { atomicSendEvent(calibEvent         ,adc());}
 void sendNextTryEvent       ( void ) { atomicSendEvent(nextTryEvent       ,adc());}
 void sendCalibFinishedEvent ( void ) { atomicSendEvent(calibFinishedEvent ,adc());}
+
+float readLemV(void) { return IFB_LEMV_PPB*ADC_PU_PPB_SCALE_FACTOR*LEM_TO_SHUNT;}
+float readLemW(void) { return IFB_LEMW_PPB*ADC_PU_PPB_SCALE_FACTOR*LEM_TO_SHUNT;}
 //----------------------------------------------------------------------------------------------------
 const State uncalib    [ ] =
 {

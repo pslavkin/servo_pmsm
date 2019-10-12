@@ -14,6 +14,7 @@ float32_t getPiIqFbk     ( void                    );
 float32_t getPiIqRef     ( void                    );
 float32_t getPidPosFbk   ( void                    );
 float32_t getPidSpeedRef ( void                    );
+void printIq(void);
 
 #endif
 

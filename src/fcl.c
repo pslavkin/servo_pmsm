@@ -91,7 +91,7 @@ __interrupt void motorControlISR(void)/*{{{*/
       FCL_runPICtrl     (                ) ;
       getVdc            (                ) ; // Measure DC Bus voltage using SDFM Filter3
       FCL_runPICtrlWrap (                ) ; // Fast current loop controller wrapper
-       addPosAbsMech     ( qep1MechTheta( ));
+      addPosAbsMech     ( qep1MechTheta( ));
       isrSm             (                ) ;
       EPWM_clearEventTriggerInterruptFlag ( EPWM1_BASE                                   );
       ADC_clearInterruptStatus            ( ADCA_BASE, ADC_INT_NUMBER1                   );

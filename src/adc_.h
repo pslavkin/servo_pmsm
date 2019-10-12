@@ -11,6 +11,8 @@ void     currentCalibrate       ( void );
 void     sendCalibEvent         ( void );
 void     sendNextTryEvent       ( void );
 void     sendCalibFinishedEvent ( void );
+float    readLemV               ( void );
+float    readLemW               ( void );
 
 #endif
 

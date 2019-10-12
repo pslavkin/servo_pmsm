@@ -223,8 +223,8 @@ extern FCL_Parameters_t FCL_params;
 //
 // LEM    1.0pu current ==> 12.0A -> 2048 counts ==> 8A -> 1365
 // SHUNT  1.0pu current ==> 9.95A -> 2048 counts ==> 8A -> 1647
-#define LEM(A)     (2048*A/BASE_LEM_CURRENT)
-#define SHUNT(A)   (2048*A/BASE_SHUNT_CURRENT)
+#define LEM(A)     (2048*(A)/BASE_LEM_CURRENT)
+#define SHUNT(A)   (2048*(A)/BASE_SHUNT_CURRENT)
 
 // Analog scaling with ADC
 #define ADC_PU_SCALE_FACTOR        0.000244140625     // 1/2^12

@@ -79,6 +79,7 @@ void Cmd_setLogBode      ( uint16_t argc, char *argv[] );
 void Cmd_setOvercurrent   ( uint16_t argc, char *argv[] );
 void Cmd_resetOvercurrent ( uint16_t argc, char *argv[] );
 void Cmd_getVdc           ( uint16_t argc, char *argv[] );
+void Cmd_getLems          ( uint16_t argc, char *argv[] );
 
 void Cmd_runFcl              ( uint16_t argc, char *argv[] );
 void Cmd_stopFcl             ( uint16_t argc, char *argv[] );

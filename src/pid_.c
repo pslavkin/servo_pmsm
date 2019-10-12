@@ -5,6 +5,7 @@
 #include "adc.h"
 #include "fcl_pi.h"
 #include "pid_.h"
+#include "adc_.h"
 
 // Instance PI(D) regulators to regulate the d and q  axis currents, speed and position
 //PIDREG3         pid_pos = PIDREG3_DEFAULTS;// (optional - for eval)
@@ -188,3 +189,34 @@ float32_t getPiIqFbk     ( void ) { return pi_iq.fbk       ;}
 float32_t getPiIqRef     ( void ) { return pi_iq.ref       ;}
 float32_t getPidPosFbk   ( void ) { return pid_pos.term.Fbk ;}
 float32_t getPidSpeedRef ( void ) { return pid_spd.term.Ref;}
+
+//--------------------------------------------------------
+#include "clarke.h"
+#include "park.h"
+#include "eqep_.h"
+
+CLARKE clarkeData = CLARKE_DEFAULTS;
+PARK   parkData   = PARK_DEFAULTS;
+
+void Lems2Iq(void)
+{
+   clarkeData.As = readLemV();
+   clarkeData.Bs = readLemW();
+   runClarke(&clarkeData); //calculo con 2 corrientes, Cs queda implicita
+   parkData.Alpha = clarkeData.Alpha;
+   parkData.Beta  = clarkeData.Beta;
+   parkData.Angle = qep1ElecTheta();
+   parkData.Sine     = __sinpuf32(parkData.Angle);
+   parkData.Cosine   = __cospuf32(parkData.Angle);
+   runPark(&parkData);
+}
+
+void printIq(void)
+{
+   Lems2Iq();
+   sciPrintf("angle=%f Iq=%f Id=%f\r\n",parkData.Angle,parkData.Qs,parkData.Ds);
+}
+
+
+
+

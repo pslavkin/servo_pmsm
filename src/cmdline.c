@@ -157,6 +157,7 @@ tCmdLineEntry overcurrentCmdTable[] =/*{{{*/
    { "o" ,Cmd_setOvercurrent   ,": set overcurrent"     },
    { "b" ,Cmd_resetOvercurrent ,": reset overcurrent"   },
    { "v" ,Cmd_getVdc           ,": read actual VDC"     },
+   { "i" ,Cmd_getLems          ,": read actual LEMV/W"  },
    { "E" ,Cmd_stopFcl          ,": emergency stop"      },
    { "<" ,Cmd_back2login       ,": back to login table" },
    { "?" ,Cmd_Help             ,": help"                },
@@ -175,6 +176,11 @@ void Cmd_resetOvercurrent(uint16_t argc, char *argv[])
 void Cmd_getVdc(uint16_t argc, char *argv[])
 {
    sciPrintf("actual vdc=%f\r\n",readFclVdc());
+}
+void Cmd_getLems(uint16_t argc, char *argv[])
+{
+   sciPrintf("LEMv=%f LEMw=%f\r\n",readLemV(),readLemW());
+   printIq();
 }
 /*}}}*/
 //--------------------------------------------------------------------------------
