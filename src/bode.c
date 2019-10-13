@@ -55,7 +55,7 @@ void calcBodeSpeed  ( float32_t per )
 }
 void bodeTorqueAcc(float32_t p)
 {
-   float32_t s    = getPiIqFbk();
+   float32_t s    = getPidIqFbk();
    bode.torqueAcc += s*s*p;
 }
 void calcBodeTorque  ( float32_t per ) 

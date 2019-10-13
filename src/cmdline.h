@@ -86,6 +86,7 @@ void Cmd_stopFcl             ( uint16_t argc, char *argv[] );
 void Cmd_restartFcl          ( uint16_t argc, char *argv[] );
 void Cmd_setControlSpeed     ( uint16_t argc, char *argv[] );
 void Cmd_setControlTorque    ( uint16_t argc, char *argv[] );
+void Cmd_setControlOpen      ( uint16_t argc, char *argv[] );
 void Cmd_setControlPos       ( uint16_t argc, char *argv[] );
 void Cmd_setControlledSpeed  ( uint16_t argc, char *argv[] );
 void Cmd_setControlledTorque ( uint16_t argc, char *argv[] );

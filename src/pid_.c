@@ -4,29 +4,28 @@
 #include "scia.h"
 #include "adc.h"
 #include "fcl_pi.h"
+#include "ipark.h"
+#include "clarke.h"
+#include "park.h"
+#include "eqep_.h"
 #include "pid_.h"
 #include "adc_.h"
 
-// Instance PI(D) regulators to regulate the d and q  axis currents, speed and position
-//PIDREG3         pid_pos = PIDREG3_DEFAULTS;// (optional - for eval)
-PID_CONTROLLER  pid_pos;
-PID_CONTROLLER  pid_spd;
-PID_CONTROLLER  pid_iq; //pablo's iq implementation
+PID_CONTROLLER       pid_pos;
+PID_CONTROLLER       pid_spd;
+PID_CONTROLLER       pid_iq; //pablo's iq implementation
+CLARKE               clarkeData = CLARKE_DEFAULTS;
+PARK                 parkData   = PARK_DEFAULTS;
+IPARK                iparkData  = IPARK_DEFAULTS;
+SVGEN                svgenData  = SVGEN_DEFAULTS;
 
+//no se usan estos..estoy esperando deshacerme de fcl y vuelan
 #pragma DATA_SECTION(pi_iq,   "ClaData")
 FCL_PIController_t   pi_id, pi_iq;
 
-// PI Controller Configuration
 void initPid(void)/*{{{*/
 {
-    // Initialize the PI module for position
-//    pi_pos      = (PI_CONTROLLER)PI_CONTROLLER_DEFAULTS;
-//    pi_pos.Kp   = 2.1;      // 1.0;   // 10.0;
-//    pi_pos.Ki   = 0.0001  ; // T*speedLoopPrescaler/0.3;
-//    pi_pos.Umax = 1;//1;
-//    pi_pos.Umin = -1;//-1;
-
-//    // Initialize the PID module for position (alternative option for eval)
+    // Initialize the PID module for position (alternative option for eval)
     pid_pos = (PID_CONTROLLER){PID_TERM_DEFAULTS, PID_PARAM_DEFAULTS, PID_DATA_DEFAULTS};
     pid_pos.param.Kp   = 4.5;
     pid_pos.param.Ki   = 0.007;
@@ -38,7 +37,6 @@ void initPid(void)/*{{{*/
     pid_pos.term.c1    = 1.0;
     pid_pos.term.c2    = 1.0;
 
-//
     // Initialize the PID module for speed
     pid_spd = (PID_CONTROLLER){PID_TERM_DEFAULTS, PID_PARAM_DEFAULTS, PID_DATA_DEFAULTS};
     pid_spd.param.Kp   = 3.5;
@@ -51,35 +49,10 @@ void initPid(void)/*{{{*/
     pid_spd.term.c1    = 1.0;
     pid_spd.term.c2    = 1.0;
 
-    // Init PI module for ID loop
-    pi_id = (FCL_PIController_t)FCL_PICONTROLLER_DEFAULTS;
-    pi_id.Kp      = 1.0;//LS * CUR_LOOP_BW;
-    pi_id.Ki      = T/0.04;   //(RS * T) * CUR_LOOP_BW;
-    pi_id.Kerr    = (pi_id.Ki*0.5) + pi_id.Kp,
-    pi_id.KerrOld = (pi_id.Ki*0.5) - pi_id.Kp;
-    pi_id.Umax    = 0.5 * maxModIndex;  //0.5
-    pi_id.Umin    = -0.5 * maxModIndex; //0.5
-    pi_id.ref     = 0;
-    pi_id.err     = 0;
-    pi_id.out     = 0;
-
-    // Init PI module for IQ loop
-    pi_iq = (FCL_PIController_t)FCL_PICONTROLLER_DEFAULTS;
-    pi_iq.Kp      = 1.0;    // LS * CUR_LOOP_BW;
-    pi_iq.Ki      = T/0.04; // (RS * T) * CUR_LOOP_BW;
-    pi_iq.Kerr    = (pi_iq.Ki*0.5) + pi_iq.Kp,
-    pi_iq.KerrOld = (pi_iq.Ki*0.5) - pi_iq.Kp;
-    pi_iq.Umax    = 0.9 * maxModIndex;
-    pi_iq.Umin    = -0.9 * maxModIndex;
-    pi_iq.ref     = 0;
-    pi_iq.err     = 0;
-    pi_iq.out     = 0;
-    //
-    // Pablo IQ PID
-    // Initialize the PID module for speed
+    // Initialize the PID module for IQ
     pid_iq            = (PID_CONTROLLER){PID_TERM_DEFAULTS, PID_PARAM_DEFAULTS, PID_DATA_DEFAULTS};
-    pid_iq.param.Kp   = 1.0;
-    pid_iq.param.Ki   = 0.1;
+    pid_iq.param.Kp   = 0.4;
+    pid_iq.param.Ki   = 0.01;
     pid_iq.param.Kd   = 0;
     pid_iq.param.Kr   = 1.0000;
     pid_iq.param.Km   = 1.0000;
@@ -199,70 +172,49 @@ void printPid(PID_CONTROLLER* pid)/*{{{*/
          );
 }/*}}}*/
 
-float32_t getPiIqFbk     ( void ) { return pi_iq.fbk       ;}
-float32_t getPiIqRef     ( void ) { return pi_iq.ref       ;}
-float32_t getPidPosFbk   ( void ) { return pid_pos.term.Fbk ;}
+float32_t getPidIqFbk    ( void ) { return pid_iq.term.Fbk ;}
+float32_t getPidIqRef    ( void ) { return pid_iq.term.Ref ;}
+float32_t getPidPosFbk   ( void ) { return pid_pos.term.Fbk;}
 float32_t getPidSpeedRef ( void ) { return pid_spd.term.Ref;}
-
 //--------------------------------------------------------
-#include "clarke.h"
-#include "park.h"
-#include "eqep_.h"
 
-CLARKE clarkeData = CLARKE_DEFAULTS;
-PARK   parkData   = PARK_DEFAULTS;
-IPARK  iparkData  = IPARK_DEFAULTS;
-SVGEN  svgenData  = SVGEN_DEFAULTS;
-
-void Lems2Iq(void)
+void lems2Iqd(float angle)
 {
    clarkeData.As = readLemV();
    clarkeData.Bs = readLemW();
    runClarke(&clarkeData); //calculo con 2 corrientes, Cs queda implicita
-   parkData.Alpha = clarkeData.Alpha;
-   parkData.Beta  = clarkeData.Beta;
-   parkData.Angle = qep1ElecTheta();
-   parkData.Sine     = __sinpuf32(parkData.Angle);
-   parkData.Cosine   = __cospuf32(parkData.Angle);
+   parkData.Alpha  = clarkeData.Alpha;
+   parkData.Beta   = clarkeData.Beta;
+   parkData.Angle  = angle;
+   parkData.Sine   = __sinpuf32(parkData.Angle);
+   parkData.Cosine = __cospuf32(parkData.Angle);
    runPark(&parkData);
-   pid_iq.term.Ref=pi_iq.ref;
-   pid_iq.term.Fbk=parkData.Qs;
 }
 
-uint32_t pwms[3];
-
-void iq2Pwm(void)
+void iqd2Pwm(float iq, float id)
 {
-   iparkData.Qs     = pi_iq.ref;//pid_iq.term.Out;
-   iparkData.Ds     = 0;
-//   iparkData.Angle  = parkData.Angle;
-   //iparkData.Sine   = __sinpuf32(parkData.Angle);
-   //iparkData.Cosine = __cospuf32(parkData.Angle);
-   iparkData.Sine   = parkData.Sine;
-   iparkData.Cosine = parkData.Cosine;
+   iparkData.Qs     = iq;
+   iparkData.Ds     = id;
+   iparkData.Sine   = parkData.Sine   ;
+   iparkData.Cosine = parkData.Cosine ;
    runIPark(&iparkData);
 
    svgenData.Ualpha = iparkData.Alpha;
    svgenData.Ubeta  = iparkData.Beta;
    runSVGenDQ(&svgenData);
 
-   pwms[0]= ((INV_PWM_HALF_TBPRD*svgenData.Tc) + INV_PWM_HALF_TBPRD);
-   pwms[1]= ((INV_PWM_HALF_TBPRD*svgenData.Ta) + INV_PWM_HALF_TBPRD);
-   pwms[2]= ((INV_PWM_HALF_TBPRD*svgenData.Tb) + INV_PWM_HALF_TBPRD);
-
-   EPWM_setCounterCompareValue(EPWM1_BASE, EPWM_COUNTER_COMPARE_A, pwms[0]);
-   EPWM_setCounterCompareValue(EPWM2_BASE, EPWM_COUNTER_COMPARE_A, pwms[1]);
-   EPWM_setCounterCompareValue(EPWM3_BASE, EPWM_COUNTER_COMPARE_A, pwms[2]);
+   EPWM_setCounterCompareValue(EPWM1_BASE ,EPWM_COUNTER_COMPARE_A ,INV_PWM_HALF_TBPRD*svgenData.Tc + INV_PWM_HALF_TBPRD);
+   EPWM_setCounterCompareValue(EPWM2_BASE ,EPWM_COUNTER_COMPARE_A ,INV_PWM_HALF_TBPRD*svgenData.Ta + INV_PWM_HALF_TBPRD);
+   EPWM_setCounterCompareValue(EPWM3_BASE ,EPWM_COUNTER_COMPARE_A ,INV_PWM_HALF_TBPRD*svgenData.Tb + INV_PWM_HALF_TBPRD);
 }
-void printIq(void)
+
+void Cmd_writePid(uint16_t argc, char *argv[],PID_CONTROLLER* p)
 {
-//   Lems2Iq();
-//   sciPrintf("angle=%f Iq=%f Id=%f\r\n",parkData.Angle,parkData.Qs,parkData.Ds);
-   sciPrintf("ta=%f tb=%f tc=%f\r\n",svgenData.Ta,svgenData.Tb,svgenData.Tc);
-   //sciPrintf("alpha=%f beta=%f sin=%f cos=%f\r\n",iparkData.Alpha,iparkData.Beta,iparkData.Sine,iparkData.Cosine);
-   sciPrintf("period=%i, pwm0=%i pwm1=%i pwm2=%i\r\n",INV_PWM_TICKS,pwms[0],pwms[1],pwms[2]);
+   if(argc>1 && (argv[1][0] != ',')) p->param.Kp   = atof(argv[1]);
+   if(argc>2 && (argv[2][0] != ',')) p->param.Ki   = atof(argv[2]);
+   if(argc>3 && (argv[3][0] != ',')) p->param.Kd   = atof(argv[3]);
+   if(argc>4 && (argv[4][0] != ',')) p->param.Kr   = atof(argv[4]);
+   if(argc>5 && (argv[5][0] != ',')) p->param.Km   = atof(argv[5]);
+   if(argc>6 && (argv[6][0] != ',')) p->param.Umax = atof(argv[6]);
+   if(argc>7 && (argv[7][0] != ',')) p->param.Umin = atof(argv[7]);
 }
-
-
-
-

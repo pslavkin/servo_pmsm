@@ -95,6 +95,7 @@ void waveGenerator(void)
                   setControlledSpeed(wave.amp*sin(2.0*PI*wave.frec*wave.t*T));
                   break;
                case TORQUE:
+               case OPEN:
                   setControlledTorque(wave.amp*sin(2.0*PI*wave.frec*wave.t*T));
                   break;
                default:
@@ -110,6 +111,7 @@ void waveGenerator(void)
                   setControlledSpeed(wave.amp*(((int32_t)(2*wave.frec*wave.t*T)%2)?1:-1));
                   break;
                case TORQUE:
+               case OPEN:
                   setControlledTorque(wave.amp*(((int32_t)(2*wave.frec*wave.t*T)%2)?1:-1));
                   break;
                default:

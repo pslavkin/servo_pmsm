@@ -269,7 +269,8 @@ typedef enum CONTROLTYPE_ENUM
 {
    POS=0,
    SPEED,
-   TORQUE
+   TORQUE,
+   OPEN
 } controlType_enum;
 
 enum fclEvents_enum {
@@ -297,6 +298,7 @@ controlType_enum     getControlType              ( void        );
 void                 setControlPos               ( void        );
 void                 setControlSpeed             ( void        );
 void                 setControlTorque            ( void        );
+void                 setControlOpen              ( void        );
 void                 setControlledTorque         ( float32_t s );
 float32_t            getControlledTorque         ( void        );
 void                 setControlledSpeed          ( float32_t s );

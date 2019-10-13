@@ -89,16 +89,11 @@ tCmdLineEntry torquePidCmdTable[] =/*{{{*/
 };
 void Cmd_readTorquePid(uint16_t argc, char *argv[])
 {
-   printFclPi(&pi_iq);
+   printPid(&pid_iq);
 }
 void Cmd_writeTorquePid(uint16_t argc, char *argv[])
 {
-   if(argc>1 && (argv[1][0] != ',')) pi_iq.Kp       = atof(argv[1]);   // Parameter: proportional loop gain
-   if(argc>2 && (argv[2][0] != ',')) pi_iq.Ki       = atof(argv[2]);   // Parameter: integral gain
-   if(argc>3 && (argv[3][0] != ',')) pi_iq.Kerr     = atof(argv[3]);   // Parameter: gain for latest error
-   if(argc>4 && (argv[4][0] != ',')) pi_iq.KerrOld  = atof(argv[4]);   // Parameter: gain for prev error
-   if(argc>5 && (argv[5][0] != ',')) pi_iq.Umax     = atof(argv[5]);   // Parameter: upper saturation limit
-   if(argc>6 && (argv[6][0] != ',')) pi_iq.Umin     = atof(argv[6]);   // Parameter: lower saturation limit
+   Cmd_writePid(argc,argv,&pid_iq);
 }
 /*}}}*/
 //--------------------------------------------------------------------------------
@@ -117,13 +112,7 @@ void Cmd_readPosPid(uint16_t argc, char *argv[])
 }
 void Cmd_writePosPid(uint16_t argc, char *argv[])
 {
-   if(argc>1 && (argv[1][0] != ',')) pid_pos.param.Kp   = atof(argv[1]);
-   if(argc>2 && (argv[2][0] != ',')) pid_pos.param.Ki   = atof(argv[2]);
-   if(argc>3 && (argv[3][0] != ',')) pid_pos.param.Kd   = atof(argv[3]);
-   if(argc>4 && (argv[4][0] != ',')) pid_pos.param.Kr   = atof(argv[4]);
-   if(argc>5 && (argv[5][0] != ',')) pid_pos.param.Km   = atof(argv[5]);
-   if(argc>6 && (argv[6][0] != ',')) pid_pos.param.Umax = atof(argv[6]);
-   if(argc>7 && (argv[7][0] != ',')) pid_pos.param.Umin = atof(argv[7]);
+   Cmd_writePid(argc,argv,&pid_pos);
 }
 /*}}}*/
 //--------------------------------------------------------------------------------
@@ -142,13 +131,7 @@ void Cmd_readSpeedPid(uint16_t argc, char *argv[])
 }
 void Cmd_writeSpeedPid(uint16_t argc, char *argv[])
 {
-   if(argc>1 && (argv[1][0] != ',')) pid_spd.param.Kp   = atof(argv[1]);
-   if(argc>2 && (argv[2][0] != ',')) pid_spd.param.Ki   = atof(argv[2]);
-   if(argc>3 && (argv[3][0] != ',')) pid_spd.param.Kd   = atof(argv[3]);
-   if(argc>4 && (argv[4][0] != ',')) pid_spd.param.Kr   = atof(argv[4]);
-   if(argc>5 && (argv[5][0] != ',')) pid_spd.param.Km   = atof(argv[5]);
-   if(argc>6 && (argv[6][0] != ',')) pid_spd.param.Umax = atof(argv[6]);
-   if(argc>7 && (argv[7][0] != ',')) pid_spd.param.Umin = atof(argv[7]);
+   Cmd_writePid(argc,argv,&pid_spd);
 }
 /*}}}*/
 //--------------------------------------------------------------------------------
@@ -180,8 +163,8 @@ void Cmd_getVdc(uint16_t argc, char *argv[])
 void Cmd_getLems(uint16_t argc, char *argv[])
 {
    //sciPrintf("LEMv=%f LEMw=%f\r\n",readLemV(),readLemW());
-   printIq();
-   //printPid(&pid_iq);
+   //printIq();
+   printPid(&pid_iq);
 }
 /*}}}*/
 //--------------------------------------------------------------------------------
@@ -193,6 +176,7 @@ tCmdLineEntry fclCmdTable[] =/*{{{*/
    { "pos"     ,Cmd_setControlPos       ,": position control loop"        },
    { "speed"   ,Cmd_setControlSpeed     ,": speed control loop"           },
    { "torque"  ,Cmd_setControlTorque    ,": torque control loop"          },
+   { "open"    ,Cmd_setControlOpen      ,": open control loop"            },
    { "cs"      ,Cmd_setControlledSpeed  ,": set controlled speed value"   },
    { "ct"      ,Cmd_setControlledTorque ,": set controlled torque value"  },
    { "E"       ,Cmd_stopFcl             ,": emergency stop"               },
@@ -221,6 +205,11 @@ void Cmd_setControlTorque(uint16_t argc, char *argv[])
 {
    setControlTorque();
    sciPrintf("torque control loop\r\n");
+}
+void Cmd_setControlOpen(uint16_t argc, char *argv[])
+{
+   setControlOpen();
+   sciPrintf("Open control loop\r\n");
 }
 void Cmd_setControlPos(uint16_t argc, char *argv[])
 {
