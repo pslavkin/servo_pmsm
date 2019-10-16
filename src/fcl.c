@@ -104,20 +104,16 @@ void runIsr(void)/*{{{*/
    speed1.ElecTheta = qep1ElecTheta();
    runSpeedFR(&speed1);
 
-   if(speedCount++>4) { 
-      speedCount=0;
-      if(posCount++>1) { 
-         posCount=0;
-         pid_pos.term.Ref     = getPosAbs     ( );
-         pid_pos.term.Fbk     = getPosAbsMech ( );
-         runPablosPID(&pid_pos);
-      }
-      pid_spd.term.Ref = controlType==SPEED?controlledSpeed:pid_pos.term.Out;
-      pid_spd.term.Fbk = getSpeed1Speed();
-      runPablosPID(&pid_spd);
-   }
+
+   pid_pos.term.Ref     = getPosAbs     ( );
+   pid_pos.term.Fbk     = getPosAbsMech ( );
+   runPablosPID(&pid_pos);
+   pid_spd.term.Ref = controlType==SPEED?controlledSpeed:pid_pos.term.Out;
+   pid_spd.term.Fbk = getSpeed1Speed();
+   runPablosPID(&pid_spd);
 
    lems2Iqd(qep1ElecTheta());
+
    pid_iq.term.Ref = controlType == TORQUE?controlledTorque:pid_spd.term.Out;
    pid_iq.term.Fbk = parkData.Qs;
 

@@ -24,11 +24,11 @@ void initPid(void)/*{{{*/
 {
     // Initialize the PID module for position (alternative option for eval)
     pid_pos = (PID_CONTROLLER){PID_TERM_DEFAULTS, PID_PARAM_DEFAULTS, PID_DATA_DEFAULTS};
-    pid_pos.param.Kp   = 2.5;
-    pid_pos.param.Ki   = 0.007;
-    pid_pos.param.Kd   = 0.500;
+    pid_pos.param.Kp   = 18;
+    pid_pos.param.Ki   = 0.0015;
+    pid_pos.param.Kd   = 0.300;
     pid_pos.param.Kr   = 1.1000;
-    pid_pos.param.Km   = 1.0000;
+    pid_pos.param.Km   = 0.8000;
     pid_pos.param.Umax = 1;//0.95;
     pid_pos.param.Umin = -1;//-0.95;
     pid_pos.term.c1    = 1.0;
@@ -36,11 +36,11 @@ void initPid(void)/*{{{*/
 
     // Initialize the PID module for speed
     pid_spd = (PID_CONTROLLER){PID_TERM_DEFAULTS, PID_PARAM_DEFAULTS, PID_DATA_DEFAULTS};
-    pid_spd.param.Kp   = 30;
-    pid_spd.param.Ki   = 0.1;
-    pid_spd.param.Kd   = 0.1;
-    pid_spd.param.Kr   = 0.8000;
-    pid_spd.param.Km   = 1.0000;
+    pid_spd.param.Kp   = 10;
+    pid_spd.param.Ki   = 0.0006;
+    pid_spd.param.Kd   = 1.0;
+    pid_spd.param.Kr   = 1.1000;
+    pid_spd.param.Km   = 0.6000;
     pid_spd.param.Umax = 0.95;//0.95;
     pid_spd.param.Umin = -0.95;//-0.95;
     pid_spd.term.c1    = 1.0;
@@ -48,11 +48,11 @@ void initPid(void)/*{{{*/
 
     // Initialize the PID module for IQ
     pid_iq            = (PID_CONTROLLER){PID_TERM_DEFAULTS, PID_PARAM_DEFAULTS, PID_DATA_DEFAULTS};
-    pid_iq.param.Kp   = 5;
-    pid_iq.param.Ki   = 2   ;
-    pid_iq.param.Kd   = 0.0 ;
+    pid_iq.param.Kp   = 2.2;
+    pid_iq.param.Ki   = 0.5 ;
+    pid_iq.param.Kd   = 0.5 ;
     pid_iq.param.Kr   = 1.0000;
-    pid_iq.param.Km   = 1.0000;
+    pid_iq.param.Km   = 0.5000;
     pid_iq.param.Umax = 0.9*maxModIndex;
     pid_iq.param.Umin = -0.9*maxModIndex;
     pid_iq.term.c1    = 1.0;

@@ -153,22 +153,22 @@ void sendCalibFinishedEvent ( void ) { atomicSendEvent(calibFinishedEvent ,adc()
 
 float readLemV(void) 
 {
-   return  IFB_LEMV_PPB*ADC_PU_PPB_SCALE_FACTOR*LEM_TO_SHUNT;
-//   static float last = 0;
-//   float actual      = IFB_LEMV_PPB*ADC_PU_PPB_SCALE_FACTOR*LEM_TO_SHUNT;
-//   float ans         = (last+actual)/2;
-//   last              = actual;
-//   return ans;
+//   return  IFB_LEMV_PPB*ADC_PU_PPB_SCALE_FACTOR*LEM_TO_SHUNT;
+   static float last = 0;
+   float actual      = IFB_LEMV_PPB*ADC_PU_PPB_SCALE_FACTOR*LEM_TO_SHUNT;
+   float ans         = (last+actual)/2;
+   last              = actual;
+   return ans;
 }
 float readLemW(void)
 {
 
-   return  IFB_LEMW_PPB*ADC_PU_PPB_SCALE_FACTOR*LEM_TO_SHUNT;
-//   static float last = 0;
-//   float actual      = IFB_LEMW_PPB*ADC_PU_PPB_SCALE_FACTOR*LEM_TO_SHUNT;
-//   float ans         = (last+actual)/2;
-//   last              = actual;
-//   return ans;
+//   return  IFB_LEMW_PPB*ADC_PU_PPB_SCALE_FACTOR*LEM_TO_SHUNT;
+   static float last = 0;
+   float actual      = IFB_LEMW_PPB*ADC_PU_PPB_SCALE_FACTOR*LEM_TO_SHUNT;
+   float ans         = (last+actual)/2;
+   last              = actual;
+   return ans;
 }
 //----------------------------------------------------------------------------------------------------
 const State uncalib    [ ] =
