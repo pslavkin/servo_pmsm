@@ -8,11 +8,11 @@ set style line 6 linecolor rgb '#FF00FF' linetype 1 linewidth 3 pointtype 5 poin
 set multiplot layout 3, 1
 set tmargin 3
 
-##set ylabel "phase margin"
-##set title "degrees"
-##set autoscale
-##plot '< tail -n 555 log.txt' every ::1 using 1:($5-$4) smooth acsplines linestyle 5 notitle
-#
+###set ylabel "phase margin"
+###set title "degrees"
+###set autoscale
+###plot '< tail -n 555 log.txt' every ::1 using 1:($5-$4) smooth acsplines linestyle 5 notitle
+##
 set ylabel "pos"
 set title "abs pos turns"
 set yrange [-0.2:1.2];

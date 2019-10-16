@@ -178,7 +178,7 @@ void align(void)/*{{{*/
    lsw         = QEP_ALIGNMENT;
    alignCntr   = 0            ;
    alignCnt    = 20000        ;
-   idRefStart  = 0.2          ;
+   idRefStart  = 0.15         ;
    idRefActual = 0          ;
    speed1      = ( SPEED_MEAS_QEP )SPEED_MEAS_QEP_DEFAULTS;
    initQep   ( );

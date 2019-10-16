@@ -3,7 +3,7 @@
 
 #include "ramper_.h"
 
-#define WAVE_RAMP_STEP 0.00020
+#define WAVE_RAMP_STEP 0.000020
 
 
 enum WAVE_DIR_ENUM {
