@@ -14,13 +14,14 @@
 wave_t wave={
    .dir       = CLOCK,
    .stepAngle = 0.0002,
-   .frec      = 0.5,
+   .frec      = 1,
    .offset    = 0,
    .enabled   = true,
-   .ampWished = 0.3,
-   .amp       = 0.3,
+   .ampWished = 0.1,
+   .amp       = 0.1,
    .shape     = STEP_DIR,
    .t         = 0,
+   .sym       = -1,
 };
 void advanceWaveStep(void)
 {
@@ -29,6 +30,8 @@ void advanceWaveStep(void)
 
 void        setWaveDir       ( enum WAVE_DIR_ENUM d ) { wave.dir       = d   ;}
 void        setWaveStepAngle ( float32_t step       ) { wave.stepAngle = step;}
+void        setWaveSym       ( int32_t sym          ) { wave.sym = sym       ;}
+int32_t     getWaveSym       (                      ) { return wave.sym      ;}
 float32_t   getWaveStepAngle ( void                 ) { return wave.stepAngle;}
 void        setWaveAmp       ( float32_t amp        )
 {
@@ -95,7 +98,6 @@ void waveGenerator(void)
                   setControlledSpeed(wave.amp*sin(2.0*PI*wave.frec*wave.t*T));
                   break;
                case TORQUE:
-               case OPEN:
                   setControlledTorque(wave.amp*sin(2.0*PI*wave.frec*wave.t*T));
                   break;
                default:
@@ -105,14 +107,13 @@ void waveGenerator(void)
          case STEP:
             switch(getControlType()) {
                case POS:
-                  setPosAbs(wave.amp*(((int32_t)(wave.frec*wave.t*T)%2)?1:-1) +wave.offset);
+                  setPosAbs(wave.amp*(((int32_t)(wave.frec*wave.t*T)%2)?1:wave.sym) +wave.offset);
                   break;
                case SPEED:
-                  setControlledSpeed(wave.amp*(((int32_t)(2*wave.frec*wave.t*T)%2)?1:-1));
+                  setControlledSpeed(wave.amp*(((int32_t)(2*wave.frec*wave.t*T)%2)?1:wave.sym));
                   break;
                case TORQUE:
-               case OPEN:
-                  setControlledTorque(wave.amp*(((int32_t)(2*wave.frec*wave.t*T)%2)?1:-1));
+                  setControlledTorque(wave.amp*(((int32_t)(2*wave.frec*wave.t*T)%2)?1:wave.sym));
                   break;
                default:
                   break;

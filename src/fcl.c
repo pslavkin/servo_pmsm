@@ -21,16 +21,18 @@
 #include "gcode.h"
 #include "overcurrent.h"
 #include "swept.h"
+#include "pplacement.h"
 #include "schedule.h"/*}}}*/
 
-float32_t            alignCntr           ;
-float32_t            alignCnt            ;
-float32_t            idRefStart          ;
-float32_t            idRefActual         ;
-float32_t            controlledSpeed  = 0;
-float32_t            controlledTorque = 0;
-controlType_enum     controlType         ;
-void ( *isrSm )(void)=stopIsr            ;
+float32_t            alignCntr                 ;
+float32_t            alignCnt                  ;
+float32_t            idRefStart                ;
+float32_t            idRefActual               ;
+float32_t            controlledSpeed  = 0      ;
+float32_t            controlledTorque = 0      ;
+controlType_enum     controlType      = TORQUE ;
+controlMethod_enum   controlMethod    = OPEN   ;
+void ( *isrSm )(void)                 = stopIsr;
 
 void initFCLVars()/*{{{*/
 {
@@ -88,31 +90,48 @@ void alignIsr(void)/*{{{*/
       }
    }
    else
-      idRefActual = ramper ( idRefStart, idRefActual, 0.0001 );
+      idRefActual = ramper ( idRefStart, idRefActual, 0.00001 );
    lems2Iqd ( 0             );
    iqd2Pwm  ( 0,idRefActual );
    sendlogPrintEvent();
 }/*}}}*/
+
+uint32_t speedCount=0;
+uint32_t posCount=0;
+
 void runIsr(void)/*{{{*/
 {
    speed1.ElecTheta = qep1ElecTheta();
    runSpeedFR(&speed1);
 
-   pid_pos.term.Ref     = getPosAbs     ( );
-   pid_pos.term.Fbk     = getPosAbsMech ( );
-   runPablosPID(&pid_pos);
-
-   pid_spd.term.Ref = controlType==SPEED?controlledSpeed:pid_pos.term.Out;
-   pid_spd.term.Fbk = getSpeed1Speed();
-   runPablosPID(&pid_spd);
+   if(speedCount++>4) { 
+      speedCount=0;
+      if(posCount++>1) { 
+         posCount=0;
+         pid_pos.term.Ref     = getPosAbs     ( );
+         pid_pos.term.Fbk     = getPosAbsMech ( );
+         runPablosPID(&pid_pos);
+      }
+      pid_spd.term.Ref = controlType==SPEED?controlledSpeed:pid_pos.term.Out;
+      pid_spd.term.Fbk = getSpeed1Speed();
+      runPablosPID(&pid_spd);
+   }
 
    lems2Iqd(qep1ElecTheta());
-   pid_iq.term.Ref = (controlType == TORQUE || controlType==OPEN)?controlledTorque:pid_spd.term.Out;
+   pid_iq.term.Ref = controlType == TORQUE?controlledTorque:pid_spd.term.Out;
    pid_iq.term.Fbk = parkData.Qs;
-   if(controlType==OPEN)
-      pid_iq.term.Out=controlledTorque;
-   else
-      runPablosPID(&pid_iq);
+
+   switch(controlMethod) {
+      case OPEN:
+         pid_iq.term.Out=controlledTorque;
+      break;
+      case PPLACE:
+         runPplacement(&pid_iq);
+      break;
+      case PID_METHOD:
+         runPablosPID(&pid_iq);
+      break;
+   }
 
    iqd2Pwm(pid_iq.term.Out,0);
 
@@ -136,23 +155,34 @@ void                 sendRestartEvent            ( void        ) { atomicSendEve
 void                 sendAdcCalibEndEvent        ( void        ) { atomicSendEvent(adcCalibEndEvent ,fcl())       ;}
 void                 sendOvercurrentEvent        ( void        ) { atomicSendEvent(overcurrentEvent ,fcl())       ;}
 void                 sendOvercurrentClearedEvent ( void        ) { atomicSendEvent(overcurrentClearedEvent ,fcl());}
-controlType_enum     getControlType              ( void        ) { return controlType                             ; ;};
-void                 setControlPos               ( void        ) { controlType=POS                                ; ;};
-void                 setControlSpeed             ( void        ) { controlType=SPEED                              ; ;};
-void                 setControlTorque            ( void        ) { controlType=TORQUE                             ; ;};
-void                 setControlOpen              ( void        ) { controlType=OPEN                               ; ;};
-void                 setControlledSpeed          ( float32_t s ) { controlledSpeed=s                              ;};
-float32_t            getControlledSpeed          ( void        ) { return controlledSpeed                         ;};
-void                 setControlledTorque         ( float32_t s ) { controlledTorque=s                             ;};
-float32_t            getControlledTorque         ( void        ) { return controlledTorque                        ;};
+controlType_enum     getControlType              ( void        ) { return controlType                             ;}
+void                 setControlPos               ( void        ) {
+   initPid();
+   controlType=POS                                ;}
+void                 setControlSpeed             ( void        ) {
+   initPid();
+   controlType=SPEED                              ;}
+void                 setControlTorque            ( void        ) { controlType=TORQUE                             ;}
+void                 setControlOpen              ( void        ) { controlMethod=OPEN                             ;}
+void                 setControlPid               ( void        ) { 
+   initPid();
+   controlMethod=PID_METHOD                       ;}
+void                 setControlPplace            ( void        ) {
+   initPplace();
+   controlMethod=PPLACE;
+}
+void                 setControlledSpeed          ( float32_t s ) { controlledSpeed=s                              ;}
+float32_t            getControlledSpeed          ( void        ) { return controlledSpeed                         ;}
+void                 setControlledTorque         ( float32_t s ) { controlledTorque=s                             ;}
+float32_t            getControlledTorque         ( void        ) { return controlledTorque                        ;}
 
 void align(void)/*{{{*/
 {
    FCL_resetController();
    lsw         = QEP_ALIGNMENT;
    alignCntr   = 0            ;
-   alignCnt    = 10000        ;
-   idRefStart  = 0.4          ;
+   alignCnt    = 20000        ;
+   idRefStart  = 0.2          ;
    idRefActual = 0          ;
    speed1      = ( SPEED_MEAS_QEP )SPEED_MEAS_QEP_DEFAULTS;
    initQep   ( );

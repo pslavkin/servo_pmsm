@@ -19,7 +19,7 @@ const State
 log_t logm = {
    .pauseTime  = 15  ,
    .ticker     = 0   ,
-   .prescaler  = 500 , // Speed loop pre scalar
+   .prescaler  = 100 , // Speed loop pre scalar
    .count      = 1   , // Speed loop counter
    .bodeEnable = 0   ,
 };

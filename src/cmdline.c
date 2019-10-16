@@ -177,6 +177,8 @@ tCmdLineEntry fclCmdTable[] =/*{{{*/
    { "speed"   ,Cmd_setControlSpeed     ,": speed control loop"           },
    { "torque"  ,Cmd_setControlTorque    ,": torque control loop"          },
    { "open"    ,Cmd_setControlOpen      ,": open control loop"            },
+   { "pid"     ,Cmd_setControlPid       ,": pid control loop"             },
+   { "pplace"  ,Cmd_setControlPplace    ,": pplace control loop"          },
    { "cs"      ,Cmd_setControlledSpeed  ,": set controlled speed value"   },
    { "ct"      ,Cmd_setControlledTorque ,": set controlled torque value"  },
    { "E"       ,Cmd_stopFcl             ,": emergency stop"               },
@@ -211,6 +213,16 @@ void Cmd_setControlOpen(uint16_t argc, char *argv[])
    setControlOpen();
    sciPrintf("Open control loop\r\n");
 }
+void Cmd_setControlPid(uint16_t argc, char *argv[])
+{
+   setControlPid();
+   sciPrintf("PID control loop\r\n");
+}
+void Cmd_setControlPplace(uint16_t argc, char *argv[])
+{
+   setControlPplace();
+   sciPrintf("Pole placement control loop\r\n");
+}
 void Cmd_setControlPos(uint16_t argc, char *argv[])
 {
    setControlPos();
@@ -232,21 +244,22 @@ void Cmd_setControlledTorque(uint16_t argc, char *argv[])
 //--------------------------------------------------------------------------------
 tCmdLineEntry waveCmdTable[] =/*{{{*/
 {
-   { "frec"    ,Cmd_setWaveFrec         ,": set frec pos generator" },
-   { "amp"     ,Cmd_setWaveAmp          ,": amplitude"              },
-   { "sin"     ,Cmd_setWaveShapeSin     ,": set sin generator"      },
-   { "step"    ,Cmd_setWaveShapeStep    ,": set step generator"     },
-   { "gcode"   ,Cmd_setWaveShapeGcode   ,": set code proccesor"     },
-   { "stepdir" ,Cmd_setWaveShapeStepdir ,": set step dir proccesor" },
-   { "ena"     ,Cmd_enableWave          ,": enable wave"            },
-   { "dis"     ,Cmd_disableWave         ,": disable wave"           },
-   { "clk"     ,Cmd_setWaveDirClk       ,": set dir clk wise"       },
-   { "aclk"    ,Cmd_setWaveDirAclk      ,": set dir anti clk wise"  },
-   { "angle"   ,Cmd_setWaveStepAngle    ,": set step angle"         },
-   { "pulse"   ,Cmd_advanceWaveStep     ,": advance one step"       },
-   { "E"       ,Cmd_stopFcl             ,": emergency stop"         },
-   { "<"       ,Cmd_back2login          ,": back to login table"    },
-   { "?"       ,Cmd_Help                ,": help"                   },
+   { "frec"    ,Cmd_setWaveFrec         ,": set frec pos generator" } ,
+   { "amp"     ,Cmd_setWaveAmp          ,": amplitude"              } ,
+   { "sin"     ,Cmd_setWaveShapeSin     ,": set sin generator"      } ,
+   { "step"    ,Cmd_setWaveShapeStep    ,": set step generator"     } ,
+   { "gcode"   ,Cmd_setWaveShapeGcode   ,": set code proccesor"     } ,
+   { "stepdir" ,Cmd_setWaveShapeStepdir ,": set step dir proccesor" } ,
+   { "ena"     ,Cmd_enableWave          ,": enable wave"            } ,
+   { "dis"     ,Cmd_disableWave         ,": disable wave"           } ,
+   { "clk"     ,Cmd_setWaveDirClk       ,": set dir clk wise"       } ,
+   { "aclk"    ,Cmd_setWaveDirAclk      ,": set dir anti clk wise"  } ,
+   { "angle"   ,Cmd_setWaveStepAngle    ,": set step angle"         } ,
+   { "pulse"   ,Cmd_advanceWaveStep     ,": advance one step"       } ,
+   { "sym"     ,Cmd_setWaveSym          ,": sym or asym wave"       } ,
+   { "E"       ,Cmd_stopFcl             ,": emergency stop"         } ,
+   { "<"       ,Cmd_back2login          ,": back to login table"    } ,
+   { "?"       ,Cmd_Help                ,": help"                   } ,
    { 0         ,0                       ,0                          }
 };
 void Cmd_setWaveFrec(uint16_t argc, char *argv[])
@@ -304,6 +317,12 @@ void Cmd_setWaveStepAngle(uint16_t argc, char *argv[])
    if(argc>1)
       setWaveStepAngle(atof(argv[1]));
    sciPrintf("stepAngle=%f\r\n",getWaveStepAngle());
+}
+void Cmd_setWaveSym(uint16_t argc, char *argv[])
+{
+   if(argc>1)
+      setWaveSym(atoi(argv[1]));
+   sciPrintf("wave sym %i\r\n",getWaveSym());
 }
 /*}}}*/
 //--------------------------------------------------------------------------------

@@ -87,6 +87,8 @@ void Cmd_restartFcl          ( uint16_t argc, char *argv[] );
 void Cmd_setControlSpeed     ( uint16_t argc, char *argv[] );
 void Cmd_setControlTorque    ( uint16_t argc, char *argv[] );
 void Cmd_setControlOpen      ( uint16_t argc, char *argv[] );
+void Cmd_setControlPid       ( uint16_t argc, char *argv[] );
+void Cmd_setControlPplace    ( uint16_t argc, char *argv[] );
 void Cmd_setControlPos       ( uint16_t argc, char *argv[] );
 void Cmd_setControlledSpeed  ( uint16_t argc, char *argv[] );
 void Cmd_setControlledTorque ( uint16_t argc, char *argv[] );
@@ -102,6 +104,7 @@ void Cmd_advanceWaveStep     ( uint16_t argc, char *argv[] );
 void Cmd_setWaveDirClk       ( uint16_t argc, char *argv[] );
 void Cmd_setWaveDirAclk      ( uint16_t argc, char *argv[] );
 void Cmd_setWaveStepAngle    ( uint16_t argc, char *argv[] );
+void Cmd_setWaveSym          ( uint16_t argc, char *argv[] );
 void Cmd_setWaveShapeStepdir ( uint16_t argc, char *argv[] );
 
 void Cmd_setSweptInit    ( uint16_t argc, char *argv[] );

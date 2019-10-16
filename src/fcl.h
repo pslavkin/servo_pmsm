@@ -270,8 +270,13 @@ typedef enum CONTROLTYPE_ENUM
    POS=0,
    SPEED,
    TORQUE,
-   OPEN
 } controlType_enum;
+typedef enum CONTROLMETHOD_ENUM
+{
+   OPEN=0,
+   PPLACE,
+   PID_METHOD,
+} controlMethod_enum;
 
 enum fclEvents_enum {
    adcCalibEndEvent        = 0x0010,
@@ -299,6 +304,8 @@ void                 setControlPos               ( void        );
 void                 setControlSpeed             ( void        );
 void                 setControlTorque            ( void        );
 void                 setControlOpen              ( void        );
+void                 setControlPid               ( void        );
+void                 setControlPplace            ( void        );
 void                 setControlledTorque         ( float32_t s );
 float32_t            getControlledTorque         ( void        );
 void                 setControlledSpeed          ( float32_t s );

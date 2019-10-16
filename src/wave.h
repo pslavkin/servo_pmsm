@@ -26,12 +26,15 @@ typedef struct wave_struct {
    float32_t            ampWished;
    float32_t            amp      ;
    uint32_t             t        ;
+   int32_t              sym      ;
 } wave_t;
 
 void      advanceWaveStep           ( void                      );
 void      setWaveDir                ( enum      WAVE_DIR_ENUM d );
 void      setWaveStepAngle          ( float32_t step            );
 float32_t getWaveStepAngle          ( void                      );
+void      setWaveSym                ( int32_t  sym              );
+int32_t   getWaveSym                (                           );
 void      setWaveFrec               ( float32_t f               );
 void      setWaveFrecWoCompensation ( float32_t f               );
 float32_t getWaveFrec               ( void                      );
