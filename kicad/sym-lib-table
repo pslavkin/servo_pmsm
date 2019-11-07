@@ -1,0 +1,3 @@
+(sym_lib_table
+  (lib (name servo)(type Legacy)(uri ${KIPRJMOD}/servo.lib)(options "")(descr ""))
+)
