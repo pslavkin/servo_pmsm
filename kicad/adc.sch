@@ -4,7 +4,7 @@ EELAYER 26 0
 EELAYER END
 $Descr B 17000 11000
 encoding utf-8
-Sheet 5 5
+Sheet 5 7
 Title "adc"
 Date "25 10 2019"
 Rev ""
@@ -427,8 +427,6 @@ Wire Wire Line
 	7650 5000 3000 5000
 Wire Wire Line
 	2250 5100 3100 5100
-Wire Wire Line
-	7650 5200 3400 5200
 Wire Wire Line
 	2250 5300 3500 5300
 Wire Wire Line
@@ -1034,34 +1032,6 @@ NoConn ~ 11350 9850
 Wire Wire Line
 	11350 9850 11250 9850
 NoConn ~ 16300 2650
-NoConn ~ 9850 7200
-NoConn ~ 7650 6800
-NoConn ~ 7650 6700
-NoConn ~ 7650 6900
-NoConn ~ 7650 7000
-NoConn ~ 7650 7200
-NoConn ~ 7650 7300
-NoConn ~ 7650 7400
-NoConn ~ 7650 7500
-NoConn ~ 7650 7600
-NoConn ~ 7650 7700
-NoConn ~ 7650 6000
-NoConn ~ 7650 6100
-NoConn ~ 7650 6200
-NoConn ~ 7650 6300
-NoConn ~ 7650 6400
-NoConn ~ 7650 6500
-NoConn ~ 7650 5700
-NoConn ~ 7650 5800
-NoConn ~ 7650 5500
-NoConn ~ 7650 5400
-NoConn ~ 7650 5300
-NoConn ~ 7650 5200
-NoConn ~ 7650 5100
-NoConn ~ 7650 5000
-NoConn ~ 9850 5000
-NoConn ~ 9850 6000
-NoConn ~ 9850 6700
 Text Label 850  5300 0    60   ~ 0
 ADC_A2A3_N
 Text Label 850  5500 0    60   ~ 0
@@ -1094,7 +1064,6 @@ Connection ~ 3150 8800
 Connection ~ 3200 5100
 Connection ~ 3300 5200
 Connection ~ 3350 8800
-Connection ~ 3400 5200
 Connection ~ 3500 5300
 Connection ~ 3550 8800
 Connection ~ 3600 5300
@@ -2420,4 +2389,7 @@ F 4 "OPA4350EA/250" V -3450 2150 60  0001 C CNN "PartNumber"
 	1    10450 9550
 	1    0    0    -1  
 $EndComp
+Connection ~ 3400 5200
+Wire Wire Line
+	7650 5200 3400 5200
 $EndSCHEMATC
