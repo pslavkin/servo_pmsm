@@ -4,7 +4,7 @@ EELAYER 26 0
 EELAYER END
 $Descr A4 11693 8268
 encoding utf-8
-Sheet 1 4
+Sheet 1 5
 Title "usb_emulator"
 Date "25 10 2019"
 Rev "1.0"
@@ -83,5 +83,11 @@ S 1800 4850 1050 950
 U 5DE49152
 F0 "gpio" 50
 F1 "gpio.sch" 50
+$EndSheet
+$Sheet
+S 2000 2450 800  700 
+U 5DD0E9D6
+F0 "adc" 50
+F1 "adc.sch" 50
 $EndSheet
 $EndSCHEMATC
