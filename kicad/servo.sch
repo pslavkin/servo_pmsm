@@ -14,12 +14,6 @@ Comment2 ""
 Comment3 ""
 Comment4 ""
 $EndDescr
-$Sheet
-S 8200 3450 1200 2000
-U 5DC1676A
-F0 "usb_emulator" 50
-F1 "usb_emulator.sch" 50
-$EndSheet
 Wire Wire Line
 	12100 2950 12100 2850
 Wire Wire Line
@@ -102,4 +96,67 @@ U 5DC4A59D
 F0 "ethercat" 50
 F1 "ethercat.sch" 50
 $EndSheet
+$Sheet
+S 13950 3550 1200 2000
+U 5DC1676A
+F0 "usb_emulator" 50
+F1 "usb_emulator.sch" 50
+F2 "EMU_TCK" I L 13950 4000 50 
+F3 "EMU_TDI" I L 13950 4100 50 
+F4 "EMU_TDO" I L 13950 4200 50 
+F5 "EMU_TMS" I L 13950 4300 50 
+F6 "~EMU_TRST~" I L 13950 4400 50 
+$EndSheet
+$Comp
+L servo:EMU_5V0 #EMU_5V0_?
+U 1 1 5DDE9A53
+P 14700 5900
+AR Path="/5DC1676A/5DDE9A53" Ref="#EMU_5V0_?"  Part="1" 
+AR Path="/5DDE9A53" Ref="#EMU_5V0_?"  Part="1" 
+F 0 "#EMU_5V0_?" H 14715 6109 20  0000 C CNN
+F 1 "EMU_5V0" H 14715 6057 30  0000 C CNN
+F 2 "" H 14700 5900 70  0000 C CNN
+F 3 "" H 14700 5900 70  0000 C CNN
+	1    14700 5900
+	1    0    0    -1  
+$EndComp
+$Comp
+L servo:EMU_3V3 #EMU_3V3_?
+U 1 1 5DDE9A5A
+P 14400 5900
+AR Path="/5DC1676A/5DDE9A5A" Ref="#EMU_3V3_?"  Part="1" 
+AR Path="/5DDE9A5A" Ref="#EMU_3V3_?"  Part="1" 
+F 0 "#EMU_3V3_?" H 14415 6109 20  0000 C CNN
+F 1 "EMU_3V3" H 14415 6057 30  0000 C CNN
+F 2 "" H 14400 5900 70  0000 C CNN
+F 3 "" H 14400 5900 70  0000 C CNN
+	1    14400 5900
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #EMU_GND_?
+U 1 1 5DDE9A61
+P 14950 5750
+AR Path="/5DC1676A/5DDE9A61" Ref="#EMU_GND_?"  Part="1" 
+AR Path="/5DDE9A61" Ref="#EMU_GND_?"  Part="1" 
+F 0 "#EMU_GND_?" H 14955 5601 20  0000 C CNN
+F 1 "EMU_GND" H 14955 5549 30  0000 C CNN
+F 2 "" H 14950 5750 70  0000 C CNN
+F 3 "" H 14950 5750 70  0000 C CNN
+	1    14950 5750
+	1    0    0    -1  
+$EndComp
+$Comp
+L servo:EMU_USB_5V0 #EMU_USB_5V0_?
+U 1 1 5DDEB262
+P 14150 5900
+AR Path="/5DC1676A/5DDEB262" Ref="#EMU_USB_5V0_?"  Part="1" 
+AR Path="/5DDEB262" Ref="#EMU_USB_5V0_?"  Part="1" 
+F 0 "#EMU_USB_5V0_?" H 14092 5967 20  0000 R CNN
+F 1 "EMU_USB_5V0" H 14092 5915 30  0000 R CNN
+F 2 "" H 14150 5900 70  0000 C CNN
+F 3 "" H 14150 5900 70  0000 C CNN
+	1    14150 5900
+	1    0    0    -1  
+$EndComp
 $EndSCHEMATC

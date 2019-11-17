@@ -1,5 +1,14 @@
 EESchema-DOCLIB  Version 2.0
 #
+$CMP 93LC46C-SN
+F http://ww1.microchip.com/downloads/en/DeviceDoc/21794G.pdf
+$ENDCMP
+#
+$CMP CMP-0004796-1
+D Dual High Speed USB To Multipurpose UART/FIFO IC, LQFP-64
+F http://www.ftdichip.com/Support/Documents/DataSheets/ICs/DS_FT2232H.pdf
+$ENDCMP
+#
 $CMP GND
 D Power flag, ground
 K power-flag
@@ -9,6 +18,26 @@ $CMP PWR_FLAG
 D Power flag, general
 K power-flag
 F ~
+$ENDCMP
+#
+$CMP SN74ALVC244PW
+D OCTALBUFFER/DRIVERWITH3-STATEOUTPUTS
+F https://www.ti.com/lit/ds/symlink/sn74alvc244.pdf
+$ENDCMP
+#
+$CMP TI-ISO7220C-SOIC_D-8
+D ISO722xDual-ChannelDigitalIsolators
+F http://www.ti.com/lit/ds/symlink/iso7221c.pdf
+$ENDCMP
+#
+$CMP TI-TPD2E001-Q1-SOT_DRL-5
+D Low-Capacitance + / - 15 kV ESD-Protection Array for High-Speed Data Interfaces, 2 Channels, -40 to +85 degC, 5-pin SOT (DRL), Green (RoHS & no Sb/Br)
+F http://www.ti.com/general/docs/lit/getliterature.tsp?genericPartNumber=TPD2E001&fileType=pdf
+$ENDCMP
+#
+$CMP TPS730XXDBV
+D Low-Noise, High PSRR, RF 200-mA Low-Dropout Linear Regulators, DBV0005A (SOT-23-5)
+F http://www.ti.com/lit/ds/symlink/tps730.pdf
 $ENDCMP
 #
 $CMP VDD
