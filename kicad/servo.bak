@@ -1,10 +1,9 @@
 EESchema Schematic File Version 4
-LIBS:servo-cache
 EELAYER 26 0
 EELAYER END
 $Descr C 22000 17000
 encoding utf-8
-Sheet 1 7
+Sheet 1 6
 Title "usb_emulator"
 Date "25 10 2019"
 Rev "1.0"
@@ -14,12 +13,6 @@ Comment2 ""
 Comment3 ""
 Comment4 ""
 $EndDescr
-$Sheet
-S 13400 3400 1200 2000
-U 5DC1676A
-F0 "usb_emulator" 50
-F1 "usb_emulator.sch" 50
-$EndSheet
 Wire Wire Line
 	12100 2950 12100 2850
 Wire Wire Line
@@ -40,13 +33,13 @@ F 3 "~" H 11850 2850 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L servo:VDD #VDD_3V3_?
+L servo:VDD3V3 #VDD_3V3_?
 U 1 1 5DE2AE9F
 P 12100 2850
 AR Path="/5DC3DC9E/5DE2AE9F" Ref="#VDD_3V3_?"  Part="1" 
 AR Path="/5DE2AE9F" Ref="#VDD_3V3_0101"  Part="1" 
 F 0 "#VDD_3V3_0101" H 12188 2917 20  0000 L CNN
-F 1 "VDD" H 12188 2865 30  0000 L CNN
+F 1 "VDD3V3" H 12188 2865 30  0000 L CNN
 F 2 "" H 12100 2850 70  0000 C CNN
 F 3 "" H 12100 2850 70  0000 C CNN
 	1    12100 2850
@@ -93,8 +86,16 @@ $EndSheet
 $Sheet
 S 11850 3450 1100 2000
 U 5DCD812E
-F0 "usb_interface" 50
-F1 "usb_interface.sch" 50
+F0 "emu_interface" 50
+F1 "emu_interface.sch" 50
+F2 "MCU_TCK" I L 11850 4050 50 
+F3 "MCU_TDI" I L 11850 4150 50 
+F4 "MCU_TDO" I L 11850 3950 50 
+F5 "MCU_TMS" I L 11850 4250 50 
+F6 "~MCU_TRST~" I L 11850 4350 50 
+F7 "MCU_SCI_RX" I L 11850 4550 50 
+F8 "MCU_SCI_TX" I L 11850 4650 50 
+F9 "EMU_SCI_RX" I L 11850 4800 50 
 $EndSheet
 $Sheet
 S 2950 3450 1250 2000

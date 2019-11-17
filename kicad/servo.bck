@@ -30,6 +30,11 @@ D ISO722xDual-ChannelDigitalIsolators
 F http://www.ti.com/lit/ds/symlink/iso7221c.pdf
 $ENDCMP
 #
+$CMP TI-ISO7221C-SOIC_D-8
+D ISO722xDual-ChannelDigitalIsolators
+F http://www.ti.com/lit/ds/symlink/iso7221c.pdf
+$ENDCMP
+#
 $CMP TI-TPD2E001-Q1-SOT_DRL-5
 D Low-Capacitance + / - 15 kV ESD-Protection Array for High-Speed Data Interfaces, 2 Channels, -40 to +85 degC, 5-pin SOT (DRL), Green (RoHS & no Sb/Br)
 F http://www.ti.com/general/docs/lit/getliterature.tsp?genericPartNumber=TPD2E001&fileType=pdf
@@ -40,7 +45,7 @@ D Low-Noise, High PSRR, RF 200-mA Low-Dropout Linear Regulators, DBV0005A (SOT-2
 F http://www.ti.com/lit/ds/symlink/tps730.pdf
 $ENDCMP
 #
-$CMP VDD
+$CMP VDD3V3
 D Power flag, positive voltage
 K power-flag
 $ENDCMP
