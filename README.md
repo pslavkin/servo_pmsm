@@ -15,7 +15,9 @@ https://gist.github.com/rxaviers/7360908
 - :heavy_check_mark: connected to a chinise CNC works!
 - :red_circle:       Dual core interconnect IPC
 -->
-- :construction:     controller schematics from Altium to kicad
+- :heavy_check_mark:    controller schematics from Altium to kicad
+- :construction:        setting kicad libs, datasheet, remove unused IC's
+- :red_circle:          mix high power cirtuit to kicad
 
 
 ---
@@ -31,7 +33,13 @@ https://gist.github.com/rxaviers/7360908
 - [License](#license)
 ---
 ## schematics
-<img src="doc/pics/schematics1.jpg" width="220"/>
+<img src="doc/pics/servo-0.jpg" width="800"/>
+<img src="doc/pics/servo-1.jpg" width="800"/>
+<img src="doc/pics/servo-2.jpg" width="800"/>
+<img src="doc/pics/servo-3.jpg" width="800"/>
+<img src="doc/pics/servo-4.jpg" width="800"/>
+<img src="doc/pics/servo-5.jpg" width="800"/>
+<img src="doc/pics/servo-6.jpg" width="800"/>
 
 
 ## Hierarchy
