@@ -1,0 +1,2222 @@
+EESchema Schematic File Version 4
+LIBS:servo-cache
+EELAYER 26 0
+EELAYER END
+$Descr B 17000 11000
+encoding utf-8
+Sheet 7 7
+Title "power"
+Date "25 10 2019"
+Rev ""
+Comp ""
+Comment1 ""
+Comment2 ""
+Comment3 ""
+Comment4 ""
+$EndDescr
+Wire Notes Line
+	4100 10800 4100 10500
+Wire Wire Line
+	2200 5400 2200 5300
+Wire Wire Line
+	4000 5400 4000 5300
+Wire Wire Line
+	4000 2500 4000 2200
+Wire Wire Line
+	11400 1700 11100 1700
+Wire Wire Line
+	12300 1300 12000 1300
+Wire Wire Line
+	13100 1300 12300 1300
+Wire Wire Line
+	13100 1400 13100 1300
+Wire Wire Line
+	11200 2100 11100 2100
+Wire Wire Line
+	11200 3300 11200 2100
+Wire Wire Line
+	13100 3300 11200 3300
+Wire Wire Line
+	13100 2200 13100 3300
+Wire Wire Line
+	11400 2300 11100 2300
+Wire Wire Line
+	11400 2100 11400 2300
+Wire Wire Line
+	11100 3300 11100 3000
+Wire Wire Line
+	12000 1700 12000 1300
+Wire Wire Line
+	12050 2700 12000 2650
+Wire Wire Line
+	12300 2700 12050 2700
+Wire Wire Line
+	12300 2500 12300 2700
+Wire Wire Line
+	12300 2150 12300 2200
+Wire Wire Line
+	12250 2100 12300 2150
+Wire Wire Line
+	12000 2100 12250 2100
+Wire Wire Line
+	13100 3500 13100 3300
+Wire Wire Line
+	12700 2200 12700 2100
+Wire Wire Line
+	12700 2100 12350 2100
+Wire Wire Line
+	14400 1300 14400 1200
+Wire Wire Line
+	14400 1400 14400 1300
+Wire Wire Line
+	13800 1300 13100 1300
+Wire Wire Line
+	14400 1300 13800 1300
+Wire Wire Line
+	13800 1300 13800 1400
+Wire Wire Line
+	12300 1300 12300 1400
+Wire Wire Line
+	12300 2050 12350 2100
+Wire Wire Line
+	12300 1900 12300 2050
+Wire Wire Line
+	9200 2400 9500 2400
+Wire Wire Line
+	9200 2800 9200 2400
+Wire Wire Line
+	8900 2800 9200 2800
+Wire Wire Line
+	8900 1500 9500 1500
+Wire Wire Line
+	8900 2400 8900 1500
+Wire Wire Line
+	8900 1200 8900 1100
+Wire Wire Line
+	8900 1500 8900 1200
+Wire Wire Line
+	7700 1200 7400 1200
+Wire Wire Line
+	8000 1200 7700 1200
+Wire Wire Line
+	8300 1200 8000 1200
+Wire Wire Line
+	8600 1200 8300 1200
+Wire Wire Line
+	8900 1200 8600 1200
+Wire Wire Line
+	6400 1600 6400 1100
+Wire Wire Line
+	6800 1600 6400 1600
+Wire Wire Line
+	7400 1600 7300 1600
+Wire Wire Line
+	7400 1200 7400 1600
+Wire Wire Line
+	7700 1200 7700 2200
+Wire Wire Line
+	8000 2200 8000 1200
+Wire Wire Line
+	8300 2100 8300 2200
+Wire Wire Line
+	8300 1700 8300 2100
+Wire Wire Line
+	8600 1900 9500 1900
+Wire Wire Line
+	8900 3400 8900 3200
+Wire Wire Line
+	15200 6550 15200 6750
+Wire Wire Line
+	15200 7050 15200 7150
+Wire Wire Line
+	14000 6550 14000 6750
+Wire Wire Line
+	14000 7050 14000 7150
+Text Notes 14250 4400 0    84   ~ 0
+Place near U1
+Wire Wire Line
+	15200 5050 15200 5250
+Wire Wire Line
+	15200 5550 15200 5650
+Wire Wire Line
+	14000 5050 14000 5250
+Wire Wire Line
+	14000 5550 14000 5650
+Wire Wire Line
+	14000 8050 14000 7950
+Wire Wire Line
+	14000 8150 14000 8050
+Wire Wire Line
+	14000 8450 14000 8550
+Wire Wire Line
+	8300 2100 9500 2100
+Wire Wire Line
+	9600 9000 9600 9200
+Wire Wire Line
+	9400 9000 9400 9200
+Wire Wire Line
+	9200 9200 9200 9000
+Wire Wire Line
+	9000 9200 9000 9000
+Wire Wire Line
+	8800 9150 8800 9000
+Wire Wire Line
+	8850 9200 8800 9150
+Wire Wire Line
+	8600 9200 8600 9000
+Wire Wire Line
+	8400 9200 8400 9000
+Wire Wire Line
+	8200 9200 8200 9000
+Wire Wire Line
+	8000 9200 8000 9000
+Wire Wire Line
+	7800 9200 7800 9000
+Wire Wire Line
+	7600 9200 7600 9000
+Wire Wire Line
+	7400 9200 7400 9000
+Text Notes 7500 8450 0    84   ~ 0
+Place near U1
+Wire Wire Line
+	9600 7100 9600 6900
+Wire Wire Line
+	7700 7100 7700 6900
+Wire Wire Line
+	7900 7100 7900 6900
+Wire Wire Line
+	8100 7100 8100 6900
+Wire Wire Line
+	8300 7050 8300 6900
+Wire Wire Line
+	8350 7100 8300 7050
+Wire Wire Line
+	8500 7100 8500 6900
+Wire Wire Line
+	8700 7100 8700 6900
+Wire Wire Line
+	9400 7100 9400 6900
+Wire Wire Line
+	8300 7150 8300 7300
+Wire Wire Line
+	8250 7100 8300 7150
+Text Notes 7150 6300 0    84   ~ 0
+Place near U1
+Wire Wire Line
+	1300 2500 1100 2500
+Wire Wire Line
+	1300 2300 1300 2500
+Wire Wire Line
+	1300 3100 1100 3100
+Wire Wire Line
+	1300 2900 1300 3100
+Wire Wire Line
+	1300 3700 1100 3700
+Wire Wire Line
+	1300 3500 1300 3700
+Wire Wire Line
+	1300 4300 1100 4300
+Wire Wire Line
+	1300 4400 1300 4300
+Wire Wire Line
+	14000 5050 14000 4950
+Wire Wire Line
+	14300 5050 14000 5050
+Wire Wire Line
+	15200 5050 14700 5050
+Wire Wire Line
+	15200 4950 15200 5050
+Wire Wire Line
+	14000 8050 14300 8050
+Wire Wire Line
+	15200 8050 14700 8050
+Wire Wire Line
+	15200 7950 15200 8050
+Wire Wire Line
+	15200 8050 15200 8150
+Wire Wire Line
+	14000 6550 14000 6450
+Wire Wire Line
+	14300 6550 14000 6550
+Wire Wire Line
+	15200 6550 14700 6550
+Wire Wire Line
+	15200 6450 15200 6550
+Text Label 2500 5600 0    70   ~ 0
+TMS320F28388DZWTS
+Text Label 2200 9800 0    70   ~ 0
+TMS320F28388DZWTS
+Wire Wire Line
+	8600 1300 8600 1200
+Wire Wire Line
+	8600 1900 8600 1700
+Wire Wire Line
+	8600 2200 8600 1900
+Wire Wire Line
+	4100 9400 4100 9300
+Wire Wire Line
+	1900 9400 1900 9300
+Wire Wire Line
+	7200 9200 7200 9000
+Wire Wire Line
+	7400 9200 7200 9200
+Wire Wire Line
+	7600 9200 7400 9200
+Wire Wire Line
+	7800 9200 7600 9200
+Wire Wire Line
+	8000 9200 7800 9200
+Wire Wire Line
+	8200 9200 8000 9200
+Wire Wire Line
+	8400 9200 8200 9200
+Wire Wire Line
+	8600 9200 8400 9200
+Wire Wire Line
+	9000 9200 8850 9200
+Wire Wire Line
+	9200 9200 9000 9200
+Wire Wire Line
+	9400 9200 9200 9200
+Wire Wire Line
+	9600 9200 9400 9200
+Wire Wire Line
+	9800 9200 9600 9200
+Wire Wire Line
+	10000 9200 9800 9200
+Wire Wire Line
+	10200 9200 10000 9200
+Wire Wire Line
+	10200 9000 10200 9200
+Wire Wire Line
+	10000 9200 10000 9000
+Wire Wire Line
+	9800 9200 9800 9000
+Wire Wire Line
+	8800 9250 8800 9400
+Wire Wire Line
+	8750 9200 8800 9250
+Wire Wire Line
+	7200 8600 7200 8700
+Wire Wire Line
+	7400 8600 7200 8600
+Wire Wire Line
+	7600 8600 7400 8600
+Wire Wire Line
+	7800 8600 7600 8600
+Wire Wire Line
+	8000 8600 7800 8600
+Wire Wire Line
+	8200 8600 8000 8600
+Wire Wire Line
+	8400 8600 8200 8600
+Wire Wire Line
+	8600 8600 8400 8600
+Wire Wire Line
+	9000 8600 8850 8600
+Wire Wire Line
+	9200 8600 9000 8600
+Wire Wire Line
+	9400 8600 9200 8600
+Wire Wire Line
+	9600 8600 9400 8600
+Wire Wire Line
+	9800 8600 9600 8600
+Wire Wire Line
+	10000 8600 9800 8600
+Wire Wire Line
+	10200 8600 10000 8600
+Wire Wire Line
+	10200 8700 10200 8600
+Wire Wire Line
+	10000 8600 10000 8700
+Wire Wire Line
+	9800 8600 9800 8700
+Wire Wire Line
+	9600 8600 9600 8700
+Wire Wire Line
+	9400 8600 9400 8700
+Wire Wire Line
+	9200 8600 9200 8700
+Wire Wire Line
+	9000 8600 9000 8700
+Wire Wire Line
+	8600 8600 8600 8700
+Wire Wire Line
+	8400 8600 8400 8700
+Wire Wire Line
+	8200 8600 8200 8700
+Wire Wire Line
+	8000 8600 8000 8700
+Wire Wire Line
+	7800 8600 7800 8700
+Wire Wire Line
+	7600 8600 7600 8700
+Wire Wire Line
+	7400 8600 7400 8700
+Wire Wire Line
+	8800 8550 8800 8300
+Wire Wire Line
+	8850 8600 8800 8550
+Wire Wire Line
+	8800 8650 8800 8700
+Wire Wire Line
+	8750 8600 8800 8650
+Wire Wire Line
+	1900 8000 1900 7900
+Wire Wire Line
+	1200 8100 1200 6400
+Wire Wire Line
+	1900 8100 1200 8100
+Wire Wire Line
+	1900 8300 1900 8200
+Wire Wire Line
+	7500 6500 7500 6600
+Wire Wire Line
+	7700 6500 7500 6500
+Wire Wire Line
+	7900 6500 7700 6500
+Wire Wire Line
+	8300 6500 8150 6500
+Wire Wire Line
+	8500 6500 8300 6500
+Wire Wire Line
+	8700 6500 8500 6500
+Wire Wire Line
+	8700 6600 8700 6500
+Wire Wire Line
+	8500 6500 8500 6600
+Wire Wire Line
+	8300 6500 8300 6600
+Wire Wire Line
+	8100 6550 8100 6600
+Wire Wire Line
+	8050 6500 8100 6550
+Wire Wire Line
+	7900 6500 7900 6600
+Wire Wire Line
+	7700 6500 7700 6600
+Wire Wire Line
+	9400 6500 9400 6600
+Wire Wire Line
+	9500 6500 9400 6500
+Wire Wire Line
+	9600 6500 9500 6500
+Wire Wire Line
+	9600 6600 9600 6500
+Wire Wire Line
+	9500 6500 9500 6200
+Wire Wire Line
+	8100 6450 8100 6200
+Wire Wire Line
+	8150 6500 8100 6450
+Text Notes 7700 5700 0    120  ~ 0
+Decoupling Capacitors
+Text Notes 14000 4250 0    120  ~ 0
+Ferrite Beads
+Text Notes 9800 850  0    120  ~ 0
+1.2V and 3.3V Supplies
+Wire Wire Line
+	4000 1800 4000 1600
+Wire Wire Line
+	6900 1200 6900 1100
+Wire Wire Line
+	7000 1200 6900 1200
+Wire Wire Line
+	12000 1300 11900 1300
+Wire Wire Line
+	11300 1300 11500 1300
+Wire Wire Line
+	11300 1500 11300 1300
+Wire Wire Line
+	11100 1500 11300 1500
+Wire Wire Line
+	12000 3500 12000 2750
+Wire Wire Line
+	11950 2700 11100 2700
+Wire Wire Line
+	12000 2750 11950 2700
+Wire Wire Line
+	8300 1200 8300 1300
+Wire Wire Line
+	7500 7100 7500 6900
+Wire Wire Line
+	7700 7100 7500 7100
+Wire Wire Line
+	7900 7100 7700 7100
+Wire Wire Line
+	8100 7100 7900 7100
+Wire Wire Line
+	8500 7100 8350 7100
+Wire Wire Line
+	8700 7100 8500 7100
+Wire Wire Line
+	9500 7100 9400 7100
+Wire Wire Line
+	9600 7100 9500 7100
+Wire Wire Line
+	9500 7100 9500 7300
+Connection ~ 1900 9300
+Connection ~ 1900 9200
+Connection ~ 1900 9100
+Connection ~ 1900 8200
+Connection ~ 1900 7900
+Connection ~ 1900 7800
+Connection ~ 1900 7700
+Connection ~ 1900 7600
+Connection ~ 1900 7500
+Connection ~ 1900 7400
+Connection ~ 1900 7300
+Connection ~ 1900 7200
+Connection ~ 1900 7100
+Connection ~ 1900 7000
+Connection ~ 1900 6900
+Connection ~ 1900 6800
+Connection ~ 1900 6700
+Connection ~ 2200 5300
+Connection ~ 2200 5200
+Connection ~ 2200 5100
+Connection ~ 2200 5000
+Connection ~ 2200 4900
+Connection ~ 2200 4800
+Connection ~ 2200 4700
+Connection ~ 2200 4600
+Connection ~ 2200 4500
+Connection ~ 2200 4400
+Connection ~ 2200 4300
+Connection ~ 2200 4200
+Connection ~ 2200 4100
+Connection ~ 2200 4000
+Connection ~ 2200 3900
+Connection ~ 2200 3800
+Connection ~ 2200 3700
+Connection ~ 2200 3600
+Connection ~ 2200 3500
+Connection ~ 2200 3400
+Connection ~ 2200 3300
+Connection ~ 2200 3200
+Connection ~ 2200 3100
+Connection ~ 2200 3000
+Connection ~ 2200 2900
+Connection ~ 2200 2800
+Connection ~ 2200 2700
+Connection ~ 2200 2600
+Connection ~ 2200 2500
+Connection ~ 2200 2400
+Connection ~ 2200 2300
+Connection ~ 2200 2200
+Connection ~ 2200 2100
+Connection ~ 2200 2000
+Connection ~ 2200 1900
+Connection ~ 2200 1800
+Connection ~ 2200 1700
+Connection ~ 2200 1600
+Connection ~ 4000 5300
+Connection ~ 4000 5200
+Connection ~ 4000 5100
+Connection ~ 4000 5000
+Connection ~ 4000 4900
+Connection ~ 4000 4800
+Connection ~ 4000 4700
+Connection ~ 4000 4600
+Connection ~ 4000 4500
+Connection ~ 4000 4400
+Connection ~ 4000 4300
+Connection ~ 4000 4200
+Connection ~ 4000 4100
+Connection ~ 4000 4000
+Connection ~ 4000 3900
+Connection ~ 4000 3800
+Connection ~ 4000 3700
+Connection ~ 4000 3600
+Connection ~ 4000 3500
+Connection ~ 4000 3400
+Connection ~ 4000 3300
+Connection ~ 4000 3200
+Connection ~ 4000 3100
+Connection ~ 4000 3000
+Connection ~ 4000 2900
+Connection ~ 4000 2800
+Connection ~ 4000 2700
+Connection ~ 4000 2600
+Connection ~ 4000 2500
+Connection ~ 4000 2200
+Connection ~ 4000 2100
+Connection ~ 4000 2000
+Connection ~ 4000 1900
+Connection ~ 4000 1800
+Connection ~ 4000 1600
+Connection ~ 4100 9300
+Connection ~ 4100 9200
+Connection ~ 4100 9100
+Connection ~ 4100 9000
+Connection ~ 4100 8900
+Connection ~ 4100 8800
+Connection ~ 4100 8700
+Connection ~ 4100 8600
+Connection ~ 4100 8500
+Connection ~ 4100 8400
+Connection ~ 4100 8300
+Connection ~ 4100 8200
+Connection ~ 4100 8100
+Connection ~ 4100 8000
+Connection ~ 4100 7900
+Connection ~ 4100 7800
+Connection ~ 4100 7700
+Connection ~ 4100 7600
+Connection ~ 4100 7500
+Connection ~ 4100 7400
+Connection ~ 4100 7300
+Connection ~ 4100 7200
+Connection ~ 4100 7100
+Connection ~ 4100 7000
+Connection ~ 4100 6900
+Connection ~ 4100 6800
+Connection ~ 7400 9200
+Connection ~ 7400 8600
+Connection ~ 7400 1200
+Connection ~ 7600 9200
+Connection ~ 7600 8600
+Connection ~ 7700 7100
+Connection ~ 7700 6500
+Connection ~ 7700 1200
+Connection ~ 7800 9200
+Connection ~ 7800 8600
+Connection ~ 7900 7100
+Connection ~ 7900 6500
+Connection ~ 8000 9200
+Connection ~ 8000 8600
+Connection ~ 8000 1200
+Connection ~ 8050 6500
+Connection ~ 8100 7100
+Connection ~ 8150 6500
+Connection ~ 8200 9200
+Connection ~ 8200 8600
+Connection ~ 8250 7100
+Connection ~ 8300 6500
+Connection ~ 8300 2100
+Connection ~ 8300 1200
+Connection ~ 8350 7100
+Connection ~ 8400 9200
+Connection ~ 8400 8600
+Connection ~ 8500 7100
+Connection ~ 8500 6500
+Connection ~ 8600 9200
+Connection ~ 8600 8600
+Connection ~ 8600 1900
+Connection ~ 8600 1200
+Connection ~ 8750 9200
+Connection ~ 8750 8600
+Connection ~ 8850 9200
+Connection ~ 8850 8600
+Connection ~ 8900 2800
+Connection ~ 8900 1500
+Connection ~ 8900 1200
+Connection ~ 9000 9200
+Connection ~ 9000 8600
+Connection ~ 9200 9200
+Connection ~ 9200 8600
+Connection ~ 9400 9200
+Connection ~ 9400 8600
+Connection ~ 9500 7100
+Connection ~ 9500 6500
+Connection ~ 9600 9200
+Connection ~ 9600 8600
+Connection ~ 9800 9200
+Connection ~ 9800 8600
+Connection ~ 10000 9200
+Connection ~ 10000 8600
+Connection ~ 11100 3000
+Connection ~ 12000 2750
+Connection ~ 12000 2650
+Connection ~ 12000 2100
+Connection ~ 12000 1300
+Connection ~ 12250 2100
+Connection ~ 12300 1300
+Connection ~ 12350 2100
+Connection ~ 13100 3300
+Connection ~ 13100 1300
+Connection ~ 13800 1300
+Connection ~ 14000 8050
+Connection ~ 14000 6550
+Connection ~ 14000 5050
+Connection ~ 14400 1300
+Connection ~ 15200 8050
+Connection ~ 15200 6550
+Connection ~ 15200 5050
+$Comp
+L servo:Resistor R712
+U 1 1 5DB38FCF
+P 13800 1600
+F 0 "R712" V 13845 1550 60  0000 R CNN
+F 1 "680" V 13747 1550 50  0000 R CNN
+F 2 "" H 13800 1600 50  0001 C CNN
+F 3 "" H 13800 1600 50  0001 C CNN
+F 4 "680" V 1400 2000 60  0001 C CNN "ValueDisplayed"
+	1    13800 1600
+	0    -1   -1   0   
+$EndComp
+$Comp
+L servo:Resistor R706
+U 1 1 5DB38FCE
+P 11700 1300
+F 0 "R706" H 11700 1107 60  0000 C CNN
+F 1 "0e" H 11700 1205 50  0000 C CNN
+F 2 "" H 11700 1300 50  0001 C CNN
+F 3 "" H 11700 1300 50  0001 C CNN
+	1    11700 1300
+	-1   0    0    1   
+$EndComp
+$Comp
+L servo:Capacitor C705
+U 1 1 5DB38FCD
+P 7700 2400
+F 0 "C705" V 7795 2509 60  0000 L CNN
+F 1 "0.1uF" V 7697 2509 50  0000 L CNN
+F 2 "" H 7700 2400 50  0001 C CNN
+F 3 "" H 7700 2400 50  0001 C CNN
+F 4 "0.1uF" V 1400 2000 60  0001 C CNN "ValueDisplayed"
+	1    7700 2400
+	0    -1   -1   0   
+$EndComp
+$Comp
+L servo:Capacitor C713
+U 1 1 5DB38FCC
+P 8300 2400
+F 0 "C713" V 8395 2290 60  0000 R CNN
+F 1 "0.1uF" V 8297 2290 50  0000 R CNN
+F 2 "" H 8300 2400 50  0001 C CNN
+F 3 "" H 8300 2400 50  0001 C CNN
+F 4 "0.1uF" V 1400 2000 60  0001 C CNN "ValueDisplayed"
+	1    8300 2400
+	0    -1   -1   0   
+$EndComp
+$Comp
+L servo:Capacitor C731
+U 1 1 5DB38FCB
+P 12700 2400
+F 0 "C731" V 12795 2290 60  0000 R CNN
+F 1 "22uF" V 12697 2290 50  0000 R CNN
+F 2 "" H 12700 2400 50  0001 C CNN
+F 3 "" H 12700 2400 50  0001 C CNN
+F 4 "22uF" V 1400 2000 60  0001 C CNN "ValueDisplayed"
+	1    12700 2400
+	0    -1   -1   0   
+$EndComp
+$Comp
+L servo:Capacitor C709
+U 1 1 5DB38FCA
+P 8000 2400
+F 0 "C709" V 8095 2290 60  0000 R CNN
+F 1 "22uF" V 7997 2290 50  0000 R CNN
+F 2 "" H 8000 2400 50  0001 C CNN
+F 3 "" H 8000 2400 50  0001 C CNN
+F 4 "22uF" V 1400 2000 60  0001 C CNN "ValueDisplayed"
+	1    8000 2400
+	0    -1   -1   0   
+$EndComp
+$Comp
+L servo:Capacitor C730
+U 1 1 5DB38FC9
+P 12300 2400
+F 0 "C730" V 12395 2290 60  0000 R CNN
+F 1 "33pF" V 12297 2290 50  0000 R CNN
+F 2 "" H 12300 2400 50  0001 C CNN
+F 3 "" H 12300 2400 50  0001 C CNN
+F 4 "33pF" V 1400 2000 60  0001 C CNN "ValueDisplayed"
+	1    12300 2400
+	0    -1   -1   0   
+$EndComp
+$Comp
+L servo:Capacitor C735
+U 1 1 5DB38FC8
+P 14400 1600
+F 0 "C735" V 14495 1490 60  0000 R CNN
+F 1 "22uF" V 14397 1490 50  0000 R CNN
+F 2 "" H 14400 1600 50  0001 C CNN
+F 3 "" H 14400 1600 50  0001 C CNN
+F 4 "22uF" V 1400 2000 60  0001 C CNN "ValueDisplayed"
+	1    14400 1600
+	0    -1   -1   0   
+$EndComp
+$Comp
+L servo:Inductor_Iron L701
+U 1 1 5DB38FC7
+P 11700 1700
+F 0 "L701" H 11700 2024 60  0000 C CNN
+F 1 "2.2uH" H 11700 1926 50  0000 C CNN
+F 2 "" H 11700 1700 50  0001 C CNN
+F 3 "" H 11700 1700 50  0001 C CNN
+F 4 "2.2uH" V 1400 2000 60  0001 C CNN "ValueDisplayed"
+	1    11700 1700
+	1    0    0    -1  
+$EndComp
+$Comp
+L servo:Inductor_Iron L702
+U 1 1 5DB38FC6
+P 11700 2100
+F 0 "L702" H 11700 2424 60  0000 C CNN
+F 1 "3.3uH" H 11700 2326 50  0000 C CNN
+F 2 "" H 11700 2100 50  0001 C CNN
+F 3 "" H 11700 2100 50  0001 C CNN
+F 4 "3.3uH" V 1400 2000 60  0001 C CNN "ValueDisplayed"
+	1    11700 2100
+	1    0    0    -1  
+$EndComp
+$Comp
+L servo:LED_A2_K1 D703
+U 1 1 5DB38FC5
+P 13800 2100
+F 0 "D703" V 13755 2320 60  0000 L CNN
+F 1 "red" V 13853 2320 50  0000 L CNN
+F 2 "" H 13800 2100 50  0001 C CNN
+F 3 "" H 13800 2100 50  0001 C CNN
+F 4 "red" V 1400 2000 60  0001 C CNN "VALUE"
+	1    13800 2100
+	0    1    1    0   
+$EndComp
+$Comp
+L servo:Resistor R709
+U 1 1 5DB38FC4
+P 13100 1600
+F 0 "R709" V 13145 1550 60  0000 R CNN
+F 1 "340k" V 13047 1550 50  0000 R CNN
+F 2 "" H 13100 1600 50  0001 C CNN
+F 3 "" H 13100 1600 50  0001 C CNN
+F 4 "340k" V 1400 2000 60  0001 C CNN "ValueDisplayed"
+	1    13100 1600
+	0    -1   -1   0   
+$EndComp
+$Comp
+L servo:DIODE_SCHOTTKY D702
+U 1 1 5DB38FC3
+P 12300 1600
+F 0 "D702" V 12297 1730 60  0000 L CNN
+F 1 "CFSH05-20L TR" V 12150 1500 60  0000 L CNN
+F 2 "" H 12470 1710 60  0000 C CNN
+F 3 "" H 12470 1710 60  0000 C CNN
+	1    12300 1600
+	0    1    1    0   
+$EndComp
+$Comp
+L servo:Capacitor C717
+U 1 1 5DB38FC2
+P 8600 2300
+F 0 "C717" V 8605 2410 60  0000 L CNN
+F 1 "0.1uF" V 8703 2410 50  0000 L CNN
+F 2 "" H 8600 2300 50  0001 C CNN
+F 3 "" H 8600 2300 50  0001 C CNN
+F 4 "0.1uF" V 1400 2000 60  0001 C CNN "ValueDisplayed"
+	1    8600 2300
+	0    1    1    0   
+$EndComp
+$Comp
+L servo:Ferrite_Bead L704
+U 1 1 5DB38FC1
+P 14500 6550
+F 0 "L704" H 14500 6779 60  0000 C CNN
+F 1 "60 ohm" H 14500 6673 60  0000 C CNN
+F 2 "" H 14420 6410 60  0000 C CNN
+F 3 "" H 14420 6410 60  0000 C CNN
+	1    14500 6550
+	1    0    0    -1  
+$EndComp
+$Comp
+L servo:Ferrite_Bead L703
+U 1 1 5DB38FC0
+P 14500 5050
+F 0 "L703" H 14420 5090 60  0000 L BNN
+F 1 "60 ohm" H 14420 4910 60  0000 L BNN
+F 2 "" H 14420 4910 60  0000 C CNN
+F 3 "" H 14420 4910 60  0000 C CNN
+	1    14500 5050
+	1    0    0    -1  
+$EndComp
+$Comp
+L servo:Ferrite_Bead L705
+U 1 1 5DB38FBF
+P 14500 8050
+F 0 "L705" H 14420 8090 60  0000 L BNN
+F 1 "220 ohm" H 14420 7910 60  0000 L BNN
+F 2 "" H 14420 7910 60  0000 C CNN
+F 3 "" H 14420 7910 60  0000 C CNN
+	1    14500 8050
+	1    0    0    -1  
+$EndComp
+$Comp
+L servo:Capacitor C738
+U 1 1 5DB38FBE
+P 15200 8350
+F 0 "C738" V 15295 8240 60  0000 R CNN
+F 1 "10uF" V 15197 8240 50  0000 R CNN
+F 2 "" H 15200 8350 50  0001 C CNN
+F 3 "" H 15200 8350 50  0001 C CNN
+F 4 "10uF" V 1500 1150 60  0001 C CNN "ValueDisplayed"
+	1    15200 8350
+	0    -1   -1   0   
+$EndComp
+$Comp
+L servo:Resistor R711
+U 1 1 5DB38FBD
+P 13100 3700
+F 0 "R711" V 13145 3650 60  0000 R CNN
+F 1 "75.0k" V 13047 3650 50  0000 R CNN
+F 2 "" H 13100 3700 50  0001 C CNN
+F 3 "" H 13100 3700 50  0001 C CNN
+F 4 "75.0k" V 1400 2000 60  0001 C CNN "ValueDisplayed"
+	1    13100 3700
+	0    -1   -1   0   
+$EndComp
+$Comp
+L servo:Capacitor C701
+U 1 1 5DB38FBC
+P 7200 8900
+F 0 "C701" V 7350 8800 60  0000 L CNN
+F 1 "0.1uF" V 7150 8800 50  0000 L CNN
+F 2 "" H 7200 8900 50  0001 C CNN
+F 3 "" H 7200 8900 50  0001 C CNN
+F 4 "0.1uF" V 1400 2000 60  0001 C CNN "ValueDisplayed"
+	1    7200 8900
+	0    -1   -1   0   
+$EndComp
+$Comp
+L servo:Capacitor C702
+U 1 1 5DB38FBB
+P 7400 8900
+F 0 "C702" V 7650 9000 60  0000 R CNN
+F 1 "0.1uF" V 7300 9000 50  0000 R CNN
+F 2 "" H 7400 8900 50  0001 C CNN
+F 3 "" H 7400 8900 50  0001 C CNN
+F 4 "0.1uF" V 1400 2000 60  0001 C CNN "ValueDisplayed"
+	1    7400 8900
+	0    -1   -1   0   
+$EndComp
+$Comp
+L servo:Capacitor C704
+U 1 1 5DB38FBA
+P 7600 8900
+F 0 "C704" V 7750 9000 60  0000 R CNN
+F 1 "0.1uF" V 7550 9000 50  0000 R CNN
+F 2 "" H 7600 8900 50  0001 C CNN
+F 3 "" H 7600 8900 50  0001 C CNN
+F 4 "0.1uF" V 1400 2000 60  0001 C CNN "ValueDisplayed"
+	1    7600 8900
+	0    -1   -1   0   
+$EndComp
+$Comp
+L servo:Resistor R710
+U 1 1 5DB38FB9
+P 13100 2000
+F 0 "R710" V 13145 1950 60  0000 R CNN
+F 1 "2.00k" V 13047 1950 50  0000 R CNN
+F 2 "" H 13100 2000 50  0001 C CNN
+F 3 "" H 13100 2000 50  0001 C CNN
+F 4 "2.00k" V 1400 2000 60  0001 C CNN "ValueDisplayed"
+	1    13100 2000
+	0    -1   -1   0   
+$EndComp
+$Comp
+L servo:Capacitor C707
+U 1 1 5DB38FB8
+P 7800 8900
+F 0 "C707" V 8050 9050 60  0000 R CNN
+F 1 "0.1uF" V 7700 8900 50  0000 C CNN
+F 2 "" H 7800 8900 50  0001 C CNN
+F 3 "" H 7800 8900 50  0001 C CNN
+F 4 "0.1uF" V 1400 2000 60  0001 C CNN "ValueDisplayed"
+	1    7800 8900
+	0    -1   -1   0   
+$EndComp
+$Comp
+L servo:Capacitor C710
+U 1 1 5DB38FB7
+P 8000 8900
+F 0 "C710" V 8150 9000 60  0000 R CNN
+F 1 "0.1uF" V 7950 9000 50  0000 R CNN
+F 2 "" H 8000 8900 50  0001 C CNN
+F 3 "" H 8000 8900 50  0001 C CNN
+F 4 "0.1uF" V 1400 2000 60  0001 C CNN "ValueDisplayed"
+	1    8000 8900
+	0    -1   -1   0   
+$EndComp
+$Comp
+L servo:Capacitor C712
+U 1 1 5DB38FB6
+P 8200 8900
+F 0 "C712" V 8450 9050 60  0000 R CNN
+F 1 "0.1uF" V 8100 8900 50  0000 C CNN
+F 2 "" H 8200 8900 50  0001 C CNN
+F 3 "" H 8200 8900 50  0001 C CNN
+F 4 "0.1uF" V 1400 2000 60  0001 C CNN "ValueDisplayed"
+	1    8200 8900
+	0    -1   -1   0   
+$EndComp
+$Comp
+L servo:Capacitor C715
+U 1 1 5DB38FB5
+P 8400 8900
+F 0 "C715" V 8550 9000 60  0000 R CNN
+F 1 "0.1uF" V 8350 9000 50  0000 R CNN
+F 2 "" H 8400 8900 50  0001 C CNN
+F 3 "" H 8400 8900 50  0001 C CNN
+F 4 "0.1uF" V 1400 2000 60  0001 C CNN "ValueDisplayed"
+	1    8400 8900
+	0    -1   -1   0   
+$EndComp
+$Comp
+L servo:Capacitor C718
+U 1 1 5DB38FB4
+P 8600 8900
+F 0 "C718" V 8850 9000 60  0000 R CNN
+F 1 "0.1uF" V 8500 8900 50  0000 C CNN
+F 2 "" H 8600 8900 50  0001 C CNN
+F 3 "" H 8600 8900 50  0001 C CNN
+F 4 "0.1uF" V 1400 2000 60  0001 C CNN "ValueDisplayed"
+	1    8600 8900
+	0    -1   -1   0   
+$EndComp
+$Comp
+L servo:Capacitor C720
+U 1 1 5DB38FB3
+P 8800 8900
+F 0 "C720" V 8950 9000 60  0000 R CNN
+F 1 "0.1uF" V 8750 8900 50  0000 C CNN
+F 2 "" H 8800 8900 50  0001 C CNN
+F 3 "" H 8800 8900 50  0001 C CNN
+F 4 "0.1uF" V 1400 2000 60  0001 C CNN "ValueDisplayed"
+	1    8800 8900
+	0    -1   -1   0   
+$EndComp
+$Comp
+L servo:Capacitor C721
+U 1 1 5DB38FB2
+P 9000 8900
+F 0 "C721" V 9250 9000 60  0000 R CNN
+F 1 "0.1uF" V 8900 9000 50  0000 R CNN
+F 2 "" H 9000 8900 50  0001 C CNN
+F 3 "" H 9000 8900 50  0001 C CNN
+F 4 "0.1uF" V 1400 2000 60  0001 C CNN "ValueDisplayed"
+	1    9000 8900
+	0    -1   -1   0   
+$EndComp
+$Comp
+L servo:Capacitor C722
+U 1 1 5DB38FB1
+P 9200 8900
+F 0 "C722" V 9350 9000 60  0000 R CNN
+F 1 "0.1uF" V 9150 9000 50  0000 R CNN
+F 2 "" H 9200 8900 50  0001 C CNN
+F 3 "" H 9200 8900 50  0001 C CNN
+F 4 "0.1uF" V 1400 2000 60  0001 C CNN "ValueDisplayed"
+	1    9200 8900
+	0    -1   -1   0   
+$EndComp
+$Comp
+L servo:Capacitor C724
+U 1 1 5DB38FB0
+P 9400 8900
+F 0 "C724" V 9650 9000 60  0000 R CNN
+F 1 "0.1uF" V 9300 9000 50  0000 R CNN
+F 2 "" H 9400 8900 50  0001 C CNN
+F 3 "" H 9400 8900 50  0001 C CNN
+F 4 "0.1uF" V 1400 2000 60  0001 C CNN "ValueDisplayed"
+	1    9400 8900
+	0    -1   -1   0   
+$EndComp
+$Comp
+L servo:Capacitor C726
+U 1 1 5DB38FAF
+P 9600 8900
+F 0 "C726" V 9750 9000 60  0000 R CNN
+F 1 "0.1uF" V 9550 8900 50  0000 C CNN
+F 2 "" H 9600 8900 50  0001 C CNN
+F 3 "" H 9600 8900 50  0001 C CNN
+F 4 "0.1uF" V 1400 2000 60  0001 C CNN "ValueDisplayed"
+	1    9600 8900
+	0    -1   -1   0   
+$EndComp
+$Comp
+L servo:Resistor R707
+U 1 1 5DB38FAE
+P 12000 2300
+F 0 "R707" V 12045 2349 60  0000 L CNN
+F 1 "205k" V 11947 2349 50  0000 L CNN
+F 2 "" H 12000 2300 50  0001 C CNN
+F 3 "" H 12000 2300 50  0001 C CNN
+F 4 "205k" V 1400 2000 60  0001 C CNN "ValueDisplayed"
+	1    12000 2300
+	0    -1   -1   0   
+$EndComp
+$Comp
+L servo:Capacitor C727
+U 1 1 5DB38FAD
+P 9800 8900
+F 0 "C727" V 10050 9000 60  0000 R CNN
+F 1 "0.1uF" V 9700 9000 50  0000 R CNN
+F 2 "" H 9800 8900 50  0001 C CNN
+F 3 "" H 9800 8900 50  0001 C CNN
+F 4 "0.1uF" V 1400 2000 60  0001 C CNN "ValueDisplayed"
+	1    9800 8900
+	0    -1   -1   0   
+$EndComp
+$Comp
+L servo:Capacitor C728
+U 1 1 5DB38FAC
+P 10000 8900
+F 0 "C728" V 10150 9000 60  0000 R CNN
+F 1 "0.1uF" V 9950 9000 50  0000 R CNN
+F 2 "" H 10000 8900 50  0001 C CNN
+F 3 "" H 10000 8900 50  0001 C CNN
+F 4 "0.1uF" V 1400 2000 60  0001 C CNN "ValueDisplayed"
+	1    10000 8900
+	0    -1   -1   0   
+$EndComp
+$Comp
+L servo:Capacitor C729
+U 1 1 5DB38FAB
+P 10200 8900
+F 0 "C729" V 10450 9000 60  0000 R CNN
+F 1 "0.1uF" V 10100 9000 50  0000 R CNN
+F 2 "" H 10200 8900 50  0001 C CNN
+F 3 "" H 10200 8900 50  0001 C CNN
+F 4 "0.1uF" V 1400 2000 60  0001 C CNN "ValueDisplayed"
+	1    10200 8900
+	0    -1   -1   0   
+$EndComp
+$Comp
+L servo:Capacitor C708
+U 1 1 5DB38FAA
+P 7900 6800
+F 0 "C708" V 8150 6950 60  0000 R CNN
+F 1 "0.1uF" V 7850 6900 50  0000 R CNN
+F 2 "" H 7900 6800 50  0001 C CNN
+F 3 "" H 7900 6800 50  0001 C CNN
+F 4 "0.1uF" V 1400 2000 60  0001 C CNN "ValueDisplayed"
+	1    7900 6800
+	0    -1   -1   0   
+$EndComp
+$Comp
+L servo:Capacitor C711
+U 1 1 5DB38FA9
+P 8100 6800
+F 0 "C711" V 8250 6900 60  0000 R CNN
+F 1 "0.1uF" V 7950 6900 50  0000 R CNN
+F 2 "" H 8100 6800 50  0001 C CNN
+F 3 "" H 8100 6800 50  0001 C CNN
+F 4 "0.1uF" V 1400 2000 60  0001 C CNN "ValueDisplayed"
+	1    8100 6800
+	0    -1   -1   0   
+$EndComp
+$Comp
+L servo:Capacitor C714
+U 1 1 5DB38FA8
+P 8300 6800
+F 0 "C714" V 8550 6900 60  0000 R CNN
+F 1 "0.1uF" V 8250 6900 50  0000 R CNN
+F 2 "" H 8300 6800 50  0001 C CNN
+F 3 "" H 8300 6800 50  0001 C CNN
+F 4 "0.1uF" V 1400 2000 60  0001 C CNN "ValueDisplayed"
+	1    8300 6800
+	0    -1   -1   0   
+$EndComp
+$Comp
+L servo:Capacitor C716
+U 1 1 5DB38FA7
+P 8500 6800
+F 0 "C716" V 8650 6900 60  0000 R CNN
+F 1 "0.1uF" V 8350 6900 50  0000 R CNN
+F 2 "" H 8500 6800 50  0001 C CNN
+F 3 "" H 8500 6800 50  0001 C CNN
+F 4 "0.1uF" V 1400 2000 60  0001 C CNN "ValueDisplayed"
+	1    8500 6800
+	0    -1   -1   0   
+$EndComp
+$Comp
+L servo:Capacitor C719
+U 1 1 5DB38FA6
+P 8700 6800
+F 0 "C719" V 8950 6850 60  0000 R CNN
+F 1 "0.1uF" V 8650 6900 50  0000 R CNN
+F 2 "" H 8700 6800 50  0001 C CNN
+F 3 "" H 8700 6800 50  0001 C CNN
+F 4 "0.1uF" V 1400 2000 60  0001 C CNN "ValueDisplayed"
+	1    8700 6800
+	0    -1   -1   0   
+$EndComp
+$Comp
+L servo:Capacitor C723
+U 1 1 5DB38FA5
+P 9400 6800
+F 0 "C723" V 9495 6909 60  0000 L CNN
+F 1 "0.1uF" V 9397 6909 50  0000 L CNN
+F 2 "" H 9400 6800 50  0001 C CNN
+F 3 "" H 9400 6800 50  0001 C CNN
+F 4 "0.1uF" V 1400 2000 60  0001 C CNN "ValueDisplayed"
+	1    9400 6800
+	0    -1   -1   0   
+$EndComp
+$Comp
+L servo:Capacitor C725
+U 1 1 5DB38FA4
+P 9600 6800
+F 0 "C725" V 9695 6690 60  0000 R CNN
+F 1 "0.1uF" V 9597 6690 50  0000 R CNN
+F 2 "" H 9600 6800 50  0001 C CNN
+F 3 "" H 9600 6800 50  0001 C CNN
+F 4 "0.1uF" V 1400 2000 60  0001 C CNN "ValueDisplayed"
+	1    9600 6800
+	0    -1   -1   0   
+$EndComp
+$Comp
+L servo:Resistor R708
+U 1 1 5DB38FA3
+P 12000 3700
+F 0 "R708" V 12045 3650 60  0000 R CNN
+F 1 "200k" V 11947 3650 50  0000 R CNN
+F 2 "" H 12000 3700 50  0001 C CNN
+F 3 "" H 12000 3700 50  0001 C CNN
+F 4 "200k" V 1400 2000 60  0001 C CNN "ValueDisplayed"
+	1    12000 3700
+	0    -1   -1   0   
+$EndComp
+$Comp
+L servo:Capacitor C703
+U 1 1 5DB38FA2
+P 7500 6800
+F 0 "C703" V 7750 6700 60  0000 L CNN
+F 1 "0.1uF" V 7450 6700 50  0000 L CNN
+F 2 "" H 7500 6800 50  0001 C CNN
+F 3 "" H 7500 6800 50  0001 C CNN
+F 4 "0.1uF" V 1400 2000 60  0001 C CNN "ValueDisplayed"
+	1    7500 6800
+	0    -1   -1   0   
+$EndComp
+$Comp
+L servo:Capacitor C706
+U 1 1 5DB38FA1
+P 7700 6800
+F 0 "C706" V 7850 6900 60  0000 R CNN
+F 1 "0.1uF" V 7550 6900 50  0000 R CNN
+F 2 "" H 7700 6800 50  0001 C CNN
+F 3 "" H 7700 6800 50  0001 C CNN
+F 4 "0.1uF" V 1400 2000 60  0001 C CNN "ValueDisplayed"
+	1    7700 6800
+	0    -1   -1   0   
+$EndComp
+$Comp
+L servo:TMS320F28388_5 U1_701
+U 1 1 5DB38FA0
+P 3100 3400
+F 0 "U1_701" H 2500 5500 60  0000 L BNN
+F 1 "~" H 3100 3400 50  0001 C CNN
+F 2 "" H 3100 3400 50  0001 C CNN
+F 3 "" H 3100 3400 50  0001 C CNN
+F 4 "TMS320F28388DZWTS" V 1500 2900 60  0001 C CNN "PartNumber"
+	1    3100 3400
+	1    0    0    -1  
+$EndComp
+$Comp
+L servo:TMS320F28388_4 U1_702
+U 1 1 5DB38F9F
+P 3000 8100
+F 0 "U1_702" H 2200 9700 60  0000 L BNN
+F 1 "~" H 3000 8100 50  0001 C CNN
+F 2 "" H 3000 8100 50  0001 C CNN
+F 3 "" H 3000 8100 50  0001 C CNN
+F 4 "TMS320F28388DZWTS" V 1400 2000 60  0001 C CNN "PartNumber"
+	1    3000 8100
+	1    0    0    -1  
+$EndComp
+$Comp
+L servo:Resistor R703
+U 1 1 5DB38F9E
+P 8600 1500
+F 0 "R703" V 8555 1550 60  0000 L CNN
+F 1 "0e" V 8653 1550 50  0000 L CNN
+F 2 "" H 8600 1500 50  0001 C CNN
+F 3 "" H 8600 1500 50  0001 C CNN
+	1    8600 1500
+	0    1    1    0   
+$EndComp
+$Comp
+L servo:CMP-0078143-2 TP701
+U 1 1 5DB38F9D
+P 1000 2500
+F 0 "TP701" V 860 2580 60  0000 R TNN
+F 1 "~" H 1000 2500 50  0001 C CNN
+F 2 "" H 1000 2500 50  0001 C CNN
+F 3 "" H 1000 2500 50  0001 C CNN
+	1    1000 2500
+	0    -1   -1   0   
+$EndComp
+$Comp
+L servo:CMP-0078143-2 TP702
+U 1 1 5DB38F9C
+P 1000 3100
+F 0 "TP702" V 860 3180 60  0000 R TNN
+F 1 "~" H 1000 3100 50  0001 C CNN
+F 2 "" H 1000 3100 50  0001 C CNN
+F 3 "" H 1000 3100 50  0001 C CNN
+	1    1000 3100
+	0    -1   -1   0   
+$EndComp
+$Comp
+L servo:CMP-0078143-2 TP703
+U 1 1 5DB38F9B
+P 1000 3700
+F 0 "TP703" V 860 3780 60  0000 R TNN
+F 1 "~" H 1000 3700 50  0001 C CNN
+F 2 "" H 1000 3700 50  0001 C CNN
+F 3 "" H 1000 3700 50  0001 C CNN
+	1    1000 3700
+	0    -1   -1   0   
+$EndComp
+$Comp
+L servo:CMP-0078143-2 TP704
+U 1 1 5DB38F9A
+P 1000 4300
+F 0 "TP704" V 860 4380 60  0000 R TNN
+F 1 "~" H 1000 4300 50  0001 C CNN
+F 2 "" H 1000 4300 50  0001 C CNN
+F 3 "" H 1000 4300 50  0001 C CNN
+	1    1000 4300
+	0    -1   -1   0   
+$EndComp
+$Comp
+L servo:Capacitor C736
+U 1 1 5DB38F99
+P 15200 5350
+F 0 "C736" V 15205 5460 60  0000 L CNN
+F 1 "2.2uF" V 15303 5460 50  0000 L CNN
+F 2 "" H 15200 5350 50  0001 C CNN
+F 3 "" H 15200 5350 50  0001 C CNN
+F 4 "2.2uF" V 1500 1150 60  0001 C CNN "ValueDisplayed"
+	1    15200 5350
+	0    1    1    0   
+$EndComp
+$Comp
+L servo:Resistor R704
+U 1 1 5DB38F98
+P 8900 2600
+F 0 "R704" V 8945 2550 60  0000 R CNN
+F 1 "10k" V 8847 2550 50  0000 R CNN
+F 2 "" H 8900 2600 50  0001 C CNN
+F 3 "" H 8900 2600 50  0001 C CNN
+F 4 "10k" V 1400 2000 60  0001 C CNN "ValueDisplayed"
+	1    8900 2600
+	0    -1   -1   0   
+$EndComp
+$Comp
+L servo:Capacitor C737
+U 1 1 5DB38F97
+P 15200 6850
+F 0 "C737" V 15205 6960 60  0000 L CNN
+F 1 "2.2uF" V 15303 6960 50  0000 L CNN
+F 2 "" H 15200 6850 50  0001 C CNN
+F 3 "" H 15200 6850 50  0001 C CNN
+F 4 "2.2uF" V 1500 1150 60  0001 C CNN "ValueDisplayed"
+	1    15200 6850
+	0    1    1    0   
+$EndComp
+$Comp
+L servo:Capacitor C733
+U 1 1 5DB38F96
+P 14000 6850
+F 0 "C733" V 14005 6960 60  0000 L CNN
+F 1 "2.2uF" V 14103 6960 50  0000 L CNN
+F 2 "" H 14000 6850 50  0001 C CNN
+F 3 "" H 14000 6850 50  0001 C CNN
+F 4 "2.2uF" V 1500 1150 60  0001 C CNN "ValueDisplayed"
+	1    14000 6850
+	0    1    1    0   
+$EndComp
+$Comp
+L servo:Capacitor C732
+U 1 1 5DB38F95
+P 14000 5350
+F 0 "C732" V 14005 5460 60  0000 L CNN
+F 1 "2.2uF" V 14103 5460 50  0000 L CNN
+F 2 "" H 14000 5350 50  0001 C CNN
+F 3 "" H 14000 5350 50  0001 C CNN
+F 4 "2.2uF" V 1500 1150 60  0001 C CNN "ValueDisplayed"
+	1    14000 5350
+	0    1    1    0   
+$EndComp
+$Comp
+L servo:Capacitor C734
+U 1 1 5DB38F94
+P 14000 8250
+F 0 "C734" V 14005 8360 60  0000 L CNN
+F 1 "10uF" V 14103 8360 50  0000 L CNN
+F 2 "" H 14000 8250 50  0001 C CNN
+F 3 "" H 14000 8250 50  0001 C CNN
+F 4 "10uF" V 1500 1150 60  0001 C CNN "ValueDisplayed"
+	1    14000 8250
+	0    1    1    0   
+$EndComp
+$Comp
+L servo:TPS6240x U701
+U 1 1 5DB38F93
+P 10300 2200
+F 0 "U701" H 10300 3273 60  0000 C CNN
+F 1 "TPS62420DRCR" H 10300 3175 50  0000 C CNN
+F 2 "" H 10300 2200 50  0001 C CNN
+F 3 "../doc/datasheets//tps62420.pdf" H 10300 2200 50  0001 C CNN
+F 4 "TPS62420DRCR" V 1400 2000 60  0001 C CNN "PartNumber"
+	1    10300 2200
+	1    0    0    -1  
+$EndComp
+$Comp
+L servo:DIODE_SCHOTTKY D701
+U 1 1 5DB38F92
+P 7100 1600
+F 0 "D701" H 7210 1490 60  0000 R TNN
+F 1 "MBRM110ET1G" H 7210 1810 60  0000 R TNN
+F 2 "" H 7210 1810 60  0000 C CNN
+F 3 "" H 7210 1810 60  0000 C CNN
+	1    7100 1600
+	-1   0    0    1   
+$EndComp
+$Comp
+L servo:Resistor R705
+U 1 1 5DB38F91
+P 8900 3000
+F 0 "R705" V 8945 2950 60  0000 R CNN
+F 1 "100k" V 8847 2950 50  0000 R CNN
+F 2 "" H 8900 3000 50  0001 C CNN
+F 3 "" H 8900 3000 50  0001 C CNN
+F 4 "100k" V 1400 2000 60  0001 C CNN "ValueDisplayed"
+	1    8900 3000
+	0    -1   -1   0   
+$EndComp
+$Comp
+L servo:Resistor R701
+U 1 1 5DB38F90
+P 7200 1200
+F 0 "R701" H 7200 1007 60  0000 C CNN
+F 1 "0e" H 7200 1105 50  0000 C CNN
+F 2 "" H 7200 1200 50  0001 C CNN
+F 3 "" H 7200 1200 50  0001 C CNN
+	1    7200 1200
+	-1   0    0    1   
+$EndComp
+$Comp
+L servo:Resistor R702
+U 1 1 5DB38F8F
+P 8300 1500
+F 0 "R702" V 8345 1450 60  0000 R CNN
+F 1 "22k" V 8247 1450 50  0000 R CNN
+F 2 "" H 8300 1500 50  0001 C CNN
+F 3 "" H 8300 1500 50  0001 C CNN
+F 4 "22k" V 1400 2000 60  0001 C CNN "ValueDisplayed"
+	1    8300 1500
+	0    -1   -1   0   
+$EndComp
+Wire Wire Line
+	1900 9300 1900 9200
+Wire Wire Line
+	1900 9200 1900 9100
+Wire Wire Line
+	1900 8200 1900 8100
+Wire Wire Line
+	1900 7900 1900 7800
+Wire Wire Line
+	1900 7800 1900 7700
+Wire Wire Line
+	1900 7700 1900 7600
+Wire Wire Line
+	1900 7600 1900 7500
+Wire Wire Line
+	1900 7500 1900 7400
+Wire Wire Line
+	1900 7400 1900 7300
+Wire Wire Line
+	1900 7300 1900 7200
+Wire Wire Line
+	1900 7200 1900 7100
+Wire Wire Line
+	1900 7100 1900 7000
+Wire Wire Line
+	1900 7000 1900 6900
+Wire Wire Line
+	1900 6900 1900 6800
+Wire Wire Line
+	1900 6800 1900 6700
+Wire Wire Line
+	1900 6700 1900 6400
+Wire Wire Line
+	2200 5300 2200 5200
+Wire Wire Line
+	2200 5200 2200 5100
+Wire Wire Line
+	2200 5100 2200 5000
+Wire Wire Line
+	2200 5000 2200 4900
+Wire Wire Line
+	2200 4900 2200 4800
+Wire Wire Line
+	2200 4800 2200 4700
+Wire Wire Line
+	2200 4700 2200 4600
+Wire Wire Line
+	2200 4600 2200 4500
+Wire Wire Line
+	2200 4500 2200 4400
+Wire Wire Line
+	2200 4400 2200 4300
+Wire Wire Line
+	2200 4300 2200 4200
+Wire Wire Line
+	2200 4200 2200 4100
+Wire Wire Line
+	2200 4100 2200 4000
+Wire Wire Line
+	2200 4000 2200 3900
+Wire Wire Line
+	2200 3900 2200 3800
+Wire Wire Line
+	2200 3800 2200 3700
+Wire Wire Line
+	2200 3700 2200 3600
+Wire Wire Line
+	2200 3600 2200 3500
+Wire Wire Line
+	2200 3500 2200 3400
+Wire Wire Line
+	2200 3400 2200 3300
+Wire Wire Line
+	2200 3300 2200 3200
+Wire Wire Line
+	2200 3200 2200 3100
+Wire Wire Line
+	2200 3100 2200 3000
+Wire Wire Line
+	2200 3000 2200 2900
+Wire Wire Line
+	2200 2900 2200 2800
+Wire Wire Line
+	2200 2800 2200 2700
+Wire Wire Line
+	2200 2700 2200 2600
+Wire Wire Line
+	2200 2600 2200 2500
+Wire Wire Line
+	2200 2500 2200 2400
+Wire Wire Line
+	2200 2400 2200 2300
+Wire Wire Line
+	2200 2300 2200 2200
+Wire Wire Line
+	2200 2200 2200 2100
+Wire Wire Line
+	2200 2100 2200 2000
+Wire Wire Line
+	2200 2000 2200 1900
+Wire Wire Line
+	2200 1900 2200 1800
+Wire Wire Line
+	2200 1800 2200 1700
+Wire Wire Line
+	2200 1700 2200 1600
+Wire Wire Line
+	2200 1600 2200 1500
+Wire Wire Line
+	4000 5300 4000 5200
+Wire Wire Line
+	4000 5200 4000 5100
+Wire Wire Line
+	4000 5100 4000 5000
+Wire Wire Line
+	4000 5000 4000 4900
+Wire Wire Line
+	4000 4900 4000 4800
+Wire Wire Line
+	4000 4800 4000 4700
+Wire Wire Line
+	4000 4700 4000 4600
+Wire Wire Line
+	4000 4600 4000 4500
+Wire Wire Line
+	4000 4500 4000 4400
+Wire Wire Line
+	4000 4400 4000 4300
+Wire Wire Line
+	4000 4300 4000 4200
+Wire Wire Line
+	4000 4200 4000 4100
+Wire Wire Line
+	4000 4100 4000 4000
+Wire Wire Line
+	4000 4000 4000 3900
+Wire Wire Line
+	4000 3900 4000 3800
+Wire Wire Line
+	4000 3800 4000 3700
+Wire Wire Line
+	4000 3700 4000 3600
+Wire Wire Line
+	4000 3600 4000 3500
+Wire Wire Line
+	4000 3500 4000 3400
+Wire Wire Line
+	4000 3400 4000 3300
+Wire Wire Line
+	4000 3300 4000 3200
+Wire Wire Line
+	4000 3200 4000 3100
+Wire Wire Line
+	4000 3100 4000 3000
+Wire Wire Line
+	4000 3000 4000 2900
+Wire Wire Line
+	4000 2900 4000 2800
+Wire Wire Line
+	4000 2800 4000 2700
+Wire Wire Line
+	4000 2700 4000 2600
+Wire Wire Line
+	4000 2600 4000 2500
+Wire Wire Line
+	4000 2200 4000 2100
+Wire Wire Line
+	4000 2100 4000 2000
+Wire Wire Line
+	4000 2000 4000 1900
+Wire Wire Line
+	4000 1900 4000 1800
+Wire Wire Line
+	4000 1600 4000 1500
+Wire Wire Line
+	4100 9300 4100 9200
+Wire Wire Line
+	4100 9200 4100 9100
+Wire Wire Line
+	4100 9100 4100 9000
+Wire Wire Line
+	4100 9000 4100 8900
+Wire Wire Line
+	4100 8900 4100 8800
+Wire Wire Line
+	4100 8800 4100 8700
+Wire Wire Line
+	4100 8700 4100 8600
+Wire Wire Line
+	4100 8600 4100 8500
+Wire Wire Line
+	4100 8500 4100 8400
+Wire Wire Line
+	4100 8400 4100 8300
+Wire Wire Line
+	4100 8300 4100 8200
+Wire Wire Line
+	4100 8200 4100 8100
+Wire Wire Line
+	4100 8100 4100 8000
+Wire Wire Line
+	4100 8000 4100 7900
+Wire Wire Line
+	4100 7900 4100 7800
+Wire Wire Line
+	4100 7800 4100 7700
+Wire Wire Line
+	4100 7700 4100 7600
+Wire Wire Line
+	4100 7600 4100 7500
+Wire Wire Line
+	4100 7500 4100 7400
+Wire Wire Line
+	4100 7400 4100 7300
+Wire Wire Line
+	4100 7300 4100 7200
+Wire Wire Line
+	4100 7200 4100 7100
+Wire Wire Line
+	4100 7100 4100 7000
+Wire Wire Line
+	4100 7000 4100 6900
+Wire Wire Line
+	4100 6900 4100 6800
+Wire Wire Line
+	4100 6800 4100 6700
+Wire Wire Line
+	8050 6500 7900 6500
+Wire Wire Line
+	8150 6500 8050 6500
+Wire Wire Line
+	8250 7100 8100 7100
+Wire Wire Line
+	8350 7100 8250 7100
+Wire Wire Line
+	8750 9200 8600 9200
+Wire Wire Line
+	8750 8600 8600 8600
+Wire Wire Line
+	8850 9200 8750 9200
+Wire Wire Line
+	8850 8600 8750 8600
+Wire Wire Line
+	11100 3000 11100 2900
+Wire Wire Line
+	12000 2750 12000 2650
+Wire Wire Line
+	12000 2650 12000 2500
+Wire Wire Line
+	12350 2100 12250 2100
+$Comp
+L servo:VDD_3V3 #PWR?
+U 1 1 5DD76435
+P 15200 4950
+F 0 "#PWR?" H 15205 5160 20  0000 C CNN
+F 1 "VDD_3V3" H 15205 5108 30  0000 C CNN
+F 2 "" H 15200 4950 70  0000 C CNN
+F 3 "" H 15200 4950 70  0000 C CNN
+	1    15200 4950
+	1    0    0    -1  
+$EndComp
+$Comp
+L servo:3V3 #PWR?
+U 1 1 5DE48EB1
+P 14400 1200
+F 0 "#PWR?" H 14405 1407 20  0000 C CNN
+F 1 "3V3" H 14405 1357 28  0000 C CNN
+F 2 "" H 14400 1200 50  0001 C CNN
+F 3 "" H 14400 1200 50  0001 C CNN
+	1    14400 1200
+	1    0    0    -1  
+$EndComp
+$Comp
+L servo:3V3 #PWR?
+U 1 1 5DE49220
+P 14000 4950
+F 0 "#PWR?" H 14005 5157 20  0000 C CNN
+F 1 "3V3" H 14005 5107 28  0000 C CNN
+F 2 "" H 14000 4950 50  0001 C CNN
+F 3 "" H 14000 4950 50  0001 C CNN
+	1    14000 4950
+	1    0    0    -1  
+$EndComp
+$Comp
+L servo:3V3 #PWR?
+U 1 1 5DE4C0C2
+P 14000 6450
+F 0 "#PWR?" H 14005 6657 20  0000 C CNN
+F 1 "3V3" H 14005 6607 28  0000 C CNN
+F 2 "" H 14000 6450 50  0001 C CNN
+F 3 "" H 14000 6450 50  0001 C CNN
+	1    14000 6450
+	1    0    0    -1  
+$EndComp
+$Comp
+L servo:VDDA_3V3 #PWR?
+U 1 1 5DE4C73A
+P 15200 6450
+AR Path="/5DD0E9D6/5DE4C73A" Ref="#PWR?"  Part="1" 
+AR Path="/5EAA846A/5DE4C73A" Ref="#PWR?"  Part="1" 
+F 0 "#PWR?" H 15205 6657 20  0000 C CNN
+F 1 "VDDA_3V3" H 15205 6607 28  0000 C CNN
+F 2 "" H 15200 6450 50  0001 C CNN
+F 3 "" H 15200 6450 50  0001 C CNN
+	1    15200 6450
+	1    0    0    -1  
+$EndComp
+$Comp
+L servo:GND #PWR?
+U 1 1 5DE4DA44
+P 14000 7150
+AR Path="/5DCD812E/5DE4DA44" Ref="#PWR?"  Part="1" 
+AR Path="/5EAA846A/5DE4DA44" Ref="#PWR?"  Part="1" 
+F 0 "#PWR?" H 14005 7001 20  0000 C CNN
+F 1 "GND" H 14005 6949 30  0000 C CNN
+F 2 "" H 14000 7150 70  0000 C CNN
+F 3 "" H 14000 7150 70  0000 C CNN
+	1    14000 7150
+	1    0    0    -1  
+$EndComp
+$Comp
+L servo:GND #PWR?
+U 1 1 5DE750EF
+P 15200 7150
+AR Path="/5DCD812E/5DE750EF" Ref="#PWR?"  Part="1" 
+AR Path="/5EAA846A/5DE750EF" Ref="#PWR?"  Part="1" 
+F 0 "#PWR?" H 15205 7001 20  0000 C CNN
+F 1 "GND" H 15205 6949 30  0000 C CNN
+F 2 "" H 15200 7150 70  0000 C CNN
+F 3 "" H 15200 7150 70  0000 C CNN
+	1    15200 7150
+	1    0    0    -1  
+$EndComp
+$Comp
+L servo:GND #PWR?
+U 1 1 5DE7635C
+P 15200 8550
+AR Path="/5DCD812E/5DE7635C" Ref="#PWR?"  Part="1" 
+AR Path="/5EAA846A/5DE7635C" Ref="#PWR?"  Part="1" 
+F 0 "#PWR?" H 15205 8401 20  0000 C CNN
+F 1 "GND" H 15205 8349 30  0000 C CNN
+F 2 "" H 15200 8550 70  0000 C CNN
+F 3 "" H 15200 8550 70  0000 C CNN
+	1    15200 8550
+	1    0    0    -1  
+$EndComp
+$Comp
+L servo:GND #PWR?
+U 1 1 5DE76565
+P 14000 8550
+AR Path="/5DCD812E/5DE76565" Ref="#PWR?"  Part="1" 
+AR Path="/5EAA846A/5DE76565" Ref="#PWR?"  Part="1" 
+F 0 "#PWR?" H 14005 8401 20  0000 C CNN
+F 1 "GND" H 14005 8349 30  0000 C CNN
+F 2 "" H 14000 8550 70  0000 C CNN
+F 3 "" H 14000 8550 70  0000 C CNN
+	1    14000 8550
+	1    0    0    -1  
+$EndComp
+$Comp
+L servo:VDD_1V2 #PWR?
+U 1 1 5DE76867
+P 15200 7950
+F 0 "#PWR?" H 15205 8157 20  0000 C CNN
+F 1 "VDD_1V2" H 15205 8107 28  0000 C CNN
+F 2 "" H 15200 7950 50  0001 C CNN
+F 3 "" H 15200 7950 50  0001 C CNN
+	1    15200 7950
+	1    0    0    -1  
+$EndComp
+$Comp
+L servo:1V2 #PWR?
+U 1 1 5DE9FD6A
+P 14000 7950
+F 0 "#PWR?" H 14005 8157 20  0000 C CNN
+F 1 "1V2" H 14005 8107 28  0000 C CNN
+F 2 "" H 14000 7950 50  0001 C CNN
+F 3 "" H 14000 7950 50  0001 C CNN
+	1    14000 7950
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	15200 8450 15200 8550
+$Comp
+L servo:GND #PWR?
+U 1 1 5DEC91DD
+P 14000 5650
+AR Path="/5DCD812E/5DEC91DD" Ref="#PWR?"  Part="1" 
+AR Path="/5EAA846A/5DEC91DD" Ref="#PWR?"  Part="1" 
+F 0 "#PWR?" H 14005 5501 20  0000 C CNN
+F 1 "GND" H 14005 5449 30  0000 C CNN
+F 2 "" H 14000 5650 70  0000 C CNN
+F 3 "" H 14000 5650 70  0000 C CNN
+	1    14000 5650
+	1    0    0    -1  
+$EndComp
+$Comp
+L servo:GND #PWR?
+U 1 1 5DEC9787
+P 15200 5650
+AR Path="/5DCD812E/5DEC9787" Ref="#PWR?"  Part="1" 
+AR Path="/5EAA846A/5DEC9787" Ref="#PWR?"  Part="1" 
+F 0 "#PWR?" H 15205 5501 20  0000 C CNN
+F 1 "GND" H 15205 5449 30  0000 C CNN
+F 2 "" H 15200 5650 70  0000 C CNN
+F 3 "" H 15200 5650 70  0000 C CNN
+	1    15200 5650
+	1    0    0    -1  
+$EndComp
+$Comp
+L servo:GND #PWR?
+U 1 1 5DEF2AA3
+P 12850 4150
+AR Path="/5DCD812E/5DEF2AA3" Ref="#PWR?"  Part="1" 
+AR Path="/5EAA846A/5DEF2AA3" Ref="#PWR?"  Part="1" 
+F 0 "#PWR?" H 12855 4001 20  0000 C CNN
+F 1 "GND" H 12855 3949 30  0000 C CNN
+F 2 "" H 12850 4150 70  0000 C CNN
+F 3 "" H 12850 4150 70  0000 C CNN
+	1    12850 4150
+	1    0    0    -1  
+$EndComp
+$Comp
+L servo:GND #PWR?
+U 1 1 5DEF2E06
+P 13100 3900
+AR Path="/5DCD812E/5DEF2E06" Ref="#PWR?"  Part="1" 
+AR Path="/5EAA846A/5DEF2E06" Ref="#PWR?"  Part="1" 
+F 0 "#PWR?" H 13105 3751 20  0000 C CNN
+F 1 "GND" H 13105 3699 30  0000 C CNN
+F 2 "" H 13100 3900 70  0000 C CNN
+F 3 "" H 13100 3900 70  0000 C CNN
+	1    13100 3900
+	1    0    0    -1  
+$EndComp
+$Comp
+L servo:GND #PWR?
+U 1 1 5DEF2F00
+P 12000 3900
+AR Path="/5DCD812E/5DEF2F00" Ref="#PWR?"  Part="1" 
+AR Path="/5EAA846A/5DEF2F00" Ref="#PWR?"  Part="1" 
+F 0 "#PWR?" H 12005 3751 20  0000 C CNN
+F 1 "GND" H 12005 3699 30  0000 C CNN
+F 2 "" H 12000 3900 70  0000 C CNN
+F 3 "" H 12000 3900 70  0000 C CNN
+	1    12000 3900
+	1    0    0    -1  
+$EndComp
+$Comp
+L servo:GND #PWR?
+U 1 1 5DEF4D22
+P 12700 2500
+AR Path="/5DCD812E/5DEF4D22" Ref="#PWR?"  Part="1" 
+AR Path="/5EAA846A/5DEF4D22" Ref="#PWR?"  Part="1" 
+F 0 "#PWR?" H 12705 2351 20  0000 C CNN
+F 1 "GND" H 12705 2299 30  0000 C CNN
+F 2 "" H 12700 2500 70  0000 C CNN
+F 3 "" H 12700 2500 70  0000 C CNN
+	1    12700 2500
+	1    0    0    -1  
+$EndComp
+$Comp
+L servo:GND #PWR?
+U 1 1 5DEF50D2
+P 13800 2400
+AR Path="/5DCD812E/5DEF50D2" Ref="#PWR?"  Part="1" 
+AR Path="/5EAA846A/5DEF50D2" Ref="#PWR?"  Part="1" 
+F 0 "#PWR?" H 13805 2251 20  0000 C CNN
+F 1 "GND" H 13805 2199 30  0000 C CNN
+F 2 "" H 13800 2400 70  0000 C CNN
+F 3 "" H 13800 2400 70  0000 C CNN
+	1    13800 2400
+	1    0    0    -1  
+$EndComp
+$Comp
+L servo:GND #PWR?
+U 1 1 5DEF5A5E
+P 14400 1700
+AR Path="/5DCD812E/5DEF5A5E" Ref="#PWR?"  Part="1" 
+AR Path="/5EAA846A/5DEF5A5E" Ref="#PWR?"  Part="1" 
+F 0 "#PWR?" H 14405 1551 20  0000 C CNN
+F 1 "GND" H 14405 1499 30  0000 C CNN
+F 2 "" H 14400 1700 70  0000 C CNN
+F 3 "" H 14400 1700 70  0000 C CNN
+	1    14400 1700
+	1    0    0    -1  
+$EndComp
+$Comp
+L servo:1V2 #PWR?
+U 1 1 5DF21ABB
+P 12700 2100
+F 0 "#PWR?" H 12705 2307 20  0000 C CNN
+F 1 "1V2" H 12705 2257 28  0000 C CNN
+F 2 "" H 12700 2100 50  0001 C CNN
+F 3 "" H 12700 2100 50  0001 C CNN
+	1    12700 2100
+	1    0    0    -1  
+$EndComp
+Connection ~ 12700 2100
+$Comp
+L servo:GND #PWR?
+U 1 1 5DF22DAE
+P 11100 3300
+AR Path="/5DCD812E/5DF22DAE" Ref="#PWR?"  Part="1" 
+AR Path="/5EAA846A/5DF22DAE" Ref="#PWR?"  Part="1" 
+F 0 "#PWR?" H 11105 3151 20  0000 C CNN
+F 1 "GND" H 11105 3099 30  0000 C CNN
+F 2 "" H 11100 3300 70  0000 C CNN
+F 3 "" H 11100 3300 70  0000 C CNN
+	1    11100 3300
+	1    0    0    -1  
+$EndComp
+$Comp
+L servo:GND #PWR?
+U 1 1 5DF249A7
+P 8900 3400
+AR Path="/5DCD812E/5DF249A7" Ref="#PWR?"  Part="1" 
+AR Path="/5EAA846A/5DF249A7" Ref="#PWR?"  Part="1" 
+F 0 "#PWR?" H 8905 3251 20  0000 C CNN
+F 1 "GND" H 8905 3199 30  0000 C CNN
+F 2 "" H 8900 3400 70  0000 C CNN
+F 3 "" H 8900 3400 70  0000 C CNN
+	1    8900 3400
+	1    0    0    -1  
+$EndComp
+$Comp
+L servo:GND #PWR?
+U 1 1 5DF24DF7
+P 8600 2500
+AR Path="/5DCD812E/5DF24DF7" Ref="#PWR?"  Part="1" 
+AR Path="/5EAA846A/5DF24DF7" Ref="#PWR?"  Part="1" 
+F 0 "#PWR?" H 8605 2351 20  0000 C CNN
+F 1 "GND" H 8605 2299 30  0000 C CNN
+F 2 "" H 8600 2500 70  0000 C CNN
+F 3 "" H 8600 2500 70  0000 C CNN
+	1    8600 2500
+	1    0    0    -1  
+$EndComp
+$Comp
+L servo:GND #PWR?
+U 1 1 5DF253B6
+P 7700 2500
+AR Path="/5DCD812E/5DF253B6" Ref="#PWR?"  Part="1" 
+AR Path="/5EAA846A/5DF253B6" Ref="#PWR?"  Part="1" 
+F 0 "#PWR?" H 7705 2351 20  0000 C CNN
+F 1 "GND" H 7705 2299 30  0000 C CNN
+F 2 "" H 7700 2500 70  0000 C CNN
+F 3 "" H 7700 2500 70  0000 C CNN
+	1    7700 2500
+	1    0    0    -1  
+$EndComp
+$Comp
+L servo:GND #PWR?
+U 1 1 5DF254C8
+P 8000 2500
+AR Path="/5DCD812E/5DF254C8" Ref="#PWR?"  Part="1" 
+AR Path="/5EAA846A/5DF254C8" Ref="#PWR?"  Part="1" 
+F 0 "#PWR?" H 8005 2351 20  0000 C CNN
+F 1 "GND" H 8005 2299 30  0000 C CNN
+F 2 "" H 8000 2500 70  0000 C CNN
+F 3 "" H 8000 2500 70  0000 C CNN
+	1    8000 2500
+	1    0    0    -1  
+$EndComp
+$Comp
+L servo:GND #PWR?
+U 1 1 5DF255C4
+P 8300 2500
+AR Path="/5DCD812E/5DF255C4" Ref="#PWR?"  Part="1" 
+AR Path="/5EAA846A/5DF255C4" Ref="#PWR?"  Part="1" 
+F 0 "#PWR?" H 8305 2351 20  0000 C CNN
+F 1 "GND" H 8305 2299 30  0000 C CNN
+F 2 "" H 8300 2500 70  0000 C CNN
+F 3 "" H 8300 2500 70  0000 C CNN
+	1    8300 2500
+	1    0    0    -1  
+$EndComp
+$Comp
+L servo:IN_5V0 #PWR?
+U 1 1 5DF52722
+P 8900 1100
+F 0 "#PWR?" H 8905 1307 20  0000 C CNN
+F 1 "IN_5V0" H 8905 1257 28  0000 C CNN
+F 2 "" H 8900 1100 50  0001 C CNN
+F 3 "" H 8900 1100 50  0001 C CNN
+	1    8900 1100
+	1    0    0    -1  
+$EndComp
+$Comp
+L servo:USB_5V0 #PWR?
+U 1 1 5DF7D081
+P 6900 1100
+F 0 "#PWR?" H 6905 1307 20  0000 C CNN
+F 1 "USB_5V0" H 6905 1257 28  0000 C CNN
+F 2 "" H 6900 1100 50  0001 C CNN
+F 3 "" H 6900 1100 50  0001 C CNN
+	1    6900 1100
+	1    0    0    -1  
+$EndComp
+$Comp
+L servo:HSEC_5V0 #PWR?
+U 1 1 5DFA6D02
+P 6400 1100
+F 0 "#PWR?" H 6405 1307 20  0000 C CNN
+F 1 "HSEC_5V0" H 6405 1257 28  0000 C CNN
+F 2 "" H 6400 1100 50  0001 C CNN
+F 3 "" H 6400 1100 50  0001 C CNN
+	1    6400 1100
+	1    0    0    -1  
+$EndComp
+$Comp
+L servo:HSEC_5V0 #PWR?
+U 1 1 5DFA9A29
+P 1300 2300
+F 0 "#PWR?" H 1305 2507 20  0000 C CNN
+F 1 "HSEC_5V0" H 1305 2457 28  0000 C CNN
+F 2 "" H 1300 2300 50  0001 C CNN
+F 3 "" H 1300 2300 50  0001 C CNN
+	1    1300 2300
+	1    0    0    -1  
+$EndComp
+$Comp
+L servo:VDD_3V3 #PWR?
+U 1 1 5DFABC28
+P 1300 2900
+F 0 "#PWR?" H 1305 3110 20  0000 C CNN
+F 1 "VDD_3V3" H 1305 3058 30  0000 C CNN
+F 2 "" H 1300 2900 70  0000 C CNN
+F 3 "" H 1300 2900 70  0000 C CNN
+	1    1300 2900
+	1    0    0    -1  
+$EndComp
+$Comp
+L servo:VDD_1V2 #PWR?
+U 1 1 5DFADF8F
+P 1300 3500
+F 0 "#PWR?" H 1305 3707 20  0000 C CNN
+F 1 "VDD_1V2" H 1305 3657 28  0000 C CNN
+F 2 "" H 1300 3500 50  0001 C CNN
+F 3 "" H 1300 3500 50  0001 C CNN
+	1    1300 3500
+	1    0    0    -1  
+$EndComp
+$Comp
+L servo:GND #PWR?
+U 1 1 5DFAF8BD
+P 1300 4400
+AR Path="/5DCD812E/5DFAF8BD" Ref="#PWR?"  Part="1" 
+AR Path="/5EAA846A/5DFAF8BD" Ref="#PWR?"  Part="1" 
+F 0 "#PWR?" H 1305 4251 20  0000 C CNN
+F 1 "GND" H 1305 4199 30  0000 C CNN
+F 2 "" H 1300 4400 70  0000 C CNN
+F 3 "" H 1300 4400 70  0000 C CNN
+	1    1300 4400
+	1    0    0    -1  
+$EndComp
+$Comp
+L servo:GND #PWR?
+U 1 1 5DFB09CC
+P 2200 5400
+AR Path="/5DCD812E/5DFB09CC" Ref="#PWR?"  Part="1" 
+AR Path="/5EAA846A/5DFB09CC" Ref="#PWR?"  Part="1" 
+F 0 "#PWR?" H 2205 5251 20  0000 C CNN
+F 1 "GND" H 2205 5199 30  0000 C CNN
+F 2 "" H 2200 5400 70  0000 C CNN
+F 3 "" H 2200 5400 70  0000 C CNN
+	1    2200 5400
+	1    0    0    -1  
+$EndComp
+$Comp
+L servo:GND #PWR?
+U 1 1 5DFB0DFC
+P 4000 5400
+AR Path="/5DCD812E/5DFB0DFC" Ref="#PWR?"  Part="1" 
+AR Path="/5EAA846A/5DFB0DFC" Ref="#PWR?"  Part="1" 
+F 0 "#PWR?" H 4005 5251 20  0000 C CNN
+F 1 "GND" H 4005 5199 30  0000 C CNN
+F 2 "" H 4000 5400 70  0000 C CNN
+F 3 "" H 4000 5400 70  0000 C CNN
+	1    4000 5400
+	1    0    0    -1  
+$EndComp
+$Comp
+L servo:VDD_3V3 #PWR?
+U 1 1 5DFB4C1C
+P 1900 6400
+F 0 "#PWR?" H 1905 6610 20  0000 C CNN
+F 1 "VDD_3V3" H 1905 6558 30  0000 C CNN
+F 2 "" H 1900 6400 70  0000 C CNN
+F 3 "" H 1900 6400 70  0000 C CNN
+	1    1900 6400
+	1    0    0    -1  
+$EndComp
+$Comp
+L servo:VDDA_3V3 #PWR?
+U 1 1 5DFB5FCC
+P 1200 6400
+AR Path="/5DD0E9D6/5DFB5FCC" Ref="#PWR?"  Part="1" 
+AR Path="/5EAA846A/5DFB5FCC" Ref="#PWR?"  Part="1" 
+F 0 "#PWR?" H 1205 6607 20  0000 C CNN
+F 1 "VDDA_3V3" H 1205 6557 28  0000 C CNN
+F 2 "" H 1200 6400 50  0001 C CNN
+F 3 "" H 1200 6400 50  0001 C CNN
+	1    1200 6400
+	1    0    0    -1  
+$EndComp
+$Comp
+L servo:VDD_3V3 #PWR?
+U 1 1 5DFB414C
+P 4100 6400
+F 0 "#PWR?" H 4105 6610 20  0000 C CNN
+F 1 "VDD_3V3" H 4105 6558 30  0000 C CNN
+F 2 "" H 4100 6400 70  0000 C CNN
+F 3 "" H 4100 6400 70  0000 C CNN
+	1    4100 6400
+	1    0    0    -1  
+$EndComp
+Connection ~ 4100 6700
+Wire Wire Line
+	4100 6700 4100 6400
+Wire Wire Line
+	1900 9100 1900 8800
+$Comp
+L servo:VDD_3V3 #PWR?
+U 1 1 5E007AB3
+P 1900 8800
+F 0 "#PWR?" H 1905 9010 20  0000 C CNN
+F 1 "VDD_3V3" H 1905 8958 30  0000 C CNN
+F 2 "" H 1900 8800 70  0000 C CNN
+F 3 "" H 1900 8800 70  0000 C CNN
+	1    1900 8800
+	1    0    0    -1  
+$EndComp
+$Comp
+L servo:VDD_3V3 #PWR?
+U 1 1 5E009DB6
+P 8800 8300
+F 0 "#PWR?" H 8805 8510 20  0000 C CNN
+F 1 "VDD_3V3" H 8805 8458 30  0000 C CNN
+F 2 "" H 8800 8300 70  0000 C CNN
+F 3 "" H 8800 8300 70  0000 C CNN
+	1    8800 8300
+	1    0    0    -1  
+$EndComp
+$Comp
+L servo:GND #PWR?
+U 1 1 5E013DA6
+P 8800 9400
+AR Path="/5DCD812E/5E013DA6" Ref="#PWR?"  Part="1" 
+AR Path="/5EAA846A/5E013DA6" Ref="#PWR?"  Part="1" 
+F 0 "#PWR?" H 8805 9251 20  0000 C CNN
+F 1 "GND" H 8805 9199 30  0000 C CNN
+F 2 "" H 8800 9400 70  0000 C CNN
+F 3 "" H 8800 9400 70  0000 C CNN
+	1    8800 9400
+	1    0    0    -1  
+$EndComp
+$Comp
+L servo:GND #PWR?
+U 1 1 5E01482D
+P 8300 7300
+AR Path="/5DCD812E/5E01482D" Ref="#PWR?"  Part="1" 
+AR Path="/5EAA846A/5E01482D" Ref="#PWR?"  Part="1" 
+F 0 "#PWR?" H 8305 7151 20  0000 C CNN
+F 1 "GND" H 8305 7099 30  0000 C CNN
+F 2 "" H 8300 7300 70  0000 C CNN
+F 3 "" H 8300 7300 70  0000 C CNN
+	1    8300 7300
+	1    0    0    -1  
+$EndComp
+$Comp
+L servo:VDD_1V2 #PWR?
+U 1 1 5E017171
+P 8100 6200
+F 0 "#PWR?" H 8105 6407 20  0000 C CNN
+F 1 "VDD_1V2" H 8105 6357 28  0000 C CNN
+F 2 "" H 8100 6200 50  0001 C CNN
+F 3 "" H 8100 6200 50  0001 C CNN
+	1    8100 6200
+	1    0    0    -1  
+$EndComp
+$Comp
+L servo:VDDA_3V3 #PWR?
+U 1 1 5E01928E
+P 9500 6200
+AR Path="/5DD0E9D6/5E01928E" Ref="#PWR?"  Part="1" 
+AR Path="/5EAA846A/5E01928E" Ref="#PWR?"  Part="1" 
+F 0 "#PWR?" H 9505 6407 20  0000 C CNN
+F 1 "VDDA_3V3" H 9505 6357 28  0000 C CNN
+F 2 "" H 9500 6200 50  0001 C CNN
+F 3 "" H 9500 6200 50  0001 C CNN
+	1    9500 6200
+	1    0    0    -1  
+$EndComp
+$Comp
+L servo:GND #PWR?
+U 1 1 5E019FD8
+P 9500 7300
+AR Path="/5DCD812E/5E019FD8" Ref="#PWR?"  Part="1" 
+AR Path="/5EAA846A/5E019FD8" Ref="#PWR?"  Part="1" 
+F 0 "#PWR?" H 9505 7151 20  0000 C CNN
+F 1 "GND" H 9505 7099 30  0000 C CNN
+F 2 "" H 9500 7300 70  0000 C CNN
+F 3 "" H 9500 7300 70  0000 C CNN
+	1    9500 7300
+	1    0    0    -1  
+$EndComp
+$EndSCHEMATC
