@@ -1,5 +1,4 @@
 EESchema Schematic File Version 4
-LIBS:servo-cache
 EELAYER 26 0
 EELAYER END
 $Descr B 17000 11000

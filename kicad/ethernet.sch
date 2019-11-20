@@ -1,5 +1,4 @@
 EESchema Schematic File Version 4
-LIBS:servo-cache
 EELAYER 26 0
 EELAYER END
 $Descr B 17000 11000
@@ -170,8 +169,6 @@ Wire Wire Line
 	8600 5600 7500 5600
 Wire Wire Line
 	8300 5800 7500 5800
-Text Label 7600 5800 0    60   ~ 0
-ENET_PHY_CLK
 $Comp
 L servo:GND #GND_0203
 U 1 1 5DB39056
@@ -1062,4 +1059,6 @@ F 3 "" H 9000 5300 70  0000 C CNN
 	1    0    0    -1  
 $EndComp
 Connection ~ 9000 5300
+Text Label 7650 5800 0    60   ~ 0
+MCU_GPIO154
 $EndSCHEMATC

@@ -1,5 +1,4 @@
 EESchema Schematic File Version 4
-LIBS:servo-cache
 EELAYER 26 0
 EELAYER END
 $Descr C 22000 17000
@@ -50,9 +49,9 @@ Text Label 14200 4050 0    60   ~ 0
 P0_TD_P
 Text Label 14200 4150 0    60   ~ 0
 P0_TD_N
-Text Label 13300 4350 0    60   ~ 0
+Text Label 13500 4350 0    60   ~ 0
 P0_RD_P
-Text Label 13300 4450 0    60   ~ 0
+Text Label 13500 4450 0    60   ~ 0
 P0_RD_N
 $Comp
 L servo:GND #GND_0625
@@ -218,7 +217,7 @@ F 3 "" H 6600 3850 70  0000 C CNN
 $EndComp
 Text Notes 8400 7450 0    120  ~ 0
 EtherCAT P1
-Text Notes 3550 3200 0    120  ~ 0
+Text Notes 3500 3350 0    120  ~ 0
 EtherCAT EEPROM
 Text Label 4500 7950 0    60   ~ 0
 MCU_GPIO145
@@ -226,10 +225,6 @@ Text Label 4500 8450 0    60   ~ 0
 MCU_GPIO146
 Text Notes 4550 7450 0    120  ~ 0
 Run and Error LEDs
-Text Label 13050 10550 0    60   ~ 0
-P1_PHY_CLK
-Text Label 12800 5750 0    60   ~ 0
-P0_PHY_CLK
 NoConn ~ 16600 5450
 NoConn ~ 16700 10250
 NoConn ~ 9800 6450
@@ -2632,4 +2627,8 @@ F 3 "" H 16700 8450 50  0001 C CNN
 	1    16700 8450
 	1    0    0    -1  
 $EndComp
+Text Label 12900 10550 0    60   ~ 0
+MCU_GPIO154
+Text Label 12800 5750 0    60   ~ 0
+MCU_GPIO154
 $EndSCHEMATC

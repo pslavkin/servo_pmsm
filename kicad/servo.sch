@@ -1,5 +1,4 @@
 EESchema Schematic File Version 4
-LIBS:servo-cache
 EELAYER 26 0
 EELAYER END
 $Descr C 22000 17000
@@ -110,7 +109,7 @@ F0 "power" 50
 F1 "power.sch" 50
 $EndSheet
 $Sheet
-S 6850 8200 1750 2950
+S 14550 3450 1100 2400
 U 5DD4DF4C
 F0 "clk" 50
 F1 "clk.sch" 50
