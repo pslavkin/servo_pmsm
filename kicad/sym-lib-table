@@ -1,3 +1,4 @@
 (sym_lib_table
   (lib (name servo)(type Legacy)(uri ${KIPRJMOD}/servo.lib)(options "")(descr ""))
+  (lib (name servo-rescue)(type Legacy)(uri ${KIPRJMOD}/servo-rescue.lib)(options "")(descr ""))
 )

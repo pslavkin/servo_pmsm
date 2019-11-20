@@ -4,12 +4,12 @@ EELAYER 26 0
 EELAYER END
 $Descr C 22000 17000
 encoding utf-8
-Sheet 6 7
+Sheet 6 8
 Title "ethercat"
 Date "25 10 2019"
-Rev ""
-Comp ""
-Comment1 ""
+Rev "1.0"
+Comp "dci"
+Comment1 "Pablo Slavkin"
 Comment2 ""
 Comment3 ""
 Comment4 ""

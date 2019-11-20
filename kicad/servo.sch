@@ -4,12 +4,12 @@ EELAYER 26 0
 EELAYER END
 $Descr C 22000 17000
 encoding utf-8
-Sheet 1 7
+Sheet 1 8
 Title "usb_emulator"
 Date "25 10 2019"
 Rev "1.0"
-Comp "pablo slavkin"
-Comment1 ""
+Comp "dci"
+Comment1 "Pablo Slavkin"
 Comment2 ""
 Comment3 ""
 Comment4 ""
@@ -108,5 +108,11 @@ S 1250 3400 1150 2100
 U 5EAA846A
 F0 "power" 50
 F1 "power.sch" 50
+$EndSheet
+$Sheet
+S 6850 8200 1750 2950
+U 5DD4DF4C
+F0 "clk" 50
+F1 "clk.sch" 50
 $EndSheet
 $EndSCHEMATC

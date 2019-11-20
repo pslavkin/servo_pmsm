@@ -4,12 +4,12 @@ EELAYER 26 0
 EELAYER END
 $Descr B 17000 11000
 encoding utf-8
-Sheet 5 7
+Sheet 5 8
 Title "emu_interface"
 Date "25 10 2019"
-Rev ""
-Comp ""
-Comment1 ""
+Rev "1.0"
+Comp "dci"
+Comment1 "Pablo Slavkin"
 Comment2 ""
 Comment3 ""
 Comment4 ""
@@ -212,7 +212,7 @@ F 0 "D504" V 13447 3770 60  0000 L CNN
 F 1 "green" H 13500 3550 50  0001 C CNN
 F 2 "" H 13500 3550 50  0001 C CNN
 F 3 "" H 13500 3550 50  0001 C CNN
-F 4 "green" V 13553 3770 60  0000 L CNN "VALUE"
+F 4 "green@2mA" V 13553 3770 60  0000 L CNN "VALUE"
 	1    13500 3550
 	0    1    1    0   
 $EndComp
@@ -220,11 +220,11 @@ $Comp
 L servo:LED_A2_K1 D503
 U 1 1 5DDA98EA
 P 12900 3550
-F 0 "D503" V 12847 3770 60  0000 L CNN
+F 0 "D503" V 12847 3421 60  0000 R CNN
 F 1 "blue" H 12900 3550 50  0001 C CNN
 F 2 "" H 12900 3550 50  0001 C CNN
 F 3 "" H 12900 3550 50  0001 C CNN
-F 4 "blue" V 12953 3770 60  0000 L CNN "VALUE"
+F 4 "blue@2mA" V 12953 3421 60  0000 R CNN "VALUE"
 	1    12900 3550
 	0    1    1    0   
 $EndComp
@@ -693,4 +693,8 @@ Text Label 9500 6100 0    50   ~ 0
 EMU_SCI_TX
 Text Label 9500 6200 0    50   ~ 0
 EMU_SCI_RX
+Text Notes 9900 5650 0    50   ~ 0
+IDC connector to plug \nan external isolated jtag interface
+Text Notes 9650 2650 0    50   ~ 0
+I decided to keep the sci interface \nisolated onboard for debug and share with rs485
 $EndSCHEMATC

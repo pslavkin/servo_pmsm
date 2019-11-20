@@ -4,12 +4,12 @@ EELAYER 26 0
 EELAYER END
 $Descr B 17000 11000
 encoding utf-8
-Sheet 4 7
+Sheet 4 8
 Title "adc"
 Date "25 10 2019"
-Rev ""
-Comp ""
-Comment1 ""
+Rev "1.0"
+Comp "dci"
+Comment1 "Pablo Slavkin"
 Comment2 ""
 Comment3 ""
 Comment4 ""
@@ -1799,8 +1799,8 @@ $Comp
 L servo:TI-REF5030DGK8_1 U402
 U 1 1 5DB39163
 P 13500 3000
-F 0 "U402" H 13500 3473 60  0000 C CNN
-F 1 "REF5030IDGKT" H 13500 3375 50  0000 C CNN
+F 0 "U402" H 13500 3523 60  0000 C CNN
+F 1 "REF5030IDGKT" H 13500 3425 50  0000 C CNN
 F 2 "" H 13500 3000 50  0001 C CNN
 F 3 "" H 13500 3000 50  0001 C CNN
 F 4 "REF5030IDGKT" V 1800 2500 60  0001 C CNN "PartNumber"

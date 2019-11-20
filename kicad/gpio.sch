@@ -4,12 +4,12 @@ EELAYER 26 0
 EELAYER END
 $Descr B 17000 11000
 encoding utf-8
-Sheet 3 7
+Sheet 3 8
 Title "gpio"
 Date "25 10 2019"
-Rev ""
-Comp ""
-Comment1 ""
+Rev "1.0"
+Comp "dci"
+Comment1 "Pablo Slavkin"
 Comment2 ""
 Comment3 ""
 Comment4 ""

@@ -4,12 +4,12 @@ EELAYER 26 0
 EELAYER END
 $Descr B 17000 11000
 encoding utf-8
-Sheet 2 7
+Sheet 2 8
 Title "ethernet"
 Date "25 10 2019"
-Rev ""
-Comp ""
-Comment1 ""
+Rev "1.0"
+Comp "dci"
+Comment1 "Pablo Slavkin"
 Comment2 ""
 Comment3 ""
 Comment4 ""
@@ -820,7 +820,7 @@ P 12700 5100
 F 0 "J201" H 12700 7089 60  0000 C CNN
 F 1 "7498010210A" H 12700 6983 60  0000 C CNN
 F 2 "" H 11690 3200 60  0000 C CNN
-F 3 "../doc/datasheets/7498010210A_rj45.pdf" H 11690 3200 60  0000 C CNN
+F 3 "../doc/datasheets/7498010210A_rj45.pdf" H 11690 3200 60  0001 C CNN
 	1    12700 5100
 	1    0    0    -1  
 $EndComp
