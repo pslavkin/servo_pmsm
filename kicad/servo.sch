@@ -1,9 +1,10 @@
 EESchema Schematic File Version 4
+LIBS:servo-cache
 EELAYER 26 0
 EELAYER END
 $Descr C 22000 17000
 encoding utf-8
-Sheet 1 8
+Sheet 1 9
 Title "usb_emulator"
 Date "25 10 2019"
 Rev "1.0"
@@ -113,5 +114,11 @@ S 14550 3450 1100 2400
 U 5DD4DF4C
 F0 "clk" 50
 F1 "clk.sch" 50
+$EndSheet
+$Sheet
+S 6700 8650 1600 2150
+U 5DD76B18
+F0 "ac_input" 50
+F1 "ac_input.sch" 50
 $EndSheet
 $EndSCHEMATC
