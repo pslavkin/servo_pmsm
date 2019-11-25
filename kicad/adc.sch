@@ -1,5 +1,4 @@
 EESchema Schematic File Version 4
-LIBS:servo-cache
 EELAYER 26 0
 EELAYER END
 $Descr B 17000 11000
@@ -1554,8 +1553,6 @@ Wire Wire Line
 	2650 900  3650 900 
 Wire Wire Line
 	1150 900  2150 900 
-Text Notes 3800 9550 0    50   ~ 0
-ADC_A0A1_P and ADC_A0A1_N make a differential pair using\nchannels A0 and A1 respectivly.     If you wish to use A0 or A1\nindependently the "_P" refers to the first ADC channel. For example\nA0 in "ADC_A0A1". Additionally the "_N" refers to the second\nchannel, A1 in "ADC_A0A1".
 Connection ~ 7100 7500
 Wire Wire Line
 	2250 7500 7100 7500
@@ -1578,22 +1575,22 @@ Connection ~ 3400 5200
 Wire Wire Line
 	7650 5200 3400 5200
 $Comp
-L servo:VDDA_3V3 #PWR0413
+L servo:3V3A #PWR0413
 U 1 1 5E235B87
 P 12250 700
 F 0 "#PWR0413" H 12255 907 20  0001 C CNN
-F 1 "VDDA_3V3" H 12255 857 28  0000 C CNN
+F 1 "3V3A" H 12255 857 28  0000 C CNN
 F 2 "" H 12250 700 50  0001 C CNN
 F 3 "" H 12250 700 50  0001 C CNN
 	1    12250 700 
 	1    0    0    -1  
 $EndComp
 $Comp
-L servo:VDDA_3V3 #PWR0416
+L servo:3V3A #PWR0416
 U 1 1 5E5CB351
 P 12000 5900
-F 0 "#PWR0416" H 12005 6107 20  0000 C CNN
-F 1 "VDDA_3V3" H 12005 6057 28  0000 C CNN
+F 0 "#PWR0416" H 12005 6107 20  0001 C CNN
+F 1 "3V3A" H 12005 6057 28  0000 C CNN
 F 2 "" H 12000 5900 50  0001 C CNN
 F 3 "" H 12000 5900 50  0001 C CNN
 	1    12000 5900

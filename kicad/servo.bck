@@ -75,6 +75,12 @@ D Dual High Speed USB To Multipurpose UART/FIFO IC, LQFP-64
 F http://www.ftdichip.com/Support/Documents/DataSheets/ICs/DS_FT2232H.pdf
 $ENDCMP
 #
+$CMP Earth
+D Power flag, earth
+K power-flag ground gnd
+F ~
+$ENDCMP
+#
 $CMP GND
 D Power flag, ground
 K power-flag
@@ -97,6 +103,36 @@ $ENDCMP
 #
 $CMP IRM-10
 D TPS6242x 2.25-MHz 600-mA and 1000-mA Dual Step-Down
+$ENDCMP
+#
+$CMP IRM-20-12
+D 12V 1.8A 20W miniature AC-DC module-type power supply MeanWell
+K 12V 1.8A 20W miniature AC-DC module-type power supply
+F http://www.meanwell.com/Upload/PDF/IRM-20/IRM-20-SPEC.PDF
+$ENDCMP
+#
+$CMP IRM-20-15
+D 15V 1.4A 20W miniature AC-DC module-type power supply MeanWell
+K 15V 1.4A 20W miniature AC-DC module-type power supply
+F http://www.meanwell.com/Upload/PDF/IRM-20/IRM-20-SPEC.PDF
+$ENDCMP
+#
+$CMP IRM-20-24
+D 24V 0.9A 20W miniature AC-DC module-type power supply MeanWell
+K 24V 0.9A 20W miniature AC-DC module-type power supply
+F http://www.meanwell.com/Upload/PDF/IRM-20/IRM-20-SPEC.PDF
+$ENDCMP
+#
+$CMP IRM-20-3.3
+D 3.3V 4.5A 14.85W miniature AC-DC module-type power supply MeanWell
+K 3.3V 4.5A 14.85W miniature AC-DC module-type power supply
+F http://www.meanwell.com/Upload/PDF/IRM-20/IRM-20-SPEC.PDF
+$ENDCMP
+#
+$CMP IRM-20-5
+D 5V 4A 20W miniature AC-DC module-type power supply MeanWell
+K 5V 4A 20W miniature AC-DC module-type power supply
+F http://www.meanwell.com/Upload/PDF/IRM-20/IRM-20-SPEC.PDF
 $ENDCMP
 #
 $CMP PWR_FLAG
