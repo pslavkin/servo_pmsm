@@ -1,10 +1,11 @@
 EESchema Schematic File Version 4
+LIBS:servo-cache
 EELAYER 26 0
 EELAYER END
 $Descr A4 11693 8268
 encoding utf-8
-Sheet 7 9
-Title "power"
+Sheet 5 10
+Title "uC Power"
 Date "25 10 2019"
 Rev "1.0"
 Comp "dci"
@@ -13,14 +14,6 @@ Comment2 ""
 Comment3 ""
 Comment4 ""
 $EndDescr
-Wire Notes Line
-	5650 5950 5650 5650
-Wire Wire Line
-	900  5700 900  5600
-Wire Wire Line
-	2700 5700 2700 5600
-Wire Wire Line
-	2700 2800 2700 2500
 Wire Wire Line
 	8500 4750 8500 4950
 Wire Wire Line
@@ -74,8 +67,6 @@ Wire Wire Line
 Text Notes 6200 2300 0    84   ~ 0
 Place near U1
 Text Label 1200 5900 0    70   ~ 0
-TMS320F28388DZWTS
-Text Label 3750 4950 0    70   ~ 0
 TMS320F28388DZWTS
 Wire Wire Line
 	5650 4550 5650 4450
@@ -238,8 +229,6 @@ Wire Wire Line
 Text Notes 6750 1700 0    120  ~ 0
 Decoupling Capacitors
 Wire Wire Line
-	2700 2100 2700 1900
-Wire Wire Line
 	6550 3100 6550 2900
 Wire Wire Line
 	6750 3100 6550 3100
@@ -274,79 +263,10 @@ Connection ~ 3450 2150
 Connection ~ 3450 2050
 Connection ~ 3450 1950
 Connection ~ 3450 1850
-Connection ~ 900  5600
-Connection ~ 900  5500
-Connection ~ 900  5400
-Connection ~ 900  5300
-Connection ~ 900  5200
-Connection ~ 900  5100
-Connection ~ 900  5000
-Connection ~ 900  4900
-Connection ~ 900  4800
-Connection ~ 900  4700
 Connection ~ 900  4600
-Connection ~ 900  4500
-Connection ~ 900  4400
-Connection ~ 900  4300
-Connection ~ 900  4200
-Connection ~ 900  4100
-Connection ~ 900  4000
-Connection ~ 900  3900
-Connection ~ 900  3800
-Connection ~ 900  3700
-Connection ~ 900  3600
-Connection ~ 900  3500
-Connection ~ 900  3400
-Connection ~ 900  3300
-Connection ~ 900  3200
-Connection ~ 900  3100
-Connection ~ 900  3000
-Connection ~ 900  2900
 Connection ~ 900  2800
-Connection ~ 900  2700
-Connection ~ 900  2600
-Connection ~ 900  2500
-Connection ~ 900  2400
-Connection ~ 900  2300
-Connection ~ 900  2200
-Connection ~ 900  2100
-Connection ~ 900  2000
-Connection ~ 900  1900
-Connection ~ 2700 5600
-Connection ~ 2700 5500
-Connection ~ 2700 5400
-Connection ~ 2700 5300
-Connection ~ 2700 5200
-Connection ~ 2700 5100
-Connection ~ 2700 5000
-Connection ~ 2700 4900
-Connection ~ 2700 4800
-Connection ~ 2700 4700
 Connection ~ 2700 4600
-Connection ~ 2700 4500
-Connection ~ 2700 4400
-Connection ~ 2700 4300
-Connection ~ 2700 4200
-Connection ~ 2700 4100
-Connection ~ 2700 4000
-Connection ~ 2700 3900
-Connection ~ 2700 3800
-Connection ~ 2700 3700
-Connection ~ 2700 3600
-Connection ~ 2700 3500
-Connection ~ 2700 3400
-Connection ~ 2700 3300
-Connection ~ 2700 3200
-Connection ~ 2700 3100
-Connection ~ 2700 3000
-Connection ~ 2700 2900
 Connection ~ 2700 2800
-Connection ~ 2700 2500
-Connection ~ 2700 2400
-Connection ~ 2700 2300
-Connection ~ 2700 2200
-Connection ~ 2700 2100
-Connection ~ 2700 1900
 Connection ~ 5650 4450
 Connection ~ 5650 4350
 Connection ~ 5650 4250
@@ -721,11 +641,11 @@ $Comp
 L servo:TMS320F28388 U1_701
 U 5 1 5DB38FA0
 P 1800 3700
-F 0 "U1_701" H 1200 5800 60  0000 L BNN
-F 1 "~" H 1800 3700 50  0001 C CNN
+F 0 "U1_701" H 1800 5973 60  0000 C CNN
+F 1 "TMS320F28388DZWTS" H 1800 5875 50  0000 C CNN
 F 2 "" H 1800 3700 50  0001 C CNN
 F 3 "" H 1800 3700 50  0001 C CNN
-F 4 "TMS320F28388DZWTS" V 200 3200 60  0001 C CNN "PartNumber"
+F 4 "TMS320F28388DZWTS" H 200 3200 60  0001 C CNN "PartNumber"
 	5    1800 3700
 	1    0    0    -1  
 $EndComp
@@ -733,11 +653,11 @@ $Comp
 L servo:TMS320F28388 U1_702
 U 4 1 5DB38F9F
 P 4550 3250
-F 0 "U1_702" H 3750 4850 60  0000 L BNN
-F 1 "~" H 4550 3250 50  0001 C CNN
+F 0 "U1_702" H 4550 5023 60  0000 C CNN
+F 1 "TMS320F28388DZWTS" H 4550 4925 50  0000 C CNN
 F 2 "" H 4550 3250 50  0001 C CNN
 F 3 "" H 4550 3250 50  0001 C CNN
-F 4 "TMS320F28388DZWTS" V 2950 -2850 60  0001 C CNN "PartNumber"
+F 4 "TMS320F28388DZWTS" H 2950 -2850 60  0001 C CNN "PartNumber"
 	4    4550 3250
 	1    0    0    -1  
 $EndComp
@@ -773,148 +693,6 @@ Wire Wire Line
 	3450 1950 3450 1850
 Wire Wire Line
 	3450 1850 3450 1550
-Wire Wire Line
-	900  5600 900  5500
-Wire Wire Line
-	900  5500 900  5400
-Wire Wire Line
-	900  5400 900  5300
-Wire Wire Line
-	900  5300 900  5200
-Wire Wire Line
-	900  5200 900  5100
-Wire Wire Line
-	900  5100 900  5000
-Wire Wire Line
-	900  5000 900  4900
-Wire Wire Line
-	900  4900 900  4800
-Wire Wire Line
-	900  4800 900  4700
-Wire Wire Line
-	900  4700 900  4600
-Wire Wire Line
-	900  4600 900  4500
-Wire Wire Line
-	900  4500 900  4400
-Wire Wire Line
-	900  4400 900  4300
-Wire Wire Line
-	900  4300 900  4200
-Wire Wire Line
-	900  4200 900  4100
-Wire Wire Line
-	900  4100 900  4000
-Wire Wire Line
-	900  4000 900  3900
-Wire Wire Line
-	900  3900 900  3800
-Wire Wire Line
-	900  3800 900  3700
-Wire Wire Line
-	900  3700 900  3600
-Wire Wire Line
-	900  3600 900  3500
-Wire Wire Line
-	900  3500 900  3400
-Wire Wire Line
-	900  3400 900  3300
-Wire Wire Line
-	900  3300 900  3200
-Wire Wire Line
-	900  3200 900  3100
-Wire Wire Line
-	900  3100 900  3000
-Wire Wire Line
-	900  3000 900  2900
-Wire Wire Line
-	900  2900 900  2800
-Wire Wire Line
-	900  2800 900  2700
-Wire Wire Line
-	900  2700 900  2600
-Wire Wire Line
-	900  2600 900  2500
-Wire Wire Line
-	900  2500 900  2400
-Wire Wire Line
-	900  2400 900  2300
-Wire Wire Line
-	900  2300 900  2200
-Wire Wire Line
-	900  2200 900  2100
-Wire Wire Line
-	900  2100 900  2000
-Wire Wire Line
-	900  2000 900  1900
-Wire Wire Line
-	900  1900 900  1800
-Wire Wire Line
-	2700 5600 2700 5500
-Wire Wire Line
-	2700 5500 2700 5400
-Wire Wire Line
-	2700 5400 2700 5300
-Wire Wire Line
-	2700 5300 2700 5200
-Wire Wire Line
-	2700 5200 2700 5100
-Wire Wire Line
-	2700 5100 2700 5000
-Wire Wire Line
-	2700 5000 2700 4900
-Wire Wire Line
-	2700 4900 2700 4800
-Wire Wire Line
-	2700 4800 2700 4700
-Wire Wire Line
-	2700 4700 2700 4600
-Wire Wire Line
-	2700 4600 2700 4500
-Wire Wire Line
-	2700 4500 2700 4400
-Wire Wire Line
-	2700 4400 2700 4300
-Wire Wire Line
-	2700 4300 2700 4200
-Wire Wire Line
-	2700 4200 2700 4100
-Wire Wire Line
-	2700 4100 2700 4000
-Wire Wire Line
-	2700 4000 2700 3900
-Wire Wire Line
-	2700 3900 2700 3800
-Wire Wire Line
-	2700 3800 2700 3700
-Wire Wire Line
-	2700 3700 2700 3600
-Wire Wire Line
-	2700 3600 2700 3500
-Wire Wire Line
-	2700 3500 2700 3400
-Wire Wire Line
-	2700 3400 2700 3300
-Wire Wire Line
-	2700 3300 2700 3200
-Wire Wire Line
-	2700 3200 2700 3100
-Wire Wire Line
-	2700 3100 2700 3000
-Wire Wire Line
-	2700 3000 2700 2900
-Wire Wire Line
-	2700 2900 2700 2800
-Wire Wire Line
-	2700 2500 2700 2400
-Wire Wire Line
-	2700 2400 2700 2300
-Wire Wire Line
-	2700 2300 2700 2200
-Wire Wire Line
-	2700 2200 2700 2100
-Wire Wire Line
-	2700 1900 2700 1800
 Wire Wire Line
 	5650 4450 5650 4350
 Wire Wire Line
@@ -1441,4 +1219,223 @@ F 3 "" H 8550 3300 50  0001 C CNN
 	1    8550 3300
 	1    0    0    -1  
 $EndComp
+Wire Wire Line
+	2700 1900 2700 1800
+Wire Wire Line
+	2700 2300 2700 2200
+Wire Wire Line
+	2700 2400 2700 2300
+Wire Wire Line
+	2700 2900 2700 2800
+Wire Wire Line
+	2700 3000 2700 2900
+Wire Wire Line
+	2700 3100 2700 3000
+Wire Wire Line
+	2700 3200 2700 3100
+Wire Wire Line
+	2700 3300 2700 3200
+Wire Wire Line
+	2700 3400 2700 3300
+Wire Wire Line
+	2700 3500 2700 3400
+Wire Wire Line
+	2700 3600 2700 3500
+Wire Wire Line
+	2700 3700 2700 3600
+Wire Wire Line
+	2700 3800 2700 3700
+Wire Wire Line
+	2700 3900 2700 3800
+Wire Wire Line
+	2700 4000 2700 3900
+Wire Wire Line
+	2700 4100 2700 4000
+Wire Wire Line
+	2700 4200 2700 4100
+Wire Wire Line
+	2700 4300 2700 4200
+Wire Wire Line
+	2700 4400 2700 4300
+Wire Wire Line
+	2700 4500 2700 4400
+Wire Wire Line
+	2700 4600 2700 4500
+Wire Wire Line
+	2700 4700 2700 4600
+Wire Wire Line
+	2700 4800 2700 4700
+Wire Wire Line
+	2700 4900 2700 4800
+Wire Wire Line
+	2700 5000 2700 4900
+Wire Wire Line
+	2700 5100 2700 5000
+Wire Wire Line
+	2700 5200 2700 5100
+Wire Wire Line
+	2700 5300 2700 5200
+Wire Wire Line
+	2700 5400 2700 5300
+Wire Wire Line
+	2700 5500 2700 5400
+Wire Wire Line
+	900  1900 900  1800
+Wire Wire Line
+	900  2000 900  1900
+Wire Wire Line
+	900  2100 900  2000
+Wire Wire Line
+	900  2200 900  2100
+Wire Wire Line
+	900  2300 900  2200
+Wire Wire Line
+	900  2400 900  2300
+Wire Wire Line
+	900  2500 900  2400
+Wire Wire Line
+	900  2600 900  2500
+Wire Wire Line
+	900  2700 900  2600
+Wire Wire Line
+	900  2800 900  2700
+Wire Wire Line
+	900  2900 900  2800
+Wire Wire Line
+	900  3000 900  2900
+Wire Wire Line
+	900  3100 900  3000
+Wire Wire Line
+	900  3200 900  3100
+Wire Wire Line
+	900  3300 900  3200
+Wire Wire Line
+	900  3400 900  3300
+Wire Wire Line
+	900  3500 900  3400
+Wire Wire Line
+	900  3600 900  3500
+Wire Wire Line
+	900  3700 900  3600
+Wire Wire Line
+	900  3800 900  3700
+Wire Wire Line
+	900  3900 900  3800
+Wire Wire Line
+	900  4000 900  3900
+Wire Wire Line
+	900  4100 900  4000
+Wire Wire Line
+	900  4200 900  4100
+Wire Wire Line
+	900  4300 900  4200
+Wire Wire Line
+	900  4400 900  4300
+Wire Wire Line
+	900  4500 900  4400
+Wire Wire Line
+	900  4600 900  4500
+Wire Wire Line
+	900  4700 900  4600
+Wire Wire Line
+	900  4800 900  4700
+Wire Wire Line
+	900  4900 900  4800
+Wire Wire Line
+	900  5000 900  4900
+Wire Wire Line
+	900  5100 900  5000
+Wire Wire Line
+	900  5200 900  5100
+Wire Wire Line
+	900  5300 900  5200
+Wire Wire Line
+	900  5400 900  5300
+Wire Wire Line
+	900  5500 900  5400
+Connection ~ 2700 1900
+Connection ~ 2700 2100
+Connection ~ 2700 2200
+Connection ~ 2700 2300
+Connection ~ 2700 2400
+Connection ~ 2700 2500
+Connection ~ 2700 2900
+Connection ~ 2700 3000
+Connection ~ 2700 3100
+Connection ~ 2700 3200
+Connection ~ 2700 3300
+Connection ~ 2700 3400
+Connection ~ 2700 3500
+Connection ~ 2700 3600
+Connection ~ 2700 3700
+Connection ~ 2700 3800
+Connection ~ 2700 3900
+Connection ~ 2700 4000
+Connection ~ 2700 4100
+Connection ~ 2700 4200
+Connection ~ 2700 4300
+Connection ~ 2700 4400
+Connection ~ 2700 4500
+Connection ~ 2700 4700
+Connection ~ 2700 4800
+Connection ~ 2700 4900
+Connection ~ 2700 5000
+Connection ~ 2700 5100
+Connection ~ 2700 5200
+Connection ~ 2700 5300
+Connection ~ 2700 5400
+Connection ~ 2700 5500
+Connection ~ 2700 5600
+Connection ~ 900  1900
+Connection ~ 900  2000
+Connection ~ 900  2100
+Connection ~ 900  2200
+Connection ~ 900  2300
+Connection ~ 900  2400
+Connection ~ 900  2500
+Connection ~ 900  2600
+Connection ~ 900  2700
+Connection ~ 900  2900
+Connection ~ 900  3000
+Connection ~ 900  3100
+Connection ~ 900  3200
+Connection ~ 900  3300
+Connection ~ 900  3400
+Connection ~ 900  3500
+Connection ~ 900  3600
+Connection ~ 900  3700
+Connection ~ 900  3800
+Connection ~ 900  3900
+Connection ~ 900  4000
+Connection ~ 900  4100
+Connection ~ 900  4200
+Connection ~ 900  4300
+Connection ~ 900  4400
+Connection ~ 900  4500
+Connection ~ 900  4700
+Connection ~ 900  4800
+Connection ~ 900  4900
+Connection ~ 900  5000
+Connection ~ 900  5100
+Connection ~ 900  5200
+Connection ~ 900  5300
+Connection ~ 900  5400
+Connection ~ 900  5500
+Connection ~ 900  5600
+Wire Wire Line
+	2700 2200 2700 2100
+Wire Wire Line
+	2700 2100 2700 1900
+Wire Wire Line
+	2700 2500 2700 2400
+Wire Wire Line
+	2700 2800 2700 2500
+Wire Wire Line
+	2700 5600 2700 5500
+Wire Wire Line
+	2700 5700 2700 5600
+Wire Wire Line
+	900  5600 900  5500
+Wire Wire Line
+	900  5700 900  5600
 $EndSCHEMATC

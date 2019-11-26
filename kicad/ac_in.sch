@@ -1,14 +1,15 @@
 EESchema Schematic File Version 4
+LIBS:servo-cache
 EELAYER 26 0
 EELAYER END
 $Descr A4 11693 8268
 encoding utf-8
-Sheet 9 9
-Title ""
-Date ""
-Rev ""
-Comp ""
-Comment1 ""
+Sheet 7 10
+Title "AC input"
+Date "25 10 2019"
+Rev "1.0"
+Comp "dci"
+Comment1 "Pablo Slavkin"
 Comment2 ""
 Comment3 ""
 Comment4 ""
@@ -768,32 +769,6 @@ Wire Wire Line
 Wire Wire Line
 	2700 1950 2700 2950
 $Comp
-L Device:EMI_Filter_CommonMode FL?
-U 1 1 5DF0ACD3
-P 2200 1150
-F 0 "FL?" H 2200 1428 50  0000 C CNN
-F 1 "EMI_Filter_CommonMode" H 2200 1337 50  0000 C CNN
-F 2 "" V 2200 1190 50  0000 C CNN
-F 3 "~" V 2200 1190 50  0000 C CNN
-	1    2200 1150
-	1    0    0    -1  
-$EndComp
-$Comp
-L Connector_Generic:Conn_01x03 J?
-U 1 1 5DF0DCF8
-P 1200 1150
-F 0 "J?" H 1120 825 50  0000 C CNN
-F 1 "Conn_01x03" H 1120 916 50  0000 C CNN
-F 2 "" H 1200 1150 50  0001 C CNN
-F 3 "~" H 1200 1150 50  0001 C CNN
-	1    1200 1150
-	-1   0    0    1   
-$EndComp
-Wire Wire Line
-	1400 1050 2000 1050
-Wire Wire Line
-	1400 1250 2000 1250
-$Comp
 L Device:Fuse F?
 U 1 1 5DF152F7
 P 2700 1250
@@ -804,8 +779,6 @@ F 3 "~" H 2700 1250 50  0001 C CNN
 	1    2700 1250
 	0    1    1    0   
 $EndComp
-Wire Wire Line
-	2400 1250 2550 1250
 Wire Wire Line
 	1400 1150 1650 1150
 Wire Wire Line
@@ -821,8 +794,6 @@ F 3 "~" H 1650 1350 50  0001 C CNN
 	1    1650 1350
 	1    0    0    -1  
 $EndComp
-Wire Wire Line
-	2400 1050 2950 1050
 Wire Wire Line
 	2950 1000 2950 1050
 $Comp
@@ -911,4 +882,34 @@ Wire Wire Line
 	5750 3100 5900 3100
 Wire Wire Line
 	5550 3300 5900 3300
+$Comp
+L Connector:Screw_Terminal_01x03 J?
+U 1 1 5E052E72
+P 1200 1150
+F 0 "J?" H 1120 825 50  0000 C CNN
+F 1 "Screw_Terminal_01x03" H 1120 916 50  0000 C CNN
+F 2 "" H 1200 1150 50  0001 C CNN
+F 3 "~" H 1200 1150 50  0001 C CNN
+	1    1200 1150
+	-1   0    0    1   
+$EndComp
+Wire Wire Line
+	2400 1250 2550 1250
+Wire Wire Line
+	1400 1250 2000 1250
+Wire Wire Line
+	2400 1050 2950 1050
+Wire Wire Line
+	1400 1050 2000 1050
+$Comp
+L Device:EMI_Filter_CommonMode FL?
+U 1 1 5DF0ACD3
+P 2200 1150
+F 0 "FL?" H 2200 1428 50  0000 C CNN
+F 1 "EMI_Filter_CommonMode" H 2200 1337 50  0000 C CNN
+F 2 "" V 2200 1190 50  0000 C CNN
+F 3 "~" V 2200 1190 50  0000 C CNN
+	1    2200 1150
+	1    0    0    -1  
+$EndComp
 $EndSCHEMATC

@@ -1,0 +1,787 @@
+EESchema Schematic File Version 4
+LIBS:servo-cache
+EELAYER 26 0
+EELAYER END
+$Descr A4 11693 8268
+encoding utf-8
+Sheet 8 10
+Title "LEM currente measurement"
+Date "25 10 2019"
+Rev "1.0"
+Comp "dci"
+Comment1 "Pablo Slavkin"
+Comment2 ""
+Comment3 ""
+Comment4 ""
+$EndDescr
+$Comp
+L servo:LTSR15-NP U?
+U 1 1 5DF5F09E
+P 2400 1600
+F 0 "U?" H 2150 2100 50  0000 L CNN
+F 1 "LTSR15-NP" H 1900 2200 50  0000 L CNN
+F 2 "Sensor_Current:LEM_LTSR-NP" H 2400 800 50  0001 C CNN
+F 3 "https://www.lem.com/sites/default/files/products_datasheets/ltsr_15-np.pdf" H 2400 1200 50  0001 C CNN
+	1    2400 1600
+	1    0    0    -1  
+$EndComp
+$Comp
+L Connector:Screw_Terminal_01x06 J?
+U 1 1 5DF66700
+P 1700 1650
+F 0 "J?" H 1780 1550 50  0000 L CNN
+F 1 "Screw_Terminal_01x06" H 1500 1200 50  0000 L CNN
+F 2 "" H 1700 1650 50  0001 C CNN
+F 3 "~" H 1700 1650 50  0001 C CNN
+	1    1700 1650
+	-1   0    0    1   
+$EndComp
+Wire Wire Line
+	2000 1300 1950 1300
+Wire Wire Line
+	1950 1300 1950 1350
+Wire Wire Line
+	1950 1350 1900 1350
+Wire Wire Line
+	2000 1400 1950 1400
+Wire Wire Line
+	1950 1400 1950 1450
+Wire Wire Line
+	1950 1450 1900 1450
+Wire Wire Line
+	2000 1500 1950 1500
+Wire Wire Line
+	1950 1500 1950 1550
+Wire Wire Line
+	1950 1550 1900 1550
+Wire Wire Line
+	2000 1900 1950 1900
+Wire Wire Line
+	1950 1900 1950 1850
+Wire Wire Line
+	1950 1850 1900 1850
+Wire Wire Line
+	2000 1800 1950 1800
+Wire Wire Line
+	1950 1800 1950 1750
+Wire Wire Line
+	1950 1750 1900 1750
+Wire Wire Line
+	2000 1700 1950 1700
+Wire Wire Line
+	1950 1700 1950 1650
+Wire Wire Line
+	1950 1650 1900 1650
+$Comp
+L servo:5VC #PWR?
+U 1 1 5DF67A74
+P 2400 1050
+F 0 "#PWR?" H 2400 850 20  0001 C CNN
+F 1 "5VC" H 2405 1207 28  0000 C CNN
+F 2 "" H 2400 1050 50  0001 C CNN
+F 3 "" H 2400 1050 50  0001 C CNN
+	1    2400 1050
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	2400 1050 2400 1100
+$Comp
+L servo:GND #PWR?
+U 1 1 5DF67DAB
+P 2400 2100
+F 0 "#PWR?" H 2400 1850 30  0001 C CNN
+F 1 "GND" H 2400 1942 30  0000 C CNN
+F 2 "" H 2400 2100 50  0001 C CNN
+F 3 "" H 2400 2100 50  0001 C CNN
+	1    2400 2100
+	1    0    0    -1  
+$EndComp
+$Comp
+L servo:Resistor R?
+U 1 1 5DF67E35
+P 3050 1600
+F 0 "R?" H 3050 1809 60  0000 C CNN
+F 1 "100e" H 3050 1703 60  0000 C CNN
+F 2 "" H 3050 1600 60  0000 C CNN
+F 3 "" H 3050 1600 60  0000 C CNN
+	1    3050 1600
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	2800 1600 2850 1600
+$Comp
+L servo:Capacitor C?
+U 1 1 5DF680B9
+P 3300 1750
+F 0 "C?" V 3297 1860 60  0000 L CNN
+F 1 "10nF" V 3403 1860 60  0000 L CNN
+F 2 "" H 3300 1750 60  0000 C CNN
+F 3 "" H 3300 1750 60  0000 C CNN
+	1    3300 1750
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	3250 1600 3300 1600
+Wire Wire Line
+	3300 1600 3300 1650
+$Comp
+L servo:GND #PWR?
+U 1 1 5DF682F9
+P 3300 2100
+F 0 "#PWR?" H 3300 1850 30  0001 C CNN
+F 1 "GND" H 3300 1942 30  0000 C CNN
+F 2 "" H 3300 2100 50  0001 C CNN
+F 3 "" H 3300 2100 50  0001 C CNN
+	1    3300 2100
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	3300 2100 3300 1950
+Wire Wire Line
+	3300 1600 3500 1600
+Connection ~ 3300 1600
+Text GLabel 3500 1600 2    50   Input ~ 0
+LEM_A_1
+$Comp
+L servo:LTSR15-NP U?
+U 1 1 5DF697C5
+P 2400 3100
+F 0 "U?" H 2150 3600 50  0000 L CNN
+F 1 "LTSR15-NP" H 1900 3700 50  0000 L CNN
+F 2 "Sensor_Current:LEM_LTSR-NP" H 2400 2300 50  0001 C CNN
+F 3 "https://www.lem.com/sites/default/files/products_datasheets/ltsr_15-np.pdf" H 2400 2700 50  0001 C CNN
+	1    2400 3100
+	1    0    0    -1  
+$EndComp
+$Comp
+L Connector:Screw_Terminal_01x06 J?
+U 1 1 5DF697CC
+P 1700 3150
+F 0 "J?" H 1780 3050 50  0000 L CNN
+F 1 "Screw_Terminal_01x06" H 1500 2700 50  0000 L CNN
+F 2 "" H 1700 3150 50  0001 C CNN
+F 3 "~" H 1700 3150 50  0001 C CNN
+	1    1700 3150
+	-1   0    0    1   
+$EndComp
+Wire Wire Line
+	2000 2800 1950 2800
+Wire Wire Line
+	1950 2800 1950 2850
+Wire Wire Line
+	1950 2850 1900 2850
+Wire Wire Line
+	2000 2900 1950 2900
+Wire Wire Line
+	1950 2900 1950 2950
+Wire Wire Line
+	1950 2950 1900 2950
+Wire Wire Line
+	2000 3000 1950 3000
+Wire Wire Line
+	1950 3000 1950 3050
+Wire Wire Line
+	1950 3050 1900 3050
+Wire Wire Line
+	2000 3400 1950 3400
+Wire Wire Line
+	1950 3400 1950 3350
+Wire Wire Line
+	1950 3350 1900 3350
+Wire Wire Line
+	2000 3300 1950 3300
+Wire Wire Line
+	1950 3300 1950 3250
+Wire Wire Line
+	1950 3250 1900 3250
+Wire Wire Line
+	2000 3200 1950 3200
+Wire Wire Line
+	1950 3200 1950 3150
+Wire Wire Line
+	1950 3150 1900 3150
+$Comp
+L servo:5VC #PWR?
+U 1 1 5DF697E5
+P 2400 2550
+F 0 "#PWR?" H 2400 2350 20  0001 C CNN
+F 1 "5VC" H 2405 2707 28  0000 C CNN
+F 2 "" H 2400 2550 50  0001 C CNN
+F 3 "" H 2400 2550 50  0001 C CNN
+	1    2400 2550
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	2400 2550 2400 2600
+$Comp
+L servo:GND #PWR?
+U 1 1 5DF697EC
+P 2400 3600
+F 0 "#PWR?" H 2400 3350 30  0001 C CNN
+F 1 "GND" H 2400 3442 30  0000 C CNN
+F 2 "" H 2400 3600 50  0001 C CNN
+F 3 "" H 2400 3600 50  0001 C CNN
+	1    2400 3600
+	1    0    0    -1  
+$EndComp
+$Comp
+L servo:Resistor R?
+U 1 1 5DF697F2
+P 3050 3100
+F 0 "R?" H 3050 3309 60  0000 C CNN
+F 1 "100e" H 3050 3203 60  0000 C CNN
+F 2 "" H 3050 3100 60  0000 C CNN
+F 3 "" H 3050 3100 60  0000 C CNN
+	1    3050 3100
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	2800 3100 2850 3100
+$Comp
+L servo:Capacitor C?
+U 1 1 5DF697FA
+P 3300 3250
+F 0 "C?" V 3297 3360 60  0000 L CNN
+F 1 "10nF" V 3403 3360 60  0000 L CNN
+F 2 "" H 3300 3250 60  0000 C CNN
+F 3 "" H 3300 3250 60  0000 C CNN
+	1    3300 3250
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	3250 3100 3300 3100
+Wire Wire Line
+	3300 3100 3300 3150
+$Comp
+L servo:GND #PWR?
+U 1 1 5DF69803
+P 3300 3600
+F 0 "#PWR?" H 3300 3350 30  0001 C CNN
+F 1 "GND" H 3300 3442 30  0000 C CNN
+F 2 "" H 3300 3600 50  0001 C CNN
+F 3 "" H 3300 3600 50  0001 C CNN
+	1    3300 3600
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	3300 3600 3300 3450
+Wire Wire Line
+	3300 3100 3500 3100
+Connection ~ 3300 3100
+Text GLabel 3500 3100 2    50   Input ~ 0
+LEM_A_2
+$Comp
+L servo:LTSR15-NP U?
+U 1 1 5DF6A176
+P 2400 4700
+F 0 "U?" H 2150 5200 50  0000 L CNN
+F 1 "LTSR15-NP" H 1900 5300 50  0000 L CNN
+F 2 "Sensor_Current:LEM_LTSR-NP" H 2400 3900 50  0001 C CNN
+F 3 "https://www.lem.com/sites/default/files/products_datasheets/ltsr_15-np.pdf" H 2400 4300 50  0001 C CNN
+	1    2400 4700
+	1    0    0    -1  
+$EndComp
+$Comp
+L Connector:Screw_Terminal_01x06 J?
+U 1 1 5DF6A17D
+P 1700 4750
+F 0 "J?" H 1780 4650 50  0000 L CNN
+F 1 "Screw_Terminal_01x06" H 1500 4300 50  0000 L CNN
+F 2 "" H 1700 4750 50  0001 C CNN
+F 3 "~" H 1700 4750 50  0001 C CNN
+	1    1700 4750
+	-1   0    0    1   
+$EndComp
+Wire Wire Line
+	2000 4400 1950 4400
+Wire Wire Line
+	1950 4400 1950 4450
+Wire Wire Line
+	1950 4450 1900 4450
+Wire Wire Line
+	2000 4500 1950 4500
+Wire Wire Line
+	1950 4500 1950 4550
+Wire Wire Line
+	1950 4550 1900 4550
+Wire Wire Line
+	2000 4600 1950 4600
+Wire Wire Line
+	1950 4600 1950 4650
+Wire Wire Line
+	1950 4650 1900 4650
+Wire Wire Line
+	2000 5000 1950 5000
+Wire Wire Line
+	1950 5000 1950 4950
+Wire Wire Line
+	1950 4950 1900 4950
+Wire Wire Line
+	2000 4900 1950 4900
+Wire Wire Line
+	1950 4900 1950 4850
+Wire Wire Line
+	1950 4850 1900 4850
+Wire Wire Line
+	2000 4800 1950 4800
+Wire Wire Line
+	1950 4800 1950 4750
+Wire Wire Line
+	1950 4750 1900 4750
+$Comp
+L servo:5VC #PWR?
+U 1 1 5DF6A196
+P 2400 4150
+F 0 "#PWR?" H 2400 3950 20  0001 C CNN
+F 1 "5VC" H 2405 4307 28  0000 C CNN
+F 2 "" H 2400 4150 50  0001 C CNN
+F 3 "" H 2400 4150 50  0001 C CNN
+	1    2400 4150
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	2400 4150 2400 4200
+$Comp
+L servo:GND #PWR?
+U 1 1 5DF6A19D
+P 2400 5200
+F 0 "#PWR?" H 2400 4950 30  0001 C CNN
+F 1 "GND" H 2400 5042 30  0000 C CNN
+F 2 "" H 2400 5200 50  0001 C CNN
+F 3 "" H 2400 5200 50  0001 C CNN
+	1    2400 5200
+	1    0    0    -1  
+$EndComp
+$Comp
+L servo:Resistor R?
+U 1 1 5DF6A1A3
+P 3050 4700
+F 0 "R?" H 3050 4909 60  0000 C CNN
+F 1 "100e" H 3050 4803 60  0000 C CNN
+F 2 "" H 3050 4700 60  0000 C CNN
+F 3 "" H 3050 4700 60  0000 C CNN
+	1    3050 4700
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	2800 4700 2850 4700
+$Comp
+L servo:Capacitor C?
+U 1 1 5DF6A1AB
+P 3300 4850
+F 0 "C?" V 3297 4960 60  0000 L CNN
+F 1 "10nF" V 3403 4960 60  0000 L CNN
+F 2 "" H 3300 4850 60  0000 C CNN
+F 3 "" H 3300 4850 60  0000 C CNN
+	1    3300 4850
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	3250 4700 3300 4700
+Wire Wire Line
+	3300 4700 3300 4750
+$Comp
+L servo:GND #PWR?
+U 1 1 5DF6A1B4
+P 3300 5200
+F 0 "#PWR?" H 3300 4950 30  0001 C CNN
+F 1 "GND" H 3300 5042 30  0000 C CNN
+F 2 "" H 3300 5200 50  0001 C CNN
+F 3 "" H 3300 5200 50  0001 C CNN
+	1    3300 5200
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	3300 5200 3300 5050
+Wire Wire Line
+	3300 4700 3500 4700
+Connection ~ 3300 4700
+Text GLabel 3500 4700 2    50   Input ~ 0
+LEM_A_3
+$Comp
+L servo:LTSR15-NP U?
+U 1 1 5DF6FE66
+P 6200 1600
+F 0 "U?" H 5950 2100 50  0000 L CNN
+F 1 "LTSR15-NP" H 5700 2200 50  0000 L CNN
+F 2 "Sensor_Current:LEM_LTSR-NP" H 6200 800 50  0001 C CNN
+F 3 "https://www.lem.com/sites/default/files/products_datasheets/ltsr_15-np.pdf" H 6200 1200 50  0001 C CNN
+	1    6200 1600
+	-1   0    0    -1  
+$EndComp
+$Comp
+L Connector:Screw_Terminal_01x06 J?
+U 1 1 5DF6FE6D
+P 6900 1650
+F 0 "J?" H 6980 1550 50  0000 L CNN
+F 1 "Screw_Terminal_01x06" H 6700 1200 50  0000 L CNN
+F 2 "" H 6900 1650 50  0001 C CNN
+F 3 "~" H 6900 1650 50  0001 C CNN
+	1    6900 1650
+	1    0    0    1   
+$EndComp
+Wire Wire Line
+	6600 1300 6650 1300
+Wire Wire Line
+	6650 1300 6650 1350
+Wire Wire Line
+	6650 1350 6700 1350
+Wire Wire Line
+	6600 1400 6650 1400
+Wire Wire Line
+	6650 1400 6650 1450
+Wire Wire Line
+	6650 1450 6700 1450
+Wire Wire Line
+	6600 1500 6650 1500
+Wire Wire Line
+	6650 1500 6650 1550
+Wire Wire Line
+	6650 1550 6700 1550
+Wire Wire Line
+	6600 1900 6650 1900
+Wire Wire Line
+	6650 1900 6650 1850
+Wire Wire Line
+	6650 1850 6700 1850
+Wire Wire Line
+	6600 1800 6650 1800
+Wire Wire Line
+	6650 1800 6650 1750
+Wire Wire Line
+	6650 1750 6700 1750
+Wire Wire Line
+	6600 1700 6650 1700
+Wire Wire Line
+	6650 1700 6650 1650
+Wire Wire Line
+	6650 1650 6700 1650
+$Comp
+L servo:5VC #PWR?
+U 1 1 5DF6FE86
+P 6200 1050
+F 0 "#PWR?" H 6200 850 20  0001 C CNN
+F 1 "5VC" H 6205 1207 28  0000 C CNN
+F 2 "" H 6200 1050 50  0001 C CNN
+F 3 "" H 6200 1050 50  0001 C CNN
+	1    6200 1050
+	-1   0    0    -1  
+$EndComp
+Wire Wire Line
+	6200 1050 6200 1100
+$Comp
+L servo:GND #PWR?
+U 1 1 5DF6FE8D
+P 6200 2100
+F 0 "#PWR?" H 6200 1850 30  0001 C CNN
+F 1 "GND" H 6200 1942 30  0000 C CNN
+F 2 "" H 6200 2100 50  0001 C CNN
+F 3 "" H 6200 2100 50  0001 C CNN
+	1    6200 2100
+	-1   0    0    -1  
+$EndComp
+$Comp
+L servo:Resistor R?
+U 1 1 5DF6FE93
+P 5550 1600
+F 0 "R?" H 5550 1809 60  0000 C CNN
+F 1 "100e" H 5550 1703 60  0000 C CNN
+F 2 "" H 5550 1600 60  0000 C CNN
+F 3 "" H 5550 1600 60  0000 C CNN
+	1    5550 1600
+	-1   0    0    -1  
+$EndComp
+Wire Wire Line
+	5800 1600 5750 1600
+$Comp
+L servo:Capacitor C?
+U 1 1 5DF6FE9B
+P 5300 1750
+F 0 "C?" V 5297 1860 60  0000 L CNN
+F 1 "10nF" V 5403 1860 60  0000 L CNN
+F 2 "" H 5300 1750 60  0000 C CNN
+F 3 "" H 5300 1750 60  0000 C CNN
+	1    5300 1750
+	0    -1   1    0   
+$EndComp
+Wire Wire Line
+	5350 1600 5300 1600
+Wire Wire Line
+	5300 1600 5300 1650
+$Comp
+L servo:GND #PWR?
+U 1 1 5DF6FEA4
+P 5300 2100
+F 0 "#PWR?" H 5300 1850 30  0001 C CNN
+F 1 "GND" H 5300 1942 30  0000 C CNN
+F 2 "" H 5300 2100 50  0001 C CNN
+F 3 "" H 5300 2100 50  0001 C CNN
+	1    5300 2100
+	-1   0    0    -1  
+$EndComp
+Wire Wire Line
+	5300 2100 5300 1950
+Wire Wire Line
+	5300 1600 5100 1600
+Connection ~ 5300 1600
+Text GLabel 5100 1600 0    50   Input ~ 0
+LEM_B_1
+$Comp
+L servo:LTSR15-NP U?
+U 1 1 5DF6FEAE
+P 6200 3100
+F 0 "U?" H 5950 3600 50  0000 L CNN
+F 1 "LTSR15-NP" H 5700 3700 50  0000 L CNN
+F 2 "Sensor_Current:LEM_LTSR-NP" H 6200 2300 50  0001 C CNN
+F 3 "https://www.lem.com/sites/default/files/products_datasheets/ltsr_15-np.pdf" H 6200 2700 50  0001 C CNN
+	1    6200 3100
+	-1   0    0    -1  
+$EndComp
+$Comp
+L Connector:Screw_Terminal_01x06 J?
+U 1 1 5DF6FEB5
+P 6900 3150
+F 0 "J?" H 6980 3050 50  0000 L CNN
+F 1 "Screw_Terminal_01x06" H 6700 2700 50  0000 L CNN
+F 2 "" H 6900 3150 50  0001 C CNN
+F 3 "~" H 6900 3150 50  0001 C CNN
+	1    6900 3150
+	1    0    0    1   
+$EndComp
+Wire Wire Line
+	6600 2800 6650 2800
+Wire Wire Line
+	6650 2800 6650 2850
+Wire Wire Line
+	6650 2850 6700 2850
+Wire Wire Line
+	6600 2900 6650 2900
+Wire Wire Line
+	6650 2900 6650 2950
+Wire Wire Line
+	6650 2950 6700 2950
+Wire Wire Line
+	6600 3000 6650 3000
+Wire Wire Line
+	6650 3000 6650 3050
+Wire Wire Line
+	6650 3050 6700 3050
+Wire Wire Line
+	6600 3400 6650 3400
+Wire Wire Line
+	6650 3400 6650 3350
+Wire Wire Line
+	6650 3350 6700 3350
+Wire Wire Line
+	6600 3300 6650 3300
+Wire Wire Line
+	6650 3300 6650 3250
+Wire Wire Line
+	6650 3250 6700 3250
+Wire Wire Line
+	6600 3200 6650 3200
+Wire Wire Line
+	6650 3200 6650 3150
+Wire Wire Line
+	6650 3150 6700 3150
+$Comp
+L servo:5VC #PWR?
+U 1 1 5DF6FECE
+P 6200 2550
+F 0 "#PWR?" H 6200 2350 20  0001 C CNN
+F 1 "5VC" H 6205 2707 28  0000 C CNN
+F 2 "" H 6200 2550 50  0001 C CNN
+F 3 "" H 6200 2550 50  0001 C CNN
+	1    6200 2550
+	-1   0    0    -1  
+$EndComp
+Wire Wire Line
+	6200 2550 6200 2600
+$Comp
+L servo:GND #PWR?
+U 1 1 5DF6FED5
+P 6200 3600
+F 0 "#PWR?" H 6200 3350 30  0001 C CNN
+F 1 "GND" H 6200 3442 30  0000 C CNN
+F 2 "" H 6200 3600 50  0001 C CNN
+F 3 "" H 6200 3600 50  0001 C CNN
+	1    6200 3600
+	-1   0    0    -1  
+$EndComp
+$Comp
+L servo:Resistor R?
+U 1 1 5DF6FEDB
+P 5550 3100
+F 0 "R?" H 5550 3309 60  0000 C CNN
+F 1 "100e" H 5550 3203 60  0000 C CNN
+F 2 "" H 5550 3100 60  0000 C CNN
+F 3 "" H 5550 3100 60  0000 C CNN
+	1    5550 3100
+	-1   0    0    -1  
+$EndComp
+Wire Wire Line
+	5800 3100 5750 3100
+$Comp
+L servo:Capacitor C?
+U 1 1 5DF6FEE3
+P 5300 3250
+F 0 "C?" V 5297 3360 60  0000 L CNN
+F 1 "10nF" V 5403 3360 60  0000 L CNN
+F 2 "" H 5300 3250 60  0000 C CNN
+F 3 "" H 5300 3250 60  0000 C CNN
+	1    5300 3250
+	0    -1   1    0   
+$EndComp
+Wire Wire Line
+	5350 3100 5300 3100
+Wire Wire Line
+	5300 3100 5300 3150
+$Comp
+L servo:GND #PWR?
+U 1 1 5DF6FEEC
+P 5300 3600
+F 0 "#PWR?" H 5300 3350 30  0001 C CNN
+F 1 "GND" H 5300 3442 30  0000 C CNN
+F 2 "" H 5300 3600 50  0001 C CNN
+F 3 "" H 5300 3600 50  0001 C CNN
+	1    5300 3600
+	-1   0    0    -1  
+$EndComp
+Wire Wire Line
+	5300 3600 5300 3450
+Wire Wire Line
+	5300 3100 5100 3100
+Connection ~ 5300 3100
+Text GLabel 5100 3100 0    50   Input ~ 0
+LEM_B_2
+$Comp
+L servo:LTSR15-NP U?
+U 1 1 5DF6FEF6
+P 6200 4700
+F 0 "U?" H 5950 5200 50  0000 L CNN
+F 1 "LTSR15-NP" H 5700 5300 50  0000 L CNN
+F 2 "Sensor_Current:LEM_LTSR-NP" H 6200 3900 50  0001 C CNN
+F 3 "https://www.lem.com/sites/default/files/products_datasheets/ltsr_15-np.pdf" H 6200 4300 50  0001 C CNN
+	1    6200 4700
+	-1   0    0    -1  
+$EndComp
+$Comp
+L Connector:Screw_Terminal_01x06 J?
+U 1 1 5DF6FEFD
+P 6900 4750
+F 0 "J?" H 6980 4650 50  0000 L CNN
+F 1 "Screw_Terminal_01x06" H 6700 4300 50  0000 L CNN
+F 2 "" H 6900 4750 50  0001 C CNN
+F 3 "~" H 6900 4750 50  0001 C CNN
+	1    6900 4750
+	1    0    0    1   
+$EndComp
+Wire Wire Line
+	6600 4400 6650 4400
+Wire Wire Line
+	6650 4400 6650 4450
+Wire Wire Line
+	6650 4450 6700 4450
+Wire Wire Line
+	6600 4500 6650 4500
+Wire Wire Line
+	6650 4500 6650 4550
+Wire Wire Line
+	6650 4550 6700 4550
+Wire Wire Line
+	6600 4600 6650 4600
+Wire Wire Line
+	6650 4600 6650 4650
+Wire Wire Line
+	6650 4650 6700 4650
+Wire Wire Line
+	6600 5000 6650 5000
+Wire Wire Line
+	6650 5000 6650 4950
+Wire Wire Line
+	6650 4950 6700 4950
+Wire Wire Line
+	6600 4900 6650 4900
+Wire Wire Line
+	6650 4900 6650 4850
+Wire Wire Line
+	6650 4850 6700 4850
+Wire Wire Line
+	6600 4800 6650 4800
+Wire Wire Line
+	6650 4800 6650 4750
+Wire Wire Line
+	6650 4750 6700 4750
+$Comp
+L servo:5VC #PWR?
+U 1 1 5DF6FF16
+P 6200 4150
+F 0 "#PWR?" H 6200 3950 20  0001 C CNN
+F 1 "5VC" H 6205 4307 28  0000 C CNN
+F 2 "" H 6200 4150 50  0001 C CNN
+F 3 "" H 6200 4150 50  0001 C CNN
+	1    6200 4150
+	-1   0    0    -1  
+$EndComp
+Wire Wire Line
+	6200 4150 6200 4200
+$Comp
+L servo:GND #PWR?
+U 1 1 5DF6FF1D
+P 6200 5200
+F 0 "#PWR?" H 6200 4950 30  0001 C CNN
+F 1 "GND" H 6200 5042 30  0000 C CNN
+F 2 "" H 6200 5200 50  0001 C CNN
+F 3 "" H 6200 5200 50  0001 C CNN
+	1    6200 5200
+	-1   0    0    -1  
+$EndComp
+$Comp
+L servo:Resistor R?
+U 1 1 5DF6FF23
+P 5550 4700
+F 0 "R?" H 5550 4909 60  0000 C CNN
+F 1 "100e" H 5550 4803 60  0000 C CNN
+F 2 "" H 5550 4700 60  0000 C CNN
+F 3 "" H 5550 4700 60  0000 C CNN
+	1    5550 4700
+	-1   0    0    -1  
+$EndComp
+Wire Wire Line
+	5800 4700 5750 4700
+$Comp
+L servo:Capacitor C?
+U 1 1 5DF6FF2B
+P 5300 4850
+F 0 "C?" V 5297 4960 60  0000 L CNN
+F 1 "10nF" V 5403 4960 60  0000 L CNN
+F 2 "" H 5300 4850 60  0000 C CNN
+F 3 "" H 5300 4850 60  0000 C CNN
+	1    5300 4850
+	0    -1   1    0   
+$EndComp
+Wire Wire Line
+	5350 4700 5300 4700
+Wire Wire Line
+	5300 4700 5300 4750
+$Comp
+L servo:GND #PWR?
+U 1 1 5DF6FF34
+P 5300 5200
+F 0 "#PWR?" H 5300 4950 30  0001 C CNN
+F 1 "GND" H 5300 5042 30  0000 C CNN
+F 2 "" H 5300 5200 50  0001 C CNN
+F 3 "" H 5300 5200 50  0001 C CNN
+	1    5300 5200
+	-1   0    0    -1  
+$EndComp
+Wire Wire Line
+	5300 5200 5300 5050
+Wire Wire Line
+	5300 4700 5100 4700
+Connection ~ 5300 4700
+Text GLabel 5100 4700 0    50   Input ~ 0
+LEM_B_3
+Text Notes 1200 5900 0    50   ~ 0
+I've decided to use LEM, nor shunt, I'ts a little expensive, but less\n bum, isolated and easy to change ranges. Without sigma delta issues..\n3 fases included but should work with only 2\n\n
+$EndSCHEMATC

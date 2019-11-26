@@ -17,8 +17,15 @@ https://gist.github.com/rxaviers/7360908
 -->
 - :heavy_check_mark:    controller schematics from Altium to kicad
 - :construction:        setting kicad libs, datasheet, remove unused IC's
-- :red_circle:          mix high power cirtuit to kicad
-
+- :construction:        mixing high power cirtuit to kicad
+- :construction:        two servo motor control on same board aproach!
+- :construction:        setting kicad libs, datasheet, remove unused IC's 
+- :heavy_check_mark:    adc
+- :heavy_check_mark:    igbt interface
+- :heavy_check_mark:    lem measurement
+- :heavy_check_mark:    ac input
+- :construction:        Line voltage measurement
+- :construction:        overcurrent protection using CMPSS
 
 ---
 ## Table of Contents
@@ -33,6 +40,8 @@ https://gist.github.com/rxaviers/7360908
 - [License](#license)
 ---
 ## schematics
+There are the actual schematics generated until now:
+
 <img src="doc/pics/servo-0.jpg" width="800"/>
 <img src="doc/pics/servo-1.jpg" width="800"/>
 <img src="doc/pics/servo-2.jpg" width="800"/>
@@ -40,7 +49,9 @@ https://gist.github.com/rxaviers/7360908
 <img src="doc/pics/servo-4.jpg" width="800"/>
 <img src="doc/pics/servo-5.jpg" width="800"/>
 <img src="doc/pics/servo-6.jpg" width="800"/>
-
+<img src="doc/pics/servo-7.jpg" width="800"/>
+<img src="doc/pics/servo-8.jpg" width="800"/>
+<img src="doc/pics/servo-9.jpg" width="800"/>
 
 ## Hierarchy
 

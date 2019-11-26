@@ -145,6 +145,24 @@ K 5V 4A 20W miniature AC-DC module-type power supply
 F http://www.meanwell.com/Upload/PDF/IRM-20/IRM-20-SPEC.PDF
 $ENDCMP
 #
+$CMP LTSR15-NP
+D Current Transducer, Unipolar, 15A, 5V supply, DC, AC, pulsed
+K current transducer
+F https://www.lem.com/sites/default/files/products_datasheets/ltsr_15-np.pdf
+$ENDCMP
+#
+$CMP LTSR25-NP
+D Current Transducer, Unipolar, 25A, 5V supply, DC, AC, pulsed
+K current transducer
+F https://www.lem.com/sites/default/files/products_datasheets/ltsr_25-np.pdf
+$ENDCMP
+#
+$CMP LTSR6-NP
+D Current Transducer, Unipolar, 6A, 5V supply, DC, AC, pulsed
+K current transducer
+F https://www.lem.com/sites/default/files/products_datasheets/ltsr_6-np.pdf
+$ENDCMP
+#
 $CMP PWR_FLAG
 D Power flag, general
 K power-flag

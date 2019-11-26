@@ -24,6 +24,16 @@ $CMP 93LC46C-SN
 F http://ww1.microchip.com/downloads/en/DeviceDoc/21794G.pdf
 $ENDCMP
 #
+$CMP ACL
+D Power flag, alternating current
+K power-flag
+$ENDCMP
+#
+$CMP ACN
+D Power flag, alternating current
+K power-flag
+$ENDCMP
+#
 $CMP AZ1117-1.2
 D 1A 20V Fixed LDO Linear Regulator, 1.2V, SOT-89/SOT-223/TO-220/TO-252/TO-263
 K Fixed Voltage Regulator 1A Positive LDO
@@ -133,6 +143,24 @@ $CMP IRM-20-5
 D 5V 4A 20W miniature AC-DC module-type power supply MeanWell
 K 5V 4A 20W miniature AC-DC module-type power supply
 F http://www.meanwell.com/Upload/PDF/IRM-20/IRM-20-SPEC.PDF
+$ENDCMP
+#
+$CMP LTSR15-NP
+D Current Transducer, Unipolar, 15A, 5V supply, DC, AC, pulsed
+K current transducer
+F https://www.lem.com/sites/default/files/products_datasheets/ltsr_15-np.pdf
+$ENDCMP
+#
+$CMP LTSR25-NP
+D Current Transducer, Unipolar, 25A, 5V supply, DC, AC, pulsed
+K current transducer
+F https://www.lem.com/sites/default/files/products_datasheets/ltsr_25-np.pdf
+$ENDCMP
+#
+$CMP LTSR6-NP
+D Current Transducer, Unipolar, 6A, 5V supply, DC, AC, pulsed
+K current transducer
+F https://www.lem.com/sites/default/files/products_datasheets/ltsr_6-np.pdf
 $ENDCMP
 #
 $CMP PWR_FLAG
