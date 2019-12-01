@@ -555,8 +555,8 @@ $Comp
 L servo:Resistor R203
 U 1 1 5DB39045
 P 5350 3700
-F 0 "R203" H 5000 3700 60  0000 R TNN
-F 1 "2.2k" H 5100 3650 50  0000 C CNN
+F 0 "R203" H 5650 3800 60  0000 R TNN
+F 1 "2.2k" H 5200 3750 50  0000 C CNN
 F 2 "" H 5350 3700 50  0001 C CNN
 F 3 "" H 5350 3700 50  0001 C CNN
 F 4 "2.2k" V -1550 400 60  0001 C CNN "ValueDisplayed"
@@ -794,8 +794,8 @@ $Comp
 L servo:Resistor R202
 U 1 1 5DB39031
 P 4950 3800
-F 0 "R202" H 4650 3800 60  0000 L BNN
-F 1 "10.0k" H 5100 3850 50  0000 C CNN
+F 0 "R202" H 4700 3700 60  0000 L BNN
+F 1 "10.0k" H 5100 3750 50  0000 C CNN
 F 2 "" H 4950 3800 50  0001 C CNN
 F 3 "" H 4950 3800 50  0001 C CNN
 F 4 "10.0k" V -1550 400 60  0001 C CNN "ValueDisplayed"
@@ -806,8 +806,8 @@ $Comp
 L servo:Resistor R210
 U 1 1 5DB39030
 P 8050 4500
-F 0 "R210" H 8050 4600 60  0000 C CNN
-F 1 "470" H 8050 4450 50  0000 C CNN
+F 0 "R210" H 8050 4693 60  0000 C CNN
+F 1 "470" H 8050 4595 50  0000 C CNN
 F 2 "" H 8050 4500 50  0001 C CNN
 F 3 "" H 8050 4500 50  0001 C CNN
 F 4 "470" V -1550 400 60  0001 C CNN "ValueDisplayed"
@@ -818,8 +818,8 @@ $Comp
 L servo:Resistor R211
 U 1 1 5DB3902F
 P 8050 4900
-F 0 "R211" H 8050 5000 60  0000 C CNN
-F 1 "470" H 8050 4800 50  0000 C CNN
+F 0 "R211" H 8050 5150 60  0000 C CNN
+F 1 "470" H 8050 5050 50  0000 C CNN
 F 2 "" H 8050 4900 50  0001 C CNN
 F 3 "" H 8050 4900 50  0001 C CNN
 F 4 "470" V -1550 400 60  0001 C CNN "ValueDisplayed"
@@ -830,8 +830,8 @@ $Comp
 L servo:Resistor R209
 U 1 1 5DB3902E
 P 7350 4350
-F 0 "R209" V 7395 4300 60  0000 R CNN
-F 1 "2.2k" V 7297 4300 50  0000 R CNN
+F 0 "R209" V 7395 4399 60  0000 L CNN
+F 1 "2.2k" V 7297 4399 50  0000 L CNN
 F 2 "" H 7350 4350 50  0001 C CNN
 F 3 "" H 7350 4350 50  0001 C CNN
 F 4 "2.2k" V -1550 350 60  0001 C CNN "ValueDisplayed"
@@ -960,46 +960,6 @@ F 3 "" H 6050 3700 70  0000 C CNN
 	1    0    0    -1  
 $EndComp
 Connection ~ 6050 3700
-Text GLabel 1400 2900 0    50   Input ~ 0
-MCU_GPIO118
-Text GLabel 1400 3000 0    50   Input ~ 0
-MCU_GPIO44
-Text GLabel 1400 3200 0    50   Input ~ 0
-MCU_GPIO75
-Text GLabel 1400 3300 0    50   Input ~ 0
-MCU_GPIO122
-Text GLabel 1400 3400 0    50   Input ~ 0
-MCU_GPIO123
-Text GLabel 1400 3500 0    50   Input ~ 0
-MCU_GPIO124
-Text GLabel 1400 3700 0    50   Input ~ 0
-MCU_GPIO112
-Text GLabel 1400 3800 0    50   Input ~ 0
-MCU_GPIO113
-Text GLabel 1400 3900 0    50   Input ~ 0
-MCU_GPIO111
-Text GLabel 1400 4100 0    50   Input ~ 0
-MCU_GPIO114
-Text GLabel 1400 4200 0    50   Input ~ 0
-MCU_GPIO115
-Text GLabel 1400 4300 0    50   Input ~ 0
-MCU_GPIO116
-Text GLabel 1400 4400 0    50   Input ~ 0
-MCU_GPIO117
-Text GLabel 1400 4600 0    50   Input ~ 0
-MCU_GPIO110
-Text GLabel 1400 4700 0    50   Input ~ 0
-MCU_GPIO109
-Text GLabel 5350 4200 2    50   Input ~ 0
-MCU_GPIO154
-Text GLabel 5350 4000 2    50   Input ~ 0
-MCU_GPIO119
-Text GLabel 5350 3900 2    50   Input ~ 0
-MCU_GPIO108
-Text GLabel 4900 3600 2    50   Input ~ 0
-MCU_GPIO106
-Text GLabel 4900 3500 2    50   Input ~ 0
-MCU_GPIO105
 Connection ~ 3050 1750
 Connection ~ 4900 1750
 Wire Wire Line
@@ -1022,4 +982,44 @@ Wire Wire Line
 Connection ~ 9700 5400
 Wire Wire Line
 	9700 5400 10950 5400
+Text GLabel 1400 2900 0    50   Input ~ 0
+ENET_TX_EN
+Text GLabel 1400 3000 0    50   Input ~ 0
+ENET_TX_CLK
+Text GLabel 1400 3200 0    50   Input ~ 0
+ENET_TX_D0
+Text GLabel 1400 3300 0    50   Input ~ 0
+ENET_TX_D1
+Text GLabel 1400 3400 0    50   Input ~ 0
+ENET_TX_D2
+Text GLabel 1400 3500 0    50   Input ~ 0
+ENET_TX_D3
+Text GLabel 1400 3800 0    50   Input ~ 0
+ENET_RX_ER
+Text GLabel 1400 3700 0    50   Input ~ 0
+ENET_RX_DV
+Text GLabel 1400 3900 0    50   Input ~ 0
+ENET_RX_CLK
+Text GLabel 1400 4100 0    50   Input ~ 0
+ENET_RX_D0
+Text GLabel 1400 4200 0    50   Input ~ 0
+ENET_RX_D1
+Text GLabel 1400 4300 0    50   Input ~ 0
+ENET_RX_D2
+Text GLabel 1400 4400 0    50   Input ~ 0
+ENET_RX_D3
+Text GLabel 1400 4600 0    50   Input ~ 0
+ENET_COL
+Text GLabel 1400 4700 0    50   Input ~ 0
+ENET_CRS
+Text GLabel 4900 3600 2    50   Input ~ 0
+ENET_MDIO
+Text GLabel 4900 3500 2    50   Input ~ 0
+ENET_MDC
+Text GLabel 5350 4000 2    50   Input ~ 0
+ENET_RST
+Text GLabel 5350 3900 2    50   Input ~ 0
+ENET_PWDN
+Text GLabel 5350 4200 2    50   Input ~ 0
+ENET_CAT_XI
 $EndSCHEMATC

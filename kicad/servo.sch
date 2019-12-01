@@ -84,6 +84,6 @@ Text Notes 1800 4900 0    197  ~ 39
 AC\nIN
 Text Notes 6450 3400 0    197  ~ 39
 Ether\nNET
-Text Notes 4850 3250 0    197  ~ 39
-CLK
+Text Notes 4800 3450 0    197  ~ 39
+CLK\nDBG
 $EndSCHEMATC

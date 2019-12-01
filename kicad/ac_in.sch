@@ -721,17 +721,6 @@ F 3 "" H 9350 4850 50  0001 C CNN
 	1    9350 4850
 	1    0    0    -1  
 $EndComp
-$Comp
-L servo:CMP-0078143-2 TP?
-U 1 1 5DDC3476
-P 9250 2300
-F 0 "TP?" H 9320 2285 60  0000 L CNN
-F 1 "~" H 9250 2300 50  0001 C CNN
-F 2 "" H 9250 2300 50  0001 C CNN
-F 3 "" H 9250 2300 50  0001 C CNN
-	1    9250 2300
-	1    0    0    -1  
-$EndComp
 Wire Wire Line
 	4250 1950 4500 1950
 Wire Wire Line
@@ -747,10 +736,6 @@ Wire Wire Line
 	8950 4000 9350 4000
 Wire Wire Line
 	9350 4000 9350 3950
-Wire Wire Line
-	8950 2450 9250 2450
-Wire Wire Line
-	9250 2450 9250 2400
 Wire Wire Line
 	3750 6200 4200 6200
 Connection ~ 4200 6200
@@ -910,6 +895,21 @@ F 1 "EMI_Filter_CommonMode" H 2200 1337 50  0000 C CNN
 F 2 "" V 2200 1190 50  0000 C CNN
 F 3 "~" V 2200 1190 50  0000 C CNN
 	1    2200 1150
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	9250 2450 9250 2400
+Wire Wire Line
+	8950 2450 9250 2450
+$Comp
+L servo:CMP-0078143-2 TP?
+U 1 1 5DDC3476
+P 9250 2300
+F 0 "TP?" H 9320 2285 60  0000 L CNN
+F 1 "~" H 9250 2300 50  0001 C CNN
+F 2 "" H 9250 2300 50  0001 C CNN
+F 3 "" H 9250 2300 50  0001 C CNN
+	1    9250 2300
 	1    0    0    -1  
 $EndComp
 $EndSCHEMATC

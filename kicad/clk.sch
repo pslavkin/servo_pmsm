@@ -14,8 +14,6 @@ Comment2 ""
 Comment3 ""
 Comment4 ""
 $EndDescr
-Wire Notes Line
-	4900 5850 4900 5550
 $Comp
 L servo:3V3 #PWR_?
 U 1 1 5DB38F8D
@@ -116,10 +114,6 @@ Wire Wire Line
 	1400 5500 1850 5500
 Text Label 8650 2700 0    60   ~ 0
 MCU_XRSn
-Wire Wire Line
-	8200 1500 7900 1500
-Wire Wire Line
-	8200 1400 8200 1500
 Text Label 8550 2000 2    60   ~ 0
 F2838x_CLK
 $Comp
@@ -257,28 +251,6 @@ F 4 "2.2k" V 5500 1700 60  0001 C CNN "ValueDisplayed"
 	0    -1   -1   0   
 $EndComp
 $Comp
-L servo:CMP-0078143-2 TP?
-U 1 1 5DB38F59
-P 8200 1300
-F 0 "TP?" H 8100 1400 60  0000 L BNN
-F 1 "~" H 8200 1300 50  0001 C CNN
-F 2 "" H 8200 1300 50  0001 C CNN
-F 3 "" H 8200 1300 50  0001 C CNN
-	1    8200 1300
-	1    0    0    -1  
-$EndComp
-$Comp
-L servo:CMP-0078143-2 TP?
-U 1 1 5DB38F58
-P 8650 2500
-F 0 "TP?" H 8550 2600 60  0000 L BNN
-F 1 "~" H 8650 2500 50  0001 C CNN
-F 2 "" H 8650 2500 50  0001 C CNN
-F 3 "" H 8650 2500 50  0001 C CNN
-	1    8650 2500
-	1    0    0    -1  
-$EndComp
-$Comp
 L servo:Switch_PushButton_GND3 S?
 U 1 1 5DB38F55
 P 9750 2800
@@ -357,13 +329,13 @@ Wire Wire Line
 Wire Wire Line
 	1400 5700 2450 5700
 Text GLabel 1400 5500 0    50   Input ~ 0
-MCU_GPIO31
+RUN_LED0
 Text GLabel 1400 5700 0    50   Input ~ 0
-MCU_GPIO34
+RUN_LED1
 Text GLabel 3850 5500 0    50   Input ~ 0
-MCU_GPIO72
+BOOT1
 Text GLabel 3850 5700 0    50   Input ~ 0
-MCU_GPIO84
+BOOT2
 Wire Wire Line
 	1850 4100 2150 4100
 Wire Wire Line
@@ -378,8 +350,6 @@ Wire Wire Line
 Wire Wire Line
 	4200 4000 4200 4100
 Connection ~ 9150 2700
-Wire Wire Line
-	9150 2700 8650 2700
 Wire Wire Line
 	8250 2400 7900 2400
 Wire Wire Line
@@ -487,10 +457,6 @@ Wire Wire Line
 	3650 2000 3650 2100
 Text Notes 3650 1200 0    50   ~ 0
 IDC connector to plug \nan external isolated jtag interface
-Text GLabel 5500 5500 0    60   BiDi ~ 0
-MCU_GPIO29
-Text GLabel 5500 5700 0    60   BiDi ~ 0
-MCU_GPIO28
 Wire Wire Line
 	3900 1800 3800 1800
 Wire Wire Line
@@ -499,10 +465,6 @@ Wire Wire Line
 	5500 5700 6050 5700
 Wire Wire Line
 	6050 5700 6050 5400
-Text GLabel 3800 1700 0    60   BiDi ~ 0
-MCU_GPIO29
-Text GLabel 3800 1800 0    60   BiDi ~ 0
-MCU_GPIO28
 $Comp
 L servo:5VC #PWR?
 U 1 1 5DE66EF3
@@ -547,12 +509,7 @@ Wire Wire Line
 Wire Wire Line
 	8650 1600 8650 2000
 Wire Wire Line
-	8650 2600 8650 2700
-Connection ~ 8650 2700
-Wire Wire Line
 	9150 2700 9350 2700
-Wire Wire Line
-	8650 2700 8250 2700
 Wire Wire Line
 	8250 2700 8250 2400
 Text Label 5000 1600 2    60   ~ 0
@@ -597,4 +554,14 @@ Text Notes 5600 3650 0    120  ~ 0
 SCI leds\n
 Wire Wire Line
 	1850 5250 1850 5500
+Text GLabel 3800 1700 0    60   BiDi ~ 0
+SCIA_TX
+Text GLabel 3800 1800 0    60   BiDi ~ 0
+SCIA_RX
+Text GLabel 5500 5500 0    60   BiDi ~ 0
+SCIA_TX
+Text GLabel 5500 5700 0    60   BiDi ~ 0
+SCIA_RX
+Wire Wire Line
+	8250 2700 9150 2700
 $EndSCHEMATC

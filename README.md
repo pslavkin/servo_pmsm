@@ -24,6 +24,7 @@ https://gist.github.com/rxaviers/7360908
 - :heavy_check_mark:    igbt interface
 - :heavy_check_mark:    lem measurement
 - :heavy_check_mark:    ac input
+- :heavy_check_mark:    connect interfaces to GPIO's (ecat0/1, enet, leds, etc)
 - :construction:        Line voltage measurement
 - :construction:        overcurrent protection using CMPSS
 

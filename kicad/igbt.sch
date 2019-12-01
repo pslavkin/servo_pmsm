@@ -112,12 +112,12 @@ Wire Wire Line
 Wire Wire Line
 	1500 1350 1500 1150
 Wire Wire Line
-	900  1150 1500 1150
+	1100 1150 1500 1150
 Connection ~ 1500 1150
 Wire Wire Line
 	1500 1150 2200 1150
 Wire Wire Line
-	900  1300 1750 1300
+	1100 1300 1750 1300
 Connection ~ 1750 1300
 Wire Wire Line
 	1750 1300 2200 1300
@@ -143,15 +143,7 @@ Wire Wire Line
 	3600 1300 4450 1300
 Wire Wire Line
 	5000 2100 5500 2100
-Text Label 4000 1150 0    50   ~ 0
-PWM_A_1H_H
-Text Label 4000 1300 0    50   ~ 0
-PWM_A_2H_H
-Text Label 1150 1150 0    50   ~ 0
-PWM_A_1H_C
-Text Label 1150 1300 0    50   ~ 0
-PWM_A_2H_C
-Text Label 5000 2100 0    50   ~ 0
+Text Label 5000 2200 0    50   ~ 0
 PWM_A_2H_H
 Text Label 5000 2000 0    50   ~ 0
 PWM_A_1H_H
@@ -255,12 +247,12 @@ Wire Wire Line
 Wire Wire Line
 	1500 2800 1500 2600
 Wire Wire Line
-	900  2600 1500 2600
+	1100 2600 1500 2600
 Connection ~ 1500 2600
 Wire Wire Line
 	1500 2600 2200 2600
 Wire Wire Line
-	900  2750 1750 2750
+	1100 2750 1750 2750
 Connection ~ 1750 2750
 Wire Wire Line
 	1750 2750 2200 2750
@@ -273,14 +265,6 @@ Wire Wire Line
 	3600 2600 4450 2600
 Wire Wire Line
 	3600 2750 4450 2750
-Text Label 4000 2600 0    50   ~ 0
-PWM_A_3H_H
-Text Label 4000 2750 0    50   ~ 0
-PWM_A_1L_H
-Text Label 1150 2600 0    50   ~ 0
-PWM_A_3H_C
-Text Label 1150 2750 0    50   ~ 0
-PWM_A_1L_C
 $Comp
 L servo:TI-ISO7220C-SOIC_D-8 U?
 U 1 1 5DDF1C84
@@ -379,12 +363,12 @@ Wire Wire Line
 Wire Wire Line
 	1500 4300 1500 4100
 Wire Wire Line
-	900  4100 1500 4100
+	1100 4100 1500 4100
 Connection ~ 1500 4100
 Wire Wire Line
 	1500 4100 2200 4100
 Wire Wire Line
-	900  4250 1750 4250
+	1100 4250 1750 4250
 Connection ~ 1750 4250
 Wire Wire Line
 	1750 4250 2200 4250
@@ -397,14 +381,6 @@ Wire Wire Line
 	3600 4100 4450 4100
 Wire Wire Line
 	3600 4250 4450 4250
-Text Label 4000 4100 0    50   ~ 0
-PWM_A_2L_H
-Text Label 4000 4250 0    50   ~ 0
-PWM_A_3L_H
-Text Label 1150 4100 0    50   ~ 0
-PWM_A_2L_C
-Text Label 1150 4250 0    50   ~ 0
-PWM_A_3L_C
 $Comp
 L servo:TI-ISO7220C-SOIC_D-8 U?
 U 1 1 5DDF2D5D
@@ -503,12 +479,12 @@ Wire Wire Line
 Wire Wire Line
 	4450 5750 4450 5550
 Wire Wire Line
-	3850 5550 4450 5550
+	4250 5550 4450 5550
 Connection ~ 4450 5550
 Wire Wire Line
 	4450 5550 5150 5550
 Wire Wire Line
-	3850 5700 4700 5700
+	4250 5700 4700 5700
 Connection ~ 4700 5700
 Wire Wire Line
 	4700 5700 5150 5700
@@ -521,10 +497,6 @@ Wire Wire Line
 	6550 5550 7400 5550
 Wire Wire Line
 	6550 5700 7400 5700
-Text Label 4100 5550 0    50   ~ 0
-PWM_A_OFF_C
-Text Label 4100 5700 0    50   ~ 0
-PWM_B_OFF_C
 Text Label 6950 5700 0    50   ~ 0
 PWM_B_OFF_H
 Text Label 6950 5550 0    50   ~ 0
@@ -627,12 +599,12 @@ Wire Wire Line
 Wire Wire Line
 	9850 1400 9850 1200
 Wire Wire Line
-	10450 1200 9850 1200
+	10350 1200 9850 1200
 Connection ~ 9850 1200
 Wire Wire Line
 	9850 1200 9150 1200
 Wire Wire Line
-	10450 1350 9600 1350
+	10350 1350 9600 1350
 Connection ~ 9600 1350
 Wire Wire Line
 	9600 1350 9150 1350
@@ -645,12 +617,8 @@ Wire Wire Line
 	7750 1350 6900 1350
 Text Label 7350 1200 2    50   ~ 0
 PWM_B_1H_H
-Text Label 7350 1350 2    50   ~ 0
+Text Label 7400 2650 2    50   ~ 0
 PWM_B_2H_H
-Text Label 10200 1200 2    50   ~ 0
-PWM_B_1H_C
-Text Label 10200 1350 2    50   ~ 0
-PWM_B_2H_C
 $Comp
 L servo:TI-ISO7220C-SOIC_D-8 U?
 U 1 1 5DDFB941
@@ -765,14 +733,10 @@ Wire Wire Line
 Connection ~ 9600 3250
 Wire Wire Line
 	7750 2800 6900 2800
-Text Label 7350 2650 2    50   ~ 0
+Text Label 7400 4150 2    50   ~ 0
 PWM_B_3H_H
-Text Label 7350 2800 2    50   ~ 0
+Text Label 7350 1350 2    50   ~ 0
 PWM_B_1L_H
-Text Label 10200 2650 2    50   ~ 0
-PWM_B_3H_C
-Text Label 10200 2800 2    50   ~ 0
-PWM_B_1L_C
 $Comp
 L servo:TI-ISO7220C-SOIC_D-8 U?
 U 1 1 5DDFB988
@@ -889,29 +853,25 @@ Wire Wire Line
 	7750 4150 6900 4150
 Wire Wire Line
 	7750 4300 6900 4300
-Text Label 7350 4150 2    50   ~ 0
+Text Label 7400 2800 2    50   ~ 0
 PWM_B_2L_H
 Text Label 7350 4300 2    50   ~ 0
 PWM_B_3L_H
-Text Label 10200 4150 2    50   ~ 0
-PWM_B_2L_C
-Text Label 10200 4300 2    50   ~ 0
-PWM_B_3L_C
 Wire Wire Line
 	6900 1200 7750 1200
 Wire Wire Line
 	6900 2650 7750 2650
 Wire Wire Line
 	5000 2300 5500 2300
-Text Label 5000 2300 0    50   ~ 0
+Text Label 5000 2100 0    50   ~ 0
 PWM_A_1L_H
-Text Label 5000 2200 0    50   ~ 0
+Text Label 5000 2400 0    50   ~ 0
 PWM_A_3H_H
 Wire Wire Line
 	5000 2200 5500 2200
 Wire Wire Line
 	5000 2400 5500 2400
-Text Label 5000 2400 0    50   ~ 0
+Text Label 5000 2300 0    50   ~ 0
 PWM_A_2L_H
 Wire Wire Line
 	6500 2400 6000 2400
@@ -930,7 +890,7 @@ F 3 "~" H 5750 3350 50  0001 C CNN
 $EndComp
 Wire Wire Line
 	5050 3250 5550 3250
-Text Label 5050 3250 0    50   ~ 0
+Text Label 5050 3350 0    50   ~ 0
 PWM_B_2H_H
 Text Label 5050 3150 0    50   ~ 0
 PWM_B_1H_H
@@ -938,15 +898,15 @@ Wire Wire Line
 	5050 3150 5550 3150
 Wire Wire Line
 	5050 3450 5550 3450
-Text Label 5050 3450 0    50   ~ 0
+Text Label 5050 3250 0    50   ~ 0
 PWM_B_1L_H
-Text Label 5050 3350 0    50   ~ 0
+Text Label 5050 3550 0    50   ~ 0
 PWM_B_3H_H
 Wire Wire Line
 	5050 3350 5550 3350
 Wire Wire Line
 	5050 3550 5550 3550
-Text Label 5050 3550 0    50   ~ 0
+Text Label 5050 3450 0    50   ~ 0
 PWM_B_2L_H
 Wire Wire Line
 	6550 3550 6050 3550
@@ -960,4 +920,44 @@ Text Label 6100 3450 0    50   ~ 0
 PWM_B_OFF_H
 Text Label 6050 2300 0    50   ~ 0
 PWM_A_OFF_H
+Text GLabel 1100 1150 0    50   Input ~ 0
+PWM_A_1H_C
+Text GLabel 1100 2600 0    50   Input ~ 0
+PWM_A_2H_C
+Text GLabel 1100 4100 0    50   Input ~ 0
+PWM_A_3H_C
+Text GLabel 1100 1300 0    50   Input ~ 0
+PWM_A_1L_C
+Text GLabel 1100 2750 0    50   Input ~ 0
+PWM_A_2L_C
+Text GLabel 1100 4250 0    50   Input ~ 0
+PWM_A_3L_C
+Text GLabel 10450 2650 2    50   Input ~ 0
+PWM_B_2H_C
+Text GLabel 10350 1200 2    50   Input ~ 0
+PWM_B_1H_C
+Text GLabel 10400 1350 2    50   Input ~ 0
+PWM_B_1L_C
+Text GLabel 10450 4150 2    50   Input ~ 0
+PWM_B_3H_C
+Text GLabel 10450 4300 2    50   Input ~ 0
+PWM_B_3L_C
+Text GLabel 10450 2800 2    50   Input ~ 0
+PWM_B_2L_C
+Text GLabel 4250 5700 0    50   Input ~ 0
+PWM_B_OFF_C
+Text GLabel 4250 5550 0    50   Input ~ 0
+PWM_A_OFF_C
+Text Label 4400 4250 2    50   ~ 0
+PWM_A_3L_H
+Text Label 3950 2750 0    50   ~ 0
+PWM_A_2L_H
+Text Label 3900 1300 0    50   ~ 0
+PWM_A_1L_H
+Text Label 3950 4100 0    50   ~ 0
+PWM_A_3H_H
+Text Label 3950 2600 0    50   ~ 0
+PWM_A_2H_H
+Text Label 3900 1150 0    50   ~ 0
+PWM_A_1H_H
 $EndSCHEMATC

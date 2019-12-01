@@ -196,51 +196,23 @@ $EndComp
 Wire Wire Line
 	2000 3900 2350 3900
 Wire Wire Line
-	2000 3800 2350 3800
-Wire Wire Line
 	2000 3700 2350 3700
 Wire Wire Line
 	2000 3600 2350 3600
 Wire Wire Line
 	2000 3500 2350 3500
 Wire Wire Line
-	2000 3400 2350 3400
-Wire Wire Line
 	2000 3200 2350 3200
-Wire Wire Line
-	2000 3100 2350 3100
 Wire Wire Line
 	2000 3000 2350 3000
 Wire Wire Line
-	2000 2900 2350 2900
-Wire Wire Line
-	2000 2700 2350 2700
-Wire Wire Line
-	2000 2600 2350 2600
-Wire Wire Line
 	2000 2500 2350 2500
 Wire Wire Line
-	2000 2400 2350 2400
-Wire Wire Line
 	2000 2300 2350 2300
-Wire Wire Line
-	2000 2200 2350 2200
 Wire Wire Line
 	2000 2000 2350 2000
 Wire Wire Line
 	2000 1900 2350 1900
-Wire Wire Line
-	2000 1700 2350 1700
-Wire Wire Line
-	2000 1600 2350 1600
-Wire Wire Line
-	2000 1500 2350 1500
-Wire Wire Line
-	2000 1400 2350 1400
-Wire Wire Line
-	2000 1300 2350 1300
-Wire Wire Line
-	2000 1200 2350 1200
 Text GLabel 2000 1200 0    50   Input ~ 0
 ADC_A0
 Text GLabel 2000 1300 0    50   Input ~ 0
@@ -289,4 +261,92 @@ Text GLabel 2000 3800 0    50   Input ~ 0
 ADC_D4
 Text GLabel 2000 3900 0    50   Input ~ 0
 ADC_D5
+Text GLabel 1350 1300 0    50   Input ~ 0
+LEM_A_2
+Text GLabel 1350 1200 0    50   Input ~ 0
+LEM_A_1
+Wire Wire Line
+	1350 1200 2350 1200
+Wire Wire Line
+	1350 1300 2350 1300
+Wire Wire Line
+	1350 1400 2350 1400
+Wire Wire Line
+	1350 1600 2350 1600
+Text GLabel 1450 2200 0    50   Input ~ 0
+LEM_A_3
+Text GLabel 1450 3800 0    50   Input ~ 0
+LEM_B_2
+Text GLabel 1450 2600 0    50   Input ~ 0
+LEM_B_1
+Text GLabel 1450 2700 0    50   Input ~ 0
+LEM_B_3
+Text GLabel 1350 1400 0    50   Input ~ 0
+LEM_A_1
+Text GLabel 1350 1600 0    50   Input ~ 0
+LEM_A_2
+Text GLabel 1450 2400 0    50   Input ~ 0
+LEM_A_3
+Wire Wire Line
+	2350 1500 2000 1500
+Wire Wire Line
+	2350 1700 2000 1700
+Wire Wire Line
+	1450 2200 2350 2200
+Wire Wire Line
+	1450 2400 2350 2400
+Text GLabel 1450 2900 0    50   Input ~ 0
+LEM_B_1
+Text GLabel 1450 3100 0    50   Input ~ 0
+LEM_B_3
+Text GLabel 1450 3400 0    50   Input ~ 0
+LEM_B_2
+Wire Wire Line
+	1450 3400 2350 3400
+Wire Wire Line
+	1450 3800 2350 3800
+Wire Wire Line
+	1450 3100 2350 3100
+Wire Wire Line
+	1450 2900 2350 2900
+Wire Wire Line
+	1450 2700 2350 2700
+Wire Wire Line
+	1450 2600 2350 2600
+Wire Notes Line style solid
+	950  1350 850  1350
+Wire Notes Line style solid
+	850  1350 850  1700
+Wire Notes Line style solid
+	850  1700 950  1700
+Wire Notes Line style solid
+	950  2350 850  2350
+Wire Notes Line style solid
+	850  2350 850  2450
+Wire Notes Line style solid
+	850  2450 950  2450
+Wire Notes Line style solid
+	950  2850 850  2850
+Wire Notes Line style solid
+	850  2850 850  3200
+Wire Notes Line style solid
+	850  3200 950  3200
+Wire Notes Line style solid
+	950  3750 850  3750
+Wire Notes Line style solid
+	850  3750 850  3850
+Wire Notes Line style solid
+	850  3850 950  3850
+Wire Notes Line style solid
+	700  1500 700  3800
+Wire Notes Line style solid
+	700  3800 850  3800
+Wire Notes Line style solid
+	850  3050 700  3050
+Wire Notes Line
+	850  1500 700  1500
+Wire Notes Line style solid
+	850  2400 700  2400
+Text Notes 700  2050 0    50   ~ 0
+for overcurrent\n protection
 $EndSCHEMATC
