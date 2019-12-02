@@ -145,6 +145,18 @@ K 5V 4A 20W miniature AC-DC module-type power supply
 F http://www.meanwell.com/Upload/PDF/IRM-20/IRM-20-SPEC.PDF
 $ENDCMP
 #
+$CMP ISO1050
+D ISO1050 Isolated CAN Transceiver
+K ISO1050 Isolated CAN Transceiver
+F http://www.ti.com/lit/ds/symlink/iso1050.pdf
+$ENDCMP
+#
+$CMP LTC2866
+D 20Mbps RS485 transceiver with tntegrated switchable termination
+K RS485
+F linear-tec\ltc2859-2861.pdf
+$ENDCMP
+#
 $CMP LTSR15-NP
 D Current Transducer, Unipolar, 15A, 5V supply, DC, AC, pulsed
 K current transducer

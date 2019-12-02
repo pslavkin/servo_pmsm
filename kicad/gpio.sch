@@ -4,7 +4,7 @@ EELAYER 26 0
 EELAYER END
 $Descr B 17000 11000
 encoding utf-8
-Sheet 10 10
+Sheet 10 14
 Title "gpio"
 Date "25 10 2019"
 Rev "1.0"
@@ -393,31 +393,11 @@ Wire Wire Line
 Wire Wire Line
 	3250 7700 4100 7700
 Wire Wire Line
-	3250 7500 4100 7500
-Wire Wire Line
-	3250 7300 4100 7300
-Wire Wire Line
 	3250 7200 4100 7200
-Wire Wire Line
-	3250 7000 4100 7000
-Wire Wire Line
-	3250 6800 4100 6800
-Wire Wire Line
-	3250 6700 4100 6700
 Wire Wire Line
 	3250 6600 4100 6600
 Wire Wire Line
-	3250 6500 4100 6500
-Wire Wire Line
-	3250 6400 4100 6400
-Wire Wire Line
-	3250 6300 4100 6300
-Wire Wire Line
 	3250 6200 4100 6200
-Wire Wire Line
-	3250 6100 4100 6100
-Wire Wire Line
-	3250 6000 4100 6000
 Wire Wire Line
 	3250 5900 4100 5900
 Wire Wire Line
@@ -445,10 +425,6 @@ Wire Wire Line
 Wire Wire Line
 	3250 4600 4100 4600
 Wire Wire Line
-	3250 2900 4100 2900
-Wire Wire Line
-	3250 2800 4100 2800
-Wire Wire Line
 	3250 2700 4100 2700
 Wire Wire Line
 	3250 2600 4100 2600
@@ -458,12 +434,6 @@ Wire Wire Line
 	3250 2400 4100 2400
 Wire Wire Line
 	3250 2300 4100 2300
-Wire Wire Line
-	3250 2200 4100 2200
-Wire Wire Line
-	3250 2100 4100 2100
-Wire Wire Line
-	3250 2000 4100 2000
 Wire Wire Line
 	3250 1100 4100 1100
 Wire Wire Line
@@ -598,14 +568,6 @@ Wire Notes Line
 	1800 4150 1900 4150
 Text Notes 1750 3700 1    50   ~ 0
 do not move
-Wire Wire Line
-	3250 6900 4100 6900
-Wire Wire Line
-	3250 7100 4100 7100
-Wire Wire Line
-	3250 7400 4100 7400
-Wire Wire Line
-	3250 7600 4100 7600
 Wire Wire Line
 	3250 8000 4100 8000
 Wire Wire Line
@@ -860,4 +822,80 @@ Wire Wire Line
 	6300 7100 7650 7100
 Wire Wire Line
 	6300 7200 7650 7200
+Text GLabel 2450 7500 0    50   Input ~ 0
+ENDAT1_CLK
+Text GLabel 2450 7600 0    50   Input ~ 0
+ENDAT1_CS
+Text GLabel 2450 7300 0    50   Input ~ 0
+ENDAT1_MOSI
+Text GLabel 2450 7400 0    50   Input ~ 0
+ENDAT1_MISO
+Text GLabel 2450 7000 0    50   Input ~ 0
+ENDAT0_CLK
+Text GLabel 2450 7100 0    50   Input ~ 0
+ENDAT0_CS
+Text GLabel 2450 6900 0    50   Input ~ 0
+ENDAT0_MOSI
+Text GLabel 2450 6800 0    50   Input ~ 0
+ENDAT0_MISO
+Wire Wire Line
+	2450 6800 4100 6800
+Wire Wire Line
+	2450 6900 4100 6900
+Wire Wire Line
+	2450 7000 4100 7000
+Wire Wire Line
+	2450 7100 4100 7100
+Wire Wire Line
+	2450 7300 4100 7300
+Wire Wire Line
+	2450 7400 4100 7400
+Wire Wire Line
+	2450 7500 4100 7500
+Wire Wire Line
+	2450 7600 4100 7600
+Text GLabel 2450 6400 0    50   Input ~ 0
+QEP1_A
+Text GLabel 2450 6500 0    50   Input ~ 0
+QEP1_B
+Text GLabel 2450 6700 0    50   Input ~ 0
+QEP1_I
+Text GLabel 2450 6000 0    50   Input ~ 0
+QEP0_A
+Text GLabel 2450 6100 0    50   Input ~ 0
+QEP0_B
+Text GLabel 2450 6300 0    50   Input ~ 0
+QEP0_I
+Wire Wire Line
+	2450 6000 4100 6000
+Wire Wire Line
+	2450 6100 4100 6100
+Wire Wire Line
+	2450 6300 4100 6300
+Wire Wire Line
+	2450 6400 4100 6400
+Wire Wire Line
+	2450 6500 4100 6500
+Wire Wire Line
+	2450 6700 4100 6700
+Text GLabel 2350 2200 0    50   Input ~ 0
+RS485_EN
+Text GLabel 2350 2100 0    50   Input ~ 0
+RS485_TX
+Text GLabel 2350 2000 0    50   Input ~ 0
+RS485_RX
+Wire Wire Line
+	2350 2000 4100 2000
+Wire Wire Line
+	2350 2100 4100 2100
+Wire Wire Line
+	2350 2200 4100 2200
+Text GLabel 2450 2900 0    50   Input ~ 0
+CAN_TX
+Text GLabel 2450 2800 0    50   Input ~ 0
+CAN_RX
+Wire Wire Line
+	2450 2800 4100 2800
+Wire Wire Line
+	2450 2900 4100 2900
 $EndSCHEMATC

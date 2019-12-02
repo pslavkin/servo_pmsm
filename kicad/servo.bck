@@ -145,6 +145,18 @@ K 5V 4A 20W miniature AC-DC module-type power supply
 F http://www.meanwell.com/Upload/PDF/IRM-20/IRM-20-SPEC.PDF
 $ENDCMP
 #
+$CMP ISO1050
+D Isolated RS485/RS422 Transceiver, Half-/Full-Duplex, 500kbps,SOIC-16W
+K RS485 Transceiver RS422 Transceiver
+F http://www.analog.com/media/en/technical-documentation/data-sheets/ADM2484E.pdf
+$ENDCMP
+#
+$CMP LTC2866
+D 20Mbps RS485 transceiver with tntegrated switchable termination
+K RS485
+F linear-tec\ltc2859-2861.pdf
+$ENDCMP
+#
 $CMP LTSR15-NP
 D Current Transducer, Unipolar, 15A, 5V supply, DC, AC, pulsed
 K current transducer
