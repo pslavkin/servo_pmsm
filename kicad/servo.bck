@@ -39,10 +39,16 @@ D Power flag, alternating current
 K power-flag
 $ENDCMP
 #
+$CMP AMC1100
+D AMC1100Fully-DifferentialIsolationAmplifier
+K ADC
+F http://www.ti.com/lit/ds/symlink/amc1100.pdf
+$ENDCMP
+#
 $CMP AMC1304
-D Low cost 1W converter
-K DC/DC Converter
-F https://www.mouser.com/datasheet/2/468/RFM-1307831.pdf
+D AMC1304xHigh-Precision,ReinforcedIsolatedDelta-SigmaModulatorswith LDO
+K ADC
+F http://www.ti.com/lit/ds/symlink/amc1304m05.pdf
 $ENDCMP
 #
 $CMP AZ1117-1.2
@@ -85,6 +91,11 @@ $CMP AZ1117-5.0
 D 1A 20V Fixed LDO Linear Regulator, 5.0V, SOT-89/SOT-223/TO-220/TO-252/TO-263
 K Fixed Voltage Regulator 1A Positive LDO
 F https://www.diodes.com/assets/Datasheets/AZ1117.pdf
+$ENDCMP
+#
+$CMP BUS_DC
+D Power flag, positive voltage
+K power-flag
 $ENDCMP
 #
 $CMP CDCLVC1104

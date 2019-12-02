@@ -25,6 +25,7 @@ https://gist.github.com/rxaviers/7360908
 - :heavy_check_mark:    lem measurement
 - :heavy_check_mark:    ac input
 - :heavy_check_mark:    connect interfaces to GPIO's (ecat0/1, enet, leds, etc)
+- :heavy_check_mark:    shunt using isolated ADC fron/backend
 - :construction:        Line voltage measurement
 - :construction:        overcurrent protection using CMPSS
 - :construction:        changing/adding shunt measurement with sigma deltas isolated ADC
@@ -59,6 +60,7 @@ There are the actual schematics generated until now:
 <img src="doc/pics/servo-12.jpg" width="800"/>
 <img src="doc/pics/servo-13.jpg" width="800"/>
 <img src="doc/pics/servo-14.jpg" width="800"/>
+<img src="doc/pics/servo-15.jpg" width="800"/>
 
 ## Hierarchy
 

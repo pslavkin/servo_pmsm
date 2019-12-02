@@ -4,7 +4,7 @@ EELAYER 26 0
 EELAYER END
 $Descr B 17000 11000
 encoding utf-8
-Sheet 10 15
+Sheet 10 16
 Title "gpio"
 Date "25 10 2019"
 Rev "1.0"
@@ -399,31 +399,15 @@ Wire Wire Line
 Wire Wire Line
 	3250 6200 4100 6200
 Wire Wire Line
-	3250 5900 4100 5900
-Wire Wire Line
-	3250 5800 4100 5800
-Wire Wire Line
 	3250 5700 4100 5700
 Wire Wire Line
 	3250 5600 4100 5600
 Wire Wire Line
 	3250 5500 4100 5500
 Wire Wire Line
-	3250 5300 4100 5300
-Wire Wire Line
-	3250 5200 4100 5200
-Wire Wire Line
 	3250 5100 4100 5100
 Wire Wire Line
 	3250 5000 4100 5000
-Wire Wire Line
-	3250 4900 4100 4900
-Wire Wire Line
-	3250 4800 4100 4800
-Wire Wire Line
-	3250 4700 4100 4700
-Wire Wire Line
-	3250 4600 4100 4600
 Wire Wire Line
 	3250 2700 4100 2700
 Wire Wire Line
@@ -432,24 +416,6 @@ Wire Wire Line
 	3250 2500 4100 2500
 Wire Wire Line
 	3250 2400 4100 2400
-Wire Wire Line
-	3250 2300 4100 2300
-Wire Wire Line
-	3250 1100 4100 1100
-Wire Wire Line
-	3250 1000 4100 1000
-Wire Wire Line
-	3250 1200 4100 1200
-Wire Wire Line
-	3250 1300 4100 1300
-Wire Wire Line
-	3250 1400 4100 1400
-Wire Wire Line
-	3250 1500 4100 1500
-Wire Wire Line
-	3250 1600 4100 1600
-Wire Wire Line
-	3250 1700 4100 1700
 Wire Wire Line
 	6300 7700 6850 7700
 Wire Wire Line
@@ -508,76 +474,40 @@ Wire Wire Line
 	6300 1200 6850 1200
 Wire Wire Line
 	6300 1100 6850 1100
-Text GLabel 2450 3000 0    50   Input ~ 0
+Text GLabel 2450 1000 0    50   Input ~ 0
 PWM_A_1H_C
-Text GLabel 2450 3200 0    50   Input ~ 0
+Text GLabel 2450 1200 0    50   Input ~ 0
 PWM_A_2H_C
-Text GLabel 2450 3400 0    50   Input ~ 0
+Text GLabel 2450 1400 0    50   Input ~ 0
 PWM_A_3H_C
-Text GLabel 2450 3100 0    50   Input ~ 0
+Text GLabel 2450 1100 0    50   Input ~ 0
 PWM_A_1L_C
-Text GLabel 2450 3300 0    50   Input ~ 0
+Text GLabel 2450 1300 0    50   Input ~ 0
 PWM_A_2L_C
-Text GLabel 2450 3500 0    50   Input ~ 0
+Text GLabel 2450 1500 0    50   Input ~ 0
 PWM_A_3L_C
-Text GLabel 2450 3800 0    50   Input ~ 0
+Text GLabel 2450 1800 0    50   Input ~ 0
 PWM_B_2H_C
-Text GLabel 2450 3600 0    50   Input ~ 0
+Text GLabel 2450 1600 0    50   Input ~ 0
 PWM_B_1H_C
-Text GLabel 2450 3700 0    50   Input ~ 0
+Text GLabel 2450 1700 0    50   Input ~ 0
 PWM_B_1L_C
-Text GLabel 2450 4000 0    50   Input ~ 0
+Text GLabel 2450 2000 0    50   Input ~ 0
 PWM_B_3H_C
-Text GLabel 2450 4100 0    50   Input ~ 0
+Text GLabel 2450 2100 0    50   Input ~ 0
 PWM_B_3L_C
-Text GLabel 2450 3900 0    50   Input ~ 0
+Text GLabel 2450 1900 0    50   Input ~ 0
 PWM_B_2L_C
-Text GLabel 2450 4300 0    50   Input ~ 0
+Text GLabel 2450 2300 0    50   Input ~ 0
 PWM_B_OFF_C
-Text GLabel 2450 4200 0    50   Input ~ 0
+Text GLabel 2450 2200 0    50   Input ~ 0
 PWM_A_OFF_C
-Wire Wire Line
-	2450 3000 4100 3000
-Wire Wire Line
-	2450 3100 4100 3100
-Wire Wire Line
-	2450 3200 4100 3200
-Wire Wire Line
-	2450 3300 4100 3300
-Wire Wire Line
-	2450 3400 4100 3400
-Wire Wire Line
-	2450 3500 4100 3500
-Wire Wire Line
-	2450 3600 4100 3600
-Wire Wire Line
-	2450 3700 4100 3700
-Wire Wire Line
-	2450 3800 4100 3800
-Wire Wire Line
-	2450 3900 4100 3900
-Wire Wire Line
-	2450 4000 4100 4000
-Wire Wire Line
-	2450 4100 4100 4100
-Wire Notes Line
-	1900 2900 1800 2900
-Wire Notes Line
-	1800 2900 1800 4150
-Wire Notes Line
-	1800 4150 1900 4150
-Text Notes 1750 3700 1    50   ~ 0
-do not move
 Wire Wire Line
 	3250 8000 4100 8000
 Wire Wire Line
 	2450 4400 4100 4400
 Wire Wire Line
 	2450 4500 4100 4500
-Wire Wire Line
-	2450 4300 4100 4300
-Wire Wire Line
-	2450 4200 4100 4200
 Text GLabel 2400 8200 0    50   Input ~ 0
 BOOT1
 Text GLabel 7700 1000 2    50   Input ~ 0
@@ -586,14 +516,10 @@ Wire Wire Line
 	6300 1000 7700 1000
 Wire Wire Line
 	2400 8200 4100 8200
-Text GLabel 2350 1800 0    60   BiDi ~ 0
+Text GLabel 2500 3900 0    60   BiDi ~ 0
 SCIA_TX
-Text GLabel 2350 1900 0    60   BiDi ~ 0
+Text GLabel 2500 3800 0    60   BiDi ~ 0
 SCIA_RX
-Wire Wire Line
-	2350 1800 4100 1800
-Wire Wire Line
-	2350 1900 4100 1900
 Text GLabel 7650 5500 2    50   Input ~ 0
 ECAT1_TX_EN
 Text GLabel 7650 5600 2    50   Input ~ 0
@@ -878,18 +804,12 @@ Wire Wire Line
 	2450 6500 4100 6500
 Wire Wire Line
 	2450 6700 4100 6700
-Text GLabel 2350 2200 0    50   Input ~ 0
+Text GLabel 2500 3400 0    50   Input ~ 0
 RS485_EN
-Text GLabel 2350 2100 0    50   Input ~ 0
+Text GLabel 2500 3200 0    50   Input ~ 0
 RS485_TX
-Text GLabel 2350 2000 0    50   Input ~ 0
+Text GLabel 2500 3300 0    50   Input ~ 0
 RS485_RX
-Wire Wire Line
-	2350 2000 4100 2000
-Wire Wire Line
-	2350 2100 4100 2100
-Wire Wire Line
-	2350 2200 4100 2200
 Text GLabel 2450 2900 0    50   Input ~ 0
 CAN_TX
 Text GLabel 2450 2800 0    50   Input ~ 0
@@ -898,4 +818,86 @@ Wire Wire Line
 	2450 2800 4100 2800
 Wire Wire Line
 	2450 2900 4100 2900
+Text GLabel 2400 4100 0    50   Input ~ 0
+SHUNT_CLK
+Text GLabel 2450 4800 0    50   Input ~ 0
+SHUNT_B_U_DOUT
+Text GLabel 2450 4900 0    50   Input ~ 0
+SHUNT_B_V_DOUT
+Text GLabel 2450 4600 0    50   Input ~ 0
+SHUNT_A_U_DOUT
+Text GLabel 2450 4700 0    50   Input ~ 0
+SHUNT_A_V_DOUT
+Wire Wire Line
+	2450 4600 4100 4600
+Wire Wire Line
+	2450 4700 4100 4700
+Wire Wire Line
+	2450 4800 4100 4800
+Wire Wire Line
+	2450 4900 4100 4900
+Wire Wire Line
+	3250 3100 4100 3100
+Wire Wire Line
+	3250 3000 4100 3000
+Wire Wire Line
+	3250 3500 4100 3500
+Wire Wire Line
+	3250 3700 4100 3700
+Wire Wire Line
+	3250 3600 4100 3600
+Wire Wire Line
+	3250 4000 4100 4000
+Wire Wire Line
+	2500 3200 4100 3200
+Wire Wire Line
+	2500 3300 4100 3300
+Wire Wire Line
+	2500 3400 4100 3400
+Wire Wire Line
+	2400 4100 4100 4100
+Wire Wire Line
+	2450 1000 4100 1000
+Wire Wire Line
+	2450 1100 4100 1100
+Wire Wire Line
+	2450 1200 4100 1200
+Wire Wire Line
+	2450 1300 4100 1300
+Wire Wire Line
+	2450 1400 4100 1400
+Wire Wire Line
+	2450 1500 4100 1500
+Wire Wire Line
+	2450 1600 4100 1600
+Wire Wire Line
+	2450 1700 4100 1700
+Wire Wire Line
+	2450 1800 4100 1800
+Wire Wire Line
+	2450 1900 4100 1900
+Wire Wire Line
+	2450 2000 4100 2000
+Wire Wire Line
+	2450 2100 4100 2100
+Wire Wire Line
+	2450 2300 4100 2300
+Wire Wire Line
+	2450 2200 4100 2200
+Wire Wire Line
+	4100 4200 3250 4200
+Wire Wire Line
+	3250 4300 4100 4300
+Wire Wire Line
+	3250 5900 4100 5900
+Wire Wire Line
+	3250 5800 4100 5800
+Wire Wire Line
+	2500 3800 4100 3800
+Wire Wire Line
+	2500 3900 4100 3900
+Wire Wire Line
+	3250 5200 4100 5200
+Wire Wire Line
+	3250 5300 4100 5300
 $EndSCHEMATC

@@ -4,12 +4,12 @@ EELAYER 26 0
 EELAYER END
 $Descr A4 11693 8268
 encoding utf-8
-Sheet 14 15
+Sheet 14 16
 Title ""
-Date ""
-Rev ""
-Comp ""
-Comment1 ""
+Date "25 10 2019"
+Rev "1.0"
+Comp "dci"
+Comment1 "Pablo Slavkin"
 Comment2 ""
 Comment3 ""
 Comment4 ""
