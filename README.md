@@ -27,6 +27,7 @@ https://gist.github.com/rxaviers/7360908
 - :heavy_check_mark:    connect interfaces to GPIO's (ecat0/1, enet, leds, etc)
 - :construction:        Line voltage measurement
 - :construction:        overcurrent protection using CMPSS
+- :construction:        changing/adding shunt measurement with sigma deltas isolated ADC
 
 ---
 ## Table of Contents
