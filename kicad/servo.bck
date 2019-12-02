@@ -20,6 +20,11 @@ D Power flag, positive voltage
 K power-flag
 $ENDCMP
 #
+$CMP 5V_SHUNT_U
+D Power flag, positive voltage
+K power-flag
+$ENDCMP
+#
 $CMP 93LC46C-SN
 F http://ww1.microchip.com/downloads/en/DeviceDoc/21794G.pdf
 $ENDCMP
@@ -32,6 +37,12 @@ $ENDCMP
 $CMP ACN
 D Power flag, alternating current
 K power-flag
+$ENDCMP
+#
+$CMP AMC1304
+D Low cost 1W converter
+K DC/DC Converter
+F https://www.mouser.com/datasheet/2/468/RFM-1307831.pdf
 $ENDCMP
 #
 $CMP AZ1117-1.2
@@ -106,6 +117,11 @@ D Power flag, ground
 K power-flag
 $ENDCMP
 #
+$CMP GND_SHUNT_U
+D Power flag, ground
+K power-flag
+$ENDCMP
+#
 $CMP HSEC_5V0
 D Power flag, positive voltage
 K power-flag
@@ -146,9 +162,9 @@ F http://www.meanwell.com/Upload/PDF/IRM-20/IRM-20-SPEC.PDF
 $ENDCMP
 #
 $CMP ISO1050
-D Isolated RS485/RS422 Transceiver, Half-/Full-Duplex, 500kbps,SOIC-16W
-K RS485 Transceiver RS422 Transceiver
-F http://www.analog.com/media/en/technical-documentation/data-sheets/ADM2484E.pdf
+D ISO1050 Isolated CAN Transceiver
+K ISO1050 Isolated CAN Transceiver
+F http://www.ti.com/lit/ds/symlink/iso1050.pdf
 $ENDCMP
 #
 $CMP LTC2866
@@ -179,6 +195,12 @@ $CMP PWR_FLAG
 D Power flag, general
 K power-flag
 F ~
+$ENDCMP
+#
+$CMP RFM-0505S
+D Low cost 1W converter
+K DC/DC Converter
+F https://www.mouser.com/datasheet/2/468/RFM-1307831.pdf
 $ENDCMP
 #
 $CMP SN74ALVC244PW

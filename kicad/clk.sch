@@ -4,7 +4,7 @@ EELAYER 26 0
 EELAYER END
 $Descr A4 11693 8268
 encoding utf-8
-Sheet 6 14
+Sheet 6 15
 Title "clk"
 Date "25 10 2019"
 Rev "1.0"
@@ -32,7 +32,7 @@ Wire Wire Line
 Wire Wire Line
 	2450 5700 2450 5250
 Text Notes 1550 3750 0    120  ~ 0
-Multiporpouse \nLEDs
+Multipropouse\nLEDs
 Text Notes 3600 3700 0    120  ~ 0
 Boot Mode to\n Flash/USB\n
 $Comp
@@ -106,10 +106,6 @@ F 3 "" H 5600 2600 70  0000 C CNN
 $EndComp
 Wire Wire Line
 	5600 2000 5600 2200
-Wire Wire Line
-	5300 1700 5400 1700
-Wire Wire Line
-	5900 1700 5800 1700
 Wire Wire Line
 	1400 5500 1850 5500
 Text Label 8650 2700 0    60   ~ 0
@@ -225,18 +221,6 @@ F 3 "" H 1850 4350 50  0001 C CNN
 F 4 "680" V -6550 5150 60  0001 C CNN "ValueDisplayed"
 	1    1850 4350
 	0    1    1    0   
-$EndComp
-$Comp
-L servo:Resistor R?
-U 1 1 5DB38F5B
-P 5600 1700
-F 0 "R?" H 5450 1750 60  0000 C CNN
-F 1 "39" H 5750 1750 50  0000 C CNN
-F 2 "" H 5600 1700 50  0001 C CNN
-F 3 "" H 5600 1700 50  0001 C CNN
-F 4 "39" V 5500 1700 60  0001 C CNN "ValueDisplayed"
-	1    5600 1700
-	1    0    0    -1  
 $EndComp
 $Comp
 L servo:Resistor R?
@@ -564,4 +548,6 @@ Text GLabel 5500 5700 0    60   BiDi ~ 0
 SCIA_RX
 Wire Wire Line
 	8250 2700 9150 2700
+Wire Wire Line
+	5300 1700 5900 1700
 $EndSCHEMATC

@@ -4,7 +4,7 @@ EELAYER 26 0
 EELAYER END
 $Descr A3 16535 11693
 encoding utf-8
-Sheet 1 14
+Sheet 1 15
 Title "servo drive"
 Date "25 10 2019"
 Rev "1.0"
@@ -118,4 +118,12 @@ F1 "can.sch" 50
 $EndSheet
 Text Notes 9550 9600 0    197  ~ 39
 CAN
+$Sheet
+S 5750 4350 1300 1150
+U 5DEE980E
+F0 "shunt" 50
+F1 "shunt.sch" 50
+$EndSheet
+Text Notes 5900 5100 0    197  ~ 39
+SHUNT
 $EndSCHEMATC
