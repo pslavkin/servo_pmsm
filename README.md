@@ -53,7 +53,7 @@ There are the actual schematics generated until now:
 <img src="doc/pics/servo-6.jpg" width="800"/>
 <img src="doc/pics/servo-7.jpg" width="800"/>
 <img src="doc/pics/servo-8.jpg" width="800"/>
-<img src="doc/pics/servo-9 .jpg" width="800"/>
+<img src="doc/pics/servo-9.jpg" width="800"/>
 <img src="doc/pics/servo-10.jpg" width="800"/>
 <img src="doc/pics/servo-11.jpg" width="800"/>
 <img src="doc/pics/servo-12.jpg" width="800"/>
