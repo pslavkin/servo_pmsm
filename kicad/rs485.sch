@@ -4,7 +4,7 @@ EELAYER 26 0
 EELAYER END
 $Descr A4 11693 8268
 encoding utf-8
-Sheet 13 16
+Sheet 13 17
 Title "RS485"
 Date "25 10 2019"
 Rev "1.0"
@@ -15,14 +15,14 @@ Comment3 ""
 Comment4 ""
 $EndDescr
 $Comp
-L servo:LTC2866 U?
+L servo:LTC2865 U?
 U 1 1 5E1BEB46
 P 3500 2250
 AR Path="/5DE3DF56/5E1BEB46" Ref="U?"  Part="1" 
-AR Path="/5E1BAEAA/5E1BEB46" Ref="U?"  Part="1" 
-F 0 "U?" H 3500 3050 50  0000 C CNN
-F 1 "LTC2866" H 3500 2950 50  0000 C CNN
-F 2 "" H 4500 1550 50  0001 C CIN
+AR Path="/5E1BAEAA/5E1BEB46" Ref="U"  Part="1" 
+F 0 "U" H 3500 3050 50  0000 C CNN
+F 1 "LTC2865" H 3500 2950 50  0000 C CNN
+F 2 "Package_SO:SSOP-28_5.3x10.2mm_P0.65mm" H 4500 1550 50  0001 C CIN
 F 3 "../doc/datasheets/ltc2865.pdf" H 3500 2250 50  0001 C CNN
 	1    3500 2250
 	-1   0    0    -1  

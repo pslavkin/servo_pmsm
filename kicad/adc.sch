@@ -181,20 +181,6 @@ Wire Wire Line
 Connection ~ 7950 4150
 Wire Wire Line
 	8150 4350 8150 4150
-$Comp
-L servo:TMS320F28388 U401
-U 1 1 5DB3916E
-P 6250 3050
-F 0 "U401" H 6250 1467 60  0000 C CNN
-F 1 "TMS320F28388DZWTS" H 6250 1369 50  0000 C CNN
-F 2 "" H 6250 3050 50  0001 C CNN
-F 3 "../doc/datasheets/tms320f28388d_datasheet.pdf" H 6250 3050 50  0001 C CNN
-F 4 "TMS320F28388DZWTS" V -550 -1050 60  0001 C CNN "PartNumber"
-	1    6250 3050
-	1    0    0    -1  
-$EndComp
-Wire Wire Line
-	4800 3050 5150 3050
 Text GLabel 4800 1750 0    50   Input ~ 0
 ADC_A0
 Text GLabel 4800 1850 0    50   Input ~ 0
@@ -251,47 +237,21 @@ Wire Wire Line
 	4150 1750 5150 1750
 Wire Wire Line
 	4150 1850 5150 1850
-Wire Wire Line
-	4150 1950 5150 1950
-Wire Wire Line
-	4150 2150 5150 2150
 Text GLabel 4150 1950 0    50   Input ~ 0
-LEM_A_3
-Text GLabel 4150 2050 0    50   Input ~ 0
 LEM_B_1
-Text GLabel 4150 2750 0    50   Input ~ 0
-LEM_B_3
-Text GLabel 4150 2250 0    50   Input ~ 0
+Text GLabel 4150 2050 0    50   Input ~ 0
 LEM_B_2
-Text Notes 2800 2500 0    50   ~ 0
-for overcurrent\n protection
-Text GLabel 4150 2150 0    50   Input ~ 0
-LEM_A_ALL
-Text GLabel 4150 2950 0    50   Input ~ 0
-LEM_B_ALL
-Wire Wire Line
-	4150 2750 5150 2750
-Wire Wire Line
-	4150 2950 5150 2950
-Wire Notes Line
-	3650 2150 2950 2150
-Wire Notes Line
-	2950 2150 2950 2300
-Wire Notes Line
-	2950 2550 2950 2950
-Wire Notes Line
-	2950 2950 3600 2950
-Text GLabel 4200 3150 0    50   Input ~ 0
+Text GLabel 4150 2750 0    50   Input ~ 0
 SHUNT_ISOA_UP
-Text GLabel 4200 3250 0    50   Input ~ 0
+Text GLabel 4150 2850 0    50   Input ~ 0
 SHUNT_ISOA_UN
-Text GLabel 4200 3450 0    50   Input ~ 0
+Text GLabel 4150 2950 0    50   Input ~ 0
 SHUNT_ISOA_VP
-Text GLabel 4200 3550 0    50   Input ~ 0
+Text GLabel 4150 3050 0    50   Input ~ 0
 SHUNT_ISOA_VN
-Text GLabel 4200 3650 0    50   Input ~ 0
+Text GLabel 4150 3150 0    50   Input ~ 0
 SHUNT_ISOA_WP
-Text GLabel 4200 3750 0    50   Input ~ 0
+Text GLabel 4150 3250 0    50   Input ~ 0
 SHUNT_ISOA_WN
 Text GLabel 4150 2450 0    50   Input ~ 0
 SHUNT_ISO_BUSP
@@ -312,26 +272,6 @@ SHUNT_ISOB_WN
 Wire Wire Line
 	4150 2050 5150 2050
 Wire Wire Line
-	4150 2250 5150 2250
-Wire Wire Line
-	4150 2450 5150 2450
-Wire Wire Line
-	4150 2550 5150 2550
-Wire Wire Line
-	5150 2850 4800 2850
-Wire Wire Line
-	4200 3150 5150 3150
-Wire Wire Line
-	4200 3250 5150 3250
-Wire Wire Line
-	4200 3550 5150 3550
-Wire Wire Line
-	4200 3450 5150 3450
-Wire Wire Line
-	4200 3750 5150 3750
-Wire Wire Line
-	4200 3650 5150 3650
-Wire Wire Line
 	4200 4050 5150 4050
 Wire Wire Line
 	4200 3950 5150 3950
@@ -343,4 +283,54 @@ Wire Wire Line
 	4200 4450 5150 4450
 Wire Wire Line
 	4200 4350 5150 4350
+$Comp
+L servo:TMS320F28388 U401
+U 1 1 5DB3916E
+P 6250 3050
+F 0 "U401" H 6250 1467 60  0000 C CNN
+F 1 "TMS320F28388DZWTS" H 6250 1369 50  0000 C CNN
+F 2 "" H 6250 3050 50  0001 C CNN
+F 3 "../doc/datasheets/tms320f28388d_datasheet.pdf" H 6250 3050 50  0001 C CNN
+F 4 "TMS320F28388DZWTS" V -550 -1050 60  0001 C CNN "PartNumber"
+	1    6250 3050
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	4150 1950 5150 1950
+Wire Wire Line
+	5150 2150 4800 2150
+Wire Wire Line
+	5150 2250 4800 2250
+Wire Wire Line
+	4150 2750 5150 2750
+Wire Wire Line
+	4150 2850 5150 2850
+Wire Wire Line
+	4150 2950 5150 2950
+Wire Wire Line
+	4150 3050 5150 3050
+Wire Wire Line
+	4150 3150 5150 3150
+Wire Wire Line
+	4150 3250 5150 3250
+Text GLabel 4150 3450 0    50   Input ~ 0
+SHUNT_ISOA_ALLP
+Text GLabel 4150 3550 0    50   Input ~ 0
+SHUNT_ISOA_ALLN
+Text GLabel 4150 3650 0    50   Input ~ 0
+SHUNT_ISOB_ALLP
+Text GLabel 4150 3750 0    50   Input ~ 0
+SHUNT_ISOB_ALLN
+Wire Wire Line
+	4150 3650 5150 3650
+Wire Wire Line
+	4150 3750 5150 3750
+Wire Wire Line
+	4150 3550 5150 3550
+Wire Wire Line
+	4150 3450 5150 3450
+Wire Wire Line
+	4150 2450 5150 2450
+Wire Wire Line
+	4150 2550 5150 2550
 $EndSCHEMATC

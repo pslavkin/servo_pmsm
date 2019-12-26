@@ -4,7 +4,7 @@ EELAYER 26 0
 EELAYER END
 $Descr A4 11693 8268
 encoding utf-8
-Sheet 11 16
+Sheet 11 17
 Title "ENDAT/BISS Interface"
 Date "25 10 2019"
 Rev "1.0"
@@ -15,11 +15,11 @@ Comment3 ""
 Comment4 ""
 $EndDescr
 $Comp
-L servo:LTC2866 U?
+L servo:LTC2865 U?
 U 1 1 5DE43046
 P 3300 2200
 F 0 "U?" H 3300 3000 50  0000 C CNN
-F 1 "LTC2866" H 3300 2900 50  0000 C CNN
+F 1 "LTC2865" H 3300 2900 50  0000 C CNN
 F 2 "" H 4300 1500 50  0001 C CIN
 F 3 "../doc/datasheets/ltc2865.pdf" H 3300 2200 50  0001 C CNN
 	1    3300 2200
@@ -187,7 +187,7 @@ F 3 "" H 4950 3500 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L servo:LTC2866 U?
+L servo:LTC2865 U?
 U 1 1 5DE4C832
 P 3350 4600
 F 0 "U?" H 3350 5500 50  0000 C CNN
@@ -427,7 +427,7 @@ Wire Wire Line
 Wire Wire Line
 	8800 2550 8800 2600
 $Comp
-L servo:LTC2866 U?
+L servo:LTC2865 U?
 U 1 1 5DE6D130
 P 8050 4600
 F 0 "U?" H 8050 5500 50  0000 C CNN
@@ -823,7 +823,7 @@ F 3 "" H 7550 1350 60  0000 C CNN
 	0    -1   1    0   
 $EndComp
 $Comp
-L servo:LTC2866 U?
+L servo:LTC2865 U?
 U 1 1 5DE6D0C5
 P 8100 2200
 F 0 "U?" H 8100 3000 50  0000 C CNN

@@ -45,6 +45,12 @@ K ADC
 F http://www.ti.com/lit/ds/symlink/amc1100.pdf
 $ENDCMP
 #
+$CMP AMC1301
+D AMC1301Precision,±250-mVInput, 3-μs Delay,ReinforcedIsolatedAmplifier
+K ADC
+F http://www.ti.com/lit/ds/symlink/amc1301.pdf
+$ENDCMP
+#
 $CMP AMC1304
 D AMC1304xHigh-Precision,ReinforcedIsolatedDelta-SigmaModulatorswith LDO
 K ADC
@@ -112,6 +118,30 @@ D Dual High Speed USB To Multipurpose UART/FIFO IC, LQFP-64
 F http://www.ftdichip.com/Support/Documents/DataSheets/ICs/DS_FT2232H.pdf
 $ENDCMP
 #
+$CMP DS1821C
+D Programmable Digital Thermostat and Thermometer TO-92
+K OneWire 1Wire Maxim Dallas
+F http://datasheets.maximintegrated.com/en/ds/DS1821.pdf
+$ENDCMP
+#
+$CMP DS1822
+D Econo 1-Wire Digital Thermometer TO-92
+K OneWire 1Wire Dallas Maxim
+F http://datasheets.maximintegrated.com/en/ds/DS1822.pdf
+$ENDCMP
+#
+$CMP DS18B20
+D Programmable Resolution 1-Wire Digital Thermometer TO-92
+K OneWire 1Wire Dallas Maxim
+F http://datasheets.maximintegrated.com/en/ds/DS18B20.pdf
+$ENDCMP
+#
+$CMP DS18S20
+D High-Precision 1-Wire Digital Thermometer TO-92
+K OneWire 1Wire Maxim Dallas
+F http://datasheets.maximintegrated.com/en/ds/DS18S20.pdf
+$ENDCMP
+#
 $CMP Earth
 D Power flag, earth
 K power-flag ground gnd
@@ -141,6 +171,12 @@ $ENDCMP
 $CMP HSEC_5V0
 D Power flag, positive voltage
 K power-flag
+$ENDCMP
+#
+$CMP IRLML6244TRPbF
+D 20V Vds, 6.3A Id, N-channel MOSFET, SOT-23
+K N-Channel MOSFET
+F https://www.fairchildsemi.com/datasheets/BS/BSS138.pdf
 $ENDCMP
 #
 $CMP IRM-10
@@ -183,7 +219,17 @@ K ISO1050 Isolated CAN Transceiver
 F http://www.ti.com/lit/ds/symlink/iso1050.pdf
 $ENDCMP
 #
-$CMP LTC2866
+$CMP ISO7220C
+D ISO722xDual-ChannelDigitalIsolators
+F http://www.ti.com/lit/ds/symlink/iso7221c.pdf
+$ENDCMP
+#
+$CMP ISO7221C
+D ISO722xDual-ChannelDigitalIsolators
+F http://www.ti.com/lit/ds/symlink/iso7221c.pdf
+$ENDCMP
+#
+$CMP LTC2865
 D 20Mbps RS485 transceiver with tntegrated switchable termination
 K RS485
 F linear-tec\ltc2859-2861.pdf
@@ -207,6 +253,12 @@ K current transducer
 F https://www.lem.com/sites/default/files/products_datasheets/ltsr_6-np.pdf
 $ENDCMP
 #
+$CMP MAX31820
+D 1-Wire Ambient Temperature Sensor TO-92
+K OneWire 1-Wire 1Wire Maxim Dallas
+F http://datasheets.maximintegrated.com/en/ds/MAX31820.pdf
+$ENDCMP
+#
 $CMP PWR_FLAG
 D Power flag, general
 K power-flag
@@ -222,16 +274,6 @@ $ENDCMP
 $CMP SN74ALVC244PW
 D OCTALBUFFER/DRIVERWITH3-STATEOUTPUTS
 F https://www.ti.com/lit/ds/symlink/sn74alvc244.pdf
-$ENDCMP
-#
-$CMP TI-ISO7220C-SOIC_D-8
-D ISO722xDual-ChannelDigitalIsolators
-F http://www.ti.com/lit/ds/symlink/iso7221c.pdf
-$ENDCMP
-#
-$CMP TI-ISO7221C-SOIC_D-8
-D ISO722xDual-ChannelDigitalIsolators
-F http://www.ti.com/lit/ds/symlink/iso7221c.pdf
 $ENDCMP
 #
 $CMP TI-TPD2E001-Q1-SOT_DRL-5

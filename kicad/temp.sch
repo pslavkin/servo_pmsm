@@ -1,0 +1,393 @@
+EESchema Schematic File Version 4
+LIBS:servo-cache
+EELAYER 26 0
+EELAYER END
+$Descr B 17000 11000
+encoding utf-8
+Sheet 10 17
+Title "gpio"
+Date "25 10 2019"
+Rev "1.0"
+Comp "dci"
+Comment1 "Pablo Slavkin"
+Comment2 ""
+Comment3 ""
+Comment4 ""
+$EndDescr
+Text GLabel 2650 2350 2    60   BiDi ~ 0
+1Wire
+$Comp
+L servo:GND #PWR_?
+U 1 1 5E081A4D
+P 2150 2800
+AR Path="/5DD4DF4C/5E081A4D" Ref="#PWR_?"  Part="1" 
+AR Path="/5DE49152/5E081A4D" Ref="#PWR_?"  Part="1" 
+F 0 "#PWR_?" H 2155 2651 20  0001 C CNN
+F 1 "GND" H 2150 2642 30  0000 C CNN
+F 2 "" H 2150 2800 70  0000 C CNN
+F 3 "" H 2150 2800 70  0000 C CNN
+	1    2150 2800
+	1    0    0    -1  
+$EndComp
+Text Notes 1800 1550 0    120  ~ 0
+Temperatura Sensors
+$Comp
+L servo:3V3 #PWR?
+U 1 1 5E0844CD
+P 2150 1850
+AR Path="/5DCD812E/5E0844CD" Ref="#PWR?"  Part="1" 
+AR Path="/5DD4DF4C/5E0844CD" Ref="#PWR?"  Part="1" 
+AR Path="/5DE49152/5E0844CD" Ref="#PWR?"  Part="1" 
+F 0 "#PWR?" H 2167 2059 20  0000 C CNN
+F 1 "3V3" H 2167 2007 30  0000 C CNN
+F 2 "" H 2150 1850 70  0000 C CNN
+F 3 "" H 2150 1850 70  0000 C CNN
+	1    2150 1850
+	1    0    0    -1  
+$EndComp
+$Comp
+L servo:DS18B20 U
+U 1 1 5E086568
+P 2150 2350
+F 0 "U" H 1920 2396 50  0000 R CNN
+F 1 "MAX31820" H 1920 2305 50  0000 R CNN
+F 2 "Package_TO_SOT_THT:TO-92_Inline" H 1150 2100 50  0001 C CNN
+F 3 "../doc/datasheets/DS18B20.pdf" H 2000 2600 50  0001 C CNN
+	1    2150 2350
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	2150 1850 2150 1950
+Wire Wire Line
+	2150 1950 3150 1950
+Wire Wire Line
+	3150 1950 3150 2250
+Wire Wire Line
+	3150 2250 3350 2250
+Connection ~ 2150 1950
+Wire Wire Line
+	2150 1950 2150 2050
+Wire Wire Line
+	2450 2350 3350 2350
+Wire Wire Line
+	2150 2750 3150 2750
+Wire Wire Line
+	3150 2750 3150 2450
+Wire Wire Line
+	3150 2450 3350 2450
+Wire Wire Line
+	2150 2750 2150 2800
+Wire Wire Line
+	2150 2650 2150 2750
+Connection ~ 2150 2750
+$Comp
+L Connector_Generic:Conn_01x03 J?
+U 1 1 5E091947
+P 10150 3200
+F 0 "J?" H 10230 3242 50  0000 L CNN
+F 1 "Conn_01x03" H 10230 3151 50  0000 L CNN
+F 2 "" H 10150 3200 50  0001 C CNN
+F 3 "~" H 10150 3200 50  0001 C CNN
+	1    10150 3200
+	1    0    0    -1  
+$EndComp
+$Comp
+L servo:ISO7221C U?
+U 1 1 5E269CD0
+P 5900 3500
+AR Path="/5DDE8C5E/5E269CD0" Ref="U?"  Part="1" 
+AR Path="/5DE49152/5E269CD0" Ref="U"  Part="1" 
+F 0 "U" H 5900 4089 60  0000 C CNN
+F 1 "ISO7221C" H 5900 3983 60  0000 C CNN
+F 2 "" H 5300 3800 60  0000 C CNN
+F 3 "../doc/datasheets/iso7221c.pdf" H 5800 4100 60  0001 C CNN
+	1    5900 3500
+	1    0    0    -1  
+$EndComp
+$Comp
+L servo:GND #PWR?
+U 1 1 5E269CD7
+P 4950 3700
+F 0 "#PWR?" H 4950 3450 30  0001 C CNN
+F 1 "GND" H 4950 3542 30  0000 C CNN
+F 2 "" H 4950 3700 50  0001 C CNN
+F 3 "" H 4950 3700 50  0001 C CNN
+	1    4950 3700
+	1    0    0    -1  
+$EndComp
+$Comp
+L servo:GNDH #PWR?
+U 1 1 5E269CDD
+P 6850 3700
+F 0 "#PWR?" H 6850 3450 30  0001 C CNN
+F 1 "GNDH" H 6850 3542 30  0000 C CNN
+F 2 "" H 6850 3700 50  0001 C CNN
+F 3 "" H 6850 3700 50  0001 C CNN
+	1    6850 3700
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	5200 3650 4950 3650
+Wire Wire Line
+	4950 3650 4950 3700
+$Comp
+L servo:3V3 #PWR?
+U 1 1 5E269CE5
+P 4950 3100
+F 0 "#PWR?" H 4955 3307 20  0000 C CNN
+F 1 "3V3" H 4955 3257 28  0000 C CNN
+F 2 "" H 4950 3100 50  0001 C CNN
+F 3 "" H 4950 3100 50  0001 C CNN
+	1    4950 3100
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	5200 3200 4950 3200
+Wire Wire Line
+	4950 3200 4950 3100
+$Comp
+L servo:3V3H #PWR?
+U 1 1 5E269CEE
+P 6850 3050
+F 0 "#PWR?" H 6850 2850 20  0001 C CNN
+F 1 "3V3H" H 6855 3207 28  0000 C CNN
+F 2 "" H 6850 3050 50  0001 C CNN
+F 3 "" H 6850 3050 50  0001 C CNN
+	1    6850 3050
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	6850 3050 6850 3200
+Wire Wire Line
+	6850 3200 6600 3200
+Wire Wire Line
+	6600 3650 6850 3650
+Wire Wire Line
+	6850 3650 6850 3700
+Text GLabel 4950 3500 0    50   Input ~ 0
+1Wire_OUT_C
+Text GLabel 4950 3350 0    50   Input ~ 0
+1Wire_IN_C
+Wire Wire Line
+	4950 3500 5200 3500
+Wire Wire Line
+	4950 3350 5200 3350
+$Comp
+L Transistor_FET:Si2319CDS Q?
+U 1 1 5E04D5E4
+P 7450 2350
+F 0 "Q?" H 7655 2396 50  0000 L CNN
+F 1 "Si2319CDS" H 7050 2250 50  0000 L CNN
+F 2 "Package_TO_SOT_SMD:SOT-23" H 7650 2275 50  0001 L CIN
+F 3 "http://www.vishay.com/docs/66709/si2319cd.pdf" H 7450 2350 50  0001 L CNN
+	1    7450 2350
+	1    0    0    -1  
+$EndComp
+$Comp
+L servo:IRLML6244TRPbF Q?
+U 1 1 5E04D75C
+P 7950 3500
+F 0 "Q?" H 8156 3546 50  0000 L CNN
+F 1 "IRLML6244TRPbF" H 8156 3455 50  0000 L CNN
+F 2 "Package_TO_SOT_SMD:SOT-23" H 8150 3425 50  0001 L CIN
+F 3 "../doc/datasheets/IRLML6244TRPBF.pdf" H 8150 3575 50  0001 L CNN
+	1    7950 3500
+	1    0    0    -1  
+$EndComp
+$Comp
+L servo:Resistor R?
+U 1 1 5E04D860
+P 8050 3000
+F 0 "R?" V 8103 2950 60  0000 R CNN
+F 1 "2k2" V 7997 2950 60  0000 R CNN
+F 2 "" H 8050 3000 60  0000 C CNN
+F 3 "" H 8050 3000 60  0000 C CNN
+	1    8050 3000
+	0    -1   -1   0   
+$EndComp
+Wire Wire Line
+	8050 3200 8050 3300
+Text GLabel 9800 3200 0    50   Input ~ 0
+1Wire
+Wire Wire Line
+	9950 3200 9800 3200
+Connection ~ 8050 3200
+$Comp
+L servo:Resistor R?
+U 1 1 5E050733
+P 7550 2900
+F 0 "R?" V 7497 2950 60  0000 L CNN
+F 1 "100e" V 7603 2950 60  0000 L CNN
+F 2 "" H 7550 2900 60  0000 C CNN
+F 3 "" H 7550 2900 60  0000 C CNN
+	1    7550 2900
+	0    1    1    0   
+$EndComp
+$Comp
+L servo:3V3H #PWR?
+U 1 1 5E0514E6
+P 9800 3050
+F 0 "#PWR?" H 9800 2850 20  0001 C CNN
+F 1 "3V3H" H 9805 3207 28  0000 C CNN
+F 2 "" H 9800 3050 50  0001 C CNN
+F 3 "" H 9800 3050 50  0001 C CNN
+	1    9800 3050
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	8050 2100 8050 2800
+Wire Wire Line
+	7550 2100 7550 2150
+Text GLabel 8400 3200 2    50   Input ~ 0
+1Wire
+Wire Wire Line
+	8050 3700 8050 3850
+Wire Wire Line
+	8050 3200 8400 3200
+$Comp
+L servo:GNDH #PWR?
+U 1 1 5E05294B
+P 8050 3850
+F 0 "#PWR?" H 8050 3600 30  0001 C CNN
+F 1 "GNDH" H 8050 3692 30  0000 C CNN
+F 2 "" H 8050 3850 50  0001 C CNN
+F 3 "" H 8050 3850 50  0001 C CNN
+	1    8050 3850
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	6600 3350 7550 3350
+Wire Wire Line
+	7550 3350 7550 3200
+Wire Wire Line
+	6600 3500 7750 3500
+$Comp
+L servo:ISO7221C U?
+U 1 1 5E05469A
+P 5900 2350
+AR Path="/5DDE8C5E/5E05469A" Ref="U?"  Part="1" 
+AR Path="/5DE49152/5E05469A" Ref="U?"  Part="1" 
+F 0 "U?" H 5900 2939 60  0000 C CNN
+F 1 "ISO7221C" H 5900 2833 60  0000 C CNN
+F 2 "" H 5300 2650 60  0000 C CNN
+F 3 "../doc/datasheets/iso7221c.pdf" H 5800 2950 60  0001 C CNN
+	1    5900 2350
+	1    0    0    -1  
+$EndComp
+Text GLabel 4950 2350 0    50   Input ~ 0
+1Wire_SPU_C
+Wire Wire Line
+	4950 2350 5200 2350
+$Comp
+L servo:3V3 #PWR?
+U 1 1 5E0552E2
+P 4950 2000
+F 0 "#PWR?" H 4955 2207 20  0000 C CNN
+F 1 "3V3" H 4955 2157 28  0000 C CNN
+F 2 "" H 4950 2000 50  0001 C CNN
+F 3 "" H 4950 2000 50  0001 C CNN
+	1    4950 2000
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	4950 2000 4950 2050
+Wire Wire Line
+	4950 2050 5200 2050
+Wire Wire Line
+	6750 1950 6750 2050
+Wire Wire Line
+	6750 2050 6600 2050
+$Comp
+L servo:GND #PWR?
+U 1 1 5E055DDA
+P 4950 2550
+F 0 "#PWR?" H 4950 2300 30  0001 C CNN
+F 1 "GND" H 4950 2392 30  0000 C CNN
+F 2 "" H 4950 2550 50  0001 C CNN
+F 3 "" H 4950 2550 50  0001 C CNN
+	1    4950 2550
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	5200 2500 4950 2500
+Wire Wire Line
+	4950 2500 4950 2550
+$Comp
+L servo:GNDH #PWR?
+U 1 1 5E056435
+P 6850 2550
+F 0 "#PWR?" H 6850 2300 30  0001 C CNN
+F 1 "GNDH" H 6850 2392 30  0000 C CNN
+F 2 "" H 6850 2550 50  0001 C CNN
+F 3 "" H 6850 2550 50  0001 C CNN
+	1    6850 2550
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	6600 2500 6850 2500
+Wire Wire Line
+	6850 2500 6850 2550
+Wire Wire Line
+	9800 3050 9800 3100
+Wire Wire Line
+	9800 3100 9950 3100
+$Comp
+L servo:GNDH #PWR?
+U 1 1 5E05960A
+P 9800 3350
+F 0 "#PWR?" H 9800 3100 30  0001 C CNN
+F 1 "GNDH" H 9800 3192 30  0000 C CNN
+F 2 "" H 9800 3350 50  0001 C CNN
+F 3 "" H 9800 3350 50  0001 C CNN
+	1    9800 3350
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	9800 3350 9800 3300
+Wire Wire Line
+	9800 3300 9950 3300
+$Comp
+L servo:5VH #PWR?
+U 1 1 5E05AE4C
+P 7550 2100
+F 0 "#PWR?" H 7550 1900 20  0001 C CNN
+F 1 "5VH" H 7555 2257 28  0000 C CNN
+F 2 "" H 7550 2100 50  0001 C CNN
+F 3 "" H 7550 2100 50  0001 C CNN
+	1    7550 2100
+	1    0    0    -1  
+$EndComp
+$Comp
+L servo:5VH #PWR?
+U 1 1 5E05D577
+P 8050 2100
+F 0 "#PWR?" H 8050 1900 20  0001 C CNN
+F 1 "5VH" H 8055 2257 28  0000 C CNN
+F 2 "" H 8050 2100 50  0001 C CNN
+F 3 "" H 8050 2100 50  0001 C CNN
+	1    8050 2100
+	1    0    0    -1  
+$EndComp
+$Comp
+L servo:5VH #PWR?
+U 1 1 5E05D5C5
+P 6750 1950
+F 0 "#PWR?" H 6750 1750 20  0001 C CNN
+F 1 "5VH" H 6755 2107 28  0000 C CNN
+F 2 "" H 6750 1950 50  0001 C CNN
+F 3 "" H 6750 1950 50  0001 C CNN
+	1    6750 1950
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	6600 2350 7250 2350
+Wire Wire Line
+	7550 2550 7550 2700
+Text GLabel 7650 3200 2    50   Input ~ 0
+1Wire_SPU_H
+Wire Wire Line
+	7650 3200 7550 3200
+Connection ~ 7550 3200
+Wire Wire Line
+	7550 3200 7550 3100
+$EndSCHEMATC
