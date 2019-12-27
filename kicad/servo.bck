@@ -39,6 +39,12 @@ D Power flag, alternating current
 K power-flag
 $ENDCMP
 #
+$CMP ADM2483
+D Isolated RS485/RS422 Transceiver, Half-/Full-Duplex, 500kbps,SOIC-16W
+K RS485 Transceiver RS422 Transceiver
+F http://www.analog.com/media/en/technical-documentation/data-sheets/ADM2484E.pdf
+$ENDCMP
+#
 $CMP AMC1100
 D AMC1100Fully-DifferentialIsolationAmplifier
 K ADC
@@ -55,6 +61,12 @@ $CMP AMC1304
 D AMC1304xHigh-Precision,ReinforcedIsolatedDelta-SigmaModulatorswith LDO
 K ADC
 F http://www.ti.com/lit/ds/symlink/amc1304m05.pdf
+$ENDCMP
+#
+$CMP AP2114
+D 1A LOW NOISE CMOS LDO REGULATOR WITH ENABLE
+K linear regulator ldo fixed positive
+F https://www.diodes.com/assets/Datasheets/AP2114.pdf
 $ENDCMP
 #
 $CMP AZ1117-1.2
@@ -97,6 +109,12 @@ $CMP AZ1117-5.0
 D 1A 20V Fixed LDO Linear Regulator, 5.0V, SOT-89/SOT-223/TO-220/TO-252/TO-263
 K Fixed Voltage Regulator 1A Positive LDO
 F https://www.diodes.com/assets/Datasheets/AZ1117.pdf
+$ENDCMP
+#
+$CMP BAT54S
+D schottky barrier diode
+K schottky diode
+F https://www.diodes.com/assets/Datasheets/ds11005.pdf
 $ENDCMP
 #
 $CMP BUS_DC
@@ -173,6 +191,12 @@ D Power flag, positive voltage
 K power-flag
 $ENDCMP
 #
+$CMP IRLML6244TRPbF
+D 20V Vds, 6.3A Id, N-channel MOSFET, SOT-23
+K N-Channel MOSFET
+F https://www.fairchildsemi.com/datasheets/BS/BSS138.pdf
+$ENDCMP
+#
 $CMP IRM-10
 D TPS6242x 2.25-MHz 600-mA and 1000-mA Dual Step-Down
 $ENDCMP
@@ -221,6 +245,12 @@ $ENDCMP
 $CMP ISO7221C
 D ISO722xDual-ChannelDigitalIsolators
 F http://www.ti.com/lit/ds/symlink/iso7221c.pdf
+$ENDCMP
+#
+$CMP LD56100
+D 1 A very low dropout fast transient ultra-low noise linear regulator
+K 1 A very low dropout fast transient ultra-low noise linear regulator
+F https://www.mouser.com/datasheet/2/389/ld56100-1374969.pdf
 $ENDCMP
 #
 $CMP LTC2865
