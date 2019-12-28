@@ -4,7 +4,7 @@ EELAYER 26 0
 EELAYER END
 $Descr A4 11693 8268
 encoding utf-8
-Sheet 12 17
+Sheet 12 18
 Title "QEP encoder Interfase"
 Date "25 10 2019"
 Rev "1.0"

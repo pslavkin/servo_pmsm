@@ -4,7 +4,7 @@ EELAYER 26 0
 EELAYER END
 $Descr A4 11693 8268
 encoding utf-8
-Sheet 6 17
+Sheet 6 18
 Title "clk"
 Date "25 10 2019"
 Rev "1.0"
@@ -417,7 +417,6 @@ F 3 "" H 5850 4000 70  0000 C CNN
 	1    5850 4000
 	1    0    0    -1  
 $EndComp
-Connection ~ 6050 5000
 $Comp
 L Connector_Generic:Conn_02x05_Counter_Clockwise J?
 U 1 1 5DE66ED3

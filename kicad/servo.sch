@@ -4,7 +4,7 @@ EELAYER 26 0
 EELAYER END
 $Descr A3 16535 11693
 encoding utf-8
-Sheet 1 17
+Sheet 1 18
 Title "servo drive"
 Date "25 10 2019"
 Rev "1.0"
@@ -137,9 +137,17 @@ uC\nGPIO
 $Sheet
 S 7500 4400 1300 1150
 U 5E0D58C4
+F0 "isolated gpio" 50
+F1 "iso_gipo.sch" 50
+$EndSheet
+Text Notes 7750 5250 0    197  ~ 39
+ISO\nGPIO\n
+$Sheet
+S 7500 5900 1300 1150
+U 5E72D841
 F0 "ui" 50
 F1 "ui.sch" 50
 $EndSheet
-Text Notes 7950 5100 0    197  ~ 39
+Text Notes 7950 6600 0    197  ~ 39
 UI
 $EndSCHEMATC

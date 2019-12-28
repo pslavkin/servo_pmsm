@@ -295,9 +295,19 @@ K DC/DC Converter
 F https://www.mouser.com/datasheet/2/468/RFM-1307831.pdf
 $ENDCMP
 #
+$CMP SI8660BD
+D Low Power Six-Channel Digital Isolator
+F https://www.mouser.com/datasheet/2/368/Si866x-1223680.pdf
+$ENDCMP
+#
 $CMP SN74ALVC244PW
 D OCTALBUFFER/DRIVERWITH3-STATEOUTPUTS
 F https://www.ti.com/lit/ds/symlink/sn74alvc244.pdf
+$ENDCMP
+#
+$CMP Si8380
+D Bipolar Digital Field Inputs for PLCs and Industrial I/O Modules
+F https://www.silabs.com/documents/public/data-sheets/Si838x-DataSheet.pdf
 $ENDCMP
 #
 $CMP TI-TPD2E001-Q1-SOT_DRL-5
