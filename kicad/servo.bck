@@ -136,6 +136,12 @@ D Dual High Speed USB To Multipurpose UART/FIFO IC, LQFP-64
 F http://www.ftdichip.com/Support/Documents/DataSheets/ICs/DS_FT2232H.pdf
 $ENDCMP
 #
+$CMP Crystal_GND23_Small
+D Four pin crystal, GND on pins 2 and 3, small symbol
+K quartz ceramic resonator oscillator
+F ~
+$ENDCMP
+#
 $CMP DS1821C
 D Programmable Digital Thermostat and Thermometer TO-92
 K OneWire 1Wire Maxim Dallas
@@ -247,6 +253,12 @@ D ISO722xDual-ChannelDigitalIsolators
 F http://www.ti.com/lit/ds/symlink/iso7221c.pdf
 $ENDCMP
 #
+$CMP Jumper_3_Bridged12
+D Jumper, 3-pole, pins 1+2 closed/bridged
+K Jumper SPDT
+F ~
+$ENDCMP
+#
 $CMP LD56100
 D 1 A very low dropout fast transient ultra-low noise linear regulator
 K 1 A very low dropout fast transient ultra-low noise linear regulator
@@ -303,6 +315,11 @@ $ENDCMP
 $CMP SN74ALVC244PW
 D OCTALBUFFER/DRIVERWITH3-STATEOUTPUTS
 F https://www.ti.com/lit/ds/symlink/sn74alvc244.pdf
+$ENDCMP
+#
+$CMP SN74LVC2G17DBVR
+D SN74LVC2G17Dual Schmitt-TriggerBuffer
+K buffer schmitt trigger
 $ENDCMP
 #
 $CMP Si8380

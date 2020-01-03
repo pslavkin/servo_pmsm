@@ -164,8 +164,6 @@ F 3 "" H 5750 3100 70  0000 C CNN
 $EndComp
 Wire Wire Line
 	5350 4000 4550 4000
-Wire Wire Line
-	5350 4200 4550 4200
 $Comp
 L servo:GND #GND_0203
 U 1 1 5DB39056
@@ -234,7 +232,6 @@ Wire Wire Line
 NoConn ~ 1650 5000
 Wire Wire Line
 	1650 5000 1750 5000
-NoConn ~ 4650 4400
 Wire Wire Line
 	4650 4400 4550 4400
 Wire Wire Line
@@ -480,11 +477,11 @@ Connection ~ 8450 3200
 Connection ~ 8450 2200
 Connection ~ 10950 5100
 $Comp
-L servo:DP83822 U201
+L servo:DP83822 U
 U 1 1 5DB3904B
 P 3150 3700
-F 0 "U201" H 3150 5273 60  0000 C CNN
-F 1 "DP83822IRHBR" H 4700 2600 50  0000 C CNN
+F 0 "U" H 3150 5273 60  0000 C CNN
+F 1 "DP83822" H 4700 2600 50  0000 C CNN
 F 2 "" H 3150 3700 50  0001 C CNN
 F 3 "../doc/datasheets/dp83822i.pdf" H 3150 3700 50  0001 C CNN
 F 4 "DP83822IRHBR" V -1550 400 60  0001 C CNN "PartNumber"
@@ -1020,6 +1017,91 @@ Text GLabel 5350 4000 2    50   Input ~ 0
 ENET_RST
 Text GLabel 5350 3900 2    50   Input ~ 0
 ENET_PWDN
-Text GLabel 5350 4200 2    50   Input ~ 0
+Text GLabel 4800 4100 2    50   Input ~ 0
 ENET_CAT_XI
+$Comp
+L servo:Resistor R?
+U 1 1 5E8455A4
+P 4850 4400
+F 0 "R?" H 4650 4300 60  0000 L BNN
+F 1 "1k" H 5000 4350 50  0000 C CNN
+F 2 "" H 4850 4400 50  0001 C CNN
+F 3 "" H 4850 4400 50  0001 C CNN
+F 4 "10.0k" V -1650 1000 60  0001 C CNN "ValueDisplayed"
+	1    4850 4400
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	4550 4200 4700 4200
+$Comp
+L servo:GND #GND_?
+U 1 1 5E85E4B4
+P 5700 4300
+F 0 "#GND_?" H 5788 4293 20  0001 L CNN
+F 1 "GND" H 5788 4241 30  0000 L CNN
+F 2 "" H 5700 4300 70  0000 C CNN
+F 3 "" H 5700 4300 70  0000 C CNN
+	1    5700 4300
+	0    -1   -1   0   
+$EndComp
+$Comp
+L servo:Crystal_GND23_Small Y?
+U 1 1 5E86BC6A
+P 5050 4300
+F 0 "Y?" V 5000 4050 50  0000 L CNN
+F 1 "Crystal_GND23_Small" V 5095 4466 50  0001 L CNN
+F 2 "" H 5050 4300 50  0001 C CNN
+F 3 "~" H 5050 4300 50  0001 C CNN
+	1    5050 4300
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	4900 4300 5200 4300
+Connection ~ 5200 4300
+Wire Wire Line
+	5200 4300 5650 4300
+Wire Wire Line
+	4800 4100 4700 4100
+Wire Wire Line
+	4700 4100 4700 4200
+Connection ~ 4700 4200
+Wire Wire Line
+	4700 4200 5050 4200
+$Comp
+L servo:Capacitor C?
+U 1 1 5E8B8556
+P 5550 4200
+F 0 "C?" H 5650 4150 60  0000 C CNN
+F 1 "22p" H 5450 4150 50  0000 C CNN
+F 2 "" H 5550 4200 50  0001 C CNN
+F 3 "" H 5550 4200 50  0001 C CNN
+F 4 "0.1uF" V -3950 1300 60  0001 C CNN "ValueDisplayed"
+	1    5550 4200
+	-1   0    0    1   
+$EndComp
+$Comp
+L servo:Capacitor C?
+U 1 1 5E8B8785
+P 5550 4400
+F 0 "C?" H 5700 4450 60  0000 C CNN
+F 1 "22p" H 5500 4450 50  0000 C CNN
+F 2 "" H 5550 4400 50  0001 C CNN
+F 3 "" H 5550 4400 50  0001 C CNN
+F 4 "0.1uF" V -3950 1500 60  0001 C CNN "ValueDisplayed"
+	1    5550 4400
+	-1   0    0    1   
+$EndComp
+Wire Wire Line
+	5350 4400 5050 4400
+Connection ~ 5050 4400
+Wire Wire Line
+	5050 4200 5350 4200
+Connection ~ 5050 4200
+Wire Wire Line
+	5650 4200 5650 4300
+Connection ~ 5650 4300
+Wire Wire Line
+	5650 4300 5700 4300
+Wire Wire Line
+	5650 4300 5650 4400
 $EndSCHEMATC

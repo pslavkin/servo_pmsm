@@ -26,6 +26,9 @@ https://gist.github.com/rxaviers/7360908
 - :heavy_check_mark:    ac input
 - :heavy_check_mark:    connect interfaces to GPIO's (ecat0/1, enet, leds, etc)
 - :heavy_check_mark:    shunt using isolated ADC fron/backend
+- :heavy_check_mark:    isolated GPI for external switches and sensor on any polarity
+- :heavy_check_mark:    8 channel buffer to drive IGBT
+- :heavy_check_mark:    ac/dc -> dc/dc -> ldo for clean power supplies
 - :construction:        Line voltage measurement
 - :construction:        overcurrent protection using CMPSS
 - :construction:        changing/adding shunt measurement with sigma deltas isolated ADC
