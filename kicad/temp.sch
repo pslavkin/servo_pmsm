@@ -4,7 +4,7 @@ EELAYER 26 0
 EELAYER END
 $Descr B 17000 11000
 encoding utf-8
-Sheet 10 18
+Sheet 9 19
 Title "gpio"
 Date "25 10 2019"
 Rev "1.0"
@@ -308,4 +308,337 @@ Wire Wire Line
 	2750 2600 2750 2650
 Text Notes 6550 2200 0    50   ~ 0
 Could be used by isolated: \n485, 1-wire bus, general IO pin
+$Comp
+L servo:AMC1301 U?
+U 1 1 60597291
+P 4250 5900
+AR Path="/5E2F3BE3/60597291" Ref="U?"  Part="1" 
+AR Path="/5DE49152/60597291" Ref="U?"  Part="1" 
+F 0 "U?" H 4250 6267 50  0000 C CNN
+F 1 "AMC1301" H 4250 6176 50  0000 C CNN
+F 2 "" H 4300 4900 50  0001 C CIN
+F 3 "../doc/datasheets/amc1301.pdf" H 4200 5400 50  0001 C CNN
+	1    4250 5900
+	-1   0    0    -1  
+$EndComp
+$Comp
+L servo:Capacitor C?
+U 1 1 605972B1
+P 5050 5650
+AR Path="/5DEE980E/605972B1" Ref="C?"  Part="1" 
+AR Path="/5E2F3BE3/605972B1" Ref="C?"  Part="1" 
+F 0 "C?" V 5047 5760 60  0000 L CNN
+F 1 "100nF" V 5153 5760 60  0000 L CNN
+F 2 "" H 5050 5650 60  0000 C CNN
+F 3 "" H 5050 5650 60  0000 C CNN
+	1    5050 5650
+	0    -1   1    0   
+$EndComp
+$Comp
+L servo:3V3 #PWR?
+U 1 1 605972BA
+P 3500 5550
+AR Path="/5DEE980E/605972BA" Ref="#PWR?"  Part="1" 
+AR Path="/5E2F3BE3/605972BA" Ref="#PWR?"  Part="1" 
+F 0 "#PWR?" H 3505 5757 20  0000 C CNN
+F 1 "3V3" H 3505 5707 28  0000 C CNN
+F 2 "" H 3500 5550 50  0001 C CNN
+F 3 "" H 3500 5550 50  0001 C CNN
+	1    3500 5550
+	-1   0    0    -1  
+$EndComp
+$Comp
+L servo:GND #PWR?
+U 1 1 605972C1
+P 3500 6300
+AR Path="/5DEE980E/605972C1" Ref="#PWR?"  Part="1" 
+AR Path="/5E2F3BE3/605972C1" Ref="#PWR?"  Part="1" 
+F 0 "#PWR?" H 3500 6050 30  0001 C CNN
+F 1 "GND" H 3500 6142 30  0000 C CNN
+F 2 "" H 3500 6300 50  0001 C CNN
+F 3 "" H 3500 6300 50  0001 C CNN
+	1    3500 6300
+	-1   0    0    -1  
+$EndComp
+Wire Wire Line
+	3500 5550 3500 5600
+$Comp
+L servo:Resistor R?
+U 1 1 605972CA
+P 5950 6150
+AR Path="/5DEE980E/605972CA" Ref="R?"  Part="1" 
+AR Path="/5E2F3BE3/605972CA" Ref="R?"  Part="1" 
+F 0 "R?" V 6003 6200 60  0000 L CNN
+F 1 "1k" V 5897 6200 60  0000 L CNN
+F 2 "" H 5950 6150 60  0000 C CNN
+F 3 "" H 5950 6150 60  0000 C CNN
+	1    5950 6150
+	0    1    -1   0   
+$EndComp
+$Comp
+L servo:Resistor R?
+U 1 1 605972D1
+P 5950 6550
+AR Path="/5DEE980E/605972D1" Ref="R?"  Part="1" 
+AR Path="/5E2F3BE3/605972D1" Ref="R?"  Part="1" 
+F 0 "R?" V 6003 6600 60  0000 L CNN
+F 1 "1k" V 5897 6600 60  0000 L CNN
+F 2 "" H 5950 6550 60  0000 C CNN
+F 3 "" H 5950 6550 60  0000 C CNN
+	1    5950 6550
+	0    1    -1   0   
+$EndComp
+$Comp
+L Connector:Screw_Terminal_01x03 J?
+U 1 1 605972D8
+P 6750 6350
+AR Path="/5DEE980E/605972D8" Ref="J?"  Part="1" 
+AR Path="/5E2F3BE3/605972D8" Ref="J?"  Part="1" 
+F 0 "J?" H 6830 6392 50  0000 L CNN
+F 1 "Screw_Terminal_01x03" V 6950 6000 50  0000 L CNN
+F 2 "" H 6750 6350 50  0001 C CNN
+F 3 "~" H 6750 6350 50  0001 C CNN
+	1    6750 6350
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	6550 6450 6550 6750
+Wire Wire Line
+	6550 6750 5950 6750
+Wire Wire Line
+	6550 6350 5950 6350
+Connection ~ 5950 6350
+$Comp
+L servo:Capacitor C?
+U 1 1 605972E3
+P 3500 5700
+AR Path="/5DEE980E/605972E3" Ref="C?"  Part="1" 
+AR Path="/5E2F3BE3/605972E3" Ref="C?"  Part="1" 
+F 0 "C?" V 3497 5810 60  0000 L CNN
+F 1 "100nF" V 3603 5810 60  0000 L CNN
+F 2 "" H 3500 5700 60  0000 C CNN
+F 3 "" H 3500 5700 60  0000 C CNN
+	1    3500 5700
+	0    -1   1    0   
+$EndComp
+$Comp
+L servo:Capacitor C?
+U 1 1 605972EA
+P 5300 6250
+AR Path="/5DEE980E/605972EA" Ref="C?"  Part="1" 
+AR Path="/5E2F3BE3/605972EA" Ref="C?"  Part="1" 
+F 0 "C?" V 5297 6140 60  0000 R CNN
+F 1 "330p" V 5403 6140 60  0000 R CNN
+F 2 "" H 5300 6250 60  0000 C CNN
+F 3 "" H 5300 6250 60  0000 C CNN
+	1    5300 6250
+	0    -1   1    0   
+$EndComp
+$Comp
+L servo:Resistor R?
+U 1 1 605972F1
+P 5650 5950
+AR Path="/5DEE980E/605972F1" Ref="R?"  Part="1" 
+AR Path="/5E2F3BE3/605972F1" Ref="R?"  Part="1" 
+F 0 "R?" H 5500 6050 60  0000 C CNN
+F 1 "12e" H 5700 6050 60  0000 C CNN
+F 2 "" H 5650 5950 60  0000 C CNN
+F 3 "" H 5650 5950 60  0000 C CNN
+	1    5650 5950
+	1    0    0    1   
+$EndComp
+$Comp
+L servo:Resistor R?
+U 1 1 605972F8
+P 5650 6750
+AR Path="/5DEE980E/605972F8" Ref="R?"  Part="1" 
+AR Path="/5E2F3BE3/605972F8" Ref="R?"  Part="1" 
+F 0 "R?" H 5650 6541 60  0000 C CNN
+F 1 "12e" H 5650 6647 60  0000 C CNN
+F 2 "" H 5650 6750 60  0000 C CNN
+F 3 "" H 5650 6750 60  0000 C CNN
+	1    5650 6750
+	1    0    0    1   
+$EndComp
+Wire Wire Line
+	5950 6750 5850 6750
+Connection ~ 5950 6750
+Wire Wire Line
+	5950 5950 5850 5950
+Wire Wire Line
+	5450 5950 5300 5950
+Wire Wire Line
+	5450 6750 5300 6750
+Wire Wire Line
+	5300 6150 5300 5950
+Wire Wire Line
+	5300 6450 5300 6750
+Connection ~ 5300 6750
+Wire Wire Line
+	5300 6750 5050 6750
+Wire Wire Line
+	5050 5850 5050 6750
+Wire Wire Line
+	4850 5550 5050 5550
+Wire Wire Line
+	4850 6750 5050 6750
+Connection ~ 5050 6750
+Wire Wire Line
+	4850 5550 4850 5850
+Wire Wire Line
+	4850 5850 4750 5850
+Wire Wire Line
+	4750 6150 4850 6150
+Wire Wire Line
+	4750 6050 4850 6050
+Wire Wire Line
+	4850 6050 4850 6150
+Connection ~ 4850 6150
+Wire Wire Line
+	4750 5950 5300 5950
+Connection ~ 5300 5950
+Wire Wire Line
+	3750 5850 3700 5850
+Wire Wire Line
+	3700 5850 3700 5600
+Wire Wire Line
+	3700 5600 3500 5600
+Connection ~ 3500 5600
+Wire Wire Line
+	3750 6150 3500 6150
+Wire Wire Line
+	3500 6150 3500 5900
+Wire Wire Line
+	3500 6150 3500 6300
+Connection ~ 3500 6150
+Text GLabel 2950 5900 0    50   Input ~ 0
+SHUNT_ISO_BUSP
+Text GLabel 2950 6100 0    50   Input ~ 0
+SHUNT_ISO_BUSN
+$Comp
+L servo:Resistor R?
+U 1 1 6059731F
+P 6250 5950
+AR Path="/5DEE980E/6059731F" Ref="R?"  Part="1" 
+AR Path="/5E2F3BE3/6059731F" Ref="R?"  Part="1" 
+F 0 "R?" H 6100 6050 60  0000 C CNN
+F 1 "1M" H 6300 6050 60  0000 C CNN
+F 2 "" H 6250 5950 60  0000 C CNN
+F 3 "" H 6250 5950 60  0000 C CNN
+	1    6250 5950
+	1    0    0    1   
+$EndComp
+Wire Wire Line
+	6050 5950 5950 5950
+Connection ~ 5950 5950
+Wire Wire Line
+	6450 5950 6550 5950
+Wire Wire Line
+	6550 5950 6550 6250
+Connection ~ 5050 5550
+$Comp
+L servo:5VH #PWR?
+U 1 1 6059733E
+P 5050 5300
+AR Path="/5E2F3BE3/6059733E" Ref="#PWR?"  Part="1" 
+AR Path="/5DE49152/6059733E" Ref="#PWR?"  Part="1" 
+F 0 "#PWR?" H 5050 5100 20  0001 C CNN
+F 1 "5VH" H 5055 5457 28  0000 C CNN
+F 2 "" H 5050 5300 50  0001 C CNN
+F 3 "" H 5050 5300 50  0001 C CNN
+	1    5050 5300
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:R_Small R?
+U 1 1 60597344
+P 3300 5900
+F 0 "R?" V 3200 5900 50  0000 C CNN
+F 1 "1k" V 3300 5900 50  0000 C CNN
+F 2 "" H 3300 5900 50  0001 C CNN
+F 3 "~" H 3300 5900 50  0001 C CNN
+	1    3300 5900
+	0    1    1    0   
+$EndComp
+$Comp
+L servo:C_Small C?
+U 1 1 6059734B
+P 3100 6000
+F 0 "C?" H 3000 6050 50  0000 L CNN
+F 1 "100n" H 2800 6000 50  0000 L CNN
+F 2 "" H 3100 6000 50  0001 C CNN
+F 3 "~" H 3100 6000 50  0001 C CNN
+	1    3100 6000
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	3200 5900 3100 5900
+$Comp
+L Device:R_Small R?
+U 1 1 60597353
+P 3300 6100
+F 0 "R?" V 3250 6100 50  0000 C CNN
+F 1 "1k" V 3300 6100 50  0000 C CNN
+F 2 "" H 3300 6100 50  0001 C CNN
+F 3 "~" H 3300 6100 50  0001 C CNN
+	1    3300 6100
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	3200 6100 3100 6100
+Wire Wire Line
+	3100 6100 2950 6100
+Connection ~ 3100 6100
+Wire Wire Line
+	2950 5900 3100 5900
+Connection ~ 3100 5900
+Wire Wire Line
+	3400 5900 3450 5900
+Wire Wire Line
+	3450 5900 3450 5950
+Wire Wire Line
+	3450 5950 3750 5950
+Wire Wire Line
+	3750 6050 3450 6050
+Wire Wire Line
+	3450 6050 3450 6100
+Wire Wire Line
+	3450 6100 3400 6100
+Text Notes 6100 5900 0    20   ~ 0
+divider to measure Vbus
+$Comp
+L servo:GNDH #PWR?
+U 1 1 6059A6AF
+P 4850 6800
+AR Path="/5DD76B18/6059A6AF" Ref="#PWR?"  Part="1" 
+AR Path="/5DEE980E/6059A6AF" Ref="#PWR?"  Part="1" 
+AR Path="/5E2F3BE3/6059A6AF" Ref="#PWR?"  Part="1" 
+AR Path="/5DE49152/6059A6AF" Ref="#PWR?"  Part="1" 
+F 0 "#PWR?" H 4850 6550 30  0001 C CNN
+F 1 "GNDH" H 4850 6642 30  0000 C CNN
+F 2 "" H 4850 6800 50  0001 C CNN
+F 3 "" H 4850 6800 50  0001 C CNN
+	1    4850 6800
+	-1   0    0    -1  
+$EndComp
+Wire Wire Line
+	4850 6150 4850 6750
+Connection ~ 4850 6750
+Wire Wire Line
+	4850 6750 4850 6800
+$Comp
+L servo:L_Small L?
+U 1 1 6059732D
+P 5050 5400
+AR Path="/5E2F3BE3/6059732D" Ref="L?"  Part="1" 
+AR Path="/5DE49152/6059732D" Ref="L?"  Part="1" 
+F 0 "L?" H 5097 5446 50  0000 L CNN
+F 1 "L_Small" H 5097 5355 50  0000 L CNN
+F 2 "" H 5050 5400 50  0001 C CNN
+F 3 "~" H 5050 5400 50  0001 C CNN
+	1    5050 5400
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	5050 5500 5050 5550
 $EndSCHEMATC

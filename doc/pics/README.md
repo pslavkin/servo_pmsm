@@ -72,12 +72,6 @@ There are the actual schematics generated until now:
 <img src="doc/pics/servo-17.jpg" width="800"/>
 <img src="doc/pics/servo-18.jpg" width="800"/>
 
-## Welcome back Moldova 3.0
-
-<img src = "doc/pics/moldova3.0.jpg" width = "400"/>
-
-I've come back to finish PCB, there we are... sdarobia!
-
 ## Hierarchy
 
 <!-- tree --ignore-case -L 3 -I "*utils*|*user*|*target*|*Debug*|Release|include|driverlib|tags|*types_c*" -->

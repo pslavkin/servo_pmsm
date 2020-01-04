@@ -4,7 +4,7 @@ EELAYER 26 0
 EELAYER END
 $Descr A3 16535 11693
 encoding utf-8
-Sheet 1 18
+Sheet 1 19
 Title "servo drive"
 Date "25 10 2019"
 Rev "1.0"
@@ -50,14 +50,6 @@ U 5DD76B18
 F0 "ac_in" 50
 F1 "ac_in.sch" 50
 $EndSheet
-$Sheet
-S 4000 5900 1300 1150
-U 5DF5EE96
-F0 "lem" 50
-F1 "lem.sch" 50
-$EndSheet
-Text Notes 4350 6550 0    197  ~ 39
-LEM
 Text Notes 6050 8300 0    197  ~ 39
 uC\nADC
 $Sheet
@@ -121,11 +113,11 @@ CAN
 $Sheet
 S 4000 2900 1300 1150
 U 5E2F3BE3
-F0 "shunt isolated" 50
-F1 "shunt_iso.sch" 50
+F0 "shunt isigma delta" 50
+F1 "shunt_sd.sch" 50
 $EndSheet
 Text Notes 4150 3800 0    197  ~ 39
-SHUNT\n ISO
+SHUNT\nSDELTA
 $Sheet
 S 5750 2900 1300 1150
 U 5E033FE4
@@ -150,4 +142,20 @@ F1 "ui.sch" 50
 $EndSheet
 Text Notes 7950 6600 0    197  ~ 39
 UI
+$Sheet
+S 4000 4450 1300 1150
+U 605B70F2
+F0 "lem" 50
+F1 "lem.sch" 50
+$EndSheet
+Text Notes 4300 5200 0    197  ~ 39
+LEM
+$Sheet
+S 4050 5850 1300 1150
+U 605BEC04
+F0 "shunt isolated" 50
+F1 "shunt_iso.sch" 50
+$EndSheet
+Text Notes 4200 6750 0    197  ~ 39
+SHUNT\n ISO
 $EndSCHEMATC

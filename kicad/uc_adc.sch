@@ -4,7 +4,7 @@ EELAYER 26 0
 EELAYER END
 $Descr A4 11693 8268
 encoding utf-8
-Sheet 3 18
+Sheet 3 19
 Title "ADC"
 Date "25 10 2019"
 Rev "1.0"
@@ -229,18 +229,6 @@ Text GLabel 4800 4350 0    50   Input ~ 0
 ADC_D4
 Text GLabel 4800 4450 0    50   Input ~ 0
 ADC_D5
-Text GLabel 4150 1850 0    50   Input ~ 0
-LEM_A_2
-Text GLabel 4150 1750 0    50   Input ~ 0
-LEM_A_1
-Wire Wire Line
-	4150 1750 5150 1750
-Wire Wire Line
-	4150 1850 5150 1850
-Text GLabel 4150 1950 0    50   Input ~ 0
-LEM_B_1
-Text GLabel 4150 2050 0    50   Input ~ 0
-LEM_B_2
 Text GLabel 4150 2750 0    50   Input ~ 0
 SHUNT_ISOA_UP
 Text GLabel 4150 2850 0    50   Input ~ 0
@@ -270,8 +258,6 @@ SHUNT_ISOB_WP
 Text GLabel 4200 4450 0    50   Input ~ 0
 SHUNT_ISOB_WN
 Wire Wire Line
-	4150 2050 5150 2050
-Wire Wire Line
 	4200 4050 5150 4050
 Wire Wire Line
 	4200 3950 5150 3950
@@ -295,8 +281,6 @@ F 4 "TMS320F28388DZWTS" V -550 -1050 60  0001 C CNN "PartNumber"
 	1    6250 3050
 	1    0    0    -1  
 $EndComp
-Wire Wire Line
-	4150 1950 5150 1950
 Wire Wire Line
 	5150 2150 4800 2150
 Wire Wire Line
@@ -333,4 +317,12 @@ Wire Wire Line
 	4150 2450 5150 2450
 Wire Wire Line
 	4150 2550 5150 2550
+Wire Wire Line
+	5150 1750 4800 1750
+Wire Wire Line
+	5150 1850 4800 1850
+Wire Wire Line
+	5150 1950 4800 1950
+Wire Wire Line
+	5150 2050 4800 2050
 $EndSCHEMATC

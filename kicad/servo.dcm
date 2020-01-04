@@ -136,6 +136,12 @@ D Dual High Speed USB To Multipurpose UART/FIFO IC, LQFP-64
 F http://www.ftdichip.com/Support/Documents/DataSheets/ICs/DS_FT2232H.pdf
 $ENDCMP
 #
+$CMP C_Small
+D Unpolarized capacitor, small symbol
+K capacitor cap
+F ~
+$ENDCMP
+#
 $CMP Crystal_GND23_Small
 D Four pin crystal, GND on pins 2 and 3, small symbol
 K quartz ceramic resonator oscillator
@@ -289,6 +295,18 @@ K current transducer
 F https://www.lem.com/sites/default/files/products_datasheets/ltsr_6-np.pdf
 $ENDCMP
 #
+$CMP LXS6-NPS
+D Current Transducer, Unipolar, 6A, 5V supply, DC, AC, pulsed
+K current transducer
+F https://www.lem.com/sites/default/files/products_datasheets/lxs_series.pdf
+$ENDCMP
+#
+$CMP L_Small
+D Inductor, small symbol
+K inductor choke coil reactor magnetic
+F ~
+$ENDCMP
+#
 $CMP MAX31820
 D 1-Wire Ambient Temperature Sensor TO-92
 K OneWire 1-Wire 1Wire Maxim Dallas
@@ -305,6 +323,12 @@ $CMP RFM-0505S
 D Low cost 1W converter
 K DC/DC Converter
 F https://www.mouser.com/datasheet/2/468/RFM-1307831.pdf
+$ENDCMP
+#
+$CMP R_Small
+D Resistor, small symbol
+K R resistor
+F ~
 $ENDCMP
 #
 $CMP SI8660BD
