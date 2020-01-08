@@ -15,7 +15,7 @@ Comment3 ""
 Comment4 ""
 $EndDescr
 $Sheet
-S 9250 5900 1300 1100
+S 9350 7400 1300 1100
 U 5DC3DC9E
 F0 "ethernet" 50
 F1 "ethernet.sch" 50
@@ -27,7 +27,7 @@ F0 "uc_adc" 50
 F1 "uc_adc.sch" 50
 $EndSheet
 $Sheet
-S 9250 7450 1300 1150
+S 9350 8900 1300 1150
 U 5DC4A59D
 F0 "ethercat" 50
 F1 "ethercat.sch" 50
@@ -53,16 +53,16 @@ $EndSheet
 Text Notes 6050 8300 0    197  ~ 39
 uC\nADC
 $Sheet
-S 4000 7450 1300 1150
+S 4050 7450 1300 1150
 U 5DDE8C5E
 F0 "igbt" 50
 F1 "igbt.sch" 50
 $EndSheet
-Text Notes 4350 8100 0    197  ~ 39
+Text Notes 4400 8100 0    197  ~ 39
 IGBT
 Text Notes 5950 6750 0    197  ~ 39
 uC \nPower
-Text Notes 9550 8300 0    197  ~ 39
+Text Notes 9650 9750 0    197  ~ 39
 Ether\nCAT
 $Sheet
 S 7500 2900 1300 1150
@@ -74,50 +74,42 @@ Text Notes 7750 3600 0    197  ~ 39
 TEMP
 Text Notes 2800 6700 0    197  ~ 39
 AC\nIN
-Text Notes 9500 6700 0    197  ~ 39
+Text Notes 9600 8200 0    197  ~ 39
 Ether\nNET
 Text Notes 6000 5400 0    197  ~ 39
 uC\nCLK\nDbg
-Text Notes 9500 5050 0    197  ~ 39
+Text Notes 9550 6550 0    197  ~ 39
 ENDAT
 $Sheet
-S 9300 4400 1300 1150
+S 9350 5900 1300 1150
 U 5DE3DF56
 F0 "endat" 50
 F1 "endat.sch" 50
 $EndSheet
 $Sheet
-S 9250 2900 1300 1150
+S 9300 4400 1300 1150
 U 5E092156
 F0 "qep" 50
 F1 "qep.sch" 50
 $EndSheet
-Text Notes 9600 3550 0    197  ~ 39
+Text Notes 9650 5050 0    197  ~ 39
 QEP
 $Sheet
-S 9250 1400 1300 1150
+S 9300 2900 1300 1150
 U 5E1BAEAA
 F0 "rs485" 50
 F1 "rs485.sch" 50
 $EndSheet
-Text Notes 9450 2100 0    197  ~ 39
+Text Notes 9500 3600 0    197  ~ 39
 RS485
 $Sheet
-S 9250 8950 1300 1150
+S 9300 1400 1300 1150
 U 5E21534F
 F0 "can" 50
 F1 "can.sch" 50
 $EndSheet
-Text Notes 9550 9600 0    197  ~ 39
+Text Notes 9600 2050 0    197  ~ 39
 CAN
-$Sheet
-S 4000 2900 1300 1150
-U 5E2F3BE3
-F0 "shunt isigma delta" 50
-F1 "shunt_sd.sch" 50
-$EndSheet
-Text Notes 4150 3800 0    197  ~ 39
-SHUNT\nSDELTA
 $Sheet
 S 5750 2900 1300 1150
 U 5E033FE4
@@ -143,19 +135,27 @@ $EndSheet
 Text Notes 7950 6600 0    197  ~ 39
 UI
 $Sheet
-S 4000 4450 1300 1150
+S 4050 4400 1300 1150
 U 605B70F2
 F0 "lem" 50
 F1 "lem.sch" 50
 $EndSheet
-Text Notes 4300 5200 0    197  ~ 39
+Text Notes 4350 5150 0    197  ~ 39
 LEM
 $Sheet
 S 4050 5850 1300 1150
 U 605BEC04
-F0 "shunt isolated" 50
-F1 "shunt_iso.sch" 50
+F0 "Vbus measurement" 50
+F1 "vbus_meas.sch" 50
 $EndSheet
-Text Notes 4200 6750 0    197  ~ 39
-SHUNT\n ISO
+Text Notes 4300 6700 0    197  ~ 39
+VBUS\nMEAS
+$Sheet
+S 4000 2900 1300 1150
+U 5EC40F3C
+F0 "sigma delta interface" 50
+F1 "sd_interface.sch" 50
+$EndSheet
+Text Notes 4150 3800 0    197  ~ 39
+SDELTA\nIFACE
 $EndSCHEMATC

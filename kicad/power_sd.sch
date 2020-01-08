@@ -4,7 +4,7 @@ EELAYER 26 0
 EELAYER END
 $Descr A3 16535 11693
 encoding utf-8
-Sheet 14 20
+Sheet 14 21
 Title "Shunt Sigma Delta isolated"
 Date "25 10 2019"
 Rev "1.0"
@@ -65,13 +65,9 @@ $EndComp
 Wire Wire Line
 	3600 3400 3850 3400
 Wire Wire Line
-	3600 3500 3600 3600
-Wire Wire Line
 	3850 3700 3850 3750
 Wire Wire Line
 	2600 3300 2050 3300
-Text GLabel 2050 3300 0    50   Input ~ 0
-SD_A1_D
 $Comp
 L servo:AMC1304 U?
 U 1 1 5DEFEC79
@@ -95,8 +91,6 @@ Wire Wire Line
 Wire Wire Line
 	3600 3100 4000 3100
 Connection ~ 4000 3100
-Wire Wire Line
-	4000 3100 4000 3600
 $Comp
 L servo:Resistor R?
 U 1 1 5DF0D5D8
@@ -134,8 +128,6 @@ Wire Wire Line
 	5250 2900 4900 2900
 Wire Wire Line
 	5250 2900 5250 3250
-Wire Wire Line
-	5250 3450 5250 3600
 Wire Wire Line
 	5250 3350 4900 3350
 Wire Wire Line
@@ -187,12 +179,12 @@ $EndComp
 $Comp
 L servo:Resistor R?
 U 1 1 5E29544D
-P 4600 3600
-F 0 "R?" H 4600 3391 60  0000 C CNN
-F 1 "12e" H 4600 3497 60  0000 C CNN
-F 2 "" H 4600 3600 60  0000 C CNN
-F 3 "" H 4600 3600 60  0000 C CNN
-	1    4600 3600
+P 4600 3750
+F 0 "R?" H 4600 3541 60  0000 C CNN
+F 1 "12e" H 4600 3647 60  0000 C CNN
+F 2 "" H 4600 3750 60  0000 C CNN
+F 3 "" H 4600 3750 60  0000 C CNN
+	1    4600 3750
 	1    0    0    1   
 $EndComp
 Wire Wire Line
@@ -201,18 +193,10 @@ Connection ~ 4900 2900
 Wire Wire Line
 	4400 2900 4250 2900
 Wire Wire Line
-	4400 3600 4250 3600
-Connection ~ 4000 3600
-Wire Wire Line
 	4250 3150 4250 2900
 Connection ~ 4250 2900
 Wire Wire Line
 	4250 2900 3600 2900
-Wire Wire Line
-	4250 3450 4250 3600
-Connection ~ 4250 3600
-Wire Wire Line
-	4250 3600 4000 3600
 Wire Wire Line
 	5900 2150 5600 2150
 $Comp
@@ -668,10 +652,8 @@ $EndComp
 Wire Wire Line
 	3700 4550 4000 4550
 Connection ~ 4000 4850
-Text Notes 4600 1000 0    197  ~ 39
-Isolated sigma delta ADC
-Text Notes 5450 1350 0    39   ~ 8
-these kind of circuit shoud be placed on power stage not on\n controlboard , because the traces from the shutn resistors to the\n sigma delta IC should be short
+Text Notes 4000 950  0    197  ~ 39
+Power board Isolated sigma delta ADC
 Wire Wire Line
 	3600 7850 3700 7850
 $Comp
@@ -1334,12 +1316,6 @@ $EndComp
 Wire Wire Line
 	3700 9200 4000 9200
 Connection ~ 4000 9500
-Text GLabel 2050 5550 0    50   Input ~ 0
-SD_A2_D
-Text GLabel 2050 7850 0    50   Input ~ 0
-SD_A3_D
-Text GLabel 2050 10200 0    50   Input ~ 0
-SD_A4_D
 Wire Wire Line
 	9350 3300 9250 3300
 $Comp
@@ -1396,8 +1372,6 @@ Wire Wire Line
 	9100 3700 9100 3750
 Wire Wire Line
 	10350 3300 10900 3300
-Text GLabel 10900 3300 2    50   Input ~ 0
-SD_B1_D
 $Comp
 L servo:AMC1304 U?
 U 1 1 5EBC92E2
@@ -2666,62 +2640,10 @@ $EndComp
 Wire Wire Line
 	9250 9200 8950 9200
 Connection ~ 8950 9500
-Text GLabel 10900 5550 2    50   Input ~ 0
-SD_B2_D
-Text GLabel 10900 7850 2    50   Input ~ 0
-SD_B3_D
-Text GLabel 10900 10200 2    50   Input ~ 0
-SD_B4_D
-Connection ~ 3600 3600
-Wire Wire Line
-	3600 3600 3600 3750
-Connection ~ 5250 3600
-Wire Wire Line
-	5250 3600 5250 3750
-Wire Wire Line
-	4000 3600 4000 3750
-Wire Wire Line
-	4250 3600 4250 3750
-Wire Wire Line
-	3600 3600 4000 3600
-Wire Wire Line
-	4800 3600 5250 3600
-$Comp
-L servo:SN74LVC2G17DBVR U?
-U 1 1 5E1BED61
-P 2200 1750
-AR Path="/5DDE8C5E/5E1BED61" Ref="U?"  Part="1" 
-AR Path="/5E2F3BE3/5E1BED61" Ref="U?"  Part="1" 
-F 0 "U?" H 2400 1700 60  0000 C CNN
-F 1 "SN74LVC2G17DBVR" H 2075 2133 60  0001 C CNN
-F 2 "" H 2200 1750 60  0000 C CNN
-F 3 "../doc/datasheets/sn74lvc2g17.pdf" H 1900 2200 60  0001 C CNN
-	1    2200 1750
-	1    0    0    -1  
-$EndComp
-Text GLabel 2900 1750 2    50   Input ~ 0
-SD_A_CLK1
-Wire Wire Line
-	1400 1550 1500 1550
-Wire Wire Line
-	1500 1550 1500 1750
-Wire Wire Line
-	1500 1750 1700 1750
-Connection ~ 1500 1550
-Wire Wire Line
-	1500 1550 1700 1550
-Wire Wire Line
-	2450 1750 2600 1750
-Wire Wire Line
-	2600 1750 2600 2100
-Wire Wire Line
-	2600 2100 1250 2100
 Wire Wire Line
 	1250 10000 2600 10000
 Wire Wire Line
 	1250 7650 2600 7650
-Wire Wire Line
-	1250 2100 1250 3100
 Connection ~ 1250 7650
 Wire Wire Line
 	1250 7650 1250 10000
@@ -2736,61 +2658,126 @@ Connection ~ 1250 3100
 Wire Wire Line
 	1250 3100 1250 5350
 Wire Wire Line
-	2450 1550 11800 1550
+	10200 10000 10350 10000
 Wire Wire Line
-	10350 10000 11800 10000
+	10200 7650 10350 7650
+Connection ~ 11650 7650
 Wire Wire Line
-	10350 7650 11800 7650
-Connection ~ 11800 7650
+	11650 7650 11650 10000
 Wire Wire Line
-	11800 7650 11800 10000
+	10200 5350 10350 5350
+Connection ~ 11650 5350
 Wire Wire Line
-	10350 5350 11800 5350
+	11650 5350 11650 7650
 Wire Wire Line
-	11800 1550 11800 3100
-Connection ~ 11800 5350
+	10200 3100 10350 3100
+Connection ~ 11650 3100
 Wire Wire Line
-	11800 5350 11800 7650
+	11650 3100 11650 5350
 Wire Wire Line
-	10350 3100 11800 3100
-Connection ~ 11800 3100
+	4250 3450 4250 3750
 Wire Wire Line
-	11800 3100 11800 5350
-$Comp
-L servo:3V3 #PWR?
-U 1 1 5E44C407
-P 2650 1450
-F 0 "#PWR?" H 2655 1657 20  0000 C CNN
-F 1 "3V3" H 2655 1607 28  0000 C CNN
-F 2 "" H 2650 1450 50  0001 C CNN
-F 3 "" H 2650 1450 50  0001 C CNN
-	1    2650 1450
-	-1   0    0    -1  
-$EndComp
+	3850 3750 4000 3750
+Connection ~ 4000 3750
 Wire Wire Line
-	2650 1450 2650 1650
+	3600 3500 3600 3750
 Wire Wire Line
-	2650 1650 2450 1650
-$Comp
-L servo:GND #PWR?
-U 1 1 5E4779CD
-P 1650 1850
-F 0 "#PWR?" H 1650 1600 30  0001 C CNN
-F 1 "GND" H 1650 1692 30  0000 C CNN
-F 2 "" H 1650 1850 50  0001 C CNN
-F 3 "" H 1650 1850 50  0001 C CNN
-	1    1650 1850
-	-1   0    0    -1  
-$EndComp
+	4000 3100 4000 3750
 Wire Wire Line
-	1700 1650 1650 1650
+	4000 3750 4250 3750
 Wire Wire Line
-	1650 1650 1650 1850
-Text GLabel 1400 1550 0    50   Input ~ 0
-PWM4SD_CLK
-Text GLabel 2900 1550 2    50   Input ~ 0
-SD_B_CLK1
+	3600 3750 3850 3750
+Connection ~ 3850 3750
 Wire Wire Line
-	2600 1750 2900 1750
-Connection ~ 2600 1750
+	4900 3750 5250 3750
+Wire Wire Line
+	5250 3450 5250 3750
+Wire Wire Line
+	4400 3750 4250 3750
+Connection ~ 4250 3750
+Wire Wire Line
+	4800 3750 4900 3750
+Connection ~ 4900 3750
+Text GLabel 10900 3300 2    50   Input ~ 0
+SD_B1_D_H
+Text GLabel 10900 5550 2    50   Input ~ 0
+SD_B2_D_H
+Text GLabel 10900 7850 2    50   Input ~ 0
+SD_B3_D_H
+Text GLabel 10900 10200 2    50   Input ~ 0
+SD_B4_D_H
+Text GLabel 1600 2000 2    50   Input ~ 0
+SD_A_CLK1_H
+Text GLabel 1100 2000 0    50   Input ~ 0
+PWM4SD_CLK_H
+Text GLabel 11400 1950 0    50   Input ~ 0
+SD_B_CLK1_H
+Text GLabel 2050 5550 0    50   Input ~ 0
+SD_A2_D_H
+Text GLabel 2050 7850 0    50   Input ~ 0
+SD_A3_D_H
+Text GLabel 2050 10200 0    50   Input ~ 0
+SD_A4_D_H
+Text GLabel 11850 1950 2    50   Input ~ 0
+PWM4SD_CLK_H
+Wire Wire Line
+	1100 2000 1250 2000
+Wire Wire Line
+	1250 2000 1250 3100
+Wire Wire Line
+	1250 2000 1300 2000
+Wire Wire Line
+	1300 2000 1300 1900
+Wire Wire Line
+	1300 1900 1350 1900
+Wire Wire Line
+	1350 1900 1350 2100
+Wire Wire Line
+	1350 2100 1400 2100
+Wire Wire Line
+	1400 2100 1400 1900
+Wire Wire Line
+	1400 1900 1450 1900
+Wire Wire Line
+	1450 1900 1450 2000
+Wire Wire Line
+	1450 2000 1600 2000
+Connection ~ 1250 2000
+Text GLabel 2050 3300 0    50   Input ~ 0
+SD_A1_D_H
+Wire Wire Line
+	11850 1950 11650 1950
+Wire Wire Line
+	11650 1950 11650 3100
+Wire Wire Line
+	11650 1950 11550 1950
+Wire Wire Line
+	11550 1950 11550 2200
+Wire Wire Line
+	11550 2200 11500 2200
+Wire Wire Line
+	11500 2200 11500 1950
+Wire Wire Line
+	11500 1950 11450 1950
+Wire Wire Line
+	11450 1950 11450 2200
+Wire Wire Line
+	11450 2200 11400 2200
+Wire Wire Line
+	11400 2200 11400 1950
+Wire Wire Line
+	11400 1950 11250 1950
+Connection ~ 11650 1950
+Connection ~ 10350 3100
+Wire Wire Line
+	10350 3100 11650 3100
+Connection ~ 10350 5350
+Wire Wire Line
+	10350 5350 11650 5350
+Connection ~ 10350 7650
+Wire Wire Line
+	10350 7650 11650 7650
+Connection ~ 10350 10000
+Wire Wire Line
+	10350 10000 11650 10000
 $EndSCHEMATC

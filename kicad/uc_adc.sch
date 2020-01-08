@@ -181,94 +181,6 @@ Wire Wire Line
 Connection ~ 7950 4150
 Wire Wire Line
 	8150 4350 8150 4150
-Text GLabel 4800 1750 0    50   Input ~ 0
-ADC_A0
-Text GLabel 4800 1850 0    50   Input ~ 0
-ADC_A1
-Text GLabel 4800 1950 0    50   Input ~ 0
-ADC_A2
-Text GLabel 4800 2050 0    50   Input ~ 0
-ADC_A3
-Text GLabel 4800 2150 0    50   Input ~ 0
-ADC_A4
-Text GLabel 4800 2250 0    50   Input ~ 0
-ADC_A5
-Text GLabel 4800 2450 0    50   Input ~ 0
-ADC_ALL_14
-Text GLabel 4800 2550 0    50   Input ~ 0
-ADC_ALL_15
-Text GLabel 4800 2750 0    50   Input ~ 0
-ADC_B0
-Text GLabel 4800 2850 0    50   Input ~ 0
-ADC_B1
-Text GLabel 4800 2950 0    50   Input ~ 0
-ADC_B2
-Text GLabel 4800 3050 0    50   Input ~ 0
-ADC_B3
-Text GLabel 4800 3150 0    50   Input ~ 0
-ADC_B4
-Text GLabel 4800 3250 0    50   Input ~ 0
-ADC_B5
-Text GLabel 4800 3450 0    50   Input ~ 0
-ADC_C2
-Text GLabel 4800 3550 0    50   Input ~ 0
-ADC_C3
-Text GLabel 4800 3650 0    50   Input ~ 0
-ADC_C4
-Text GLabel 4800 3750 0    50   Input ~ 0
-ADC_C5
-Text GLabel 4800 3950 0    50   Input ~ 0
-ADC_D0
-Text GLabel 4800 4050 0    50   Input ~ 0
-ADC_D1
-Text GLabel 4800 4150 0    50   Input ~ 0
-ADC_D2
-Text GLabel 4800 4250 0    50   Input ~ 0
-ADC_D3
-Text GLabel 4800 4350 0    50   Input ~ 0
-ADC_D4
-Text GLabel 4800 4450 0    50   Input ~ 0
-ADC_D5
-Text GLabel 4150 2750 0    50   Input ~ 0
-SHUNT_ISOA_UP
-Text GLabel 4150 2850 0    50   Input ~ 0
-SHUNT_ISOA_UN
-Text GLabel 4150 2950 0    50   Input ~ 0
-SHUNT_ISOA_VP
-Text GLabel 4150 3050 0    50   Input ~ 0
-SHUNT_ISOA_VN
-Text GLabel 4150 3150 0    50   Input ~ 0
-SHUNT_ISOA_WP
-Text GLabel 4150 3250 0    50   Input ~ 0
-SHUNT_ISOA_WN
-Text GLabel 4150 2450 0    50   Input ~ 0
-SHUNT_ISO_BUSP
-Text GLabel 4150 2550 0    50   Input ~ 0
-SHUNT_ISO_BUSN
-Text GLabel 4200 3950 0    50   Input ~ 0
-SHUNT_ISOB_UP
-Text GLabel 4200 4050 0    50   Input ~ 0
-SHUNT_ISOB_UN
-Text GLabel 4200 4150 0    50   Input ~ 0
-SHUNT_ISOB_VP
-Text GLabel 4200 4250 0    50   Input ~ 0
-SHUNT_ISOB_VN
-Text GLabel 4200 4350 0    50   Input ~ 0
-SHUNT_ISOB_WP
-Text GLabel 4200 4450 0    50   Input ~ 0
-SHUNT_ISOB_WN
-Wire Wire Line
-	4200 4050 5150 4050
-Wire Wire Line
-	4200 3950 5150 3950
-Wire Wire Line
-	4200 4250 5150 4250
-Wire Wire Line
-	4200 4150 5150 4150
-Wire Wire Line
-	4200 4450 5150 4450
-Wire Wire Line
-	4200 4350 5150 4350
 $Comp
 L servo:TMS320F28388 U401
 U 1 1 5DB3916E
@@ -286,38 +198,6 @@ Wire Wire Line
 Wire Wire Line
 	5150 2250 4800 2250
 Wire Wire Line
-	4150 2750 5150 2750
-Wire Wire Line
-	4150 2850 5150 2850
-Wire Wire Line
-	4150 2950 5150 2950
-Wire Wire Line
-	4150 3050 5150 3050
-Wire Wire Line
-	4150 3150 5150 3150
-Wire Wire Line
-	4150 3250 5150 3250
-Text GLabel 4150 3450 0    50   Input ~ 0
-SHUNT_ISOA_ALLP
-Text GLabel 4150 3550 0    50   Input ~ 0
-SHUNT_ISOA_ALLN
-Text GLabel 4150 3650 0    50   Input ~ 0
-SHUNT_ISOB_ALLP
-Text GLabel 4150 3750 0    50   Input ~ 0
-SHUNT_ISOB_ALLN
-Wire Wire Line
-	4150 3650 5150 3650
-Wire Wire Line
-	4150 3750 5150 3750
-Wire Wire Line
-	4150 3550 5150 3550
-Wire Wire Line
-	4150 3450 5150 3450
-Wire Wire Line
-	4150 2450 5150 2450
-Wire Wire Line
-	4150 2550 5150 2550
-Wire Wire Line
 	5150 1750 4800 1750
 Wire Wire Line
 	5150 1850 4800 1850
@@ -325,4 +205,58 @@ Wire Wire Line
 	5150 1950 4800 1950
 Wire Wire Line
 	5150 2050 4800 2050
+Text GLabel 4800 1750 0    50   Input ~ 0
+LEM_A_U
+Text GLabel 4800 2750 0    50   Input ~ 0
+LEM_B_U
+Text GLabel 4800 1850 0    50   Input ~ 0
+LEM_A_V
+Text GLabel 4800 2850 0    50   Input ~ 0
+LEM_B_V
+Text GLabel 4800 2050 0    50   Input ~ 0
+LEM_A_W
+Text GLabel 4800 3050 0    50   Input ~ 0
+LEM_B_W
+Text GLabel 4800 1950 0    50   Input ~ 0
+LEM_A_ALL
+Text GLabel 4800 2950 0    50   Input ~ 0
+LEM_B_ALL
+Wire Wire Line
+	5150 2750 4800 2750
+Wire Wire Line
+	4800 3050 5150 3050
+Wire Wire Line
+	4800 2950 5150 2950
+Wire Wire Line
+	4800 2850 5150 2850
+Text GLabel 4800 3150 0    50   Input ~ 0
+VBUS_B_P
+Text GLabel 4800 3250 0    50   Input ~ 0
+VBUS_B_N
+Text GLabel 4800 2150 0    50   Input ~ 0
+VBUS_A_P
+Text GLabel 4800 2250 0    50   Input ~ 0
+VBUS_A_N
+Wire Wire Line
+	5150 3150 4800 3150
+Wire Wire Line
+	4800 3250 5150 3250
+Text GLabel 4800 3450 0    50   Input ~ 0
+NTC1_P
+Text GLabel 4800 3550 0    50   Input ~ 0
+NTC1_N
+Text GLabel 4800 3650 0    50   Input ~ 0
+NTC2_P
+Text GLabel 4800 3750 0    50   Input ~ 0
+NTC2_N
+Wire Wire Line
+	4800 3450 5150 3450
+Wire Wire Line
+	4800 3650 5150 3650
+Wire Wire Line
+	4800 3550 5150 3550
+Wire Wire Line
+	4800 3750 5150 3750
+Text Notes 3650 2050 0    20   ~ 0
+lem all hast to be connected on positive pin\n of comparator CMPINxP, becose the internal\n DAC reference work on the negative side only.\n 
 $EndSCHEMATC

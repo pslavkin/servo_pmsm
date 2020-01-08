@@ -4,7 +4,7 @@ EELAYER 26 0
 EELAYER END
 $Descr A3 16535 11693
 encoding utf-8
-Sheet 9 19
+Sheet 8 19
 Title "Igbt interface"
 Date "25 10 2019"
 Rev "1.0"
@@ -81,17 +81,6 @@ F 3 "" H 1400 2100 50  0001 C CNN
 $EndComp
 Wire Wire Line
 	1400 2200 1400 2100
-$Comp
-L servo:3V3H #PWR?
-U 1 1 5E190D20
-P 7550 1750
-F 0 "#PWR?" H 7550 1550 20  0001 C CNN
-F 1 "3V3H" H 7555 1907 28  0000 C CNN
-F 2 "" H 7550 1750 50  0001 C CNN
-F 3 "" H 7550 1750 50  0001 C CNN
-	1    7550 1750
-	1    0    0    -1  
-$EndComp
 Text Label 10000 3400 2    50   ~ 0
 PWM_B_BRK_MEC_H
 Text Label 10000 3300 2    50   ~ 0
@@ -501,17 +490,6 @@ F 1 "5VH" H 7155 1907 28  0000 C CNN
 F 2 "" H 7150 1750 50  0001 C CNN
 F 3 "" H 7150 1750 50  0001 C CNN
 	1    7150 1750
-	1    0    0    -1  
-$EndComp
-$Comp
-L servo:Jumper_3_Bridged12 JP?
-U 1 1 5E23B0DF
-P 7350 1750
-F 0 "JP?" H 7350 1852 50  0000 C CNN
-F 1 "Jumper_3_Bridged12" H 7350 1863 50  0001 C CNN
-F 2 "" H 7350 1750 50  0001 C CNN
-F 3 "~" H 7350 1750 50  0001 C CNN
-	1    7350 1750
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
@@ -936,10 +914,8 @@ Wire Wire Line
 	4400 2050 4400 2150
 Connection ~ 4400 1850
 Connection ~ 10300 1850
-Text Notes 4300 1100 0    197  ~ 39
+Text Notes 4300 950  0    197  ~ 39
 PWM OUT -> ISOLATOR -> BUFFER -> LED
-Wire Wire Line
-	4400 1850 7350 1850
 $Comp
 L servo:Resistor R?
 U 1 1 5E46BE68
@@ -1946,7 +1922,19 @@ Connection ~ 8650 3500
 Connection ~ 8650 3600
 Connection ~ 8650 3700
 Connection ~ 8650 3800
-Connection ~ 7350 1850
+Text Notes 700  4050 0    50   ~ 0
+Free to other uses
+Text Notes 13450 4050 0    50   ~ 0
+Free to other uses
+Text Notes 1500 4600 0    39   ~ 8
+Choose a package pin-to-pin compatible with\nTI ISO7760. But SIlabs cost halt the price as TI
+Text Notes 6600 1350 0    39   ~ 0
+these pins has isolation and a buffer. They could be directly connected\n to a IGBT module for test porpouses or to a power board and another\n isolation stage for production porpouses to have a reinforced isolation.\n In next stages of the development of the board, the buffers could be\n eliminated, but not the isolation Scmith trigger stage
 Wire Wire Line
-	7350 1850 10300 1850
+	4400 1850 7150 1850
+Wire Wire Line
+	7150 1750 7150 1850
+Connection ~ 7150 1850
+Wire Wire Line
+	7150 1850 10300 1850
 $EndSCHEMATC

@@ -433,10 +433,10 @@ F 3 "~" H 2850 3000 50  0001 C CNN
 	1    2850 3000
 	0    1    1    0   
 $EndComp
-Text Notes 3000 2850 0    50   ~ 0
-in case we need more \ncurrent use another 5v dc/dc\nand open jumper
-Text Notes 2800 1500 0    50   ~ 0
-5v has switching \nnoise, but don't care
+Text Notes 2950 2900 0    20   ~ 0
+in case we need more \ncurrent use another 5v dc/dc and\n open jumper to no overload the previos \nschitching power supply. if not, just chain and \ndo not place the extra 78E5
+Text Notes 3000 1550 0    20   ~ 0
+5v will have some switching \nnoise, but don't care, couse I'll use \n3v3 for the noise sensible logic.\nIf need some 5v clean supply just add\n a filter near your stuff
 Wire Wire Line
 	2750 1600 2900 1600
 Connection ~ 2900 1600
@@ -835,19 +835,9 @@ to clear switching \nnoise\n5->3.3\n3.3->1.2 \n
 Text Notes 10050 1650 0    50   ~ 0
 to clear switching \nnoise\n5->3.3\n3.3->1.2 \n
 Text Notes 2000 950  0    197  ~ 39
-COLD
-Text Notes 8600 1000 0    197  ~ 39
-HOT
-Text Notes 2150 1200 0    50   ~ 0
-sip 3 package, easy to \nreplace and many options
-Text Notes 1350 3700 0    50   ~ 0
-sip 3 package, easy to \nreplace and many options
-Text Notes 1400 5200 0    50   ~ 0
-sip 3 package, easy to \nreplace and many options
-Text Notes 7450 1500 0    50   ~ 0
-sip 3 package, easy to \nreplace and many options
-Text Notes 3800 5350 0    50   ~ 0
-low noise \nLDO <30uV
+COLD SUPPLY\n
+Text Notes 8200 950  0    197  ~ 39
+HOT SUPPLY
 Connection ~ 3200 4850
 Wire Wire Line
 	3200 5650 3800 5650
@@ -877,7 +867,7 @@ F 3 "../doc/datasheets/AP2114.pdf" H 3800 3400 50  0001 C CNN
 	1    3800 3300
 	1    0    0    -1  
 $EndComp
-Text Notes 3900 3700 0    50   ~ 0
+Text Notes 4050 3550 0    20   ~ 0
 low noise \nLDO <30uV
 Wire Wire Line
 	4100 3200 4150 3200
@@ -978,7 +968,7 @@ Wire Wire Line
 Connection ~ 7800 4950
 Wire Wire Line
 	7800 4950 7900 4950
-Text Notes 7350 4350 0    197  ~ 39
+Text Notes 7300 4150 0    197  ~ 39
 Main Power
 $Comp
 L Device:Fuse F?
@@ -1079,4 +1069,18 @@ Wire Wire Line
 	1150 2000 1250 2000
 Wire Wire Line
 	1250 2000 1250 2050
+Text Notes 8650 1150 0    20   ~ 0
+Take in account that hot doesn't mean that it is refered to high voltage\n AC socket input path like 220v/380v. It is intended to isolate the uC\n/logic/user interfase side from accidentally high voltage contact on the\n hot side and prevent injuries as to make the reinforced isolation\n possible with one single isolateion added
+Text Notes 7550 1500 0    20   ~ 0
+sip 3 package, cheap, easy to \nreplace and many options
+Text Notes 2150 1900 0    20   ~ 0
+sip 3 package, cheap, easy to \nreplace and many options
+Text Notes 2000 3550 0    20   ~ 0
+sip 3 package, cheap, easy to \nreplace and many options
+Text Notes 1950 5200 0    20   ~ 0
+sip 3 package, cheap, easy to \nreplace and many options
+Text Notes 3900 5250 0    20   ~ 0
+low noise \nLDO <30uV
+Text Notes 7650 4350 0    20   ~ 0
+In case the control board have to be supply directly with socket voltage\n (220v) populate these. It's not a good idea cause I'll like to keep hight\n voltage outside these controller board, but it's a requeriment, so I let it\n as an option. But you have the low voltage input 15vc and 15vh\n connectors also
 $EndSCHEMATC
