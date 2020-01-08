@@ -2,7 +2,7 @@ EESchema Schematic File Version 4
 LIBS:servo-cache
 EELAYER 26 0
 EELAYER END
-$Descr A4 11693 8268
+$Descr A3 16535 11693
 encoding utf-8
 Sheet 7 19
 Title "AC input"
@@ -466,19 +466,19 @@ Wire Wire Line
 Wire Wire Line
 	3250 2000 3250 2250
 Wire Wire Line
-	10700 1850 10700 1950
+	8950 3350 8950 3450
 $Comp
 L servo:Resistor R?
 U 1 1 5E2F90C7
-P 10700 2150
+P 8950 3650
 AR Path="/5EAA846A/5E2F90C7" Ref="R?"  Part="1" 
 AR Path="/5DD76B18/5E2F90C7" Ref="R?"  Part="1" 
-F 0 "R?" V 10745 2100 60  0000 R CNN
-F 1 "680" V 10647 2100 50  0000 R CNN
-F 2 "" H 10700 2150 50  0001 C CNN
-F 3 "" H 10700 2150 50  0001 C CNN
-F 4 "680" V -1700 2550 60  0001 C CNN "ValueDisplayed"
-	1    10700 2150
+F 0 "R?" V 8995 3600 60  0000 R CNN
+F 1 "680" V 8897 3600 50  0000 R CNN
+F 2 "" H 8950 3650 50  0001 C CNN
+F 3 "" H 8950 3650 50  0001 C CNN
+F 4 "680" V -3450 4050 60  0001 C CNN "ValueDisplayed"
+	1    8950 3650
 	0    -1   -1   0   
 $EndComp
 $Comp
@@ -498,19 +498,19 @@ $EndComp
 $Comp
 L servo:LED_A2_K1 D?
 U 1 1 5E2F90D7
-P 10700 2450
+P 8950 3950
 AR Path="/5EAA846A/5E2F90D7" Ref="D?"  Part="1" 
 AR Path="/5DD76B18/5E2F90D7" Ref="D?"  Part="1" 
-F 0 "D?" V 10650 2550 60  0000 L CNN
-F 1 "green" V 10750 2600 50  0000 L CNN
-F 2 "" H 10700 2450 50  0001 C CNN
-F 3 "" H 10700 2450 50  0001 C CNN
-F 4 "red" V -1700 2350 60  0001 C CNN "VALUE"
-	1    10700 2450
+F 0 "D?" V 8900 4050 60  0000 L CNN
+F 1 "green" V 9000 4100 50  0000 L CNN
+F 2 "" H 8950 3950 50  0001 C CNN
+F 3 "" H 8950 3950 50  0001 C CNN
+F 4 "red" V -3450 3850 60  0001 C CNN "VALUE"
+	1    8950 3950
 	0    1    1    0   
 $EndComp
 Wire Wire Line
-	10700 2600 10700 2650
+	8950 4100 8950 4150
 $Comp
 L Regulator_Switching:R-78E5.0-1.0 U?
 U 1 1 5E2F90E5
@@ -551,40 +551,40 @@ Wire Wire Line
 $Comp
 L servo:Capacitor C?
 U 1 1 5E2F910E
-P 10000 2050
+P 8250 3550
 AR Path="/5EAA846A/5E2F910E" Ref="C?"  Part="1" 
 AR Path="/5DD76B18/5E2F910E" Ref="C?"  Part="1" 
-F 0 "C?" V 10095 1940 60  0000 R CNN
-F 1 "22uF" V 9997 1940 50  0000 R CNN
-F 2 "" H 10000 2050 50  0001 C CNN
-F 3 "" H 10000 2050 50  0001 C CNN
-F 4 "22uF" V -3000 2450 60  0001 C CNN "ValueDisplayed"
-	1    10000 2050
+F 0 "C?" V 8345 3440 60  0000 R CNN
+F 1 "22uF" V 8247 3440 50  0000 R CNN
+F 2 "" H 8250 3550 50  0001 C CNN
+F 3 "" H 8250 3550 50  0001 C CNN
+F 4 "22uF" V -4750 3950 60  0001 C CNN "ValueDisplayed"
+	1    8250 3550
 	0    -1   -1   0   
 $EndComp
 $Comp
 L servo:Capacitor C?
 U 1 1 5E2F911C
-P 10350 2050
+P 8600 3550
 AR Path="/5EAA846A/5E2F911C" Ref="C?"  Part="1" 
 AR Path="/5DD76B18/5E2F911C" Ref="C?"  Part="1" 
-F 0 "C?" V 10445 1940 60  0000 R CNN
-F 1 "100nF" V 10347 1940 50  0000 R CNN
-F 2 "" H 10350 2050 50  0001 C CNN
-F 3 "" H 10350 2050 50  0001 C CNN
-F 4 "22uF" V -2650 2450 60  0001 C CNN "ValueDisplayed"
-	1    10350 2050
+F 0 "C?" V 8695 3440 60  0000 R CNN
+F 1 "100nF" V 8597 3440 50  0000 R CNN
+F 2 "" H 8600 3550 50  0001 C CNN
+F 3 "" H 8600 3550 50  0001 C CNN
+F 4 "22uF" V -4400 3950 60  0001 C CNN "ValueDisplayed"
+	1    8600 3550
 	0    -1   -1   0   
 $EndComp
 Wire Wire Line
-	10000 2150 10000 2650
+	8250 3650 8250 4150
 Wire Wire Line
-	10350 2150 10350 2650
-Connection ~ 10350 1850
+	8600 3650 8600 4150
+Connection ~ 8600 3350
 Wire Wire Line
-	10350 1850 10700 1850
+	8600 3350 8950 3350
 Wire Wire Line
-	10000 1850 10350 1850
+	8250 3350 8600 3350
 Wire Wire Line
 	7150 1750 7150 1850
 $Comp
@@ -614,45 +614,45 @@ $EndComp
 $Comp
 L servo:3V3H #PWR?
 U 1 1 5E31FAAF
-P 10700 1850
-F 0 "#PWR?" H 10700 1650 20  0001 C CNN
-F 1 "3V3H" H 10705 2007 28  0000 C CNN
-F 2 "" H 10700 1850 50  0001 C CNN
-F 3 "" H 10700 1850 50  0001 C CNN
-	1    10700 1850
+P 8950 3350
+F 0 "#PWR?" H 8950 3150 20  0001 C CNN
+F 1 "3V3H" H 8955 3507 28  0000 C CNN
+F 2 "" H 8950 3350 50  0001 C CNN
+F 3 "" H 8950 3350 50  0001 C CNN
+	1    8950 3350
 	1    0    0    -1  
 $EndComp
-Connection ~ 10700 1850
+Connection ~ 8950 3350
 Connection ~ 1950 1600
 Wire Wire Line
 	1950 1400 1950 1600
 $Comp
 L servo:GNDH #PWR?
 U 1 1 5E3444DD
-P 9400 2650
-F 0 "#PWR?" H 9400 2400 30  0001 C CNN
-F 1 "GNDH" H 9400 2492 30  0000 C CNN
-F 2 "" H 9400 2650 50  0001 C CNN
-F 3 "" H 9400 2650 50  0001 C CNN
-	1    9400 2650
+P 7650 4150
+F 0 "#PWR?" H 7650 3900 30  0001 C CNN
+F 1 "GNDH" H 7650 3992 30  0000 C CNN
+F 2 "" H 7650 4150 50  0001 C CNN
+F 3 "" H 7650 4150 50  0001 C CNN
+	1    7650 4150
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
 	1950 1600 1950 3200
 Wire Wire Line
-	7750 2650 8150 2650
+	7750 2650 7900 2650
 Connection ~ 8150 2650
 Wire Wire Line
 	8150 2650 8500 2650
 Connection ~ 8500 2650
 Wire Wire Line
 	8500 2650 8900 2650
-Connection ~ 10000 2650
+Connection ~ 8250 4150
 Wire Wire Line
-	10000 2650 10350 2650
-Connection ~ 10350 2650
+	8250 4150 8600 4150
+Connection ~ 8600 4150
 Wire Wire Line
-	10350 2650 10700 2650
+	8600 4150 8950 4150
 Wire Wire Line
 	2450 5650 2850 5650
 Connection ~ 2850 5650
@@ -714,76 +714,73 @@ F 4 "red" V -3500 2300 60  0001 C CNN "VALUE"
 $EndComp
 Wire Wire Line
 	8900 2550 8900 2650
-Connection ~ 8900 2650
-Wire Wire Line
-	8900 2650 9400 2650
 Wire Wire Line
 	8900 1900 8900 1850
 $Comp
 L servo:15VC #PWR?
 U 1 1 5E3CA8DA
-P 9000 5550
-F 0 "#PWR?" H 9000 5350 20  0001 C CNN
-F 1 "15VC" H 9005 5707 28  0000 C CNN
-F 2 "" H 9000 5550 50  0001 C CNN
-F 3 "" H 9000 5550 50  0001 C CNN
-	1    9000 5550
+P 13750 2450
+F 0 "#PWR?" H 13750 2250 20  0001 C CNN
+F 1 "15VC" H 13755 2607 28  0000 C CNN
+F 2 "" H 13750 2450 50  0001 C CNN
+F 3 "" H 13750 2450 50  0001 C CNN
+	1    13750 2450
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
-	8750 5550 9000 5550
+	13500 2450 13750 2450
 $Comp
 L servo:GND #PWR?
 U 1 1 5E3CD93F
-P 9000 5750
+P 13750 2650
 AR Path="/5DCD812E/5E3CD93F" Ref="#PWR?"  Part="1" 
 AR Path="/5EAA846A/5E3CD93F" Ref="#PWR?"  Part="1" 
 AR Path="/5F1E3CD5/5E3CD93F" Ref="#PWR?"  Part="1" 
 AR Path="/5DD76B18/5E3CD93F" Ref="#PWR?"  Part="1" 
-F 0 "#PWR?" H 9005 5601 20  0001 C CNN
-F 1 "GND" H 9005 5592 30  0000 C CNN
-F 2 "" H 9000 5750 70  0000 C CNN
-F 3 "" H 9000 5750 70  0000 C CNN
-	1    9000 5750
+F 0 "#PWR?" H 13755 2501 20  0001 C CNN
+F 1 "GND" H 13755 2492 30  0000 C CNN
+F 2 "" H 13750 2650 70  0000 C CNN
+F 3 "" H 13750 2650 70  0000 C CNN
+	1    13750 2650
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
-	8750 5750 9000 5750
+	13500 2650 13750 2650
 $Comp
 L Connector:Screw_Terminal_01x03 J?
 U 1 1 5E3D0C3C
-P 6950 4850
-F 0 "J?" H 6870 4525 50  0000 C CNN
-F 1 "Screw" H 6870 4616 50  0000 C CNN
-F 2 "" H 6950 4850 50  0001 C CNN
-F 3 "~" H 6950 4850 50  0001 C CNN
-	1    6950 4850
+P 11700 1750
+F 0 "J?" H 11620 1425 50  0000 C CNN
+F 1 "Screw" H 11620 1516 50  0000 C CNN
+F 2 "" H 11700 1750 50  0001 C CNN
+F 3 "~" H 11700 1750 50  0001 C CNN
+	1    11700 1750
 	-1   0    0    1   
 $EndComp
 Wire Wire Line
-	8700 4750 8950 4750
+	13500 1650 13750 1650
 Wire Wire Line
-	8700 4950 8950 4950
+	13500 1850 13750 1850
 $Comp
 L servo:15VH #PWR?
 U 1 1 5E3D3E10
-P 8950 4750
-F 0 "#PWR?" H 8950 4550 20  0001 C CNN
-F 1 "15VH" H 8955 4907 28  0000 C CNN
-F 2 "" H 8950 4750 50  0001 C CNN
-F 3 "" H 8950 4750 50  0001 C CNN
-	1    8950 4750
+P 13750 1650
+F 0 "#PWR?" H 13750 1450 20  0001 C CNN
+F 1 "15VH" H 13755 1807 28  0000 C CNN
+F 2 "" H 13750 1650 50  0001 C CNN
+F 3 "" H 13750 1650 50  0001 C CNN
+	1    13750 1650
 	1    0    0    -1  
 $EndComp
 $Comp
 L servo:GNDH #PWR?
 U 1 1 5E3D40D8
-P 8950 4950
-F 0 "#PWR?" H 8950 4700 30  0001 C CNN
-F 1 "GNDH" H 8950 4792 30  0000 C CNN
-F 2 "" H 8950 4950 50  0001 C CNN
-F 3 "" H 8950 4950 50  0001 C CNN
-	1    8950 4950
+P 13750 1850
+F 0 "#PWR?" H 13750 1600 30  0001 C CNN
+F 1 "GNDH" H 13750 1692 30  0000 C CNN
+F 2 "" H 13750 1850 50  0001 C CNN
+F 3 "" H 13750 1850 50  0001 C CNN
+	1    13750 1850
 	1    0    0    -1  
 $EndComp
 $Comp
@@ -830,10 +827,6 @@ Wire Wire Line
 	1550 2050 1550 2250
 Wire Wire Line
 	1550 2250 2450 2250
-Text Notes 5250 4450 0    50   ~ 0
-to clear switching \nnoise\n5->3.3\n3.3->1.2 \n
-Text Notes 10050 1650 0    50   ~ 0
-to clear switching \nnoise\n5->3.3\n3.3->1.2 \n
 Text Notes 2000 950  0    197  ~ 39
 COLD SUPPLY\n
 Text Notes 8200 950  0    197  ~ 39
@@ -898,93 +891,93 @@ Wire Wire Line
 $Comp
 L servo:AP2114 U?
 U 1 1 5E46EE61
-P 9400 1950
-F 0 "U?" H 9400 2315 50  0000 C CNN
-F 1 "AP2114H-1.2TRG1" H 9400 2224 50  0000 C CNN
-F 2 "Package_TO_SOT_SMD:SOT-223" H 9500 2575 50  0001 C CNN
-F 3 "../doc/datasheets/AP2114.pdf" H 9400 2050 50  0001 C CNN
-	1    9400 1950
+P 7650 3450
+F 0 "U?" H 7650 3815 50  0000 C CNN
+F 1 "AP2114H-1.2TRG1" H 7650 3724 50  0000 C CNN
+F 2 "Package_TO_SOT_SMD:SOT-223" H 7750 4075 50  0001 C CNN
+F 3 "../doc/datasheets/AP2114.pdf" H 7650 3550 50  0001 C CNN
+	1    7650 3450
 	1    0    0    -1  
 $EndComp
-Text Notes 9400 2350 0    50   ~ 0
+Text Notes 7650 3850 0    50   ~ 0
 low noise \nLDO <30uV
 Wire Wire Line
 	8500 1850 8900 1850
 Connection ~ 8900 1850
 Wire Wire Line
-	8900 1850 9100 1850
+	7150 3350 7350 3350
 Wire Wire Line
 	8900 1750 8900 1850
 Wire Wire Line
-	9400 2250 9400 2650
-Connection ~ 9400 2650
+	7650 3750 7650 4150
+Connection ~ 7650 4150
 Wire Wire Line
-	9400 2650 10000 2650
+	7650 4150 8250 4150
 Wire Wire Line
-	9700 1850 9800 1850
-Connection ~ 10000 1850
+	7950 3350 8050 3350
+Connection ~ 8250 3350
 Wire Wire Line
-	9800 1950 9800 1850
+	8050 3450 8050 3350
 Wire Wire Line
-	9700 1950 9800 1950
-Connection ~ 9800 1850
+	7950 3450 8050 3450
+Connection ~ 8050 3350
 Wire Wire Line
-	9800 1850 10000 1850
+	8050 3350 8250 3350
 $Comp
 L servo:IRM-20-12 PS?
 U 1 1 5E5160DF
-P 8300 4850
-F 0 "PS?" H 8300 5175 50  0000 C CNN
-F 1 "IRM-20-12" H 8300 5084 50  0000 C CNN
-F 2 "Converter_ACDC:Converter_ACDC_MeanWell_IRM-20-xx_THT" H 8300 4550 50  0001 C CNN
-F 3 "../doc/datasheets/IRM-20-SPEC.PDF" H 8700 4500 50  0001 C CNN
-	1    8300 4850
+P 13100 1750
+F 0 "PS?" H 13100 2075 50  0000 C CNN
+F 1 "IRM-20-12" H 13100 1984 50  0000 C CNN
+F 2 "Converter_ACDC:Converter_ACDC_MeanWell_IRM-20-xx_THT" H 13100 1450 50  0001 C CNN
+F 3 "../doc/datasheets/IRM-20-SPEC.PDF" H 13500 1400 50  0001 C CNN
+	1    13100 1750
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
-	7900 4750 7700 4750
+	12700 1650 12450 1650
 $Comp
 L servo:IRM-20-12 PS?
 U 1 1 5E535720
-P 8350 5650
-F 0 "PS?" H 8350 5975 50  0000 C CNN
-F 1 "IRM-20-12" H 8350 5884 50  0000 C CNN
-F 2 "Converter_ACDC:Converter_ACDC_MeanWell_IRM-20-xx_THT" H 8350 5350 50  0001 C CNN
-F 3 "../doc/datasheets/IRM-20-SPEC.PDF" H 8750 5300 50  0001 C CNN
-	1    8350 5650
+P 13100 2550
+F 0 "PS?" H 13100 2875 50  0000 C CNN
+F 1 "IRM-20-12" H 13100 2784 50  0000 C CNN
+F 2 "Converter_ACDC:Converter_ACDC_MeanWell_IRM-20-xx_THT" H 13100 2250 50  0001 C CNN
+F 3 "../doc/datasheets/IRM-20-SPEC.PDF" H 13500 2200 50  0001 C CNN
+	1    13100 2550
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
-	7700 4750 7700 5550
+	12450 1650 12450 2450
 Wire Wire Line
-	7700 5550 7950 5550
-Connection ~ 7700 4750
+	12450 2450 12700 2450
+Connection ~ 12450 1650
 Wire Wire Line
-	7700 4750 7600 4750
+	12450 1650 12350 1650
 Wire Wire Line
-	7800 5750 7950 5750
+	12550 2650 12700 2650
 Wire Wire Line
-	7800 4950 7800 5750
-Connection ~ 7800 4950
+	12550 1850 12550 2650
+Connection ~ 12550 1850
 Wire Wire Line
-	7800 4950 7900 4950
-Text Notes 7300 4150 0    197  ~ 39
+	12550 1850 12700 1850
+Text Notes 12050 1050 0    197  ~ 39
 Main Power
 $Comp
 L Device:Fuse F?
 U 1 1 5E553611
-P 7450 4750
-F 0 "F?" V 7253 4750 50  0000 C CNN
-F 1 "Fuse" V 7344 4750 50  0000 C CNN
-F 2 "" V 7380 4750 50  0001 C CNN
-F 3 "~" H 7450 4750 50  0001 C CNN
-	1    7450 4750
+P 12200 1650
+F 0 "F?" V 12003 1650 50  0000 C CNN
+F 1 "Fuse" V 12094 1650 50  0000 C CNN
+F 2 "" V 12130 1650 50  0001 C CNN
+F 3 "~" H 12200 1650 50  0001 C CNN
+	1    12200 1650
 	0    1    1    0   
 $EndComp
 Wire Wire Line
-	7300 4750 7150 4750
+	12050 1650 11900 1650
 Wire Wire Line
-	7150 4950 7800 4950
+	11900 1850 12550 1850
 $Comp
 L Connector:Screw_Terminal_01x03 J?
 U 1 1 5E55DF68
@@ -1081,6 +1074,43 @@ Text Notes 1950 5200 0    20   ~ 0
 sip 3 package, cheap, easy to \nreplace and many options
 Text Notes 3900 5250 0    20   ~ 0
 low noise \nLDO <30uV
-Text Notes 7650 4350 0    20   ~ 0
+Text Notes 12400 1250 0    20   ~ 0
 In case the control board have to be supply directly with socket voltage\n (220v) populate these. It's not a good idea cause I'll like to keep hight\n voltage outside these controller board, but it's a requeriment, so I let it\n as an option. But you have the low voltage input 15vc and 15vh\n connectors also
+Text Notes 2500 1050 0    20   ~ 0
+It is inteded to use only, I mean ONLY inside the control board, none of\n these coopers wires has to leave the board. I isolate every single pin\n from these supply to go outside, take these in account\n
+Text Notes 3450 3650 0    20   ~ 0
+the intention of the LCD it to clean the noise without using big filters\n and L's. It's recommended and tested that these method works pretty\n
+Text Notes 3500 5350 0    20   ~ 0
+the intention of the LCD it to clean the noise without using big filters\n and L's. It's recommended and tested that these method works pretty\n
+$Comp
+L servo:5VH #PWR?
+U 1 1 5EC754C7
+P 7150 3250
+F 0 "#PWR?" H 7150 3050 20  0001 C CNN
+F 1 "5VH" H 7155 3407 28  0000 C CNN
+F 2 "" H 7150 3250 50  0001 C CNN
+F 3 "" H 7150 3250 50  0001 C CNN
+	1    7150 3250
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	7150 3250 7150 3350
+$Comp
+L servo:GNDH #PWR?
+U 1 1 5EC79A03
+P 7900 2700
+F 0 "#PWR?" H 7900 2450 30  0001 C CNN
+F 1 "GNDH" H 7900 2542 30  0000 C CNN
+F 2 "" H 7900 2700 50  0001 C CNN
+F 3 "" H 7900 2700 50  0001 C CNN
+	1    7900 2700
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	7900 2700 7900 2650
+Connection ~ 7900 2650
+Wire Wire Line
+	7900 2650 8150 2650
+Text Notes 9100 3750 0    39   ~ 8
+I think that nobody is using 3v3 hot.. \nand it is useless.. maybe just throut away
 $EndSCHEMATC

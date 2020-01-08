@@ -177,9 +177,7 @@ F 3 "" H 5250 4650 50  0001 C CNN
 $EndComp
 Wire Wire Line
 	5250 4700 5250 4650
-Text Notes 3900 5750 0    20   ~ 0
-LXS6 is LTS and CAS pin to pin compatible, but LXS is a little better.\n I don't usa an opamp becous with the external conection I have x,2x\n and 3x amplifier option without any component
-Text Notes 5500 2350 0    39   ~ 8
+Text Notes 5700 2950 0    39   ~ 8
 with 6 screw connector you could choose\n3 range of current measurement  1x, 2x or 3x.\nIN 1 BRIDGE 1-2-3  and 4-5-6 OUT 4  ------- X\nIN 1 BRIDGE 1-2     and 3-5-6 OUT 4  ------- 2X\nIN 1 BRIDGE 2-6     and 3-5    OUT 4  ------- 3X\n
 $Comp
 L servo:Capacitor C?
@@ -392,8 +390,6 @@ F 3 "" H 5250 2850 50  0001 C CNN
 $EndComp
 Wire Wire Line
 	5250 2900 5250 2850
-Text Notes 3900 3950 0    20   ~ 0
-LXS6 is LTS and CAS pin to pin compatible, but LXS is a little better.\n I don't usa an opamp becous with the external conection I have x,2x\n and 3x amplifier option without any component
 $Comp
 L servo:Capacitor C?
 U 1 1 5E1B6C98
@@ -607,8 +603,6 @@ F 3 "" H 5200 6450 50  0001 C CNN
 $EndComp
 Wire Wire Line
 	5200 6500 5200 6450
-Text Notes 3850 7550 0    20   ~ 0
-LXS6 is LTS and CAS pin to pin compatible, but LXS is a little better.\n I don't usa an opamp becous with the external conection I have x,2x\n and 3x amplifier option without any component
 $Comp
 L servo:Capacitor C?
 U 1 1 5E1BC9DB
@@ -822,8 +816,6 @@ F 3 "" H 5200 8300 50  0001 C CNN
 $EndComp
 Wire Wire Line
 	5200 8350 5200 8300
-Text Notes 3850 9400 0    20   ~ 0
-LXS6 is LTS and CAS pin to pin compatible, but LXS is a little better.\n I don't usa an opamp becous with the external conection I have x,2x\n and 3x amplifier option without any component
 $Comp
 L servo:Capacitor C?
 U 1 1 5E1CD4FE
@@ -1039,8 +1031,6 @@ F 3 "" H 8000 4650 50  0001 C CNN
 $EndComp
 Wire Wire Line
 	8000 4700 8000 4650
-Text Notes 9350 5750 2    20   ~ 0
-LXS6 is LTS and CAS pin to pin compatible, but LXS is a little better.\n I don't usa an opamp becous with the external conection I have x,2x\n and 3x amplifier option without any component
 $Comp
 L servo:Capacitor C?
 U 1 1 5E203A7A
@@ -1252,8 +1242,6 @@ F 3 "" H 8000 2850 50  0001 C CNN
 $EndComp
 Wire Wire Line
 	8000 2900 8000 2850
-Text Notes 9350 3950 2    20   ~ 0
-LXS6 is LTS and CAS pin to pin compatible, but LXS is a little better.\n I don't usa an opamp becous with the external conection I have x,2x\n and 3x amplifier option without any component
 $Comp
 L servo:Capacitor C?
 U 1 1 5E203AF4
@@ -1467,8 +1455,6 @@ F 3 "" H 8050 6450 50  0001 C CNN
 $EndComp
 Wire Wire Line
 	8050 6500 8050 6450
-Text Notes 9400 7550 2    20   ~ 0
-LXS6 is LTS and CAS pin to pin compatible, but LXS is a little better.\n I don't usa an opamp becous with the external conection I have x,2x\n and 3x amplifier option without any component
 $Comp
 L servo:Capacitor C?
 U 1 1 5E203B6F
@@ -1682,8 +1668,6 @@ F 3 "" H 8050 8300 50  0001 C CNN
 $EndComp
 Wire Wire Line
 	8050 8350 8050 8300
-Text Notes 9400 9400 2    20   ~ 0
-LXS6 is LTS and CAS pin to pin compatible, but LXS is a little better.\n I don't usa an opamp becous with the external conection I have x,2x\n and 3x amplifier option without any component
 $Comp
 L servo:Capacitor C?
 U 1 1 5E203BEA
@@ -1738,4 +1722,6 @@ Wire Wire Line
 	7500 9150 7300 9150
 Text Notes 4100 1500 0    197  ~ 39
 8 LEM's current measurement \nU+V+W+ALL x 2
+Text Notes 6950 2100 0    20   ~ 0
+The intention of these lems is to have the capacity on the control board\n to measure all the current, without the need of the sigma delta chips\n on power board side. Why?? becouse I've study the two options\n carrefullty and I've conclude that there are very similar, and more or\n less buck per byck (a little expensive is SD) but the new generation\n LEM's I'm includin here has <0.5uSeg response time, and the SD has\n all the SD filter delay, so LEM is faster. The other advantage is that for\n same LEM I've choosen you could rearange the connection to multiply\n the preccision 1x,2x or 3x without touching nothing, and is pretty\n linear.  In the case of SD you have to change the precission shunt. or\n puts more than one, that is costly and take some board space.\nThe disadvantage of LEM is that the output is single ended, so it could\n not travel across boards, for that reason I've put them on control\n board, but is completely isolated becouse of these phisics effect. and\n also becouse of that single ended I just use one ADC channel per\n current. I't not the only option, becous if you insist and wanna use SD,\n I'eft all the SD channels available as an inputs on SD schematic page.\n\nthese LEM's version doesn't need a buffer, \nit's one already included inside LEM\n\nLXS6 is LTS and CAS pin to pin compatible, but LXS is a little better.\n I don't usa an opamp becous with the external conection I have x,2x\n and 3x amplifier option without any component\n
 $EndSCHEMATC

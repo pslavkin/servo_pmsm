@@ -343,6 +343,12 @@ K inductor choke coil reactor magnetic
 F ~
 $ENDCMP
 #
+$CMP M25PX32-VMW
+D 32Mb, Dual I/O, 4KB Subsector Erase, 3V Serial Flash Memory with 75 MHz SPI Bus Interface, SOIJ package
+K NOR Serial Flash Embedded Memory
+F https://www.micron.com/~/media/documents/products/data-sheet/nor-flash/serial-nor/m25px/m25px32.pdf
+$ENDCMP
+#
 $CMP MAX31820
 D 1-Wire Ambient Temperature Sensor TO-92
 K OneWire 1-Wire 1Wire Maxim Dallas
@@ -371,6 +377,12 @@ $CMP R_Small
 D Resistor, small symbol
 K R resistor
 F ~
+$ENDCMP
+#
+$CMP S558-5500-25-F
+D Single Port  Ethernet Transformers
+K Single Port Gigabit Ethernet Transformer
+F https://www.mouser.com/datasheet/2/643/dr-MAG-S558-5500-25-F-1149686.pdf
 $ENDCMP
 #
 $CMP SI8660BD
