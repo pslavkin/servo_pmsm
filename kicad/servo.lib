@@ -745,9 +745,26 @@ ENDDEF
 # Capacitor
 #
 DEF Capacitor C 0 40 Y Y 1 F N
-F0 "C" 100 0 60 H V L BNN
-F1 "Capacitor" 0 0 60 H V C CNN
-F2 "" 0 0 60 H V C CNN
+F0 "C" 100 0 20 H V L BNN
+F1 "Capacitor" 0 0 20 H V C CNN
+F2 "" 0 -100 60 H I C CNN
+F3 "" 0 0 60 H V C CNN
+DRAW
+P 2 0 1 10 0 0 30 0 N
+P 2 0 1 10 30 80 30 -80 N
+P 2 0 1 10 70 80 70 -80 N
+P 2 0 1 10 100 0 70 0 N
+X 1 1 200 0 100 L 1 1 0 1 P
+X 2 2 -100 0 100 R 1 1 0 1 P
+ENDDRAW
+ENDDEF
+#
+# Capacitor_0
+#
+DEF Capacitor_0 C 0 40 Y Y 1 F N
+F0 "C" 100 0 20 H V L BNN
+F1 "Capacitor_0" 0 0 20 H V C CNN
+F2 "" 0 -100 60 H I C CNN
 F3 "" 0 0 60 H V C CNN
 DRAW
 P 2 0 1 10 0 0 30 0 N
@@ -1383,10 +1400,10 @@ ENDDEF
 # L_Small
 #
 DEF L_Small L 0 10 N N 1 F N
-F0 "L" 30 40 50 H V L CNN
-F1 "L_Small" 30 -40 50 H V L CNN
-F2 "" 0 0 50 H I C CNN
-F3 "" 0 0 50 H I C CNN
+F0 "L" 30 40 20 H V L CNN
+F1 "L_Small" 30 -40 20 H V L CNN
+F2 "" -70 -60 50 H I C CNN
+F3 "" 30 40 50 H I C CNN
 $FPLIST
  Choke_*
  *Coil*
@@ -1648,10 +1665,10 @@ ENDDEF
 # Resistor
 #
 DEF Resistor R 0 40 Y Y 1 F N
-F0 "R" -400 0 60 H V L BNN
-F1 "Resistor" 0 0 60 H V C CNN
-F2 "" 0 0 60 H V C CNN
-F3 "" 0 0 60 H V C CNN
+F0 "R" -400 0 20 H V L BNN
+F1 "Resistor" 0 0 20 H V C CNN
+F2 "" -500 -100 60 H I C CNN
+F3 "" -400 0 60 H I C CNN
 DRAW
 P 10 0 1 10 100 0 60 0 50 -20 30 20 10 -20 -10 20 -30 -20 -50 20 -60 0 -100 0 N
 X 1 1 -200 0 100 R 1 1 0 1 P

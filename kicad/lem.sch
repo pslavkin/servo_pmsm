@@ -27,78 +27,15 @@ F 3 "~" H 3800 4950 50  0001 C CNN
 	1    3800 4950
 	-1   0    0    -1  
 $EndComp
-$Comp
-L servo:Capacitor C1608
-U 1 1 5DF697FA
-P 5500 5700
-F 0 "C1608" V 5450 5700 60  0000 L CNN
-F 1 "100pF" V 5600 5700 60  0000 L CNN
-F 2 "" H 5500 5700 60  0000 C CNN
-F 3 "" H 5500 5700 60  0000 C CNN
-	1    5500 5700
-	0    1    1    0   
-$EndComp
-$Comp
-L servo:GND #PWR0251
-U 1 1 5DF69803
-P 5200 5900
-F 0 "#PWR0251" H 5200 5650 30  0001 C CNN
-F 1 "GND" H 5200 5742 30  0000 C CNN
-F 2 "" H 5200 5900 50  0001 C CNN
-F 3 "" H 5200 5900 50  0001 C CNN
-	1    5200 5900
-	1    0    0    -1  
-$EndComp
 Text GLabel 6000 5500 2    50   Input ~ 0
 LEM_A_V
-$Comp
-L servo:Resistor R1608
-U 1 1 605C72E8
-P 5200 5700
-F 0 "R1608" V 5147 5750 60  0000 L CNN
-F 1 "3.3k" V 5300 5700 60  0000 L CNN
-F 2 "" H 5200 5700 60  0000 C CNN
-F 3 "" H 5200 5700 60  0000 C CNN
-	1    5200 5700
-	0    1    1    0   
-$EndComp
-$Comp
-L servo:Resistor R1607
-U 1 1 605C9529
-P 5200 5300
-F 0 "R1607" V 5147 5350 60  0000 L CNN
-F 1 "5k" V 5253 5350 60  0000 L CNN
-F 2 "" H 5200 5300 60  0000 C CNN
-F 3 "" H 5200 5300 60  0000 C CNN
-	1    5200 5300
-	0    1    1    0   
-$EndComp
-$Comp
-L servo:GND #PWR0252
-U 1 1 5E109723
-P 5500 5900
-F 0 "#PWR0252" H 5500 5650 30  0001 C CNN
-F 1 "GND" H 5500 5742 30  0000 C CNN
-F 2 "" H 5500 5900 50  0001 C CNN
-F 3 "" H 5500 5900 50  0001 C CNN
-	1    5500 5900
-	1    0    0    -1  
-$EndComp
-Wire Wire Line
-	5500 5600 5500 5500
-Wire Wire Line
-	5500 5500 5200 5500
-Connection ~ 5200 5500
-Connection ~ 5500 5500
-Wire Wire Line
-	4950 5100 5200 5100
 $Comp
 L servo:LXS6-NPS U1604
 U 1 1 5E124838
 P 4550 5000
 F 0 "U1604" H 4550 5700 50  0000 L CNN
 F 1 "LXS6-NPS" H 4400 5600 50  0000 L CNN
-F 2 "" H 4550 4200 50  0001 C CNN
+F 2 "servo:LEM_LTSR-NP" H 4550 4200 50  0001 C CNN
 F 3 "../doc/datasheets/lem_lxs_series.pdf" H 4550 4350 50  0001 C CNN
 	1    4550 5000
 	-1   0    0    -1  
@@ -161,76 +98,28 @@ F 3 "" H 5450 5050 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
-	4950 5000 5250 5000
-Wire Wire Line
 	5450 5000 5450 5050
 $Comp
 L servo:5VC #PWR0254
 U 1 1 5E148432
-P 5250 4650
-F 0 "#PWR0254" H 5250 4450 20  0001 C CNN
-F 1 "5VC" H 5255 4807 28  0000 C CNN
-F 2 "" H 5250 4650 50  0001 C CNN
-F 3 "" H 5250 4650 50  0001 C CNN
-	1    5250 4650
+P 5250 4600
+F 0 "#PWR0254" H 5250 4400 20  0001 C CNN
+F 1 "5VC" H 5255 4757 28  0000 C CNN
+F 2 "" H 5250 4600 50  0001 C CNN
+F 3 "" H 5250 4600 50  0001 C CNN
+	1    5250 4600
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
-	5250 4700 5250 4650
+	5250 4650 5250 4600
 Text Notes 5700 2950 0    39   ~ 8
 with 6 screw connector you could choose\n3 range of current measurement  1x, 2x or 3x.\nIN 1 BRIDGE 1-2-3  and 4-5-6 OUT 4  ------- X\nIN 1 BRIDGE 1-2     and 3-5-6 OUT 4  ------- 2X\nIN 1 BRIDGE 2-6     and 3-5    OUT 4  ------- 3X\n
-$Comp
-L servo:Capacitor C1604
-U 1 1 5E1896DF
-P 5250 4800
-F 0 "C1604" V 5247 4910 60  0000 L CNN
-F 1 "100nF" V 5353 4910 60  0000 L CNN
-F 2 "" H 5250 4800 60  0000 C CNN
-F 3 "" H 5250 4800 60  0000 C CNN
-	1    5250 4800
-	0    1    1    0   
-$EndComp
-Connection ~ 5250 5000
-Wire Wire Line
-	5250 5000 5450 5000
 Wire Wire Line
 	4950 4900 5050 4900
 Wire Wire Line
-	5050 4900 5050 4700
+	5050 4900 5050 4650
 Wire Wire Line
-	5050 4700 5250 4700
-Connection ~ 5250 4700
-$Comp
-L servo:Capacitor C1612
-U 1 1 5E19874E
-P 5800 5700
-F 0 "C1612" V 5750 5700 60  0000 L CNN
-F 1 "100pF" V 5900 5700 60  0000 L CNN
-F 2 "" H 5800 5700 60  0000 C CNN
-F 3 "" H 5800 5700 60  0000 C CNN
-	1    5800 5700
-	0    1    1    0   
-$EndComp
-$Comp
-L servo:GND #PWR0255
-U 1 1 5E198755
-P 5800 5900
-F 0 "#PWR0255" H 5800 5650 30  0001 C CNN
-F 1 "GND" H 5800 5742 30  0000 C CNN
-F 2 "" H 5800 5900 50  0001 C CNN
-F 3 "" H 5800 5900 50  0001 C CNN
-	1    5800 5900
-	1    0    0    -1  
-$EndComp
-Wire Wire Line
-	5800 5500 5800 5600
-Text Notes 5550 5600 0    20   ~ 0
-one near LEM, \nthe other near uC
-Wire Wire Line
-	5500 5500 5800 5500
-Connection ~ 5800 5500
-Wire Wire Line
-	5800 5500 6000 5500
+	5050 4650 5250 4650
 $Comp
 L Connector:Screw_Terminal_01x06 J1603
 U 1 1 5E1B6C3C
@@ -242,67 +131,6 @@ F 3 "~" H 3800 3150 50  0001 C CNN
 	1    3800 3150
 	-1   0    0    -1  
 $EndComp
-$Comp
-L servo:Capacitor C1607
-U 1 1 5E1B6C43
-P 5500 3900
-F 0 "C1607" V 5450 3900 60  0000 L CNN
-F 1 "100pF" V 5600 3900 60  0000 L CNN
-F 2 "" H 5500 3900 60  0000 C CNN
-F 3 "" H 5500 3900 60  0000 C CNN
-	1    5500 3900
-	0    1    1    0   
-$EndComp
-$Comp
-L servo:GND #PWR0256
-U 1 1 5E1B6C4A
-P 5200 4100
-F 0 "#PWR0256" H 5200 3850 30  0001 C CNN
-F 1 "GND" H 5200 3942 30  0000 C CNN
-F 2 "" H 5200 4100 50  0001 C CNN
-F 3 "" H 5200 4100 50  0001 C CNN
-	1    5200 4100
-	1    0    0    -1  
-$EndComp
-$Comp
-L servo:Resistor R1606
-U 1 1 5E1B6C51
-P 5200 3900
-F 0 "R1606" V 5147 3950 60  0000 L CNN
-F 1 "3.3k" V 5300 3900 60  0000 L CNN
-F 2 "" H 5200 3900 60  0000 C CNN
-F 3 "" H 5200 3900 60  0000 C CNN
-	1    5200 3900
-	0    1    1    0   
-$EndComp
-$Comp
-L servo:Resistor R1605
-U 1 1 5E1B6C58
-P 5200 3500
-F 0 "R1605" V 5147 3550 60  0000 L CNN
-F 1 "5k" V 5253 3550 60  0000 L CNN
-F 2 "" H 5200 3500 60  0000 C CNN
-F 3 "" H 5200 3500 60  0000 C CNN
-	1    5200 3500
-	0    1    1    0   
-$EndComp
-$Comp
-L servo:GND #PWR0257
-U 1 1 5E1B6C5F
-P 5500 4100
-F 0 "#PWR0257" H 5500 3850 30  0001 C CNN
-F 1 "GND" H 5500 3942 30  0000 C CNN
-F 2 "" H 5500 4100 50  0001 C CNN
-F 3 "" H 5500 4100 50  0001 C CNN
-	1    5500 4100
-	1    0    0    -1  
-$EndComp
-Wire Wire Line
-	5500 3800 5500 3700
-Wire Wire Line
-	5500 3700 5200 3700
-Connection ~ 5200 3700
-Connection ~ 5500 3700
 Wire Wire Line
 	4950 3300 5200 3300
 $Comp
@@ -311,7 +139,7 @@ U 1 1 5E1B6C6A
 P 4550 3200
 F 0 "U1603" H 4550 3900 50  0000 L CNN
 F 1 "LXS6-NPS" H 4400 3800 50  0000 L CNN
-F 2 "" H 4550 2400 50  0001 C CNN
+F 2 "servo:LEM_LTSR-NP" H 4550 2400 50  0001 C CNN
 F 3 "../doc/datasheets/lem_lxs_series.pdf" H 4550 2550 50  0001 C CNN
 	1    4550 3200
 	-1   0    0    -1  
@@ -394,9 +222,9 @@ $Comp
 L servo:Capacitor C1603
 U 1 1 5E1B6C98
 P 5250 3000
-F 0 "C1603" V 5247 3110 60  0000 L CNN
-F 1 "100nF" V 5353 3110 60  0000 L CNN
-F 2 "" H 5250 3000 60  0000 C CNN
+F 0 "C1603" V 5278 3110 20  0000 L CNN
+F 1 "100nF" V 5321 3110 20  0000 L CNN
+F 2 "Capacitor_SMD:C_0603_1608Metric" H 5250 2900 60  0001 C CNN
 F 3 "" H 5250 3000 60  0000 C CNN
 	1    5250 3000
 	0    1    1    0   
@@ -412,37 +240,6 @@ Wire Wire Line
 	5050 2900 5250 2900
 Connection ~ 5250 2900
 $Comp
-L servo:Capacitor C1611
-U 1 1 5E1B6CA5
-P 5800 3900
-F 0 "C1611" V 5750 3900 60  0000 L CNN
-F 1 "100pF" V 5900 3900 60  0000 L CNN
-F 2 "" H 5800 3900 60  0000 C CNN
-F 3 "" H 5800 3900 60  0000 C CNN
-	1    5800 3900
-	0    1    1    0   
-$EndComp
-$Comp
-L servo:GND #PWR0260
-U 1 1 5E1B6CAC
-P 5800 4100
-F 0 "#PWR0260" H 5800 3850 30  0001 C CNN
-F 1 "GND" H 5800 3942 30  0000 C CNN
-F 2 "" H 5800 4100 50  0001 C CNN
-F 3 "" H 5800 4100 50  0001 C CNN
-	1    5800 4100
-	1    0    0    -1  
-$EndComp
-Wire Wire Line
-	5800 3700 5800 3800
-Text Notes 5550 3800 0    20   ~ 0
-one near LEM, \nthe other near uC
-Wire Wire Line
-	5500 3700 5800 3700
-Connection ~ 5800 3700
-Wire Wire Line
-	5800 3700 6000 3700
-$Comp
 L Connector:Screw_Terminal_01x06 J1601
 U 1 1 5E1BC97F
 P 3750 6750
@@ -453,69 +250,8 @@ F 3 "~" H 3750 6750 50  0001 C CNN
 	1    3750 6750
 	-1   0    0    -1  
 $EndComp
-$Comp
-L servo:Capacitor C1605
-U 1 1 5E1BC986
-P 5450 7500
-F 0 "C1605" V 5400 7500 60  0000 L CNN
-F 1 "100pF" V 5550 7500 60  0000 L CNN
-F 2 "" H 5450 7500 60  0000 C CNN
-F 3 "" H 5450 7500 60  0000 C CNN
-	1    5450 7500
-	0    1    1    0   
-$EndComp
-$Comp
-L servo:GND #PWR0261
-U 1 1 5E1BC98D
-P 5150 7700
-F 0 "#PWR0261" H 5150 7450 30  0001 C CNN
-F 1 "GND" H 5150 7542 30  0000 C CNN
-F 2 "" H 5150 7700 50  0001 C CNN
-F 3 "" H 5150 7700 50  0001 C CNN
-	1    5150 7700
-	1    0    0    -1  
-$EndComp
 Text GLabel 5950 7300 2    50   Input ~ 0
 LEM_A_W
-$Comp
-L servo:Resistor R1602
-U 1 1 5E1BC994
-P 5150 7500
-F 0 "R1602" V 5097 7550 60  0000 L CNN
-F 1 "3.3k" V 5250 7500 60  0000 L CNN
-F 2 "" H 5150 7500 60  0000 C CNN
-F 3 "" H 5150 7500 60  0000 C CNN
-	1    5150 7500
-	0    1    1    0   
-$EndComp
-$Comp
-L servo:Resistor R1601
-U 1 1 5E1BC99B
-P 5150 7100
-F 0 "R1601" V 5097 7150 60  0000 L CNN
-F 1 "5k" V 5203 7150 60  0000 L CNN
-F 2 "" H 5150 7100 60  0000 C CNN
-F 3 "" H 5150 7100 60  0000 C CNN
-	1    5150 7100
-	0    1    1    0   
-$EndComp
-$Comp
-L servo:GND #PWR0262
-U 1 1 5E1BC9A2
-P 5450 7700
-F 0 "#PWR0262" H 5450 7450 30  0001 C CNN
-F 1 "GND" H 5450 7542 30  0000 C CNN
-F 2 "" H 5450 7700 50  0001 C CNN
-F 3 "" H 5450 7700 50  0001 C CNN
-	1    5450 7700
-	1    0    0    -1  
-$EndComp
-Wire Wire Line
-	5450 7400 5450 7300
-Wire Wire Line
-	5450 7300 5150 7300
-Connection ~ 5150 7300
-Connection ~ 5450 7300
 Wire Wire Line
 	4900 6900 5150 6900
 $Comp
@@ -524,7 +260,7 @@ U 1 1 5E1BC9AD
 P 4500 6800
 F 0 "U1601" H 4500 7500 50  0000 L CNN
 F 1 "LXS6-NPS" H 4350 7400 50  0000 L CNN
-F 2 "" H 4500 6000 50  0001 C CNN
+F 2 "servo:LEM_LTSR-NP" H 4500 6000 50  0001 C CNN
 F 3 "../doc/datasheets/lem_lxs_series.pdf" H 4500 6150 50  0001 C CNN
 	1    4500 6800
 	-1   0    0    -1  
@@ -587,8 +323,6 @@ F 3 "" H 5400 6850 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
-	4900 6800 5200 6800
-Wire Wire Line
 	5400 6800 5400 6850
 $Comp
 L servo:5VC #PWR0264
@@ -603,58 +337,12 @@ F 3 "" H 5200 6450 50  0001 C CNN
 $EndComp
 Wire Wire Line
 	5200 6500 5200 6450
-$Comp
-L servo:Capacitor C1601
-U 1 1 5E1BC9DB
-P 5200 6600
-F 0 "C1601" V 5197 6710 60  0000 L CNN
-F 1 "100nF" V 5303 6710 60  0000 L CNN
-F 2 "" H 5200 6600 60  0000 C CNN
-F 3 "" H 5200 6600 60  0000 C CNN
-	1    5200 6600
-	0    1    1    0   
-$EndComp
-Connection ~ 5200 6800
-Wire Wire Line
-	5200 6800 5400 6800
 Wire Wire Line
 	4900 6700 5000 6700
 Wire Wire Line
 	5000 6700 5000 6500
 Wire Wire Line
 	5000 6500 5200 6500
-Connection ~ 5200 6500
-$Comp
-L servo:Capacitor C1609
-U 1 1 5E1BC9E8
-P 5750 7500
-F 0 "C1609" V 5700 7500 60  0000 L CNN
-F 1 "100pF" V 5850 7500 60  0000 L CNN
-F 2 "" H 5750 7500 60  0000 C CNN
-F 3 "" H 5750 7500 60  0000 C CNN
-	1    5750 7500
-	0    1    1    0   
-$EndComp
-$Comp
-L servo:GND #PWR0265
-U 1 1 5E1BC9EF
-P 5750 7700
-F 0 "#PWR0265" H 5750 7450 30  0001 C CNN
-F 1 "GND" H 5750 7542 30  0000 C CNN
-F 2 "" H 5750 7700 50  0001 C CNN
-F 3 "" H 5750 7700 50  0001 C CNN
-	1    5750 7700
-	1    0    0    -1  
-$EndComp
-Wire Wire Line
-	5750 7300 5750 7400
-Text Notes 5500 7400 0    20   ~ 0
-one near LEM, \nthe other near uC
-Wire Wire Line
-	5450 7300 5750 7300
-Connection ~ 5750 7300
-Wire Wire Line
-	5750 7300 5950 7300
 $Comp
 L Connector:Screw_Terminal_01x06 J1602
 U 1 1 5E1CD4A2
@@ -670,9 +358,9 @@ $Comp
 L servo:Capacitor C1606
 U 1 1 5E1CD4A9
 P 5450 9350
-F 0 "C1606" V 5400 9350 60  0000 L CNN
-F 1 "100pF" V 5550 9350 60  0000 L CNN
-F 2 "" H 5450 9350 60  0000 C CNN
+F 0 "C1606" V 5478 9460 20  0000 L CNN
+F 1 "100pF" V 5521 9460 20  0000 L CNN
+F 2 "Capacitor_SMD:C_0603_1608Metric" H 5450 9250 60  0001 C CNN
 F 3 "" H 5450 9350 60  0000 C CNN
 	1    5450 9350
 	0    1    1    0   
@@ -694,10 +382,10 @@ $Comp
 L servo:Resistor R1604
 U 1 1 5E1CD4B7
 P 5150 9350
-F 0 "R1604" V 5097 9400 60  0000 L CNN
-F 1 "3.3k" V 5250 9350 60  0000 L CNN
-F 2 "" H 5150 9350 60  0000 C CNN
-F 3 "" H 5150 9350 60  0000 C CNN
+F 0 "R1604" V 5128 9400 20  0000 L CNN
+F 1 "3.3k" V 5171 9400 20  0000 L CNN
+F 2 "Resistor_SMD:R_0603_1608Metric" H 4650 9250 60  0001 C CNN
+F 3 "" H 4750 9350 60  0001 C CNN
 	1    5150 9350
 	0    1    1    0   
 $EndComp
@@ -705,10 +393,10 @@ $Comp
 L servo:Resistor R1603
 U 1 1 5E1CD4BE
 P 5150 8950
-F 0 "R1603" V 5097 9000 60  0000 L CNN
-F 1 "5k" V 5203 9000 60  0000 L CNN
-F 2 "" H 5150 8950 60  0000 C CNN
-F 3 "" H 5150 8950 60  0000 C CNN
+F 0 "R1603" V 5128 9000 20  0000 L CNN
+F 1 "5k" V 5171 9000 20  0000 L CNN
+F 2 "Resistor_SMD:R_0603_1608Metric" H 4650 8850 60  0001 C CNN
+F 3 "" H 4750 8950 60  0001 C CNN
 	1    5150 8950
 	0    1    1    0   
 $EndComp
@@ -727,7 +415,6 @@ Wire Wire Line
 	5450 9250 5450 9150
 Wire Wire Line
 	5450 9150 5150 9150
-Connection ~ 5150 9150
 Connection ~ 5450 9150
 Wire Wire Line
 	4900 8750 5150 8750
@@ -737,7 +424,7 @@ U 1 1 5E1CD4D0
 P 4500 8650
 F 0 "U1602" H 4500 9350 50  0000 L CNN
 F 1 "LXS6-NPS" H 4350 9250 50  0000 L CNN
-F 2 "" H 4500 7850 50  0001 C CNN
+F 2 "servo:LEM_LTSR-NP" H 4500 7850 50  0001 C CNN
 F 3 "../doc/datasheets/lem_lxs_series.pdf" H 4500 8000 50  0001 C CNN
 	1    4500 8650
 	-1   0    0    -1  
@@ -800,50 +487,29 @@ F 3 "" H 5400 8700 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
-	4900 8650 5200 8650
-Wire Wire Line
 	5400 8650 5400 8700
 $Comp
 L servo:5VC #PWR0269
 U 1 1 5E1CD4F6
-P 5200 8300
-F 0 "#PWR0269" H 5200 8100 20  0001 C CNN
-F 1 "5VC" H 5205 8457 28  0000 C CNN
-F 2 "" H 5200 8300 50  0001 C CNN
-F 3 "" H 5200 8300 50  0001 C CNN
-	1    5200 8300
+P 5200 8200
+F 0 "#PWR0269" H 5200 8000 20  0001 C CNN
+F 1 "5VC" H 5205 8357 28  0000 C CNN
+F 2 "" H 5200 8200 50  0001 C CNN
+F 3 "" H 5200 8200 50  0001 C CNN
+	1    5200 8200
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
-	5200 8350 5200 8300
-$Comp
-L servo:Capacitor C1602
-U 1 1 5E1CD4FE
-P 5200 8450
-F 0 "C1602" V 5197 8560 60  0000 L CNN
-F 1 "100nF" V 5303 8560 60  0000 L CNN
-F 2 "" H 5200 8450 60  0000 C CNN
-F 3 "" H 5200 8450 60  0000 C CNN
-	1    5200 8450
-	0    1    1    0   
-$EndComp
-Connection ~ 5200 8650
-Wire Wire Line
-	5200 8650 5400 8650
+	5200 8250 5200 8200
 Wire Wire Line
 	4900 8550 5000 8550
-Wire Wire Line
-	5000 8550 5000 8350
-Wire Wire Line
-	5000 8350 5200 8350
-Connection ~ 5200 8350
 $Comp
 L servo:Capacitor C1610
 U 1 1 5E1CD50B
 P 5750 9350
-F 0 "C1610" V 5700 9350 60  0000 L CNN
-F 1 "100pF" V 5850 9350 60  0000 L CNN
-F 2 "" H 5750 9350 60  0000 C CNN
+F 0 "C1610" V 5778 9460 20  0000 L CNN
+F 1 "100pF" V 5821 9460 20  0000 L CNN
+F 2 "Capacitor_SMD:C_0603_1608Metric" H 5750 9250 60  0001 C CNN
 F 3 "" H 5750 9350 60  0000 C CNN
 	1    5750 9350
 	0    1    1    0   
@@ -870,291 +536,19 @@ Wire Wire Line
 	5750 9150 5950 9150
 Text GLabel 7250 3700 0    50   Input ~ 0
 LEM_B_U
-$Comp
-L Connector:Screw_Terminal_01x06 J1606
-U 1 1 5E203A1E
-P 9450 4950
-F 0 "J1606" H 9530 4850 50  0000 L CNN
-F 1 "Screw_Terminal_01x06" H 9250 4500 50  0001 L CNN
-F 2 "" H 9450 4950 50  0001 C CNN
-F 3 "~" H 9450 4950 50  0001 C CNN
-	1    9450 4950
-	1    0    0    -1  
-$EndComp
-$Comp
-L servo:Capacitor C1618
-U 1 1 5E203A25
-P 7750 5700
-F 0 "C1618" V 7700 5700 60  0000 L CNN
-F 1 "100pF" V 7850 5700 60  0000 L CNN
-F 2 "" H 7750 5700 60  0000 C CNN
-F 3 "" H 7750 5700 60  0000 C CNN
-	1    7750 5700
-	0    -1   1    0   
-$EndComp
-$Comp
-L servo:GND #PWR0271
-U 1 1 5E203A2C
-P 8050 5900
-F 0 "#PWR0271" H 8050 5650 30  0001 C CNN
-F 1 "GND" H 8050 5742 30  0000 C CNN
-F 2 "" H 8050 5900 50  0001 C CNN
-F 3 "" H 8050 5900 50  0001 C CNN
-	1    8050 5900
-	-1   0    0    -1  
-$EndComp
 Text GLabel 7250 5500 0    50   Input ~ 0
 LEM_B_V
-$Comp
-L servo:Resistor R1612
-U 1 1 5E203A33
-P 8050 5700
-F 0 "R1612" V 7997 5750 60  0000 L CNN
-F 1 "3.3k" V 8150 5700 60  0000 L CNN
-F 2 "" H 8050 5700 60  0000 C CNN
-F 3 "" H 8050 5700 60  0000 C CNN
-	1    8050 5700
-	0    -1   1    0   
-$EndComp
-$Comp
-L servo:Resistor R1611
-U 1 1 5E203A3A
-P 8050 5300
-F 0 "R1611" V 7997 5350 60  0000 L CNN
-F 1 "5k" V 8103 5350 60  0000 L CNN
-F 2 "" H 8050 5300 60  0000 C CNN
-F 3 "" H 8050 5300 60  0000 C CNN
-	1    8050 5300
-	0    -1   1    0   
-$EndComp
-$Comp
-L servo:GND #PWR0272
-U 1 1 5E203A41
-P 7750 5900
-F 0 "#PWR0272" H 7750 5650 30  0001 C CNN
-F 1 "GND" H 7750 5742 30  0000 C CNN
-F 2 "" H 7750 5900 50  0001 C CNN
-F 3 "" H 7750 5900 50  0001 C CNN
-	1    7750 5900
-	-1   0    0    -1  
-$EndComp
-Wire Wire Line
-	7750 5600 7750 5500
-Wire Wire Line
-	7750 5500 8050 5500
-Connection ~ 8050 5500
-Connection ~ 7750 5500
-Wire Wire Line
-	8300 5100 8050 5100
-$Comp
-L servo:LXS6-NPS U1606
-U 1 1 5E203A4C
-P 8700 5000
-F 0 "U1606" H 8700 5700 50  0000 L CNN
-F 1 "LXS6-NPS" H 8550 5600 50  0000 L CNN
-F 2 "" H 8700 4200 50  0001 C CNN
-F 3 "../doc/datasheets/lem_lxs_series.pdf" H 8700 4350 50  0001 C CNN
-	1    8700 5000
-	1    0    0    -1  
-$EndComp
-Wire Wire Line
-	8800 4550 9100 4550
-Wire Wire Line
-	9100 4550 9100 4950
-Wire Wire Line
-	9100 4950 9250 4950
-Wire Wire Line
-	9250 4850 9150 4850
-Wire Wire Line
-	9150 4850 9150 4500
-Wire Wire Line
-	9150 4500 8700 4500
-Wire Wire Line
-	8700 4500 8700 4550
-Wire Wire Line
-	8600 4550 8600 4450
-Wire Wire Line
-	8600 4450 9200 4450
-Wire Wire Line
-	9200 4450 9200 4750
-Wire Wire Line
-	9200 4750 9250 4750
-Wire Wire Line
-	9250 5050 9100 5050
-Wire Wire Line
-	9100 5050 9100 5500
-Wire Wire Line
-	9100 5500 8800 5500
-Wire Wire Line
-	8800 5500 8800 5450
-Wire Wire Line
-	8700 5450 8700 5550
-Wire Wire Line
-	8700 5550 9150 5550
-Wire Wire Line
-	9150 5550 9150 5150
-Wire Wire Line
-	9150 5150 9250 5150
-Wire Wire Line
-	9250 5250 9200 5250
-Wire Wire Line
-	9200 5250 9200 5600
-Wire Wire Line
-	9200 5600 8600 5600
-Wire Wire Line
-	8600 5600 8600 5450
-$Comp
-L servo:GND #PWR0273
-U 1 1 5E203A6A
-P 7800 5050
-F 0 "#PWR0273" H 7800 4800 30  0001 C CNN
-F 1 "GND" H 7800 4892 30  0000 C CNN
-F 2 "" H 7800 5050 50  0001 C CNN
-F 3 "" H 7800 5050 50  0001 C CNN
-	1    7800 5050
-	-1   0    0    -1  
-$EndComp
-Wire Wire Line
-	8300 5000 8000 5000
-Wire Wire Line
-	7800 5000 7800 5050
-$Comp
-L servo:5VC #PWR0274
-U 1 1 5E203A72
-P 8000 4650
-F 0 "#PWR0274" H 8000 4450 20  0001 C CNN
-F 1 "5VC" H 8005 4807 28  0000 C CNN
-F 2 "" H 8000 4650 50  0001 C CNN
-F 3 "" H 8000 4650 50  0001 C CNN
-	1    8000 4650
-	-1   0    0    -1  
-$EndComp
-Wire Wire Line
-	8000 4700 8000 4650
-$Comp
-L servo:Capacitor C1622
-U 1 1 5E203A7A
-P 8000 4800
-F 0 "C1622" V 7997 4910 60  0000 L CNN
-F 1 "100nF" V 8103 4910 60  0000 L CNN
-F 2 "" H 8000 4800 60  0000 C CNN
-F 3 "" H 8000 4800 60  0000 C CNN
-	1    8000 4800
-	0    -1   1    0   
-$EndComp
-Connection ~ 8000 5000
-Wire Wire Line
-	8000 5000 7800 5000
-Wire Wire Line
-	8300 4900 8200 4900
-Wire Wire Line
-	8200 4900 8200 4700
-Wire Wire Line
-	8200 4700 8000 4700
-Connection ~ 8000 4700
-$Comp
-L servo:Capacitor C1614
-U 1 1 5E203A87
-P 7450 5700
-F 0 "C1614" V 7400 5700 60  0000 L CNN
-F 1 "100pF" V 7550 5700 60  0000 L CNN
-F 2 "" H 7450 5700 60  0000 C CNN
-F 3 "" H 7450 5700 60  0000 C CNN
-	1    7450 5700
-	0    -1   1    0   
-$EndComp
-$Comp
-L servo:GND #PWR0275
-U 1 1 5E203A8E
-P 7450 5900
-F 0 "#PWR0275" H 7450 5650 30  0001 C CNN
-F 1 "GND" H 7450 5742 30  0000 C CNN
-F 2 "" H 7450 5900 50  0001 C CNN
-F 3 "" H 7450 5900 50  0001 C CNN
-	1    7450 5900
-	-1   0    0    -1  
-$EndComp
-Wire Wire Line
-	7450 5500 7450 5600
-Text Notes 7700 5600 2    20   ~ 0
-one near LEM, \nthe other near uC
-Wire Wire Line
-	7750 5500 7450 5500
-Connection ~ 7450 5500
-Wire Wire Line
-	7450 5500 7250 5500
 $Comp
 L Connector:Screw_Terminal_01x06 J1605
 U 1 1 5E203A99
 P 9450 3150
 F 0 "J1605" H 9530 3050 50  0000 L CNN
 F 1 "Screw_Terminal_01x06" H 9250 2700 50  0001 L CNN
-F 2 "" H 9450 3150 50  0001 C CNN
+F 2 "Connector_PinHeader_2.54mm:PinHeader_1x06_P2.54mm_Vertical" H 9450 3150 50  0001 C CNN
 F 3 "~" H 9450 3150 50  0001 C CNN
 	1    9450 3150
 	1    0    0    -1  
 $EndComp
-$Comp
-L servo:Capacitor C1617
-U 1 1 5E203AA0
-P 7750 3900
-F 0 "C1617" V 7700 3900 60  0000 L CNN
-F 1 "100pF" V 7850 3900 60  0000 L CNN
-F 2 "" H 7750 3900 60  0000 C CNN
-F 3 "" H 7750 3900 60  0000 C CNN
-	1    7750 3900
-	0    -1   1    0   
-$EndComp
-$Comp
-L servo:GND #PWR0276
-U 1 1 5E203AA7
-P 8050 4100
-F 0 "#PWR0276" H 8050 3850 30  0001 C CNN
-F 1 "GND" H 8050 3942 30  0000 C CNN
-F 2 "" H 8050 4100 50  0001 C CNN
-F 3 "" H 8050 4100 50  0001 C CNN
-	1    8050 4100
-	-1   0    0    -1  
-$EndComp
-$Comp
-L servo:Resistor R1610
-U 1 1 5E203AAD
-P 8050 3900
-F 0 "R1610" V 7997 3950 60  0000 L CNN
-F 1 "3.3k" V 8150 3900 60  0000 L CNN
-F 2 "" H 8050 3900 60  0000 C CNN
-F 3 "" H 8050 3900 60  0000 C CNN
-	1    8050 3900
-	0    -1   1    0   
-$EndComp
-$Comp
-L servo:Resistor R1609
-U 1 1 5E203AB4
-P 8050 3500
-F 0 "R1609" V 7997 3550 60  0000 L CNN
-F 1 "5k" V 8103 3550 60  0000 L CNN
-F 2 "" H 8050 3500 60  0000 C CNN
-F 3 "" H 8050 3500 60  0000 C CNN
-	1    8050 3500
-	0    -1   1    0   
-$EndComp
-$Comp
-L servo:GND #PWR0277
-U 1 1 5E203ABB
-P 7750 4100
-F 0 "#PWR0277" H 7750 3850 30  0001 C CNN
-F 1 "GND" H 7750 3942 30  0000 C CNN
-F 2 "" H 7750 4100 50  0001 C CNN
-F 3 "" H 7750 4100 50  0001 C CNN
-	1    7750 4100
-	-1   0    0    -1  
-$EndComp
-Wire Wire Line
-	7750 3800 7750 3700
-Wire Wire Line
-	7750 3700 8050 3700
-Connection ~ 8050 3700
-Connection ~ 7750 3700
 Wire Wire Line
 	8300 3300 8050 3300
 $Comp
@@ -1163,7 +557,7 @@ U 1 1 5E203AC6
 P 8700 3200
 F 0 "U1605" H 8700 3900 50  0000 L CNN
 F 1 "LXS6-NPS" H 8550 3800 50  0000 L CNN
-F 2 "" H 8700 2400 50  0001 C CNN
+F 2 "servo:LEM_LTSR-NP" H 8700 2400 50  0001 C CNN
 F 3 "../doc/datasheets/lem_lxs_series.pdf" H 8700 2550 50  0001 C CNN
 	1    8700 3200
 	1    0    0    -1  
@@ -1226,8 +620,6 @@ F 3 "" H 7800 3250 50  0001 C CNN
 	-1   0    0    -1  
 $EndComp
 Wire Wire Line
-	8300 3200 8000 3200
-Wire Wire Line
 	7800 3200 7800 3250
 $Comp
 L servo:5VC #PWR0279
@@ -1242,43 +634,434 @@ F 3 "" H 8000 2850 50  0001 C CNN
 $EndComp
 Wire Wire Line
 	8000 2900 8000 2850
-$Comp
-L servo:Capacitor C1621
-U 1 1 5E203AF4
-P 8000 3000
-F 0 "C1621" V 7997 3110 60  0000 L CNN
-F 1 "100nF" V 8103 3110 60  0000 L CNN
-F 2 "" H 8000 3000 60  0000 C CNN
-F 3 "" H 8000 3000 60  0000 C CNN
-	1    8000 3000
-	0    -1   1    0   
-$EndComp
-Connection ~ 8000 3200
-Wire Wire Line
-	8000 3200 7800 3200
 Wire Wire Line
 	8300 3100 8200 3100
 Wire Wire Line
 	8200 3100 8200 2900
 Wire Wire Line
 	8200 2900 8000 2900
-Connection ~ 8000 2900
+Text GLabel 7300 7300 0    50   Input ~ 0
+LEM_B_W
+Text GLabel 7300 9150 0    50   Input ~ 0
+LEM_B_ALL
+Text Notes 4100 1500 0    197  ~ 39
+8 LEM's current measurement \nU+V+W+ALL x 2
+Text Notes 6950 2100 0    20   ~ 0
+The intention of these lems is to have the capacity on the control board\n to measure all the current, without the need of the sigma delta chips\n on power board side. Why?? becouse I've study the two options\n carrefullty and I've conclude that there are very similar, and more or\n less buck per byck (a little expensive is SD) but the new generation\n LEM's I'm includin here has <0.5uSeg response time, and the SD has\n all the SD filter delay, so LEM is faster. The other advantage is that for\n same LEM I've choosen you could rearange the connection to multiply\n the preccision 1x,2x or 3x without touching nothing, and is pretty\n linear.  In the case of SD you have to change the precission shunt. or\n puts more than one, that is costly and take some board space.\nThe disadvantage of LEM is that the output is single ended, so it could\n not travel across boards, for that reason I've put them on control\n board, but is completely isolated becouse of these phisics effect. and\n also becouse of that single ended I just use one ADC channel per\n current. I't not the only option, becous if you insist and wanna use SD,\n I'eft all the SD channels available as an inputs on SD schematic page.\n\nthese LEM's version doesn't need a buffer, \nit's one already included inside LEM\n\nLXS6 is LTS and CAS pin to pin compatible, but LXS is a little better.\n I don't usa an opamp becous with the external conection I have x,2x\n and 3x amplifier option without any component\n
+Connection ~ 5150 9150
+$Comp
+L servo:Capacitor C1605
+U 1 1 5E363480
+P 5450 7500
+F 0 "C1605" V 5478 7610 20  0000 L CNN
+F 1 "100pF" V 5521 7610 20  0000 L CNN
+F 2 "Capacitor_SMD:C_0603_1608Metric" H 5450 7400 60  0001 C CNN
+F 3 "" H 5450 7500 60  0000 C CNN
+	1    5450 7500
+	0    1    1    0   
+$EndComp
+$Comp
+L servo:GND #PWR01601
+U 1 1 5E363487
+P 5150 7700
+F 0 "#PWR01601" H 5150 7450 30  0001 C CNN
+F 1 "GND" H 5150 7542 30  0000 C CNN
+F 2 "" H 5150 7700 50  0001 C CNN
+F 3 "" H 5150 7700 50  0001 C CNN
+	1    5150 7700
+	1    0    0    -1  
+$EndComp
+$Comp
+L servo:Resistor R1602
+U 1 1 5E36348D
+P 5150 7500
+F 0 "R1602" V 5128 7550 20  0000 L CNN
+F 1 "3.3k" V 5171 7550 20  0000 L CNN
+F 2 "Resistor_SMD:R_0603_1608Metric" H 4650 7400 60  0001 C CNN
+F 3 "" H 4750 7500 60  0001 C CNN
+	1    5150 7500
+	0    1    1    0   
+$EndComp
+$Comp
+L servo:Resistor R1601
+U 1 1 5E363494
+P 5150 7100
+F 0 "R1601" V 5128 7150 20  0000 L CNN
+F 1 "5k" V 5171 7150 20  0000 L CNN
+F 2 "Resistor_SMD:R_0603_1608Metric" H 4650 7000 60  0001 C CNN
+F 3 "" H 4750 7100 60  0001 C CNN
+	1    5150 7100
+	0    1    1    0   
+$EndComp
+$Comp
+L servo:GND #PWR01604
+U 1 1 5E36349B
+P 5450 7700
+F 0 "#PWR01604" H 5450 7450 30  0001 C CNN
+F 1 "GND" H 5450 7542 30  0000 C CNN
+F 2 "" H 5450 7700 50  0001 C CNN
+F 3 "" H 5450 7700 50  0001 C CNN
+	1    5450 7700
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	5450 7400 5450 7300
+Wire Wire Line
+	5450 7300 5150 7300
+Connection ~ 5450 7300
+$Comp
+L servo:Capacitor C1609
+U 1 1 5E3634A4
+P 5750 7500
+F 0 "C1609" V 5778 7610 20  0000 L CNN
+F 1 "100pF" V 5821 7610 20  0000 L CNN
+F 2 "Capacitor_SMD:C_0603_1608Metric" H 5750 7400 60  0001 C CNN
+F 3 "" H 5750 7500 60  0000 C CNN
+	1    5750 7500
+	0    1    1    0   
+$EndComp
+$Comp
+L servo:GND #PWR01607
+U 1 1 5E3634AB
+P 5750 7700
+F 0 "#PWR01607" H 5750 7450 30  0001 C CNN
+F 1 "GND" H 5750 7542 30  0000 C CNN
+F 2 "" H 5750 7700 50  0001 C CNN
+F 3 "" H 5750 7700 50  0001 C CNN
+	1    5750 7700
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	5750 7300 5750 7400
+Text Notes 5500 7400 0    20   ~ 0
+one near LEM, \nthe other near uC
+Wire Wire Line
+	5450 7300 5750 7300
+Connection ~ 5750 7300
+Wire Wire Line
+	5750 7300 5950 7300
+Connection ~ 5150 7300
+$Comp
+L servo:Capacitor C1608
+U 1 1 5E39C27F
+P 5500 5700
+F 0 "C1608" V 5528 5810 20  0000 L CNN
+F 1 "100pF" V 5571 5810 20  0000 L CNN
+F 2 "Capacitor_SMD:C_0603_1608Metric" H 5500 5600 60  0001 C CNN
+F 3 "" H 5500 5700 60  0000 C CNN
+	1    5500 5700
+	0    1    1    0   
+$EndComp
+$Comp
+L servo:GND #PWR01603
+U 1 1 5E39C286
+P 5200 5900
+F 0 "#PWR01603" H 5200 5650 30  0001 C CNN
+F 1 "GND" H 5200 5742 30  0000 C CNN
+F 2 "" H 5200 5900 50  0001 C CNN
+F 3 "" H 5200 5900 50  0001 C CNN
+	1    5200 5900
+	1    0    0    -1  
+$EndComp
+$Comp
+L servo:Resistor R1608
+U 1 1 5E39C28C
+P 5200 5700
+F 0 "R1608" V 5178 5750 20  0000 L CNN
+F 1 "3.3k" V 5221 5750 20  0000 L CNN
+F 2 "Resistor_SMD:R_0603_1608Metric" H 4700 5600 60  0001 C CNN
+F 3 "" H 4800 5700 60  0001 C CNN
+	1    5200 5700
+	0    1    1    0   
+$EndComp
+$Comp
+L servo:Resistor R1607
+U 1 1 5E39C293
+P 5200 5300
+F 0 "R1607" V 5178 5350 20  0000 L CNN
+F 1 "5k" V 5221 5350 20  0000 L CNN
+F 2 "Resistor_SMD:R_0603_1608Metric" H 4700 5200 60  0001 C CNN
+F 3 "" H 4800 5300 60  0001 C CNN
+	1    5200 5300
+	0    1    1    0   
+$EndComp
+$Comp
+L servo:GND #PWR01606
+U 1 1 5E39C29A
+P 5500 5900
+F 0 "#PWR01606" H 5500 5650 30  0001 C CNN
+F 1 "GND" H 5500 5742 30  0000 C CNN
+F 2 "" H 5500 5900 50  0001 C CNN
+F 3 "" H 5500 5900 50  0001 C CNN
+	1    5500 5900
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	5500 5600 5500 5500
+Wire Wire Line
+	5500 5500 5200 5500
+Connection ~ 5500 5500
+$Comp
+L servo:Capacitor C1612
+U 1 1 5E39C2A3
+P 5800 5700
+F 0 "C1612" V 5828 5810 20  0000 L CNN
+F 1 "100pF" V 5871 5810 20  0000 L CNN
+F 2 "Capacitor_SMD:C_0603_1608Metric" H 5800 5600 60  0001 C CNN
+F 3 "" H 5800 5700 60  0000 C CNN
+	1    5800 5700
+	0    1    1    0   
+$EndComp
+$Comp
+L servo:GND #PWR01609
+U 1 1 5E39C2AA
+P 5800 5900
+F 0 "#PWR01609" H 5800 5650 30  0001 C CNN
+F 1 "GND" H 5800 5742 30  0000 C CNN
+F 2 "" H 5800 5900 50  0001 C CNN
+F 3 "" H 5800 5900 50  0001 C CNN
+	1    5800 5900
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	5800 5500 5800 5600
+Text Notes 5550 5600 0    20   ~ 0
+one near LEM, \nthe other near uC
+Wire Wire Line
+	5500 5500 5800 5500
+Connection ~ 5800 5500
+Wire Wire Line
+	5800 5500 6000 5500
+Connection ~ 5200 5500
+$Comp
+L servo:Capacitor C1607
+U 1 1 5E3E8DDF
+P 5500 3900
+F 0 "C1607" V 5528 4010 20  0000 L CNN
+F 1 "100pF" V 5571 4010 20  0000 L CNN
+F 2 "Capacitor_SMD:C_0603_1608Metric" H 5500 3800 60  0001 C CNN
+F 3 "" H 5500 3900 60  0000 C CNN
+	1    5500 3900
+	0    1    1    0   
+$EndComp
+$Comp
+L servo:GND #PWR01602
+U 1 1 5E3E8DE6
+P 5200 4100
+F 0 "#PWR01602" H 5200 3850 30  0001 C CNN
+F 1 "GND" H 5200 3942 30  0000 C CNN
+F 2 "" H 5200 4100 50  0001 C CNN
+F 3 "" H 5200 4100 50  0001 C CNN
+	1    5200 4100
+	1    0    0    -1  
+$EndComp
+$Comp
+L servo:Resistor R1606
+U 1 1 5E3E8DEC
+P 5200 3900
+F 0 "R1606" V 5178 3950 20  0000 L CNN
+F 1 "3.3k" V 5221 3950 20  0000 L CNN
+F 2 "Resistor_SMD:R_0603_1608Metric" H 4700 3800 60  0001 C CNN
+F 3 "" H 4800 3900 60  0001 C CNN
+	1    5200 3900
+	0    1    1    0   
+$EndComp
+$Comp
+L servo:Resistor R1605
+U 1 1 5E3E8DF3
+P 5200 3500
+F 0 "R1605" V 5178 3550 20  0000 L CNN
+F 1 "5k" V 5221 3550 20  0000 L CNN
+F 2 "Resistor_SMD:R_0603_1608Metric" H 4700 3400 60  0001 C CNN
+F 3 "" H 4800 3500 60  0001 C CNN
+	1    5200 3500
+	0    1    1    0   
+$EndComp
+$Comp
+L servo:GND #PWR01605
+U 1 1 5E3E8DFA
+P 5500 4100
+F 0 "#PWR01605" H 5500 3850 30  0001 C CNN
+F 1 "GND" H 5500 3942 30  0000 C CNN
+F 2 "" H 5500 4100 50  0001 C CNN
+F 3 "" H 5500 4100 50  0001 C CNN
+	1    5500 4100
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	5500 3800 5500 3700
+Wire Wire Line
+	5500 3700 5200 3700
+Connection ~ 5500 3700
+$Comp
+L servo:Capacitor C1611
+U 1 1 5E3E8E03
+P 5800 3900
+F 0 "C1611" V 5828 4010 20  0000 L CNN
+F 1 "100pF" V 5871 4010 20  0000 L CNN
+F 2 "Capacitor_SMD:C_0603_1608Metric" H 5800 3800 60  0001 C CNN
+F 3 "" H 5800 3900 60  0000 C CNN
+	1    5800 3900
+	0    1    1    0   
+$EndComp
+$Comp
+L servo:GND #PWR01608
+U 1 1 5E3E8E0A
+P 5800 4100
+F 0 "#PWR01608" H 5800 3850 30  0001 C CNN
+F 1 "GND" H 5800 3942 30  0000 C CNN
+F 2 "" H 5800 4100 50  0001 C CNN
+F 3 "" H 5800 4100 50  0001 C CNN
+	1    5800 4100
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	5800 3700 5800 3800
+Text Notes 5550 3800 0    20   ~ 0
+one near LEM, \nthe other near uC
+Wire Wire Line
+	5500 3700 5800 3700
+Connection ~ 5800 3700
+Wire Wire Line
+	5800 3700 6000 3700
+Connection ~ 5200 3700
+Wire Wire Line
+	4950 5000 5250 5000
+$Comp
+L servo:Capacitor C1604
+U 1 1 5E4105E6
+P 5250 4750
+F 0 "C1604" V 5278 4860 20  0000 L CNN
+F 1 "100nF" V 5321 4860 20  0000 L CNN
+F 2 "Capacitor_SMD:C_0603_1608Metric" H 5250 4650 60  0001 C CNN
+F 3 "" H 5250 4750 60  0000 C CNN
+	1    5250 4750
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	4900 6800 5200 6800
+$Comp
+L servo:Capacitor C1601
+U 1 1 5E423E70
+P 5200 6600
+F 0 "C1601" V 5228 6710 20  0000 L CNN
+F 1 "100nF" V 5271 6710 20  0000 L CNN
+F 2 "Capacitor_SMD:C_0603_1608Metric" H 5200 6500 60  0001 C CNN
+F 3 "" H 5200 6600 60  0000 C CNN
+	1    5200 6600
+	0    1    1    0   
+$EndComp
+Connection ~ 5200 6800
+Wire Wire Line
+	5200 6800 5400 6800
+Connection ~ 5200 6500
+Wire Wire Line
+	4900 8650 5200 8650
+$Comp
+L servo:Capacitor C1602
+U 1 1 5E437864
+P 5200 8350
+F 0 "C1602" V 5228 8460 20  0000 L CNN
+F 1 "100nF" V 5271 8460 20  0000 L CNN
+F 2 "Capacitor_SMD:C_0603_1608Metric" H 5200 8250 60  0001 C CNN
+F 3 "" H 5200 8350 60  0000 C CNN
+	1    5200 8350
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	5200 5100 4950 5100
+Connection ~ 5250 4650
+Wire Wire Line
+	5250 4950 5250 5000
+Connection ~ 5250 5000
+Wire Wire Line
+	5250 5000 5450 5000
+Wire Wire Line
+	5000 8250 5200 8250
+Wire Wire Line
+	5000 8250 5000 8550
+Connection ~ 5200 8250
+Wire Wire Line
+	5200 8550 5200 8650
+Connection ~ 5200 8650
+Wire Wire Line
+	5200 8650 5400 8650
+$Comp
+L servo:Capacitor C1617
+U 1 1 5E1F171D
+P 7750 3900
+F 0 "C1617" V 7778 4010 20  0000 L CNN
+F 1 "100pF" V 7821 4010 20  0000 L CNN
+F 2 "Capacitor_SMD:C_0603_1608Metric" H 7750 3800 60  0001 C CNN
+F 3 "" H 7750 3900 60  0000 C CNN
+	1    7750 3900
+	0    -1   1    0   
+$EndComp
+$Comp
+L servo:GND #PWR0255
+U 1 1 5E1F1724
+P 8050 4100
+F 0 "#PWR0255" H 8050 3850 30  0001 C CNN
+F 1 "GND" H 8050 3942 30  0000 C CNN
+F 2 "" H 8050 4100 50  0001 C CNN
+F 3 "" H 8050 4100 50  0001 C CNN
+	1    8050 4100
+	-1   0    0    -1  
+$EndComp
+$Comp
+L servo:Resistor R1610
+U 1 1 5E1F172A
+P 8050 3900
+F 0 "R1610" V 8028 3950 20  0000 L CNN
+F 1 "3.3k" V 8071 3950 20  0000 L CNN
+F 2 "Resistor_SMD:R_0603_1608Metric" H 7550 3800 60  0001 C CNN
+F 3 "" H 7650 3900 60  0001 C CNN
+	1    8050 3900
+	0    -1   1    0   
+$EndComp
+$Comp
+L servo:Resistor R1609
+U 1 1 5E1F1731
+P 8050 3500
+F 0 "R1609" V 8028 3550 20  0000 L CNN
+F 1 "5k" V 8071 3550 20  0000 L CNN
+F 2 "Resistor_SMD:R_0603_1608Metric" H 7550 3400 60  0001 C CNN
+F 3 "" H 7650 3500 60  0001 C CNN
+	1    8050 3500
+	0    -1   1    0   
+$EndComp
+$Comp
+L servo:GND #PWR0256
+U 1 1 5E1F1738
+P 7750 4100
+F 0 "#PWR0256" H 7750 3850 30  0001 C CNN
+F 1 "GND" H 7750 3942 30  0000 C CNN
+F 2 "" H 7750 4100 50  0001 C CNN
+F 3 "" H 7750 4100 50  0001 C CNN
+	1    7750 4100
+	-1   0    0    -1  
+$EndComp
+Wire Wire Line
+	7750 3800 7750 3700
+Wire Wire Line
+	7750 3700 8050 3700
+Connection ~ 7750 3700
 $Comp
 L servo:Capacitor C1613
-U 1 1 5E203B01
+U 1 1 5E1F1741
 P 7450 3900
-F 0 "C1613" V 7400 3900 60  0000 L CNN
-F 1 "100pF" V 7550 3900 60  0000 L CNN
-F 2 "" H 7450 3900 60  0000 C CNN
+F 0 "C1613" V 7478 4010 20  0000 L CNN
+F 1 "100pF" V 7521 4010 20  0000 L CNN
+F 2 "Capacitor_SMD:C_0603_1608Metric" H 7450 3800 60  0001 C CNN
 F 3 "" H 7450 3900 60  0000 C CNN
 	1    7450 3900
 	0    -1   1    0   
 $EndComp
 $Comp
-L servo:GND #PWR0280
-U 1 1 5E203B08
+L servo:GND #PWR0257
+U 1 1 5E1F1748
 P 7450 4100
-F 0 "#PWR0280" H 7450 3850 30  0001 C CNN
+F 0 "#PWR0257" H 7450 3850 30  0001 C CNN
 F 1 "GND" H 7450 3942 30  0000 C CNN
 F 2 "" H 7450 4100 50  0001 C CNN
 F 3 "" H 7450 4100 50  0001 C CNN
@@ -1294,302 +1077,466 @@ Wire Wire Line
 Connection ~ 7450 3700
 Wire Wire Line
 	7450 3700 7250 3700
+Connection ~ 8050 3700
 $Comp
-L Connector:Screw_Terminal_01x06 J1607
-U 1 1 5E203B13
-P 9500 6750
-F 0 "J1607" H 9580 6650 50  0000 L CNN
-F 1 "Screw_Terminal_01x06" H 9300 6300 50  0001 L CNN
-F 2 "" H 9500 6750 50  0001 C CNN
-F 3 "~" H 9500 6750 50  0001 C CNN
-	1    9500 6750
+L servo:Capacitor C1621
+U 1 1 5E2D2BA2
+P 8000 3000
+F 0 "C1621" V 8028 3110 20  0000 L CNN
+F 1 "100nF" V 8071 3110 20  0000 L CNN
+F 2 "Capacitor_SMD:C_0603_1608Metric" H 8000 2900 60  0001 C CNN
+F 3 "" H 8000 3000 60  0000 C CNN
+	1    8000 3000
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	7800 3200 8000 3200
+Connection ~ 8000 2900
+Connection ~ 8000 3200
+Wire Wire Line
+	8000 3200 8300 3200
+$Comp
+L Connector:Screw_Terminal_01x06 J1606
+U 1 1 5E36D46E
+P 9450 4950
+F 0 "J1606" H 9530 4850 50  0000 L CNN
+F 1 "Screw_Terminal_01x06" H 9250 4500 50  0001 L CNN
+F 2 "Connector_PinHeader_2.54mm:PinHeader_1x06_P2.54mm_Vertical" H 9450 4950 50  0001 C CNN
+F 3 "~" H 9450 4950 50  0001 C CNN
+	1    9450 4950
 	1    0    0    -1  
 $EndComp
+Wire Wire Line
+	8300 5100 8050 5100
 $Comp
-L servo:Capacitor C1619
-U 1 1 5E203B1A
-P 7800 7500
-F 0 "C1619" V 7750 7500 60  0000 L CNN
-F 1 "100pF" V 7900 7500 60  0000 L CNN
-F 2 "" H 7800 7500 60  0000 C CNN
-F 3 "" H 7800 7500 60  0000 C CNN
-	1    7800 7500
+L servo:LXS6-NPS U1606
+U 1 1 5E36D476
+P 8700 5000
+F 0 "U1606" H 8700 5700 50  0000 L CNN
+F 1 "LXS6-NPS" H 8550 5600 50  0000 L CNN
+F 2 "servo:LEM_LTSR-NP" H 8700 4200 50  0001 C CNN
+F 3 "../doc/datasheets/lem_lxs_series.pdf" H 8700 4350 50  0001 C CNN
+	1    8700 5000
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	8800 4550 9100 4550
+Wire Wire Line
+	9100 4550 9100 4950
+Wire Wire Line
+	9100 4950 9250 4950
+Wire Wire Line
+	9250 4850 9150 4850
+Wire Wire Line
+	9150 4850 9150 4500
+Wire Wire Line
+	9150 4500 8700 4500
+Wire Wire Line
+	8700 4500 8700 4550
+Wire Wire Line
+	8600 4550 8600 4450
+Wire Wire Line
+	8600 4450 9200 4450
+Wire Wire Line
+	9200 4450 9200 4750
+Wire Wire Line
+	9200 4750 9250 4750
+Wire Wire Line
+	9250 5050 9100 5050
+Wire Wire Line
+	9100 5050 9100 5500
+Wire Wire Line
+	9100 5500 8800 5500
+Wire Wire Line
+	8800 5500 8800 5450
+Wire Wire Line
+	8700 5450 8700 5550
+Wire Wire Line
+	8700 5550 9150 5550
+Wire Wire Line
+	9150 5550 9150 5150
+Wire Wire Line
+	9150 5150 9250 5150
+Wire Wire Line
+	9250 5250 9200 5250
+Wire Wire Line
+	9200 5250 9200 5600
+Wire Wire Line
+	9200 5600 8600 5600
+Wire Wire Line
+	8600 5600 8600 5450
+$Comp
+L servo:GND #PWR0260
+U 1 1 5E36D494
+P 7800 5050
+F 0 "#PWR0260" H 7800 4800 30  0001 C CNN
+F 1 "GND" H 7800 4892 30  0000 C CNN
+F 2 "" H 7800 5050 50  0001 C CNN
+F 3 "" H 7800 5050 50  0001 C CNN
+	1    7800 5050
+	-1   0    0    -1  
+$EndComp
+Wire Wire Line
+	7800 5000 7800 5050
+$Comp
+L servo:5VC #PWR0261
+U 1 1 5E36D49B
+P 8000 4650
+F 0 "#PWR0261" H 8000 4450 20  0001 C CNN
+F 1 "5VC" H 8005 4807 28  0000 C CNN
+F 2 "" H 8000 4650 50  0001 C CNN
+F 3 "" H 8000 4650 50  0001 C CNN
+	1    8000 4650
+	-1   0    0    -1  
+$EndComp
+Wire Wire Line
+	8000 4700 8000 4650
+Wire Wire Line
+	8300 4900 8200 4900
+Wire Wire Line
+	8200 4900 8200 4700
+Wire Wire Line
+	8200 4700 8000 4700
+$Comp
+L servo:Capacitor C1618
+U 1 1 5E36D4A5
+P 7750 5700
+F 0 "C1618" V 7778 5810 20  0000 L CNN
+F 1 "100pF" V 7821 5810 20  0000 L CNN
+F 2 "Capacitor_SMD:C_0603_1608Metric" H 7750 5600 60  0001 C CNN
+F 3 "" H 7750 5700 60  0000 C CNN
+	1    7750 5700
 	0    -1   1    0   
 $EndComp
 $Comp
-L servo:GND #PWR0281
-U 1 1 5E203B21
-P 8100 7700
-F 0 "#PWR0281" H 8100 7450 30  0001 C CNN
-F 1 "GND" H 8100 7542 30  0000 C CNN
-F 2 "" H 8100 7700 50  0001 C CNN
-F 3 "" H 8100 7700 50  0001 C CNN
-	1    8100 7700
+L servo:GND #PWR0262
+U 1 1 5E36D4AC
+P 8050 5900
+F 0 "#PWR0262" H 8050 5650 30  0001 C CNN
+F 1 "GND" H 8050 5742 30  0000 C CNN
+F 2 "" H 8050 5900 50  0001 C CNN
+F 3 "" H 8050 5900 50  0001 C CNN
+	1    8050 5900
 	-1   0    0    -1  
 $EndComp
-Text GLabel 7300 7300 0    50   Input ~ 0
-LEM_B_W
+$Comp
+L servo:Resistor R1612
+U 1 1 5E36D4B2
+P 8050 5700
+F 0 "R1612" V 8028 5750 20  0000 L CNN
+F 1 "3.3k" V 8071 5750 20  0000 L CNN
+F 2 "Resistor_SMD:R_0603_1608Metric" H 7550 5600 60  0001 C CNN
+F 3 "" H 7650 5700 60  0001 C CNN
+	1    8050 5700
+	0    -1   1    0   
+$EndComp
+$Comp
+L servo:Resistor R1611
+U 1 1 5E36D4B9
+P 8050 5300
+F 0 "R1611" V 8028 5350 20  0000 L CNN
+F 1 "5k" V 8071 5350 20  0000 L CNN
+F 2 "Resistor_SMD:R_0603_1608Metric" H 7550 5200 60  0001 C CNN
+F 3 "" H 7650 5300 60  0001 C CNN
+	1    8050 5300
+	0    -1   1    0   
+$EndComp
+$Comp
+L servo:GND #PWR0265
+U 1 1 5E36D4C0
+P 7750 5900
+F 0 "#PWR0265" H 7750 5650 30  0001 C CNN
+F 1 "GND" H 7750 5742 30  0000 C CNN
+F 2 "" H 7750 5900 50  0001 C CNN
+F 3 "" H 7750 5900 50  0001 C CNN
+	1    7750 5900
+	-1   0    0    -1  
+$EndComp
+Wire Wire Line
+	7750 5600 7750 5500
+Wire Wire Line
+	7750 5500 8050 5500
+Connection ~ 7750 5500
+$Comp
+L servo:Capacitor C1614
+U 1 1 5E36D4C9
+P 7450 5700
+F 0 "C1614" V 7478 5810 20  0000 L CNN
+F 1 "100pF" V 7521 5810 20  0000 L CNN
+F 2 "Capacitor_SMD:C_0603_1608Metric" H 7450 5600 60  0001 C CNN
+F 3 "" H 7450 5700 60  0000 C CNN
+	1    7450 5700
+	0    -1   1    0   
+$EndComp
+$Comp
+L servo:GND #PWR0271
+U 1 1 5E36D4D0
+P 7450 5900
+F 0 "#PWR0271" H 7450 5650 30  0001 C CNN
+F 1 "GND" H 7450 5742 30  0000 C CNN
+F 2 "" H 7450 5900 50  0001 C CNN
+F 3 "" H 7450 5900 50  0001 C CNN
+	1    7450 5900
+	-1   0    0    -1  
+$EndComp
+Wire Wire Line
+	7450 5500 7450 5600
+Text Notes 7700 5600 2    20   ~ 0
+one near LEM, \nthe other near uC
+Wire Wire Line
+	7750 5500 7450 5500
+Connection ~ 7450 5500
+Wire Wire Line
+	7450 5500 7250 5500
+Connection ~ 8050 5500
+$Comp
+L servo:Capacitor C1622
+U 1 1 5E36D4DC
+P 8000 4800
+F 0 "C1622" V 8028 4910 20  0000 L CNN
+F 1 "100nF" V 8071 4910 20  0000 L CNN
+F 2 "Capacitor_SMD:C_0603_1608Metric" H 8000 4700 60  0001 C CNN
+F 3 "" H 8000 4800 60  0000 C CNN
+	1    8000 4800
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	7800 5000 8000 5000
+Connection ~ 8000 4700
+Connection ~ 8000 5000
+Wire Wire Line
+	8000 5000 8300 5000
+$Comp
+L Connector:Screw_Terminal_01x06 J1607
+U 1 1 5E37C575
+P 9450 6750
+F 0 "J1607" H 9530 6650 50  0000 L CNN
+F 1 "Screw_Terminal_01x06" H 9250 6300 50  0001 L CNN
+F 2 "Connector_PinHeader_2.54mm:PinHeader_1x06_P2.54mm_Vertical" H 9450 6750 50  0001 C CNN
+F 3 "~" H 9450 6750 50  0001 C CNN
+	1    9450 6750
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	8300 6900 8050 6900
+$Comp
+L servo:LXS6-NPS U1607
+U 1 1 5E37C57D
+P 8700 6800
+F 0 "U1607" H 8700 7500 50  0000 L CNN
+F 1 "LXS6-NPS" H 8550 7400 50  0000 L CNN
+F 2 "servo:LEM_LTSR-NP" H 8700 6000 50  0001 C CNN
+F 3 "../doc/datasheets/lem_lxs_series.pdf" H 8700 6150 50  0001 C CNN
+	1    8700 6800
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	8800 6350 9100 6350
+Wire Wire Line
+	9100 6350 9100 6750
+Wire Wire Line
+	9100 6750 9250 6750
+Wire Wire Line
+	9250 6650 9150 6650
+Wire Wire Line
+	9150 6650 9150 6300
+Wire Wire Line
+	9150 6300 8700 6300
+Wire Wire Line
+	8700 6300 8700 6350
+Wire Wire Line
+	8600 6350 8600 6250
+Wire Wire Line
+	8600 6250 9200 6250
+Wire Wire Line
+	9200 6250 9200 6550
+Wire Wire Line
+	9200 6550 9250 6550
+Wire Wire Line
+	9250 6850 9100 6850
+Wire Wire Line
+	9100 6850 9100 7300
+Wire Wire Line
+	9100 7300 8800 7300
+Wire Wire Line
+	8800 7300 8800 7250
+Wire Wire Line
+	8700 7250 8700 7350
+Wire Wire Line
+	8700 7350 9150 7350
+Wire Wire Line
+	9150 7350 9150 6950
+Wire Wire Line
+	9150 6950 9250 6950
+Wire Wire Line
+	9250 7050 9200 7050
+Wire Wire Line
+	9200 7050 9200 7400
+Wire Wire Line
+	9200 7400 8600 7400
+Wire Wire Line
+	8600 7400 8600 7250
+$Comp
+L servo:GND #PWR0272
+U 1 1 5E37C59B
+P 7800 6850
+F 0 "#PWR0272" H 7800 6600 30  0001 C CNN
+F 1 "GND" H 7800 6692 30  0000 C CNN
+F 2 "" H 7800 6850 50  0001 C CNN
+F 3 "" H 7800 6850 50  0001 C CNN
+	1    7800 6850
+	-1   0    0    -1  
+$EndComp
+Wire Wire Line
+	7800 6800 7800 6850
+$Comp
+L servo:5VC #PWR0273
+U 1 1 5E37C5A2
+P 8000 6450
+F 0 "#PWR0273" H 8000 6250 20  0001 C CNN
+F 1 "5VC" H 8005 6607 28  0000 C CNN
+F 2 "" H 8000 6450 50  0001 C CNN
+F 3 "" H 8000 6450 50  0001 C CNN
+	1    8000 6450
+	-1   0    0    -1  
+$EndComp
+Wire Wire Line
+	8000 6500 8000 6450
+Wire Wire Line
+	8300 6700 8200 6700
+Wire Wire Line
+	8200 6700 8200 6500
+Wire Wire Line
+	8200 6500 8000 6500
+$Comp
+L servo:Capacitor C1619
+U 1 1 5E37C5AC
+P 7750 7500
+F 0 "C1619" V 7778 7610 20  0000 L CNN
+F 1 "100pF" V 7821 7610 20  0000 L CNN
+F 2 "Capacitor_SMD:C_0603_1608Metric" H 7750 7400 60  0001 C CNN
+F 3 "" H 7750 7500 60  0000 C CNN
+	1    7750 7500
+	0    -1   1    0   
+$EndComp
+$Comp
+L servo:GND #PWR0274
+U 1 1 5E37C5B3
+P 8050 7700
+F 0 "#PWR0274" H 8050 7450 30  0001 C CNN
+F 1 "GND" H 8050 7542 30  0000 C CNN
+F 2 "" H 8050 7700 50  0001 C CNN
+F 3 "" H 8050 7700 50  0001 C CNN
+	1    8050 7700
+	-1   0    0    -1  
+$EndComp
 $Comp
 L servo:Resistor R1614
-U 1 1 5E203B28
-P 8100 7500
-F 0 "R1614" V 8047 7550 60  0000 L CNN
-F 1 "3.3k" V 8200 7500 60  0000 L CNN
-F 2 "" H 8100 7500 60  0000 C CNN
-F 3 "" H 8100 7500 60  0000 C CNN
-	1    8100 7500
+U 1 1 5E37C5B9
+P 8050 7500
+F 0 "R1614" V 8028 7550 20  0000 L CNN
+F 1 "3.3k" V 8071 7550 20  0000 L CNN
+F 2 "Resistor_SMD:R_0603_1608Metric" H 7550 7400 60  0001 C CNN
+F 3 "" H 7650 7500 60  0001 C CNN
+	1    8050 7500
 	0    -1   1    0   
 $EndComp
 $Comp
 L servo:Resistor R1613
-U 1 1 5E203B2F
-P 8100 7100
-F 0 "R1613" V 8047 7150 60  0000 L CNN
-F 1 "5k" V 8153 7150 60  0000 L CNN
-F 2 "" H 8100 7100 60  0000 C CNN
-F 3 "" H 8100 7100 60  0000 C CNN
-	1    8100 7100
+U 1 1 5E37C5C0
+P 8050 7100
+F 0 "R1613" V 8028 7150 20  0000 L CNN
+F 1 "5k" V 8071 7150 20  0000 L CNN
+F 2 "Resistor_SMD:R_0603_1608Metric" H 7550 7000 60  0001 C CNN
+F 3 "" H 7650 7100 60  0001 C CNN
+	1    8050 7100
 	0    -1   1    0   
 $EndComp
 $Comp
-L servo:GND #PWR0282
-U 1 1 5E203B36
-P 7800 7700
-F 0 "#PWR0282" H 7800 7450 30  0001 C CNN
-F 1 "GND" H 7800 7542 30  0000 C CNN
-F 2 "" H 7800 7700 50  0001 C CNN
-F 3 "" H 7800 7700 50  0001 C CNN
-	1    7800 7700
+L servo:GND #PWR0275
+U 1 1 5E37C5C7
+P 7750 7700
+F 0 "#PWR0275" H 7750 7450 30  0001 C CNN
+F 1 "GND" H 7750 7542 30  0000 C CNN
+F 2 "" H 7750 7700 50  0001 C CNN
+F 3 "" H 7750 7700 50  0001 C CNN
+	1    7750 7700
 	-1   0    0    -1  
 $EndComp
 Wire Wire Line
-	7800 7400 7800 7300
+	7750 7400 7750 7300
 Wire Wire Line
-	7800 7300 8100 7300
-Connection ~ 8100 7300
-Connection ~ 7800 7300
-Wire Wire Line
-	8350 6900 8100 6900
-$Comp
-L servo:LXS6-NPS U1607
-U 1 1 5E203B41
-P 8750 6800
-F 0 "U1607" H 8750 7500 50  0000 L CNN
-F 1 "LXS6-NPS" H 8600 7400 50  0000 L CNN
-F 2 "" H 8750 6000 50  0001 C CNN
-F 3 "../doc/datasheets/lem_lxs_series.pdf" H 8750 6150 50  0001 C CNN
-	1    8750 6800
-	1    0    0    -1  
-$EndComp
-Wire Wire Line
-	8850 6350 9150 6350
-Wire Wire Line
-	9150 6350 9150 6750
-Wire Wire Line
-	9150 6750 9300 6750
-Wire Wire Line
-	9300 6650 9200 6650
-Wire Wire Line
-	9200 6650 9200 6300
-Wire Wire Line
-	9200 6300 8750 6300
-Wire Wire Line
-	8750 6300 8750 6350
-Wire Wire Line
-	8650 6350 8650 6250
-Wire Wire Line
-	8650 6250 9250 6250
-Wire Wire Line
-	9250 6250 9250 6550
-Wire Wire Line
-	9250 6550 9300 6550
-Wire Wire Line
-	9300 6850 9150 6850
-Wire Wire Line
-	9150 6850 9150 7300
-Wire Wire Line
-	9150 7300 8850 7300
-Wire Wire Line
-	8850 7300 8850 7250
-Wire Wire Line
-	8750 7250 8750 7350
-Wire Wire Line
-	8750 7350 9200 7350
-Wire Wire Line
-	9200 7350 9200 6950
-Wire Wire Line
-	9200 6950 9300 6950
-Wire Wire Line
-	9300 7050 9250 7050
-Wire Wire Line
-	9250 7050 9250 7400
-Wire Wire Line
-	9250 7400 8650 7400
-Wire Wire Line
-	8650 7400 8650 7250
-$Comp
-L servo:GND #PWR0283
-U 1 1 5E203B5F
-P 7850 6850
-F 0 "#PWR0283" H 7850 6600 30  0001 C CNN
-F 1 "GND" H 7850 6692 30  0000 C CNN
-F 2 "" H 7850 6850 50  0001 C CNN
-F 3 "" H 7850 6850 50  0001 C CNN
-	1    7850 6850
-	-1   0    0    -1  
-$EndComp
-Wire Wire Line
-	8350 6800 8050 6800
-Wire Wire Line
-	7850 6800 7850 6850
-$Comp
-L servo:5VC #PWR0284
-U 1 1 5E203B67
-P 8050 6450
-F 0 "#PWR0284" H 8050 6250 20  0001 C CNN
-F 1 "5VC" H 8055 6607 28  0000 C CNN
-F 2 "" H 8050 6450 50  0001 C CNN
-F 3 "" H 8050 6450 50  0001 C CNN
-	1    8050 6450
-	-1   0    0    -1  
-$EndComp
-Wire Wire Line
-	8050 6500 8050 6450
-$Comp
-L servo:Capacitor C1623
-U 1 1 5E203B6F
-P 8050 6600
-F 0 "C1623" V 8047 6710 60  0000 L CNN
-F 1 "100nF" V 8153 6710 60  0000 L CNN
-F 2 "" H 8050 6600 60  0000 C CNN
-F 3 "" H 8050 6600 60  0000 C CNN
-	1    8050 6600
-	0    -1   1    0   
-$EndComp
-Connection ~ 8050 6800
-Wire Wire Line
-	8050 6800 7850 6800
-Wire Wire Line
-	8350 6700 8250 6700
-Wire Wire Line
-	8250 6700 8250 6500
-Wire Wire Line
-	8250 6500 8050 6500
-Connection ~ 8050 6500
+	7750 7300 8050 7300
+Connection ~ 7750 7300
 $Comp
 L servo:Capacitor C1615
-U 1 1 5E203B7C
-P 7500 7500
-F 0 "C1615" V 7450 7500 60  0000 L CNN
-F 1 "100pF" V 7600 7500 60  0000 L CNN
-F 2 "" H 7500 7500 60  0000 C CNN
-F 3 "" H 7500 7500 60  0000 C CNN
-	1    7500 7500
+U 1 1 5E37C5D0
+P 7450 7500
+F 0 "C1615" V 7478 7610 20  0000 L CNN
+F 1 "100pF" V 7521 7610 20  0000 L CNN
+F 2 "Capacitor_SMD:C_0603_1608Metric" H 7450 7400 60  0001 C CNN
+F 3 "" H 7450 7500 60  0000 C CNN
+	1    7450 7500
 	0    -1   1    0   
 $EndComp
 $Comp
-L servo:GND #PWR0285
-U 1 1 5E203B83
-P 7500 7700
-F 0 "#PWR0285" H 7500 7450 30  0001 C CNN
-F 1 "GND" H 7500 7542 30  0000 C CNN
-F 2 "" H 7500 7700 50  0001 C CNN
-F 3 "" H 7500 7700 50  0001 C CNN
-	1    7500 7700
+L servo:GND #PWR0276
+U 1 1 5E37C5D7
+P 7450 7700
+F 0 "#PWR0276" H 7450 7450 30  0001 C CNN
+F 1 "GND" H 7450 7542 30  0000 C CNN
+F 2 "" H 7450 7700 50  0001 C CNN
+F 3 "" H 7450 7700 50  0001 C CNN
+	1    7450 7700
 	-1   0    0    -1  
 $EndComp
 Wire Wire Line
-	7500 7300 7500 7400
-Text Notes 7750 7400 2    20   ~ 0
+	7450 7300 7450 7400
+Text Notes 7700 7400 2    20   ~ 0
 one near LEM, \nthe other near uC
 Wire Wire Line
-	7800 7300 7500 7300
-Connection ~ 7500 7300
+	7750 7300 7450 7300
+Connection ~ 7450 7300
 Wire Wire Line
-	7500 7300 7300 7300
+	7450 7300 7250 7300
+Connection ~ 8050 7300
+$Comp
+L servo:Capacitor C1623
+U 1 1 5E37C5E3
+P 8000 6600
+F 0 "C1623" V 8028 6710 20  0000 L CNN
+F 1 "100nF" V 8071 6710 20  0000 L CNN
+F 2 "Capacitor_SMD:C_0603_1608Metric" H 8000 6500 60  0001 C CNN
+F 3 "" H 8000 6600 60  0000 C CNN
+	1    8000 6600
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	7800 6800 8000 6800
+Connection ~ 8000 6500
+Connection ~ 8000 6800
+Wire Wire Line
+	8000 6800 8300 6800
 $Comp
 L Connector:Screw_Terminal_01x06 J1608
-U 1 1 5E203B8E
+U 1 1 5E3900CC
 P 9500 8600
 F 0 "J1608" H 9580 8500 50  0000 L CNN
 F 1 "Screw_Terminal_01x06" H 9300 8150 50  0001 L CNN
-F 2 "" H 9500 8600 50  0001 C CNN
+F 2 "Connector_PinHeader_2.54mm:PinHeader_1x06_P2.54mm_Vertical" H 9500 8600 50  0001 C CNN
 F 3 "~" H 9500 8600 50  0001 C CNN
 	1    9500 8600
 	1    0    0    -1  
 $EndComp
-$Comp
-L servo:Capacitor C1620
-U 1 1 5E203B95
-P 7800 9350
-F 0 "C1620" V 7750 9350 60  0000 L CNN
-F 1 "100pF" V 7900 9350 60  0000 L CNN
-F 2 "" H 7800 9350 60  0000 C CNN
-F 3 "" H 7800 9350 60  0000 C CNN
-	1    7800 9350
-	0    -1   1    0   
-$EndComp
-$Comp
-L servo:GND #PWR0286
-U 1 1 5E203B9C
-P 8100 9550
-F 0 "#PWR0286" H 8100 9300 30  0001 C CNN
-F 1 "GND" H 8100 9392 30  0000 C CNN
-F 2 "" H 8100 9550 50  0001 C CNN
-F 3 "" H 8100 9550 50  0001 C CNN
-	1    8100 9550
-	-1   0    0    -1  
-$EndComp
-Text GLabel 7300 9150 0    50   Input ~ 0
-LEM_B_ALL
-$Comp
-L servo:Resistor R1616
-U 1 1 5E203BA3
-P 8100 9350
-F 0 "R1616" V 8047 9400 60  0000 L CNN
-F 1 "3.3k" V 8200 9350 60  0000 L CNN
-F 2 "" H 8100 9350 60  0000 C CNN
-F 3 "" H 8100 9350 60  0000 C CNN
-	1    8100 9350
-	0    -1   1    0   
-$EndComp
-$Comp
-L servo:Resistor R1615
-U 1 1 5E203BAA
-P 8100 8950
-F 0 "R1615" V 8047 9000 60  0000 L CNN
-F 1 "5k" V 8153 9000 60  0000 L CNN
-F 2 "" H 8100 8950 60  0000 C CNN
-F 3 "" H 8100 8950 60  0000 C CNN
-	1    8100 8950
-	0    -1   1    0   
-$EndComp
-$Comp
-L servo:GND #PWR0287
-U 1 1 5E203BB1
-P 7800 9550
-F 0 "#PWR0287" H 7800 9300 30  0001 C CNN
-F 1 "GND" H 7800 9392 30  0000 C CNN
-F 2 "" H 7800 9550 50  0001 C CNN
-F 3 "" H 7800 9550 50  0001 C CNN
-	1    7800 9550
-	-1   0    0    -1  
-$EndComp
-Wire Wire Line
-	7800 9250 7800 9150
-Wire Wire Line
-	7800 9150 8100 9150
-Connection ~ 8100 9150
-Connection ~ 7800 9150
 Wire Wire Line
 	8350 8750 8100 8750
 $Comp
 L servo:LXS6-NPS U1608
-U 1 1 5E203BBC
+U 1 1 5E3900D4
 P 8750 8650
 F 0 "U1608" H 8750 9350 50  0000 L CNN
 F 1 "LXS6-NPS" H 8600 9250 50  0000 L CNN
-F 2 "" H 8750 7850 50  0001 C CNN
+F 2 "servo:LEM_LTSR-NP" H 8750 7850 50  0001 C CNN
 F 3 "../doc/datasheets/lem_lxs_series.pdf" H 8750 8000 50  0001 C CNN
 	1    8750 8650
 	1    0    0    -1  
@@ -1641,10 +1588,10 @@ Wire Wire Line
 Wire Wire Line
 	8650 9250 8650 9100
 $Comp
-L servo:GND #PWR0288
-U 1 1 5E203BDA
+L servo:GND #PWR0277
+U 1 1 5E3900F2
 P 7850 8700
-F 0 "#PWR0288" H 7850 8450 30  0001 C CNN
+F 0 "#PWR0277" H 7850 8450 30  0001 C CNN
 F 1 "GND" H 7850 8542 30  0000 C CNN
 F 2 "" H 7850 8700 50  0001 C CNN
 F 3 "" H 7850 8700 50  0001 C CNN
@@ -1652,14 +1599,12 @@ F 3 "" H 7850 8700 50  0001 C CNN
 	-1   0    0    -1  
 $EndComp
 Wire Wire Line
-	8350 8650 8050 8650
-Wire Wire Line
 	7850 8650 7850 8700
 $Comp
-L servo:5VC #PWR0289
-U 1 1 5E203BE2
+L servo:5VC #PWR0280
+U 1 1 5E3900F9
 P 8050 8300
-F 0 "#PWR0289" H 8050 8100 20  0001 C CNN
+F 0 "#PWR0280" H 8050 8100 20  0001 C CNN
 F 1 "5VC" H 8055 8457 28  0000 C CNN
 F 2 "" H 8050 8300 50  0001 C CNN
 F 3 "" H 8050 8300 50  0001 C CNN
@@ -1668,43 +1613,88 @@ F 3 "" H 8050 8300 50  0001 C CNN
 $EndComp
 Wire Wire Line
 	8050 8350 8050 8300
-$Comp
-L servo:Capacitor C1624
-U 1 1 5E203BEA
-P 8050 8450
-F 0 "C1624" V 8047 8560 60  0000 L CNN
-F 1 "100nF" V 8153 8560 60  0000 L CNN
-F 2 "" H 8050 8450 60  0000 C CNN
-F 3 "" H 8050 8450 60  0000 C CNN
-	1    8050 8450
-	0    -1   1    0   
-$EndComp
-Connection ~ 8050 8650
-Wire Wire Line
-	8050 8650 7850 8650
 Wire Wire Line
 	8350 8550 8250 8550
 Wire Wire Line
 	8250 8550 8250 8350
 Wire Wire Line
 	8250 8350 8050 8350
-Connection ~ 8050 8350
+$Comp
+L servo:Capacitor C1620
+U 1 1 5E390103
+P 7800 9350
+F 0 "C1620" V 7828 9460 20  0000 L CNN
+F 1 "100pF" V 7871 9460 20  0000 L CNN
+F 2 "Capacitor_SMD:C_0603_1608Metric" H 7800 9250 60  0001 C CNN
+F 3 "" H 7800 9350 60  0000 C CNN
+	1    7800 9350
+	0    -1   1    0   
+$EndComp
+$Comp
+L servo:GND #PWR0281
+U 1 1 5E39010A
+P 8100 9550
+F 0 "#PWR0281" H 8100 9300 30  0001 C CNN
+F 1 "GND" H 8100 9392 30  0000 C CNN
+F 2 "" H 8100 9550 50  0001 C CNN
+F 3 "" H 8100 9550 50  0001 C CNN
+	1    8100 9550
+	-1   0    0    -1  
+$EndComp
+$Comp
+L servo:Resistor R1616
+U 1 1 5E390110
+P 8100 9350
+F 0 "R1616" V 8078 9400 20  0000 L CNN
+F 1 "3.3k" V 8121 9400 20  0000 L CNN
+F 2 "Resistor_SMD:R_0603_1608Metric" H 7600 9250 60  0001 C CNN
+F 3 "" H 7700 9350 60  0001 C CNN
+	1    8100 9350
+	0    -1   1    0   
+$EndComp
+$Comp
+L servo:Resistor R1615
+U 1 1 5E390117
+P 8100 8950
+F 0 "R1615" V 8078 9000 20  0000 L CNN
+F 1 "5k" V 8121 9000 20  0000 L CNN
+F 2 "Resistor_SMD:R_0603_1608Metric" H 7600 8850 60  0001 C CNN
+F 3 "" H 7700 8950 60  0001 C CNN
+	1    8100 8950
+	0    -1   1    0   
+$EndComp
+$Comp
+L servo:GND #PWR0282
+U 1 1 5E39011E
+P 7800 9550
+F 0 "#PWR0282" H 7800 9300 30  0001 C CNN
+F 1 "GND" H 7800 9392 30  0000 C CNN
+F 2 "" H 7800 9550 50  0001 C CNN
+F 3 "" H 7800 9550 50  0001 C CNN
+	1    7800 9550
+	-1   0    0    -1  
+$EndComp
+Wire Wire Line
+	7800 9250 7800 9150
+Wire Wire Line
+	7800 9150 8100 9150
+Connection ~ 7800 9150
 $Comp
 L servo:Capacitor C1616
-U 1 1 5E203BF7
+U 1 1 5E390127
 P 7500 9350
-F 0 "C1616" V 7450 9350 60  0000 L CNN
-F 1 "100pF" V 7600 9350 60  0000 L CNN
-F 2 "" H 7500 9350 60  0000 C CNN
+F 0 "C1616" V 7528 9460 20  0000 L CNN
+F 1 "100pF" V 7571 9460 20  0000 L CNN
+F 2 "Capacitor_SMD:C_0603_1608Metric" H 7500 9250 60  0001 C CNN
 F 3 "" H 7500 9350 60  0000 C CNN
 	1    7500 9350
 	0    -1   1    0   
 $EndComp
 $Comp
-L servo:GND #PWR0290
-U 1 1 5E203BFE
+L servo:GND #PWR0283
+U 1 1 5E39012E
 P 7500 9550
-F 0 "#PWR0290" H 7500 9300 30  0001 C CNN
+F 0 "#PWR0283" H 7500 9300 30  0001 C CNN
 F 1 "GND" H 7500 9392 30  0000 C CNN
 F 2 "" H 7500 9550 50  0001 C CNN
 F 3 "" H 7500 9550 50  0001 C CNN
@@ -1720,8 +1710,22 @@ Wire Wire Line
 Connection ~ 7500 9150
 Wire Wire Line
 	7500 9150 7300 9150
-Text Notes 4100 1500 0    197  ~ 39
-8 LEM's current measurement \nU+V+W+ALL x 2
-Text Notes 6950 2100 0    20   ~ 0
-The intention of these lems is to have the capacity on the control board\n to measure all the current, without the need of the sigma delta chips\n on power board side. Why?? becouse I've study the two options\n carrefullty and I've conclude that there are very similar, and more or\n less buck per byck (a little expensive is SD) but the new generation\n LEM's I'm includin here has <0.5uSeg response time, and the SD has\n all the SD filter delay, so LEM is faster. The other advantage is that for\n same LEM I've choosen you could rearange the connection to multiply\n the preccision 1x,2x or 3x without touching nothing, and is pretty\n linear.  In the case of SD you have to change the precission shunt. or\n puts more than one, that is costly and take some board space.\nThe disadvantage of LEM is that the output is single ended, so it could\n not travel across boards, for that reason I've put them on control\n board, but is completely isolated becouse of these phisics effect. and\n also becouse of that single ended I just use one ADC channel per\n current. I't not the only option, becous if you insist and wanna use SD,\n I'eft all the SD channels available as an inputs on SD schematic page.\n\nthese LEM's version doesn't need a buffer, \nit's one already included inside LEM\n\nLXS6 is LTS and CAS pin to pin compatible, but LXS is a little better.\n I don't usa an opamp becous with the external conection I have x,2x\n and 3x amplifier option without any component\n
+Connection ~ 8100 9150
+$Comp
+L servo:Capacitor C1624
+U 1 1 5E39013A
+P 8050 8450
+F 0 "C1624" V 8078 8560 20  0000 L CNN
+F 1 "100nF" V 8121 8560 20  0000 L CNN
+F 2 "Capacitor_SMD:C_0603_1608Metric" H 8050 8350 60  0001 C CNN
+F 3 "" H 8050 8450 60  0000 C CNN
+	1    8050 8450
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	7850 8650 8050 8650
+Connection ~ 8050 8350
+Connection ~ 8050 8650
+Wire Wire Line
+	8050 8650 8350 8650
 $EndSCHEMATC

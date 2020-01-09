@@ -476,6 +476,11 @@ D SN74LVC2G17Dual Schmitt-TriggerBuffer
 K buffer schmitt trigger
 $ENDCMP
 #
+$CMP SW_Push
+D Push button switch, generic, two pins
+K switch normally-open pushbutton push-button
+$ENDCMP
+#
 $CMP Si8380
 D Bipolar Digital Field Inputs for PLCs and Industrial I/O Modules
 F https://www.silabs.com/documents/public/data-sheets/Si838x-DataSheet.pdf

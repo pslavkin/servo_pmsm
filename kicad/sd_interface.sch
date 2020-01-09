@@ -14,7 +14,7 @@ Comment2 ""
 Comment3 ""
 Comment4 ""
 $EndDescr
-Text Notes 5450 1350 0    197  ~ 39
+Text Notes 5200 1500 0    197  ~ 39
 Isolated sigma delta ADC
 Text GLabel 9800 2800 2    50   Input ~ 0
 SD_B1_D
@@ -47,7 +47,7 @@ U 1 1 5ECC54DD
 P 5800 3000
 F 0 "U1801" H 5800 3589 60  0000 C CNN
 F 1 "SI8661BD" H 5800 3483 60  0000 C CNN
-F 2 "" H 5200 3300 60  0000 C CNN
+F 2 "Package_SO:SOIC-16W_7.5x10.3mm_P1.27mm" H 5200 3300 60  0001 C CNN
 F 3 "../doc/datasheets/Si8660.pdf" H 5700 3600 60  0001 C CNN
 	1    5800 3000
 	-1   0    0    -1  
@@ -112,7 +112,7 @@ U 1 1 5EEE0A60
 P 7100 3000
 F 0 "J1801" H 7180 2946 50  0000 L CNN
 F 1 "Screw_Terminal_01x06" H 7180 2901 50  0001 L CNN
-F 2 "" H 7100 3000 50  0001 C CNN
+F 2 "Connector_PinHeader_2.54mm:PinHeader_1x06_P2.54mm_Vertical" H 7100 3000 50  0001 C CNN
 F 3 "~" H 7100 3000 50  0001 C CNN
 	1    7100 3000
 	1    0    0    -1  
@@ -146,7 +146,7 @@ U 1 1 5EEE31AB
 P 8950 3000
 F 0 "U1802" H 8950 3589 60  0000 C CNN
 F 1 "SI8661BD" H 8950 3483 60  0000 C CNN
-F 2 "" H 8350 3300 60  0000 C CNN
+F 2 "Package_SO:SOIC-16W_7.5x10.3mm_P1.27mm" H 8350 3300 60  0001 C CNN
 F 3 "../doc/datasheets/Si8660.pdf" H 8850 3600 60  0001 C CNN
 	1    8950 3000
 	1    0    0    -1  
@@ -203,7 +203,7 @@ U 1 1 5EEE31D7
 P 7650 3000
 F 0 "J1802" H 7570 3325 50  0000 C CNN
 F 1 "Screw_Terminal_01x06" H 7730 2901 50  0001 L CNN
-F 2 "" H 7650 3000 50  0001 C CNN
+F 2 "Connector_PinHeader_2.54mm:PinHeader_1x06_P2.54mm_Vertical" H 7650 3000 50  0001 C CNN
 F 3 "~" H 7650 3000 50  0001 C CNN
 	1    7650 3000
 	-1   0    0    -1  
@@ -230,7 +230,7 @@ Text Notes 5450 2300 0    20   ~ 4
 Choose a package pin-to-pin compatible with\nTI ISO7761. But SIlabs cost halt the price as TI
 Text Notes 8600 2350 0    20   ~ 4
 Choose a package pin-to-pin compatible with\nTI ISO7761. But SIlabs cost halt the price as TI
-Text Notes 7050 1800 0    20   ~ 0
+Text Notes 6800 1950 0    20   ~ 0
 It's intended for power board circuitery to supply all the signals to\n control board. The control board will use the SD filter to aquire the\n data. All the power part will be at power board.\n\nPWM clk output to powerboard and then come back again to maintain\n delays with resect to SD data channels. On power board you have to\n respect traces length between clk and data\n\nI use 5VH on power side to be less prone to noise error on the way on\n connection the two boards (and I've decided to not supply 3v3H too)\n\n
 $Comp
 L servo:5VH #PWR0235
