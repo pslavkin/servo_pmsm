@@ -78,21 +78,21 @@ Text Notes 12600 6250 0    197  ~ 39
 Ether\nNET
 Text Notes 7300 4900 0    197  ~ 39
 uC\nCLK\nDbg
-Text Notes 10700 4500 0    197  ~ 39
+Text Notes 10750 4550 0    197  ~ 39
 ENDAT
 $Sheet
-S 10500 3850 1300 1150
+S 10550 3900 1300 1150
 U 5DE3DF56
 F0 "endat" 50
 F1 "endat.sch" 50
 $EndSheet
 $Sheet
-S 10550 5350 1300 1150
+S 10550 5400 1300 1150
 U 5E092156
 F0 "qep" 50
 F1 "qep.sch" 50
 $EndSheet
-Text Notes 10900 6000 0    197  ~ 39
+Text Notes 10900 6050 0    197  ~ 39
 QEP
 $Sheet
 S 12300 3850 1300 1150

@@ -30,12 +30,17 @@ https://gist.github.com/rxaviers/7360908
 - :heavy_check_mark:    isolated GPI for external switches and sensor on any polarity
 - :heavy_check_mark:    8 channel buffer to drive IGBT
 - :heavy_check_mark:    ac/dc -> dc/dc -> ldo for clean power supplies
-- :construction:        Line voltage measurement
-- :construction:        overcurrent protection using CMPSS
+- :heavy_check_mark:        Line voltage measurement
+- :heavy_check_mark:        overcurrent protection using CMPSS
 - :red_circle:          aborted! lem is better changing/adding shunt measurement with sigma deltas isolated ADC
 - :heavy_check_mark:    LEM revival. I've decided to return to the idea of LEM 'cose sigma
   delta carry more complexity and less benefits. But SD could be included on power stage and
 I'll let pins to aquire and filter it.
+- :heavy_check_mark:     schematics ready!, and check rules passed. go to part numbering and
+  footprint selection
+- :red_circle:          isolated GPIO aborted! I've reise free pins that comes from IGBT
+- :heavy_check_mark:    EVE LCD driven choosen as the UI by spi.. I's all the thinks we need
+ 
 
 ---
 ## Table of Contents
