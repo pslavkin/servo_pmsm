@@ -4,9 +4,9 @@ EELAYER 26 0
 EELAYER END
 $Descr A3 16535 11693
 encoding utf-8
-Sheet 2 19
+Sheet 2 18
 Title "ethernet"
-Date "25 10 2019"
+Date "2020-01-09"
 Rev "1.0"
 Comp "dci"
 Comment1 "Pablo Slavkin"

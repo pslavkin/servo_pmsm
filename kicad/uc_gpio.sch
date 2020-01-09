@@ -4,9 +4,9 @@ EELAYER 26 0
 EELAYER END
 $Descr A3 16535 11693
 encoding utf-8
-Sheet 14 19
+Sheet 14 18
 Title "gpio"
-Date "25 10 2019"
+Date "2020-01-09"
 Rev "1.0"
 Comp "dci"
 Comment1 "Pablo Slavkin"
@@ -348,18 +348,6 @@ Wire Wire Line
 	8350 3300 8900 3300
 Wire Wire Line
 	8350 3200 8900 3200
-Wire Wire Line
-	8350 3100 8900 3100
-Wire Wire Line
-	8350 3000 8900 3000
-Wire Wire Line
-	8350 2900 8900 2900
-Wire Wire Line
-	8350 2800 8900 2800
-Wire Wire Line
-	8350 2700 8900 2700
-Wire Wire Line
-	8350 2600 8900 2600
 Wire Wire Line
 	8350 2500 8900 2500
 Wire Wire Line
@@ -720,22 +708,6 @@ Wire Wire Line
 	3150 4500 4800 4500
 Wire Wire Line
 	3150 4800 4800 4800
-Text GLabel 3150 6100 0    60   Input ~ 0
-ISO_GPI1
-Text GLabel 3150 6200 0    60   Input ~ 0
-ISO_GPI2
-Text GLabel 3150 6300 0    60   Input ~ 0
-ISO_GPI3
-Text GLabel 3150 6400 0    60   Input ~ 0
-ISO_GPI4
-Text GLabel 3150 6500 0    60   Input ~ 0
-ISO_GPI5
-Text GLabel 3150 6600 0    60   Input ~ 0
-ISO_GPI6
-Text GLabel 3150 6700 0    60   Input ~ 0
-ISO_GPI7
-Text GLabel 3150 6800 0    60   Input ~ 0
-ISO_GPI8
 Wire Wire Line
 	3150 6100 4800 6100
 Wire Wire Line
@@ -964,4 +936,44 @@ Wire Wire Line
 	8350 8700 9700 8700
 Wire Wire Line
 	8350 8800 9700 8800
+Text GLabel 9700 3000 2    50   Input ~ 0
+LCD_SPI_CLK
+Text GLabel 9700 2800 2    50   Input ~ 0
+LCD_SPI_MOSI
+Text GLabel 9700 2700 2    50   Input ~ 0
+LCD_INT
+Text GLabel 9700 2900 2    50   Input ~ 0
+LCD_SPI_MISO
+Text GLabel 9700 3100 2    50   Input ~ 0
+LCD_SPI_CS
+Wire Wire Line
+	8350 2800 9700 2800
+Wire Wire Line
+	8350 2900 9700 2900
+Wire Wire Line
+	8350 3000 9700 3000
+Wire Wire Line
+	8350 3100 9700 3100
+Text GLabel 9700 2600 2    50   Input ~ 0
+LCD_SPI_PDW
+Wire Wire Line
+	8350 2700 9700 2700
+Wire Wire Line
+	8350 2600 9700 2600
+Text GLabel 3150 6100 0    50   Input ~ 0
+FREE_OUT_A1
+Text GLabel 3150 6200 0    50   Input ~ 0
+FREE_OUT_A2
+Text GLabel 3150 6300 0    50   Input ~ 0
+FREE_IN_A3
+Text GLabel 3150 6400 0    50   Input ~ 0
+FREE_IN_A4
+Text GLabel 3150 6500 0    50   Input ~ 0
+FREE_OUT_B1
+Text GLabel 3150 6600 0    50   Input ~ 0
+FREE_OUT_B2
+Text GLabel 3150 6700 0    50   Input ~ 0
+FREE_IN_B3
+Text GLabel 3150 6800 0    50   Input ~ 0
+FREE_IN_B4
 $EndSCHEMATC

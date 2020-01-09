@@ -4,9 +4,9 @@ EELAYER 26 0
 EELAYER END
 $Descr A3 16535 11693
 encoding utf-8
-Sheet 4 19
+Sheet 4 18
 Title "ethercat"
-Date "25 10 2019"
+Date "2020-01-09"
 Rev "1.0"
 Comp "dci"
 Comment1 "Pablo Slavkin"
@@ -1123,7 +1123,7 @@ Wire Wire Line
 	9050 3350 8650 3350
 Text Notes 3350 9650 0    20   ~ 0
 these IC is a 'must'. \nEspecified on the ethercat slave
-Text Notes 2050 1000 0    197  ~ 39
+Text Notes 750  1000 0    197  ~ 39
 EtherCAT
 $Comp
 L servo:OSC_4P_1_TRI-STATE Y?
@@ -1304,7 +1304,7 @@ Text Notes 7150 9800 0    20   ~ 0
 There are totally optional
 Text Notes 10450 3550 0    20   ~ 0
 It'd be optionall\n
-Text Notes 2050 1200 0    20   ~ 0
+Text Notes 800  1400 0    20   ~ 0
 I choose transfeormer spare part instead of the embedded shielded RJ45\n plus leds, cause noy I can choose any format connector  RJ45 and\n maybe add PoE then. And are halt the price\n\nThe eeprom is mandatory in order to ESC read save some internal\n configuration.\n\nLeds are optional, but the PHY's has som pins used as a boostrap, so you\n have to respet that
 Wire Wire Line
 	3800 1850 4250 1850

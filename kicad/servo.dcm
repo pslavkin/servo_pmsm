@@ -395,6 +395,11 @@ D Low Power Six-Channel Digital Isolator
 F https://www.mouser.com/datasheet/2/368/Si866x-1223680.pdf
 $ENDCMP
 #
+$CMP SI8662BD
+D Low Power Six-Channel Digital Isolator
+F https://www.mouser.com/datasheet/2/368/Si866x-1223680.pdf
+$ENDCMP
+#
 $CMP SN74ALVC244PW
 D OCTALBUFFER/DRIVERWITH3-STATEOUTPUTS
 F https://www.ti.com/lit/ds/symlink/sn74alvc244.pdf

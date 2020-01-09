@@ -4,9 +4,9 @@ EELAYER 26 0
 EELAYER END
 $Descr A4 11693 8268
 encoding utf-8
-Sheet 11 19
+Sheet 11 18
 Title "QEP encoder Interfase"
-Date "25 10 2019"
+Date "2020-01-09"
 Rev "1.0"
 Comp "dci"
 Comment1 "Pablo Slavkin"

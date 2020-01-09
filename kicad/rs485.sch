@@ -4,9 +4,9 @@ EELAYER 26 0
 EELAYER END
 $Descr A4 11693 8268
 encoding utf-8
-Sheet 12 19
+Sheet 12 18
 Title "RS485"
-Date "25 10 2019"
+Date "2020-01-09"
 Rev "1.0"
 Comp "dci"
 Comment1 "Pablo Slavkin"

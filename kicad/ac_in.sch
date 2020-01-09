@@ -4,9 +4,9 @@ EELAYER 26 0
 EELAYER END
 $Descr A3 16535 11693
 encoding utf-8
-Sheet 7 19
+Sheet 7 18
 Title "AC input"
-Date "25 10 2019"
+Date "2020-01-09"
 Rev "1.0"
 Comp "dci"
 Comment1 "Pablo Slavkin"
@@ -59,22 +59,22 @@ F 3 "" H 3650 1500 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L servo:IN_3V3C #PWR?
+L servo:3V3 #PWR?
 U 1 1 5DDC15D8
 P 5050 3100
 F 0 "#PWR?" H 5050 2900 20  0001 C CNN
-F 1 "IN_3V3C" H 5055 3257 28  0000 C CNN
+F 1 "3V3" H 5055 3257 28  0000 C CNN
 F 2 "" H 5050 3100 50  0001 C CNN
 F 3 "" H 5050 3100 50  0001 C CNN
 	1    5050 3100
 	1    0    0    -1  
 $EndComp
 $Comp
-L servo:IN_1V2C #PWR?
+L servo:1V2C #PWR?
 U 1 1 5DDC3F59
 P 5050 4750
 F 0 "#PWR?" H 5050 4550 20  0001 C CNN
-F 1 "IN_1V2C" H 5055 4907 28  0000 C CNN
+F 1 "1V2C" H 5055 4907 28  0000 C CNN
 F 2 "" H 5050 4750 50  0001 C CNN
 F 3 "" H 5050 4750 50  0001 C CNN
 	1    5050 4750
@@ -465,22 +465,6 @@ Wire Wire Line
 	2900 2000 2900 2250
 Wire Wire Line
 	3250 2000 3250 2250
-Wire Wire Line
-	8950 3350 8950 3450
-$Comp
-L servo:Resistor R?
-U 1 1 5E2F90C7
-P 8950 3650
-AR Path="/5EAA846A/5E2F90C7" Ref="R?"  Part="1" 
-AR Path="/5DD76B18/5E2F90C7" Ref="R?"  Part="1" 
-F 0 "R?" V 8995 3600 60  0000 R CNN
-F 1 "680" V 8897 3600 50  0000 R CNN
-F 2 "" H 8950 3650 50  0001 C CNN
-F 3 "" H 8950 3650 50  0001 C CNN
-F 4 "680" V -3450 4050 60  0001 C CNN "ValueDisplayed"
-	1    8950 3650
-	0    -1   -1   0   
-$EndComp
 $Comp
 L servo:Capacitor C?
 U 1 1 5E2F90CF
@@ -495,22 +479,6 @@ F 4 "22uF" V -4850 2450 60  0001 C CNN "ValueDisplayed"
 	1    8150 2050
 	0    -1   -1   0   
 $EndComp
-$Comp
-L servo:LED_A2_K1 D?
-U 1 1 5E2F90D7
-P 8950 3950
-AR Path="/5EAA846A/5E2F90D7" Ref="D?"  Part="1" 
-AR Path="/5DD76B18/5E2F90D7" Ref="D?"  Part="1" 
-F 0 "D?" V 8900 4050 60  0000 L CNN
-F 1 "green" V 9000 4100 50  0000 L CNN
-F 2 "" H 8950 3950 50  0001 C CNN
-F 3 "" H 8950 3950 50  0001 C CNN
-F 4 "red" V -3450 3850 60  0001 C CNN "VALUE"
-	1    8950 3950
-	0    1    1    0   
-$EndComp
-Wire Wire Line
-	8950 4100 8950 4150
 $Comp
 L Regulator_Switching:R-78E5.0-1.0 U?
 U 1 1 5E2F90E5
@@ -548,43 +516,6 @@ Wire Wire Line
 	8150 2150 8150 2650
 Wire Wire Line
 	8500 2150 8500 2650
-$Comp
-L servo:Capacitor C?
-U 1 1 5E2F910E
-P 8250 3550
-AR Path="/5EAA846A/5E2F910E" Ref="C?"  Part="1" 
-AR Path="/5DD76B18/5E2F910E" Ref="C?"  Part="1" 
-F 0 "C?" V 8345 3440 60  0000 R CNN
-F 1 "22uF" V 8247 3440 50  0000 R CNN
-F 2 "" H 8250 3550 50  0001 C CNN
-F 3 "" H 8250 3550 50  0001 C CNN
-F 4 "22uF" V -4750 3950 60  0001 C CNN "ValueDisplayed"
-	1    8250 3550
-	0    -1   -1   0   
-$EndComp
-$Comp
-L servo:Capacitor C?
-U 1 1 5E2F911C
-P 8600 3550
-AR Path="/5EAA846A/5E2F911C" Ref="C?"  Part="1" 
-AR Path="/5DD76B18/5E2F911C" Ref="C?"  Part="1" 
-F 0 "C?" V 8695 3440 60  0000 R CNN
-F 1 "100nF" V 8597 3440 50  0000 R CNN
-F 2 "" H 8600 3550 50  0001 C CNN
-F 3 "" H 8600 3550 50  0001 C CNN
-F 4 "22uF" V -4400 3950 60  0001 C CNN "ValueDisplayed"
-	1    8600 3550
-	0    -1   -1   0   
-$EndComp
-Wire Wire Line
-	8250 3650 8250 4150
-Wire Wire Line
-	8600 3650 8600 4150
-Connection ~ 8600 3350
-Wire Wire Line
-	8600 3350 8950 3350
-Wire Wire Line
-	8250 3350 8600 3350
 Wire Wire Line
 	7150 1750 7150 1850
 $Comp
@@ -611,32 +542,9 @@ F 3 "" H 8900 1750 50  0001 C CNN
 	1    8900 1750
 	1    0    0    -1  
 $EndComp
-$Comp
-L servo:3V3H #PWR?
-U 1 1 5E31FAAF
-P 8950 3350
-F 0 "#PWR?" H 8950 3150 20  0001 C CNN
-F 1 "3V3H" H 8955 3507 28  0000 C CNN
-F 2 "" H 8950 3350 50  0001 C CNN
-F 3 "" H 8950 3350 50  0001 C CNN
-	1    8950 3350
-	1    0    0    -1  
-$EndComp
-Connection ~ 8950 3350
 Connection ~ 1950 1600
 Wire Wire Line
 	1950 1400 1950 1600
-$Comp
-L servo:GNDH #PWR?
-U 1 1 5E3444DD
-P 7650 4150
-F 0 "#PWR?" H 7650 3900 30  0001 C CNN
-F 1 "GNDH" H 7650 3992 30  0000 C CNN
-F 2 "" H 7650 4150 50  0001 C CNN
-F 3 "" H 7650 4150 50  0001 C CNN
-	1    7650 4150
-	1    0    0    -1  
-$EndComp
 Wire Wire Line
 	1950 1600 1950 3200
 Wire Wire Line
@@ -647,12 +555,6 @@ Wire Wire Line
 Connection ~ 8500 2650
 Wire Wire Line
 	8500 2650 8900 2650
-Connection ~ 8250 4150
-Wire Wire Line
-	8250 4150 8600 4150
-Connection ~ 8600 4150
-Wire Wire Line
-	8600 4150 8950 4150
 Wire Wire Line
 	2450 5650 2850 5650
 Connection ~ 2850 5650
@@ -829,7 +731,7 @@ Wire Wire Line
 	1550 2250 2450 2250
 Text Notes 2000 950  0    197  ~ 39
 COLD SUPPLY\n
-Text Notes 8200 950  0    197  ~ 39
+Text Notes 6950 1000 0    197  ~ 39
 HOT SUPPLY
 Connection ~ 3200 4850
 Wire Wire Line
@@ -888,41 +790,11 @@ Wire Wire Line
 Connection ~ 3200 4000
 Wire Wire Line
 	3200 4000 3800 4000
-$Comp
-L servo:AP2114 U?
-U 1 1 5E46EE61
-P 7650 3450
-F 0 "U?" H 7650 3815 50  0000 C CNN
-F 1 "AP2114H-1.2TRG1" H 7650 3724 50  0000 C CNN
-F 2 "Package_TO_SOT_SMD:SOT-223" H 7750 4075 50  0001 C CNN
-F 3 "../doc/datasheets/AP2114.pdf" H 7650 3550 50  0001 C CNN
-	1    7650 3450
-	1    0    0    -1  
-$EndComp
-Text Notes 7650 3850 0    50   ~ 0
-low noise \nLDO <30uV
 Wire Wire Line
 	8500 1850 8900 1850
 Connection ~ 8900 1850
 Wire Wire Line
-	7150 3350 7350 3350
-Wire Wire Line
 	8900 1750 8900 1850
-Wire Wire Line
-	7650 3750 7650 4150
-Connection ~ 7650 4150
-Wire Wire Line
-	7650 4150 8250 4150
-Wire Wire Line
-	7950 3350 8050 3350
-Connection ~ 8250 3350
-Wire Wire Line
-	8050 3450 8050 3350
-Wire Wire Line
-	7950 3450 8050 3450
-Connection ~ 8050 3350
-Wire Wire Line
-	8050 3350 8250 3350
 $Comp
 L servo:IRM-20-12 PS?
 U 1 1 5E5160DF
@@ -1062,7 +934,7 @@ Wire Wire Line
 	1150 2000 1250 2000
 Wire Wire Line
 	1250 2000 1250 2050
-Text Notes 8650 1150 0    20   ~ 0
+Text Notes 7400 1200 0    20   ~ 0
 Take in account that hot doesn't mean that it is refered to high voltage\n AC socket input path like 220v/380v. It is intended to isolate the uC\n/logic/user interfase side from accidentally high voltage contact on the\n hot side and prevent injuries as to make the reinforced isolation\n possible with one single isolateion added
 Text Notes 7550 1500 0    20   ~ 0
 sip 3 package, cheap, easy to \nreplace and many options
@@ -1083,19 +955,6 @@ the intention of the LCD it to clean the noise without using big filters\n and L
 Text Notes 3500 5350 0    20   ~ 0
 the intention of the LCD it to clean the noise without using big filters\n and L's. It's recommended and tested that these method works pretty\n
 $Comp
-L servo:5VH #PWR?
-U 1 1 5EC754C7
-P 7150 3250
-F 0 "#PWR?" H 7150 3050 20  0001 C CNN
-F 1 "5VH" H 7155 3407 28  0000 C CNN
-F 2 "" H 7150 3250 50  0001 C CNN
-F 3 "" H 7150 3250 50  0001 C CNN
-	1    7150 3250
-	1    0    0    -1  
-$EndComp
-Wire Wire Line
-	7150 3250 7150 3350
-$Comp
 L servo:GNDH #PWR?
 U 1 1 5EC79A03
 P 7900 2700
@@ -1111,6 +970,4 @@ Wire Wire Line
 Connection ~ 7900 2650
 Wire Wire Line
 	7900 2650 8150 2650
-Text Notes 9100 3750 0    39   ~ 8
-I think that nobody is using 3v3 hot.. \nand it is useless.. maybe just throut away
 $EndSCHEMATC

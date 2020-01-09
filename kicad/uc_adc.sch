@@ -4,9 +4,9 @@ EELAYER 26 0
 EELAYER END
 $Descr A3 16535 11693
 encoding utf-8
-Sheet 3 19
+Sheet 3 18
 Title "ADC"
-Date "25 10 2019"
+Date "2020-01-09"
 Rev "1.0"
 Comp "dci"
 Comment1 "Pablo Slavkin"
@@ -152,17 +152,6 @@ Wire Wire Line
 	8600 3450 8600 3350
 Wire Wire Line
 	8200 3450 8600 3450
-$Comp
-L servo:GNDA #PWR?
-U 1 1 5EF6D6BF
-P 7250 5050
-F 0 "#PWR?" H 7250 4800 50  0001 C CNN
-F 1 "GNDA" H 7255 4877 50  0000 C CNN
-F 2 "" H 7250 5050 50  0001 C CNN
-F 3 "" H 7250 5050 50  0001 C CNN
-	1    7250 5050
-	1    0    0    -1  
-$EndComp
 Wire Wire Line
 	8600 4850 8200 4850
 Connection ~ 7250 4850
@@ -192,30 +181,30 @@ F 4 "TMS320F28388DZWTS" V -1450 -350 60  0001 C CNN "PartNumber"
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
-	4250 2850 3900 2850
+	4250 5050 3900 5050
 Wire Wire Line
-	4250 2950 3900 2950
+	4250 5150 3900 5150
 Wire Wire Line
-	4250 2450 3900 2450
+	4250 4650 3900 4650
 Wire Wire Line
-	4250 2550 3900 2550
+	4250 4750 3900 4750
 Wire Wire Line
-	4250 2650 3900 2650
+	4250 4850 3900 4850
 Wire Wire Line
-	4250 2750 3900 2750
-Text GLabel 3900 2450 0    50   Input ~ 0
+	4250 4950 3900 4950
+Text GLabel 3900 4650 0    50   Input ~ 0
 LEM_A_U
 Text GLabel 3900 3450 0    50   Input ~ 0
 LEM_B_U
-Text GLabel 3900 2550 0    50   Input ~ 0
+Text GLabel 3900 4750 0    50   Input ~ 0
 LEM_A_V
 Text GLabel 3900 3550 0    50   Input ~ 0
 LEM_B_V
-Text GLabel 3900 2750 0    50   Input ~ 0
+Text GLabel 3900 4950 0    50   Input ~ 0
 LEM_A_W
 Text GLabel 3900 3750 0    50   Input ~ 0
 LEM_B_W
-Text GLabel 3900 2650 0    50   Input ~ 0
+Text GLabel 3900 4850 0    50   Input ~ 0
 LEM_A_ALL
 Text GLabel 3900 3650 0    50   Input ~ 0
 LEM_B_ALL
@@ -231,9 +220,9 @@ Text GLabel 3900 3850 0    50   Input ~ 0
 VBUS_B_P
 Text GLabel 3900 3950 0    50   Input ~ 0
 VBUS_B_N
-Text GLabel 3900 2850 0    50   Input ~ 0
+Text GLabel 3900 5050 0    50   Input ~ 0
 VBUS_A_P
-Text GLabel 3900 2950 0    50   Input ~ 0
+Text GLabel 3900 5150 0    50   Input ~ 0
 VBUS_A_N
 Wire Wire Line
 	4250 3850 3900 3850
@@ -255,10 +244,33 @@ Wire Wire Line
 	3900 4250 4250 4250
 Wire Wire Line
 	3900 4450 4250 4450
-Text Notes 2650 2750 0    20   ~ 0
+Text Notes 2650 4950 0    20   ~ 0
 lem all hast to be connected on positive pin\n of comparator CMPINxP, becose the internal\n DAC reference work on the negative side only.\n 
-Text Notes 4250 1050 0    197  ~ 39
+Text Notes 4350 1600 0    197  ~ 39
 uC ADC PINS
-Text Notes 4800 1300 0    20   ~ 0
+Text Notes 4900 1850 0    20   ~ 0
 Every interfase to the ADC has the responsability to filter it's output\n before enter ADC pin, for that reason these page just connect to the uC\n without nothin in the middle
+Text GLabel 3900 2450 0    50   Input ~ 0
+LCD_AUDIO
+Wire Wire Line
+	4250 2450 3900 2450
+Text Notes 3550 2350 0    20   ~ 0
+using the DAC out to manage audio \nor other multiporpouse signals
+Text GLabel 3900 2550 0    50   Input ~ 0
+DACB_DBG_OUT
+Wire Wire Line
+	4250 2550 3900 2550
+$Comp
+L servo:GND #PWR?
+U 1 1 5E9C32E8
+P 7250 5050
+AR Path="/5DCD812E/5E9C32E8" Ref="#PWR?"  Part="1" 
+AR Path="/5EAA846A/5E9C32E8" Ref="#PWR?"  Part="1" 
+F 0 "#PWR?" H 7255 4901 20  0001 C CNN
+F 1 "GND" H 7255 4849 30  0000 C CNN
+F 2 "" H 7250 5050 70  0000 C CNN
+F 3 "" H 7250 5050 70  0000 C CNN
+	1    7250 5050
+	1    0    0    -1  
+$EndComp
 $EndSCHEMATC

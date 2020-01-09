@@ -4,9 +4,9 @@ EELAYER 26 0
 EELAYER END
 $Descr A3 16535 11693
 encoding utf-8
-Sheet 10 19
+Sheet 10 18
 Title "ENDAT/BISS Interface"
-Date "25 10 2019"
+Date "2020-01-09"
 Rev "1.0"
 Comp "dci"
 Comment1 "Pablo Slavkin"
@@ -172,7 +172,7 @@ AR Path="/5DD4DF4C/5FDC21FA" Ref="#PWR?"  Part="1"
 AR Path="/5DE49152/5FDC21FA" Ref="#PWR?"  Part="1" 
 AR Path="/5E1BAEAA/5FDC21FA" Ref="#PWR?"  Part="1" 
 AR Path="/5DE3DF56/5FDC21FA" Ref="#PWR?"  Part="1" 
-F 0 "#PWR?" H 12567 2859 20  0000 C CNN
+F 0 "#PWR?" H 12567 2859 20  0001 C CNN
 F 1 "3V3" H 12567 2807 30  0000 C CNN
 F 2 "" H 12550 2650 70  0000 C CNN
 F 3 "" H 12550 2650 70  0000 C CNN
@@ -568,17 +568,6 @@ F 3 "" H 4100 2900 60  0000 C CNN
 	0    1    1    0   
 $EndComp
 $Comp
-L servo:GND #PWR?
-U 1 1 5FF891FD
-P 4100 3150
-F 0 "#PWR?" H 4100 2900 30  0001 C CNN
-F 1 "GND" H 4100 2992 30  0000 C CNN
-F 2 "" H 4100 3150 50  0001 C CNN
-F 3 "" H 4100 3150 50  0001 C CNN
-	1    4100 3150
-	1    0    0    -1  
-$EndComp
-$Comp
 L servo:ADM2483 U?
 U 1 1 5FF89203
 P 5050 3650
@@ -626,10 +615,6 @@ F 3 "" H 6350 4300 50  0001 C CNN
 	1    6350 4300
 	1    0    0    -1  
 $EndComp
-Wire Wire Line
-	6350 4250 6350 4300
-Wire Wire Line
-	6150 4000 6150 4250
 Wire Wire Line
 	4350 4000 4450 4000
 $Comp
@@ -725,7 +710,6 @@ Wire Wire Line
 	6750 3400 6750 3700
 Wire Wire Line
 	6350 4250 6350 4200
-Connection ~ 6350 4250
 Wire Wire Line
 	4450 3600 4400 3600
 Wire Wire Line
@@ -738,10 +722,7 @@ Wire Wire Line
 Wire Wire Line
 	4350 4000 4350 4150
 Wire Wire Line
-	6150 4250 6350 4250
-Wire Wire Line
 	4100 2650 4100 2700
-Connection ~ 5750 2700
 $Comp
 L servo:Capacitor C?
 U 1 1 5FF89253
@@ -774,31 +755,9 @@ Wire Wire Line
 Wire Wire Line
 	3950 3650 4400 3650
 Wire Wire Line
-	5650 4000 6150 4000
-Wire Wire Line
 	5750 2700 5750 3300
-$Comp
-L servo:GNDH #PWR?
-U 1 1 5FF89267
-P 5950 3100
-AR Path="/5DE49152/5FF89267" Ref="#PWR?"  Part="1" 
-AR Path="/5E1BAEAA/5FF89267" Ref="#PWR?"  Part="1" 
-AR Path="/5DE3DF56/5FF89267" Ref="#PWR?"  Part="1" 
-F 0 "#PWR?" H 5950 2850 30  0001 C CNN
-F 1 "GNDH" H 5950 2942 30  0000 C CNN
-F 2 "" H 5950 3100 50  0001 C CNN
-F 3 "" H 5950 3100 50  0001 C CNN
-	1    5950 3100
-	1    0    0    -1  
-$EndComp
 Wire Wire Line
 	6350 2700 6350 3000
-Wire Wire Line
-	4100 3150 4100 3100
-Wire Wire Line
-	7750 3550 7750 3600
-Wire Wire Line
-	7750 3600 7850 3600
 $Comp
 L Connector:Screw_Terminal_01x07 J?
 U 1 1 5FF89271
@@ -808,20 +767,6 @@ F 1 "Screw_Terminal_01x07" V 8200 3550 50  0000 L CNN
 F 2 "" H 8050 3900 50  0001 C CNN
 F 3 "~" H 8050 3900 50  0001 C CNN
 	1    8050 3900
-	1    0    0    -1  
-$EndComp
-$Comp
-L servo:5VH #PWR?
-U 1 1 5FF89280
-P 7750 3550
-AR Path="/5DE49152/5FF89280" Ref="#PWR?"  Part="1" 
-AR Path="/5E1BAEAA/5FF89280" Ref="#PWR?"  Part="1" 
-AR Path="/5DE3DF56/5FF89280" Ref="#PWR?"  Part="1" 
-F 0 "#PWR?" H 7750 3350 20  0001 C CNN
-F 1 "5VH" H 7755 3707 28  0000 C CNN
-F 2 "" H 7750 3550 50  0001 C CNN
-F 3 "" H 7750 3550 50  0001 C CNN
-	1    7750 3550
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
@@ -838,17 +783,6 @@ F 2 "" H 4100 4950 60  0000 C CNN
 F 3 "" H 4100 4950 60  0000 C CNN
 	1    4100 4950
 	0    1    1    0   
-$EndComp
-$Comp
-L servo:GND #PWR?
-U 1 1 5FF8928F
-P 4100 5200
-F 0 "#PWR?" H 4100 4950 30  0001 C CNN
-F 1 "GND" H 4100 5042 30  0000 C CNN
-F 2 "" H 4100 5200 50  0001 C CNN
-F 3 "" H 4100 5200 50  0001 C CNN
-	1    4100 5200
-	1    0    0    -1  
 $EndComp
 $Comp
 L servo:ADM2483 U?
@@ -898,10 +832,6 @@ F 3 "" H 6350 6350 50  0001 C CNN
 	1    6350 6350
 	1    0    0    -1  
 $EndComp
-Wire Wire Line
-	6350 6300 6350 6350
-Wire Wire Line
-	6150 6050 6150 6300
 Wire Wire Line
 	4350 6050 4450 6050
 $Comp
@@ -995,7 +925,6 @@ Wire Wire Line
 	6000 5750 6000 5450
 Wire Wire Line
 	6350 6300 6350 6250
-Connection ~ 6350 6300
 Wire Wire Line
 	4450 5650 4400 5650
 Wire Wire Line
@@ -1007,8 +936,6 @@ Wire Wire Line
 	4400 5700 4400 5750
 Wire Wire Line
 	4350 6050 4350 6200
-Wire Wire Line
-	6150 6300 6350 6300
 Wire Wire Line
 	4100 4700 4100 4750
 Connection ~ 5750 4750
@@ -1040,27 +967,9 @@ Wire Wire Line
 Wire Wire Line
 	4150 5700 4400 5700
 Wire Wire Line
-	5650 6050 6150 6050
-Wire Wire Line
 	5750 4750 5750 5350
-$Comp
-L servo:GNDH #PWR?
-U 1 1 5FF892F7
-P 5950 5150
-AR Path="/5DE49152/5FF892F7" Ref="#PWR?"  Part="1" 
-AR Path="/5E1BAEAA/5FF892F7" Ref="#PWR?"  Part="1" 
-AR Path="/5DE3DF56/5FF892F7" Ref="#PWR?"  Part="1" 
-F 0 "#PWR?" H 5950 4900 30  0001 C CNN
-F 1 "GNDH" H 5950 4992 30  0000 C CNN
-F 2 "" H 5950 5150 50  0001 C CNN
-F 3 "" H 5950 5150 50  0001 C CNN
-	1    5950 5150
-	1    0    0    -1  
-$EndComp
 Wire Wire Line
 	6350 4750 6350 5050
-Wire Wire Line
-	4100 5200 4100 5150
 Wire Wire Line
 	6750 5450 6750 3900
 Wire Wire Line
@@ -1084,40 +993,6 @@ F 3 "" H 4150 5700 50  0001 C CNN
 $EndComp
 $Comp
 L servo:GNDH #PWR?
-U 1 1 5FF8930B
-P 7750 4250
-AR Path="/5DE49152/5FF8930B" Ref="#PWR?"  Part="1" 
-AR Path="/5E1BAEAA/5FF8930B" Ref="#PWR?"  Part="1" 
-AR Path="/5DE3DF56/5FF8930B" Ref="#PWR?"  Part="1" 
-F 0 "#PWR?" H 7750 4000 30  0001 C CNN
-F 1 "GNDH" H 7750 4092 30  0000 C CNN
-F 2 "" H 7750 4250 50  0001 C CNN
-F 3 "" H 7750 4250 50  0001 C CNN
-	1    7750 4250
-	-1   0    0    -1  
-$EndComp
-$Comp
-L servo:Resistor R?
-U 1 1 5FFAA3A6
-P 7550 4100
-AR Path="/5DE3DF56/5FFAA3A6" Ref="R?"  Part="1" 
-AR Path="/5E1BAEAA/5FFAA3A6" Ref="R?"  Part="1" 
-AR Path="/5DE49152/5FFAA3A6" Ref="R?"  Part="1" 
-F 0 "R?" H 7550 4203 60  0000 C CNN
-F 1 "1e" H 7550 4309 60  0000 C CNN
-F 2 "" H 7550 4100 60  0000 C CNN
-F 3 "" H 7550 4100 60  0000 C CNN
-	1    7550 4100
-	-1   0    0    1   
-$EndComp
-Wire Wire Line
-	7850 4200 7750 4200
-Wire Wire Line
-	7850 4100 7750 4100
-Wire Wire Line
-	7750 4250 7750 4200
-$Comp
-L servo:GNDH #PWR?
 U 1 1 600383D6
 P 8900 4250
 AR Path="/5DE49152/600383D6" Ref="#PWR?"  Part="1" 
@@ -1130,30 +1005,10 @@ F 3 "" H 8900 4250 50  0001 C CNN
 	1    8900 4250
 	1    0    0    -1  
 $EndComp
-$Comp
-L servo:Resistor R?
-U 1 1 600383DC
-P 9100 4100
-AR Path="/5DE3DF56/600383DC" Ref="R?"  Part="1" 
-AR Path="/5E1BAEAA/600383DC" Ref="R?"  Part="1" 
-AR Path="/5DE49152/600383DC" Ref="R?"  Part="1" 
-F 0 "R?" H 9100 4203 60  0000 C CNN
-F 1 "1e" H 9100 4309 60  0000 C CNN
-F 2 "" H 9100 4100 60  0000 C CNN
-F 3 "" H 9100 4100 60  0000 C CNN
-	1    9100 4100
-	1    0    0    1   
-$EndComp
 Wire Wire Line
 	8800 4200 8900 4200
 Wire Wire Line
-	8800 4100 8900 4100
-Wire Wire Line
 	8900 4250 8900 4200
-Text Notes 9200 4250 0    20   ~ 4
-to use as a fuse \nor protection
-Text Notes 7250 4200 0    20   ~ 4
-to use as a fuse \nor protection
 Text GLabel 2950 5500 0    50   Output ~ 0
 ENDAT1_N_SKEW_CLK
 Text GLabel 2900 5650 0    50   Output ~ 0
@@ -1278,4 +1133,117 @@ F 3 "" H 9300 4100 50  0001 C CNN
 	1    9300 4100
 	1    0    0    -1  
 $EndComp
+Connection ~ 5750 2700
+Wire Wire Line
+	7750 3600 7850 3600
+Wire Wire Line
+	7750 3550 7750 3600
+$Comp
+L servo:5VH #PWR?
+U 1 1 5FF89280
+P 7750 3550
+AR Path="/5DE49152/5FF89280" Ref="#PWR?"  Part="1" 
+AR Path="/5E1BAEAA/5FF89280" Ref="#PWR?"  Part="1" 
+AR Path="/5DE3DF56/5FF89280" Ref="#PWR?"  Part="1" 
+F 0 "#PWR?" H 7750 3350 20  0001 C CNN
+F 1 "5VH" H 7755 3707 28  0000 C CNN
+F 2 "" H 7750 3550 50  0001 C CNN
+F 3 "" H 7750 3550 50  0001 C CNN
+	1    7750 3550
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	7850 4200 7750 4200
+Wire Wire Line
+	7750 4250 7750 4200
+$Comp
+L servo:GNDH #PWR?
+U 1 1 5FF8930B
+P 7750 4250
+AR Path="/5DE49152/5FF8930B" Ref="#PWR?"  Part="1" 
+AR Path="/5E1BAEAA/5FF8930B" Ref="#PWR?"  Part="1" 
+AR Path="/5DE3DF56/5FF8930B" Ref="#PWR?"  Part="1" 
+F 0 "#PWR?" H 7750 4000 30  0001 C CNN
+F 1 "GNDH" H 7750 4092 30  0000 C CNN
+F 2 "" H 7750 4250 50  0001 C CNN
+F 3 "" H 7750 4250 50  0001 C CNN
+	1    7750 4250
+	-1   0    0    -1  
+$EndComp
+Connection ~ 6350 4250
+Wire Wire Line
+	6350 4250 6350 4300
+Wire Wire Line
+	5650 4000 5750 4000
+$Comp
+L servo:GNDH #PWR?
+U 1 1 5FF89267
+P 5950 3100
+AR Path="/5DE49152/5FF89267" Ref="#PWR?"  Part="1" 
+AR Path="/5E1BAEAA/5FF89267" Ref="#PWR?"  Part="1" 
+AR Path="/5DE3DF56/5FF89267" Ref="#PWR?"  Part="1" 
+F 0 "#PWR?" H 5950 2850 30  0001 C CNN
+F 1 "GNDH" H 5950 2942 30  0000 C CNN
+F 2 "" H 5950 3100 50  0001 C CNN
+F 3 "" H 5950 3100 50  0001 C CNN
+	1    5950 3100
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	4100 3150 4100 3100
+$Comp
+L servo:GND #PWR?
+U 1 1 5FF891FD
+P 4100 3150
+F 0 "#PWR?" H 4100 2900 30  0001 C CNN
+F 1 "GND" H 4100 2992 30  0000 C CNN
+F 2 "" H 4100 3150 50  0001 C CNN
+F 3 "" H 4100 3150 50  0001 C CNN
+	1    4100 3150
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	4100 5200 4100 5150
+$Comp
+L servo:GND #PWR?
+U 1 1 5FF8928F
+P 4100 5200
+F 0 "#PWR?" H 4100 4950 30  0001 C CNN
+F 1 "GND" H 4100 5042 30  0000 C CNN
+F 2 "" H 4100 5200 50  0001 C CNN
+F 3 "" H 4100 5200 50  0001 C CNN
+	1    4100 5200
+	1    0    0    -1  
+$EndComp
+Connection ~ 6350 6300
+Wire Wire Line
+	6350 6300 6350 6350
+Wire Wire Line
+	5650 6050 5750 6050
+$Comp
+L servo:GNDH #PWR?
+U 1 1 5FF892F7
+P 5950 5150
+AR Path="/5DE49152/5FF892F7" Ref="#PWR?"  Part="1" 
+AR Path="/5E1BAEAA/5FF892F7" Ref="#PWR?"  Part="1" 
+AR Path="/5DE3DF56/5FF892F7" Ref="#PWR?"  Part="1" 
+F 0 "#PWR?" H 5950 4900 30  0001 C CNN
+F 1 "GNDH" H 5950 4992 30  0000 C CNN
+F 2 "" H 5950 5150 50  0001 C CNN
+F 3 "" H 5950 5150 50  0001 C CNN
+	1    5950 5150
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	5750 6300 5750 6050
+Wire Wire Line
+	5750 6300 6350 6300
+Wire Wire Line
+	5750 4000 5750 4250
+Wire Wire Line
+	5750 4250 6350 4250
+Wire Wire Line
+	8800 4100 9300 4100
+Wire Wire Line
+	7350 4100 7850 4100
 $EndSCHEMATC

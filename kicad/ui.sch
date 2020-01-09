@@ -4,9 +4,9 @@ EELAYER 26 0
 EELAYER END
 $Descr A4 11693 8268
 encoding utf-8
-Sheet 16 19
+Sheet 16 18
 Title "clk"
-Date "25 10 2019"
+Date "2020-01-09"
 Rev "1.0"
 Comp "dci"
 Comment1 "Pablo Slavkin"
@@ -218,17 +218,6 @@ F 3 "" H 8600 1500 50  0001 C CNN
 	1    8600 1500
 	1    0    0    -1  
 $EndComp
-$Comp
-L power:GND #PWR?
-U 1 1 5E35287F
-P 8600 2300
-F 0 "#PWR?" H 8600 2050 50  0001 C CNN
-F 1 "GND" H 8605 2127 50  0000 C CNN
-F 2 "" H 8600 2300 50  0001 C CNN
-F 3 "" H 8600 2300 50  0001 C CNN
-	1    8600 2300
-	1    0    0    -1  
-$EndComp
 Wire Wire Line
 	8200 1900 8150 1900
 Wire Wire Line
@@ -283,46 +272,11 @@ LCD_SPI_MISO
 Text GLabel 5450 1850 2    50   Input ~ 0
 LCD_SPI_CS
 Text GLabel 5450 1950 2    50   Input ~ 0
-LCD_SPI_PD
+LCD_SPI_PDW
 Wire Wire Line
 	4650 2350 4650 2450
-$Comp
-L power:GND #PWR?
-U 1 1 5E356823
-P 6100 1650
-F 0 "#PWR?" H 6100 1400 50  0001 C CNN
-F 1 "GND" H 6105 1477 50  0000 C CNN
-F 2 "" H 6100 1650 50  0001 C CNN
-F 3 "" H 6100 1650 50  0001 C CNN
-	1    6100 1650
-	1    0    0    -1  
-$EndComp
-Wire Wire Line
-	5450 1650 6100 1650
-$Comp
-L power:GND #PWR?
-U 1 1 5E356FA9
-P 5600 2550
-F 0 "#PWR?" H 5600 2300 50  0001 C CNN
-F 1 "GND" H 5605 2377 50  0000 C CNN
-F 2 "" H 5600 2550 50  0001 C CNN
-F 3 "" H 5600 2550 50  0001 C CNN
-	1    5600 2550
-	1    0    0    -1  
-$EndComp
 Wire Wire Line
 	5600 2550 5450 2550
-$Comp
-L power:GND #PWR?
-U 1 1 5E3573A3
-P 4750 2550
-F 0 "#PWR?" H 4750 2300 50  0001 C CNN
-F 1 "GND" H 4755 2377 50  0000 C CNN
-F 2 "" H 4750 2550 50  0001 C CNN
-F 3 "" H 4750 2550 50  0001 C CNN
-	1    4750 2550
-	1    0    0    -1  
-$EndComp
 Wire Wire Line
 	4950 2550 4750 2550
 $Comp
@@ -372,4 +326,72 @@ Text Notes 4650 2400 0    20   ~ 0
 backligth supply\n
 Text Notes 5500 2400 0    20   ~ 0
 backligth supply\n
+$Comp
+L servo:GND #PWR?
+U 1 1 5EA082E4
+P 8600 2300
+AR Path="/5DCD812E/5EA082E4" Ref="#PWR?"  Part="1" 
+AR Path="/5EAA846A/5EA082E4" Ref="#PWR?"  Part="1" 
+AR Path="/5F1E3CD5/5EA082E4" Ref="#PWR?"  Part="1" 
+AR Path="/5DD76B18/5EA082E4" Ref="#PWR?"  Part="1" 
+F 0 "#PWR?" H 8605 2151 20  0001 C CNN
+F 1 "GND" H 8605 2142 30  0000 C CNN
+F 2 "" H 8600 2300 70  0000 C CNN
+F 3 "" H 8600 2300 70  0000 C CNN
+	1    8600 2300
+	1    0    0    -1  
+$EndComp
+$Comp
+L servo:GND #PWR?
+U 1 1 5EA08C62
+P 4750 2600
+AR Path="/5DCD812E/5EA08C62" Ref="#PWR?"  Part="1" 
+AR Path="/5EAA846A/5EA08C62" Ref="#PWR?"  Part="1" 
+AR Path="/5F1E3CD5/5EA08C62" Ref="#PWR?"  Part="1" 
+AR Path="/5DD76B18/5EA08C62" Ref="#PWR?"  Part="1" 
+F 0 "#PWR?" H 4755 2451 20  0001 C CNN
+F 1 "GND" H 4755 2442 30  0000 C CNN
+F 2 "" H 4750 2600 70  0000 C CNN
+F 3 "" H 4750 2600 70  0000 C CNN
+	1    4750 2600
+	1    0    0    -1  
+$EndComp
+$Comp
+L servo:GND #PWR?
+U 1 1 5EA090ED
+P 5600 2600
+AR Path="/5DCD812E/5EA090ED" Ref="#PWR?"  Part="1" 
+AR Path="/5EAA846A/5EA090ED" Ref="#PWR?"  Part="1" 
+AR Path="/5F1E3CD5/5EA090ED" Ref="#PWR?"  Part="1" 
+AR Path="/5DD76B18/5EA090ED" Ref="#PWR?"  Part="1" 
+F 0 "#PWR?" H 5605 2451 20  0001 C CNN
+F 1 "GND" H 5605 2442 30  0000 C CNN
+F 2 "" H 5600 2600 70  0000 C CNN
+F 3 "" H 5600 2600 70  0000 C CNN
+	1    5600 2600
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	5600 2550 5600 2600
+Wire Wire Line
+	4750 2550 4750 2600
+$Comp
+L servo:GND #PWR?
+U 1 1 5EA0A9F9
+P 6250 1700
+AR Path="/5DCD812E/5EA0A9F9" Ref="#PWR?"  Part="1" 
+AR Path="/5EAA846A/5EA0A9F9" Ref="#PWR?"  Part="1" 
+AR Path="/5F1E3CD5/5EA0A9F9" Ref="#PWR?"  Part="1" 
+AR Path="/5DD76B18/5EA0A9F9" Ref="#PWR?"  Part="1" 
+F 0 "#PWR?" H 6255 1551 20  0001 C CNN
+F 1 "GND" H 6255 1542 30  0000 C CNN
+F 2 "" H 6250 1700 70  0000 C CNN
+F 3 "" H 6250 1700 70  0000 C CNN
+	1    6250 1700
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	6250 1650 6250 1700
+Wire Wire Line
+	5450 1650 6250 1650
 $EndSCHEMATC

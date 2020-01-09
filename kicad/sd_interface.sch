@@ -4,9 +4,9 @@ EELAYER 26 0
 EELAYER END
 $Descr A3 16535 11693
 encoding utf-8
-Sheet 19 19
+Sheet 19 18
 Title "Shunt Sigma Delta isolated"
-Date "25 10 2019"
+Date "2020-01-09"
 Rev "1.0"
 Comp "dci"
 Comment1 "Pablo Slavkin"
@@ -14,7 +14,7 @@ Comment2 ""
 Comment3 ""
 Comment4 ""
 $EndDescr
-Text Notes 5400 1700 0    197  ~ 39
+Text Notes 5450 1350 0    197  ~ 39
 Isolated sigma delta ADC
 Text GLabel 9800 2800 2    50   Input ~ 0
 SD_B1_D
@@ -60,7 +60,7 @@ $Comp
 L servo:3V3 #PWR?
 U 1 1 5ECC6BF2
 P 5000 2500
-F 0 "#PWR?" H 5005 2707 20  0000 C CNN
+F 0 "#PWR?" H 5005 2707 20  0001 C CNN
 F 1 "3V3" H 5005 2657 28  0000 C CNN
 F 2 "" H 5000 2500 50  0001 C CNN
 F 3 "" H 5000 2500 50  0001 C CNN
@@ -176,7 +176,7 @@ $Comp
 L servo:3V3 #PWR?
 U 1 1 5EEE31B5
 P 9750 2500
-F 0 "#PWR?" H 9755 2707 20  0000 C CNN
+F 0 "#PWR?" H 9755 2707 20  0001 C CNN
 F 1 "3V3" H 9755 2657 28  0000 C CNN
 F 2 "" H 9750 2500 50  0001 C CNN
 F 3 "" H 9750 2500 50  0001 C CNN
@@ -260,12 +260,10 @@ Wire Wire Line
 	9800 3200 9650 3200
 Wire Wire Line
 	9650 3300 9800 3300
-Text Notes 6400 3950 0    39   ~ 0
-PWM clk output to powerboard and then come back again to maintain\n delays with resect to SD data channels. On power board you have to\n respect traces length between clk and data
 Text Notes 5450 2300 0    20   ~ 4
 Choose a package pin-to-pin compatible with\nTI ISO7761. But SIlabs cost halt the price as TI
 Text Notes 8600 2350 0    20   ~ 4
 Choose a package pin-to-pin compatible with\nTI ISO7761. But SIlabs cost halt the price as TI
-Text Notes 6200 2000 0    39   ~ 0
-It's intended for power board circuitery to supply all the signals to\n control board. The control board will use the SD filter to aquire the\n data. All the power part will be at power board.
+Text Notes 6400 1900 0    39   ~ 0
+It's intended for power board circuitery to supply all the signals to\n control board. The control board will use the SD filter to aquire the\n data. All the power part will be at power board.\n\nPWM clk output to powerboard and then come back again to maintain\n delays with resect to SD data channels. On power board you have to\n respect traces length between clk and data
 $EndSCHEMATC

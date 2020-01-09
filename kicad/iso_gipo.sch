@@ -6,7 +6,7 @@ $Descr A3 16535 11693
 encoding utf-8
 Sheet 15 19
 Title "clk"
-Date "25 10 2019"
+Date "2020-01-09"
 Rev "1.0"
 Comp "dci"
 Comment1 "Pablo Slavkin"
@@ -363,7 +363,7 @@ $Comp
 L servo:3V3 #PWR?
 U 1 1 5E75F6F8
 P 8150 4050
-F 0 "#PWR?" H 8155 4257 20  0000 C CNN
+F 0 "#PWR?" H 8155 4257 20  0001 C CNN
 F 1 "3V3" H 8155 4207 28  0000 C CNN
 F 2 "" H 8150 4050 50  0001 C CNN
 F 3 "" H 8150 4050 50  0001 C CNN
