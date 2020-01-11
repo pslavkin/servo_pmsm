@@ -169,6 +169,11 @@ D Power flag, ground
 K power-flag
 $ENDCMP
 #
+$CMP CAT24C16WI
+D The  CAT24C02/04/08/16  are  2−Kb,  4−Kb,  8−Kb  and  16−Kbrespectively  I2C  Serial  EEPROM  devices  organized  internally  as16/32/64  and  128  pages  respectively  of  16  bytes  each.  All  devicessupport  both  the  Standard  (100  kHz)  as  well  as  Fast  (400  kHz)  I2Cprotocol
+F https://www.onsemi.com/pub/Collateral/CAT24C01-D.PDF
+$ENDCMP
+#
 $CMP CDCLVC1104
 D CDCLVC11xx 3.3-V and 2.5-V LVCMOS High-Performance Clock Buffer Family
 $ENDCMP
@@ -181,6 +186,18 @@ $ENDCMP
 $CMP C_Small
 D Unpolarized capacitor, small symbol
 K capacitor cap
+F ~
+$ENDCMP
+#
+$CMP Conn_01x02
+D Generic connector, single row, 01x02, script generated (kicad-library-utils/schlib/autogen/connector/)
+K connector
+F ~
+$ENDCMP
+#
+$CMP Conn_01x15
+D Generic connector, single row, 01x15, script generated (kicad-library-utils/schlib/autogen/connector/)
+K connector
 F ~
 $ENDCMP
 #
@@ -220,6 +237,12 @@ K power-flag ground gnd
 F ~
 $ENDCMP
 #
+$CMP Fuse
+D Fuse
+K fuse
+F ~
+$ENDCMP
+#
 $CMP GND
 D Power flag, ground
 K power-flag
@@ -253,6 +276,12 @@ $ENDCMP
 #
 $CMP IRM-10
 D TPS6242x 2.25-MHz 600-mA and 1000-mA Dual Step-Down
+$ENDCMP
+#
+$CMP IRM-15-3.3_0
+D 15W  AC-DC PCB-Mount Green Power Module
+K 15W  AC-DC PCB-Mount Green Power Module
+F http://www.meanwell.com/Upload/PDF/IRM-20/IRM-20-SPEC.PDF
 $ENDCMP
 #
 $CMP IRM-20-12
@@ -299,6 +328,12 @@ $ENDCMP
 $CMP ISO7221C
 D ISO722xDual-ChannelDigitalIsolators
 F http://www.ti.com/lit/ds/symlink/iso7221c.pdf
+$ENDCMP
+#
+$CMP Jumper_2_Bridged
+D Jumper, 2-pole, closed/bridged
+K Jumper SPST
+F ~
 $ENDCMP
 #
 $CMP Jumper_3_Bridged12
@@ -377,6 +412,156 @@ $CMP PWR_FLAG
 D Power flag, general
 K power-flag
 F ~
+$ENDCMP
+#
+$CMP R-781.5-0.5
+D 500mA Step-Down DC/DC-Regulator, 4.75-30V input, 1.5V fixed Output Voltage, LM78xx replacement, -40°C to +85°C, SIP3
+K dc-dc recom Step-Down DC/DC-Regulator
+F https://www.recom-power.com/pdf/Innoline/R-78xx-0.5.pdf
+$ENDCMP
+#
+$CMP R-781.8-0.5
+D 500mA Step-Down DC/DC-Regulator, 4.75-32V input, 1.8V fixed Output Voltage, LM78xx replacement, -40°C to +85°C, SIP3
+K dc-dc recom Step-Down DC/DC-Regulator
+F https://www.recom-power.com/pdf/Innoline/R-78xx-0.5.pdf
+$ENDCMP
+#
+$CMP R-781.8-1.0
+D 1A Step-Down DC/DC-Regulator, 4.75-18V input, 1.8V fixed Output Voltage, LM78xx replacement, -40°C to +85°C, SIP3
+K dc-dc recom Step-Down DC/DC-Regulator
+F https://www.recom-power.com/pdf/Innoline/R-78xx-1.0.pdf
+$ENDCMP
+#
+$CMP R-7812-0.5
+D 500mA Step-Down DC/DC-Regulator, 15-32V input, 12V fixed Output Voltage, LM78xx replacement, -40°C to +85°C, SIP3
+K dc-dc recom Step-Down DC/DC-Regulator
+F https://www.recom-power.com/pdf/Innoline/R-78xx-0.5.pdf
+$ENDCMP
+#
+$CMP R-7815-0.5
+D 500mA Step-Down DC/DC-Regulator, 18-32V input, 15V fixed Output Voltage, LM78xx replacement, -40°C to +85°C, SIP3
+K dc-dc recom Step-Down DC/DC-Regulator
+F https://www.recom-power.com/pdf/Innoline/R-78xx-0.5.pdf
+$ENDCMP
+#
+$CMP R-782.5-0.5
+D 500mA Step-Down DC/DC-Regulator, 4.75-18V input, 2.5V fixed Output Voltage, LM78xx replacement, -40°C to +85°C, SIP3
+K dc-dc recom Step-Down DC/DC-Regulator
+F https://www.recom-power.com/pdf/Innoline/R-78xx-0.5.pdf
+$ENDCMP
+#
+$CMP R-782.5-1.0
+D 1A Step-Down DC/DC-Regulator, 4.75-18V input, 2.5V fixed Output Voltage, LM78xx replacement, -40°C to +85°C, SIP3
+K dc-dc recom Step-Down DC/DC-Regulator
+F https://www.recom-power.com/pdf/Innoline/R-78xx-1.0.pdf
+$ENDCMP
+#
+$CMP R-783.3-0.5
+D 500mA Step-Down DC/DC-Regulator, 4.75-18V input, 3.3V fixed Output Voltage, LM78xx replacement, -40°C to +85°C, SIP3
+K dc-dc recom Step-Down DC/DC-Regulator
+F https://www.recom-power.com/pdf/Innoline/R-78xx-0.5.pdf
+$ENDCMP
+#
+$CMP R-783.3-1.0
+D 1A Step-Down DC/DC-Regulator, 4.75-18V input, 3.3V fixed Output Voltage, LM78xx replacement, -40°C to +85°C, SIP3
+K dc-dc recom Step-Down DC/DC-Regulator
+F https://www.recom-power.com/pdf/Innoline/R-78xx-1.0.pdf
+$ENDCMP
+#
+$CMP R-785.0-0.5
+D 500mA Step-Down DC/DC-Regulator, 6.5-18V input, 5V fixed Output Voltage, LM78xx replacement, -40°C to +85°C, SIP3
+K dc-dc recom Step-Down DC/DC-Regulator
+F https://www.recom-power.com/pdf/Innoline/R-78xx-0.5.pdf
+$ENDCMP
+#
+$CMP R-785.0-1.0
+D 1A Step-Down DC/DC-Regulator, 6.5-18V input, 5V fixed Output Voltage, LM78xx replacement, -40°C to +85°C, SIP3
+K dc-dc recom Step-Down DC/DC-Regulator
+F https://www.recom-power.com/pdf/Innoline/R-78xx-1.0.pdf
+$ENDCMP
+#
+$CMP R-786.5-0.5
+D 500mA Step-Down DC/DC-Regulator, 8-32V input, 6.5V fixed Output Voltage, LM78xx replacement, -40°C to +85°C, SIP3
+K dc-dc recom Step-Down DC/DC-Regulator
+F https://www.recom-power.com/pdf/Innoline/R-78xx-0.5.pdf
+$ENDCMP
+#
+$CMP R-78C1.8-1.0
+D 1A Step-Down DC/DC-Regulator, 5-42V input, 1.8V fixed Output Voltage, LM78xx replacement, -40°C to +85°C, SIP3
+K dc-dc recom Step-Down DC/DC-Regulator
+F https://www.recom-power.com/pdf/Innoline/R-78Cxx-1.0.pdf
+$ENDCMP
+#
+$CMP R-78C12-1.0
+D 1A Step-Down DC/DC-Regulator, 15-42V input, 12V fixed Output Voltage, LM78xx replacement, -40°C to +85°C, SIP3
+K dc-dc recom Step-Down DC/DC-Regulator
+F https://www.recom-power.com/pdf/Innoline/R-78Cxx-1.0.pdf
+$ENDCMP
+#
+$CMP R-78C15-1.0
+D 1A Step-Down DC/DC-Regulator, 18-42V input, 15V fixed Output Voltage, LM78xx replacement, -40°C to +85°C, SIP3
+K dc-dc recom Step-Down DC/DC-Regulator
+F https://www.recom-power.com/pdf/Innoline/R-78Cxx-1.0.pdf
+$ENDCMP
+#
+$CMP R-78C3.3-1.0
+D 1A Step-Down DC/DC-Regulator, 6-42V input, 3.3V fixed Output Voltage, LM78xx replacement, -40°C to +85°C, SIP3
+K dc-dc recom Step-Down DC/DC-Regulator
+F https://www.recom-power.com/pdf/Innoline/R-78Cxx-1.0.pdf
+$ENDCMP
+#
+$CMP R-78C5.0-1.0
+D 1A Step-Down DC/DC-Regulator, 7-42V input, 5V fixed Output Voltage, LM78xx replacement, -40°C to +85°C, SIP3
+K dc-dc recom Step-Down DC/DC-Regulator
+F https://www.recom-power.com/pdf/Innoline/R-78Cxx-1.0.pdf
+$ENDCMP
+#
+$CMP R-78C9.0-1.0
+D 1A Step-Down DC/DC-Regulator, 12-42V input, 9V fixed Output Voltage, LM78xx replacement, -40°C to +85°C, SIP3
+K dc-dc recom Step-Down DC/DC-Regulator
+F https://www.recom-power.com/pdf/Innoline/R-78Cxx-1.0.pdf
+$ENDCMP
+#
+$CMP R-78E12-0.5
+D 500mA Step-Down DC/DC-Regulator, 15-28V input, 12V fixed Output Voltage, LM78xx replacement, -40°C to +85°C, SIP3
+K dc-dc recom Step-Down DC/DC-Regulator
+F https://www.recom-power.com/pdf/Innoline/R-78Exx-0.5.pdf
+$ENDCMP
+#
+$CMP R-78E15-0.5
+D 500mA Step-Down DC/DC-Regulator, 18-28V input, 15V fixed Output Voltage, LM78xx replacement, -40°C to +85°C, SIP3
+K dc-dc recom Step-Down DC/DC-Regulator
+F https://www.recom-power.com/pdf/Innoline/R-78Exx-0.5.pdf
+$ENDCMP
+#
+$CMP R-78E3.3-0.5
+D 500mA Step-Down DC/DC-Regulator, 6-28V input, 3.3V fixed Output Voltage, LM78xx replacement, -40°C to +85°C, SIP3
+K dc-dc recom Step-Down DC/DC-Regulator
+F https://www.recom-power.com/pdf/Innoline/R-78Exx-0.5.pdf
+$ENDCMP
+#
+$CMP R-78E3.3-1.0
+D 1A Step-Down DC/DC-Regulator, 6-28V input, 3.3V fixed Output Voltage, LM78xx replacement, -40°C to +85°C, SIP3
+K dc-dc recom Step-Down DC/DC-Regulator
+F https://www.recom-power.com/pdf/Innoline/R-78Exx-1.0.pdf
+$ENDCMP
+#
+$CMP R-78E5.0-0.5
+D 500mA Step-Down DC/DC-Regulator, 7-28V input, 5V fixed Output Voltage, LM78xx replacement, -40°C to +85°C, SIP3
+K dc-dc recom Step-Down DC/DC-Regulator
+F https://www.recom-power.com/pdf/Innoline/R-78Exx-0.5.pdf
+$ENDCMP
+#
+$CMP R-78E5.0-1.0
+D 1A Step-Down DC/DC-Regulator, 7-28V input, 5V fixed Output Voltage, LM78xx replacement, -40°C to +85°C, SIP3
+K dc-dc recom Step-Down DC/DC-Regulator
+F https://www.recom-power.com/pdf/Innoline/R-78Exx-1.0.pdf
+$ENDCMP
+#
+$CMP R-78E9.0-0.5
+D 500mA Step-Down DC/DC-Regulator, 12-28V input, 9V fixed Output Voltage, LM78xx replacement, -40°C to +85°C, SIP3
+K dc-dc recom Step-Down DC/DC-Regulator
+F https://www.recom-power.com/pdf/Innoline/R-78Exx-0.5.pdf
 $ENDCMP
 #
 $CMP RFM-0505S
@@ -481,6 +666,42 @@ D Push button switch, generic, two pins
 K switch normally-open pushbutton push-button
 $ENDCMP
 #
+$CMP Screw_Terminal_01x02
+D Generic screw terminal, single row, 01x02, script generated (kicad-library-utils/schlib/autogen/connector/)
+K screw terminal
+F ~
+$ENDCMP
+#
+$CMP Screw_Terminal_01x02_0
+D Generic screw terminal, single row, 01x02, script generated (kicad-library-utils/schlib/autogen/connector/)
+K screw terminal
+F ~
+$ENDCMP
+#
+$CMP Screw_Terminal_01x03
+D Generic screw terminal, single row, 01x03, script generated (kicad-library-utils/schlib/autogen/connector/)
+K screw terminal
+F ~
+$ENDCMP
+#
+$CMP Screw_Terminal_01x04
+D Generic screw terminal, single row, 01x04, script generated (kicad-library-utils/schlib/autogen/connector/)
+K screw terminal
+F ~
+$ENDCMP
+#
+$CMP Screw_Terminal_01x06
+D Generic screw terminal, single row, 01x06, script generated (kicad-library-utils/schlib/autogen/connector/)
+K screw terminal
+F ~
+$ENDCMP
+#
+$CMP Screw_Terminal_01x08
+D Generic screw terminal, single row, 01x08, script generated (kicad-library-utils/schlib/autogen/connector/)
+K screw terminal
+F ~
+$ENDCMP
+#
 $CMP Si8380
 D Bipolar Digital Field Inputs for PLCs and Industrial I/O Modules
 F https://www.silabs.com/documents/public/data-sheets/Si838x-DataSheet.pdf
@@ -497,6 +718,24 @@ $ENDCMP
 #
 $CMP TPS6240x
 D TPS6242x 2.25-MHz 600-mA and 1000-mA Dual Step-Down
+$ENDCMP
+#
+$CMP TestPoint
+D test point
+K test point tp
+F ~
+$ENDCMP
+#
+$CMP jumper
+D Jumper, normally open, small symbol
+K jumper link bridge NO
+F ~
+$ENDCMP
+#
+$CMP opa2350
+D OPAx350High-Speed,Single-Supply,Rail-to-RailOperationalAmplifiersMicroAmplifierSeries
+K dual opamp
+F http://www.ti.com/lit/ds/sbos099d/sbos099d.pdf
 $ENDCMP
 #
 #End Doc Library

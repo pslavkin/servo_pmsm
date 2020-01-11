@@ -4,7 +4,7 @@ EELAYER 26 0
 EELAYER END
 $Descr A3 16535 11693
 encoding utf-8
-Sheet 1 18
+Sheet 1 19
 Title "servo drive"
 Date "2020-01-09"
 Rev "1.0"
@@ -137,21 +137,29 @@ LEM
 $Sheet
 S 3600 5350 1300 1150
 U 605BEC04
-F0 "Vbus measurement" 50
+F0 "Vbus meas" 50
 F1 "vbus_meas.sch" 50
 $EndSheet
 Text Notes 3850 6200 0    197  ~ 39
 VBUS\nMEAS
 $Sheet
-S 3550 2400 1300 1150
+S 8850 6950 1300 1150
 U 5EC40F3C
-F0 "sigma delta interface" 50
-F1 "sd_interface.sch" 50
+F0 "connectors" 50
+F1 "conn.sch" 50
 $EndSheet
-Text Notes 3700 3300 0    197  ~ 39
-SDELTA\nIFACE
+Text Notes 9100 7650 0    197  ~ 39
+CONN
 Text Notes 5700 1300 0    394  ~ 79
 SERVO DRIVER BLOCKS
 Text Notes 8350 1650 0    20   ~ 0
 The project is divided in blocks. Each block join a group os signals and\n circuits depending on his function. The project is intended to have\n reinforced insulation using double simple isolation. For that reason,\n the uC circuitery is on a cold supply and the output logic is at hot\n supply, BUT take in account that HOT is not 220, is just a name\n indicating the first isolation stage\n
+$Sheet
+S 3600 2350 1300 1150
+U 6056AA11
+F0 "sigma_delta" 50
+F1 "sigma_delta.sch" 50
+$EndSheet
+Text Notes 3700 3050 0    197  ~ 39
+SDELTA\n
 $EndSCHEMATC

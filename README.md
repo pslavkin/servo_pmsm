@@ -17,10 +17,10 @@ https://gist.github.com/rxaviers/7360908
 - :red_circle:       Dual core interconnect IPC
 -->
 - :heavy_check_mark:    controller schematics from Altium to kicad
-- :construction:        setting kicad libs, datasheet, remove unused IC's
-- :construction:        mixing high power cirtuit to kicad
-- :construction:        two servo motor control on same board aproach!
-- :construction:        setting kicad libs, datasheet, remove unused IC's 
+- :heavy_check_mark:    setting kicad libs, datasheet, remove unused IC's
+- :heavy_check_mark:    mixing high power cirtuit to kicad
+- :heavy_check_mark:    two servo motor control on same board aproach!
+- :heavy_check_mark:    setting kicad libs, datasheet, remove unused IC's 
 - :heavy_check_mark:    adc
 - :heavy_check_mark:    igbt interface
 - :heavy_check_mark:    lem measurement
@@ -40,6 +40,7 @@ I'll let pins to aquire and filter it.
   footprint selection
 - :red_circle:          isolated GPIO aborted! I've reise free pins that comes from IGBT
 - :heavy_check_mark:    EVE LCD driven choosen as the UI by spi.. I's all the thinks we need
+- :construction:        all footprints choosen, but deserves some comprobation
  
 
 ---

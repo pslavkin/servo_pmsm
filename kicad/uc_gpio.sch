@@ -4,7 +4,7 @@ EELAYER 26 0
 EELAYER END
 $Descr A3 16535 11693
 encoding utf-8
-Sheet 14 18
+Sheet 14 19
 Title "gpio"
 Date "2020-01-09"
 Rev "1.0"
@@ -313,23 +313,23 @@ Wire Wire Line
 Wire Wire Line
 	3200 5000 4800 5000
 Text GLabel 3150 5700 0    50   Input ~ 0
-SD_A1_D
+SD_A1
 Text GLabel 3150 5800 0    50   Input ~ 0
-SD_A2_D
+SD_A2
 Text GLabel 3150 5900 0    50   Input ~ 0
-SD_A3_D
+SD_A3
 Text GLabel 3150 6000 0    50   Input ~ 0
-SD_A4_D
+SD_A4
 Text GLabel 3150 3300 0    50   Input ~ 0
 PWM_A_BRK_RES_C
 Text GLabel 3150 3400 0    50   Input ~ 0
 PWM_B_BRK_RES_C
 Text GLabel 3150 7000 0    50   Input ~ 0
-SD_B1_D
+SD_B1
 Text GLabel 3150 7100 0    50   Input ~ 0
-SD_B2_D
+SD_B2
 Text GLabel 3150 7200 0    50   Input ~ 0
-SD_B3_D
+SD_B3
 Wire Wire Line
 	3150 7000 4800 7000
 Text Notes 2400 3900 0    20   ~ 0
@@ -337,7 +337,7 @@ SD C2/3/4 goes \ndirectly inside uC\nonly and MUST  \nC1 required
 Wire Wire Line
 	3150 3800 4800 3800
 Text GLabel 3150 3800 0    50   Input ~ 0
-SD_A_CLK1
+SD_A_CLK
 Text GLabel 3150 3700 0    50   Input ~ 0
 PWM4SD_CLK
 Wire Wire Line
@@ -385,11 +385,11 @@ Wire Wire Line
 Text Notes 2400 7850 0    20   ~ 0
 SD C2/3/4 goes\ndirectly inside uC\nonly and MUST  \nC1 required
 Text GLabel 3150 7800 0    50   Input ~ 0
-SD_B_CLK1
+SD_B_CLK
 Wire Wire Line
 	3150 7300 4800 7300
 Text GLabel 3150 7300 0    50   Input ~ 0
-SD_B4_D
+SD_B4
 Text GLabel 3150 7600 0    50   Input ~ 0
 RS485_RX
 Text GLabel 3150 7500 0    50   Output ~ 0
