@@ -16,19 +16,6 @@ Comment4 ""
 $EndDescr
 Text Notes 6500 1200 0    197  ~ 39
 Common Connections
-$Comp
-L Connector_Generic:Conn_02x10_Odd_Even J?
-U 1 1 605AFA04
-P 9650 2850
-AR Path="/5DDE8C5E/605AFA04" Ref="J?"  Part="1" 
-AR Path="/5EC40F3C/605AFA04" Ref="J1803"  Part="1" 
-F 0 "J1803" H 9700 3467 50  0000 C CNN
-F 1 "Conn_02x10_Odd_Even" H 9700 3376 50  0000 C CNN
-F 2 "Connector_PinSocket_2.54mm:PinSocket_2x10_P2.54mm_Vertical_SMD" H 9650 2850 50  0001 C CNN
-F 3 "~" H 9650 2850 50  0001 C CNN
-	1    9650 2850
-	1    0    0    -1  
-$EndComp
 Wire Wire Line
 	10300 2650 9950 2650
 Wire Wire Line
@@ -108,19 +95,6 @@ Wire Wire Line
 Connection ~ 9700 3550
 Wire Wire Line
 	9350 3350 9350 3550
-$Comp
-L Connector_Generic:Conn_02x10_Odd_Even J?
-U 1 1 605AFA33
-P 8300 4850
-AR Path="/5DDE8C5E/605AFA33" Ref="J?"  Part="1" 
-AR Path="/5EC40F3C/605AFA33" Ref="J1802"  Part="1" 
-F 0 "J1802" H 8350 5467 50  0000 C CNN
-F 1 "Conn_02x10_Odd_Even" H 8350 5376 50  0000 C CNN
-F 2 "Connector_PinSocket_2.54mm:PinSocket_2x10_P2.54mm_Vertical_SMD" H 8300 4850 50  0001 C CNN
-F 3 "~" H 8300 4850 50  0001 C CNN
-	1    8300 4850
-	1    0    0    -1  
-$EndComp
 Wire Wire Line
 	8600 5350 8750 5350
 $Comp
@@ -271,19 +245,6 @@ F 1 "15VH" H 10050 2407 28  0000 C CNN
 F 2 "" H 10050 2250 50  0001 C CNN
 F 3 "" H 10050 2250 50  0001 C CNN
 	1    10050 2250
-	1    0    0    -1  
-$EndComp
-$Comp
-L Connector_Generic:Conn_02x10_Odd_Even J?
-U 1 1 605C2571
-P 6750 2750
-AR Path="/5DDE8C5E/605C2571" Ref="J?"  Part="1" 
-AR Path="/5EC40F3C/605C2571" Ref="J1801"  Part="1" 
-F 0 "J1801" H 6800 3367 50  0000 C CNN
-F 1 "Conn_02x10_Odd_Even" H 6800 3276 50  0000 C CNN
-F 2 "Connector_PinSocket_2.54mm:PinSocket_2x10_P2.54mm_Vertical_SMD" H 6750 2750 50  0001 C CNN
-F 3 "~" H 6750 2750 50  0001 C CNN
-	1    6750 2750
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
@@ -441,4 +402,43 @@ Wire Wire Line
 	6200 3150 6550 3150
 Wire Wire Line
 	9100 3250 9450 3250
+$Comp
+L servo:NHD-4.3-480272FT-CTXL-T J?
+U 1 1 5E343D65
+P 8300 4850
+AR Path="/5E72D841/5E343D65" Ref="J?"  Part="1" 
+AR Path="/5EC40F3C/5E343D65" Ref="J1802"  Part="1" 
+F 0 "J1802" H 8350 5451 50  0000 C CNN
+F 1 "NHD-4.3-480272FT-CTXL-T" H 8350 5368 39  0000 C CNN
+F 2 "Connector_IDC:IDC-Header_2x10_P2.54mm_Vertical" H 8300 4850 50  0001 C CNN
+F 3 "../doc/datasheets/NHD-4.3-480272FT-CTXL-T.pdf" H 8350 5350 50  0001 C CNN
+	1    8300 4850
+	1    0    0    -1  
+$EndComp
+$Comp
+L servo:NHD-4.3-480272FT-CTXL-T J?
+U 1 1 5E34A399
+P 6750 2750
+AR Path="/5E72D841/5E34A399" Ref="J?"  Part="1" 
+AR Path="/5EC40F3C/5E34A399" Ref="J1801"  Part="1" 
+F 0 "J1801" H 6800 3351 50  0000 C CNN
+F 1 "NHD-4.3-480272FT-CTXL-T" H 6800 3268 39  0000 C CNN
+F 2 "Connector_IDC:IDC-Header_2x10_P2.54mm_Vertical" H 6750 2750 50  0001 C CNN
+F 3 "../doc/datasheets/NHD-4.3-480272FT-CTXL-T.pdf" H 6800 3250 50  0001 C CNN
+	1    6750 2750
+	1    0    0    -1  
+$EndComp
+$Comp
+L servo:NHD-4.3-480272FT-CTXL-T J?
+U 1 1 5E350A93
+P 9650 2850
+AR Path="/5E72D841/5E350A93" Ref="J?"  Part="1" 
+AR Path="/5EC40F3C/5E350A93" Ref="J1803"  Part="1" 
+F 0 "J1803" H 9700 3451 50  0000 C CNN
+F 1 "NHD-4.3-480272FT-CTXL-T" H 9700 3368 39  0000 C CNN
+F 2 "Connector_IDC:IDC-Header_2x10_P2.54mm_Vertical" H 9650 2850 50  0001 C CNN
+F 3 "../doc/datasheets/NHD-4.3-480272FT-CTXL-T.pdf" H 9700 3350 50  0001 C CNN
+	1    9650 2850
+	1    0    0    -1  
+$EndComp
 $EndSCHEMATC

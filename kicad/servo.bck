@@ -55,12 +55,6 @@ K Single Gate Buff Tri-State LVC CMOS
 F http://www.ti.com/lit/sg/scyt129e/scyt129e.pdf
 $ENDCMP
 #
-$CMP 8P8C
-D RJ connector, 8P8C (8 positions 8 connected), RJ31/RJ32/RJ33/RJ34/RJ35/RJ41/RJ45/RJ49/RJ61
-K 8P8C RJ female connector
-F ~
-$ENDCMP
-#
 $CMP 93LC46C-SN
 F http://ww1.microchip.com/downloads/en/DeviceDoc/21794G.pdf
 $ENDCMP
@@ -622,6 +616,12 @@ $CMP RJ61
 D RJ connector, 8P8C (8 positions 8 connected)
 K 8P8C RJ female connector
 F ~
+$ENDCMP
+#
+$CMP RJHSE-5384
+D RJ connector, 8P8C (8 positions 8 connected), RJ31/RJ32/RJ33/RJ34/RJ35/RJ41/RJ45/RJ49/RJ61
+K 8P8C RJ female connector
+F https://www.mouser.com/datasheet/2/18/rjhsex38x-1508275.pdf
 $ENDCMP
 #
 $CMP R_Small

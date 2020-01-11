@@ -1,4 +1,4 @@
-(module servo:LEM_LTSR-NP (layer F.Cu) (tedit 5B859E16)
+(module LEM_LTSR-NP (layer F.Cu) (tedit 5E199880)
   (descr "LEM current transducer LEM_LTSR-NP 5V supply voltage series https://www.lem.com/sites/default/files/products_datasheets/ltsr_6-np.pdf")
   (tags "Current transducer")
   (fp_text reference U1608 (at -5 0) (layer F.SilkS)
@@ -57,9 +57,9 @@
   (pad 4 thru_hole oval (at 5.08 12.7) (size 1.9 2.5) (drill 1.3) (layers *.Cu *.Mask))
   (pad 6 thru_hole oval (at 0 12.7) (size 1.9 2.5) (drill 1.3) (layers *.Cu *.Mask))
   (pad 5 thru_hole oval (at 2.54 12.7) (size 1.9 2.5) (drill 1.3) (layers *.Cu *.Mask))
-  (model ${KISYS3DMOD}/Sensor_Current.3dshapes/LEM_LTSR-NP.wrl
-    (at (xyz 0 0 0))
+  (model /home/pslavkin/Downloads/LXS_90.O9.XX.000.0_20170323.stp
+    (offset (xyz -18 -21 35))
     (scale (xyz 1 1 1))
-    (rotate (xyz 0 0 0))
+    (rotate (xyz 90 0 0))
   )
 )

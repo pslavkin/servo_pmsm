@@ -682,7 +682,7 @@ U 1 1 6173F780
 P 7750 3800
 F 0 "J1001" H 7830 3792 50  0000 L CNN
 F 1 "tblock" H 7830 3701 50  0000 L CNN
-F 2 "TerminalBlock_RND:TerminalBlock_RND_205-00291_1x06_P5.08mm_Horizontal" H 7750 3800 50  0001 C CNN
+F 2 "Connector_Phoenix_MSTB:PhoenixContact_MSTBA_2,5_6-G-5,08_1x06_P5.08mm_Horizontal" H 7750 3800 50  0001 C CNN
 F 3 "~" H 7750 3800 50  0001 C CNN
 	1    7750 3800
 	1    0    0    -1  
@@ -1321,7 +1321,7 @@ U 1 1 617F3407
 P 8500 3800
 F 0 "J1002" H 8580 3792 50  0000 L CNN
 F 1 "tblock" H 8580 3701 50  0000 L CNN
-F 2 "TerminalBlock_RND:TerminalBlock_RND_205-00291_1x06_P5.08mm_Horizontal" H 8500 3800 50  0001 C CNN
+F 2 "Connector_Phoenix_MSTB:PhoenixContact_MSTBA_2,5_6-G-5,08_1x06_P5.08mm_Horizontal" H 8500 3800 50  0001 C CNN
 F 3 "~" H 8500 3800 50  0001 C CNN
 	1    8500 3800
 	-1   0    0    -1  

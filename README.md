@@ -41,6 +41,7 @@ I'll let pins to aquire and filter it.
 - :red_circle:          isolated GPIO aborted! I've reise free pins that comes from IGBT
 - :heavy_check_mark:    EVE LCD driven choosen as the UI by spi.. I's all the thinks we need
 - :construction:        all footprints choosen, but deserves some comprobation
+- :construction:        begin with placement, all big pictures passed, preliminary
  
 
 ---
@@ -77,6 +78,11 @@ There are the actual schematics generated until now:
 <img src="doc/pics/servo-16.jpg" width="800"/>
 <img src="doc/pics/servo-17.jpg" width="800"/>
 <img src="doc/pics/servo-18.jpg" width="800"/>
+
+## Layout
+Let's begin with layout!
+first pic, easy, doesn't it?
+<img src="doc/pics/layout1.jpg" width="800"/>
 
 ## Welcome back Moldova 3.0
 

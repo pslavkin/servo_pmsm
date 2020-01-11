@@ -389,7 +389,7 @@ AR Path="/5DE49152/5E1AD423" Ref="J?"  Part="1"
 AR Path="/605BEC04/5E1AD423" Ref="J1701"  Part="1" 
 F 0 "J1701" H 9730 3296 50  0000 L CNN
 F 1 "Screw_Terminal_01x03" H 9730 3251 50  0001 L CNN
-F 2 "TerminalBlock_RND:TerminalBlock_RND_205-00288_1x03_P5.08mm_Horizontal" H 9650 3300 50  0001 C CNN
+F 2 "Connector_Phoenix_MSTB:PhoenixContact_MSTBVA_2,5_3-G-5,08_1x03_P5.08mm_Vertical" H 9650 3300 50  0001 C CNN
 F 3 "~" H 9650 3300 50  0001 C CNN
 	1    9650 3300
 	1    0    0    -1  
@@ -833,7 +833,7 @@ AR Path="/5DE49152/5E1B9B1A" Ref="J?"  Part="1"
 AR Path="/605BEC04/5E1B9B1A" Ref="J1702"  Part="1" 
 F 0 "J1702" H 9830 5596 50  0000 L CNN
 F 1 "Screw_Terminal_01x03" H 9830 5551 50  0001 L CNN
-F 2 "TerminalBlock_RND:TerminalBlock_RND_205-00277_1x03_P5.00mm_Vertical" H 9750 5600 50  0001 C CNN
+F 2 "Connector_Phoenix_MSTB:PhoenixContact_MSTBVA_2,5_3-G-5,08_1x03_P5.08mm_Vertical" H 9750 5600 50  0001 C CNN
 F 3 "~" H 9750 5600 50  0001 C CNN
 	1    9750 5600
 	1    0    0    -1  
