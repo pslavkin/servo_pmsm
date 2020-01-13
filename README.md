@@ -45,6 +45,12 @@ I'll let pins to aquire and filter it.
  
 
 ---
+## Welcome back Moldova 3.0
+
+<img src = "doc/pics/moldova3.0.jpg" width = "400"/>
+I've come back to finish PCB, there we are... sdarobia!
+
+
 ## Table of Contents
 
 
@@ -84,11 +90,6 @@ Let's begin with layout!
 first pic, easy, doesn't it?
 <img src="doc/pics/layout1.jpg" width="800"/>
 
-## Welcome back Moldova 3.0
-
-<img src = "doc/pics/moldova3.0.jpg" width = "400"/>
-
-I've come back to finish PCB, there we are... sdarobia!
 
 ## Hierarchy
 

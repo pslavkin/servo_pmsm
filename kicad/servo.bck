@@ -606,6 +606,12 @@ K 8P8C RJ female connector
 F ~
 $ENDCMP
 #
+$CMP RJ45x1_ARJM11D7-009-AB-ER2-T
+D RJ34 with magnetics x 1
+K Single Port Ethernet Transformer
+F https://abracon.com/Magnetics/lan/ARJ11D.pdf
+$ENDCMP
+#
 $CMP RJ49
 D RJ connector, 8P8C (8 positions 8 connected)
 K 8P8C RJ female connector
@@ -736,6 +742,12 @@ $CMP opa2350
 D OPAx350High-Speed,Single-Supply,Rail-to-RailOperationalAmplifiersMicroAmplifierSeries
 K dual opamp
 F http://www.ti.com/lit/ds/sbos099d/sbos099d.pdf
+$ENDCMP
+#
+$CMP rj45x2_0845-2G1T-H5
+D rj45 x2 with magnetics dual row
+K rj45
+F https://www.mouser.com/datasheet/2/643/dr-MAG-0845-2G1T-H5-1309698.pdf
 $ENDCMP
 #
 #End Doc Library

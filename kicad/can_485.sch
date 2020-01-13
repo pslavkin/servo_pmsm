@@ -1,0 +1,551 @@
+EESchema Schematic File Version 4
+LIBS:servo-cache
+EELAYER 26 0
+EELAYER END
+$Descr A3 16535 11693
+encoding utf-8
+Sheet 12 18
+Title ""
+Date "2020-01-09"
+Rev "1.0"
+Comp "dci"
+Comment1 "Pablo Slavkin"
+Comment2 ""
+Comment3 ""
+Comment4 ""
+$EndDescr
+$Comp
+L servo:ISO1050 U1201
+U 1 1 5E217E51
+P 4850 3050
+F 0 "U1201" H 4800 3800 50  0000 C CNN
+F 1 "ISO1050" H 4800 3700 50  0000 C CNN
+F 2 "Package_SO:SSO-8_6.7x9.8mm_P2.54mm_Clearance8mm" H 4750 2350 50  0001 C CNN
+F 3 "../doc/datasheets/iso1050.pdf" H 4900 3850 50  0001 C CNN
+	1    4850 3050
+	1    0    0    -1  
+$EndComp
+$Comp
+L servo:Resistor R1202
+U 1 1 5E21D81F
+P 6300 2850
+F 0 "R1202" V 6278 2900 20  0000 L CNN
+F 1 "1k" V 6321 2900 20  0000 L CNN
+F 2 "Resistor_SMD:R_0603_1608Metric" H 5800 2750 60  0001 C CNN
+F 3 "" H 5900 2850 60  0001 C CNN
+	1    6300 2850
+	0    1    1    0   
+$EndComp
+$Comp
+L servo:3V3 #PWR?
+U 1 1 5E21DD67
+P 4150 2150
+AR Path="/5DE3DF56/5E21DD67" Ref="#PWR?"  Part="1" 
+AR Path="/5E1BAEAA/5E21DD67" Ref="#PWR?"  Part="1" 
+AR Path="/5E21534F/5E21DD67" Ref="#PWR01202"  Part="1" 
+F 0 "#PWR01202" H 4155 2357 20  0001 C CNN
+F 1 "3V3" H 4155 2307 28  0000 C CNN
+F 2 "" H 4150 2150 50  0001 C CNN
+F 3 "" H 4150 2150 50  0001 C CNN
+	1    4150 2150
+	1    0    0    -1  
+$EndComp
+$Comp
+L servo:Capacitor C?
+U 1 1 5E21DD6E
+P 5850 2500
+AR Path="/5DE3DF56/5E21DD6E" Ref="C?"  Part="1" 
+AR Path="/5E1BAEAA/5E21DD6E" Ref="C?"  Part="1" 
+AR Path="/5E21534F/5E21DD6E" Ref="C1202"  Part="1" 
+F 0 "C1202" V 5878 2610 20  0000 L CNN
+F 1 "100nF" V 5921 2610 20  0000 L CNN
+F 2 "servo:C_0603_1608Metric" H 5850 2400 60  0001 C CNN
+F 3 "" H 5850 2500 60  0000 C CNN
+	1    5850 2500
+	0    1    1    0   
+$EndComp
+$Comp
+L servo:Capacitor C?
+U 1 1 5E21DD7B
+P 3850 2500
+AR Path="/5DE3DF56/5E21DD7B" Ref="C?"  Part="1" 
+AR Path="/5E1BAEAA/5E21DD7B" Ref="C?"  Part="1" 
+AR Path="/5E21534F/5E21DD7B" Ref="C1201"  Part="1" 
+F 0 "C1201" V 3878 2610 20  0000 L CNN
+F 1 "100nF" V 3921 2610 20  0000 L CNN
+F 2 "servo:C_0603_1608Metric" H 3850 2400 60  0001 C CNN
+F 3 "" H 3850 2500 60  0000 C CNN
+	1    3850 2500
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	3850 2300 4150 2300
+Wire Wire Line
+	5550 2150 5550 2200
+Connection ~ 5550 2200
+Wire Wire Line
+	3450 3050 4300 3050
+Wire Wire Line
+	3450 2800 4300 2800
+Text GLabel 3450 3050 0    50   Input ~ 0
+CAN_TX
+Text GLabel 3450 2800 0    50   Input ~ 0
+CAN_RX
+Wire Wire Line
+	4150 2600 4300 2600
+Wire Wire Line
+	5550 2600 5450 2600
+Wire Wire Line
+	5550 2200 5550 2600
+$Comp
+L servo:GND #PWR?
+U 1 1 5E221639
+P 4100 3300
+AR Path="/5DE3DF56/5E221639" Ref="#PWR?"  Part="1" 
+AR Path="/5E1BAEAA/5E221639" Ref="#PWR?"  Part="1" 
+AR Path="/5E21534F/5E221639" Ref="#PWR01201"  Part="1" 
+F 0 "#PWR01201" H 4100 3050 30  0001 C CNN
+F 1 "GND" H 4100 3142 30  0000 C CNN
+F 2 "" H 4100 3300 50  0001 C CNN
+F 3 "" H 4100 3300 50  0001 C CNN
+	1    4100 3300
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	4300 3250 4100 3250
+Wire Wire Line
+	4100 3250 4100 3300
+Wire Wire Line
+	6600 2900 6600 3050
+Wire Wire Line
+	6600 2650 6600 2800
+Wire Wire Line
+	5450 2750 6100 2750
+Wire Wire Line
+	6100 2750 6100 2650
+Wire Wire Line
+	5450 2850 6100 2850
+Wire Wire Line
+	6100 2850 6100 3050
+Text Notes 3050 1550 0    197  ~ 39
+Isolated CAN interfase
+$Comp
+L servo:5VH #PWR?
+U 1 1 5E32E6BC
+P 5550 2150
+AR Path="/5DE49152/5E32E6BC" Ref="#PWR?"  Part="1" 
+AR Path="/5E1BAEAA/5E32E6BC" Ref="#PWR?"  Part="1" 
+AR Path="/5E21534F/5E32E6BC" Ref="#PWR01204"  Part="1" 
+F 0 "#PWR01204" H 5550 1950 20  0001 C CNN
+F 1 "5VH" H 5555 2307 28  0000 C CNN
+F 2 "" H 5550 2150 50  0001 C CNN
+F 3 "" H 5550 2150 50  0001 C CNN
+	1    5550 2150
+	1    0    0    -1  
+$EndComp
+$Comp
+L servo:15VH #PWR?
+U 1 1 5E33F748
+P 7200 2150
+AR Path="/5DE3DF56/5E33F748" Ref="#PWR?"  Part="1" 
+AR Path="/5E1BAEAA/5E33F748" Ref="#PWR?"  Part="1" 
+AR Path="/5E21534F/5E33F748" Ref="#PWR01208"  Part="1" 
+F 0 "#PWR01208" H 7200 1950 20  0001 C CNN
+F 1 "15VH" H 7205 2307 28  0000 C CNN
+F 2 "" H 7200 2150 50  0001 C CNN
+F 3 "" H 7200 2150 50  0001 C CNN
+	1    7200 2150
+	1    0    0    -1  
+$EndComp
+$Comp
+L servo:GNDH #PWR?
+U 1 1 5E3402F1
+P 5850 3600
+AR Path="/5DE49152/5E3402F1" Ref="#PWR?"  Part="1" 
+AR Path="/5E1BAEAA/5E3402F1" Ref="#PWR?"  Part="1" 
+AR Path="/5E21534F/5E3402F1" Ref="#PWR01205"  Part="1" 
+F 0 "#PWR01205" H 5850 3350 30  0001 C CNN
+F 1 "GNDH" H 5850 3442 30  0000 C CNN
+F 2 "" H 5850 3600 50  0001 C CNN
+F 3 "" H 5850 3600 50  0001 C CNN
+	1    5850 3600
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	5450 3250 5600 3250
+Wire Wire Line
+	3850 3250 4100 3250
+Connection ~ 4100 3250
+Wire Wire Line
+	6100 3050 6300 3050
+Wire Wire Line
+	6100 2650 6300 2650
+Connection ~ 6300 2650
+Wire Wire Line
+	6300 2650 6600 2650
+Connection ~ 6300 3050
+Wire Wire Line
+	6300 3050 6600 3050
+Wire Wire Line
+	5550 2200 5850 2200
+Wire Wire Line
+	5850 2400 5850 2200
+Wire Wire Line
+	3850 2700 3850 3250
+$Comp
+L servo:Jumper_3_Bridged12 JP?
+U 1 1 60724F1C
+P 6800 2200
+AR Path="/5E1BAEAA/60724F1C" Ref="JP?"  Part="1" 
+AR Path="/5E21534F/60724F1C" Ref="JP1201"  Part="1" 
+F 0 "JP1201" H 6800 2369 39  0000 C CNN
+F 1 "jumper" H 6800 2294 39  0000 C CNN
+F 2 "Jumper:SolderJumper-3_P1.3mm_Open_RoundedPad1.0x1.5mm" H 6600 2000 50  0001 C CNN
+F 3 "~" H 6700 2100 50  0001 C CNN
+	1    6800 2200
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	6800 2300 6800 2700
+Wire Wire Line
+	7000 2200 7200 2200
+Wire Wire Line
+	6600 2200 6300 2200
+Connection ~ 5850 2200
+Wire Wire Line
+	7200 2150 7200 2200
+$Comp
+L servo:Resistor R1201
+U 1 1 60731D77
+P 6300 2450
+F 0 "R1201" V 6278 2500 20  0000 L CNN
+F 1 "1k" V 6321 2500 20  0000 L CNN
+F 2 "Resistor_SMD:R_0603_1608Metric" H 5800 2350 60  0001 C CNN
+F 3 "" H 5900 2450 60  0001 C CNN
+	1    6300 2450
+	0    1    1    0   
+$EndComp
+$Comp
+L servo:Resistor R1203
+U 1 1 60731DA9
+P 6300 3300
+F 0 "R1203" V 6278 3350 20  0000 L CNN
+F 1 "1k" V 6321 3350 20  0000 L CNN
+F 2 "Resistor_SMD:R_0603_1608Metric" H 5800 3200 60  0001 C CNN
+F 3 "" H 5900 3300 60  0001 C CNN
+	1    6300 3300
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	6300 3100 6300 3050
+Connection ~ 6300 3500
+Wire Wire Line
+	6300 3500 6800 3500
+Wire Wire Line
+	6800 3000 6800 3500
+Wire Wire Line
+	6300 2250 6300 2200
+Connection ~ 6300 2200
+Wire Wire Line
+	6300 2200 5850 2200
+Wire Wire Line
+	5600 3500 5600 3250
+Wire Wire Line
+	5600 3500 5850 3500
+Wire Wire Line
+	5850 2700 5850 3500
+Connection ~ 5850 3500
+Wire Wire Line
+	5850 3500 6300 3500
+Wire Wire Line
+	5850 3500 5850 3600
+Wire Wire Line
+	3850 2300 3850 2400
+Connection ~ 4150 2300
+Wire Wire Line
+	4150 2300 4150 2600
+Wire Wire Line
+	4150 2150 4150 2300
+Text Notes 4050 1700 0    20   ~ 0
+A simple CAN driver. It also could be used as a RS485 driver in his \nspeed.. the minimum for CAN is 40kbos, so in RS485 at 9600 could be\n fine
+$Comp
+L servo:ADM2483 U?
+U 1 1 5E28489F
+P 10400 2900
+AR Path="/5DE49152/5E28489F" Ref="U?"  Part="1" 
+AR Path="/5E1BAEAA/5E28489F" Ref="U?"  Part="1" 
+AR Path="/5E21534F/5E28489F" Ref="U1202"  Part="1" 
+F 0 "U1202" H 10400 3517 50  0000 C CNN
+F 1 "ADM2483" H 10400 3426 50  0000 C CNN
+F 2 "Package_SO:SOIC-16W_7.5x10.3mm_P1.27mm" H 10400 2200 50  0001 C CNN
+F 3 "../doc/datasheets/adm2483.pdf" H 9650 2800 50  0001 C CNN
+	1    10400 2900
+	-1   0    0    -1  
+$EndComp
+$Comp
+L servo:5VH #PWR?
+U 1 1 5E2848A6
+P 9700 2150
+AR Path="/5DE49152/5E2848A6" Ref="#PWR?"  Part="1" 
+AR Path="/5E1BAEAA/5E2848A6" Ref="#PWR?"  Part="1" 
+AR Path="/5E21534F/5E2848A6" Ref="#PWR01206"  Part="1" 
+F 0 "#PWR01206" H 9700 1950 20  0001 C CNN
+F 1 "5VH" H 9705 2307 28  0000 C CNN
+F 2 "" H 9700 2150 50  0001 C CNN
+F 3 "" H 9700 2150 50  0001 C CNN
+	1    9700 2150
+	-1   0    0    -1  
+$EndComp
+Wire Wire Line
+	9700 2200 9700 2550
+Wire Wire Line
+	9700 2550 9800 2550
+Wire Wire Line
+	9700 2200 9700 2150
+$Comp
+L servo:GNDH #PWR?
+U 1 1 5E2848AF
+P 9250 3550
+AR Path="/5DE49152/5E2848AF" Ref="#PWR?"  Part="1" 
+AR Path="/5E1BAEAA/5E2848AF" Ref="#PWR?"  Part="1" 
+AR Path="/5E21534F/5E2848AF" Ref="#PWR01207"  Part="1" 
+F 0 "#PWR01207" H 9250 3300 30  0001 C CNN
+F 1 "GNDH" H 9250 3392 30  0000 C CNN
+F 2 "" H 9250 3550 50  0001 C CNN
+F 3 "" H 9250 3550 50  0001 C CNN
+	1    9250 3550
+	-1   0    0    -1  
+$EndComp
+Wire Wire Line
+	9250 3500 9250 3550
+Wire Wire Line
+	9450 3250 9450 3500
+$Comp
+L servo:GND #PWR_?
+U 1 1 5E2848B7
+P 11150 3400
+AR Path="/5DD4DF4C/5E2848B7" Ref="#PWR_?"  Part="1" 
+AR Path="/5DE49152/5E2848B7" Ref="#PWR_?"  Part="1" 
+AR Path="/5E1BAEAA/5E2848B7" Ref="#PWR_?"  Part="1" 
+AR Path="/5E21534F/5E2848B7" Ref="#PWR_01201"  Part="1" 
+F 0 "#PWR_01201" H 11155 3251 20  0001 C CNN
+F 1 "GND" H 11150 3242 30  0000 C CNN
+F 2 "" H 11150 3400 70  0000 C CNN
+F 3 "" H 11150 3400 70  0000 C CNN
+	1    11150 3400
+	-1   0    0    -1  
+$EndComp
+$Comp
+L servo:Resistor R?
+U 1 1 5E2848BD
+P 9250 2850
+AR Path="/5DE3DF56/5E2848BD" Ref="R?"  Part="1" 
+AR Path="/5E1BAEAA/5E2848BD" Ref="R?"  Part="1" 
+AR Path="/5DE49152/5E2848BD" Ref="R?"  Part="1" 
+AR Path="/5E21534F/5E2848BD" Ref="R1205"  Part="1" 
+F 0 "R1205" V 9228 2900 20  0000 L CNN
+F 1 "120e" V 9271 2900 20  0000 L CNN
+F 2 "Resistor_SMD:R_0603_1608Metric" H 8750 2750 60  0001 C CNN
+F 3 "" H 8850 2850 60  0001 C CNN
+	1    9250 2850
+	0    -1   1    0   
+$EndComp
+Wire Wire Line
+	9550 3050 9250 3050
+Connection ~ 9250 3050
+$Comp
+L servo:Resistor R?
+U 1 1 5E2848C6
+P 9250 3250
+AR Path="/5DE3DF56/5E2848C6" Ref="R?"  Part="1" 
+AR Path="/5E1BAEAA/5E2848C6" Ref="R?"  Part="1" 
+AR Path="/5DE49152/5E2848C6" Ref="R?"  Part="1" 
+AR Path="/5E21534F/5E2848C6" Ref="R1206"  Part="1" 
+F 0 "R1206" V 9228 3300 20  0000 L CNN
+F 1 "10k" V 9271 3300 20  0000 L CNN
+F 2 "Resistor_SMD:R_0603_1608Metric" H 8750 3150 60  0001 C CNN
+F 3 "" H 8850 3250 60  0001 C CNN
+	1    9250 3250
+	0    -1   1    0   
+$EndComp
+$Comp
+L servo:Resistor R?
+U 1 1 5E2848CD
+P 9250 2450
+AR Path="/5DE3DF56/5E2848CD" Ref="R?"  Part="1" 
+AR Path="/5E1BAEAA/5E2848CD" Ref="R?"  Part="1" 
+AR Path="/5DE49152/5E2848CD" Ref="R?"  Part="1" 
+AR Path="/5E21534F/5E2848CD" Ref="R1204"  Part="1" 
+F 0 "R1204" V 9228 2500 20  0000 L CNN
+F 1 "10k" V 9271 2500 20  0000 L CNN
+F 2 "Resistor_SMD:R_0603_1608Metric" H 8750 2350 60  0001 C CNN
+F 3 "" H 8850 2450 60  0001 C CNN
+	1    9250 2450
+	0    -1   1    0   
+$EndComp
+Wire Wire Line
+	8850 3050 9250 3050
+Wire Wire Line
+	9700 2200 9250 2200
+Wire Wire Line
+	9250 2200 9250 2250
+$Comp
+L servo:3V3 #PWR?
+U 1 1 5E2848D9
+P 11250 2350
+AR Path="/5DCD812E/5E2848D9" Ref="#PWR?"  Part="1" 
+AR Path="/5DD4DF4C/5E2848D9" Ref="#PWR?"  Part="1" 
+AR Path="/5DE49152/5E2848D9" Ref="#PWR?"  Part="1" 
+AR Path="/5E1BAEAA/5E2848D9" Ref="#PWR?"  Part="1" 
+AR Path="/5E21534F/5E2848D9" Ref="#PWR01203"  Part="1" 
+F 0 "#PWR01203" H 11267 2559 20  0001 C CNN
+F 1 "3V3" H 11267 2507 30  0000 C CNN
+F 2 "" H 11250 2350 70  0000 C CNN
+F 3 "" H 11250 2350 70  0000 C CNN
+	1    11250 2350
+	-1   0    0    -1  
+$EndComp
+Wire Wire Line
+	9800 2850 9550 2850
+Wire Wire Line
+	9550 2850 9550 3050
+Wire Wire Line
+	9800 2950 9450 2950
+Wire Wire Line
+	9450 2950 9450 2650
+Wire Wire Line
+	8850 2650 8850 2800
+Wire Wire Line
+	8850 3050 8850 2900
+Wire Wire Line
+	9250 3500 9250 3450
+Wire Wire Line
+	8650 3000 8650 3500
+Wire Wire Line
+	8650 3500 9250 3500
+Connection ~ 9250 3500
+Wire Wire Line
+	11650 3050 11000 3050
+Wire Wire Line
+	11000 2750 11650 2750
+Wire Wire Line
+	11000 2850 11050 2850
+Wire Wire Line
+	11050 2850 11050 2900
+Wire Wire Line
+	11050 2950 11000 2950
+Wire Wire Line
+	11650 2900 11050 2900
+Connection ~ 11050 2900
+Wire Wire Line
+	11050 2900 11050 2950
+Text Notes 8550 2550 2    20   ~ 0
+Could be used by isolated: \n485, 1-wire bus, general IO pin
+Text GLabel 11650 2900 2    50   Input ~ 0
+RS485_EN
+Text GLabel 11650 3050 2    50   Input ~ 0
+RS485_TX
+Text GLabel 11650 2750 2    50   Input ~ 0
+RS485_RX
+Wire Wire Line
+	11150 3250 11150 3400
+Wire Wire Line
+	9450 3500 9250 3500
+Wire Wire Line
+	9800 3250 9650 3250
+Wire Wire Line
+	11250 2350 11250 2550
+Connection ~ 9700 2200
+Text Notes 11250 1450 2    197  ~ 39
+Isolated RS485
+Wire Wire Line
+	9800 2650 9650 2650
+Wire Wire Line
+	9650 2650 9650 3250
+Connection ~ 9650 3250
+Wire Wire Line
+	9650 3250 9450 3250
+Wire Wire Line
+	11000 2650 11150 2650
+Wire Wire Line
+	11150 2650 11150 3250
+Wire Wire Line
+	11000 3150 11250 3150
+Wire Wire Line
+	11250 3150 11250 2550
+Connection ~ 11250 2550
+Wire Wire Line
+	11250 2550 11000 2550
+Connection ~ 11150 3250
+Wire Wire Line
+	11150 3250 11000 3250
+Wire Wire Line
+	9450 2650 9250 2650
+Connection ~ 9250 2650
+Wire Wire Line
+	9250 2650 8850 2650
+$Comp
+L servo:Jumper_3_Bridged12 JP?
+U 1 1 5E28490C
+P 8650 2200
+AR Path="/5E1BAEAA/5E28490C" Ref="JP?"  Part="1" 
+AR Path="/5E21534F/5E28490C" Ref="JP1202"  Part="1" 
+F 0 "JP1202" H 8650 2369 39  0000 C CNN
+F 1 "Jumper_3_Bridged12" H 8650 2294 39  0000 C CNN
+F 2 "Jumper:SolderJumper-3_P1.3mm_Open_RoundedPad1.0x1.5mm" H 8450 2000 50  0001 C CNN
+F 3 "~" H 8550 2100 50  0001 C CNN
+	1    8650 2200
+	-1   0    0    -1  
+$EndComp
+Wire Wire Line
+	8650 2300 8650 2700
+Wire Wire Line
+	9250 2200 8850 2200
+Connection ~ 9250 2200
+$Comp
+L servo:15VH #PWR?
+U 1 1 5E284916
+P 8250 2150
+AR Path="/5E1BAEAA/5E284916" Ref="#PWR?"  Part="1" 
+AR Path="/5E21534F/5E284916" Ref="#PWR01209"  Part="1" 
+F 0 "#PWR01209" H 8250 1950 20  0001 C CNN
+F 1 "15VH" H 8250 2307 28  0000 C CNN
+F 2 "" H 8250 2150 50  0001 C CNN
+F 3 "" H 8250 2150 50  0001 C CNN
+	1    8250 2150
+	-1   0    0    -1  
+$EndComp
+Wire Wire Line
+	8250 2200 8250 2150
+Wire Wire Line
+	8450 2200 8250 2200
+Text Notes 10550 1600 2    20   ~ 0
+With these interfase you could manage isolated RS485 or isolated \n GPIO or isolated 1-Wire, using 5H or 15H as a supply
+Wire Wire Line
+	6800 2700 7350 2700
+Wire Wire Line
+	6600 2800 7350 2800
+Wire Wire Line
+	6600 2900 7350 2900
+Wire Wire Line
+	6800 3000 7350 3000
+Wire Wire Line
+	7850 2700 8650 2700
+Wire Wire Line
+	7850 2800 8850 2800
+Wire Wire Line
+	7850 2900 8850 2900
+Wire Wire Line
+	7850 3000 8650 3000
+$Comp
+L Connector_Generic:Conn_02x04_Row_Letter_Last J1201
+U 1 1 5E2A904D
+P 7550 2800
+F 0 "J1201" H 7600 3117 50  0000 C CNN
+F 1 "tblock" H 7600 3026 50  0000 C CNN
+F 2 "servo:tblock02x04" H 7550 2800 50  0001 C CNN
+F 3 "~" H 7550 2800 50  0001 C CNN
+	1    7550 2800
+	1    0    0    -1  
+$EndComp
+$EndSCHEMATC

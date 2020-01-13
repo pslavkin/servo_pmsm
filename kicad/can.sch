@@ -206,7 +206,7 @@ U 1 1 607242CE
 P 7200 2800
 F 0 "J1301" H 7280 2792 50  0000 L CNN
 F 1 "tblock" H 7280 2701 50  0000 L CNN
-F 2 "TerminalBlock_RND:TerminalBlock_RND_205-00289_1x04_P5.08mm_Horizontal" H 7200 2800 50  0001 C CNN
+F 2 "Connector_Phoenix_MSTB:PhoenixContact_MSTBA_2,5_4-G-5,08_1x04_P5.08mm_Horizontal" H 7200 2800 50  0001 C CNN
 F 3 "~" H 7200 2800 50  0001 C CNN
 	1    7200 2800
 	1    0    0    -1  

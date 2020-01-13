@@ -4,7 +4,7 @@ EELAYER 26 0
 EELAYER END
 $Descr A3 16535 11693
 encoding utf-8
-Sheet 3 19
+Sheet 3 18
 Title "ADC"
 Date "2020-01-09"
 Rev "1.0"
@@ -188,9 +188,9 @@ Text GLabel 3900 4750 0    50   Input ~ 0
 LEM_A_V
 Text GLabel 3900 3550 0    50   Input ~ 0
 LEM_B_V
-Text GLabel 3900 4950 0    50   Input ~ 0
+Text GLabel 3300 4950 0    50   Input ~ 0
 LEM_A_W
-Text GLabel 3900 3750 0    50   Input ~ 0
+Text GLabel 3350 3750 0    50   Input ~ 0
 LEM_B_W
 Text GLabel 3900 4850 0    50   Input ~ 0
 LEM_A_ALL
@@ -228,7 +228,7 @@ Wire Wire Line
 	3900 4250 4250 4250
 Wire Wire Line
 	3900 4450 4250 4450
-Text Notes 2650 4950 0    20   ~ 0
+Text Notes 2700 4750 0    20   ~ 0
 lem all hast to be connected on positive pin\n of comparator CMPINxP, becose the internal\n DAC reference work on the negative side only.\n 
 Text Notes 4350 1600 0    197  ~ 39
 uC ADC PINS
@@ -292,4 +292,6 @@ Wire Wire Line
 	4250 2850 3900 2850
 Wire Wire Line
 	3900 2950 4250 2950
+NoConn ~ 3900 3750
+NoConn ~ 3900 4950
 $EndSCHEMATC

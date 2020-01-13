@@ -4,7 +4,7 @@ EELAYER 26 0
 EELAYER END
 $Descr A3 16535 11693
 encoding utf-8
-Sheet 1 19
+Sheet 1 18
 Title "servo drive"
 Date "2020-01-09"
 Rev "1.0"
@@ -95,20 +95,12 @@ $EndSheet
 Text Notes 10900 6050 0    197  ~ 39
 QEP
 $Sheet
-S 12300 3850 1300 1150
-U 5E1BAEAA
-F0 "rs485" 50
-F1 "rs485.sch" 50
-$EndSheet
-Text Notes 12500 4550 0    197  ~ 39
-RS485
-$Sheet
-S 12300 2350 1300 1150
+S 12350 3850 1300 1150
 U 5E21534F
-F0 "can" 50
-F1 "can.sch" 50
+F0 "can rs485" 50
+F1 "can_485.sch" 50
 $EndSheet
-Text Notes 12600 3000 0    197  ~ 39
+Text Notes 12650 4500 0    197  ~ 39
 CAN
 $Sheet
 S 7050 2400 1300 1150
