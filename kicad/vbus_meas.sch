@@ -4,7 +4,7 @@ EELAYER 26 0
 EELAYER END
 $Descr A3 16535 11693
 encoding utf-8
-Sheet 17 18
+Sheet 16 18
 Title "Shunt isolated"
 Date "2020-01-09"
 Rev "1.0"
@@ -156,8 +156,6 @@ Wire Wire Line
 Connection ~ 8250 3300
 Connection ~ 7850 3200
 Wire Wire Line
-	9350 3400 9450 3400
-Wire Wire Line
 	7850 2900 8800 2900
 Connection ~ 7850 2900
 $Comp
@@ -196,12 +194,6 @@ Wire Wire Line
 Connection ~ 8250 3900
 Wire Wire Line
 	8250 3750 8250 3900
-Text Notes 9000 3550 0    20   ~ 0
-divider to measure Vbus, be shure it has the \npower range and sized needed
-Wire Wire Line
-	9300 3300 9450 3300
-Wire Wire Line
-	9350 3900 9350 3400
 Wire Wire Line
 	8900 3300 8800 3300
 Wire Wire Line
@@ -222,10 +214,7 @@ F 3 "" H 8700 3300 60  0001 C CNN
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
-	8800 3900 9350 3900
-Wire Wire Line
 	8250 3900 8800 3900
-Connection ~ 8800 3900
 Wire Wire Line
 	8800 3800 8800 3900
 Connection ~ 8800 3300
@@ -374,26 +363,6 @@ $EndComp
 Connection ~ 10350 2350
 Wire Wire Line
 	10350 2350 10050 2350
-Connection ~ 8800 2900
-Wire Wire Line
-	8800 2900 9350 2900
-Wire Wire Line
-	9350 2900 9350 3200
-Wire Wire Line
-	9350 3200 9450 3200
-$Comp
-L Connector:Screw_Terminal_01x03 J?
-U 1 1 5E1AD423
-P 9650 3300
-AR Path="/5DE49152/5E1AD423" Ref="J?"  Part="1" 
-AR Path="/605BEC04/5E1AD423" Ref="J1601"  Part="1" 
-F 0 "J1601" H 9730 3296 50  0000 L CNN
-F 1 "Screw_Terminal_01x03" H 9730 3251 50  0001 L CNN
-F 2 "Connector_Phoenix_MSTB:PhoenixContact_MSTBVA_2,5_3-G-5,08_1x03_P5.08mm_Vertical" H 9650 3300 50  0001 C CNN
-F 3 "~" H 9650 3300 50  0001 C CNN
-	1    9650 3300
-	1    0    0    -1  
-$EndComp
 $Comp
 L power:PWR_FLAG #FLG01603
 U 1 1 5EF2B12C
@@ -606,8 +575,6 @@ Wire Wire Line
 Connection ~ 8350 5600
 Connection ~ 7950 5500
 Wire Wire Line
-	9450 5700 9550 5700
-Wire Wire Line
 	7950 5200 8900 5200
 Connection ~ 7950 5200
 $Comp
@@ -640,12 +607,6 @@ Wire Wire Line
 Connection ~ 8350 6200
 Wire Wire Line
 	8350 6050 8350 6200
-Text Notes 9100 5850 0    20   ~ 0
-divider to measure Vbus, be shure it has the \npower range and sized needed
-Wire Wire Line
-	9400 5600 9550 5600
-Wire Wire Line
-	9450 6200 9450 5700
 Wire Wire Line
 	9000 5600 8900 5600
 Wire Wire Line
@@ -665,8 +626,6 @@ F 3 "" H 8800 5600 60  0001 C CNN
 	1    9200 5600
 	1    0    0    -1  
 $EndComp
-Wire Wire Line
-	8900 6200 9450 6200
 Wire Wire Line
 	8350 6200 8900 6200
 Connection ~ 8900 6200
@@ -818,26 +777,6 @@ $EndComp
 Connection ~ 10450 4650
 Wire Wire Line
 	10450 4650 10150 4650
-Connection ~ 8900 5200
-Wire Wire Line
-	8900 5200 9450 5200
-Wire Wire Line
-	9450 5200 9450 5500
-Wire Wire Line
-	9450 5500 9550 5500
-$Comp
-L Connector:Screw_Terminal_01x03 J?
-U 1 1 5E1B9B1A
-P 9750 5600
-AR Path="/5DE49152/5E1B9B1A" Ref="J?"  Part="1" 
-AR Path="/605BEC04/5E1B9B1A" Ref="J1602"  Part="1" 
-F 0 "J1602" H 9830 5596 50  0000 L CNN
-F 1 "Screw_Terminal_01x03" H 9830 5551 50  0001 L CNN
-F 2 "Connector_Phoenix_MSTB:PhoenixContact_MSTBVA_2,5_3-G-5,08_1x03_P5.08mm_Vertical" H 9750 5600 50  0001 C CNN
-F 3 "~" H 9750 5600 50  0001 C CNN
-	1    9750 5600
-	1    0    0    -1  
-$EndComp
 $Comp
 L power:PWR_FLAG #FLG01602
 U 1 1 5E1B9B21
@@ -940,4 +879,51 @@ F 3 "~" H 7850 2500 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 Connection ~ 7850 2500
+$Comp
+L servo:Resistor R?
+U 1 1 5E256CA8
+P 9600 5600
+AR Path="/5DEE980E/5E256CA8" Ref="R?"  Part="1" 
+AR Path="/5E2F3BE3/5E256CA8" Ref="R?"  Part="1" 
+AR Path="/605BEC04/5E256CA8" Ref="R1614"  Part="1" 
+AR Path="/5DE49152/5E256CA8" Ref="R?"  Part="1" 
+F 0 "R1614" H 9600 5715 20  0000 C CNN
+F 1 "1M" H 9600 5672 20  0000 C CNN
+F 2 "Resistor_SMD:R_0603_1608Metric" H 9100 5500 60  0001 C CNN
+F 3 "" H 9200 5600 60  0001 C CNN
+	1    9600 5600
+	1    0    0    -1  
+$EndComp
+$Comp
+L servo:Resistor R?
+U 1 1 5E26C457
+P 9500 3300
+AR Path="/5DEE980E/5E26C457" Ref="R?"  Part="1" 
+AR Path="/5E2F3BE3/5E26C457" Ref="R?"  Part="1" 
+AR Path="/605BEC04/5E26C457" Ref="R1613"  Part="1" 
+AR Path="/5DE49152/5E26C457" Ref="R?"  Part="1" 
+F 0 "R1613" H 9500 3415 20  0000 C CNN
+F 1 "1M" H 9500 3372 20  0000 C CNN
+F 2 "Resistor_SMD:R_0603_1608Metric" H 9000 3200 60  0001 C CNN
+F 3 "" H 9100 3300 60  0001 C CNN
+	1    9500 3300
+	1    0    0    -1  
+$EndComp
+Connection ~ 8800 3900
+Text GLabel 9900 6200 2    50   Input ~ 0
+VBUS_B_N_H
+Text GLabel 9850 3900 2    50   Input ~ 0
+VBUS_A_N_H
+Text GLabel 9900 5600 2    50   Input ~ 0
+VBUS_B_P_H
+Text GLabel 9850 3300 2    50   Input ~ 0
+VBUS_A_P_H
+Wire Wire Line
+	8900 6200 9900 6200
+Wire Wire Line
+	9900 5600 9800 5600
+Wire Wire Line
+	8800 3900 9850 3900
+Wire Wire Line
+	9700 3300 9850 3300
 $EndSCHEMATC

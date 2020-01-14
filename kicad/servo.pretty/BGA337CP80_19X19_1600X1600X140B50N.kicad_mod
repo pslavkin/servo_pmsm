@@ -1,4 +1,4 @@
-(module servo:BGA337CP80_19X19_1600X1600X140B50N (layer F.Cu) (tedit 5E174A84)
+(module BGA337CP80_19X19_1600X1600X140B50N (layer F.Cu) (tedit 5E1DB077)
   (fp_text reference U1_501 (at -6.425595 -10.592685) (layer F.SilkS)
     (effects (font (size 1.093724 1.093724) (thickness 0.015)))
   )
@@ -354,4 +354,9 @@
   (pad A3 smd circle (at -5.6 -7.2) (size 0.4 0.4) (layers F.Cu F.Paste F.Mask))
   (pad A2 smd circle (at -6.4 -7.2) (size 0.4 0.4) (layers F.Cu F.Paste F.Mask))
   (pad A1 smd circle (at -7.2 -7.2) (size 0.4 0.4) (layers F.Cu F.Paste F.Mask))
+  (model ${KIPRJMOD}/shapes3D/bga337.stp
+    (offset (xyz 0 0 0.5))
+    (scale (xyz 1 1 1))
+    (rotate (xyz 0 0 0))
+  )
 )

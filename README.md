@@ -40,6 +40,8 @@ I'll let pins to aquire and filter it.
   footprint selection
 - :red_circle:          isolated GPIO aborted! I've reise free pins that comes from IGBT
 - :heavy_check_mark:    EVE LCD driven choosen as the UI by spi.. I's all the thinks we need
+- :heavy_check_mark:    3d added EVE LCD 3. 20w offline ac/dc changed to 10w. 15vcold
+  eliminated, two buttons eliminated. 2 LEM's eliminated
 - :construction:        all footprints choosen, but deserves some comprobation
 - :construction:        begin with placement, all big pictures passed, preliminary
  
@@ -88,7 +90,12 @@ There are the actual schematics generated until now:
 ## Layout
 Let's begin with layout!
 first pic, easy, doesn't it?
-<img src="doc/pics/layout1.jpg" width="800"/>
+
+<img src="doc/pics/layout1.jpg" width="600"/>
+<img src="doc/pics/layout2.jpg" width="600"/>
+
+<img src="doc/pics/ratsnets1.jpg" width="600"/>
+<img src="doc/pics/ratsnets2.jpg" width="600"/>
 
 
 ## Hierarchy

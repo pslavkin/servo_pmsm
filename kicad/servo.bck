@@ -268,8 +268,9 @@ K N-Channel MOSFET
 F https://www.fairchildsemi.com/datasheets/BS/BSS138.pdf
 $ENDCMP
 #
-$CMP IRM-10
-D TPS6242x 2.25-MHz 600-mA and 1000-mA Dual Step-Down
+$CMP IRM-10-5
+D 10W  AC-DC PCB-Mount Green Power Module
+K 10W  AC-DC PCB-Mount Green Power Module
 $ENDCMP
 #
 $CMP IRM-15-3.3_0
@@ -606,10 +607,10 @@ K 8P8C RJ female connector
 F ~
 $ENDCMP
 #
-$CMP RJ45x1_ARJM11D7-009-AB-ER2-T
+$CMP RJ45x1_ARJM11D7
 D RJ34 with magnetics x 1
 K Single Port Ethernet Transformer
-F https://abracon.com/Magnetics/lan/ARJ11D.pdf
+F https://abracon.com/Support/ARJM11D7.PDF
 $ENDCMP
 #
 $CMP RJ49

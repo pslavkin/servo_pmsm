@@ -100,8 +100,8 @@ U 5E21534F
 F0 "can rs485" 50
 F1 "can_485.sch" 50
 $EndSheet
-Text Notes 12650 4500 0    197  ~ 39
-CAN
+Text Notes 12550 4700 0    197  ~ 39
+CAN\nRS485
 $Sheet
 S 7050 2400 1300 1150
 U 5E033FE4

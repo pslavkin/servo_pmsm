@@ -1,6 +1,33 @@
 EESchema-LIBRARY Version 2.4
 #encoding utf-8
 #
+# Connector_Generic_Conn_02x03_Counter_Clockwise
+#
+DEF Connector_Generic_Conn_02x03_Counter_Clockwise J 0 40 Y N 1 F N
+F0 "J" 50 200 50 H V C CNN
+F1 "Connector_Generic_Conn_02x03_Counter_Clockwise" 50 -200 50 H V C CNN
+F2 "" 0 0 50 H I C CNN
+F3 "" 0 0 50 H I C CNN
+$FPLIST
+ Connector*:*_2x??_*
+$ENDFPLIST
+DRAW
+S -50 -95 0 -105 1 1 6 N
+S -50 5 0 -5 1 1 6 N
+S -50 105 0 95 1 1 6 N
+S -50 150 150 -150 1 1 10 f
+S 150 -95 100 -105 1 1 6 N
+S 150 5 100 -5 1 1 6 N
+S 150 105 100 95 1 1 6 N
+X Pin_1 1 -200 100 150 R 50 50 1 1 P
+X Pin_2 2 -200 0 150 R 50 50 1 1 P
+X Pin_3 3 -200 -100 150 R 50 50 1 1 P
+X Pin_4 4 300 -100 150 L 50 50 1 1 P
+X Pin_5 5 300 0 150 L 50 50 1 1 P
+X Pin_6 6 300 100 150 L 50 50 1 1 P
+ENDDRAW
+ENDDEF
+#
 # Connector_Generic_Conn_02x04_Row_Letter_Last
 #
 DEF Connector_Generic_Conn_02x04_Row_Letter_Last J 0 40 Y N 1 F N
@@ -153,33 +180,6 @@ X Pin_8b 8b 300 -400 150 L 50 50 1 1 P
 ENDDRAW
 ENDDEF
 #
-# Connector_Screw_Terminal_01x03
-#
-DEF Connector_Screw_Terminal_01x03 J 0 40 Y N 1 F N
-F0 "J" 0 200 50 H V C CNN
-F1 "Connector_Screw_Terminal_01x03" 0 -200 50 H V C CNN
-F2 "" 0 0 50 H I C CNN
-F3 "" 0 0 50 H I C CNN
-$FPLIST
- TerminalBlock*:*
-$ENDFPLIST
-DRAW
-C 0 -100 25 1 1 6 N
-C 0 0 25 1 1 6 N
-C 0 100 25 1 1 6 N
-S -50 150 50 -150 1 1 10 f
-P 2 1 1 6 -21 -87 13 -120 N
-P 2 1 1 6 -21 13 13 -20 N
-P 2 1 1 6 -21 113 13 80 N
-P 2 1 1 6 -14 -80 20 -113 N
-P 2 1 1 6 -14 20 20 -13 N
-P 2 1 1 6 -14 120 20 87 N
-X Pin_1 1 -200 100 150 R 50 50 1 1 P
-X Pin_2 2 -200 0 150 R 50 50 1 1 P
-X Pin_3 3 -200 -100 150 R 50 50 1 1 P
-ENDDRAW
-ENDDEF
-#
 # power_PWR_FLAG
 #
 DEF power_PWR_FLAG #FLG 0 0 N N 1 F P
@@ -190,20 +190,6 @@ F3 "" 0 0 50 H I C CNN
 DRAW
 P 6 0 1 0 0 0 0 50 -40 75 0 100 40 75 0 50 N
 X pwr 1 0 0 0 U 50 50 0 0 w
-ENDDRAW
-ENDDEF
-#
-# servo_15VC
-#
-DEF servo_15VC #PWR 0 0 Y Y 1 F P
-F0 "#PWR" 0 -200 20 H I C CNN
-F1 "servo_15VC" 0 150 28 H V C CNN
-F2 "" 0 0 50 H I C CNN
-F3 "" 0 0 50 H I C CNN
-DRAW
-C 0 75 25 0 1 0 N
-P 2 0 1 0 0 0 0 50 N
-X 15VC 1 0 0 0 U 2 2 1 1 W N
 ENDDRAW
 ENDDEF
 #
@@ -611,14 +597,13 @@ X GNDH 1 0 0 0 D 2 2 1 1 W N
 ENDDRAW
 ENDDEF
 #
-# servo_IRM-15-12
+# servo_IRM-10-5
 #
-DEF servo_IRM-15-12 PS 0 20 Y Y 1 F N
+DEF servo_IRM-10-5 PS 0 20 Y Y 1 F N
 F0 "PS" 0 200 39 H V C CNN
-F1 "servo_IRM-15-12" 0 -200 39 H V C CNN
-F2 "servo:Converter_ACDC_MeanWell_IRM-15-xx_THT" 0 -300 50 H I C CNN
-F3 "../doc/datasheets/IRM-15-SPEC.PDF" 400 -350 50 H I C CNN
-ALIAS IRM-15-5 IRM-15-12 IRM-15-15 IRM-15-24
+F1 "servo_IRM-10-5" 0 -200 39 H V C CNN
+F2 "Converter_ACDC:Converter_ACDC_MeanWell_IRM-10-xx_THT" 0 -300 50 H I C CNN
+F3 "../doc/datasheets/irm-10.pdf" 400 -350 50 H I C CNN
 $FPLIST
  Converter*ACDC*MeanWell*IRM*20*THT*
 $ENDFPLIST
@@ -697,25 +682,6 @@ X GND2 5 600 -200 100 L 50 50 1 1 W
 X CANL 6 600 200 100 L 50 50 1 1 B
 X CANH 7 600 300 100 L 50 50 1 1 B
 X VCC2 8 600 450 100 L 50 50 1 1 W
-ENDDRAW
-ENDDEF
-#
-# servo_Jumper_2_Bridged
-#
-DEF servo_Jumper_2_Bridged JP 0 0 Y N 1 F N
-F0 "JP" 0 75 20 H V C CNN
-F1 "servo_Jumper_2_Bridged" 0 -100 20 H V C CNN
-F2 "" 0 0 50 H I C CNN
-F3 "" 0 0 50 H I C CNN
-$FPLIST
- Jumper*
-$ENDFPLIST
-DRAW
-A 0 -70 100 1269 531 0 1 0 N -60 10 60 10
-C -80 0 20 0 0 0 N
-C 80 0 20 0 0 0 N
-X A 1 -200 0 100 R 20 50 1 1 P
-X B 2 200 0 100 L 20 50 1 1 P
 ENDDRAW
 ENDDEF
 #
@@ -1379,56 +1345,6 @@ X 2 2 200 0 100 L 50 50 0 1 P
 ENDDRAW
 ENDDEF
 #
-# servo_Screw_Terminal_01x02
-#
-DEF servo_Screw_Terminal_01x02 J 0 40 Y N 1 F N
-F0 "J" 0 100 39 H V C CNN
-F1 "servo_Screw_Terminal_01x02" 0 -200 39 H V C CNN
-F2 "" -100 0 50 H I C CNN
-F3 "" 0 100 50 H I C CNN
-$FPLIST
- TerminalBlock*:*
-$ENDFPLIST
-DRAW
-C 0 -100 25 1 1 6 N
-C 0 0 25 1 1 6 N
-S -50 50 50 -150 1 1 10 f
-P 2 1 1 6 -21 -87 13 -120 N
-P 2 1 1 6 -21 13 13 -20 N
-P 2 1 1 6 -14 -80 20 -113 N
-P 2 1 1 6 -14 20 20 -13 N
-X Pin_1 1 -200 0 150 R 39 39 1 1 P
-X Pin_2 2 -200 -100 150 R 39 39 1 1 P
-ENDDRAW
-ENDDEF
-#
-# servo_Screw_Terminal_01x03
-#
-DEF servo_Screw_Terminal_01x03 J 0 40 Y N 1 F N
-F0 "J" 0 200 39 H V C CNN
-F1 "servo_Screw_Terminal_01x03" 0 -200 39 H V C CNN
-F2 "" 0 0 50 H I C CNN
-F3 "" 0 0 50 H I C CNN
-$FPLIST
- TerminalBlock*:*
-$ENDFPLIST
-DRAW
-C 0 -100 25 1 1 6 N
-C 0 0 25 1 1 6 N
-C 0 100 25 1 1 6 N
-S -50 150 50 -150 1 1 10 f
-P 2 1 1 6 -21 -87 13 -120 N
-P 2 1 1 6 -21 13 13 -20 N
-P 2 1 1 6 -21 113 13 80 N
-P 2 1 1 6 -14 -80 20 -113 N
-P 2 1 1 6 -14 20 20 -13 N
-P 2 1 1 6 -14 120 20 87 N
-X Pin_1 1 -200 100 150 R 50 50 1 1 P
-X Pin_2 2 -200 0 150 R 50 50 1 1 P
-X Pin_3 3 -200 -100 150 R 50 50 1 1 P
-ENDDRAW
-ENDDEF
-#
 # servo_TMS320F28388
 #
 DEF servo_TMS320F28388 U 0 40 Y Y 5 L N
@@ -1796,6 +1712,36 @@ $ENDFPLIST
 DRAW
 C 0 130 30 0 1 0 N
 X 1 1 0 0 100 U 50 50 1 1 P
+ENDDRAW
+ENDDEF
+#
+# servo_irm-10-12
+#
+DEF servo_irm-10-12 PS 0 20 Y Y 1 F N
+F0 "PS" 0 200 39 H V C CNN
+F1 "servo_irm-10-12" 0 -200 39 H V C CNN
+F2 "Converter_ACDC:Converter_ACDC_MeanWell_IRM-10-xx_THT" 0 -300 50 H I C CNN
+F3 "../doc/datasheets/irm-10.pdf" 400 -350 50 H I C CNN
+ALIAS irm-10-12
+$FPLIST
+ Converter*ACDC*MeanWell*IRM*20*THT*
+$ENDFPLIST
+DRAW
+A -185 38 28 -1525 -275 0 1 0 N -210 25 -160 25
+A -135 11 29 292 1508 0 1 0 N -110 25 -160 25
+S -300 150 300 -150 0 1 10 f
+P 2 0 1 0 -210 -25 -110 -25 N
+P 2 0 1 0 0 -50 0 -100 N
+P 2 0 1 0 0 50 0 0 N
+P 2 0 1 0 0 150 0 100 N
+P 2 0 1 0 110 -25 210 -25 N
+P 2 0 1 0 110 25 130 25 N
+P 2 0 1 0 150 25 170 25 N
+P 2 0 1 0 190 25 210 25 N
+X AC/L 1 -400 100 100 R 50 50 1 1 W
+X AC/N 2 -400 -100 100 R 50 50 1 1 W
+X -Vout 3 400 -100 100 L 50 50 1 1 w
+X +Vout 4 400 100 100 L 50 50 1 1 w
 ENDDRAW
 ENDDEF
 #
