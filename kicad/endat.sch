@@ -1280,17 +1280,6 @@ Wire Wire Line
 	9300 3400 9200 3400
 Wire Wire Line
 	9000 3600 9000 3500
-$Comp
-L Connector_Generic:Conn_02x06_Row_Letter_Last J1001
-U 1 1 5E215342
-P 8050 3800
-F 0 "J1001" H 8100 4217 50  0000 C CNN
-F 1 "tblock" H 8100 4126 50  0000 C CNN
-F 2 "servo:tblock02x06" H 8050 3800 50  0001 C CNN
-F 3 "~" H 8050 3800 50  0001 C CNN
-	1    8050 3800
-	1    0    0    -1  
-$EndComp
 Wire Wire Line
 	7250 3600 7850 3600
 Wire Wire Line
@@ -1315,4 +1304,15 @@ Wire Wire Line
 	8350 3700 9500 3700
 Wire Wire Line
 	8350 3600 9000 3600
+$Comp
+L servo:tblock2x6 J1001
+U 1 1 5E22F1B6
+P 8050 3800
+F 0 "J1001" H 8100 4193 39  0000 C CNN
+F 1 "tblock2x6" H 8100 4118 39  0000 C CNN
+F 2 "servo:tblock02x06" H 8000 4000 50  0001 C CNN
+F 3 "../doc/datasheets/tblock2rows.pdf" H 8100 4100 50  0001 C CNN
+	1    8050 3800
+	1    0    0    -1  
+$EndComp
 $EndSCHEMATC

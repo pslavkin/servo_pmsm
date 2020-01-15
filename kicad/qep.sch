@@ -754,17 +754,6 @@ Wire Wire Line
 	10050 3100 9900 3100
 Text Notes 4950 1750 0    20   ~ 4
 I left the input for two isolated incremental encoders.\nI left the 4 signals input plus two auxiliary output for eny porpous plus\n the ability to choose between 5 or 15vH
-$Comp
-L Connector_Generic:Conn_02x08_Row_Letter_Last J1101
-U 1 1 5E1C6D24
-P 5700 3400
-F 0 "J1101" H 5750 3917 50  0000 C CNN
-F 1 "tblock" H 5750 3826 50  0000 C CNN
-F 2 "servo:tblock02x08" H 5700 3400 50  0001 C CNN
-F 3 "" H 5700 3400 50  0001 C CNN
-	1    5700 3400
-	1    0    0    -1  
-$EndComp
 Wire Wire Line
 	4800 3100 5500 3100
 Wire Wire Line
@@ -797,4 +786,15 @@ Wire Wire Line
 	6000 3700 6700 3700
 Wire Wire Line
 	6000 3600 6900 3600
+$Comp
+L servo:tblock2x8 J1101
+U 1 1 5E20064E
+P 5700 3400
+F 0 "J1101" H 5750 3917 50  0000 C CNN
+F 1 "tblock" H 5750 3826 50  0000 C CNN
+F 2 "servo:tblock02x08" H 5700 3400 50  0001 C CNN
+F 3 "../doc/datasheets/tblock2rows.pdf" H 5750 3800 50  0001 C CNN
+	1    5700 3400
+	1    0    0    -1  
+$EndComp
 $EndSCHEMATC

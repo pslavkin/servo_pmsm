@@ -537,14 +537,18 @@ Wire Wire Line
 	7850 2900 8850 2900
 Wire Wire Line
 	7850 3000 8650 3000
+Text Notes -6600 5600 1    787  ~ 157
+OJO con el GND y el EARTH SPERAR
+Text Notes -6350 5450 0    787  ~ 157
+Dejar optar por EARCH o GND en el pin de GND de CAN y 485
 $Comp
-L Connector_Generic:Conn_02x04_Row_Letter_Last J1201
-U 1 1 5E2A904D
+L servo:tblock2x4 J1201
+U 1 1 5E248598
 P 7550 2800
-F 0 "J1201" H 7600 3117 50  0000 C CNN
-F 1 "tblock" H 7600 3026 50  0000 C CNN
-F 2 "servo:tblock02x04" H 7550 2800 50  0001 C CNN
-F 3 "~" H 7550 2800 50  0001 C CNN
+F 0 "J1201" H 7600 3093 39  0000 C CNN
+F 1 "tblock2x4" H 7600 3018 39  0000 C CNN
+F 2 "servo:tblock02x04" H 7500 2900 50  0001 C CNN
+F 3 "../doc/datsheets/tblock2xrows.pdf" H 7600 3000 50  0001 C CNN
 	1    7550 2800
 	1    0    0    -1  
 $EndComp

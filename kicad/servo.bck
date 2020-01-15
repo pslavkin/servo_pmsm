@@ -723,6 +723,12 @@ $CMP TPD4E001QDBV
 D TPD4E001-Q1 4-Channel ESD Protection Array With 1.5-pF I/O Capacitance
 $ENDCMP
 #
+$CMP TPD4S012
+D TPD4S0124-ChannelESD Solutionfor USB-HS/USBOTG/USBChargerInterface
+K USB  Port Protection
+F http://www.ti.com/lit/ds/symlink/tpd4s012.pdf
+$ENDCMP
+#
 $CMP TPS6240x
 D TPS6242x 2.25-MHz 600-mA and 1000-mA Dual Step-Down
 $ENDCMP
@@ -749,6 +755,30 @@ $CMP rj45x2_0845-2G1T-H5
 D rj45 x2 with magnetics dual row
 K rj45
 F https://www.mouser.com/datasheet/2/643/dr-MAG-0845-2G1T-H5-1309698.pdf
+$ENDCMP
+#
+$CMP tblock2x3
+D Generic connector, double row, 02x03, counter clockwise pin numbering scheme (similar to DIP packge numbering), script generated (kicad-library-utils/schlib/autogen/connector/)
+K connector
+F ~
+$ENDCMP
+#
+$CMP tblock2x4
+D Generic connector, double row, 02x04, row letter last pin numbering scheme (pin number consists of a letter for the row and a number for the pin index in this row. 1a, ..., Na; 1b, ..., Nb)), script generated (kicad-library-utils/schlib/autogen/connector/)
+K connector
+F ~
+$ENDCMP
+#
+$CMP tblock2x6
+D Generic connector, double row, 02x06, row letter last pin numbering scheme (pin number consists of a letter for the row and a number for the pin index in this row. 1a, ..., Na; 1b, ..., Nb)), script generated (kicad-library-utils/schlib/autogen/connector/)
+K connector
+F 1762415
+$ENDCMP
+#
+$CMP tblock2x8
+D Generic connector, double row, 02x08, row letter last pin numbering scheme (pin number consists of a letter for the row and a number for the pin index in this row. 1a, ..., Na; 1b, ..., Nb)), script generated (kicad-library-utils/schlib/autogen/connector/)
+K connector
+F 1762431
 $ENDCMP
 #
 #End Doc Library

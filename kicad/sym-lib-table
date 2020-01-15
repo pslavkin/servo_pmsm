@@ -1,4 +1,5 @@
 (sym_lib_table
   (lib (name servo)(type Legacy)(uri ${KIPRJMOD}/servo.lib)(options "")(descr ""))
   (lib (name servo-rescue)(type Legacy)(uri ${KIPRJMOD}/servo-rescue.lib)(options "")(descr ""))
+  (lib (name 0821-1X1T-36-F)(type Legacy)(uri /home/pslavkin/servo_pmsm_orphano/kicad/0821-1X1T-36-F.lib)(options "")(descr ""))
 )

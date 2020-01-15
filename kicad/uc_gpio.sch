@@ -394,7 +394,7 @@ Text GLabel 3150 7600 0    50   Input ~ 0
 RS485_RX
 Text GLabel 3150 7500 0    50   Output ~ 0
 RS485_TX
-Text GLabel 3150 7400 0    50   Output ~ 0
+Text GLabel 3150 7700 0    50   Output ~ 0
 RS485_EN
 Wire Wire Line
 	3150 7800 4800 7800
@@ -548,17 +548,17 @@ Text GLabel 3150 6100 0    50   Input ~ 0
 FREE_OUT_A1
 Text GLabel 3150 6200 0    50   Input ~ 0
 FREE_OUT_A2
-Text GLabel 3150 6300 0    50   Input ~ 0
-FREE_IN_A3
-Text GLabel 3150 6400 0    50   Input ~ 0
-FREE_IN_A4
 Text GLabel 3150 6500 0    50   Input ~ 0
-FREE_OUT_B1
+FREE_IN_A3
 Text GLabel 3150 6600 0    50   Input ~ 0
-FREE_OUT_B2
+FREE_IN_A4
 Text GLabel 3150 6700 0    50   Input ~ 0
-FREE_IN_B3
+FREE_OUT_B1
 Text GLabel 3150 6800 0    50   Input ~ 0
+FREE_OUT_B2
+Text GLabel 3150 6900 0    50   Input ~ 0
+FREE_IN_B3
+Text GLabel 3150 7400 0    50   Input ~ 0
 FREE_IN_B4
 Wire Wire Line
 	3150 2100 4800 2100
@@ -595,8 +595,6 @@ NoConn ~ 4800 9400
 NoConn ~ 4800 9500
 NoConn ~ 4800 9600
 NoConn ~ 4800 9700
-NoConn ~ 4800 6900
-NoConn ~ 4800 7700
 NoConn ~ 4800 8300
 NoConn ~ 8350 3400
 NoConn ~ 8350 3500
@@ -629,6 +627,14 @@ Text GLabel 9700 3300 2    50   Input ~ 0
 LCD_GPIO5
 Text GLabel 9700 3200 2    50   Input ~ 0
 LCD_GPIO4
+Wire Wire Line
+	9700 3200 8350 3200
+Wire Wire Line
+	8350 3300 9700 3300
+Text GLabel 3150 6400 0    50   Input ~ 0
+USB_D+
+Text GLabel 3150 6300 0    50   Input ~ 0
+USB_D-
 $Comp
 L servo:TMS320F28388 U301
 U 2 1 5DB38FFC
@@ -642,7 +648,7 @@ F 4 "TMS320F28388DZWTS" V 4300 3200 60  0001 C CNN "PartNumber"
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
-	9700 3200 8350 3200
+	4800 6900 3150 6900
 Wire Wire Line
-	8350 3300 9700 3300
+	4800 7700 3150 7700
 $EndSCHEMATC

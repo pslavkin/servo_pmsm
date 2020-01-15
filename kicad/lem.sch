@@ -206,17 +206,6 @@ Wire Wire Line
 	5450 3000 5450 3400
 Wire Wire Line
 	5350 3100 4950 3100
-$Comp
-L Connector_Generic:Conn_02x03_Counter_Clockwise J1507
-U 1 1 5E31FDCB
-P 5450 3600
-F 0 "J1507" V 5454 3780 50  0000 L CNN
-F 1 "tblock" V 5545 3780 50  0000 L CNN
-F 2 "servo:tblock02x03" H 5450 3600 50  0001 C CNN
-F 3 "~" H 5450 3600 50  0001 C CNN
-	1    5450 3600
-	0    1    1    0   
-$EndComp
 Wire Wire Line
 	4750 2900 4750 3200
 Wire Wire Line
@@ -405,17 +394,6 @@ Wire Wire Line
 	5250 4950 5250 5350
 Wire Wire Line
 	5150 5050 4750 5050
-$Comp
-L Connector_Generic:Conn_02x03_Counter_Clockwise J1501
-U 1 1 5E275022
-P 5250 5550
-F 0 "J1501" V 5254 5730 50  0000 L CNN
-F 1 "tblock" V 5345 5730 50  0000 L CNN
-F 2 "servo:tblock02x03" H 5250 5550 50  0001 C CNN
-F 3 "~" H 5250 5550 50  0001 C CNN
-	1    5250 5550
-	0    1    1    0   
-$EndComp
 Wire Wire Line
 	4550 4850 4550 5150
 Wire Wire Line
@@ -604,17 +582,6 @@ Wire Wire Line
 	5350 7550 5350 7950
 Wire Wire Line
 	5250 7650 4850 7650
-$Comp
-L Connector_Generic:Conn_02x03_Counter_Clockwise J1502
-U 1 1 5E27626C
-P 5350 8150
-F 0 "J1502" V 5354 8330 50  0000 L CNN
-F 1 "tblock" V 5445 8330 50  0000 L CNN
-F 2 "servo:tblock02x03" H 5350 8150 50  0001 C CNN
-F 3 "~" H 5350 8150 50  0001 C CNN
-	1    5350 8150
-	0    1    1    0   
-$EndComp
 Wire Wire Line
 	4650 7450 4650 7750
 Wire Wire Line
@@ -803,17 +770,6 @@ Wire Wire Line
 	7250 3000 7250 3400
 Wire Wire Line
 	7350 3100 7750 3100
-$Comp
-L Connector_Generic:Conn_02x03_Counter_Clockwise J1503
-U 1 1 5E2786C0
-P 7250 3600
-F 0 "J1503" V 7254 3780 50  0000 L CNN
-F 1 "tblock" V 7345 3780 50  0000 L CNN
-F 2 "servo:tblock02x03" H 7250 3600 50  0001 C CNN
-F 3 "~" H 7250 3600 50  0001 C CNN
-	1    7250 3600
-	0    -1   1    0   
-$EndComp
 Wire Wire Line
 	7950 2900 7950 3200
 Wire Wire Line
@@ -1002,17 +958,6 @@ Wire Wire Line
 	7250 4950 7250 5350
 Wire Wire Line
 	7350 5050 7750 5050
-$Comp
-L Connector_Generic:Conn_02x03_Counter_Clockwise J1504
-U 1 1 5E2833E7
-P 7250 5550
-F 0 "J1504" V 7254 5730 50  0000 L CNN
-F 1 "tblock" V 7345 5730 50  0000 L CNN
-F 2 "servo:tblock02x03" H 7250 5550 50  0001 C CNN
-F 3 "~" H 7250 5550 50  0001 C CNN
-	1    7250 5550
-	0    -1   1    0   
-$EndComp
 Wire Wire Line
 	7950 4850 7950 5150
 Wire Wire Line
@@ -1201,17 +1146,6 @@ Wire Wire Line
 	7250 7550 7250 7950
 Wire Wire Line
 	7350 7650 7750 7650
-$Comp
-L Connector_Generic:Conn_02x03_Counter_Clockwise J1505
-U 1 1 5E288A55
-P 7250 8150
-F 0 "J1505" V 7254 8330 50  0000 L CNN
-F 1 "tblock" V 7345 8330 50  0000 L CNN
-F 2 "servo:tblock02x03" H 7250 8150 50  0001 C CNN
-F 3 "~" H 7250 8150 50  0001 C CNN
-	1    7250 8150
-	0    -1   1    0   
-$EndComp
 Wire Wire Line
 	7950 7450 7950 7750
 Wire Wire Line
@@ -1236,4 +1170,70 @@ Wire Wire Line
 	7950 8650 7950 8900
 Text Notes 6900 2350 0    20   ~ 0
 chanlog1: I've decided to return to a 2x3 terminal block output 'cause\n it match the size of the LEM
+$Comp
+L servo:tblock2x3 J1503
+U 1 1 5E261EDA
+P 5450 3600
+F 0 "J1503" V 5462 3780 39  0000 L CNN
+F 1 "tblock2x3" V 5537 3780 39  0000 L CNN
+F 2 "servo:tblock02x03" H 5400 3700 50  0001 C CNN
+F 3 "../doc/dfatasheets/tblock2rows.pdf" H 5500 3800 50  0001 C CNN
+	1    5450 3600
+	0    1    1    0   
+$EndComp
+$Comp
+L servo:tblock2x3 J1504
+U 1 1 5E270F16
+P 7250 3600
+F 0 "J1504" V 7262 3780 39  0000 L CNN
+F 1 "tblock2x3" V 7337 3780 39  0000 L CNN
+F 2 "servo:tblock02x03" H 7200 3700 50  0001 C CNN
+F 3 "../doc/dfatasheets/tblock2rows.pdf" H 7300 3800 50  0001 C CNN
+	1    7250 3600
+	0    1    1    0   
+$EndComp
+$Comp
+L servo:tblock2x3 J1501
+U 1 1 5E2787AF
+P 5250 5550
+F 0 "J1501" V 5262 5730 39  0000 L CNN
+F 1 "tblock2x3" V 5337 5730 39  0000 L CNN
+F 2 "servo:tblock02x03" H 5200 5650 50  0001 C CNN
+F 3 "../doc/dfatasheets/tblock2rows.pdf" H 5300 5750 50  0001 C CNN
+	1    5250 5550
+	0    1    1    0   
+$EndComp
+$Comp
+L servo:tblock2x3 J1505
+U 1 1 5E27FF32
+P 7250 5550
+F 0 "J1505" V 7262 5730 39  0000 L CNN
+F 1 "tblock2x3" V 7337 5730 39  0000 L CNN
+F 2 "servo:tblock02x03" H 7200 5650 50  0001 C CNN
+F 3 "../doc/dfatasheets/tblock2rows.pdf" H 7300 5750 50  0001 C CNN
+	1    7250 5550
+	0    1    1    0   
+$EndComp
+$Comp
+L servo:tblock2x3 J1502
+U 1 1 5E296823
+P 5350 8150
+F 0 "J1502" V 5362 8330 39  0000 L CNN
+F 1 "tblock2x3" V 5437 8330 39  0000 L CNN
+F 2 "servo:tblock02x03" H 5300 8250 50  0001 C CNN
+F 3 "../doc/dfatasheets/tblock2rows.pdf" H 5400 8350 50  0001 C CNN
+	1    5350 8150
+	0    1    1    0   
+$EndComp
+$Comp
+L servo:tblock2x3 J1506
+U 1 1 5E29DFAC
+P 7250 8150
+F 0 "J1506" V 7262 8330 39  0000 L CNN
+F 1 "tblock2x3" V 7337 8330 39  0000 L CNN
+F 2 "servo:tblock02x03" H 7200 8250 50  0001 C CNN
+F 3 "../doc/datasheets/tblock2rows.pdf" H 7300 8350 50  0001 C CNN
+	1    7250 8150
+	0    1    1    0   
+$EndComp
 $EndSCHEMATC
