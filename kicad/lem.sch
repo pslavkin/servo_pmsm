@@ -4,7 +4,7 @@ EELAYER 26 0
 EELAYER END
 $Descr A3 16535 11693
 encoding utf-8
-Sheet 15 18
+Sheet 15 19
 Title "LEM currente measurement"
 Date "2020-01-09"
 Rev "1.0"
@@ -195,7 +195,6 @@ Wire Wire Line
 NoConn ~ 6400 10550
 Text Notes 5700 10800 0    20   ~ 0
 I've decided to eliminate 1 LEM, you could use 3 in line measurement,\n or 2 in line plus one for all. De reason is size of board and complexity
-NoConn ~ 5500 7550
 Wire Wire Line
 	4750 2900 5550 2900
 Wire Wire Line
@@ -385,35 +384,11 @@ Wire Wire Line
 Wire Wire Line
 	4750 5050 4750 5150
 Wire Wire Line
-	4550 4850 5350 4850
-Wire Wire Line
-	5350 4850 5350 5350
-Wire Wire Line
-	4650 4950 5250 4950
-Wire Wire Line
-	5250 4950 5250 5350
-Wire Wire Line
-	5150 5050 4750 5050
-Wire Wire Line
 	4550 4850 4550 5150
 Wire Wire Line
 	4650 4950 4650 5150
 Wire Wire Line
-	5150 5050 5150 5350
-Wire Wire Line
-	4750 6100 5150 6100
-Wire Wire Line
-	5150 6100 5150 5850
-Wire Wire Line
 	4650 6050 4650 6200
-Wire Wire Line
-	4650 6200 5250 6200
-Wire Wire Line
-	5250 6200 5250 5850
-Wire Wire Line
-	5350 5850 5350 6300
-Wire Wire Line
-	5350 6300 4550 6300
 Wire Wire Line
 	4550 6050 4550 6300
 Wire Wire Line
@@ -556,52 +531,17 @@ Connection ~ 3500 8700
 Wire Wire Line
 	3500 8700 3300 8700
 Connection ~ 4100 8700
-$Comp
-L servo:LXS6-NPS U1502
-U 1 1 5E27625D
-P 4750 8200
-F 0 "U1502" H 4250 8700 39  0000 L CNN
-F 1 "LXS6-NPS" H 4200 8600 39  0000 L CNN
-F 2 "servo:LEM_LTSR-NP" H 4750 7400 50  0001 C CNN
-F 3 "../doc/datasheets/lem_lxs_series.pdf" H 4750 7550 50  0001 C CNN
-	1    4750 8200
-	1    0    0    -1  
-$EndComp
 Connection ~ 3850 8200
 Wire Wire Line
 	4350 8200 3850 8200
 Wire Wire Line
 	4850 7650 4850 7750
 Wire Wire Line
-	4650 7450 5450 7450
-Wire Wire Line
-	5450 7450 5450 7950
-Wire Wire Line
-	4750 7550 5350 7550
-Wire Wire Line
-	5350 7550 5350 7950
-Wire Wire Line
-	5250 7650 4850 7650
-Wire Wire Line
 	4650 7450 4650 7750
 Wire Wire Line
 	4750 7550 4750 7750
 Wire Wire Line
-	5250 7650 5250 7950
-Wire Wire Line
-	4850 8700 5250 8700
-Wire Wire Line
-	5250 8700 5250 8450
-Wire Wire Line
 	4750 8650 4750 8800
-Wire Wire Line
-	4750 8800 5350 8800
-Wire Wire Line
-	5350 8800 5350 8450
-Wire Wire Line
-	5450 8450 5450 8900
-Wire Wire Line
-	5450 8900 4650 8900
 Wire Wire Line
 	4650 8650 4650 8900
 Wire Wire Line
@@ -761,35 +701,11 @@ Wire Wire Line
 Wire Wire Line
 	7750 3100 7750 3200
 Wire Wire Line
-	7950 2900 7150 2900
-Wire Wire Line
-	7150 2900 7150 3400
-Wire Wire Line
-	7850 3000 7250 3000
-Wire Wire Line
-	7250 3000 7250 3400
-Wire Wire Line
-	7350 3100 7750 3100
-Wire Wire Line
 	7950 2900 7950 3200
 Wire Wire Line
 	7850 3000 7850 3200
 Wire Wire Line
-	7350 3100 7350 3400
-Wire Wire Line
-	7750 4150 7350 4150
-Wire Wire Line
-	7350 4150 7350 3900
-Wire Wire Line
 	7850 4100 7850 4250
-Wire Wire Line
-	7850 4250 7250 4250
-Wire Wire Line
-	7250 4250 7250 3900
-Wire Wire Line
-	7150 3900 7150 4350
-Wire Wire Line
-	7150 4350 7950 4350
 Wire Wire Line
 	7950 4100 7950 4350
 Wire Wire Line
@@ -949,35 +865,11 @@ Wire Wire Line
 Wire Wire Line
 	7750 5050 7750 5150
 Wire Wire Line
-	7950 4850 7150 4850
-Wire Wire Line
-	7150 4850 7150 5350
-Wire Wire Line
-	7850 4950 7250 4950
-Wire Wire Line
-	7250 4950 7250 5350
-Wire Wire Line
-	7350 5050 7750 5050
-Wire Wire Line
 	7950 4850 7950 5150
 Wire Wire Line
 	7850 4950 7850 5150
 Wire Wire Line
-	7350 5050 7350 5350
-Wire Wire Line
-	7750 6100 7350 6100
-Wire Wire Line
-	7350 6100 7350 5850
-Wire Wire Line
 	7850 6050 7850 6200
-Wire Wire Line
-	7850 6200 7250 6200
-Wire Wire Line
-	7250 6200 7250 5850
-Wire Wire Line
-	7150 5850 7150 6300
-Wire Wire Line
-	7150 6300 7950 6300
 Wire Wire Line
 	7950 6050 7950 6300
 Wire Wire Line
@@ -1137,35 +1029,7 @@ Wire Wire Line
 Wire Wire Line
 	7750 7650 7750 7750
 Wire Wire Line
-	7950 7450 7150 7450
-Wire Wire Line
-	7150 7450 7150 7950
-Wire Wire Line
-	7850 7550 7250 7550
-Wire Wire Line
-	7250 7550 7250 7950
-Wire Wire Line
-	7350 7650 7750 7650
-Wire Wire Line
-	7950 7450 7950 7750
-Wire Wire Line
-	7850 7550 7850 7750
-Wire Wire Line
-	7350 7650 7350 7950
-Wire Wire Line
-	7750 8700 7350 8700
-Wire Wire Line
-	7350 8700 7350 8450
-Wire Wire Line
 	7850 8650 7850 8800
-Wire Wire Line
-	7850 8800 7250 8800
-Wire Wire Line
-	7250 8800 7250 8450
-Wire Wire Line
-	7150 8450 7150 8900
-Wire Wire Line
-	7150 8900 7950 8900
 Wire Wire Line
 	7950 8650 7950 8900
 Text Notes 6900 2350 0    20   ~ 0
@@ -1236,4 +1100,211 @@ F 3 "../doc/datasheets/tblock2rows.pdf" H 7300 8350 50  0001 C CNN
 	1    7250 8150
 	0    1    1    0   
 $EndComp
+Text Label 5100 2900 0    20   ~ 0
+LemAU_1
+Text Label 5100 3000 0    20   ~ 0
+LemAU_2
+Text Label 5100 3100 0    20   ~ 0
+LemAU_3
+Text Label 5100 4150 0    20   ~ 0
+LemAU_4
+Text Label 5100 4250 0    20   ~ 0
+LemAU_5
+Text Label 5100 4350 0    20   ~ 0
+LemAU_6
+$Comp
+L servo:LXS6-NPS U1502
+U 1 1 5E27625D
+P 4750 8200
+F 0 "U1502" H 4250 8700 39  0000 L CNN
+F 1 "LXS6-NPS" H 4200 8600 39  0000 L CNN
+F 2 "servo:LEM_LTSR-NP" H 4750 7400 50  0001 C CNN
+F 3 "../doc/datasheets/lem_lxs_series.pdf" H 4750 7550 50  0001 C CNN
+	1    4750 8200
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	7850 7550 7850 7750
+Wire Wire Line
+	7950 7450 7950 7750
+Wire Wire Line
+	4550 4850 5350 4850
+Wire Wire Line
+	5350 4850 5350 5350
+Wire Wire Line
+	4650 4950 5250 4950
+Wire Wire Line
+	5250 4950 5250 5350
+Wire Wire Line
+	5150 5050 4750 5050
+Wire Wire Line
+	5150 5050 5150 5350
+Text Label 4900 4850 0    20   ~ 0
+LemAV_1
+Text Label 4900 4950 0    20   ~ 0
+LemAV_2
+Text Label 4900 5050 0    20   ~ 0
+LemAV_3
+Wire Wire Line
+	4650 7450 5450 7450
+Wire Wire Line
+	5450 7450 5450 7950
+Wire Wire Line
+	4750 7550 5350 7550
+Wire Wire Line
+	5350 7550 5350 7950
+Wire Wire Line
+	5250 7650 4850 7650
+Wire Wire Line
+	5250 7650 5250 7950
+Text Label 5000 7450 0    20   ~ 0
+LemA_All_1
+Text Label 5000 7550 0    20   ~ 0
+LemA_All_2
+Text Label 5000 7650 0    20   ~ 0
+LemA_All_3
+Wire Wire Line
+	4750 6100 5150 6100
+Wire Wire Line
+	5150 6100 5150 5850
+Wire Wire Line
+	4650 6200 5250 6200
+Wire Wire Line
+	5250 6200 5250 5850
+Wire Wire Line
+	5350 5850 5350 6300
+Wire Wire Line
+	5350 6300 4550 6300
+Text Label 4900 6100 0    20   ~ 0
+LemAV_4
+Text Label 4900 6200 0    20   ~ 0
+LemAV_5
+Text Label 4900 6300 0    20   ~ 0
+LemAV_6
+Wire Wire Line
+	4850 8700 5250 8700
+Wire Wire Line
+	5250 8700 5250 8450
+Wire Wire Line
+	4750 8800 5350 8800
+Wire Wire Line
+	5350 8800 5350 8450
+Wire Wire Line
+	5450 8450 5450 8900
+Wire Wire Line
+	5450 8900 4650 8900
+Text Label 5000 8700 0    20   ~ 0
+LemA_All_4
+Text Label 5000 8800 0    20   ~ 0
+LemA_All_5
+Text Label 5000 8900 0    20   ~ 0
+LemA_All_6
+Wire Wire Line
+	7950 2900 7150 2900
+Wire Wire Line
+	7150 2900 7150 3400
+Wire Wire Line
+	7850 3000 7250 3000
+Wire Wire Line
+	7250 3000 7250 3400
+Wire Wire Line
+	7350 3100 7750 3100
+Wire Wire Line
+	7350 3100 7350 3400
+Wire Wire Line
+	7750 4150 7350 4150
+Wire Wire Line
+	7350 4150 7350 3900
+Wire Wire Line
+	7850 4250 7250 4250
+Wire Wire Line
+	7250 4250 7250 3900
+Wire Wire Line
+	7150 3900 7150 4350
+Wire Wire Line
+	7150 4350 7950 4350
+Text Label 7600 2900 2    20   ~ 0
+LemBU_1
+Text Label 7600 3000 2    20   ~ 0
+LemBU_2
+Text Label 7600 3100 2    20   ~ 0
+LemBU_3
+Text Label 7600 4150 2    20   ~ 0
+LemBU_4
+Text Label 7600 4250 2    20   ~ 0
+LemBU_5
+Text Label 7600 4350 2    20   ~ 0
+LemBU_6
+Wire Wire Line
+	7950 4850 7150 4850
+Wire Wire Line
+	7150 4850 7150 5350
+Wire Wire Line
+	7850 4950 7250 4950
+Wire Wire Line
+	7250 4950 7250 5350
+Wire Wire Line
+	7350 5050 7750 5050
+Wire Wire Line
+	7350 5050 7350 5350
+Wire Wire Line
+	7750 6100 7350 6100
+Wire Wire Line
+	7350 6100 7350 5850
+Wire Wire Line
+	7850 6200 7250 6200
+Wire Wire Line
+	7250 6200 7250 5850
+Wire Wire Line
+	7150 5850 7150 6300
+Wire Wire Line
+	7150 6300 7950 6300
+Text Label 7600 4850 2    20   ~ 0
+LemBV_1
+Text Label 7600 4950 2    20   ~ 0
+LemBV_2
+Text Label 7600 5050 2    20   ~ 0
+LemBV_3
+Text Label 7600 6100 2    20   ~ 0
+LemBV_4
+Text Label 7600 6200 2    20   ~ 0
+LemBV_5
+Text Label 7600 6300 2    20   ~ 0
+LemBV_6
+Wire Wire Line
+	7950 7450 7150 7450
+Wire Wire Line
+	7150 7450 7150 7950
+Wire Wire Line
+	7850 7550 7250 7550
+Wire Wire Line
+	7250 7550 7250 7950
+Wire Wire Line
+	7350 7650 7750 7650
+Wire Wire Line
+	7350 7650 7350 7950
+Wire Wire Line
+	7750 8700 7350 8700
+Wire Wire Line
+	7350 8700 7350 8450
+Wire Wire Line
+	7850 8800 7250 8800
+Wire Wire Line
+	7250 8800 7250 8450
+Wire Wire Line
+	7150 8450 7150 8900
+Wire Wire Line
+	7150 8900 7950 8900
+Text Label 7600 7450 2    20   ~ 0
+LemB_All_1
+Text Label 7600 7550 2    20   ~ 0
+LemB_All_2
+Text Label 7600 7650 2    20   ~ 0
+LemB_All_3
+Text Label 7600 8700 2    20   ~ 0
+LemB_All_4
+Text Label 7600 8800 2    20   ~ 0
+LemB_All_5
+Text Label 7600 8900 2    20   ~ 0
+LemB_All_6
 $EndSCHEMATC

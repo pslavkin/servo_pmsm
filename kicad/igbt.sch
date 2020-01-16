@@ -4,7 +4,7 @@ EELAYER 26 0
 EELAYER END
 $Descr A3 16535 11693
 encoding utf-8
-Sheet 8 18
+Sheet 8 19
 Title "Igbt interface"
 Date "2020-01-09"
 Rev "1.0"
@@ -36,10 +36,6 @@ Text GLabel 14550 7300 2    50   Input ~ 0
 FREE_OUT_B1
 Text GLabel 14550 7400 2    50   Input ~ 0
 FREE_OUT_B2
-Text GLabel 14550 7500 2    50   Input ~ 0
-FREE_IN_B3
-Text GLabel 14550 7600 2    50   Input ~ 0
-FREE_IN_B4
 Text GLabel 14550 7200 2    50   Input ~ 0
 BRK_B_MEC_C
 Text GLabel 1950 2300 0    50   Input ~ 0
@@ -335,10 +331,6 @@ Text GLabel 1950 3650 0    50   Input ~ 0
 FREE_OUT_A1
 Text GLabel 1950 3750 0    50   Input ~ 0
 FREE_OUT_A2
-Text GLabel 1950 3850 0    50   Input ~ 0
-FREE_IN_A3
-Text GLabel 1950 3950 0    50   Input ~ 0
-FREE_IN_A4
 Wire Wire Line
 	2350 3650 1950 3650
 Wire Wire Line
@@ -412,17 +404,6 @@ F 1 "SN74LVC2G17DBVR" H 5150 2450 20  0000 L BNN
 F 2 "servo:SOT-23-6" H 4450 2700 60  0001 C CNN
 F 3 "../doc/datasheets/sn74lvc2g17.pdf" H 4650 2950 60  0001 C CNN
 	1    4950 2500
-	1    0    0    -1  
-$EndComp
-$Comp
-L servo:SN74LVC2G17DBVR U803
-U 1 1 5E60CBFC
-P 4950 2050
-F 0 "U803" H 4450 1950 39  0000 L BNN
-F 1 "SN74LVC2G17DBVR" H 5150 2000 20  0000 L BNN
-F 2 "servo:SOT-23-6" H 4450 2250 60  0001 C CNN
-F 3 "../doc/datasheets/sn74lvc2g17.pdf" H 4650 2500 60  0001 C CNN
-	1    4950 2050
 	1    0    0    -1  
 $EndComp
 $Comp
@@ -1666,10 +1647,6 @@ Text GLabel 6750 6950 0    50   Input ~ 0
 FREE_OUT_B1_H
 Text GLabel 6750 7050 0    50   Input ~ 0
 FREE_OUT_B2_H
-Text GLabel 6750 7150 0    50   Input ~ 0
-FREE_IN_B3_H
-Text GLabel 6750 7250 0    50   Input ~ 0
-FREE_IN_B4_H
 Text GLabel 9250 2500 2    50   Input ~ 0
 PWM_A_1H_H
 Text GLabel 9250 2600 2    50   Input ~ 0
@@ -1690,8 +1667,31 @@ Text GLabel 9250 3300 2    50   Input ~ 0
 FREE_OUT_A1_H
 Text GLabel 9250 3400 2    50   Input ~ 0
 FREE_OUT_A2_H
+$Comp
+L servo:SN74LVC2G17DBVR U803
+U 1 1 5E60CBFC
+P 4950 2050
+F 0 "U803" H 4450 1950 39  0000 L BNN
+F 1 "SN74LVC2G17DBVR" H 5150 2000 20  0000 L BNN
+F 2 "servo:SOT-23-6" H 4450 2250 60  0001 C CNN
+F 3 "../doc/datasheets/sn74lvc2g17.pdf" H 4650 2500 60  0001 C CNN
+	1    4950 2050
+	1    0    0    -1  
+$EndComp
+Text GLabel 1950 3850 0    50   Input ~ 0
+FAN_RPM1
+Text GLabel 1950 3950 0    50   Input ~ 0
+IGBT_ALARM1
 Text GLabel 9250 3500 2    50   Input ~ 0
-FREE_IN_A3_H
+FAN_RPM1_H
 Text GLabel 9250 3600 2    50   Input ~ 0
-FREE_IN_A4_H
+IGBT_ALARM1_H
+Text GLabel 6750 7150 0    50   Input ~ 0
+FAN_RPM2_H
+Text GLabel 6750 7250 0    50   Input ~ 0
+IGBT_ALARM2_H
+Text GLabel 14550 7500 2    50   Input ~ 0
+FAN_RPM2
+Text GLabel 14550 7600 2    50   Input ~ 0
+IGBT_ALARM2
 $EndSCHEMATC

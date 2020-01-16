@@ -4,7 +4,7 @@ EELAYER 26 0
 EELAYER END
 $Descr A3 16535 11693
 encoding utf-8
-Sheet 17 18
+Sheet 17 19
 Title "Common connections"
 Date "2020-01-09"
 Rev "1.0"
@@ -17,84 +17,84 @@ $EndDescr
 Text Notes 6500 1200 0    197  ~ 39
 Common Connections
 Wire Wire Line
-	10300 2650 9950 2650
+	10300 2550 9950 2550
 Wire Wire Line
-	9950 2750 10300 2750
+	9950 2650 10300 2650
 Wire Wire Line
-	10300 2850 9950 2850
+	10300 2750 9950 2750
 Wire Wire Line
-	9950 2950 10300 2950
+	9950 2850 10300 2850
 Wire Wire Line
-	10300 3050 9950 3050
-Wire Wire Line
-	10300 3250 9950 3250
+	10300 2950 9950 2950
 Wire Wire Line
 	10300 3150 9950 3150
 Wire Wire Line
-	9950 2550 10300 2550
+	10300 3050 9950 3050
 Wire Wire Line
-	9950 3350 10100 3350
+	9950 2450 10300 2450
 Wire Wire Line
-	9450 2750 9100 2750
+	9950 3250 10100 3250
 Wire Wire Line
-	9100 2850 9450 2850
+	9450 2650 9100 2650
 Wire Wire Line
-	9450 2950 9100 2950
+	9100 2750 9450 2750
+Wire Wire Line
+	9450 2850 9100 2850
+Wire Wire Line
+	9100 2950 9450 2950
 Wire Wire Line
 	9100 3050 9450 3050
 Wire Wire Line
-	9100 3150 9450 3150
-Wire Wire Line
-	9100 2650 9450 2650
-Wire Wire Line
 	9100 2550 9450 2550
+Wire Wire Line
+	9100 2450 9450 2450
 $Comp
 L servo:GNDH #PWR?
 U 1 1 605AFA1C
-P 9700 3600
+P 9700 3500
 AR Path="/5DDE8C5E/605AFA1C" Ref="#PWR?"  Part="1" 
 AR Path="/5EC40F3C/605AFA1C" Ref="#PWR01708"  Part="1" 
-F 0 "#PWR01708" H 9700 3350 30  0001 C CNN
-F 1 "GNDH" H 9700 3442 30  0000 C CNN
-F 2 "" H 9700 3600 50  0001 C CNN
-F 3 "" H 9700 3600 50  0001 C CNN
-	1    9700 3600
+F 0 "#PWR01708" H 9700 3250 30  0001 C CNN
+F 1 "GNDH" H 9700 3342 30  0000 C CNN
+F 2 "" H 9700 3500 50  0001 C CNN
+F 3 "" H 9700 3500 50  0001 C CNN
+	1    9700 3500
 	-1   0    0    -1  
 $EndComp
 Wire Wire Line
-	9450 3350 9350 3350
+	9450 3250 9350 3250
 $Comp
 L servo:5VH #PWR?
 U 1 1 605AFA23
-P 9300 2250
+P 9300 2150
 AR Path="/5DDE8C5E/605AFA23" Ref="#PWR?"  Part="1" 
 AR Path="/5EC40F3C/605AFA23" Ref="#PWR01707"  Part="1" 
-F 0 "#PWR01707" H 9300 2050 20  0001 C CNN
-F 1 "5VH" H 9305 2407 28  0000 C CNN
-F 2 "" H 9300 2250 50  0001 C CNN
-F 3 "" H 9300 2250 50  0001 C CNN
-	1    9300 2250
+F 0 "#PWR01707" H 9300 1950 20  0001 C CNN
+F 1 "5VH" H 9305 2307 28  0000 C CNN
+F 2 "" H 9300 2150 50  0001 C CNN
+F 3 "" H 9300 2150 50  0001 C CNN
+	1    9300 2150
 	-1   0    0    -1  
 $EndComp
 Wire Wire Line
-	9300 2250 9300 2450
+	9300 2150 9300 2350
 Wire Wire Line
-	9300 2450 9450 2450
+	9300 2350 9450 2350
 Wire Wire Line
-	10050 2250 10050 2450
+	10050 2150 10050 2350
 Wire Wire Line
-	10050 2450 9950 2450
+	10050 2350 9950 2350
 Wire Wire Line
-	10100 3350 10100 3550
+	10100 3250 10100 3450
 Wire Wire Line
-	10100 3550 9700 3550
+	10100 3450 9700 3450
 Wire Wire Line
-	9700 3550 9700 3600
+	9700 3450 9700 3500
 Wire Wire Line
-	9350 3550 9700 3550
-Connection ~ 9700 3550
+	9350 3450 9700 3450
+Connection ~ 9700 3450
 Wire Wire Line
-	9350 3350 9350 3550
+	9350 3250 9350 3450
 Wire Wire Line
 	8600 5350 8750 5350
 $Comp
@@ -160,12 +160,7 @@ Wire Wire Line
 	7850 4650 8100 4650
 Connection ~ 8750 5350
 Wire Wire Line
-	8600 5050 8750 5050
-Wire Wire Line
-	8750 5050 8750 5150
-Wire Wire Line
 	8600 5150 8750 5150
-Connection ~ 8750 5150
 Wire Wire Line
 	8600 5250 8750 5250
 Wire Wire Line
@@ -174,12 +169,7 @@ Connection ~ 8750 5250
 Wire Wire Line
 	8750 5250 8750 5350
 Wire Wire Line
-	8100 5050 7950 5050
-Wire Wire Line
-	7950 5050 7950 5150
-Wire Wire Line
 	8100 5150 7950 5150
-Connection ~ 7950 5150
 Wire Wire Line
 	8100 5250 7950 5250
 Wire Wire Line
@@ -190,41 +180,37 @@ Wire Wire Line
 Connection ~ 7950 5350
 Text Notes 8000 5500 0    39   ~ 0
 Free to use until now
-Text GLabel 10300 2550 2    50   Input ~ 0
+Text GLabel 10300 2450 2    50   Input ~ 0
 PWM_B_1H_H
-Text GLabel 10300 2650 2    50   Input ~ 0
+Text GLabel 10300 2550 2    50   Input ~ 0
 PWM_B_1L_H
-Text GLabel 10300 2750 2    50   Input ~ 0
+Text GLabel 10300 2650 2    50   Input ~ 0
 PWM_B_2H_H
-Text GLabel 10300 2850 2    50   Input ~ 0
+Text GLabel 10300 2750 2    50   Input ~ 0
 PWM_B_2L_H
-Text GLabel 10300 2950 2    50   Input ~ 0
+Text GLabel 10300 2850 2    50   Input ~ 0
 PWM_B_3H_H
-Text GLabel 10300 3050 2    50   Input ~ 0
+Text GLabel 10300 2950 2    50   Input ~ 0
 PWM_B_3L_H
-Text GLabel 10300 3150 2    50   Input ~ 0
+Text GLabel 10300 3050 2    50   Input ~ 0
 PWM_B_BRK_RES_H
-Text GLabel 10300 3250 2    50   Input ~ 0
+Text GLabel 10300 3150 2    50   Input ~ 0
 BRK_B_MEC_H
 Text GLabel 8850 4550 2    50   Input ~ 0
 FREE_OUT_B1_H
 Text GLabel 8850 4650 2    50   Input ~ 0
 FREE_OUT_B2_H
-Text GLabel 8850 4750 2    50   Input ~ 0
-FREE_IN_B3_H
-Text GLabel 8850 4850 2    50   Input ~ 0
-FREE_IN_B4_H
-Text GLabel 9100 2550 0    50   Input ~ 0
+Text GLabel 9100 2450 0    50   Input ~ 0
 SD_B1_H
-Text GLabel 9100 2650 0    50   Input ~ 0
+Text GLabel 9100 2550 0    50   Input ~ 0
 SD_B2_H
-Text GLabel 9100 2750 0    50   Input ~ 0
+Text GLabel 9100 2650 0    50   Input ~ 0
 SD_B3_H
-Text GLabel 9100 2850 0    50   Input ~ 0
+Text GLabel 9100 2750 0    50   Input ~ 0
 SD_B4_H
-Text GLabel 9100 2950 0    50   Input ~ 0
+Text GLabel 9100 2850 0    50   Input ~ 0
 SD_B_CLK_H
-Text GLabel 9100 3050 0    50   Input ~ 0
+Text GLabel 9100 2950 0    50   Input ~ 0
 PWM4SD_B_CLK_H
 Text GLabel 7850 4950 0    50   Input ~ 0
 1-WIREP_H
@@ -237,14 +223,14 @@ Wire Wire Line
 $Comp
 L servo:15VH #PWR?
 U 1 1 605AFA8F
-P 10050 2250
+P 10050 2150
 AR Path="/5DDE8C5E/605AFA8F" Ref="#PWR?"  Part="1" 
 AR Path="/5EC40F3C/605AFA8F" Ref="#PWR01709"  Part="1" 
-F 0 "#PWR01709" H 10050 2050 20  0001 C CNN
-F 1 "15VH" H 10050 2407 28  0000 C CNN
-F 2 "" H 10050 2250 50  0001 C CNN
-F 3 "" H 10050 2250 50  0001 C CNN
-	1    10050 2250
+F 0 "#PWR01709" H 10050 1950 20  0001 C CNN
+F 1 "15VH" H 10050 2307 28  0000 C CNN
+F 2 "" H 10050 2150 50  0001 C CNN
+F 3 "" H 10050 2150 50  0001 C CNN
+	1    10050 2150
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
@@ -371,10 +357,6 @@ Text GLabel 7850 4550 0    50   Input ~ 0
 FREE_OUT_A1_H
 Text GLabel 7850 4650 0    50   Input ~ 0
 FREE_OUT_A2_H
-Text GLabel 7850 4750 0    50   Input ~ 0
-FREE_IN_A3_H
-Text GLabel 7850 4850 0    50   Input ~ 0
-FREE_IN_A4_H
 $Comp
 L servo:15VH #PWR?
 U 1 1 60686BCE
@@ -392,16 +374,16 @@ Wire Wire Line
 	8700 4150 8700 4450
 Text GLabel 6200 3050 0    50   Input ~ 0
 NTCA1_H
-Text GLabel 9100 3150 0    50   Input ~ 0
+Text GLabel 9100 3050 0    50   Input ~ 0
 NTCB1_H
 Text GLabel 6200 3150 0    50   Input ~ 0
 NTCA2_H
-Text GLabel 9100 3250 0    50   Input ~ 0
+Text GLabel 9100 3150 0    50   Input ~ 0
 NTCB2_H
 Wire Wire Line
 	6200 3150 6550 3150
 Wire Wire Line
-	9100 3250 9450 3250
+	9100 3150 9450 3150
 $Comp
 L servo:NHD-4.3-480272FT-CTXL-T J?
 U 1 1 5E343D65
@@ -431,14 +413,32 @@ $EndComp
 $Comp
 L servo:NHD-4.3-480272FT-CTXL-T J?
 U 1 1 5E350A93
-P 9650 2850
+P 9650 2750
 AR Path="/5E72D841/5E350A93" Ref="J?"  Part="1" 
 AR Path="/5EC40F3C/5E350A93" Ref="J1703"  Part="1" 
-F 0 "J1703" H 9700 3451 50  0000 C CNN
-F 1 "NHD-4.3-480272FT-CTXL-T" H 9700 3368 39  0000 C CNN
-F 2 "Connector_IDC:IDC-Header_2x10_P2.54mm_Vertical" H 9650 2850 50  0001 C CNN
-F 3 "../doc/datasheets/NHD-4.3-480272FT-CTXL-T.pdf" H 9700 3350 50  0001 C CNN
-	1    9650 2850
+F 0 "J1703" H 9700 3351 50  0000 C CNN
+F 1 "NHD-4.3-480272FT-CTXL-T" H 9700 3268 39  0000 C CNN
+F 2 "Connector_IDC:IDC-Header_2x10_P2.54mm_Vertical" H 9650 2750 50  0001 C CNN
+F 3 "../doc/datasheets/NHD-4.3-480272FT-CTXL-T.pdf" H 9700 3250 50  0001 C CNN
+	1    9650 2750
 	1    0    0    -1  
 $EndComp
+Wire Wire Line
+	8600 5050 8750 5050
+Text GLabel 7850 4750 0    50   Input ~ 0
+FAN_RPM1_H
+Text GLabel 7850 4850 0    50   Input ~ 0
+IGBT_ALARM1_H
+Wire Wire Line
+	8750 5150 8750 5050
+Connection ~ 8750 5150
+Wire Wire Line
+	7950 5150 7950 5050
+Connection ~ 7950 5150
+Wire Wire Line
+	7950 5050 8100 5050
+Text GLabel 8850 4750 2    50   Input ~ 0
+FAN_RPM2_H
+Text GLabel 8850 4850 2    50   Input ~ 0
+IGBT_ALARM2_H
 $EndSCHEMATC

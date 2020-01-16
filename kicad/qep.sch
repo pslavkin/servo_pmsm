@@ -4,7 +4,7 @@ EELAYER 26 0
 EELAYER END
 $Descr A4 11693 8268
 encoding utf-8
-Sheet 11 18
+Sheet 11 19
 Title "QEP encoder Interfase"
 Date "2020-01-09"
 Rev "1.0"
@@ -14,787 +14,1259 @@ Comment2 ""
 Comment3 ""
 Comment4 ""
 $EndDescr
-Text GLabel 1250 3200 0    50   Input ~ 0
-QEP1_A
-Text GLabel 1250 3300 0    50   Input ~ 0
-QEP1_B
-Text GLabel 1250 3500 0    50   Input ~ 0
-QEP1_S
-$Comp
-L servo:GND #PWR?
-U 1 1 5E2F5F80
-P 1450 3850
-AR Path="/5DDE8C5E/5E2F5F80" Ref="#PWR?"  Part="1" 
-AR Path="/5E092156/5E2F5F80" Ref="#PWR01102"  Part="1" 
-F 0 "#PWR01102" H 1450 3600 30  0001 C CNN
-F 1 "GND" H 1450 3692 30  0000 C CNN
-F 2 "" H 1450 3850 50  0001 C CNN
-F 3 "" H 1450 3850 50  0001 C CNN
-	1    1450 3850
-	1    0    0    -1  
-$EndComp
-Wire Wire Line
-	1550 3800 1450 3800
-Wire Wire Line
-	1450 3800 1450 3850
-$Comp
-L servo:3V3 #PWR?
-U 1 1 5E2F5F88
-P 1400 2950
-AR Path="/5DDE8C5E/5E2F5F88" Ref="#PWR?"  Part="1" 
-AR Path="/5E092156/5E2F5F88" Ref="#PWR01101"  Part="1" 
-F 0 "#PWR01101" H 1300 3050 20  0001 C CNN
-F 1 "3V3" H 1400 3100 28  0000 C CNN
-F 2 "" H 1400 2950 50  0001 C CNN
-F 3 "" H 1400 2950 50  0001 C CNN
-	1    1400 2950
-	1    0    0    -1  
-$EndComp
-$Comp
-L servo:GNDH #PWR?
-U 1 1 5E2F5F90
-P 3600 4300
-AR Path="/5DDE8C5E/5E2F5F90" Ref="#PWR?"  Part="1" 
-AR Path="/5E092156/5E2F5F90" Ref="#PWR01104"  Part="1" 
-F 0 "#PWR01104" H 3600 4050 30  0001 C CNN
-F 1 "GNDH" H 3600 4142 30  0000 C CNN
-F 2 "" H 3600 4300 50  0001 C CNN
-F 3 "" H 3600 4300 50  0001 C CNN
-	1    3600 4300
-	1    0    0    -1  
-$EndComp
-Wire Wire Line
-	3100 3000 3100 3100
-Wire Wire Line
-	2950 3800 3100 3800
-Wire Wire Line
-	3100 3800 3100 4200
-Text Notes 2950 4150 2    39   ~ 8
-Choose a package pin-to-pin compatible with\nTI ISO7760. But SIlabs cost halt the price as TI
-Text GLabel 1250 3400 0    50   Input ~ 0
-QEP1_I
-$Comp
-L servo:Resistor R1101
-U 1 1 5E304AAA
-P 4300 3200
-F 0 "R1101" H 4400 3250 20  0000 C CNN
-F 1 "100e" H 4200 3250 20  0000 C CNN
-F 2 "Resistor_SMD:R_0603_1608Metric" H 3800 3100 60  0001 C CNN
-F 3 "" H 3900 3200 60  0001 C CNN
-	1    4300 3200
-	1    0    0    -1  
-$EndComp
-$Comp
-L servo:5VH #PWR01103
-U 1 1 5E311045
-P 3100 3000
-F 0 "#PWR01103" H 3100 2800 20  0001 C CNN
-F 1 "5VH" H 3105 3157 28  0000 C CNN
-F 2 "" H 3100 3000 50  0001 C CNN
-F 3 "" H 3100 3000 50  0001 C CNN
-	1    3100 3000
-	1    0    0    -1  
-$EndComp
-$Comp
-L servo:Capacitor C1101
-U 1 1 5E31A9A1
-P 3400 3900
-F 0 "C1101" V 3350 3900 20  0000 R CNN
-F 1 "1nF" V 3400 3900 20  0000 R CNN
-F 2 "servo:C_0603_1608Metric" H 3400 3800 60  0001 C CNN
-F 3 "" H 3400 3900 60  0000 C CNN
-	1    3400 3900
-	0    1    1    0   
-$EndComp
-Wire Wire Line
-	3600 4200 3600 4300
-Wire Wire Line
-	2950 3100 3100 3100
-Wire Wire Line
-	1550 3200 1250 3200
-Wire Wire Line
-	1250 3300 1550 3300
-Wire Wire Line
-	1550 3400 1250 3400
-Wire Wire Line
-	1250 3500 1550 3500
-Text GLabel 10200 3200 2    50   Input ~ 0
-QEP2_A
-Text GLabel 10200 3300 2    50   Input ~ 0
-QEP2_B
-Text GLabel 10200 3500 2    50   Input ~ 0
-QEP2_S
-Text GLabel 10200 3400 2    50   Input ~ 0
-QEP2_I
-Text Notes 3350 1550 0    197  ~ 39
-2x Isolated Incremental encoder \n5v input A-B-I-S
-$Comp
-L servo:SI8662BD U1101
-U 1 1 5E914D68
-P 2250 3400
-F 0 "U1101" H 2250 3989 60  0000 C CNN
-F 1 "SI8662BD" H 2250 3883 60  0000 C CNN
-F 2 "Package_SO:SOIC-16W_7.5x10.3mm_P1.27mm" H 1650 3700 60  0001 C CNN
-F 3 "../doc/datasheets/Si8660.pdf" H 2150 4000 60  0001 C CNN
-	1    2250 3400
-	-1   0    0    -1  
-$EndComp
-Text GLabel 1250 3600 0    50   Input ~ 0
-QEP1_OUT1
-Text GLabel 1250 3700 0    50   Input ~ 0
-QEP1_OUT2
-Wire Wire Line
-	1550 3600 1250 3600
-Wire Wire Line
-	1250 3700 1550 3700
-Text Notes 800  3800 0    20   ~ 0
-Free to use output, for any use
-Text GLabel 10200 3600 2    50   Input ~ 0
-QEP2_OUT1
-Text GLabel 10200 3700 2    50   Input ~ 0
-QEP2_OUT2
-Text Notes 10650 3800 2    20   ~ 0
-Free to use output, for any use
-$Comp
-L servo:Capacitor C1102
-U 1 1 61854B0C
-P 3600 3900
-F 0 "C1102" V 3550 3900 20  0000 R CNN
-F 1 "1nF" V 3600 3900 20  0000 R CNN
-F 2 "servo:C_0603_1608Metric" H 3600 3800 60  0001 C CNN
-F 3 "" H 3600 3900 60  0000 C CNN
-	1    3600 3900
-	0    1    1    0   
-$EndComp
-$Comp
-L servo:Capacitor C1103
-U 1 1 61854B38
-P 3800 3900
-F 0 "C1103" V 3750 3900 20  0000 R CNN
-F 1 "1nF" V 3800 3900 20  0000 R CNN
-F 2 "servo:C_0603_1608Metric" H 3800 3800 60  0001 C CNN
-F 3 "" H 3800 3900 60  0000 C CNN
-	1    3800 3900
-	0    1    1    0   
-$EndComp
-$Comp
-L servo:Capacitor C1104
-U 1 1 61854BCB
-P 4000 3900
-F 0 "C1104" V 3950 3900 20  0000 R CNN
-F 1 "1nF" V 4000 3900 20  0000 R CNN
-F 2 "servo:C_0603_1608Metric" H 4000 3800 60  0001 C CNN
-F 3 "" H 4000 3900 60  0000 C CNN
-	1    4000 3900
-	0    1    1    0   
-$EndComp
-$Comp
-L servo:Resistor R1102
-U 1 1 618588E2
-P 4300 3300
-F 0 "R1102" H 4400 3350 20  0000 C CNN
-F 1 "100e" H 4200 3350 20  0000 C CNN
-F 2 "Resistor_SMD:R_0603_1608Metric" H 3800 3200 60  0001 C CNN
-F 3 "" H 3900 3300 60  0001 C CNN
-	1    4300 3300
-	1    0    0    -1  
-$EndComp
-$Comp
-L servo:Resistor R1103
-U 1 1 6185890A
-P 4300 3400
-F 0 "R1103" H 4400 3450 20  0000 C CNN
-F 1 "100e" H 4200 3450 20  0000 C CNN
-F 2 "Resistor_SMD:R_0603_1608Metric" H 3800 3300 60  0001 C CNN
-F 3 "" H 3900 3400 60  0001 C CNN
-	1    4300 3400
-	1    0    0    -1  
-$EndComp
-$Comp
-L servo:Resistor R1104
-U 1 1 61858934
-P 4300 3500
-F 0 "R1104" H 4400 3550 20  0000 C CNN
-F 1 "100e" H 4200 3550 20  0000 C CNN
-F 2 "Resistor_SMD:R_0603_1608Metric" H 3800 3400 60  0001 C CNN
-F 3 "" H 3900 3500 60  0001 C CNN
-	1    4300 3500
-	1    0    0    -1  
-$EndComp
-$Comp
-L servo:5VH #PWR?
-U 1 1 61861F29
-P 4500 2900
-AR Path="/5DE49152/61861F29" Ref="#PWR?"  Part="1" 
-AR Path="/5E1BAEAA/61861F29" Ref="#PWR?"  Part="1" 
-AR Path="/5DE3DF56/61861F29" Ref="#PWR?"  Part="1" 
-AR Path="/5E092156/61861F29" Ref="#PWR01105"  Part="1" 
-F 0 "#PWR01105" H 4500 2700 20  0001 C CNN
-F 1 "5VH" H 4505 3057 28  0000 C CNN
-F 2 "" H 4500 2900 50  0001 C CNN
-F 3 "" H 4500 2900 50  0001 C CNN
-	1    4500 2900
-	1    0    0    -1  
-$EndComp
-$Comp
-L servo:Jumper_3_Bridged12 JP?
-U 1 1 61861F2F
-P 4800 2950
-AR Path="/5E1BAEAA/61861F2F" Ref="JP?"  Part="1" 
-AR Path="/5DE3DF56/61861F2F" Ref="JP?"  Part="1" 
-AR Path="/5E092156/61861F2F" Ref="JP1101"  Part="1" 
-F 0 "JP1101" H 4800 3119 39  0000 C CNN
-F 1 "jumper" H 4800 3044 39  0000 C CNN
-F 2 "Jumper:SolderJumper-3_P1.3mm_Open_RoundedPad1.0x1.5mm" H 4600 2750 50  0001 C CNN
-F 3 "~" H 4700 2850 50  0001 C CNN
-	1    4800 2950
-	1    0    0    -1  
-$EndComp
-$Comp
-L servo:15VH #PWR?
-U 1 1 61861F36
-P 5100 2900
-AR Path="/5E1BAEAA/61861F36" Ref="#PWR?"  Part="1" 
-AR Path="/5DE3DF56/61861F36" Ref="#PWR?"  Part="1" 
-AR Path="/5E092156/61861F36" Ref="#PWR01106"  Part="1" 
-F 0 "#PWR01106" H 5100 2700 20  0001 C CNN
-F 1 "15VH" H 5100 3057 28  0000 C CNN
-F 2 "" H 5100 2900 50  0001 C CNN
-F 3 "" H 5100 2900 50  0001 C CNN
-	1    5100 2900
-	1    0    0    -1  
-$EndComp
-Wire Wire Line
-	5100 2950 5100 2900
-Wire Wire Line
-	5000 2950 5100 2950
-Wire Wire Line
-	4500 2900 4500 2950
-Wire Wire Line
-	4500 2950 4600 2950
-Wire Wire Line
-	4800 3100 4800 3050
-$Comp
-L servo:Resistor R1105
-U 1 1 618792C6
-P 4300 3600
-F 0 "R1105" H 4400 3650 20  0000 C CNN
-F 1 "100e" H 4200 3650 20  0000 C CNN
-F 2 "Resistor_SMD:R_0603_1608Metric" H 3800 3500 60  0001 C CNN
-F 3 "" H 3900 3600 60  0001 C CNN
-	1    4300 3600
-	1    0    0    -1  
-$EndComp
-$Comp
-L servo:Resistor R1106
-U 1 1 618792F0
-P 4300 3700
-F 0 "R1106" H 4400 3750 20  0000 C CNN
-F 1 "100e" H 4200 3750 20  0000 C CNN
-F 2 "Resistor_SMD:R_0603_1608Metric" H 3800 3600 60  0001 C CNN
-F 3 "" H 3900 3700 60  0001 C CNN
-	1    4300 3700
-	1    0    0    -1  
-$EndComp
-Wire Wire Line
-	4100 3600 2950 3600
-Wire Wire Line
-	2950 3700 4100 3700
-Wire Wire Line
-	3100 4200 3400 4200
-Wire Wire Line
-	2950 3500 4000 3500
-Wire Wire Line
-	2950 3300 3600 3300
-Wire Wire Line
-	2950 3200 3400 3200
-$Comp
-L servo:Capacitor C1105
-U 1 1 61880060
-P 4550 3900
-F 0 "C1105" V 4500 3900 20  0000 R CNN
-F 1 "1nF" V 4550 3900 20  0000 R CNN
-F 2 "servo:C_0603_1608Metric" H 4550 3800 60  0001 C CNN
-F 3 "" H 4550 3900 60  0000 C CNN
-	1    4550 3900
-	0    1    1    0   
-$EndComp
-$Comp
-L servo:Capacitor C1106
-U 1 1 61880067
-P 4750 3900
-F 0 "C1106" V 4700 3900 20  0000 R CNN
-F 1 "1nF" V 4750 3900 20  0000 R CNN
-F 2 "servo:C_0603_1608Metric" H 4750 3800 60  0001 C CNN
-F 3 "" H 4750 3900 60  0000 C CNN
-	1    4750 3900
-	0    1    1    0   
-$EndComp
-Wire Wire Line
-	3400 4100 3400 4200
-Connection ~ 3400 4200
-Wire Wire Line
-	3600 4100 3600 4200
-Connection ~ 3600 4200
-Wire Wire Line
-	3600 4200 3800 4200
-Wire Wire Line
-	3800 4100 3800 4200
-Connection ~ 3800 4200
-Wire Wire Line
-	3800 4200 4000 4200
-Connection ~ 4000 4200
-Wire Wire Line
-	3400 3800 3400 3200
-Connection ~ 3400 3200
-Wire Wire Line
-	3400 3200 4100 3200
-Wire Wire Line
-	3600 3800 3600 3300
-Connection ~ 3600 3300
-Wire Wire Line
-	3600 3300 4100 3300
-Wire Wire Line
-	3800 3800 3800 3400
-Wire Wire Line
-	2950 3400 3800 3400
-Connection ~ 3800 3400
-Wire Wire Line
-	3800 3400 4100 3400
-Wire Wire Line
-	4000 3800 4000 3500
-Connection ~ 4000 3500
-Wire Wire Line
-	4000 3500 4100 3500
-Wire Wire Line
-	4550 3800 4550 3600
-Connection ~ 4550 3600
-Wire Wire Line
-	4550 3600 4500 3600
-Wire Wire Line
-	4750 3800 4750 3700
-Connection ~ 4750 3700
-Wire Wire Line
-	4750 3700 4500 3700
-Wire Wire Line
-	4750 4200 4750 4100
-Wire Wire Line
-	4000 4200 4550 4200
-Wire Wire Line
-	4550 4100 4550 4200
-Connection ~ 4550 4200
-Wire Wire Line
-	4550 4200 4750 4200
-Wire Wire Line
-	4000 4100 4000 4200
-Wire Wire Line
-	3400 4200 3600 4200
-Wire Wire Line
-	4750 4200 4900 4200
-Wire Wire Line
-	4900 4200 4900 3800
-Connection ~ 4750 4200
-Wire Wire Line
-	1400 2950 1400 3100
-Wire Wire Line
-	1400 3100 1550 3100
-$Comp
-L servo:GND #PWR?
-U 1 1 618A5A41
-P 10000 3850
-AR Path="/5DDE8C5E/618A5A41" Ref="#PWR?"  Part="1" 
-AR Path="/5E092156/618A5A41" Ref="#PWR01111"  Part="1" 
-F 0 "#PWR01111" H 10000 3600 30  0001 C CNN
-F 1 "GND" H 10000 3692 30  0000 C CNN
-F 2 "" H 10000 3850 50  0001 C CNN
-F 3 "" H 10000 3850 50  0001 C CNN
-	1    10000 3850
-	-1   0    0    -1  
-$EndComp
-Wire Wire Line
-	9900 3800 10000 3800
-Wire Wire Line
-	10000 3800 10000 3850
-$Comp
-L servo:3V3 #PWR?
-U 1 1 618A5A49
-P 10050 2950
-AR Path="/5DDE8C5E/618A5A49" Ref="#PWR?"  Part="1" 
-AR Path="/5E092156/618A5A49" Ref="#PWR01112"  Part="1" 
-F 0 "#PWR01112" H 9950 3050 20  0001 C CNN
-F 1 "3V3" H 10050 3100 28  0000 C CNN
-F 2 "" H 10050 2950 50  0001 C CNN
-F 3 "" H 10050 2950 50  0001 C CNN
-	1    10050 2950
-	-1   0    0    -1  
-$EndComp
-$Comp
-L servo:GNDH #PWR?
-U 1 1 618A5A4F
-P 7850 4300
-AR Path="/5DDE8C5E/618A5A4F" Ref="#PWR?"  Part="1" 
-AR Path="/5E092156/618A5A4F" Ref="#PWR01109"  Part="1" 
-F 0 "#PWR01109" H 7850 4050 30  0001 C CNN
-F 1 "GNDH" H 7850 4142 30  0000 C CNN
-F 2 "" H 7850 4300 50  0001 C CNN
-F 3 "" H 7850 4300 50  0001 C CNN
-	1    7850 4300
-	-1   0    0    -1  
-$EndComp
-Wire Wire Line
-	8350 3000 8350 3100
-Wire Wire Line
-	8500 3800 8350 3800
-Wire Wire Line
-	8350 3800 8350 4200
-Text Notes 8500 4150 0    39   ~ 8
-Choose a package pin-to-pin compatible with\nTI ISO7760. But SIlabs cost halt the price as TI
-$Comp
-L servo:Resistor R1107
-U 1 1 618A5A5A
-P 7150 3200
-F 0 "R1107" H 7250 3250 20  0000 C CNN
-F 1 "100e" H 7050 3250 20  0000 C CNN
-F 2 "Resistor_SMD:R_0603_1608Metric" H 6650 3100 60  0001 C CNN
-F 3 "" H 6750 3200 60  0001 C CNN
-	1    7150 3200
-	-1   0    0    -1  
-$EndComp
-$Comp
-L servo:5VH #PWR01110
-U 1 1 618A5A61
-P 8350 3000
-F 0 "#PWR01110" H 8350 2800 20  0001 C CNN
-F 1 "5VH" H 8355 3157 28  0000 C CNN
-F 2 "" H 8350 3000 50  0001 C CNN
-F 3 "" H 8350 3000 50  0001 C CNN
-	1    8350 3000
-	-1   0    0    -1  
-$EndComp
-$Comp
-L servo:Capacitor C1112
-U 1 1 618A5A67
-P 8050 3900
-F 0 "C1112" V 8000 3900 20  0000 R CNN
-F 1 "1nF" V 8050 3900 20  0000 R CNN
-F 2 "servo:C_0603_1608Metric" H 8050 3800 60  0001 C CNN
-F 3 "" H 8050 3900 60  0000 C CNN
-	1    8050 3900
-	0    -1   1    0   
-$EndComp
-Wire Wire Line
-	7850 4200 7850 4300
-Wire Wire Line
-	8500 3100 8350 3100
-Wire Wire Line
-	9900 3200 10200 3200
-Wire Wire Line
-	10200 3300 9900 3300
-Wire Wire Line
-	9900 3400 10200 3400
-Wire Wire Line
-	10200 3500 9900 3500
-$Comp
-L servo:SI8662BD U1102
-U 1 1 618A5A74
-P 9200 3400
-F 0 "U1102" H 9200 3989 60  0000 C CNN
-F 1 "SI8662BD" H 9200 3883 60  0000 C CNN
-F 2 "Package_SO:SOIC-16W_7.5x10.3mm_P1.27mm" H 8600 3700 60  0001 C CNN
-F 3 "../doc/datasheets/Si8660.pdf" H 9100 4000 60  0001 C CNN
-	1    9200 3400
-	1    0    0    -1  
-$EndComp
-Wire Wire Line
-	9900 3600 10200 3600
-Wire Wire Line
-	10200 3700 9900 3700
-$Comp
-L servo:Capacitor C1111
-U 1 1 618A5A80
-P 7850 3900
-F 0 "C1111" V 7800 3900 20  0000 R CNN
-F 1 "1nF" V 7850 3900 20  0000 R CNN
-F 2 "servo:C_0603_1608Metric" H 7850 3800 60  0001 C CNN
-F 3 "" H 7850 3900 60  0000 C CNN
-	1    7850 3900
-	0    -1   1    0   
-$EndComp
-$Comp
-L servo:Capacitor C1110
-U 1 1 618A5A87
-P 7650 3900
-F 0 "C1110" V 7600 3900 20  0000 R CNN
-F 1 "1nF" V 7650 3900 20  0000 R CNN
-F 2 "servo:C_0603_1608Metric" H 7650 3800 60  0001 C CNN
-F 3 "" H 7650 3900 60  0000 C CNN
-	1    7650 3900
-	0    -1   1    0   
-$EndComp
-$Comp
-L servo:Capacitor C1109
-U 1 1 618A5A8E
-P 7450 3900
-F 0 "C1109" V 7400 3900 20  0000 R CNN
-F 1 "1nF" V 7450 3900 20  0000 R CNN
-F 2 "servo:C_0603_1608Metric" H 7450 3800 60  0001 C CNN
-F 3 "" H 7450 3900 60  0000 C CNN
-	1    7450 3900
-	0    -1   1    0   
-$EndComp
-$Comp
-L servo:Resistor R1108
-U 1 1 618A5A95
-P 7150 3300
-F 0 "R1108" H 7250 3350 20  0000 C CNN
-F 1 "100e" H 7050 3350 20  0000 C CNN
-F 2 "Resistor_SMD:R_0603_1608Metric" H 6650 3200 60  0001 C CNN
-F 3 "" H 6750 3300 60  0001 C CNN
-	1    7150 3300
-	-1   0    0    -1  
-$EndComp
-$Comp
-L servo:Resistor R1109
-U 1 1 618A5A9C
-P 7150 3400
-F 0 "R1109" H 7250 3450 20  0000 C CNN
-F 1 "100e" H 7050 3450 20  0000 C CNN
-F 2 "Resistor_SMD:R_0603_1608Metric" H 6650 3300 60  0001 C CNN
-F 3 "" H 6750 3400 60  0001 C CNN
-	1    7150 3400
-	-1   0    0    -1  
-$EndComp
-$Comp
-L servo:Resistor R1110
-U 1 1 618A5AA3
-P 7150 3500
-F 0 "R1110" H 7250 3550 20  0000 C CNN
-F 1 "100e" H 7050 3550 20  0000 C CNN
-F 2 "Resistor_SMD:R_0603_1608Metric" H 6650 3400 60  0001 C CNN
-F 3 "" H 6750 3500 60  0001 C CNN
-	1    7150 3500
-	-1   0    0    -1  
-$EndComp
-$Comp
-L servo:5VH #PWR?
-U 1 1 618A5AAA
-P 6950 2900
-AR Path="/5DE49152/618A5AAA" Ref="#PWR?"  Part="1" 
-AR Path="/5E1BAEAA/618A5AAA" Ref="#PWR?"  Part="1" 
-AR Path="/5DE3DF56/618A5AAA" Ref="#PWR?"  Part="1" 
-AR Path="/5E092156/618A5AAA" Ref="#PWR01108"  Part="1" 
-F 0 "#PWR01108" H 6950 2700 20  0001 C CNN
-F 1 "5VH" H 6955 3057 28  0000 C CNN
-F 2 "" H 6950 2900 50  0001 C CNN
-F 3 "" H 6950 2900 50  0001 C CNN
-	1    6950 2900
-	-1   0    0    -1  
-$EndComp
-$Comp
-L servo:Jumper_3_Bridged12 JP?
-U 1 1 618A5AB0
-P 6650 2950
-AR Path="/5E1BAEAA/618A5AB0" Ref="JP?"  Part="1" 
-AR Path="/5DE3DF56/618A5AB0" Ref="JP?"  Part="1" 
-AR Path="/5E092156/618A5AB0" Ref="JP1102"  Part="1" 
-F 0 "JP1102" H 6650 3119 39  0000 C CNN
-F 1 "jumper" H 6650 3044 39  0000 C CNN
-F 2 "Jumper:SolderJumper-3_P1.3mm_Open_RoundedPad1.0x1.5mm" H 6450 2750 50  0001 C CNN
-F 3 "~" H 6550 2850 50  0001 C CNN
-	1    6650 2950
-	-1   0    0    -1  
-$EndComp
-$Comp
-L servo:15VH #PWR?
-U 1 1 618A5AB7
-P 6350 2900
-AR Path="/5E1BAEAA/618A5AB7" Ref="#PWR?"  Part="1" 
-AR Path="/5DE3DF56/618A5AB7" Ref="#PWR?"  Part="1" 
-AR Path="/5E092156/618A5AB7" Ref="#PWR01107"  Part="1" 
-F 0 "#PWR01107" H 6350 2700 20  0001 C CNN
-F 1 "15VH" H 6350 3057 28  0000 C CNN
-F 2 "" H 6350 2900 50  0001 C CNN
-F 3 "" H 6350 2900 50  0001 C CNN
-	1    6350 2900
-	-1   0    0    -1  
-$EndComp
-Wire Wire Line
-	6350 2950 6350 2900
-Wire Wire Line
-	6450 2950 6350 2950
-Wire Wire Line
-	6950 2900 6950 2950
-Wire Wire Line
-	6950 2950 6850 2950
-Wire Wire Line
-	6650 3100 6650 3050
-$Comp
-L servo:Resistor R1111
-U 1 1 618A5ACE
-P 7150 3600
-F 0 "R1111" H 7250 3650 20  0000 C CNN
-F 1 "100e" H 7050 3650 20  0000 C CNN
-F 2 "Resistor_SMD:R_0603_1608Metric" H 6650 3500 60  0001 C CNN
-F 3 "" H 6750 3600 60  0001 C CNN
-	1    7150 3600
-	-1   0    0    -1  
-$EndComp
-$Comp
-L servo:Resistor R1112
-U 1 1 618A5AD5
-P 7150 3700
-F 0 "R1112" H 7250 3750 20  0000 C CNN
-F 1 "100e" H 7050 3750 20  0000 C CNN
-F 2 "Resistor_SMD:R_0603_1608Metric" H 6650 3600 60  0001 C CNN
-F 3 "" H 6750 3700 60  0001 C CNN
-	1    7150 3700
-	-1   0    0    -1  
-$EndComp
-Wire Wire Line
-	7350 3600 8500 3600
-Wire Wire Line
-	8500 3700 7350 3700
-Wire Wire Line
-	8350 4200 8050 4200
-Wire Wire Line
-	8500 3500 7450 3500
-Wire Wire Line
-	8500 3300 7850 3300
-Wire Wire Line
-	8500 3200 8050 3200
-$Comp
-L servo:Capacitor C1108
-U 1 1 618A5AE4
-P 6900 3900
-F 0 "C1108" V 6850 3900 20  0000 R CNN
-F 1 "1nF" V 6900 3900 20  0000 R CNN
-F 2 "servo:C_0603_1608Metric" H 6900 3800 60  0001 C CNN
-F 3 "" H 6900 3900 60  0000 C CNN
-	1    6900 3900
-	0    -1   1    0   
-$EndComp
-$Comp
-L servo:Capacitor C1107
-U 1 1 618A5AEB
-P 6700 3900
-F 0 "C1107" V 6650 3900 20  0000 R CNN
-F 1 "1nF" V 6700 3900 20  0000 R CNN
-F 2 "servo:C_0603_1608Metric" H 6700 3800 60  0001 C CNN
-F 3 "" H 6700 3900 60  0000 C CNN
-	1    6700 3900
-	0    -1   1    0   
-$EndComp
-Wire Wire Line
-	8050 4100 8050 4200
-Connection ~ 8050 4200
-Wire Wire Line
-	7850 4100 7850 4200
-Connection ~ 7850 4200
-Wire Wire Line
-	7850 4200 7650 4200
-Wire Wire Line
-	7650 4100 7650 4200
-Connection ~ 7650 4200
-Wire Wire Line
-	7650 4200 7450 4200
-Connection ~ 7450 4200
-Wire Wire Line
-	8050 3800 8050 3200
-Connection ~ 8050 3200
-Wire Wire Line
-	8050 3200 7350 3200
-Wire Wire Line
-	7850 3800 7850 3300
-Connection ~ 7850 3300
-Wire Wire Line
-	7850 3300 7350 3300
-Wire Wire Line
-	7650 3800 7650 3400
-Wire Wire Line
-	8500 3400 7650 3400
-Connection ~ 7650 3400
-Wire Wire Line
-	7650 3400 7350 3400
-Wire Wire Line
-	7450 3800 7450 3500
-Connection ~ 7450 3500
-Wire Wire Line
-	7450 3500 7350 3500
-Wire Wire Line
-	6900 3800 6900 3600
-Connection ~ 6900 3600
-Wire Wire Line
-	6900 3600 6950 3600
-Wire Wire Line
-	6700 3800 6700 3700
-Connection ~ 6700 3700
-Wire Wire Line
-	6700 3700 6950 3700
-Wire Wire Line
-	6700 4200 6700 4100
-Wire Wire Line
-	7450 4200 6900 4200
-Wire Wire Line
-	6900 4100 6900 4200
-Connection ~ 6900 4200
-Wire Wire Line
-	6900 4200 6700 4200
-Wire Wire Line
-	7450 4100 7450 4200
-Wire Wire Line
-	8050 4200 7850 4200
-Wire Wire Line
-	6700 4200 6550 4200
-Wire Wire Line
-	6550 4200 6550 3800
-Connection ~ 6700 4200
-Wire Wire Line
-	10050 2950 10050 3100
-Wire Wire Line
-	10050 3100 9900 3100
-Text Notes 4950 1750 0    20   ~ 4
+Text Notes 2050 1450 0    197  ~ 39
+2x Isolated Idifferential ncremental encoder  interfase\n5v input A-B-I-S\n
+Text Notes 3650 1650 0    20   ~ 4
 I left the input for two isolated incremental encoders.\nI left the 4 signals input plus two auxiliary output for eny porpous plus\n the ability to choose between 5 or 15vH
-Wire Wire Line
-	4800 3100 5500 3100
-Wire Wire Line
-	4500 3200 5500 3200
-Wire Wire Line
-	4500 3300 5500 3300
-Wire Wire Line
-	4500 3400 5500 3400
-Wire Wire Line
-	4500 3500 5500 3500
-Wire Wire Line
-	4900 3800 5500 3800
-Wire Wire Line
-	4750 3700 5500 3700
-Wire Wire Line
-	4550 3600 5500 3600
-Wire Wire Line
-	6000 3100 6650 3100
-Wire Wire Line
-	6000 3200 6950 3200
-Wire Wire Line
-	6000 3300 6950 3300
-Wire Wire Line
-	6000 3400 6950 3400
-Wire Wire Line
-	6000 3500 6950 3500
-Wire Wire Line
-	6000 3800 6550 3800
-Wire Wire Line
-	6000 3700 6700 3700
-Wire Wire Line
-	6000 3600 6900 3600
 $Comp
-L servo:tblock2x8 J1101
-U 1 1 5E20064E
-P 5700 3400
-F 0 "J1101" H 5750 3917 50  0000 C CNN
-F 1 "tblock" H 5750 3826 50  0000 C CNN
-F 2 "servo:tblock02x08" H 5700 3400 50  0001 C CNN
-F 3 "../doc/datasheets/tblock2rows.pdf" H 5750 3800 50  0001 C CNN
-	1    5700 3400
+L Connector_Generic:Conn_02x10_Row_Letter_Last J1101
+U 1 1 6027FD06
+P 5800 3750
+F 0 "J1101" H 5850 4367 50  0000 C CNN
+F 1 "tblock" H 5850 4276 50  0000 C CNN
+F 2 "Connector_Phoenix_MC:PhoenixContact_MCV_1,5_10-G-3.81_1x10_P3.81mm_Vertical" H 5800 3750 50  0001 C CNN
+F 3 "~" H 5800 3750 50  0001 C CNN
+	1    5800 3750
 	1    0    0    -1  
 $EndComp
+Text Label 5350 3450 0    20   ~ 0
+QEP1_A+_H
+Text Label 5350 3550 0    20   ~ 0
+QEP1_A-_H
+Text Label 5350 3650 0    20   ~ 0
+QEP1_B+_H
+Text Label 5350 3750 0    20   ~ 0
+QEP1_B-_H
+Text Label 5350 3850 0    20   ~ 0
+QEP1_I+_H
+Text Label 5350 3950 0    20   ~ 0
+QEP1_I-_H
+Text Label 5350 4050 0    20   ~ 0
+QEP1_S+_H
+Text Label 5350 4150 0    20   ~ 0
+QEP1_S-_H
+Text GLabel 1100 3500 0    50   Input ~ 0
+QEP1_A
+Text GLabel 1100 3600 0    50   Input ~ 0
+QEP1_B
+Text GLabel 1100 3800 0    50   Input ~ 0
+QEP1_S
+Text GLabel 1100 3700 0    50   Input ~ 0
+QEP1_I
+Text GLabel 1100 3900 0    50   Input ~ 0
+STEP1
+Text GLabel 1100 4000 0    50   Input ~ 0
+DIR1
+$Comp
+L servo:R_Small R1122
+U 1 1 602AA37F
+P 7300 2500
+F 0 "R1122" H 7359 2522 20  0000 L CNN
+F 1 "10k" H 7359 2479 20  0000 L CNN
+F 2 "Resistor_SMD:R_0603_1608Metric" H 7300 2500 50  0001 C CNN
+F 3 "~" H 7300 2500 50  0001 C CNN
+	1    7300 2500
+	-1   0    0    -1  
+$EndComp
+$Comp
+L servo:R_Small R1123
+U 1 1 602AA386
+P 7300 2700
+F 0 "R1123" H 7359 2722 20  0000 L CNN
+F 1 "1k" H 7359 2679 20  0000 L CNN
+F 2 "Resistor_SMD:R_0603_1608Metric" H 7300 2700 50  0001 C CNN
+F 3 "~" H 7300 2700 50  0001 C CNN
+	1    7300 2700
+	-1   0    0    -1  
+$EndComp
+$Comp
+L servo:R_Small R1124
+U 1 1 602AA38D
+P 7300 2900
+F 0 "R1124" H 7359 2922 20  0000 L CNN
+F 1 "10k" H 7359 2879 20  0000 L CNN
+F 2 "Resistor_SMD:R_0603_1608Metric" H 7300 2900 50  0001 C CNN
+F 3 "~" H 7300 2900 50  0001 C CNN
+	1    7300 2900
+	-1   0    0    -1  
+$EndComp
+$Comp
+L servo:5VH #PWR?
+U 1 1 602AA394
+P 7300 2400
+AR Path="/5DE49152/602AA394" Ref="#PWR?"  Part="1" 
+AR Path="/5E1BAEAA/602AA394" Ref="#PWR?"  Part="1" 
+AR Path="/5DE3DF56/602AA394" Ref="#PWR?"  Part="1" 
+AR Path="/5E092156/602AA394" Ref="#PWR0154"  Part="1" 
+F 0 "#PWR0154" H 7300 2200 20  0001 C CNN
+F 1 "5VH" H 7305 2557 28  0000 C CNN
+F 2 "" H 7300 2400 50  0001 C CNN
+F 3 "" H 7300 2400 50  0001 C CNN
+	1    7300 2400
+	-1   0    0    -1  
+$EndComp
+$Comp
+L servo:GNDH #PWR?
+U 1 1 602AA39A
+P 7300 3000
+AR Path="/5DDE8C5E/602AA39A" Ref="#PWR?"  Part="1" 
+AR Path="/5E092156/602AA39A" Ref="#PWR0155"  Part="1" 
+F 0 "#PWR0155" H 7300 2750 30  0001 C CNN
+F 1 "GNDH" H 7300 2850 20  0000 C CNN
+F 2 "" H 7300 3000 50  0001 C CNN
+F 3 "" H 7300 3000 50  0001 C CNN
+	1    7300 3000
+	-1   0    0    -1  
+$EndComp
+Connection ~ 7300 2600
+Connection ~ 7300 2800
+Wire Wire Line
+	7450 2800 7300 2800
+$Comp
+L servo:R_Small R1119
+U 1 1 602AA3A3
+P 7050 2500
+F 0 "R1119" H 7109 2522 20  0000 L CNN
+F 1 "10k" H 7109 2479 20  0000 L CNN
+F 2 "Resistor_SMD:R_0603_1608Metric" H 7050 2500 50  0001 C CNN
+F 3 "~" H 7050 2500 50  0001 C CNN
+	1    7050 2500
+	-1   0    0    -1  
+$EndComp
+$Comp
+L servo:R_Small R1120
+U 1 1 602AA3AA
+P 7050 2700
+F 0 "R1120" H 7109 2722 20  0000 L CNN
+F 1 "1k" H 7109 2679 20  0000 L CNN
+F 2 "Resistor_SMD:R_0603_1608Metric" H 7050 2700 50  0001 C CNN
+F 3 "~" H 7050 2700 50  0001 C CNN
+	1    7050 2700
+	-1   0    0    -1  
+$EndComp
+$Comp
+L servo:R_Small R1121
+U 1 1 602AA3B1
+P 7050 2900
+F 0 "R1121" H 7109 2922 20  0000 L CNN
+F 1 "10k" H 7109 2879 20  0000 L CNN
+F 2 "Resistor_SMD:R_0603_1608Metric" H 7050 2900 50  0001 C CNN
+F 3 "~" H 7050 2900 50  0001 C CNN
+	1    7050 2900
+	-1   0    0    -1  
+$EndComp
+$Comp
+L servo:5VH #PWR?
+U 1 1 602AA3B8
+P 7050 2400
+AR Path="/5DE49152/602AA3B8" Ref="#PWR?"  Part="1" 
+AR Path="/5E1BAEAA/602AA3B8" Ref="#PWR?"  Part="1" 
+AR Path="/5DE3DF56/602AA3B8" Ref="#PWR?"  Part="1" 
+AR Path="/5E092156/602AA3B8" Ref="#PWR0156"  Part="1" 
+F 0 "#PWR0156" H 7050 2200 20  0001 C CNN
+F 1 "5VH" H 7055 2557 28  0000 C CNN
+F 2 "" H 7050 2400 50  0001 C CNN
+F 3 "" H 7050 2400 50  0001 C CNN
+	1    7050 2400
+	-1   0    0    -1  
+$EndComp
+$Comp
+L servo:GNDH #PWR?
+U 1 1 602AA3BE
+P 7050 3000
+AR Path="/5DDE8C5E/602AA3BE" Ref="#PWR?"  Part="1" 
+AR Path="/5E092156/602AA3BE" Ref="#PWR0157"  Part="1" 
+F 0 "#PWR0157" H 7050 2750 30  0001 C CNN
+F 1 "GNDH" H 7050 2850 20  0000 C CNN
+F 2 "" H 7050 3000 50  0001 C CNN
+F 3 "" H 7050 3000 50  0001 C CNN
+	1    7050 3000
+	-1   0    0    -1  
+$EndComp
+$Comp
+L servo:5VH #PWR?
+U 1 1 602AA3C6
+P 8100 2800
+AR Path="/5DE49152/602AA3C6" Ref="#PWR?"  Part="1" 
+AR Path="/5E1BAEAA/602AA3C6" Ref="#PWR?"  Part="1" 
+AR Path="/5DE3DF56/602AA3C6" Ref="#PWR?"  Part="1" 
+AR Path="/5E092156/602AA3C6" Ref="#PWR0158"  Part="1" 
+F 0 "#PWR0158" H 8100 2600 20  0001 C CNN
+F 1 "5VH" H 8105 2957 28  0000 C CNN
+F 2 "" H 8100 2800 50  0001 C CNN
+F 3 "" H 8100 2800 50  0001 C CNN
+	1    8100 2800
+	-1   0    0    -1  
+$EndComp
+Wire Wire Line
+	7700 3750 7600 3750
+Wire Wire Line
+	7700 3850 7600 3850
+Wire Wire Line
+	7600 3850 7600 4500
+Wire Wire Line
+	7600 4500 8100 4500
+$Comp
+L servo:GNDH #PWR?
+U 1 1 602AA3D0
+P 8100 4600
+AR Path="/5DDE8C5E/602AA3D0" Ref="#PWR?"  Part="1" 
+AR Path="/5E092156/602AA3D0" Ref="#PWR0159"  Part="1" 
+F 0 "#PWR0159" H 8100 4350 30  0001 C CNN
+F 1 "GNDH" H 8100 4450 20  0000 C CNN
+F 2 "" H 8100 4600 50  0001 C CNN
+F 3 "" H 8100 4600 50  0001 C CNN
+	1    8100 4600
+	-1   0    0    -1  
+$EndComp
+Wire Wire Line
+	8100 4600 8100 4500
+Text Notes 9200 3800 2    20   ~ 0
+optional one to hi \nor/and one to low
+Text Label 6500 3350 2    20   ~ 0
+QEP1_A+_H
+Text Label 6500 3450 2    20   ~ 0
+QEP1_A-_H
+Text Label 6300 3650 2    20   ~ 0
+QEP1_B+_H
+Text Label 6300 3750 2    20   ~ 0
+QEP1_B-_H
+Text Label 6300 3850 2    20   ~ 0
+QEP1_I+_H
+Text Label 6300 3950 2    20   ~ 0
+QEP1_I-_H
+Text Label 6500 4150 2    20   ~ 0
+QEP1_S+_H
+Text Label 6500 4250 2    20   ~ 0
+QEP1_S-_H
+Text GLabel 10600 3500 2    50   Input ~ 0
+QEP2_A
+Text GLabel 10600 3600 2    50   Input ~ 0
+QEP2_B
+Text GLabel 10600 3800 2    50   Input ~ 0
+QEP2_S
+$Comp
+L servo:GND #PWR?
+U 1 1 602AA3F1
+P 10550 4150
+AR Path="/5DDE8C5E/602AA3F1" Ref="#PWR?"  Part="1" 
+AR Path="/5E092156/602AA3F1" Ref="#PWR0160"  Part="1" 
+F 0 "#PWR0160" H 10550 3900 30  0001 C CNN
+F 1 "GND" H 10550 3992 30  0000 C CNN
+F 2 "" H 10550 4150 50  0001 C CNN
+F 3 "" H 10550 4150 50  0001 C CNN
+	1    10550 4150
+	-1   0    0    -1  
+$EndComp
+Wire Wire Line
+	10450 4100 10550 4100
+Wire Wire Line
+	10550 4100 10550 4150
+$Comp
+L servo:3V3 #PWR?
+U 1 1 602AA3F9
+P 10600 3250
+AR Path="/5DDE8C5E/602AA3F9" Ref="#PWR?"  Part="1" 
+AR Path="/5E092156/602AA3F9" Ref="#PWR0161"  Part="1" 
+F 0 "#PWR0161" H 10500 3350 20  0001 C CNN
+F 1 "3V3" H 10600 3400 28  0000 C CNN
+F 2 "" H 10600 3250 50  0001 C CNN
+F 3 "" H 10600 3250 50  0001 C CNN
+	1    10600 3250
+	-1   0    0    -1  
+$EndComp
+Text Notes 9250 4550 0    39   ~ 0
+Choose a package pin-to-pin compatible with\nTI ISO7760. But SIlabs cost halt the price as TI
+Text GLabel 10600 3700 2    50   Input ~ 0
+QEP2_I
+$Comp
+L servo:5VH #PWR0162
+U 1 1 602AA401
+P 8900 3200
+F 0 "#PWR0162" H 8900 3000 20  0001 C CNN
+F 1 "5VH" H 8905 3357 28  0000 C CNN
+F 2 "" H 8900 3200 50  0001 C CNN
+F 3 "" H 8900 3200 50  0001 C CNN
+	1    8900 3200
+	-1   0    0    -1  
+$EndComp
+Wire Wire Line
+	9050 3400 8900 3400
+Wire Wire Line
+	10450 3500 10600 3500
+Wire Wire Line
+	10600 3600 10450 3600
+Wire Wire Line
+	10450 3700 10600 3700
+Wire Wire Line
+	10600 3800 10450 3800
+Text GLabel 10600 3900 2    50   Input ~ 0
+STEP2
+Text GLabel 10600 4000 2    50   Input ~ 0
+DIR2
+Wire Wire Line
+	10600 3250 10600 3400
+Wire Wire Line
+	10600 3400 10450 3400
+$Comp
+L servo:SI8660BD U1104
+U 1 1 602AA411
+P 9750 3700
+F 0 "U1104" H 9750 4243 39  0000 C CNN
+F 1 "SI8660BD" H 9750 4168 39  0000 C CNN
+F 2 "Package_SO:SOIC-16W_7.5x10.3mm_P1.27mm" H 9150 4000 60  0001 C CNN
+F 3 "../doc/datasheets/Si8660.pdf" H 9650 4300 60  0001 C CNN
+	1    9750 3700
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	10450 3900 10600 3900
+Wire Wire Line
+	10600 4000 10450 4000
+Wire Wire Line
+	9050 3500 8650 3500
+Wire Wire Line
+	8650 3500 8650 3400
+Wire Wire Line
+	8650 3400 8550 3400
+Wire Wire Line
+	9050 3700 8650 3700
+Wire Wire Line
+	8650 3700 8650 4000
+Wire Wire Line
+	8650 4000 8550 4000
+Wire Wire Line
+	9050 3800 8750 3800
+Wire Wire Line
+	8750 3800 8750 4200
+Wire Wire Line
+	8750 4200 8550 4200
+Wire Wire Line
+	9050 3600 8550 3600
+Wire Wire Line
+	6200 3350 6200 3450
+Wire Wire Line
+	6300 3450 6300 3550
+Wire Wire Line
+	7700 3450 7450 3450
+Wire Wire Line
+	6200 4250 6200 4150
+Wire Wire Line
+	6200 4150 6100 4150
+Wire Wire Line
+	6300 4150 6300 4050
+Wire Wire Line
+	6400 4050 6400 3950
+Wire Wire Line
+	7700 4050 6900 4050
+Wire Wire Line
+	6500 3950 6500 3850
+Wire Wire Line
+	6500 3850 6100 3850
+Wire Wire Line
+	7700 3950 6950 3950
+Wire Wire Line
+	6500 3650 6500 3750
+Wire Wire Line
+	6500 3750 6100 3750
+Wire Wire Line
+	7700 3650 7150 3650
+Wire Wire Line
+	6400 3550 6400 3650
+Wire Wire Line
+	7700 3550 7200 3550
+Wire Wire Line
+	7450 2800 7450 3450
+Connection ~ 7450 3450
+Wire Wire Line
+	7200 2600 7200 3550
+Connection ~ 7200 3550
+Wire Wire Line
+	7050 2800 7150 2800
+Wire Wire Line
+	7150 2800 7150 3650
+Connection ~ 7050 2800
+Connection ~ 7150 3650
+$Comp
+L servo:R_Small R1116
+U 1 1 602AA453
+P 6800 2500
+F 0 "R1116" H 6859 2522 20  0000 L CNN
+F 1 "10k" H 6859 2479 20  0000 L CNN
+F 2 "Resistor_SMD:R_0603_1608Metric" H 6800 2500 50  0001 C CNN
+F 3 "~" H 6800 2500 50  0001 C CNN
+	1    6800 2500
+	-1   0    0    -1  
+$EndComp
+$Comp
+L servo:R_Small R1117
+U 1 1 602AA45A
+P 6800 2700
+F 0 "R1117" H 6859 2722 20  0000 L CNN
+F 1 "1k" H 6859 2679 20  0000 L CNN
+F 2 "Resistor_SMD:R_0603_1608Metric" H 6800 2700 50  0001 C CNN
+F 3 "~" H 6800 2700 50  0001 C CNN
+	1    6800 2700
+	-1   0    0    -1  
+$EndComp
+$Comp
+L servo:R_Small R1118
+U 1 1 602AA461
+P 6800 2900
+F 0 "R1118" H 6859 2922 20  0000 L CNN
+F 1 "10k" H 6859 2879 20  0000 L CNN
+F 2 "Resistor_SMD:R_0603_1608Metric" H 6800 2900 50  0001 C CNN
+F 3 "~" H 6800 2900 50  0001 C CNN
+	1    6800 2900
+	-1   0    0    -1  
+$EndComp
+$Comp
+L servo:5VH #PWR?
+U 1 1 602AA468
+P 6800 2400
+AR Path="/5DE49152/602AA468" Ref="#PWR?"  Part="1" 
+AR Path="/5E1BAEAA/602AA468" Ref="#PWR?"  Part="1" 
+AR Path="/5DE3DF56/602AA468" Ref="#PWR?"  Part="1" 
+AR Path="/5E092156/602AA468" Ref="#PWR0163"  Part="1" 
+F 0 "#PWR0163" H 6800 2200 20  0001 C CNN
+F 1 "5VH" H 6805 2557 28  0000 C CNN
+F 2 "" H 6800 2400 50  0001 C CNN
+F 3 "" H 6800 2400 50  0001 C CNN
+	1    6800 2400
+	-1   0    0    -1  
+$EndComp
+$Comp
+L servo:GNDH #PWR?
+U 1 1 602AA46E
+P 6800 3000
+AR Path="/5DDE8C5E/602AA46E" Ref="#PWR?"  Part="1" 
+AR Path="/5E092156/602AA46E" Ref="#PWR0164"  Part="1" 
+F 0 "#PWR0164" H 6800 2750 30  0001 C CNN
+F 1 "GNDH" H 6800 2850 20  0000 C CNN
+F 2 "" H 6800 3000 50  0001 C CNN
+F 3 "" H 6800 3000 50  0001 C CNN
+	1    6800 3000
+	-1   0    0    -1  
+$EndComp
+Wire Wire Line
+	6800 2800 6900 2800
+Connection ~ 6800 2800
+Wire Wire Line
+	6900 2800 6900 4050
+Connection ~ 6900 4050
+Wire Wire Line
+	6800 2600 6950 2600
+Wire Wire Line
+	6950 2600 6950 3950
+Connection ~ 6800 2600
+Connection ~ 6950 3950
+$Comp
+L servo:R_Small R1113
+U 1 1 602AA47E
+P 6550 2500
+F 0 "R1113" H 6609 2522 20  0000 L CNN
+F 1 "10k" H 6609 2479 20  0000 L CNN
+F 2 "Resistor_SMD:R_0603_1608Metric" H 6550 2500 50  0001 C CNN
+F 3 "~" H 6550 2500 50  0001 C CNN
+	1    6550 2500
+	-1   0    0    -1  
+$EndComp
+$Comp
+L servo:R_Small R1114
+U 1 1 602AA485
+P 6550 2700
+F 0 "R1114" H 6609 2722 20  0000 L CNN
+F 1 "1k" H 6609 2679 20  0000 L CNN
+F 2 "Resistor_SMD:R_0603_1608Metric" H 6550 2700 50  0001 C CNN
+F 3 "~" H 6550 2700 50  0001 C CNN
+	1    6550 2700
+	-1   0    0    -1  
+$EndComp
+$Comp
+L servo:R_Small R1115
+U 1 1 602AA48C
+P 6550 2900
+F 0 "R1115" H 6609 2922 20  0000 L CNN
+F 1 "10k" H 6609 2879 20  0000 L CNN
+F 2 "Resistor_SMD:R_0603_1608Metric" H 6550 2900 50  0001 C CNN
+F 3 "~" H 6550 2900 50  0001 C CNN
+	1    6550 2900
+	-1   0    0    -1  
+$EndComp
+$Comp
+L servo:5VH #PWR?
+U 1 1 602AA493
+P 6550 2400
+AR Path="/5DE49152/602AA493" Ref="#PWR?"  Part="1" 
+AR Path="/5E1BAEAA/602AA493" Ref="#PWR?"  Part="1" 
+AR Path="/5DE3DF56/602AA493" Ref="#PWR?"  Part="1" 
+AR Path="/5E092156/602AA493" Ref="#PWR0165"  Part="1" 
+F 0 "#PWR0165" H 6550 2200 20  0001 C CNN
+F 1 "5VH" H 6555 2557 28  0000 C CNN
+F 2 "" H 6550 2400 50  0001 C CNN
+F 3 "" H 6550 2400 50  0001 C CNN
+	1    6550 2400
+	-1   0    0    -1  
+$EndComp
+$Comp
+L servo:GNDH #PWR?
+U 1 1 602AA499
+P 6550 3000
+AR Path="/5DDE8C5E/602AA499" Ref="#PWR?"  Part="1" 
+AR Path="/5E092156/602AA499" Ref="#PWR0166"  Part="1" 
+F 0 "#PWR0166" H 6550 2750 30  0001 C CNN
+F 1 "GNDH" H 6550 2850 20  0000 C CNN
+F 2 "" H 6550 3000 50  0001 C CNN
+F 3 "" H 6550 3000 50  0001 C CNN
+	1    6550 3000
+	-1   0    0    -1  
+$EndComp
+Wire Wire Line
+	6550 2800 6650 2800
+Connection ~ 6550 2800
+Connection ~ 6550 2600
+Wire Wire Line
+	7200 2600 7050 2600
+Connection ~ 7050 2600
+$Comp
+L servo:5VH #PWR?
+U 1 1 603AC063
+P 6150 2950
+AR Path="/5DE49152/603AC063" Ref="#PWR?"  Part="1" 
+AR Path="/5E1BAEAA/603AC063" Ref="#PWR?"  Part="1" 
+AR Path="/5DE3DF56/603AC063" Ref="#PWR?"  Part="1" 
+AR Path="/5E092156/603AC063" Ref="#PWR0167"  Part="1" 
+F 0 "#PWR0167" H 6150 2750 20  0001 C CNN
+F 1 "5VH" H 6155 3107 28  0000 C CNN
+F 2 "" H 6150 2950 50  0001 C CNN
+F 3 "" H 6150 2950 50  0001 C CNN
+	1    6150 2950
+	-1   0    0    -1  
+$EndComp
+$Comp
+L servo:Jumper_3_Bridged12 JP?
+U 1 1 603AC069
+P 5850 3000
+AR Path="/5E1BAEAA/603AC069" Ref="JP?"  Part="1" 
+AR Path="/5DE3DF56/603AC069" Ref="JP?"  Part="1" 
+AR Path="/5E092156/603AC069" Ref="JP1101"  Part="1" 
+F 0 "JP1101" H 5850 3169 39  0000 C CNN
+F 1 "jumper" H 5850 3094 39  0000 C CNN
+F 2 "Jumper:SolderJumper-3_P1.3mm_Open_RoundedPad1.0x1.5mm" H 5650 2800 50  0001 C CNN
+F 3 "~" H 5750 2900 50  0001 C CNN
+	1    5850 3000
+	-1   0    0    -1  
+$EndComp
+$Comp
+L servo:15VH #PWR?
+U 1 1 603AC070
+P 5550 2950
+AR Path="/5E1BAEAA/603AC070" Ref="#PWR?"  Part="1" 
+AR Path="/5DE3DF56/603AC070" Ref="#PWR?"  Part="1" 
+AR Path="/5E092156/603AC070" Ref="#PWR0168"  Part="1" 
+F 0 "#PWR0168" H 5550 2750 20  0001 C CNN
+F 1 "15VH" H 5550 3107 28  0000 C CNN
+F 2 "" H 5550 2950 50  0001 C CNN
+F 3 "" H 5550 2950 50  0001 C CNN
+	1    5550 2950
+	-1   0    0    -1  
+$EndComp
+Wire Wire Line
+	5550 3000 5550 2950
+Wire Wire Line
+	5650 3000 5550 3000
+Wire Wire Line
+	6150 2950 6150 3000
+Wire Wire Line
+	6150 3000 6050 3000
+Wire Wire Line
+	5600 3350 5600 3100
+Wire Wire Line
+	5600 3100 5850 3100
+Connection ~ 5850 3100
+$Comp
+L servo:GNDH #PWR?
+U 1 1 60472C0D
+P 5850 4450
+AR Path="/5DDE8C5E/60472C0D" Ref="#PWR?"  Part="1" 
+AR Path="/5E092156/60472C0D" Ref="#PWR0169"  Part="1" 
+F 0 "#PWR0169" H 5850 4200 30  0001 C CNN
+F 1 "GNDH" H 5850 4300 20  0000 C CNN
+F 2 "" H 5850 4450 50  0001 C CNN
+F 3 "" H 5850 4450 50  0001 C CNN
+	1    5850 4450
+	-1   0    0    -1  
+$EndComp
+Wire Wire Line
+	5850 4450 5850 4400
+$Comp
+L servo:GNDH #PWR?
+U 1 1 62289DAB
+P 9050 4200
+AR Path="/5DDE8C5E/62289DAB" Ref="#PWR?"  Part="1" 
+AR Path="/5E092156/62289DAB" Ref="#PWR0170"  Part="1" 
+F 0 "#PWR0170" H 9050 3950 30  0001 C CNN
+F 1 "GNDH" H 9050 4042 30  0000 C CNN
+F 2 "" H 9050 4200 50  0001 C CNN
+F 3 "" H 9050 4200 50  0001 C CNN
+	1    9050 4200
+	-1   0    0    -1  
+$EndComp
+Wire Wire Line
+	9050 4100 9050 4200
+Wire Wire Line
+	8900 3200 8900 3400
+Text GLabel 8350 4950 0    50   Input ~ 0
+STEP2_H
+Text GLabel 8350 5050 0    50   Input ~ 0
+DIR2_H
+Wire Wire Line
+	8100 2800 8100 3000
+Wire Wire Line
+	7500 3350 7500 2600
+Wire Wire Line
+	7300 2600 7500 2600
+Connection ~ 7500 3350
+Wire Wire Line
+	7500 3350 7700 3350
+Wire Wire Line
+	6400 3650 6100 3650
+Wire Wire Line
+	6400 3950 6100 3950
+Wire Wire Line
+	6300 4050 6100 4050
+Wire Wire Line
+	6300 3550 6100 3550
+Wire Wire Line
+	6200 3450 6100 3450
+$Comp
+L servo:am26ls32a U1103
+U 1 1 63383E83
+P 8100 4100
+F 0 "U1103" H 7950 5150 39  0000 C CNN
+F 1 "am26ls32a" H 7900 5050 39  0000 C CNN
+F 2 "Package_SO:SOIC-16_3.9x9.9mm_P1.27mm" H 9100 3150 50  0001 C CNN
+F 3 "../doc/datasheets/am26ls32a.pdf" H 8100 3700 50  0001 C CNN
+	1    8100 4100
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	7600 3750 7600 3000
+Wire Wire Line
+	7600 3000 8100 3000
+Connection ~ 8100 3000
+Wire Wire Line
+	8100 3000 8100 3100
+Connection ~ 8100 4500
+Wire Wire Line
+	6100 3350 6100 3100
+Wire Wire Line
+	5850 3100 6100 3100
+Wire Wire Line
+	6300 3450 7450 3450
+Wire Wire Line
+	6400 3550 7200 3550
+Wire Wire Line
+	6200 4250 6650 4250
+Wire Wire Line
+	6500 3650 7150 3650
+Wire Wire Line
+	6200 3350 7500 3350
+Wire Wire Line
+	6500 3950 6950 3950
+Wire Wire Line
+	6400 4050 6900 4050
+Wire Wire Line
+	6300 4150 6700 4150
+Wire Wire Line
+	6650 2800 6650 4250
+Connection ~ 6650 4250
+Wire Wire Line
+	6650 4250 7700 4250
+Wire Wire Line
+	6550 2600 6700 2600
+Wire Wire Line
+	6700 4150 6700 2600
+Connection ~ 6700 4150
+Wire Wire Line
+	6700 4150 7700 4150
+Wire Wire Line
+	8950 4000 8950 5050
+Wire Wire Line
+	8950 5050 8350 5050
+Wire Wire Line
+	8950 4000 9050 4000
+Wire Wire Line
+	8850 3900 8850 4950
+Wire Wire Line
+	8850 4950 8350 4950
+Wire Wire Line
+	8850 3900 9050 3900
+$Comp
+L servo:R_Small R1101
+U 1 1 634575F7
+P 4400 2500
+F 0 "R1101" H 4459 2522 20  0000 L CNN
+F 1 "10k" H 4459 2479 20  0000 L CNN
+F 2 "Resistor_SMD:R_0603_1608Metric" H 4400 2500 50  0001 C CNN
+F 3 "~" H 4400 2500 50  0001 C CNN
+	1    4400 2500
+	1    0    0    -1  
+$EndComp
+$Comp
+L servo:R_Small R1102
+U 1 1 634575FE
+P 4400 2700
+F 0 "R1102" H 4459 2722 20  0000 L CNN
+F 1 "1k" H 4459 2679 20  0000 L CNN
+F 2 "Resistor_SMD:R_0603_1608Metric" H 4400 2700 50  0001 C CNN
+F 3 "~" H 4400 2700 50  0001 C CNN
+	1    4400 2700
+	1    0    0    -1  
+$EndComp
+$Comp
+L servo:R_Small R1103
+U 1 1 63457605
+P 4400 2900
+F 0 "R1103" H 4459 2922 20  0000 L CNN
+F 1 "10k" H 4459 2879 20  0000 L CNN
+F 2 "Resistor_SMD:R_0603_1608Metric" H 4400 2900 50  0001 C CNN
+F 3 "~" H 4400 2900 50  0001 C CNN
+	1    4400 2900
+	1    0    0    -1  
+$EndComp
+$Comp
+L servo:5VH #PWR?
+U 1 1 6345760C
+P 4400 2400
+AR Path="/5DE49152/6345760C" Ref="#PWR?"  Part="1" 
+AR Path="/5E1BAEAA/6345760C" Ref="#PWR?"  Part="1" 
+AR Path="/5DE3DF56/6345760C" Ref="#PWR?"  Part="1" 
+AR Path="/5E092156/6345760C" Ref="#PWR0171"  Part="1" 
+F 0 "#PWR0171" H 4400 2200 20  0001 C CNN
+F 1 "5VH" H 4405 2557 28  0000 C CNN
+F 2 "" H 4400 2400 50  0001 C CNN
+F 3 "" H 4400 2400 50  0001 C CNN
+	1    4400 2400
+	1    0    0    -1  
+$EndComp
+$Comp
+L servo:GNDH #PWR?
+U 1 1 63457612
+P 4400 3000
+AR Path="/5DDE8C5E/63457612" Ref="#PWR?"  Part="1" 
+AR Path="/5E092156/63457612" Ref="#PWR0172"  Part="1" 
+F 0 "#PWR0172" H 4400 2750 30  0001 C CNN
+F 1 "GNDH" H 4400 2850 20  0000 C CNN
+F 2 "" H 4400 3000 50  0001 C CNN
+F 3 "" H 4400 3000 50  0001 C CNN
+	1    4400 3000
+	1    0    0    -1  
+$EndComp
+Connection ~ 4400 2600
+Connection ~ 4400 2800
+Wire Wire Line
+	4250 2800 4400 2800
+$Comp
+L servo:R_Small R1104
+U 1 1 6345761B
+P 4650 2500
+F 0 "R1104" H 4709 2522 20  0000 L CNN
+F 1 "10k" H 4709 2479 20  0000 L CNN
+F 2 "Resistor_SMD:R_0603_1608Metric" H 4650 2500 50  0001 C CNN
+F 3 "~" H 4650 2500 50  0001 C CNN
+	1    4650 2500
+	1    0    0    -1  
+$EndComp
+$Comp
+L servo:R_Small R1105
+U 1 1 63457622
+P 4650 2700
+F 0 "R1105" H 4709 2722 20  0000 L CNN
+F 1 "1k" H 4709 2679 20  0000 L CNN
+F 2 "Resistor_SMD:R_0603_1608Metric" H 4650 2700 50  0001 C CNN
+F 3 "~" H 4650 2700 50  0001 C CNN
+	1    4650 2700
+	1    0    0    -1  
+$EndComp
+$Comp
+L servo:R_Small R1106
+U 1 1 63457629
+P 4650 2900
+F 0 "R1106" H 4709 2922 20  0000 L CNN
+F 1 "10k" H 4709 2879 20  0000 L CNN
+F 2 "Resistor_SMD:R_0603_1608Metric" H 4650 2900 50  0001 C CNN
+F 3 "~" H 4650 2900 50  0001 C CNN
+	1    4650 2900
+	1    0    0    -1  
+$EndComp
+$Comp
+L servo:5VH #PWR?
+U 1 1 63457630
+P 4650 2400
+AR Path="/5DE49152/63457630" Ref="#PWR?"  Part="1" 
+AR Path="/5E1BAEAA/63457630" Ref="#PWR?"  Part="1" 
+AR Path="/5DE3DF56/63457630" Ref="#PWR?"  Part="1" 
+AR Path="/5E092156/63457630" Ref="#PWR0173"  Part="1" 
+F 0 "#PWR0173" H 4650 2200 20  0001 C CNN
+F 1 "5VH" H 4655 2557 28  0000 C CNN
+F 2 "" H 4650 2400 50  0001 C CNN
+F 3 "" H 4650 2400 50  0001 C CNN
+	1    4650 2400
+	1    0    0    -1  
+$EndComp
+$Comp
+L servo:GNDH #PWR?
+U 1 1 63457636
+P 4650 3000
+AR Path="/5DDE8C5E/63457636" Ref="#PWR?"  Part="1" 
+AR Path="/5E092156/63457636" Ref="#PWR0174"  Part="1" 
+F 0 "#PWR0174" H 4650 2750 30  0001 C CNN
+F 1 "GNDH" H 4650 2850 20  0000 C CNN
+F 2 "" H 4650 3000 50  0001 C CNN
+F 3 "" H 4650 3000 50  0001 C CNN
+	1    4650 3000
+	1    0    0    -1  
+$EndComp
+$Comp
+L servo:5VH #PWR?
+U 1 1 6345763C
+P 3600 2800
+AR Path="/5DE49152/6345763C" Ref="#PWR?"  Part="1" 
+AR Path="/5E1BAEAA/6345763C" Ref="#PWR?"  Part="1" 
+AR Path="/5DE3DF56/6345763C" Ref="#PWR?"  Part="1" 
+AR Path="/5E092156/6345763C" Ref="#PWR0175"  Part="1" 
+F 0 "#PWR0175" H 3600 2600 20  0001 C CNN
+F 1 "5VH" H 3605 2957 28  0000 C CNN
+F 2 "" H 3600 2800 50  0001 C CNN
+F 3 "" H 3600 2800 50  0001 C CNN
+	1    3600 2800
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	4000 3750 4100 3750
+Wire Wire Line
+	4000 3850 4100 3850
+Wire Wire Line
+	4100 3850 4100 4500
+Wire Wire Line
+	4100 4500 3600 4500
+$Comp
+L servo:GNDH #PWR?
+U 1 1 63457646
+P 3600 4600
+AR Path="/5DDE8C5E/63457646" Ref="#PWR?"  Part="1" 
+AR Path="/5E092156/63457646" Ref="#PWR0176"  Part="1" 
+F 0 "#PWR0176" H 3600 4350 30  0001 C CNN
+F 1 "GNDH" H 3600 4450 20  0000 C CNN
+F 2 "" H 3600 4600 50  0001 C CNN
+F 3 "" H 3600 4600 50  0001 C CNN
+	1    3600 4600
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	3600 4600 3600 4500
+Text Notes 2500 3800 0    20   ~ 0
+optional one to hi \nor/and one to low
+Text Label 5200 3350 0    20   ~ 0
+QEP1_A+_H
+Text Label 5200 3450 0    20   ~ 0
+QEP1_A-_H
+Text Label 5400 3650 0    20   ~ 0
+QEP1_B+_H
+Text Label 5400 3750 0    20   ~ 0
+QEP1_B-_H
+Text Label 5400 3850 0    20   ~ 0
+QEP1_I+_H
+Text Label 5400 3950 0    20   ~ 0
+QEP1_I-_H
+Text Label 5200 4150 0    20   ~ 0
+QEP1_S+_H
+Text Label 5200 4250 0    20   ~ 0
+QEP1_S-_H
+$Comp
+L servo:GND #PWR?
+U 1 1 63457659
+P 1150 4150
+AR Path="/5DDE8C5E/63457659" Ref="#PWR?"  Part="1" 
+AR Path="/5E092156/63457659" Ref="#PWR0177"  Part="1" 
+F 0 "#PWR0177" H 1150 3900 30  0001 C CNN
+F 1 "GND" H 1150 3992 30  0000 C CNN
+F 2 "" H 1150 4150 50  0001 C CNN
+F 3 "" H 1150 4150 50  0001 C CNN
+	1    1150 4150
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	1250 4100 1150 4100
+Wire Wire Line
+	1150 4100 1150 4150
+$Comp
+L servo:3V3 #PWR?
+U 1 1 63457661
+P 1100 3250
+AR Path="/5DDE8C5E/63457661" Ref="#PWR?"  Part="1" 
+AR Path="/5E092156/63457661" Ref="#PWR0178"  Part="1" 
+F 0 "#PWR0178" H 1000 3350 20  0001 C CNN
+F 1 "3V3" H 1100 3400 28  0000 C CNN
+F 2 "" H 1100 3250 50  0001 C CNN
+F 3 "" H 1100 3250 50  0001 C CNN
+	1    1100 3250
+	1    0    0    -1  
+$EndComp
+Text Notes 2450 4550 2    39   ~ 0
+Choose a package pin-to-pin compatible with\nTI ISO7760. But SIlabs cost halt the price as TI
+$Comp
+L servo:5VH #PWR0179
+U 1 1 63457669
+P 2800 3200
+F 0 "#PWR0179" H 2800 3000 20  0001 C CNN
+F 1 "5VH" H 2805 3357 28  0000 C CNN
+F 2 "" H 2800 3200 50  0001 C CNN
+F 3 "" H 2800 3200 50  0001 C CNN
+	1    2800 3200
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	2650 3400 2800 3400
+Wire Wire Line
+	1250 3500 1100 3500
+Wire Wire Line
+	1100 3600 1250 3600
+Wire Wire Line
+	1250 3700 1100 3700
+Wire Wire Line
+	1100 3800 1250 3800
+Wire Wire Line
+	1100 3250 1100 3400
+Wire Wire Line
+	1100 3400 1250 3400
+$Comp
+L servo:SI8660BD U1101
+U 1 1 63457678
+P 1950 3700
+F 0 "U1101" H 1950 4243 39  0000 C CNN
+F 1 "SI8660BD" H 1950 4168 39  0000 C CNN
+F 2 "Package_SO:SOIC-16W_7.5x10.3mm_P1.27mm" H 1350 4000 60  0001 C CNN
+F 3 "../doc/datasheets/Si8660.pdf" H 1850 4300 60  0001 C CNN
+	1    1950 3700
+	-1   0    0    -1  
+$EndComp
+Wire Wire Line
+	1250 3900 1100 3900
+Wire Wire Line
+	1100 4000 1250 4000
+Wire Wire Line
+	2650 3500 3050 3500
+Wire Wire Line
+	3050 3500 3050 3400
+Wire Wire Line
+	3050 3400 3150 3400
+Wire Wire Line
+	2650 3700 3050 3700
+Wire Wire Line
+	3050 3700 3050 4000
+Wire Wire Line
+	3050 4000 3150 4000
+Wire Wire Line
+	2650 3800 2950 3800
+Wire Wire Line
+	2950 3800 2950 4200
+Wire Wire Line
+	2950 4200 3150 4200
+Wire Wire Line
+	2650 3600 3150 3600
+Wire Wire Line
+	5500 3350 5500 3450
+Wire Wire Line
+	5400 3450 5400 3550
+Wire Wire Line
+	4000 3450 4250 3450
+Wire Wire Line
+	5500 4250 5500 4150
+Wire Wire Line
+	5500 4150 5600 4150
+Wire Wire Line
+	5400 4150 5400 4050
+Wire Wire Line
+	5300 4050 5300 3950
+Wire Wire Line
+	4000 4050 4800 4050
+Wire Wire Line
+	5200 3950 5200 3850
+Wire Wire Line
+	5200 3850 5600 3850
+Wire Wire Line
+	4000 3950 4750 3950
+Wire Wire Line
+	5200 3650 5200 3750
+Wire Wire Line
+	5200 3750 5600 3750
+Wire Wire Line
+	4000 3650 4550 3650
+Wire Wire Line
+	5300 3550 5300 3650
+Wire Wire Line
+	4000 3550 4500 3550
+Wire Wire Line
+	4250 2800 4250 3450
+Connection ~ 4250 3450
+Wire Wire Line
+	4500 2600 4500 3550
+Connection ~ 4500 3550
+Wire Wire Line
+	4650 2800 4550 2800
+Wire Wire Line
+	4550 2800 4550 3650
+Connection ~ 4650 2800
+Connection ~ 4550 3650
+$Comp
+L servo:R_Small R1107
+U 1 1 634576A3
+P 4900 2500
+F 0 "R1107" H 4959 2522 20  0000 L CNN
+F 1 "10k" H 4959 2479 20  0000 L CNN
+F 2 "Resistor_SMD:R_0603_1608Metric" H 4900 2500 50  0001 C CNN
+F 3 "~" H 4900 2500 50  0001 C CNN
+	1    4900 2500
+	1    0    0    -1  
+$EndComp
+$Comp
+L servo:R_Small R1108
+U 1 1 634576AA
+P 4900 2700
+F 0 "R1108" H 4959 2722 20  0000 L CNN
+F 1 "1k" H 4959 2679 20  0000 L CNN
+F 2 "Resistor_SMD:R_0603_1608Metric" H 4900 2700 50  0001 C CNN
+F 3 "~" H 4900 2700 50  0001 C CNN
+	1    4900 2700
+	1    0    0    -1  
+$EndComp
+$Comp
+L servo:R_Small R1109
+U 1 1 634576B1
+P 4900 2900
+F 0 "R1109" H 4959 2922 20  0000 L CNN
+F 1 "10k" H 4959 2879 20  0000 L CNN
+F 2 "Resistor_SMD:R_0603_1608Metric" H 4900 2900 50  0001 C CNN
+F 3 "~" H 4900 2900 50  0001 C CNN
+	1    4900 2900
+	1    0    0    -1  
+$EndComp
+$Comp
+L servo:5VH #PWR?
+U 1 1 634576B8
+P 4900 2400
+AR Path="/5DE49152/634576B8" Ref="#PWR?"  Part="1" 
+AR Path="/5E1BAEAA/634576B8" Ref="#PWR?"  Part="1" 
+AR Path="/5DE3DF56/634576B8" Ref="#PWR?"  Part="1" 
+AR Path="/5E092156/634576B8" Ref="#PWR0180"  Part="1" 
+F 0 "#PWR0180" H 4900 2200 20  0001 C CNN
+F 1 "5VH" H 4905 2557 28  0000 C CNN
+F 2 "" H 4900 2400 50  0001 C CNN
+F 3 "" H 4900 2400 50  0001 C CNN
+	1    4900 2400
+	1    0    0    -1  
+$EndComp
+$Comp
+L servo:GNDH #PWR?
+U 1 1 634576BE
+P 4900 3000
+AR Path="/5DDE8C5E/634576BE" Ref="#PWR?"  Part="1" 
+AR Path="/5E092156/634576BE" Ref="#PWR0181"  Part="1" 
+F 0 "#PWR0181" H 4900 2750 30  0001 C CNN
+F 1 "GNDH" H 4900 2850 20  0000 C CNN
+F 2 "" H 4900 3000 50  0001 C CNN
+F 3 "" H 4900 3000 50  0001 C CNN
+	1    4900 3000
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	4900 2800 4800 2800
+Connection ~ 4900 2800
+Wire Wire Line
+	4800 2800 4800 4050
+Connection ~ 4800 4050
+Wire Wire Line
+	4900 2600 4750 2600
+Wire Wire Line
+	4750 2600 4750 3950
+Connection ~ 4900 2600
+Connection ~ 4750 3950
+$Comp
+L servo:R_Small R1110
+U 1 1 634576CC
+P 5150 2500
+F 0 "R1110" H 5209 2522 20  0000 L CNN
+F 1 "10k" H 5209 2479 20  0000 L CNN
+F 2 "Resistor_SMD:R_0603_1608Metric" H 5150 2500 50  0001 C CNN
+F 3 "~" H 5150 2500 50  0001 C CNN
+	1    5150 2500
+	1    0    0    -1  
+$EndComp
+$Comp
+L servo:R_Small R1111
+U 1 1 634576D3
+P 5150 2700
+F 0 "R1111" H 5209 2722 20  0000 L CNN
+F 1 "1k" H 5209 2679 20  0000 L CNN
+F 2 "Resistor_SMD:R_0603_1608Metric" H 5150 2700 50  0001 C CNN
+F 3 "~" H 5150 2700 50  0001 C CNN
+	1    5150 2700
+	1    0    0    -1  
+$EndComp
+$Comp
+L servo:R_Small R1112
+U 1 1 634576DA
+P 5150 2900
+F 0 "R1112" H 5209 2922 20  0000 L CNN
+F 1 "10k" H 5209 2879 20  0000 L CNN
+F 2 "Resistor_SMD:R_0603_1608Metric" H 5150 2900 50  0001 C CNN
+F 3 "~" H 5150 2900 50  0001 C CNN
+	1    5150 2900
+	1    0    0    -1  
+$EndComp
+$Comp
+L servo:5VH #PWR?
+U 1 1 634576E1
+P 5150 2400
+AR Path="/5DE49152/634576E1" Ref="#PWR?"  Part="1" 
+AR Path="/5E1BAEAA/634576E1" Ref="#PWR?"  Part="1" 
+AR Path="/5DE3DF56/634576E1" Ref="#PWR?"  Part="1" 
+AR Path="/5E092156/634576E1" Ref="#PWR0182"  Part="1" 
+F 0 "#PWR0182" H 5150 2200 20  0001 C CNN
+F 1 "5VH" H 5155 2557 28  0000 C CNN
+F 2 "" H 5150 2400 50  0001 C CNN
+F 3 "" H 5150 2400 50  0001 C CNN
+	1    5150 2400
+	1    0    0    -1  
+$EndComp
+$Comp
+L servo:GNDH #PWR?
+U 1 1 634576E7
+P 5150 3000
+AR Path="/5DDE8C5E/634576E7" Ref="#PWR?"  Part="1" 
+AR Path="/5E092156/634576E7" Ref="#PWR0183"  Part="1" 
+F 0 "#PWR0183" H 5150 2750 30  0001 C CNN
+F 1 "GNDH" H 5150 2850 20  0000 C CNN
+F 2 "" H 5150 3000 50  0001 C CNN
+F 3 "" H 5150 3000 50  0001 C CNN
+	1    5150 3000
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	5150 2800 5050 2800
+Connection ~ 5150 2800
+Connection ~ 5150 2600
+Wire Wire Line
+	4500 2600 4650 2600
+Connection ~ 4650 2600
+$Comp
+L servo:GNDH #PWR?
+U 1 1 634576F5
+P 2650 4200
+AR Path="/5DDE8C5E/634576F5" Ref="#PWR?"  Part="1" 
+AR Path="/5E092156/634576F5" Ref="#PWR0184"  Part="1" 
+F 0 "#PWR0184" H 2650 3950 30  0001 C CNN
+F 1 "GNDH" H 2650 4042 30  0000 C CNN
+F 2 "" H 2650 4200 50  0001 C CNN
+F 3 "" H 2650 4200 50  0001 C CNN
+	1    2650 4200
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	2650 4100 2650 4200
+Wire Wire Line
+	2800 3200 2800 3400
+Text GLabel 3350 4950 2    50   Input ~ 0
+STEP1_H
+Text GLabel 3350 5050 2    50   Input ~ 0
+DIR1_H
+Wire Wire Line
+	3600 2800 3600 3000
+Wire Wire Line
+	4200 3350 4200 2600
+Wire Wire Line
+	4400 2600 4200 2600
+Connection ~ 4200 3350
+Wire Wire Line
+	4200 3350 4000 3350
+Wire Wire Line
+	5300 3650 5600 3650
+Wire Wire Line
+	5300 3950 5600 3950
+Wire Wire Line
+	5400 4050 5600 4050
+Wire Wire Line
+	5400 3550 5600 3550
+Wire Wire Line
+	5500 3450 5600 3450
+$Comp
+L servo:am26ls32a U1102
+U 1 1 63457709
+P 3600 4100
+F 0 "U1102" H 3450 5150 39  0000 C CNN
+F 1 "am26ls32a" H 3400 5050 39  0000 C CNN
+F 2 "Package_SO:SOIC-16_3.9x9.9mm_P1.27mm" H 4600 3150 50  0001 C CNN
+F 3 "../doc/datasheets/am26ls32a.pdf" H 3600 3700 50  0001 C CNN
+	1    3600 4100
+	-1   0    0    -1  
+$EndComp
+Wire Wire Line
+	4100 3750 4100 3000
+Wire Wire Line
+	4100 3000 3600 3000
+Connection ~ 3600 3000
+Wire Wire Line
+	3600 3000 3600 3100
+Connection ~ 3600 4500
+Wire Wire Line
+	5400 3450 4250 3450
+Wire Wire Line
+	5300 3550 4500 3550
+Wire Wire Line
+	5500 4250 5050 4250
+Wire Wire Line
+	5200 3650 4550 3650
+Wire Wire Line
+	5500 3350 4200 3350
+Wire Wire Line
+	5200 3950 4750 3950
+Wire Wire Line
+	5300 4050 4800 4050
+Wire Wire Line
+	5400 4150 5000 4150
+Wire Wire Line
+	5050 2800 5050 4250
+Connection ~ 5050 4250
+Wire Wire Line
+	5050 4250 4000 4250
+Wire Wire Line
+	5150 2600 5000 2600
+Wire Wire Line
+	5000 4150 5000 2600
+Connection ~ 5000 4150
+Wire Wire Line
+	5000 4150 4000 4150
+Wire Wire Line
+	2750 4000 2750 5050
+Wire Wire Line
+	2750 5050 3350 5050
+Wire Wire Line
+	2750 4000 2650 4000
+Wire Wire Line
+	2850 3900 2850 4950
+Wire Wire Line
+	2850 4950 3350 4950
+Wire Wire Line
+	2850 3900 2650 3900
+Wire Wire Line
+	5600 4250 5600 4400
+Wire Wire Line
+	5600 4400 5850 4400
+Wire Wire Line
+	6100 4400 6100 4250
+Connection ~ 5850 4400
+Wire Wire Line
+	5850 4400 6100 4400
 $EndSCHEMATC

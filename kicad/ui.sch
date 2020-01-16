@@ -4,7 +4,7 @@ EELAYER 26 0
 EELAYER END
 $Descr A4 11693 8268
 encoding utf-8
-Sheet 14 18
+Sheet 14 19
 Title "clk"
 Date "2020-01-09"
 Rev "1.0"

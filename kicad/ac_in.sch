@@ -4,7 +4,7 @@ EELAYER 26 0
 EELAYER END
 $Descr A3 16535 11693
 encoding utf-8
-Sheet 7 18
+Sheet 7 19
 Title "AC input"
 Date "2020-01-09"
 Rev "1.0"
@@ -626,12 +626,12 @@ Wire Wire Line
 $Comp
 L servo:PWR_FLAG #FLG0701
 U 1 1 5E1BE0A4
-P 3800 2300
-F 0 "#FLG0701" H 3800 2375 20  0001 C CNN
-F 1 "PWR_FLAG" H 3800 2450 20  0000 C CNN
-F 2 "" H 3800 2300 50  0001 C CNN
-F 3 "~" H 3800 2300 50  0001 C CNN
-	1    3800 2300
+P 3500 5550
+F 0 "#FLG0701" H 3500 5625 20  0001 C CNN
+F 1 "PWR_FLAG" H 3500 5700 20  0000 C CNN
+F 2 "" H 3500 5550 50  0001 C CNN
+F 3 "~" H 3500 5550 50  0001 C CNN
+	1    3500 5550
 	1    0    0    -1  
 $EndComp
 $Comp
@@ -712,8 +712,6 @@ Wire Wire Line
 	6450 2150 6500 2150
 Wire Wire Line
 	6100 2150 6250 2150
-Wire Wire Line
-	3800 2300 3800 2650
 Connection ~ 4600 9350
 Wire Wire Line
 	4600 9350 4500 9350
@@ -837,25 +835,10 @@ Wire Wire Line
 Connection ~ 6500 2150
 Wire Wire Line
 	6500 2150 6600 2150
-Connection ~ 3800 2650
 Wire Wire Line
 	3900 2450 4150 2450
-$Comp
-L servo:PWR_FLAG #FLG0706
-U 1 1 5E560C61
-P 4000 9550
-F 0 "#FLG0706" H 4000 9625 20  0001 C CNN
-F 1 "PWR_FLAG" H 4000 9700 20  0000 C CNN
-F 2 "" H 4000 9550 50  0001 C CNN
-F 3 "~" H 4000 9550 50  0001 C CNN
-	1    4000 9550
-	1    0    0    -1  
-$EndComp
-Wire Wire Line
-	3800 9550 4000 9550
 Wire Wire Line
 	3900 9350 4200 9350
-Connection ~ 4000 9550
 $Comp
 L Connector_Generic:Conn_02x04_Row_Letter_Last J?
 U 1 1 5E229E8E
@@ -944,8 +927,6 @@ F 3 "../doc/datasheets/irm-10.pdf" H 5650 9100 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
-	4000 9550 4850 9550
-Wire Wire Line
 	4600 9350 4850 9350
 Wire Wire Line
 	5650 9350 5900 9350
@@ -967,22 +948,22 @@ $EndComp
 $Comp
 L servo:Earth #PWR?
 U 1 1 5E23C47B
-P 3500 6350
+P 3500 6650
 AR Path="/5DC3DC9E/5E23C47B" Ref="#PWR?"  Part="1" 
 AR Path="/5DD76B18/5E23C47B" Ref="#PWR0131"  Part="1" 
-F 0 "#PWR0131" H 3500 6100 20  0001 C CNN
-F 1 "Earth" H 3500 6201 20  0000 C CNN
-F 2 "" H 3500 6350 50  0001 C CNN
-F 3 "~" H 3500 6350 50  0001 C CNN
-	1    3500 6350
+F 0 "#PWR0131" H 3500 6400 20  0001 C CNN
+F 1 "Earth" H 3500 6501 20  0000 C CNN
+F 2 "" H 3500 6650 50  0001 C CNN
+F 3 "~" H 3500 6650 50  0001 C CNN
+	1    3500 6650
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
 	3350 6300 3500 6300
 Wire Wire Line
-	3500 6300 3500 6350
+	3500 6300 3500 6600
 Wire Wire Line
-	3350 6200 3800 6200
+	3350 6200 3500 6200
 Wire Wire Line
 	3800 2650 3800 6200
 Connection ~ 3800 6200
@@ -998,4 +979,29 @@ Wire Wire Line
 	3900 6000 3900 2450
 Text Notes 2800 6500 0    20   ~ 0
 Individuali selected input, but in case \nyou want, just join input line pins and \nwith 3 pins turn it all
+$Comp
+L servo:PWR_FLAG #FLG0102
+U 1 1 63A59982
+P 3650 6500
+F 0 "#FLG0102" H 3650 6575 20  0001 C CNN
+F 1 "PWR_FLAG" H 3650 6650 20  0000 C CNN
+F 2 "" H 3650 6500 50  0001 C CNN
+F 3 "~" H 3650 6500 50  0001 C CNN
+	1    3650 6500
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	3500 6600 3650 6600
+Wire Wire Line
+	3650 6600 3650 6500
+Connection ~ 3500 6600
+Wire Wire Line
+	3500 6600 3500 6650
+Wire Wire Line
+	3800 9550 4850 9550
+Wire Wire Line
+	3500 5550 3500 6200
+Connection ~ 3500 6200
+Wire Wire Line
+	3500 6200 3800 6200
 $EndSCHEMATC

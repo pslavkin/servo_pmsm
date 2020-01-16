@@ -4,7 +4,7 @@ EELAYER 26 0
 EELAYER END
 $Descr A3 16535 11693
 encoding utf-8
-Sheet 1 18
+Sheet 1 19
 Title "servo drive"
 Date "2020-01-09"
 Rev "1.0"
@@ -78,13 +78,13 @@ Text Notes 12600 6250 0    197  ~ 39
 Ether\nNET
 Text Notes 7300 4900 0    197  ~ 39
 uC\nCLK\nDbg
-Text Notes 10750 4550 0    197  ~ 39
-ENDAT
+Text Notes 10850 4750 0    197  ~ 39
+STEP\nDIR\n
 $Sheet
 S 10550 3900 1300 1150
 U 5DE3DF56
-F0 "endat" 50
-F1 "endat.sch" 50
+F0 "step_dir" 50
+F1 "step_dir.sch" 50
 $EndSheet
 $Sheet
 S 10550 5400 1300 1150
@@ -154,4 +154,12 @@ F1 "sigma_delta.sch" 50
 $EndSheet
 Text Notes 3700 3050 0    197  ~ 39
 SDELTA\n
+Text Notes 10750 2950 0    197  ~ 39
+ENDAT
+$Sheet
+S 10550 2300 1300 1150
+U 5F8D42C2
+F0 "sheet5F8D42BF" 50
+F1 "endat.sch" 50
+$EndSheet
 $EndSCHEMATC

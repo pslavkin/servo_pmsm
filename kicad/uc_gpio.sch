@@ -4,7 +4,7 @@ EELAYER 26 0
 EELAYER END
 $Descr A3 16535 11693
 encoding utf-8
-Sheet 13 18
+Sheet 13 19
 Title "gpio"
 Date "2020-01-09"
 Rev "1.0"
@@ -15,55 +15,47 @@ Comment3 ""
 Comment4 ""
 $EndDescr
 Wire Wire Line
-	3950 10400 4800 10400
+	3150 10400 4800 10400
 Wire Wire Line
-	3950 10300 4800 10300
+	3150 10300 4800 10300
 Wire Wire Line
-	3950 10200 4800 10200
-Wire Wire Line
-	3950 10100 4800 10100
-Wire Wire Line
-	3950 10000 4800 10000
-Wire Wire Line
-	3950 9900 4800 9900
-Wire Wire Line
-	3950 9800 4800 9800
-Text GLabel 3150 2100 0    50   Input ~ 0
+	3150 10200 4800 10200
+Text GLabel 3200 2100 0    50   Input ~ 0
 PWM_A_1H_C
-Text GLabel 3150 2300 0    50   Input ~ 0
+Text GLabel 3200 2300 0    50   Input ~ 0
 PWM_A_2H_C
-Text GLabel 3150 2500 0    50   Input ~ 0
+Text GLabel 3200 2500 0    50   Input ~ 0
 PWM_A_3H_C
-Text GLabel 3150 2200 0    50   Input ~ 0
+Text GLabel 3200 2200 0    50   Input ~ 0
 PWM_A_1L_C
-Text GLabel 3150 2400 0    50   Input ~ 0
+Text GLabel 3200 2400 0    50   Input ~ 0
 PWM_A_2L_C
-Text GLabel 3150 2600 0    50   Input ~ 0
+Text GLabel 3200 2600 0    50   Input ~ 0
 PWM_A_3L_C
-Text GLabel 3150 2900 0    50   Input ~ 0
+Text GLabel 3200 2900 0    50   Input ~ 0
 PWM_B_2H_C
-Text GLabel 3150 2700 0    50   Input ~ 0
+Text GLabel 3200 2700 0    50   Input ~ 0
 PWM_B_1H_C
-Text GLabel 3150 2800 0    50   Input ~ 0
+Text GLabel 3200 2800 0    50   Input ~ 0
 PWM_B_1L_C
-Text GLabel 3150 3100 0    50   Input ~ 0
+Text GLabel 3200 3100 0    50   Input ~ 0
 PWM_B_3H_C
-Text GLabel 3150 3200 0    50   Input ~ 0
+Text GLabel 3200 3200 0    50   Input ~ 0
 PWM_B_3L_C
-Text GLabel 3150 3000 0    50   Input ~ 0
+Text GLabel 3200 3000 0    50   Input ~ 0
 PWM_B_2L_C
 Wire Wire Line
 	3150 5500 4800 5500
 Wire Wire Line
 	3150 5600 4800 5600
-Text GLabel 3100 9300 0    50   Input ~ 0
+Text GLabel 3150 9300 0    50   Input ~ 0
 BOOT1
 Text GLabel 9750 2100 2    50   Input ~ 0
 BOOT2
 Wire Wire Line
 	8350 2100 9750 2100
 Wire Wire Line
-	3100 9300 4800 9300
+	3150 9300 4800 9300
 Text GLabel 3200 5000 0    60   Output ~ 0
 SCIA_TX
 Text GLabel 3200 4900 0    60   Input ~ 0
@@ -250,17 +242,17 @@ Wire Wire Line
 	3150 8600 4800 8600
 Wire Wire Line
 	3150 8700 4800 8700
-Text GLabel 4450 4500 0    50   Input ~ 0
+Text GLabel 3200 4500 0    50   Input ~ 0
 QEP2_A
-Text GLabel 4450 4600 0    50   Input ~ 0
+Text GLabel 3200 4600 0    50   Input ~ 0
 QEP2_B
-Text GLabel 4450 4700 0    50   Input ~ 0
+Text GLabel 3200 4700 0    50   Input ~ 0
 QEP2_I
-Text GLabel 4450 4100 0    50   Input ~ 0
+Text GLabel 3200 4100 0    50   Input ~ 0
 QEP1_A
-Text GLabel 4450 4200 0    50   Input ~ 0
+Text GLabel 3200 4200 0    50   Input ~ 0
 QEP1_B
-Text GLabel 4450 4400 0    50   Input ~ 0
+Text GLabel 3200 4400 0    50   Input ~ 0
 QEP1_I
 Wire Wire Line
 	3150 7100 4800 7100
@@ -271,9 +263,9 @@ CAN_TX
 Text GLabel 3200 5100 0    50   Input ~ 0
 CAN_RX
 Wire Wire Line
-	3150 3900 4800 3900
+	3200 3900 4800 3900
 Wire Wire Line
-	3150 4000 4800 4000
+	3200 4000 4800 4000
 Wire Wire Line
 	3150 5700 4800 5700
 Wire Wire Line
@@ -283,31 +275,31 @@ Wire Wire Line
 Wire Wire Line
 	3150 6000 4800 6000
 Wire Wire Line
-	3150 2200 4800 2200
+	3200 2200 4800 2200
 Wire Wire Line
-	3150 2300 4800 2300
+	3200 2300 4800 2300
 Wire Wire Line
-	3150 2400 4800 2400
+	3200 2400 4800 2400
 Wire Wire Line
-	3150 2500 4800 2500
+	3200 2500 4800 2500
 Wire Wire Line
-	3150 2600 4800 2600
+	3200 2600 4800 2600
 Wire Wire Line
-	3150 2700 4800 2700
+	3200 2700 4800 2700
 Wire Wire Line
-	3150 2800 4800 2800
+	3200 2800 4800 2800
 Wire Wire Line
-	3150 2900 4800 2900
+	3200 2900 4800 2900
 Wire Wire Line
-	3150 3000 4800 3000
+	3200 3000 4800 3000
 Wire Wire Line
-	3150 3100 4800 3100
+	3200 3100 4800 3100
 Wire Wire Line
-	3150 3200 4800 3200
+	3200 3200 4800 3200
 Wire Wire Line
-	3150 3400 4800 3400
+	3200 3400 4800 3400
 Wire Wire Line
-	3150 3300 4800 3300
+	3200 3300 4800 3300
 Wire Wire Line
 	3200 4900 4800 4900
 Wire Wire Line
@@ -320,9 +312,9 @@ Text GLabel 3150 5900 0    50   Input ~ 0
 SD_A3
 Text GLabel 3150 6000 0    50   Input ~ 0
 SD_A4
-Text GLabel 3150 3300 0    50   Input ~ 0
+Text GLabel 3200 3300 0    50   Input ~ 0
 PWM_A_BRK_RES_C
-Text GLabel 3150 3400 0    50   Input ~ 0
+Text GLabel 3200 3400 0    50   Input ~ 0
 PWM_B_BRK_RES_C
 Text GLabel 3150 7000 0    50   Input ~ 0
 SD_B1
@@ -335,37 +327,37 @@ Wire Wire Line
 Text Notes 2400 3900 0    20   ~ 0
 SD C2/3/4 goes \ndirectly inside uC\nonly and MUST  \nC1 required
 Wire Wire Line
-	3150 3800 4800 3800
-Text GLabel 3150 3800 0    50   Input ~ 0
+	3200 3800 4800 3800
+Text GLabel 3200 3800 0    50   Input ~ 0
 SD_A_CLK
-Text GLabel 3150 3700 0    50   Input ~ 0
+Text GLabel 3200 3700 0    50   Input ~ 0
 PWM4SD_CLK
 Wire Wire Line
-	3150 3700 4800 3700
+	3200 3700 4800 3700
 Text Notes 2350 3750 0    20   ~ 0
 one PWM channel \nfor all 8 SD
 Text Notes 2400 5000 0    20   ~ 0
 Sdefault gpio's for sciA \nboot, don't move
 Wire Wire Line
-	4450 4100 4800 4100
+	3200 4100 4800 4100
 Wire Wire Line
-	4450 4200 4800 4200
+	3200 4200 4800 4200
 Wire Wire Line
-	4450 4300 4800 4300
-Text GLabel 4450 4300 0    50   Input ~ 0
+	3200 4300 4800 4300
+Text GLabel 3200 4300 0    50   Input ~ 0
 QEP1_S
 Wire Wire Line
-	4450 4400 4800 4400
-Text GLabel 4450 4800 0    50   Input ~ 0
+	3200 4400 4800 4400
+Text GLabel 3200 4800 0    50   Input ~ 0
 QEP2_S
 Wire Wire Line
-	4450 4700 4800 4700
+	3200 4700 4800 4700
 Wire Wire Line
-	4450 4600 4800 4600
+	3200 4600 4800 4600
 Wire Wire Line
-	4450 4500 4800 4500
+	3200 4500 4800 4500
 Wire Wire Line
-	4450 4800 4800 4800
+	3200 4800 4800 4800
 Wire Wire Line
 	3150 6100 4800 6100
 Wire Wire Line
@@ -476,17 +468,17 @@ Text GLabel 9700 7300 2    50   Input ~ 0
 ECAT1_RX_DV
 Text GLabel 9700 7500 2    50   Input ~ 0
 ECAT1_RX_ER
-Text GLabel 3150 3500 0    50   Output ~ 0
+Text GLabel 3200 3500 0    50   Output ~ 0
 ENDAT1_N_SKEW_CLK
-Text GLabel 3150 3600 0    50   Output ~ 0
+Text GLabel 3200 3600 0    50   Output ~ 0
 ENDAT1_Y_SKEW_CLK
 Wire Wire Line
-	3150 3500 4800 3500
+	3200 3500 4800 3500
 Wire Wire Line
-	3150 3600 4800 3600
-Text GLabel 3150 3900 0    50   Output ~ 0
+	3200 3600 4800 3600
+Text GLabel 3200 3900 0    50   Output ~ 0
 ENDAT2_N_SKEW_CLK
-Text GLabel 3150 4000 0    50   Output ~ 0
+Text GLabel 3200 4000 0    50   Output ~ 0
 ENDAT2_Y_SKEW_CLK
 Wire Wire Line
 	3200 5100 4800 5100
@@ -548,20 +540,12 @@ Text GLabel 3150 6100 0    50   Input ~ 0
 FREE_OUT_A1
 Text GLabel 3150 6200 0    50   Input ~ 0
 FREE_OUT_A2
-Text GLabel 3150 6500 0    50   Input ~ 0
-FREE_IN_A3
-Text GLabel 3150 6600 0    50   Input ~ 0
-FREE_IN_A4
 Text GLabel 3150 6700 0    50   Input ~ 0
 FREE_OUT_B1
 Text GLabel 3150 6800 0    50   Input ~ 0
 FREE_OUT_B2
-Text GLabel 3150 6900 0    50   Input ~ 0
-FREE_IN_B3
-Text GLabel 3150 7400 0    50   Input ~ 0
-FREE_IN_B4
 Wire Wire Line
-	3150 2100 4800 2100
+	3200 2100 4800 2100
 Text GLabel 3150 5400 0    50   Input ~ 0
 BRK_B_MEC_C
 Text GLabel 3150 5300 0    50   Input ~ 0
@@ -572,24 +556,12 @@ Wire Wire Line
 	3150 5400 4800 5400
 Wire Wire Line
 	8350 9600 9700 9600
-Text GLabel 3950 10400 0    50   Input ~ 0
+Text GLabel 3150 10400 0    50   Input ~ 0
 1Wire_OUT
-Text GLabel 3950 10200 0    50   Input ~ 0
+Text GLabel 3150 10200 0    50   Input ~ 0
 1Wire_IN
-Text GLabel 3950 10300 0    50   Input ~ 0
+Text GLabel 3150 10300 0    50   Input ~ 0
 1Wire_EN
-Text GLabel 3950 9800 0    50   Input ~ 0
-QEP2_OUT1
-Text GLabel 3950 9900 0    50   Input ~ 0
-QEP2_OUT2
-Text GLabel 3950 10000 0    50   Input ~ 0
-QEP1_OUT1
-Text GLabel 3950 10100 0    50   Input ~ 0
-QEP1_OUT2
-NoConn ~ 4800 8800
-NoConn ~ 4800 8900
-NoConn ~ 4800 9000
-NoConn ~ 4800 9100
 NoConn ~ 4800 9200
 NoConn ~ 4800 9400
 NoConn ~ 4800 9500
@@ -635,6 +607,22 @@ Text GLabel 3150 6400 0    50   Input ~ 0
 USB_D+
 Text GLabel 3150 6300 0    50   Input ~ 0
 USB_D-
+Wire Wire Line
+	4800 6900 3150 6900
+Wire Wire Line
+	4800 7700 3150 7700
+Text GLabel 3150 6900 0    50   Input ~ 0
+FAN_RPM2
+Text GLabel 3150 7400 0    50   Input ~ 0
+IGBT_ALARM2
+Text GLabel 3150 6500 0    50   Input ~ 0
+FAN_RPM1
+Text GLabel 3150 6600 0    50   Input ~ 0
+IGBT_ALARM1
+Text GLabel 3150 8800 0    50   Input ~ 0
+STEP1
+Text GLabel 3150 8900 0    50   Input ~ 0
+DIR1
 $Comp
 L servo:TMS320F28388 U301
 U 2 1 5DB38FFC
@@ -648,7 +636,19 @@ F 4 "TMS320F28388DZWTS" V 4300 3200 60  0001 C CNN "PartNumber"
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
-	4800 6900 3150 6900
+	3150 9000 4800 9000
 Wire Wire Line
-	4800 7700 3150 7700
+	3150 9100 4800 9100
+Wire Wire Line
+	3150 8900 4800 8900
+Wire Wire Line
+	3150 8800 4800 8800
+Text GLabel 3150 9000 0    50   Input ~ 0
+STEP2
+Text GLabel 3150 9100 0    50   Input ~ 0
+DIR2
+NoConn ~ 4800 9800
+NoConn ~ 4800 9900
+NoConn ~ 4800 10000
+NoConn ~ 4800 10100
 $EndSCHEMATC

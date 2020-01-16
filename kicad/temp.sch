@@ -4,7 +4,7 @@ EELAYER 26 0
 EELAYER END
 $Descr B 17000 11000
 encoding utf-8
-Sheet 9 18
+Sheet 9 19
 Title "gpio"
 Date "2020-01-09"
 Rev "1.0"

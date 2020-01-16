@@ -1,5 +1,9 @@
 EESchema-DOCLIB  Version 2.0
 #
+$CMP 0821-1X1T-36-F
+D rj45 x2 magnetics
+$ENDCMP
+#
 $CMP 15VC
 D Power flag, positive voltage
 K power-flag
@@ -668,6 +672,10 @@ D SN74LVC2G17Dual Schmitt-TriggerBuffer
 K buffer schmitt trigger
 $ENDCMP
 #
+$CMP SN75C1167DBR
+D DUAL DIFFERENTIAL DRIVERS AND RECEIVERS
+$ENDCMP
+#
 $CMP SW_Push
 D Push button switch, generic, two pins
 K switch normally-open pushbutton push-button
@@ -737,6 +745,12 @@ $CMP TestPoint
 D test point
 K test point tp
 F ~
+$ENDCMP
+#
+$CMP am26ls32a
+D AM26LS32Ax,AM26LS33AxQuadrupleDifferentialLine Receivers
+K receiver rs485 rs422 differential
+F http://www.ti.com/lit/ds/symlink/am26ls32a.pdf
 $ENDCMP
 #
 $CMP jumper
