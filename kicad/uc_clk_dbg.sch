@@ -351,8 +351,6 @@ F 3 "" H 8250 3300 70  0000 C CNN
 $EndComp
 Wire Wire Line
 	2900 2400 2900 2250
-Wire Wire Line
-	3100 2800 3100 2900
 $Comp
 L servo:5VC #PWR?
 U 1 1 5DE66EF3
@@ -370,14 +368,14 @@ $EndComp
 $Comp
 L servo:GND #PWR?
 U 1 1 5DE66EF9
-P 3100 2900
+P 3000 2900
 AR Path="/5DCD812E/5DE66EF9" Ref="#PWR?"  Part="1" 
 AR Path="/5DD4DF4C/5DE66EF9" Ref="#PWR0603"  Part="1" 
-F 0 "#PWR0603" H 3100 2650 30  0001 C CNN
-F 1 "GND" H 3100 2742 30  0000 C CNN
-F 2 "" H 3100 2900 50  0001 C CNN
-F 3 "" H 3100 2900 50  0001 C CNN
-	1    3100 2900
+F 0 "#PWR0603" H 3000 2650 30  0001 C CNN
+F 1 "GND" H 3000 2742 30  0000 C CNN
+F 2 "" H 3000 2900 50  0001 C CNN
+F 3 "" H 3000 2900 50  0001 C CNN
+	1    3000 2900
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
@@ -508,19 +506,6 @@ Text Notes 13200 6400 0    197  ~ 39
 SPI FLASH 
 Text Notes 13750 6650 0    20   ~ 0
 To store some firmware features, \nand maybe UI images or screens
-$Comp
-L Connector_Generic:Conn_02x05_Counter_Clockwise J?
-U 1 1 5EE6EDE5
-P 3300 2600
-AR Path="/5DCD812E/5EE6EDE5" Ref="J?"  Part="1" 
-AR Path="/5DD4DF4C/5EE6EDE5" Ref="J601"  Part="1" 
-F 0 "J601" H 3350 3017 50  0000 C CNN
-F 1 "Conn_02x05_Counter_Clockwise" H 3350 2926 50  0001 C CNN
-F 2 "Connector_IDC:IDC-Header_2x05_P2.54mm_Horizontal" H 3300 2600 50  0001 C CNN
-F 3 "~" H 3300 2600 50  0001 C CNN
-	1    3300 2600
-	1    0    0    -1  
-$EndComp
 Text Label 4100 2500 2    60   ~ 0
 PRG_TDI
 Text Label 4200 2700 2    60   ~ 0
@@ -541,8 +526,8 @@ $Comp
 L servo:3V3 #PWR0601
 U 1 1 5EEB86F5
 P 2750 2200
-F 0 "#PWR0601" H 2755 2407 20  0000 C CNN
-F 1 "3V3" H 2755 2357 28  0000 C CNN
+F 0 "#PWR0601" H 2650 2300 20  0001 C CNN
+F 1 "3V3" H 2750 2350 28  0000 C CNN
 F 2 "" H 2750 2200 50  0001 C CNN
 F 3 "" H 2750 2200 50  0001 C CNN
 	1    2750 2200
@@ -623,7 +608,7 @@ Wire Wire Line
 Wire Wire Line
 	13400 2500 13650 2500
 Text GLabel 9900 7350 0    50   Input ~ 0
-DACB_DBG_OUT
+DACB_DBG
 $Comp
 L servo:Resistor R608
 U 1 1 5E228777
@@ -674,25 +659,18 @@ Connection ~ 10300 7350
 $Comp
 L servo:GND #PWR_0606
 U 1 1 5E236685
-P 10400 7800
-F 0 "#PWR_0606" H 10405 7651 20  0001 C CNN
-F 1 "GND" H 10400 7643 30  0000 C CNN
-F 2 "" H 10400 7800 70  0000 C CNN
-F 3 "" H 10400 7800 70  0000 C CNN
-	1    10400 7800
+P 10300 7800
+F 0 "#PWR_0606" H 10305 7651 20  0001 C CNN
+F 1 "GND" H 10300 7643 30  0000 C CNN
+F 2 "" H 10300 7800 70  0000 C CNN
+F 3 "" H 10300 7800 70  0000 C CNN
+	1    10300 7800
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
 	10300 7750 10300 7800
-Wire Wire Line
-	10300 7800 10400 7800
-Wire Wire Line
-	10550 7800 10550 7450
-Connection ~ 10400 7800
-Wire Wire Line
-	10400 7800 10550 7800
 Text Notes 9400 6800 0    197  ~ 39
-DAC DBG OUT
+ADC/DAC DBG OUT
 Text Notes 9900 7050 0    20   ~ 0
 it's just optional for debug porpouses to monitor\n some analog signal out from the board, it could \nbe very handy
 Wire Wire Line
@@ -823,20 +801,7 @@ NoConn ~ 12650 2700
 NoConn ~ 12650 2600
 NoConn ~ 12650 2400
 Wire Wire Line
-	10550 7450 10800 7450
-Wire Wire Line
 	10800 7350 10700 7350
-$Comp
-L servo:Conn_01x02 J602
-U 1 1 5E7183C5
-P 11000 7350
-F 0 "J602" H 11080 7338 39  0000 L CNN
-F 1 "Conn_01x02" H 11080 7263 39  0000 L CNN
-F 2 "Connector_PinHeader_2.54mm:PinHeader_1x02_P2.54mm_Vertical_SMD_Pin1Left" H 11000 7350 50  0001 C CNN
-F 3 "~" H 11000 7350 50  0001 C CNN
-	1    11000 7350
-	1    0    0    -1  
-$EndComp
 Wire Wire Line
 	13900 3600 14250 3600
 $Comp
@@ -850,4 +815,26 @@ F 3 "~" H 14450 3600 50  0001 C CNN
 	1    14250 3600
 	1    0    0    -1  
 $EndComp
+$Comp
+L Connector_Generic:Conn_02x06_Counter_Clockwise J?
+U 1 1 5E245156
+P 3300 2600
+F 0 "J?" H 3350 3017 50  0000 C CNN
+F 1 "dbg_conn" H 3350 2926 50  0000 C CNN
+F 2 "" H 3300 2600 50  0001 C CNN
+F 3 "~" H 3300 2600 50  0001 C CNN
+	1    3300 2600
+	1    0    0    -1  
+$EndComp
+Text GLabel 10800 7350 2    50   Input ~ 0
+DACB_DBG_OUT
+Text GLabel 3600 2900 2    50   Input ~ 0
+DACB_DBG_OUT
+Wire Wire Line
+	3100 2900 3000 2900
+Wire Wire Line
+	3000 2900 3000 2800
+Wire Wire Line
+	3000 2800 3100 2800
+Connection ~ 3000 2900
 $EndSCHEMATC

@@ -24,7 +24,7 @@ U 1 1 6027FD06
 P 5800 3750
 F 0 "J1101" H 5850 4367 50  0000 C CNN
 F 1 "tblock" H 5850 4276 50  0000 C CNN
-F 2 "Connector_Phoenix_MC:PhoenixContact_MCV_1,5_10-G-3.81_1x10_P3.81mm_Vertical" H 5800 3750 50  0001 C CNN
+F 2 "servo:tblock02x10_3.81" H 5800 3750 50  0001 C CNN
 F 3 "~" H 5800 3750 50  0001 C CNN
 	1    5800 3750
 	1    0    0    -1  

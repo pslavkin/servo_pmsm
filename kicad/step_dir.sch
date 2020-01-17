@@ -241,7 +241,7 @@ AR Path="/5DE3DF56/6322E1B9" Ref="J1001"  Part="1"
 AR Path="/5F8D42C2/6322E1B9" Ref="J?"  Part="1" 
 F 0 "J1001" H 8650 4243 39  0000 C CNN
 F 1 "tblock2x6" H 8650 4168 39  0000 C CNN
-F 2 "Connector_Phoenix_MC:PhoenixContact_MC_1,5_6-G-3.81_1x06_P3.81mm_Horizontal" H 8550 4050 50  0001 C CNN
+F 2 "servo:tblock02x6_3.81" H 8550 4050 50  0001 C CNN
 F 3 "../doc/datasheets/tblock2rows.pdf" H 8650 4150 50  0001 C CNN
 	1    8600 3850
 	1    0    0    -1  

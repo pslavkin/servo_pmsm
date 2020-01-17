@@ -211,7 +211,7 @@ LCD_AUDIO
 Text Notes 1450 2350 0    20   ~ 0
 using the DAC out to manage audio \nor other multiporpouse signals
 Text GLabel 1800 2550 0    50   Input ~ 0
-DACB_DBG_OUT
+DACB_DBG
 $Comp
 L servo:GND #PWR?
 U 1 1 5E9C32E8
