@@ -609,7 +609,7 @@ U 1 1 618ED4ED
 P 9500 1750
 F 0 "J1402" H 9580 1738 39  0000 L CNN
 F 1 "Conn_01x02" H 9580 1663 39  0000 L CNN
-F 2 "Connector_PinHeader_2.54mm:PinHeader_1x02_P2.54mm_Vertical_SMD_Pin1Left" H 9500 1750 50  0001 C CNN
+F 2 "Connector_Molex:Molex_KK-254_AE-6410-02A_1x02_P2.54mm_Vertical" H 9500 1750 50  0001 C CNN
 F 3 "~" H 9500 1750 50  0001 C CNN
 	1    9500 1750
 	1    0    0    -1  

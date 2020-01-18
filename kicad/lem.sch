@@ -85,17 +85,6 @@ Text Notes 4050 1400 0    197  ~ 39
 Text Notes 6900 2150 0    20   ~ 0
 The intention of these lems is to have the capacity on the control board\n to measure all the current, without the need of the sigma delta chips\n on power board side. Why?? becouse I've study the two options\n carrefullty and I've conclude that there are very similar, and more or\n less buck per byck (a little expensive is SD) but the new generation\n LEM's I'm includin here has <0.5uSeg response time, and the SD has\n all the SD filter delay, so LEM is faster. The other advantage is that for\n same LEM I've choosen you could rearange the connection to multiply\n the preccision 1x,2x or 3x without touching nothing, and is pretty\n linear.  In the case of SD you have to change the precission shunt. or\n puts more than one, that is costly and take some board space.\nThe disadvantage of LEM is that the output is single ended, so it could\n not travel across boards, for that reason I've put them on control\n board, but is completely isolated becouse of these phisics effect. and\n also becouse of that single ended I just use one ADC channel per\n current. I't not the only option, becous if you insist and wanna use SD,\n I'eft all the SD channels available as an inputs on SD schematic page.\n\nthese LEM's version doesn't need a buffer, \nit's one already included inside LEM\n\nLXS6 is LTS and CAS pin to pin compatible, but LXS is a little better.\n I don't usa an opamp becous with the external conection I have x,2x\n and 3x amplifier option without any component\n\nI've decided to make the loop over the LEM on board and if you\n wanna change it you have to use the soldering iron..becouse the\n connetor is 2 terminal, not 6\n
 $Comp
-L servo:Capacitor C1506
-U 1 1 5E3E8DDF
-P 3900 4350
-F 0 "C1506" V 3928 4460 20  0000 L CNN
-F 1 "100pF" V 3971 4460 20  0000 L CNN
-F 2 "servo:C_0603_1608Metric" H 3900 4250 60  0001 C CNN
-F 3 "" H 3900 4350 60  0000 C CNN
-	1    3900 4350
-	0    -1   1    0   
-$EndComp
-$Comp
 L servo:GND #PWR01504
 U 1 1 5E3E8DE6
 P 4200 4550
@@ -129,22 +118,6 @@ F 3 "" H 3800 3950 60  0001 C CNN
 	0    -1   1    0   
 $EndComp
 $Comp
-L servo:GND #PWR01512
-U 1 1 5E3E8DFA
-P 3900 4550
-F 0 "#PWR01512" H 3900 4300 30  0001 C CNN
-F 1 "GND" H 3900 4392 30  0000 C CNN
-F 2 "" H 3900 4550 50  0001 C CNN
-F 3 "" H 3900 4550 50  0001 C CNN
-	1    3900 4550
-	-1   0    0    -1  
-$EndComp
-Wire Wire Line
-	3900 4250 3900 4150
-Wire Wire Line
-	3900 4150 4200 4150
-Connection ~ 3900 4150
-$Comp
 L servo:Capacitor C1509
 U 1 1 5E3E8E03
 P 3600 4350
@@ -168,10 +141,6 @@ F 3 "" H 3600 4550 50  0001 C CNN
 $EndComp
 Wire Wire Line
 	3600 4150 3600 4250
-Text Notes 3850 4250 2    20   ~ 0
-one near LEM, \nthe other near uC
-Wire Wire Line
-	3900 4150 3600 4150
 Connection ~ 3600 4150
 Wire Wire Line
 	3600 4150 3400 4150
@@ -264,17 +233,6 @@ Wire Wire Line
 	4150 5300 3750 5300
 Connection ~ 3750 5300
 $Comp
-L servo:Capacitor C1503
-U 1 1 5E274FDC
-P 3700 6300
-F 0 "C1503" V 3728 6410 20  0000 L CNN
-F 1 "100pF" V 3771 6410 20  0000 L CNN
-F 2 "servo:C_0603_1608Metric" H 3700 6200 60  0001 C CNN
-F 3 "" H 3700 6300 60  0000 C CNN
-	1    3700 6300
-	0    -1   1    0   
-$EndComp
-$Comp
 L servo:GND #PWR0103
 U 1 1 5E274FE3
 P 4000 6500
@@ -308,22 +266,6 @@ F 3 "" H 3600 5900 60  0001 C CNN
 	0    -1   1    0   
 $EndComp
 $Comp
-L servo:GND #PWR0104
-U 1 1 5E274FF7
-P 3700 6500
-F 0 "#PWR0104" H 3700 6250 30  0001 C CNN
-F 1 "GND" H 3700 6342 30  0000 C CNN
-F 2 "" H 3700 6500 50  0001 C CNN
-F 3 "" H 3700 6500 50  0001 C CNN
-	1    3700 6500
-	-1   0    0    -1  
-$EndComp
-Wire Wire Line
-	3700 6200 3700 6100
-Wire Wire Line
-	3700 6100 4000 6100
-Connection ~ 3700 6100
-$Comp
 L servo:Capacitor C1501
 U 1 1 5E275000
 P 3400 6300
@@ -347,10 +289,6 @@ F 3 "" H 3400 6500 50  0001 C CNN
 $EndComp
 Wire Wire Line
 	3400 6100 3400 6200
-Text Notes 3650 6200 2    20   ~ 0
-one near LEM, \nthe other near uC
-Wire Wire Line
-	3700 6100 3400 6100
 Connection ~ 3400 6100
 Wire Wire Line
 	3400 6100 3200 6100
@@ -428,17 +366,6 @@ Wire Wire Line
 	4250 7900 3850 7900
 Connection ~ 3850 7900
 $Comp
-L servo:Capacitor C1507
-U 1 1 5E276226
-P 3800 8900
-F 0 "C1507" V 3828 9010 20  0000 L CNN
-F 1 "100pF" V 3871 9010 20  0000 L CNN
-F 2 "servo:C_0603_1608Metric" H 3800 8800 60  0001 C CNN
-F 3 "" H 3800 8900 60  0000 C CNN
-	1    3800 8900
-	0    -1   1    0   
-$EndComp
-$Comp
 L servo:GND #PWR0108
 U 1 1 5E27622D
 P 4100 9100
@@ -472,22 +399,6 @@ F 3 "" H 3700 8500 60  0001 C CNN
 	0    -1   1    0   
 $EndComp
 $Comp
-L servo:GND #PWR0109
-U 1 1 5E276241
-P 3800 9100
-F 0 "#PWR0109" H 3800 8850 30  0001 C CNN
-F 1 "GND" H 3800 8942 30  0000 C CNN
-F 2 "" H 3800 9100 50  0001 C CNN
-F 3 "" H 3800 9100 50  0001 C CNN
-	1    3800 9100
-	-1   0    0    -1  
-$EndComp
-Wire Wire Line
-	3800 8800 3800 8700
-Wire Wire Line
-	3800 8700 4100 8700
-Connection ~ 3800 8700
-$Comp
 L servo:Capacitor C1502
 U 1 1 5E27624A
 P 3500 8900
@@ -511,10 +422,6 @@ F 3 "" H 3500 9100 50  0001 C CNN
 $EndComp
 Wire Wire Line
 	3500 8700 3500 8800
-Text Notes 3750 8800 2    20   ~ 0
-one near LEM, \nthe other near uC
-Wire Wire Line
-	3800 8700 3500 8700
 Connection ~ 3500 8700
 Wire Wire Line
 	3500 8700 3300 8700
@@ -640,37 +547,6 @@ Wire Wire Line
 Wire Wire Line
 	8800 4150 8500 4150
 Connection ~ 8800 4150
-$Comp
-L servo:Capacitor C1516
-U 1 1 5E27869E
-P 9100 4350
-F 0 "C1516" V 9128 4460 20  0000 L CNN
-F 1 "100pF" V 9171 4460 20  0000 L CNN
-F 2 "servo:C_0603_1608Metric" H 9100 4250 60  0001 C CNN
-F 3 "" H 9100 4350 60  0000 C CNN
-	1    9100 4350
-	0    1    1    0   
-$EndComp
-$Comp
-L servo:GND #PWR0115
-U 1 1 5E2786A5
-P 9100 4550
-F 0 "#PWR0115" H 9100 4300 30  0001 C CNN
-F 1 "GND" H 9100 4392 30  0000 C CNN
-F 2 "" H 9100 4550 50  0001 C CNN
-F 3 "" H 9100 4550 50  0001 C CNN
-	1    9100 4550
-	1    0    0    -1  
-$EndComp
-Wire Wire Line
-	9100 4150 9100 4250
-Text Notes 8850 4250 0    20   ~ 0
-one near LEM, \nthe other near uC
-Wire Wire Line
-	8800 4150 9100 4150
-Connection ~ 9100 4150
-Wire Wire Line
-	9100 4150 9300 4150
 Connection ~ 8500 4150
 $Comp
 L servo:LXS6-NPS U1504
@@ -804,37 +680,6 @@ Wire Wire Line
 Wire Wire Line
 	8800 6100 8500 6100
 Connection ~ 8800 6100
-$Comp
-L servo:Capacitor C1517
-U 1 1 5E2833C5
-P 9100 6300
-F 0 "C1517" V 9128 6410 20  0000 L CNN
-F 1 "100pF" V 9171 6410 20  0000 L CNN
-F 2 "servo:C_0603_1608Metric" H 9100 6200 60  0001 C CNN
-F 3 "" H 9100 6300 60  0000 C CNN
-	1    9100 6300
-	0    1    1    0   
-$EndComp
-$Comp
-L servo:GND #PWR0120
-U 1 1 5E2833CC
-P 9100 6500
-F 0 "#PWR0120" H 9100 6250 30  0001 C CNN
-F 1 "GND" H 9100 6342 30  0000 C CNN
-F 2 "" H 9100 6500 50  0001 C CNN
-F 3 "" H 9100 6500 50  0001 C CNN
-	1    9100 6500
-	1    0    0    -1  
-$EndComp
-Wire Wire Line
-	9100 6100 9100 6200
-Text Notes 8850 6200 0    20   ~ 0
-one near LEM, \nthe other near uC
-Wire Wire Line
-	8800 6100 9100 6100
-Connection ~ 9100 6100
-Wire Wire Line
-	9100 6100 9300 6100
 Connection ~ 8500 6100
 $Comp
 L servo:LXS6-NPS U1505
@@ -968,37 +813,6 @@ Wire Wire Line
 Wire Wire Line
 	8800 8700 8500 8700
 Connection ~ 8800 8700
-$Comp
-L servo:Capacitor C1518
-U 1 1 5E288A33
-P 9100 8900
-F 0 "C1518" V 9128 9010 20  0000 L CNN
-F 1 "100pF" V 9171 9010 20  0000 L CNN
-F 2 "servo:C_0603_1608Metric" H 9100 8800 60  0001 C CNN
-F 3 "" H 9100 8900 60  0000 C CNN
-	1    9100 8900
-	0    1    1    0   
-$EndComp
-$Comp
-L servo:GND #PWR0125
-U 1 1 5E288A3A
-P 9100 9100
-F 0 "#PWR0125" H 9100 8850 30  0001 C CNN
-F 1 "GND" H 9100 8942 30  0000 C CNN
-F 2 "" H 9100 9100 50  0001 C CNN
-F 3 "" H 9100 9100 50  0001 C CNN
-	1    9100 9100
-	1    0    0    -1  
-$EndComp
-Wire Wire Line
-	9100 8700 9100 8800
-Text Notes 8850 8800 0    20   ~ 0
-one near LEM, \nthe other near uC
-Wire Wire Line
-	8800 8700 9100 8700
-Connection ~ 9100 8700
-Wire Wire Line
-	9100 8700 9300 8700
 Connection ~ 8500 8700
 $Comp
 L servo:LXS6-NPS U1506
@@ -1353,4 +1167,16 @@ Wire Wire Line
 	7150 3100 7750 3100
 Wire Wire Line
 	7150 3100 7150 3400
+Wire Wire Line
+	3400 6100 4000 6100
+Wire Wire Line
+	3600 4150 4200 4150
+Wire Wire Line
+	8800 4150 9300 4150
+Wire Wire Line
+	8800 6100 9300 6100
+Wire Wire Line
+	8800 8700 9300 8700
+Wire Wire Line
+	3500 8700 4100 8700
 $EndSCHEMATC

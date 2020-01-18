@@ -74,13 +74,13 @@ F 3 "" H 11400 2500 70  0000 C CNN
 	1    11400 2500
 	1    0    0    -1  
 $EndComp
-Text Label 10050 2800 0    60   ~ 0
+Text Label 10050 2800 0    39   ~ 0
 P0_TD_P
-Text Label 10050 2900 0    60   ~ 0
+Text Label 10050 2900 0    39   ~ 0
 P0_TD_N
-Text Label 9350 3100 0    60   ~ 0
+Text Label 9350 3100 0    39   ~ 0
 P0_RD_P
-Text Label 9350 3200 0    60   ~ 0
+Text Label 9350 3200 0    39   ~ 0
 P0_RD_N
 $Comp
 L servo:GND #GND_0205
@@ -264,13 +264,13 @@ $Comp
 L servo:Resistor R204
 U 1 1 63C6814C
 P 9350 4000
-F 0 "R204" H 9200 3850 60  0000 C CNN
-F 1 "2.2k" H 9200 3950 50  0000 C CNN
-F 2 "Resistor_SMD:R_0603_1608Metric" H 9350 4000 50  0001 C CNN
-F 3 "" H 9350 4000 50  0001 C CNN
+F 0 "R204" H 9350 4115 20  0000 C CNN
+F 1 "2.2k" H 9350 4072 20  0000 C CNN
+F 2 "Resistor_SMD:R_0603_1608Metric" H 8850 3900 60  0001 C CNN
+F 3 "" H 8950 4000 60  0001 C CNN
 F 4 "2.2k" V -150 2900 60  0001 C CNN "ValueDisplayed"
 	1    9350 4000
-	-1   0    0    1   
+	1    0    0    -1  
 $EndComp
 $Comp
 L servo:Capacitor C214
@@ -360,10 +360,10 @@ $Comp
 L servo:Resistor R201
 U 1 1 63C681B2
 P 8850 3400
-F 0 "R201" H 8700 3450 60  0000 C CNN
-F 1 "4.87k" H 9000 3450 50  0000 C CNN
-F 2 "Resistor_SMD:R_0603_1608Metric" H 8850 3400 50  0001 C CNN
-F 3 "" H 8850 3400 50  0001 C CNN
+F 0 "R201" H 8850 3515 20  0000 C CNN
+F 1 "4.87k" H 8850 3472 20  0000 C CNN
+F 2 "Resistor_SMD:R_0603_1608Metric" H 8350 3300 60  0001 C CNN
+F 3 "" H 8450 3400 60  0001 C CNN
 F 4 "4.87k" V -150 2900 60  0001 C CNN "ValueDisplayed"
 	1    8850 3400
 	1    0    0    -1  
@@ -372,10 +372,10 @@ $Comp
 L servo:Resistor R202
 U 1 1 63C681CA
 P 8850 4100
-F 0 "R202" H 9000 4150 60  0000 C CNN
-F 1 "10.0k" H 8650 4150 50  0000 C CNN
-F 2 "Resistor_SMD:R_0603_1608Metric" H 8850 4100 50  0001 C CNN
-F 3 "" H 8850 4100 50  0001 C CNN
+F 0 "R202" H 8750 4150 20  0000 C CNN
+F 1 "10.0k" H 9000 4150 20  0000 C CNN
+F 2 "Resistor_SMD:R_0603_1608Metric" H 8350 4000 60  0001 C CNN
+F 3 "" H 8450 4100 60  0001 C CNN
 F 4 "10.0k" V -150 2900 60  0001 C CNN "ValueDisplayed"
 	1    8850 4100
 	1    0    0    -1  
@@ -627,10 +627,10 @@ $Comp
 L servo:Resistor R203
 U 1 1 63C68282
 P 8950 4500
-F 0 "R203" H 9100 4550 60  0000 C CNN
-F 1 "0e(dnp)" H 8750 4550 50  0000 C CNN
-F 2 "Resistor_SMD:R_0603_1608Metric" H 8950 4500 50  0001 C CNN
-F 3 "" H 8950 4500 50  0001 C CNN
+F 0 "R203" H 8950 4615 20  0000 C CNN
+F 1 "0e(dnp)" H 8950 4572 20  0000 C CNN
+F 2 "Resistor_SMD:R_0603_1608Metric" H 8450 4400 60  0001 C CNN
+F 3 "" H 8550 4500 60  0001 C CNN
 F 4 "10.0k" V -50 3300 60  0001 C CNN "ValueDisplayed"
 	1    8950 4500
 	1    0    0    -1  
@@ -646,12 +646,12 @@ P 9250 5100
 AR Path="/5DD4DF4C/63C6828B" Ref="Y?"  Part="1" 
 AR Path="/5DC3DC9E/63C6828B" Ref="Y201"  Part="1" 
 AR Path="/5DC4A59D/63C6828B" Ref="Y?"  Part="1" 
-F 0 "Y201" H 9250 4867 60  0000 C CNN
-F 1 "~" H 9250 5100 50  0001 C CNN
-F 2 "Oscillator:Oscillator_SMD_SeikoEpson_SG210-4Pin_2.5x2.0mm" H 9250 5100 50  0001 C CNN
-F 3 "../doc/datasheets//ECS-2520S.pdf" H 9250 5100 50  0001 C CNN
+F 0 "Y201" H 9150 5300 39  0000 L BNN
+F 1 "~" H 9250 5350 39  0000 C CNN
+F 2 "Oscillator:Oscillator_SMD_SeikoEpson_SG210-4Pin_2.5x2.0mm" H 9300 5050 60  0001 C CNN
+F 3 "../doc/datasheets//ECS-2520S.pdf" H 9150 5650 60  0001 C CNN
 	1    9250 5100
-	-1   0    0    -1  
+	1    0    0    -1  
 $EndComp
 $Comp
 L servo:3V3 #PWR?

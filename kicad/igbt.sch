@@ -120,23 +120,9 @@ Wire Wire Line
 Wire Wire Line
 	4150 2100 4150 1850
 Wire Wire Line
-	4150 1850 4450 1850
-Wire Wire Line
 	3750 2100 4150 2100
 Wire Wire Line
-	4250 2200 4250 2050
-Wire Wire Line
-	4250 2050 4450 2050
-Wire Wire Line
 	3750 2200 4250 2200
-Wire Wire Line
-	3750 2300 4450 2300
-Wire Wire Line
-	4250 2400 4250 2500
-Wire Wire Line
-	4250 2500 4450 2500
-Wire Wire Line
-	3750 2400 4250 2400
 Wire Wire Line
 	4150 2500 4150 2750
 Wire Wire Line
@@ -175,12 +161,6 @@ Wire Wire Line
 	3750 3950 4050 3950
 Wire Wire Line
 	4050 3950 4050 4300
-Wire Wire Line
-	5750 1850 5750 2500
-Wire Wire Line
-	5200 2050 5650 2050
-Wire Wire Line
-	5650 2050 5650 2600
 Wire Wire Line
 	5200 2300 5550 2300
 Wire Wire Line
@@ -273,8 +253,6 @@ F 3 "" H 4400 4550 50  0001 C CNN
 $EndComp
 Connection ~ 5250 1950
 Wire Wire Line
-	3850 1650 4850 1650
-Wire Wire Line
 	3850 1650 3850 2000
 Wire Wire Line
 	5750 2500 6500 2500
@@ -358,8 +336,6 @@ F 3 "../doc/datasheets/Si8660.pdf" H 2950 4250 60  0001 C CNN
 	1    3050 3650
 	1    0    0    -1  
 $EndComp
-Wire Wire Line
-	5200 1850 5250 1850
 Text GLabel 1950 3550 0    50   Input ~ 0
 BRK_A_MEC_C
 $Comp
@@ -664,8 +640,6 @@ Wire Wire Line
 Wire Wire Line
 	8850 2500 9250 2500
 Connection ~ 8850 2500
-Wire Wire Line
-	5250 1850 5750 1850
 Connection ~ 6400 4500
 Wire Wire Line
 	6400 4500 7050 4500
@@ -916,8 +890,6 @@ F 3 "" H 12100 8200 50  0001 C CNN
 	-1   0    0    -1  
 $EndComp
 Connection ~ 11250 5600
-Wire Wire Line
-	12650 5300 11650 5300
 Wire Wire Line
 	12650 5300 12650 5650
 Wire Wire Line
@@ -1611,8 +1583,6 @@ Wire Wire Line
 Wire Wire Line
 	11250 5300 11250 5600
 Connection ~ 11650 5300
-Wire Wire Line
-	11650 5300 11250 5300
 $Comp
 L servo:5VH #PWR0804
 U 1 1 5EB25496
@@ -1625,8 +1595,6 @@ F 3 "" H 4850 1550 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 Connection ~ 4850 1650
-Wire Wire Line
-	4850 1650 5250 1650
 Text GLabel 6750 6150 0    50   Input ~ 0
 PWM_B_1H_H
 Text GLabel 6750 6250 0    50   Input ~ 0
@@ -1694,4 +1662,580 @@ Text GLabel 14550 7500 2    50   Input ~ 0
 FAN_RPM2
 Text GLabel 14550 7600 2    50   Input ~ 0
 IGBT_ALARM2
+Wire Wire Line
+	3750 2400 4250 2400
+Wire Wire Line
+	4250 2400 4250 2500
+Wire Wire Line
+	4250 2500 4450 2500
+Wire Wire Line
+	3750 2300 4450 2300
+Wire Wire Line
+	5750 1850 5750 2500
+Wire Wire Line
+	5650 2050 5650 2600
+Wire Wire Line
+	5200 1850 5250 1850
+Wire Wire Line
+	5250 1850 5750 1850
+Wire Wire Line
+	5200 2050 5650 2050
+Wire Wire Line
+	4250 2200 4250 2050
+Wire Wire Line
+	4150 1850 4450 1850
+Wire Wire Line
+	4250 2050 4450 2050
+Wire Wire Line
+	3850 1650 4850 1650
+Wire Wire Line
+	4850 1650 5250 1650
+Wire Wire Line
+	11650 5300 12650 5300
+Wire Wire Line
+	11250 5300 11650 5300
+$Comp
+L servo:Capacitor C?
+U 1 1 5F157327
+P 14550 5300
+AR Path="/5E092156/5F157327" Ref="C?"  Part="1" 
+AR Path="/5E72D841/5F157327" Ref="C?"  Part="1" 
+AR Path="/5DDE8C5E/5F157327" Ref="C834"  Part="1" 
+F 0 "C834" V 14622 5190 20  0000 R CNN
+F 1 "10u" V 14579 5190 20  0000 R CNN
+F 2 "servo:C_0603_1608Metric" H 14550 5200 60  0001 C CNN
+F 3 "" H 14550 5300 60  0000 C CNN
+	1    14550 5300
+	0    -1   -1   0   
+$EndComp
+$Comp
+L servo:GND #PWR?
+U 1 1 5F15732E
+P 14550 5400
+AR Path="/5DCD812E/5F15732E" Ref="#PWR?"  Part="1" 
+AR Path="/5EAA846A/5F15732E" Ref="#PWR?"  Part="1" 
+AR Path="/5F1E3CD5/5F15732E" Ref="#PWR?"  Part="1" 
+AR Path="/5DD76B18/5F15732E" Ref="#PWR?"  Part="1" 
+AR Path="/5E72D841/5F15732E" Ref="#PWR?"  Part="1" 
+AR Path="/5DDE8C5E/5F15732E" Ref="#PWR0104"  Part="1" 
+F 0 "#PWR0104" H 14555 5251 20  0001 C CNN
+F 1 "GND" H 14555 5242 30  0000 C CNN
+F 2 "" H 14550 5400 70  0000 C CNN
+F 3 "" H 14550 5400 70  0000 C CNN
+	1    14550 5400
+	1    0    0    -1  
+$EndComp
+$Comp
+L servo:3V3 #PWR0109
+U 1 1 5F17931B
+P 14550 5100
+F 0 "#PWR0109" H 14555 5307 20  0001 C CNN
+F 1 "3V3" H 14555 5257 28  0000 C CNN
+F 2 "" H 14550 5100 50  0001 C CNN
+F 3 "" H 14550 5100 50  0001 C CNN
+	1    14550 5100
+	-1   0    0    -1  
+$EndComp
+$Comp
+L servo:Capacitor C?
+U 1 1 5F1795FC
+P 14500 6800
+AR Path="/5E092156/5F1795FC" Ref="C?"  Part="1" 
+AR Path="/5E72D841/5F1795FC" Ref="C?"  Part="1" 
+AR Path="/5DDE8C5E/5F1795FC" Ref="C833"  Part="1" 
+F 0 "C833" V 14572 6690 20  0000 R CNN
+F 1 "10u" V 14529 6690 20  0000 R CNN
+F 2 "servo:C_0603_1608Metric" H 14500 6700 60  0001 C CNN
+F 3 "" H 14500 6800 60  0000 C CNN
+	1    14500 6800
+	0    -1   -1   0   
+$EndComp
+$Comp
+L servo:GND #PWR?
+U 1 1 5F179603
+P 14500 6900
+AR Path="/5DCD812E/5F179603" Ref="#PWR?"  Part="1" 
+AR Path="/5EAA846A/5F179603" Ref="#PWR?"  Part="1" 
+AR Path="/5F1E3CD5/5F179603" Ref="#PWR?"  Part="1" 
+AR Path="/5DD76B18/5F179603" Ref="#PWR?"  Part="1" 
+AR Path="/5E72D841/5F179603" Ref="#PWR?"  Part="1" 
+AR Path="/5DDE8C5E/5F179603" Ref="#PWR0115"  Part="1" 
+F 0 "#PWR0115" H 14505 6751 20  0001 C CNN
+F 1 "GND" H 14505 6742 30  0000 C CNN
+F 2 "" H 14500 6900 70  0000 C CNN
+F 3 "" H 14500 6900 70  0000 C CNN
+	1    14500 6900
+	1    0    0    -1  
+$EndComp
+$Comp
+L servo:3V3 #PWR0120
+U 1 1 5F179609
+P 14500 6600
+F 0 "#PWR0120" H 14505 6807 20  0001 C CNN
+F 1 "3V3" H 14505 6757 28  0000 C CNN
+F 2 "" H 14500 6600 50  0001 C CNN
+F 3 "" H 14500 6600 50  0001 C CNN
+	1    14500 6600
+	-1   0    0    -1  
+$EndComp
+$Comp
+L servo:Capacitor C?
+U 1 1 5F19B896
+P 2000 1650
+AR Path="/5E092156/5F19B896" Ref="C?"  Part="1" 
+AR Path="/5E72D841/5F19B896" Ref="C?"  Part="1" 
+AR Path="/5DDE8C5E/5F19B896" Ref="C826"  Part="1" 
+F 0 "C826" V 2072 1540 20  0000 R CNN
+F 1 "10u" V 2029 1540 20  0000 R CNN
+F 2 "servo:C_0603_1608Metric" H 2000 1550 60  0001 C CNN
+F 3 "" H 2000 1650 60  0000 C CNN
+	1    2000 1650
+	0    -1   -1   0   
+$EndComp
+$Comp
+L servo:GND #PWR?
+U 1 1 5F19B89D
+P 2000 1750
+AR Path="/5DCD812E/5F19B89D" Ref="#PWR?"  Part="1" 
+AR Path="/5EAA846A/5F19B89D" Ref="#PWR?"  Part="1" 
+AR Path="/5F1E3CD5/5F19B89D" Ref="#PWR?"  Part="1" 
+AR Path="/5DD76B18/5F19B89D" Ref="#PWR?"  Part="1" 
+AR Path="/5E72D841/5F19B89D" Ref="#PWR?"  Part="1" 
+AR Path="/5DDE8C5E/5F19B89D" Ref="#PWR0125"  Part="1" 
+F 0 "#PWR0125" H 2005 1601 20  0001 C CNN
+F 1 "GND" H 2005 1592 30  0000 C CNN
+F 2 "" H 2000 1750 70  0000 C CNN
+F 3 "" H 2000 1750 70  0000 C CNN
+	1    2000 1750
+	1    0    0    -1  
+$EndComp
+$Comp
+L servo:3V3 #PWR0251
+U 1 1 5F19B8A3
+P 2000 1450
+F 0 "#PWR0251" H 2005 1657 20  0001 C CNN
+F 1 "3V3" H 2005 1607 28  0000 C CNN
+F 2 "" H 2000 1450 50  0001 C CNN
+F 3 "" H 2000 1450 50  0001 C CNN
+	1    2000 1450
+	-1   0    0    -1  
+$EndComp
+$Comp
+L servo:Capacitor C?
+U 1 1 5F1BD8B6
+P 1950 3100
+AR Path="/5E092156/5F1BD8B6" Ref="C?"  Part="1" 
+AR Path="/5E72D841/5F1BD8B6" Ref="C?"  Part="1" 
+AR Path="/5DDE8C5E/5F1BD8B6" Ref="C825"  Part="1" 
+F 0 "C825" V 2022 2990 20  0000 R CNN
+F 1 "10u" V 1979 2990 20  0000 R CNN
+F 2 "servo:C_0603_1608Metric" H 1950 3000 60  0001 C CNN
+F 3 "" H 1950 3100 60  0000 C CNN
+	1    1950 3100
+	0    -1   -1   0   
+$EndComp
+$Comp
+L servo:GND #PWR?
+U 1 1 5F1BD8BD
+P 1950 3200
+AR Path="/5DCD812E/5F1BD8BD" Ref="#PWR?"  Part="1" 
+AR Path="/5EAA846A/5F1BD8BD" Ref="#PWR?"  Part="1" 
+AR Path="/5F1E3CD5/5F1BD8BD" Ref="#PWR?"  Part="1" 
+AR Path="/5DD76B18/5F1BD8BD" Ref="#PWR?"  Part="1" 
+AR Path="/5E72D841/5F1BD8BD" Ref="#PWR?"  Part="1" 
+AR Path="/5DDE8C5E/5F1BD8BD" Ref="#PWR0252"  Part="1" 
+F 0 "#PWR0252" H 1955 3051 20  0001 C CNN
+F 1 "GND" H 1955 3042 30  0000 C CNN
+F 2 "" H 1950 3200 70  0000 C CNN
+F 3 "" H 1950 3200 70  0000 C CNN
+	1    1950 3200
+	1    0    0    -1  
+$EndComp
+$Comp
+L servo:3V3 #PWR0253
+U 1 1 5F1BD8C3
+P 1950 2900
+F 0 "#PWR0253" H 1955 3107 20  0001 C CNN
+F 1 "3V3" H 1955 3057 28  0000 C CNN
+F 2 "" H 1950 2900 50  0001 C CNN
+F 3 "" H 1950 2900 50  0001 C CNN
+	1    1950 2900
+	-1   0    0    -1  
+$EndComp
+$Comp
+L servo:Capacitor C?
+U 1 1 5F339B9E
+P 6050 1800
+AR Path="/5E092156/5F339B9E" Ref="C?"  Part="1" 
+AR Path="/5E72D841/5F339B9E" Ref="C?"  Part="1" 
+AR Path="/5DDE8C5E/5F339B9E" Ref="C827"  Part="1" 
+F 0 "C827" V 6150 1750 20  0000 R CNN
+F 1 "0.1u" V 6050 1750 20  0000 R CNN
+F 2 "servo:C_0603_1608Metric" H 6050 1700 60  0001 C CNN
+F 3 "" H 6050 1800 60  0000 C CNN
+	1    6050 1800
+	0    1    -1   0   
+$EndComp
+$Comp
+L servo:5VH #PWR0256
+U 1 1 5F339BA5
+P 6050 1500
+F 0 "#PWR0256" H 6050 1300 20  0001 C CNN
+F 1 "5VH" H 6055 1657 28  0000 C CNN
+F 2 "" H 6050 1500 50  0001 C CNN
+F 3 "" H 6050 1500 50  0001 C CNN
+	1    6050 1500
+	-1   0    0    -1  
+$EndComp
+$Comp
+L servo:GNDH #PWR0257
+U 1 1 5F339BAB
+P 6050 2100
+F 0 "#PWR0257" H 6050 1850 30  0001 C CNN
+F 1 "GNDH" H 6050 1942 30  0000 C CNN
+F 2 "" H 6050 2100 50  0001 C CNN
+F 3 "" H 6050 2100 50  0001 C CNN
+	1    6050 2100
+	-1   0    0    -1  
+$EndComp
+Wire Wire Line
+	6050 1900 6050 1950
+Wire Wire Line
+	6050 1600 6050 1550
+$Comp
+L servo:Capacitor C?
+U 1 1 5F4A4CA1
+P 6300 1800
+AR Path="/5E092156/5F4A4CA1" Ref="C?"  Part="1" 
+AR Path="/5E72D841/5F4A4CA1" Ref="C?"  Part="1" 
+AR Path="/5DDE8C5E/5F4A4CA1" Ref="C828"  Part="1" 
+F 0 "C828" V 6400 1750 20  0000 R CNN
+F 1 "0.1u" V 6300 1750 20  0000 R CNN
+F 2 "servo:C_0603_1608Metric" H 6300 1700 60  0001 C CNN
+F 3 "" H 6300 1800 60  0000 C CNN
+	1    6300 1800
+	0    1    -1   0   
+$EndComp
+$Comp
+L servo:Capacitor C?
+U 1 1 5F4A4DD3
+P 6550 1800
+AR Path="/5E092156/5F4A4DD3" Ref="C?"  Part="1" 
+AR Path="/5E72D841/5F4A4DD3" Ref="C?"  Part="1" 
+AR Path="/5DDE8C5E/5F4A4DD3" Ref="C829"  Part="1" 
+F 0 "C829" V 6650 1750 20  0000 R CNN
+F 1 "0.1u" V 6550 1750 20  0000 R CNN
+F 2 "servo:C_0603_1608Metric" H 6550 1700 60  0001 C CNN
+F 3 "" H 6550 1800 60  0000 C CNN
+	1    6550 1800
+	0    1    -1   0   
+$EndComp
+$Comp
+L servo:Capacitor C?
+U 1 1 5F4A4E79
+P 6800 1800
+AR Path="/5E092156/5F4A4E79" Ref="C?"  Part="1" 
+AR Path="/5E72D841/5F4A4E79" Ref="C?"  Part="1" 
+AR Path="/5DDE8C5E/5F4A4E79" Ref="C830"  Part="1" 
+F 0 "C830" V 6900 1750 20  0000 R CNN
+F 1 "0.1u" V 6800 1750 20  0000 R CNN
+F 2 "servo:C_0603_1608Metric" H 6800 1700 60  0001 C CNN
+F 3 "" H 6800 1800 60  0000 C CNN
+	1    6800 1800
+	0    1    -1   0   
+$EndComp
+$Comp
+L servo:Capacitor C?
+U 1 1 5F4A4F21
+P 7050 1800
+AR Path="/5E092156/5F4A4F21" Ref="C?"  Part="1" 
+AR Path="/5E72D841/5F4A4F21" Ref="C?"  Part="1" 
+AR Path="/5DDE8C5E/5F4A4F21" Ref="C831"  Part="1" 
+F 0 "C831" V 7150 1750 20  0000 R CNN
+F 1 "0.1u" V 7050 1750 20  0000 R CNN
+F 2 "servo:C_0603_1608Metric" H 7050 1700 60  0001 C CNN
+F 3 "" H 7050 1800 60  0000 C CNN
+	1    7050 1800
+	0    1    -1   0   
+$EndComp
+$Comp
+L servo:Capacitor C?
+U 1 1 5F4A4FCB
+P 7300 1800
+AR Path="/5E092156/5F4A4FCB" Ref="C?"  Part="1" 
+AR Path="/5E72D841/5F4A4FCB" Ref="C?"  Part="1" 
+AR Path="/5DDE8C5E/5F4A4FCB" Ref="C832"  Part="1" 
+F 0 "C832" V 7400 1750 20  0000 R CNN
+F 1 "0.1u" V 7300 1750 20  0000 R CNN
+F 2 "servo:C_0603_1608Metric" H 7300 1700 60  0001 C CNN
+F 3 "" H 7300 1800 60  0000 C CNN
+	1    7300 1800
+	0    1    -1   0   
+$EndComp
+$Comp
+L servo:Capacitor C?
+U 1 1 5F4A510D
+P 7550 1800
+AR Path="/5E092156/5F4A510D" Ref="C?"  Part="1" 
+AR Path="/5E72D841/5F4A510D" Ref="C?"  Part="1" 
+AR Path="/5DDE8C5E/5F4A510D" Ref="C835"  Part="1" 
+F 0 "C835" V 7650 1750 20  0000 R CNN
+F 1 "0.1u" V 7550 1750 20  0000 R CNN
+F 2 "servo:C_0603_1608Metric" H 7550 1700 60  0001 C CNN
+F 3 "" H 7550 1800 60  0000 C CNN
+	1    7550 1800
+	0    1    -1   0   
+$EndComp
+Wire Wire Line
+	6050 1550 6300 1550
+Wire Wire Line
+	7550 1550 7550 1600
+Connection ~ 6050 1550
+Wire Wire Line
+	6050 1550 6050 1500
+Wire Wire Line
+	7300 1600 7300 1550
+Connection ~ 7300 1550
+Wire Wire Line
+	7300 1550 7550 1550
+Wire Wire Line
+	7050 1600 7050 1550
+Connection ~ 7050 1550
+Wire Wire Line
+	7050 1550 7300 1550
+Wire Wire Line
+	6800 1600 6800 1550
+Connection ~ 6800 1550
+Wire Wire Line
+	6800 1550 7050 1550
+Wire Wire Line
+	6550 1600 6550 1550
+Connection ~ 6550 1550
+Wire Wire Line
+	6550 1550 6800 1550
+Wire Wire Line
+	6300 1600 6300 1550
+Connection ~ 6300 1550
+Wire Wire Line
+	6300 1550 6550 1550
+Wire Wire Line
+	6050 1950 6300 1950
+Wire Wire Line
+	7550 1950 7550 1900
+Connection ~ 6050 1950
+Wire Wire Line
+	6050 1950 6050 2100
+Wire Wire Line
+	7300 1900 7300 1950
+Connection ~ 7300 1950
+Wire Wire Line
+	7300 1950 7550 1950
+Wire Wire Line
+	7050 1900 7050 1950
+Connection ~ 7050 1950
+Wire Wire Line
+	7050 1950 7300 1950
+Wire Wire Line
+	6800 1900 6800 1950
+Connection ~ 6800 1950
+Wire Wire Line
+	6800 1950 7050 1950
+Wire Wire Line
+	6550 1900 6550 1950
+Connection ~ 6550 1950
+Wire Wire Line
+	6550 1950 6800 1950
+Wire Wire Line
+	6300 1900 6300 1950
+Connection ~ 6300 1950
+Wire Wire Line
+	6300 1950 6550 1950
+$Comp
+L servo:Capacitor C?
+U 1 1 5F66FBE0
+P 10400 5550
+AR Path="/5E092156/5F66FBE0" Ref="C?"  Part="1" 
+AR Path="/5E72D841/5F66FBE0" Ref="C?"  Part="1" 
+AR Path="/5DDE8C5E/5F66FBE0" Ref="C842"  Part="1" 
+F 0 "C842" V 10500 5500 20  0000 R CNN
+F 1 "0.1u" V 10400 5500 20  0000 R CNN
+F 2 "servo:C_0603_1608Metric" H 10400 5450 60  0001 C CNN
+F 3 "" H 10400 5550 60  0000 C CNN
+	1    10400 5550
+	0    -1   -1   0   
+$EndComp
+$Comp
+L servo:5VH #PWR0254
+U 1 1 5F66FBE7
+P 10400 5250
+F 0 "#PWR0254" H 10400 5050 20  0001 C CNN
+F 1 "5VH" H 10405 5407 28  0000 C CNN
+F 2 "" H 10400 5250 50  0001 C CNN
+F 3 "" H 10400 5250 50  0001 C CNN
+	1    10400 5250
+	1    0    0    -1  
+$EndComp
+$Comp
+L servo:GNDH #PWR0255
+U 1 1 5F66FBED
+P 10400 5850
+F 0 "#PWR0255" H 10400 5600 30  0001 C CNN
+F 1 "GNDH" H 10400 5692 30  0000 C CNN
+F 2 "" H 10400 5850 50  0001 C CNN
+F 3 "" H 10400 5850 50  0001 C CNN
+	1    10400 5850
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	10400 5650 10400 5700
+Wire Wire Line
+	10400 5350 10400 5300
+$Comp
+L servo:Capacitor C?
+U 1 1 5F66FBF5
+P 10150 5550
+AR Path="/5E092156/5F66FBF5" Ref="C?"  Part="1" 
+AR Path="/5E72D841/5F66FBF5" Ref="C?"  Part="1" 
+AR Path="/5DDE8C5E/5F66FBF5" Ref="C841"  Part="1" 
+F 0 "C841" V 10250 5500 20  0000 R CNN
+F 1 "0.1u" V 10150 5500 20  0000 R CNN
+F 2 "servo:C_0603_1608Metric" H 10150 5450 60  0001 C CNN
+F 3 "" H 10150 5550 60  0000 C CNN
+	1    10150 5550
+	0    -1   -1   0   
+$EndComp
+$Comp
+L servo:Capacitor C?
+U 1 1 5F66FBFC
+P 9900 5550
+AR Path="/5E092156/5F66FBFC" Ref="C?"  Part="1" 
+AR Path="/5E72D841/5F66FBFC" Ref="C?"  Part="1" 
+AR Path="/5DDE8C5E/5F66FBFC" Ref="C840"  Part="1" 
+F 0 "C840" V 10000 5500 20  0000 R CNN
+F 1 "0.1u" V 9900 5500 20  0000 R CNN
+F 2 "servo:C_0603_1608Metric" H 9900 5450 60  0001 C CNN
+F 3 "" H 9900 5550 60  0000 C CNN
+	1    9900 5550
+	0    -1   -1   0   
+$EndComp
+$Comp
+L servo:Capacitor C?
+U 1 1 5F66FC03
+P 9650 5550
+AR Path="/5E092156/5F66FC03" Ref="C?"  Part="1" 
+AR Path="/5E72D841/5F66FC03" Ref="C?"  Part="1" 
+AR Path="/5DDE8C5E/5F66FC03" Ref="C839"  Part="1" 
+F 0 "C839" V 9750 5500 20  0000 R CNN
+F 1 "0.1u" V 9650 5500 20  0000 R CNN
+F 2 "servo:C_0603_1608Metric" H 9650 5450 60  0001 C CNN
+F 3 "" H 9650 5550 60  0000 C CNN
+	1    9650 5550
+	0    -1   -1   0   
+$EndComp
+$Comp
+L servo:Capacitor C?
+U 1 1 5F66FC0A
+P 9400 5550
+AR Path="/5E092156/5F66FC0A" Ref="C?"  Part="1" 
+AR Path="/5E72D841/5F66FC0A" Ref="C?"  Part="1" 
+AR Path="/5DDE8C5E/5F66FC0A" Ref="C838"  Part="1" 
+F 0 "C838" V 9500 5500 20  0000 R CNN
+F 1 "0.1u" V 9400 5500 20  0000 R CNN
+F 2 "servo:C_0603_1608Metric" H 9400 5450 60  0001 C CNN
+F 3 "" H 9400 5550 60  0000 C CNN
+	1    9400 5550
+	0    -1   -1   0   
+$EndComp
+$Comp
+L servo:Capacitor C?
+U 1 1 5F66FC11
+P 9150 5550
+AR Path="/5E092156/5F66FC11" Ref="C?"  Part="1" 
+AR Path="/5E72D841/5F66FC11" Ref="C?"  Part="1" 
+AR Path="/5DDE8C5E/5F66FC11" Ref="C837"  Part="1" 
+F 0 "C837" V 9250 5500 20  0000 R CNN
+F 1 "0.1u" V 9150 5500 20  0000 R CNN
+F 2 "servo:C_0603_1608Metric" H 9150 5450 60  0001 C CNN
+F 3 "" H 9150 5550 60  0000 C CNN
+	1    9150 5550
+	0    -1   -1   0   
+$EndComp
+$Comp
+L servo:Capacitor C?
+U 1 1 5F66FC18
+P 8900 5550
+AR Path="/5E092156/5F66FC18" Ref="C?"  Part="1" 
+AR Path="/5E72D841/5F66FC18" Ref="C?"  Part="1" 
+AR Path="/5DDE8C5E/5F66FC18" Ref="C836"  Part="1" 
+F 0 "C836" V 9000 5500 20  0000 R CNN
+F 1 "0.1u" V 8900 5500 20  0000 R CNN
+F 2 "servo:C_0603_1608Metric" H 8900 5450 60  0001 C CNN
+F 3 "" H 8900 5550 60  0000 C CNN
+	1    8900 5550
+	0    -1   -1   0   
+$EndComp
+Wire Wire Line
+	10400 5300 10150 5300
+Wire Wire Line
+	8900 5300 8900 5350
+Connection ~ 10400 5300
+Wire Wire Line
+	10400 5300 10400 5250
+Wire Wire Line
+	9150 5350 9150 5300
+Connection ~ 9150 5300
+Wire Wire Line
+	9150 5300 8900 5300
+Wire Wire Line
+	9400 5350 9400 5300
+Connection ~ 9400 5300
+Wire Wire Line
+	9400 5300 9150 5300
+Wire Wire Line
+	9650 5350 9650 5300
+Connection ~ 9650 5300
+Wire Wire Line
+	9650 5300 9400 5300
+Wire Wire Line
+	9900 5350 9900 5300
+Connection ~ 9900 5300
+Wire Wire Line
+	9900 5300 9650 5300
+Wire Wire Line
+	10150 5350 10150 5300
+Connection ~ 10150 5300
+Wire Wire Line
+	10150 5300 9900 5300
+Wire Wire Line
+	10400 5700 10150 5700
+Wire Wire Line
+	8900 5700 8900 5650
+Connection ~ 10400 5700
+Wire Wire Line
+	10400 5700 10400 5850
+Wire Wire Line
+	9150 5650 9150 5700
+Connection ~ 9150 5700
+Wire Wire Line
+	9150 5700 8900 5700
+Wire Wire Line
+	9400 5650 9400 5700
+Connection ~ 9400 5700
+Wire Wire Line
+	9400 5700 9150 5700
+Wire Wire Line
+	9650 5650 9650 5700
+Connection ~ 9650 5700
+Wire Wire Line
+	9650 5700 9400 5700
+Wire Wire Line
+	9900 5650 9900 5700
+Connection ~ 9900 5700
+Wire Wire Line
+	9900 5700 9650 5700
+Wire Wire Line
+	10150 5650 10150 5700
+Connection ~ 10150 5700
+Wire Wire Line
+	10150 5700 9900 5700
 $EndSCHEMATC
