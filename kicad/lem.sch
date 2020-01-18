@@ -196,21 +196,13 @@ NoConn ~ 6400 10550
 Text Notes 5700 10800 0    20   ~ 0
 I've decided to eliminate 1 LEM, you could use 3 in line measurement,\n or 2 in line plus one for all. De reason is size of board and complexity
 Wire Wire Line
-	4750 2900 5550 2900
-Wire Wire Line
-	5550 2900 5550 3400
-Wire Wire Line
 	4850 3000 5450 3000
 Wire Wire Line
 	5450 3000 5450 3400
 Wire Wire Line
-	5350 3100 4950 3100
-Wire Wire Line
 	4750 2900 4750 3200
 Wire Wire Line
 	4850 3000 4850 3200
-Wire Wire Line
-	5350 3100 5350 3400
 Wire Wire Line
 	4950 4150 5350 4150
 Wire Wire Line
@@ -221,10 +213,6 @@ Wire Wire Line
 	4850 4250 5450 4250
 Wire Wire Line
 	5450 4250 5450 3900
-Wire Wire Line
-	5550 3900 5550 4350
-Wire Wire Line
-	5550 4350 4750 4350
 Wire Wire Line
 	4750 4100 4750 4350
 Wire Wire Line
@@ -1037,68 +1025,68 @@ chanlog1: I've decided to return to a 2x3 terminal block output 'cause\n it matc
 $Comp
 L servo:tblock2x3 J1503
 U 1 1 5E261EDA
-P 5450 3600
-F 0 "J1503" V 5462 3780 39  0000 L CNN
-F 1 "tblock2x3" V 5537 3780 39  0000 L CNN
-F 2 "servo:tblock02x03" H 5400 3700 50  0001 C CNN
-F 3 "../doc/dfatasheets/tblock2rows.pdf" H 5500 3800 50  0001 C CNN
-	1    5450 3600
-	0    1    1    0   
+P 5450 3700
+F 0 "J1503" V 5462 3880 39  0000 L CNN
+F 1 "tblock2x3" V 5537 3880 39  0000 L CNN
+F 2 "servo:tblock02x03" H 5400 3800 50  0001 C CNN
+F 3 "../doc/dfatasheets/tblock2rows.pdf" H 5500 3900 50  0001 C CNN
+	1    5450 3700
+	0    -1   -1   0   
 $EndComp
 $Comp
 L servo:tblock2x3 J1504
 U 1 1 5E270F16
-P 7250 3600
-F 0 "J1504" V 7262 3780 39  0000 L CNN
-F 1 "tblock2x3" V 7337 3780 39  0000 L CNN
-F 2 "servo:tblock02x03" H 7200 3700 50  0001 C CNN
-F 3 "../doc/dfatasheets/tblock2rows.pdf" H 7300 3800 50  0001 C CNN
-	1    7250 3600
-	0    1    1    0   
+P 7250 3700
+F 0 "J1504" V 7262 3880 39  0000 L CNN
+F 1 "tblock2x3" V 7337 3880 39  0000 L CNN
+F 2 "servo:tblock02x03" H 7200 3800 50  0001 C CNN
+F 3 "../doc/dfatasheets/tblock2rows.pdf" H 7300 3900 50  0001 C CNN
+	1    7250 3700
+	0    1    -1   0   
 $EndComp
 $Comp
 L servo:tblock2x3 J1501
 U 1 1 5E2787AF
-P 5250 5550
-F 0 "J1501" V 5262 5730 39  0000 L CNN
-F 1 "tblock2x3" V 5337 5730 39  0000 L CNN
-F 2 "servo:tblock02x03" H 5200 5650 50  0001 C CNN
-F 3 "../doc/dfatasheets/tblock2rows.pdf" H 5300 5750 50  0001 C CNN
-	1    5250 5550
-	0    1    1    0   
+P 5250 5650
+F 0 "J1501" V 5338 5462 39  0000 R CNN
+F 1 "tblock2x3" V 5263 5462 39  0000 R CNN
+F 2 "servo:tblock02x03" H 5200 5750 50  0001 C CNN
+F 3 "../doc/dfatasheets/tblock2rows.pdf" H 5300 5850 50  0001 C CNN
+	1    5250 5650
+	0    -1   -1   0   
 $EndComp
 $Comp
 L servo:tblock2x3 J1505
 U 1 1 5E27FF32
-P 7250 5550
-F 0 "J1505" V 7262 5730 39  0000 L CNN
-F 1 "tblock2x3" V 7337 5730 39  0000 L CNN
-F 2 "servo:tblock02x03" H 7200 5650 50  0001 C CNN
-F 3 "../doc/dfatasheets/tblock2rows.pdf" H 7300 5750 50  0001 C CNN
-	1    7250 5550
-	0    1    1    0   
+P 7250 5650
+F 0 "J1505" V 7262 5830 39  0000 L CNN
+F 1 "tblock2x3" V 7337 5830 39  0000 L CNN
+F 2 "servo:tblock02x03" H 7200 5750 50  0001 C CNN
+F 3 "../doc/dfatasheets/tblock2rows.pdf" H 7300 5850 50  0001 C CNN
+	1    7250 5650
+	0    1    -1   0   
 $EndComp
 $Comp
 L servo:tblock2x3 J1502
 U 1 1 5E296823
-P 5350 8150
-F 0 "J1502" V 5362 8330 39  0000 L CNN
-F 1 "tblock2x3" V 5437 8330 39  0000 L CNN
-F 2 "servo:tblock02x03" H 5300 8250 50  0001 C CNN
-F 3 "../doc/dfatasheets/tblock2rows.pdf" H 5400 8350 50  0001 C CNN
-	1    5350 8150
-	0    1    1    0   
+P 5350 8250
+F 0 "J1502" V 5362 8430 39  0000 L CNN
+F 1 "tblock2x3" V 5437 8430 39  0000 L CNN
+F 2 "servo:tblock02x03" H 5300 8350 50  0001 C CNN
+F 3 "../doc/dfatasheets/tblock2rows.pdf" H 5400 8450 50  0001 C CNN
+	1    5350 8250
+	0    -1   -1   0   
 $EndComp
 $Comp
 L servo:tblock2x3 J1506
 U 1 1 5E29DFAC
-P 7250 8150
-F 0 "J1506" V 7262 8330 39  0000 L CNN
-F 1 "tblock2x3" V 7337 8330 39  0000 L CNN
-F 2 "servo:tblock02x03" H 7200 8250 50  0001 C CNN
-F 3 "../doc/datasheets/tblock2rows.pdf" H 7300 8350 50  0001 C CNN
-	1    7250 8150
-	0    1    1    0   
+P 7250 8250
+F 0 "J1506" V 7262 8430 39  0000 L CNN
+F 1 "tblock2x3" V 7337 8430 39  0000 L CNN
+F 2 "servo:tblock02x03" H 7200 8350 50  0001 C CNN
+F 3 "../doc/datasheets/tblock2rows.pdf" H 7300 8450 50  0001 C CNN
+	1    7250 8250
+	0    1    -1   0   
 $EndComp
 Text Label 5100 2900 0    20   ~ 0
 LemAU_1
@@ -1128,17 +1116,9 @@ Wire Wire Line
 Wire Wire Line
 	7950 7450 7950 7750
 Wire Wire Line
-	4550 4850 5350 4850
-Wire Wire Line
-	5350 4850 5350 5350
-Wire Wire Line
 	4650 4950 5250 4950
 Wire Wire Line
 	5250 4950 5250 5350
-Wire Wire Line
-	5150 5050 4750 5050
-Wire Wire Line
-	5150 5050 5150 5350
 Text Label 4900 4850 0    20   ~ 0
 LemAV_1
 Text Label 4900 4950 0    20   ~ 0
@@ -1146,17 +1126,9 @@ LemAV_2
 Text Label 4900 5050 0    20   ~ 0
 LemAV_3
 Wire Wire Line
-	4650 7450 5450 7450
-Wire Wire Line
-	5450 7450 5450 7950
-Wire Wire Line
 	4750 7550 5350 7550
 Wire Wire Line
 	5350 7550 5350 7950
-Wire Wire Line
-	5250 7650 4850 7650
-Wire Wire Line
-	5250 7650 5250 7950
 Text Label 5000 7450 0    20   ~ 0
 LemA_All_1
 Text Label 5000 7550 0    20   ~ 0
@@ -1166,15 +1138,9 @@ LemA_All_3
 Wire Wire Line
 	4750 6100 5150 6100
 Wire Wire Line
-	5150 6100 5150 5850
-Wire Wire Line
 	4650 6200 5250 6200
 Wire Wire Line
 	5250 6200 5250 5850
-Wire Wire Line
-	5350 5850 5350 6300
-Wire Wire Line
-	5350 6300 4550 6300
 Text Label 4900 6100 0    20   ~ 0
 LemAV_4
 Text Label 4900 6200 0    20   ~ 0
@@ -1189,10 +1155,6 @@ Wire Wire Line
 	4750 8800 5350 8800
 Wire Wire Line
 	5350 8800 5350 8450
-Wire Wire Line
-	5450 8450 5450 8900
-Wire Wire Line
-	5450 8900 4650 8900
 Text Label 5000 8700 0    20   ~ 0
 LemA_All_4
 Text Label 5000 8800 0    20   ~ 0
@@ -1200,29 +1162,15 @@ LemA_All_5
 Text Label 5000 8900 0    20   ~ 0
 LemA_All_6
 Wire Wire Line
-	7950 2900 7150 2900
-Wire Wire Line
-	7150 2900 7150 3400
-Wire Wire Line
 	7850 3000 7250 3000
 Wire Wire Line
 	7250 3000 7250 3400
 Wire Wire Line
-	7350 3100 7750 3100
-Wire Wire Line
-	7350 3100 7350 3400
-Wire Wire Line
 	7750 4150 7350 4150
-Wire Wire Line
-	7350 4150 7350 3900
 Wire Wire Line
 	7850 4250 7250 4250
 Wire Wire Line
 	7250 4250 7250 3900
-Wire Wire Line
-	7150 3900 7150 4350
-Wire Wire Line
-	7150 4350 7950 4350
 Text Label 7600 2900 2    20   ~ 0
 LemBU_1
 Text Label 7600 3000 2    20   ~ 0
@@ -1236,29 +1184,13 @@ LemBU_5
 Text Label 7600 4350 2    20   ~ 0
 LemBU_6
 Wire Wire Line
-	7950 4850 7150 4850
-Wire Wire Line
-	7150 4850 7150 5350
-Wire Wire Line
 	7850 4950 7250 4950
 Wire Wire Line
 	7250 4950 7250 5350
 Wire Wire Line
-	7350 5050 7750 5050
-Wire Wire Line
-	7350 5050 7350 5350
-Wire Wire Line
-	7750 6100 7350 6100
-Wire Wire Line
-	7350 6100 7350 5850
-Wire Wire Line
 	7850 6200 7250 6200
 Wire Wire Line
 	7250 6200 7250 5850
-Wire Wire Line
-	7150 5850 7150 6300
-Wire Wire Line
-	7150 6300 7950 6300
 Text Label 7600 4850 2    20   ~ 0
 LemBV_1
 Text Label 7600 4950 2    20   ~ 0
@@ -1272,17 +1204,7 @@ LemBV_5
 Text Label 7600 6300 2    20   ~ 0
 LemBV_6
 Wire Wire Line
-	7950 7450 7150 7450
-Wire Wire Line
-	7150 7450 7150 7950
-Wire Wire Line
 	7850 7550 7250 7550
-Wire Wire Line
-	7250 7550 7250 7950
-Wire Wire Line
-	7350 7650 7750 7650
-Wire Wire Line
-	7350 7650 7350 7950
 Wire Wire Line
 	7750 8700 7350 8700
 Wire Wire Line
@@ -1291,10 +1213,6 @@ Wire Wire Line
 	7850 8800 7250 8800
 Wire Wire Line
 	7250 8800 7250 8450
-Wire Wire Line
-	7150 8450 7150 8900
-Wire Wire Line
-	7150 8900 7950 8900
 Text Label 7600 7450 2    20   ~ 0
 LemB_All_1
 Text Label 7600 7550 2    20   ~ 0
@@ -1307,4 +1225,132 @@ Text Label 7600 8800 2    20   ~ 0
 LemB_All_5
 Text Label 7600 8900 2    20   ~ 0
 LemB_All_6
+Wire Wire Line
+	7250 7550 7250 7950
+Wire Wire Line
+	7150 8450 7000 8450
+Wire Wire Line
+	7000 8450 7000 7450
+Wire Wire Line
+	7000 7450 7950 7450
+Wire Wire Line
+	7150 7650 7150 7950
+Wire Wire Line
+	7150 7650 7750 7650
+Wire Wire Line
+	7350 7850 7350 7950
+Wire Wire Line
+	7350 7850 6850 7850
+Wire Wire Line
+	6850 7850 6850 8900
+Wire Wire Line
+	6850 8900 7950 8900
+Wire Wire Line
+	5600 8900 5600 7850
+Wire Wire Line
+	5600 7850 5250 7850
+Wire Wire Line
+	4650 8900 5600 8900
+Wire Wire Line
+	5700 8550 5450 8550
+Wire Wire Line
+	5450 8550 5450 8450
+Wire Wire Line
+	4850 7650 5450 7650
+Wire Wire Line
+	5600 6300 5600 5150
+Wire Wire Line
+	5600 5150 5150 5150
+Wire Wire Line
+	5150 5150 5150 5350
+Wire Wire Line
+	4550 6300 5600 6300
+Wire Wire Line
+	4750 5050 5350 5050
+Wire Wire Line
+	5700 4850 5700 6000
+Wire Wire Line
+	5700 6000 5350 6000
+Wire Wire Line
+	5350 6000 5350 5850
+Wire Wire Line
+	4550 4850 5700 4850
+Wire Wire Line
+	5350 5050 5350 5350
+Wire Wire Line
+	5150 6100 5150 5850
+Wire Wire Line
+	5800 4050 5550 4050
+Wire Wire Line
+	5550 4050 5550 3900
+Wire Wire Line
+	4950 3100 5550 3100
+Wire Wire Line
+	5900 4350 5900 3200
+Wire Wire Line
+	5900 3200 5350 3200
+Wire Wire Line
+	5350 3200 5350 3400
+Wire Wire Line
+	4750 4350 5900 4350
+Wire Wire Line
+	5250 7850 5250 7950
+Wire Wire Line
+	5450 7650 5450 7950
+Wire Wire Line
+	5700 7450 5700 8550
+Wire Wire Line
+	4650 7450 5700 7450
+Wire Wire Line
+	5550 3100 5550 3400
+Wire Wire Line
+	5800 2900 5800 4050
+Wire Wire Line
+	4750 2900 5800 2900
+Wire Wire Line
+	7000 4850 7950 4850
+Wire Wire Line
+	6700 6300 6700 5200
+Wire Wire Line
+	6700 5200 7350 5200
+Wire Wire Line
+	7350 5200 7350 5350
+Wire Wire Line
+	6700 6300 7950 6300
+Wire Wire Line
+	7000 4850 7000 6000
+Wire Wire Line
+	7150 5050 7750 5050
+Wire Wire Line
+	7150 5050 7150 5350
+Wire Wire Line
+	7350 5850 7350 6100
+Wire Wire Line
+	7350 6100 7750 6100
+Wire Wire Line
+	7000 6000 7150 6000
+Wire Wire Line
+	7150 6000 7150 5850
+Wire Wire Line
+	6850 2900 6850 4050
+Wire Wire Line
+	6850 2900 7950 2900
+Wire Wire Line
+	6850 4050 7150 4050
+Wire Wire Line
+	7150 4050 7150 3900
+Wire Wire Line
+	6950 4350 6950 3200
+Wire Wire Line
+	6950 4350 7950 4350
+Wire Wire Line
+	7350 4150 7350 3900
+Wire Wire Line
+	7350 3200 7350 3400
+Wire Wire Line
+	6950 3200 7350 3200
+Wire Wire Line
+	7150 3100 7750 3100
+Wire Wire Line
+	7150 3100 7150 3400
 $EndSCHEMATC

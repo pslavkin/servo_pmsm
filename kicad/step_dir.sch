@@ -157,13 +157,13 @@ F 3 "" H 7500 3400 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 Text Label 8150 3750 0    20   ~ 0
-QEP1_A+_H
+STEP1_A+_H
 Text Label 8150 3850 0    20   ~ 0
-QEP1_A-_H
+STEP1_A-_H
 Text Label 8150 3950 0    20   ~ 0
-QEP1_B+_H
+STEP1_B+_H
 Text Label 8150 4050 0    20   ~ 0
-QEP1_B-_H
+STEP1_B-_H
 Wire Wire Line
 	7000 3200 7000 3850
 Wire Wire Line
@@ -461,14 +461,14 @@ Connection ~ 8650 4250
 Wire Wire Line
 	8650 4250 9000 4250
 $Comp
-L servo:am26ls32a U?
+L servo:am26ls32a U1001
 U 1 1 6322E22C
 P 8950 5750
-AR Path="/5E092156/6322E22C" Ref="U?"  Part="1" 
+AR Path="/5E092156/6322E22C" Ref="U1001"  Part="1" 
 AR Path="/5DE3DF56/6322E22C" Ref="U1001"  Part="1" 
 F 0 "U1001" H 8800 6800 39  0000 C CNN
 F 1 "am26ls32a" H 8750 6700 39  0000 C CNN
-F 2 "Package_SO:SOIC-16_3.9x9.9mm_P1.27mm" H 9950 4800 50  0001 C CNN
+F 2 "Package_SO:SOIC-16W_5.3x10.2mm_P1.27mm" H 9950 4800 50  0001 C CNN
 F 3 "../doc/datasheets/am26ls32a.pdf" H 8950 5350 50  0001 C CNN
 	1    8950 5750
 	0    -1   1    0   
@@ -520,23 +520,11 @@ Wire Wire Line
 Wire Wire Line
 	7800 5750 7800 5250
 Wire Wire Line
-	8200 5350 8200 4800
-Wire Wire Line
-	8200 4800 6900 4800
-Wire Wire Line
 	6900 4800 6900 3750
 Connection ~ 6900 3750
 Wire Wire Line
 	7000 3850 7000 4700
-Wire Wire Line
-	7000 4700 8300 4700
-Wire Wire Line
-	8300 4700 8300 5350
 Connection ~ 7000 3850
-Wire Wire Line
-	8400 5350 8400 4600
-Wire Wire Line
-	8400 4600 7300 4600
 Wire Wire Line
 	7300 3000 7300 3950
 Connection ~ 7300 3950
@@ -545,9 +533,7 @@ Wire Wire Line
 Wire Wire Line
 	7400 4050 7400 4500
 Wire Wire Line
-	7400 4500 8500 4500
-Wire Wire Line
-	8500 4500 8500 5350
+	7400 4500 8300 4500
 Connection ~ 7400 4050
 Wire Wire Line
 	8800 5350 8800 4500
@@ -604,4 +590,26 @@ Wire Wire Line
 	8850 6450 9300 6450
 Text Notes 8400 1350 0    20   ~ 0
 The isolation part is shared with QEP
+Wire Wire Line
+	8500 4700 8500 5350
+Wire Wire Line
+	7000 4700 8500 4700
+Wire Wire Line
+	8400 4800 8400 5350
+Wire Wire Line
+	6900 4800 8400 4800
+Wire Wire Line
+	8300 5350 8300 4500
+Wire Wire Line
+	8200 5350 8200 4600
+Wire Wire Line
+	8200 4600 7300 4600
+Text Label 8950 3750 0    20   ~ 0
+STEP2_A+_H
+Text Label 8950 3850 0    20   ~ 0
+STEP2_A-_H
+Text Label 8950 3950 0    20   ~ 0
+STEP2_B+_H
+Text Label 8950 4050 0    20   ~ 0
+STEP2_B-_H
 $EndSCHEMATC

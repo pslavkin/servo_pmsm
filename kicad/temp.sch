@@ -120,22 +120,20 @@ $EndComp
 Wire Wire Line
 	9250 3000 9000 3000
 Wire Wire Line
-	8550 2100 9000 2100
-Wire Wire Line
 	9000 2100 9000 2200
 Connection ~ 8550 2100
 $Comp
 L servo:3V3 #PWR?
 U 1 1 5E0A4BCB
-P 7100 2350
+P 7100 2100
 AR Path="/5DCD812E/5E0A4BCB" Ref="#PWR?"  Part="1" 
 AR Path="/5DD4DF4C/5E0A4BCB" Ref="#PWR?"  Part="1" 
 AR Path="/5DE49152/5E0A4BCB" Ref="#PWR0905"  Part="1" 
-F 0 "#PWR0905" H 7117 2559 20  0001 C CNN
-F 1 "3V3" H 7117 2507 30  0000 C CNN
-F 2 "" H 7100 2350 70  0000 C CNN
-F 3 "" H 7100 2350 70  0000 C CNN
-	1    7100 2350
+F 0 "#PWR0905" H 7117 2309 20  0001 C CNN
+F 1 "3V3" H 7117 2257 30  0000 C CNN
+F 2 "" H 7100 2100 70  0000 C CNN
+F 3 "" H 7100 2100 70  0000 C CNN
+	1    7100 2100
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
@@ -339,7 +337,7 @@ Wire Wire Line
 Wire Wire Line
 	8300 4950 8300 5600
 Wire Wire Line
-	7100 2350 7100 2500
+	7100 2100 7100 2500
 Wire Wire Line
 	8550 2000 8550 2100
 Wire Wire Line
@@ -795,7 +793,7 @@ Wire Wire Line
 	11250 4550 11250 4650
 Wire Wire Line
 	11500 4650 11250 4650
-Text Notes 7900 1700 0    20   ~ 0
+Text Notes 8050 1600 0    20   ~ 0
 I left 2 isolated analog input to measure until 2 NTC for each motor. If each motor  has one inside the motor and other for IGBT disipator,\n\nIf you need more precisiion or more sensors, I left also an isolated \n1-wire/RS485 interfase that could manage a lot of 18B20 on a bus\n network.\n
 Wire Wire Line
 	9250 5050 9400 5050
@@ -1417,6 +1415,91 @@ F 1 "GNDH" H 8700 7142 30  0000 C CNN
 F 2 "" H 8700 7300 50  0001 C CNN
 F 3 "" H 8700 7300 50  0001 C CNN
 	1    8700 7300
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	9300 2000 9300 2050
+$Comp
+L servo:Capacitor C?
+U 1 1 5E31D563
+P 9300 2150
+AR Path="/5DEE980E/5E31D563" Ref="C?"  Part="1" 
+AR Path="/5E2F3BE3/5E31D563" Ref="C?"  Part="1" 
+AR Path="/605BEC04/5E31D563" Ref="C?"  Part="1" 
+AR Path="/5DE49152/5E31D563" Ref="C918"  Part="1" 
+F 0 "C918" V 9328 1946 20  0000 L BNN
+F 1 "100nF" V 9371 1993 20  0000 C CNN
+F 2 "servo:C_0603_1608Metric" H 9300 2050 60  0001 C CNN
+F 3 "" H 9300 2150 60  0000 C CNN
+	1    9300 2150
+	0    1    1    0   
+$EndComp
+$Comp
+L servo:5VH #PWR0189
+U 1 1 5E3339D7
+P 9300 2000
+F 0 "#PWR0189" H 9300 1800 20  0001 C CNN
+F 1 "5VH" H 9305 2157 28  0000 C CNN
+F 2 "" H 9300 2000 50  0001 C CNN
+F 3 "" H 9300 2000 50  0001 C CNN
+	1    9300 2000
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	8550 2100 9000 2100
+$Comp
+L servo:GNDH #PWR0190
+U 1 1 5E333B21
+P 9300 2350
+F 0 "#PWR0190" H 9300 2100 30  0001 C CNN
+F 1 "GNDH" H 9300 2192 30  0000 C CNN
+F 2 "" H 9300 2350 50  0001 C CNN
+F 3 "" H 9300 2350 50  0001 C CNN
+	1    9300 2350
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	6750 2100 6750 2150
+$Comp
+L servo:Capacitor C?
+U 1 1 5E33EC9B
+P 6750 2250
+AR Path="/5DEE980E/5E33EC9B" Ref="C?"  Part="1" 
+AR Path="/5E2F3BE3/5E33EC9B" Ref="C?"  Part="1" 
+AR Path="/605BEC04/5E33EC9B" Ref="C?"  Part="1" 
+AR Path="/5DE49152/5E33EC9B" Ref="C917"  Part="1" 
+F 0 "C917" V 6778 2046 20  0000 L BNN
+F 1 "100nF" V 6821 2093 20  0000 C CNN
+F 2 "servo:C_0603_1608Metric" H 6750 2150 60  0001 C CNN
+F 3 "" H 6750 2250 60  0000 C CNN
+	1    6750 2250
+	0    1    1    0   
+$EndComp
+$Comp
+L servo:3V3 #PWR?
+U 1 1 5E349DDD
+P 6750 2100
+AR Path="/5DCD812E/5E349DDD" Ref="#PWR?"  Part="1" 
+AR Path="/5DD4DF4C/5E349DDD" Ref="#PWR?"  Part="1" 
+AR Path="/5DE49152/5E349DDD" Ref="#PWR0192"  Part="1" 
+F 0 "#PWR0192" H 6767 2309 20  0001 C CNN
+F 1 "3V3" H 6767 2257 30  0000 C CNN
+F 2 "" H 6750 2100 70  0000 C CNN
+F 3 "" H 6750 2100 70  0000 C CNN
+	1    6750 2100
+	1    0    0    -1  
+$EndComp
+$Comp
+L servo:GND #PWR_?
+U 1 1 5E3E3460
+P 6750 2450
+AR Path="/5DD4DF4C/5E3E3460" Ref="#PWR_?"  Part="1" 
+AR Path="/5DE49152/5E3E3460" Ref="#PWR_0101"  Part="1" 
+F 0 "#PWR_0101" H 6755 2301 20  0001 C CNN
+F 1 "GND" H 6750 2292 30  0000 C CNN
+F 2 "" H 6750 2450 70  0000 C CNN
+F 3 "" H 6750 2450 70  0000 C CNN
+	1    6750 2450
 	1    0    0    -1  
 $EndComp
 $EndSCHEMATC

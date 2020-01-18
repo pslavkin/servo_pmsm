@@ -1,5 +1,6 @@
-(module BGA337CP80_19X19_1600X1600X140B50N (layer F.Cu) (tedit 5E1DB077)
-  (fp_text reference U1_501 (at -6.425595 -10.592685) (layer F.SilkS)
+(module BGA337CP80_19X19_1600X1600X140B50N (layer F.Cu) (tedit 5E22B0CE)
+  (clearance 0.1238)
+  (fp_text reference U301 (at -6.425595 -10.592685) (layer F.SilkS)
     (effects (font (size 1.093724 1.093724) (thickness 0.015)))
   )
   (fp_text value TMS320F28388DZWTS (at 13.63977 10.534555) (layer F.Fab)

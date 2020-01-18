@@ -159,7 +159,7 @@ ENDAT
 $Sheet
 S 10550 2300 1300 1150
 U 5F8D42C2
-F0 "sheet5F8D42BF" 50
+F0 "endat" 50
 F1 "endat.sch" 50
 $EndSheet
 $EndSCHEMATC

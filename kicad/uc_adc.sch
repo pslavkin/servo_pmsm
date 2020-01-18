@@ -255,17 +255,6 @@ $EndComp
 NoConn ~ 6700 3750
 NoConn ~ 6700 4950
 $Comp
-L servo:Resistor R302
-U 1 1 5E7E9D3C
-P 2100 2450
-F 0 "R302" H 1950 2500 20  0000 C CNN
-F 1 "10e" H 2200 2500 20  0000 C CNN
-F 2 "Resistor_SMD:R_0603_1608Metric" H 1600 2350 60  0001 C CNN
-F 3 "" H 1700 2450 60  0001 C CNN
-	1    2100 2450
-	1    0    0    -1  
-$EndComp
-$Comp
 L servo:TPD4E001QDBV IC?
 U 1 1 5E7ECD00
 P 2700 1850
@@ -312,15 +301,11 @@ Wire Wire Line
 Wire Wire Line
 	2600 2150 2600 2550
 Wire Wire Line
-	2300 2650 2800 2650
-Wire Wire Line
 	2800 2650 2800 2150
 Wire Wire Line
 	2950 2750 2950 1550
 Wire Wire Line
 	2950 1550 2800 1550
-Wire Wire Line
-	2300 2750 2950 2750
 $Comp
 L servo:TPD4E001QDBV IC?
 U 1 1 5E814358
@@ -498,110 +483,36 @@ Wire Wire Line
 Wire Wire Line
 	5350 1550 5200 1550
 Wire Wire Line
-	3050 2850 2300 2850
-Wire Wire Line
 	3050 1550 3050 2850
-Wire Wire Line
-	2300 2950 3200 2950
 Wire Wire Line
 	3200 2150 3200 2950
 Wire Wire Line
-	3400 3450 2300 3450
-Wire Wire Line
 	3400 2150 3400 3450
 Wire Wire Line
-	2300 3550 3550 3550
-Wire Wire Line
 	3550 1550 3550 3550
-Wire Wire Line
-	3650 3650 2300 3650
 Wire Wire Line
 	3650 1550 3650 3650
 Wire Wire Line
 	3800 2150 3800 3850
 Wire Wire Line
-	4000 3950 2300 3950
-Wire Wire Line
 	4000 2150 4000 3950
-Wire Wire Line
-	4150 4150 2300 4150
 Wire Wire Line
 	4150 1550 4150 4150
 Wire Wire Line
-	2300 4250 4250 4250
-Wire Wire Line
-	4400 4350 2300 4350
-Wire Wire Line
 	4400 2150 4400 4350
-Wire Wire Line
-	2300 4450 4600 4450
 Wire Wire Line
 	4600 2150 4600 4450
 Wire Wire Line
-	4750 4650 2300 4650
-Wire Wire Line
-	2300 4750 4850 4750
-Wire Wire Line
 	4850 1550 4850 4750
-Wire Wire Line
-	5000 4850 2300 4850
 Wire Wire Line
 	5000 2150 5000 4850
 Wire Wire Line
-	2300 5050 5200 5050
-Wire Wire Line
 	5200 2150 5200 5050
 Wire Wire Line
-	5350 5150 2300 5150
-Wire Wire Line
 	5350 1550 5350 5150
-Wire Wire Line
-	1900 5150 1800 5150
-Wire Wire Line
-	1800 5050 1900 5050
-Wire Wire Line
-	1900 4850 1800 4850
-Wire Wire Line
-	1900 4750 1800 4750
-Wire Wire Line
-	1800 4650 1900 4650
-Wire Wire Line
-	1900 4450 1800 4450
-Wire Wire Line
-	1800 4350 1900 4350
-Wire Wire Line
-	1900 4250 1800 4250
-Wire Wire Line
-	1800 4150 1900 4150
-Wire Wire Line
-	1900 3950 1800 3950
-Wire Wire Line
-	1800 3850 1900 3850
-Wire Wire Line
-	1900 3650 1800 3650
-Wire Wire Line
-	1900 3450 1800 3450
-Wire Wire Line
-	1800 3550 1900 3550
-Wire Wire Line
-	1900 2950 1800 2950
-Wire Wire Line
-	1800 2850 1900 2850
-Wire Wire Line
-	1900 2750 1800 2750
-Wire Wire Line
-	1800 2650 1900 2650
-Wire Wire Line
-	1900 2550 1800 2550
-Wire Wire Line
-	1800 2450 1900 2450
-Wire Wire Line
-	2300 2450 2450 2450
 Connection ~ 2450 2450
 Wire Wire Line
 	2450 2450 7050 2450
-Wire Wire Line
-	2300 2550 2600 2550
 Connection ~ 2600 2550
 Wire Wire Line
 	2600 2550 7050 2550
@@ -626,8 +537,6 @@ Connection ~ 3550 3550
 Wire Wire Line
 	3650 3650 7050 3650
 Connection ~ 3650 3650
-Wire Wire Line
-	2300 3850 3800 3850
 Connection ~ 3800 3850
 Wire Wire Line
 	3800 3850 7050 3850
@@ -636,244 +545,75 @@ Wire Wire Line
 Connection ~ 4000 3950
 Wire Wire Line
 	4150 4150 7050 4150
-Connection ~ 4150 4150
 Wire Wire Line
 	4250 4250 7050 4250
-Connection ~ 4250 4250
-Wire Wire Line
-	4250 4200 4250 4250
 Wire Wire Line
 	4400 4350 7050 4350
 Wire Wire Line
-	4250 1550 4250 4250
-Connection ~ 4400 4350
-Wire Wire Line
 	4600 4450 7050 4450
-Connection ~ 4600 4450
 Wire Wire Line
 	4750 4650 7050 4650
-Connection ~ 4750 4650
 Wire Wire Line
 	4850 4750 7050 4750
-Connection ~ 4850 4750
 Wire Wire Line
 	5000 4850 7050 4850
 Wire Wire Line
 	4750 1550 4750 4650
-Connection ~ 5000 4850
 Wire Wire Line
 	5200 5050 7050 5050
-Connection ~ 5200 5050
 Wire Wire Line
 	5350 5150 7050 5150
+Wire Wire Line
+	1800 2650 2800 2650
+Wire Wire Line
+	1800 2750 2950 2750
+Wire Wire Line
+	1800 2850 3050 2850
+Wire Wire Line
+	1800 2950 3200 2950
+Wire Wire Line
+	1800 2550 2600 2550
+Wire Wire Line
+	1800 2450 2450 2450
+Wire Wire Line
+	1800 3450 3400 3450
+Wire Wire Line
+	1800 3550 3550 3550
+Wire Wire Line
+	1800 3650 3650 3650
+Wire Wire Line
+	1800 3850 3800 3850
+Wire Wire Line
+	1800 3950 4000 3950
 Connection ~ 5350 5150
-$Comp
-L servo:Resistor R303
-U 1 1 5E953ABF
-P 2100 2550
-F 0 "R303" H 1950 2600 20  0000 C CNN
-F 1 "10e" H 2200 2600 20  0000 C CNN
-F 2 "Resistor_SMD:R_0603_1608Metric" H 1600 2450 60  0001 C CNN
-F 3 "" H 1700 2550 60  0001 C CNN
-	1    2100 2550
-	1    0    0    -1  
-$EndComp
-$Comp
-L servo:Resistor R304
-U 1 1 5E953AE9
-P 2100 2650
-F 0 "R304" H 1950 2700 20  0000 C CNN
-F 1 "10e" H 2200 2700 20  0000 C CNN
-F 2 "Resistor_SMD:R_0603_1608Metric" H 1600 2550 60  0001 C CNN
-F 3 "" H 1700 2650 60  0001 C CNN
-	1    2100 2650
-	1    0    0    -1  
-$EndComp
-$Comp
-L servo:Resistor R305
-U 1 1 5E953B15
-P 2100 2750
-F 0 "R305" H 1950 2800 20  0000 C CNN
-F 1 "10e" H 2200 2800 20  0000 C CNN
-F 2 "Resistor_SMD:R_0603_1608Metric" H 1600 2650 60  0001 C CNN
-F 3 "" H 1700 2750 60  0001 C CNN
-	1    2100 2750
-	1    0    0    -1  
-$EndComp
-$Comp
-L servo:Resistor R306
-U 1 1 5E953B43
-P 2100 2850
-F 0 "R306" H 1950 2900 20  0000 C CNN
-F 1 "10e" H 2200 2900 20  0000 C CNN
-F 2 "Resistor_SMD:R_0603_1608Metric" H 1600 2750 60  0001 C CNN
-F 3 "" H 1700 2850 60  0001 C CNN
-	1    2100 2850
-	1    0    0    -1  
-$EndComp
-$Comp
-L servo:Resistor R307
-U 1 1 5E953B79
-P 2100 2950
-F 0 "R307" H 1950 3000 20  0000 C CNN
-F 1 "10e" H 2200 3000 20  0000 C CNN
-F 2 "Resistor_SMD:R_0603_1608Metric" H 1600 2850 60  0001 C CNN
-F 3 "" H 1700 2950 60  0001 C CNN
-	1    2100 2950
-	1    0    0    -1  
-$EndComp
-$Comp
-L servo:Resistor R308
-U 1 1 5E953BEF
-P 2100 3450
-F 0 "R308" H 1950 3500 20  0000 C CNN
-F 1 "10e" H 2200 3500 20  0000 C CNN
-F 2 "Resistor_SMD:R_0603_1608Metric" H 1600 3350 60  0001 C CNN
-F 3 "" H 1700 3450 60  0001 C CNN
-	1    2100 3450
-	1    0    0    -1  
-$EndComp
-$Comp
-L servo:Resistor R309
-U 1 1 5E953C35
-P 2100 3550
-F 0 "R309" H 1950 3600 20  0000 C CNN
-F 1 "10e" H 2200 3600 20  0000 C CNN
-F 2 "Resistor_SMD:R_0603_1608Metric" H 1600 3450 60  0001 C CNN
-F 3 "" H 1700 3550 60  0001 C CNN
-	1    2100 3550
-	1    0    0    -1  
-$EndComp
-$Comp
-L servo:Resistor R310
-U 1 1 5E953C6B
-P 2100 3650
-F 0 "R310" H 1950 3700 20  0000 C CNN
-F 1 "10e" H 2200 3700 20  0000 C CNN
-F 2 "Resistor_SMD:R_0603_1608Metric" H 1600 3550 60  0001 C CNN
-F 3 "" H 1700 3650 60  0001 C CNN
-	1    2100 3650
-	1    0    0    -1  
-$EndComp
-$Comp
-L servo:Resistor R311
-U 1 1 5E953CA5
-P 2100 3850
-F 0 "R311" H 1950 3900 20  0000 C CNN
-F 1 "10e" H 2200 3900 20  0000 C CNN
-F 2 "Resistor_SMD:R_0603_1608Metric" H 1600 3750 60  0001 C CNN
-F 3 "" H 1700 3850 60  0001 C CNN
-	1    2100 3850
-	1    0    0    -1  
-$EndComp
-$Comp
-L servo:Resistor R312
-U 1 1 5E953CE5
-P 2100 3950
-F 0 "R312" H 1950 4000 20  0000 C CNN
-F 1 "10e" H 2200 4000 20  0000 C CNN
-F 2 "Resistor_SMD:R_0603_1608Metric" H 1600 3850 60  0001 C CNN
-F 3 "" H 1700 3950 60  0001 C CNN
-	1    2100 3950
-	1    0    0    -1  
-$EndComp
-$Comp
-L servo:Resistor R313
-U 1 1 5E953D21
-P 2100 4150
-F 0 "R313" H 1950 4200 20  0000 C CNN
-F 1 "10e" H 2200 4200 20  0000 C CNN
-F 2 "Resistor_SMD:R_0603_1608Metric" H 1600 4050 60  0001 C CNN
-F 3 "" H 1700 4150 60  0001 C CNN
-	1    2100 4150
-	1    0    0    -1  
-$EndComp
-$Comp
-L servo:Resistor R314
-U 1 1 5E953D67
-P 2100 4250
-F 0 "R314" H 1950 4300 20  0000 C CNN
-F 1 "10e" H 2200 4300 20  0000 C CNN
-F 2 "Resistor_SMD:R_0603_1608Metric" H 1600 4150 60  0001 C CNN
-F 3 "" H 1700 4250 60  0001 C CNN
-	1    2100 4250
-	1    0    0    -1  
-$EndComp
-$Comp
-L servo:Resistor R315
-U 1 1 5E953E07
-P 2100 4350
-F 0 "R315" H 1950 4400 20  0000 C CNN
-F 1 "10e" H 2200 4400 20  0000 C CNN
-F 2 "Resistor_SMD:R_0603_1608Metric" H 1600 4250 60  0001 C CNN
-F 3 "" H 1700 4350 60  0001 C CNN
-	1    2100 4350
-	1    0    0    -1  
-$EndComp
-$Comp
-L servo:Resistor R316
-U 1 1 5E953E4D
-P 2100 4450
-F 0 "R316" H 1950 4500 20  0000 C CNN
-F 1 "10e" H 2200 4500 20  0000 C CNN
-F 2 "Resistor_SMD:R_0603_1608Metric" H 1600 4350 60  0001 C CNN
-F 3 "" H 1700 4450 60  0001 C CNN
-	1    2100 4450
-	1    0    0    -1  
-$EndComp
-$Comp
-L servo:Resistor R317
-U 1 1 5E953E95
-P 2100 4650
-F 0 "R317" H 1950 4700 20  0000 C CNN
-F 1 "10e" H 2200 4700 20  0000 C CNN
-F 2 "Resistor_SMD:R_0603_1608Metric" H 1600 4550 60  0001 C CNN
-F 3 "" H 1700 4650 60  0001 C CNN
-	1    2100 4650
-	1    0    0    -1  
-$EndComp
-$Comp
-L servo:Resistor R318
-U 1 1 5E953EDF
-P 2100 4750
-F 0 "R318" H 1950 4800 20  0000 C CNN
-F 1 "10e" H 2200 4800 20  0000 C CNN
-F 2 "Resistor_SMD:R_0603_1608Metric" H 1600 4650 60  0001 C CNN
-F 3 "" H 1700 4750 60  0001 C CNN
-	1    2100 4750
-	1    0    0    -1  
-$EndComp
-$Comp
-L servo:Resistor R319
-U 1 1 5E953F27
-P 2100 4850
-F 0 "R319" H 1950 4900 20  0000 C CNN
-F 1 "10e" H 2200 4900 20  0000 C CNN
-F 2 "Resistor_SMD:R_0603_1608Metric" H 1600 4750 60  0001 C CNN
-F 3 "" H 1700 4850 60  0001 C CNN
-	1    2100 4850
-	1    0    0    -1  
-$EndComp
-$Comp
-L servo:Resistor R320
-U 1 1 5E953FC8
-P 2100 5050
-F 0 "R320" H 1950 5100 20  0000 C CNN
-F 1 "10e" H 2200 5100 20  0000 C CNN
-F 2 "Resistor_SMD:R_0603_1608Metric" H 1600 4950 60  0001 C CNN
-F 3 "" H 1700 5050 60  0001 C CNN
-	1    2100 5050
-	1    0    0    -1  
-$EndComp
-$Comp
-L servo:Resistor R321
-U 1 1 5E954018
-P 2100 5150
-F 0 "R321" H 1950 5200 20  0000 C CNN
-F 1 "10e" H 2200 5200 20  0000 C CNN
-F 2 "Resistor_SMD:R_0603_1608Metric" H 1600 5050 60  0001 C CNN
-F 3 "" H 1700 5150 60  0001 C CNN
-	1    2100 5150
-	1    0    0    -1  
-$EndComp
+Connection ~ 5200 5050
+Connection ~ 5000 4850
+Connection ~ 4850 4750
+Connection ~ 4750 4650
+Connection ~ 4600 4450
+Connection ~ 4400 4350
+Wire Wire Line
+	4250 1550 4250 4250
+Wire Wire Line
+	4250 4200 4250 4250
+Connection ~ 4250 4250
+Connection ~ 4150 4150
+Wire Wire Line
+	1800 5150 5350 5150
+Wire Wire Line
+	1800 5050 5200 5050
+Wire Wire Line
+	1800 4850 5000 4850
+Wire Wire Line
+	1800 4750 4850 4750
+Wire Wire Line
+	1800 4650 4750 4650
+Wire Wire Line
+	1800 4450 4600 4450
+Wire Wire Line
+	1800 4350 4400 4350
+Wire Wire Line
+	1800 4250 4250 4250
+Wire Wire Line
+	1800 4150 4150 4150
 $EndSCHEMATC
