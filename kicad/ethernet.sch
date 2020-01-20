@@ -46,8 +46,6 @@ Text GLabel 5550 5000 0    50   Input ~ 0
 ENET_CRS
 Text GLabel 8700 3900 2    50   Input ~ 0
 ENET_MDIO
-Text GLabel 8700 3800 2    50   Input ~ 0
-ENET_MDC
 Text GLabel 9650 4300 2    50   Input ~ 0
 ENET_RST
 Text GLabel 9650 4200 2    50   Input ~ 0
@@ -527,13 +525,13 @@ $EndComp
 $Comp
 L servo:Resistor R208
 U 1 1 63C6822E
-P 10800 4200
-F 0 "R208" V 10778 4250 20  0000 L CNN
-F 1 "2.2k" V 10821 4250 20  0000 L CNN
-F 2 "Resistor_SMD:R_0603_1608Metric" H 10300 4100 60  0001 C CNN
-F 3 "" H 10400 4200 60  0001 C CNN
-F 4 "2.2k" V -500 2000 60  0001 C CNN "ValueDisplayed"
-	1    10800 4200
+P 10850 4000
+F 0 "R208" V 10828 4050 20  0000 L CNN
+F 1 "2.2k" V 10871 4050 20  0000 L CNN
+F 2 "Resistor_SMD:R_0603_1608Metric" H 10350 3900 60  0001 C CNN
+F 3 "" H 10450 4000 60  0001 C CNN
+F 4 "2.2k" V -450 1800 60  0001 C CNN "ValueDisplayed"
+	1    10850 4000
 	0    1    1    0   
 $EndComp
 Wire Wire Line
@@ -591,12 +589,12 @@ $EndComp
 $Comp
 L servo:3V3 #PWR0206
 U 1 1 63C68255
-P 10800 3950
-F 0 "#PWR0206" H 10805 4157 20  0001 C CNN
-F 1 "3V3" H 10805 4107 28  0000 C CNN
-F 2 "" H 10800 3950 50  0001 C CNN
-F 3 "" H 10800 3950 50  0001 C CNN
-	1    10800 3950
+P 10950 3750
+F 0 "#PWR0206" H 10955 3957 20  0001 C CNN
+F 1 "3V3" H 10955 3907 28  0000 C CNN
+F 2 "" H 10950 3750 50  0001 C CNN
+F 3 "" H 10950 3750 50  0001 C CNN
+	1    10950 3750
 	1    0    0    -1  
 $EndComp
 $Comp
@@ -628,7 +626,7 @@ L servo:Resistor R203
 U 1 1 63C68282
 P 8950 4500
 F 0 "R203" H 8950 4615 20  0000 C CNN
-F 1 "0e(dnp)" H 8950 4572 20  0000 C CNN
+F 1 "0e" H 8950 4572 20  0000 C CNN
 F 2 "Resistor_SMD:R_0603_1608Metric" H 8450 4400 60  0001 C CNN
 F 3 "" H 8550 4500 60  0001 C CNN
 F 4 "10.0k" V -50 3300 60  0001 C CNN "ValueDisplayed"
@@ -642,65 +640,65 @@ EtherNET
 $Comp
 L servo:OSC_4P_1_TRI-STATE Y?
 U 1 1 63C6828B
-P 9250 5100
+P 9250 5350
 AR Path="/5DD4DF4C/63C6828B" Ref="Y?"  Part="1" 
 AR Path="/5DC3DC9E/63C6828B" Ref="Y201"  Part="1" 
 AR Path="/5DC4A59D/63C6828B" Ref="Y?"  Part="1" 
-F 0 "Y201" H 9150 5300 39  0000 L BNN
-F 1 "~" H 9250 5350 39  0000 C CNN
-F 2 "Oscillator:Oscillator_SMD_SeikoEpson_SG210-4Pin_2.5x2.0mm" H 9300 5050 60  0001 C CNN
-F 3 "../doc/datasheets//ECS-2520S.pdf" H 9150 5650 60  0001 C CNN
-	1    9250 5100
+F 0 "Y201" H 9250 5643 39  0000 C CNN
+F 1 "dnp" H 9250 5568 39  0000 C CNN
+F 2 "Oscillator:Oscillator_SMD_SeikoEpson_SG210-4Pin_2.5x2.0mm" H 9300 5300 60  0001 C CNN
+F 3 "../doc/datasheets//ECS-2520S.pdf" H 9150 5900 60  0001 C CNN
+	1    9250 5350
 	1    0    0    -1  
 $EndComp
 $Comp
 L servo:3V3 #PWR?
 U 1 1 63C68292
-P 9600 5000
+P 9600 5250
 AR Path="/5EAA846A/63C68292" Ref="#PWR?"  Part="1" 
 AR Path="/5DC3DC9E/63C68292" Ref="#PWR0203"  Part="1" 
 AR Path="/5DC4A59D/63C68292" Ref="#PWR?"  Part="1" 
-F 0 "#PWR0203" H 9605 5210 20  0001 C CNN
-F 1 "3V3" H 9605 5158 30  0000 C CNN
-F 2 "" H 9600 5000 70  0000 C CNN
-F 3 "" H 9600 5000 70  0000 C CNN
-	1    9600 5000
+F 0 "#PWR0203" H 9605 5460 20  0001 C CNN
+F 1 "3V3" H 9605 5408 30  0000 C CNN
+F 2 "" H 9600 5250 70  0000 C CNN
+F 3 "" H 9600 5250 70  0000 C CNN
+	1    9600 5250
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
-	9500 5000 9600 5000
+	9500 5250 9600 5250
 Wire Wire Line
-	9500 5200 9600 5200
+	9500 5450 9600 5450
 Wire Wire Line
-	9600 5200 9600 5000
-Connection ~ 9600 5000
+	9600 5450 9600 5250
+Connection ~ 9600 5250
 Wire Wire Line
-	9000 5200 8950 5200
+	9000 5450 8950 5450
 Wire Wire Line
-	8950 5200 8950 5450
+	8950 5450 8950 5700
 Wire Wire Line
 	8550 4500 8750 4500
 Wire Wire Line
-	8750 4500 8750 5000
+	8750 4500 8750 5250
 Wire Wire Line
-	8750 5000 9000 5000
+	8750 5250 9000 5250
 Connection ~ 8750 4500
 $Comp
 L servo:GND #GND_0204
 U 1 1 63C682A2
-P 8950 5450
-F 0 "#GND_0204" H 8955 5301 20  0001 C CNN
-F 1 "GND" H 8950 5292 30  0000 C CNN
-F 2 "" H 8950 5450 70  0000 C CNN
-F 3 "" H 8950 5450 70  0000 C CNN
-	1    8950 5450
+P 8950 5700
+F 0 "#GND_0204" H 8955 5551 20  0001 C CNN
+F 1 "GND" H 8950 5542 30  0000 C CNN
+F 2 "" H 8950 5700 70  0000 C CNN
+F 3 "" H 8950 5700 70  0000 C CNN
+	1    8950 5700
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
 	9050 3400 9650 3400
-Text Notes 9250 5450 0    20   ~ 0
+Text Notes 9150 5650 0    20   ~ 0
 you could choose between\n uC out clk, oscilator for ecah PHY\n or share oscilator to many PHY's using uC\n out clk path
-Text Notes 10900 4350 0    20   ~ 0
+Text Notes 11100 4300 0    20   ~ 0
 the pullup of led_0 is mandatory, but to\n drive the led you could choose between \nPHY or uC populating/unpopulating the resistor
 Text Notes 6700 2000 0    20   ~ 0
 I choose transfeormer spare part instead of the embedded shielded RJ45\n plus leds, cause noy I can choose any format connector  RJ45 and\n maybe add PoE then. And are halt the price\n\n
@@ -832,16 +830,15 @@ Wire Wire Line
 	8650 4200 8650 4100
 Connection ~ 8650 4100
 NoConn ~ 8650 4700
-NoConn ~ 8550 4900
 $Comp
 L servo:3V3 #PWR0209
 U 1 1 5E379A32
-P 13450 1650
-F 0 "#PWR0209" H 13455 1857 20  0001 C CNN
-F 1 "3V3" H 13455 1807 28  0000 C CNN
-F 2 "" H 13450 1650 50  0001 C CNN
-F 3 "" H 13450 1650 50  0001 C CNN
-	1    13450 1650
+P 13400 1600
+F 0 "#PWR0209" H 13405 1807 20  0001 C CNN
+F 1 "3V3" H 13405 1757 28  0000 C CNN
+F 2 "" H 13400 1600 50  0001 C CNN
+F 3 "" H 13400 1600 50  0001 C CNN
+	1    13400 1600
 	1    0    0    -1  
 $EndComp
 $Comp
@@ -859,14 +856,11 @@ $EndComp
 Wire Wire Line
 	13450 1650 13450 1800
 Wire Wire Line
-	10800 3950 10800 4000
+	10850 3750 10850 3800
 Wire Wire Line
 	8550 3600 10550 3600
 Wire Wire Line
 	10550 4400 10550 3600
-Connection ~ 10800 4400
-Wire Wire Line
-	10800 4400 10550 4400
 Wire Wire Line
 	3450 2800 3650 2800
 Wire Wire Line
@@ -916,8 +910,6 @@ Wire Wire Line
 	13650 3500 13350 3500
 Wire Wire Line
 	13350 3500 13350 4400
-Wire Wire Line
-	10800 4400 13350 4400
 Text GLabel 12950 2500 0    50   Input ~ 0
 USB_D+
 Text GLabel 12950 2400 0    50   Input ~ 0
@@ -961,8 +953,6 @@ Text Notes 7050 7700 0    197  ~ 39
 USB HOST
 Text Notes 7550 7750 0    20   ~ 0
 it's just an USB protection
-Text Notes -5250 -50  0    787  ~ 157
-OJO con el GND y el EARTH SPERAR
 $Comp
 L servo:Earth #PWR0129
 U 1 1 5E5959F5
@@ -1092,8 +1082,6 @@ Wire Wire Line
 Connection ~ 8700 8350
 NoConn ~ 8100 8250
 NoConn ~ 8100 8450
-NoConn ~ 13650 3800
-NoConn ~ 13650 4100
 Wire Wire Line
 	11750 3000 13650 3000
 Wire Wire Line
@@ -1103,8 +1091,60 @@ Wire Wire Line
 	12100 2900 12200 2900
 Wire Wire Line
 	12200 1850 12200 2900
+Text GLabel 8700 3800 2    50   Input ~ 0
+ENET_MDCLK
+$Comp
+L servo:Resistor R211
+U 1 1 5EF6459C
+P 11050 4000
+F 0 "R211" V 11028 4050 20  0000 L CNN
+F 1 "2.2k" V 11071 4050 20  0000 L CNN
+F 2 "Resistor_SMD:R_0603_1608Metric" H 10550 3900 60  0001 C CNN
+F 3 "" H 10650 4000 60  0001 C CNN
+F 4 "2.2k" V -250 1800 60  0001 C CNN "ValueDisplayed"
+	1    11050 4000
+	0    1    1    0   
+$EndComp
+$Comp
+L servo:Resistor R213
+U 1 1 5EF6E068
+P 13300 2000
+F 0 "R213" V 13278 2050 20  0000 L CNN
+F 1 "470" V 13321 2050 20  0000 L CNN
+F 2 "Resistor_SMD:R_0603_1608Metric" H 12800 1900 60  0001 C CNN
+F 3 "" H 12900 2000 60  0001 C CNN
+F 4 "470" V 3700 -2500 60  0001 C CNN "ValueDisplayed"
+	1    13300 2000
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	13300 1650 13300 1800
+Wire Wire Line
+	13400 1600 13400 1650
+Connection ~ 13400 1650
+Wire Wire Line
+	13400 1650 13300 1650
+Wire Wire Line
+	13300 2200 13300 3800
+Wire Wire Line
+	13300 3800 13650 3800
 Wire Wire Line
 	15150 3650 15150 3700
+Connection ~ 15150 3700
+Wire Wire Line
+	15150 3900 15150 4350
+Connection ~ 15150 3900
+Wire Wire Line
+	15150 3850 15150 3900
+Connection ~ 15150 3850
+Wire Wire Line
+	15150 3700 15150 3750
+Connection ~ 15150 3750
+Wire Wire Line
+	15150 3800 15150 3850
+Wire Wire Line
+	15150 3750 15150 3800
+Connection ~ 15150 3800
 $Comp
 L servo:0821-1X1T-36-F J201
 U 1 1 5E23A3EB
@@ -1117,18 +1157,34 @@ F 3 "../doc/datasheets/dr-MAG-0821-1X1T-36-F.pdf" H 14150 4550 50  0001 L BNN
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
-	15150 3900 15150 4350
+	13450 1650 13400 1650
 Wire Wire Line
-	15150 3700 15150 3750
-Connection ~ 15150 3700
-Connection ~ 15150 3900
-Connection ~ 15150 3750
+	13500 4550 11050 4550
 Wire Wire Line
-	15150 3750 15150 3800
-Connection ~ 15150 3800
+	10550 4900 8550 4900
 Wire Wire Line
-	15150 3800 15150 3850
-Connection ~ 15150 3850
+	10550 4400 10850 4400
 Wire Wire Line
-	15150 3850 15150 3900
+	10850 3750 10950 3750
+Wire Wire Line
+	11050 3750 11050 3800
+Connection ~ 10950 3750
+Wire Wire Line
+	10950 3750 11050 3750
+Wire Wire Line
+	10850 4200 10850 4400
+Connection ~ 10850 4400
+Wire Wire Line
+	10850 4400 13350 4400
+Wire Wire Line
+	11050 4200 11050 4550
+Connection ~ 11050 4550
+Wire Wire Line
+	11050 4550 10550 4550
+Wire Wire Line
+	13650 4100 13500 4100
+Wire Wire Line
+	13500 4100 13500 4550
+Wire Wire Line
+	10550 4550 10550 4900
 $EndSCHEMATC

@@ -85,16 +85,16 @@ $EndComp
 $Comp
 L servo:Capacitor C?
 U 1 1 5E1AD3A3
-P 8250 3550
+P 8250 3700
 AR Path="/5DEE980E/5E1AD3A3" Ref="C?"  Part="1" 
 AR Path="/5E2F3BE3/5E1AD3A3" Ref="C?"  Part="1" 
 AR Path="/605BEC04/5E1AD3A3" Ref="C1605"  Part="1" 
 AR Path="/5DE49152/5E1AD3A3" Ref="C?"  Part="1" 
-F 0 "C1605" V 8278 3441 20  0000 R CNN
-F 1 "330p" V 8321 3441 20  0000 R CNN
-F 2 "servo:C_0603_1608Metric" H 8250 3450 60  0001 C CNN
-F 3 "" H 8250 3550 60  0000 C CNN
-	1    8250 3550
+F 0 "C1605" V 8278 3591 20  0000 R CNN
+F 1 "330p" V 8321 3591 20  0000 R CNN
+F 2 "servo:C_0603_1608Metric" H 8250 3600 60  0001 C CNN
+F 3 "" H 8250 3700 60  0000 C CNN
+	1    8250 3700
 	0    1    1    0   
 $EndComp
 Wire Wire Line
@@ -178,9 +178,9 @@ Wire Wire Line
 Wire Wire Line
 	8100 3000 8100 3300
 Wire Wire Line
-	7850 3200 7850 3900
+	7850 3200 7850 4050
 Wire Wire Line
-	7850 3900 8250 3900
+	7850 4050 8250 4050
 Text Notes 6700 3450 0    20   ~ 0
 It's an isolated specialized IC for volttage measurement that acept\n unipolar signal until 2V, so it has more dynamic range than AMC1301\n for example 
 Text GLabel 5500 5150 0    50   Input ~ 0
@@ -190,10 +190,10 @@ VBUS_B_N
 Text Notes 6850 1750 0    39   ~ 0
 It's intended to measure the Vbus, one per motor, but they cold be\n joined if both motor share same VBus. The Vbus informatio will be\n used by the control algorith and to drive the break resistor PWM to\n protect the rise of the Vbus more than a threshold\n\nThe input is expected not to be 220v or 380v. It's supoused to be a\n isolated low voltage to maintaint the reinforced insulation. In case\n you can't you could input 220v directly but the isolation would be\n simple
 Wire Wire Line
-	8250 3300 8250 3450
-Connection ~ 8250 3900
+	8250 3300 8250 3600
+Connection ~ 8250 4050
 Wire Wire Line
-	8250 3750 8250 3900
+	8250 3900 8250 4050
 Wire Wire Line
 	8900 3300 8800 3300
 Wire Wire Line
@@ -208,33 +208,31 @@ AR Path="/605BEC04/5E1AD417" Ref="R1611"  Part="1"
 AR Path="/5DE49152/5E1AD417" Ref="R?"  Part="1" 
 F 0 "R1611" H 9100 3415 20  0000 C CNN
 F 1 "1M" H 9100 3372 20  0000 C CNN
-F 2 "Resistor_SMD:R_0603_1608Metric" H 8600 3200 60  0001 C CNN
+F 2 "Resistor_SMD:R_1206_3216Metric_Pad1.42x1.75mm_HandSolder" H 8600 3200 60  0001 C CNN
 F 3 "" H 8700 3300 60  0001 C CNN
 	1    9100 3300
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
-	8250 3900 8800 3900
+	8250 4050 8800 4050
 Wire Wire Line
-	8800 3800 8800 3900
+	8800 3950 8800 4050
 Connection ~ 8800 3300
-Wire Wire Line
-	8800 3400 8800 3300
 Wire Wire Line
 	8800 3300 8700 3300
 $Comp
 L servo:Resistor R?
 U 1 1 5E1AD395
-P 8800 3600
+P 8800 3750
 AR Path="/5DEE980E/5E1AD395" Ref="R?"  Part="1" 
 AR Path="/5E2F3BE3/5E1AD395" Ref="R?"  Part="1" 
 AR Path="/605BEC04/5E1AD395" Ref="R1608"  Part="1" 
 AR Path="/5DE49152/5E1AD395" Ref="R?"  Part="1" 
-F 0 "R1608" V 8778 3650 20  0000 L CNN
-F 1 "1k" V 8821 3650 20  0000 L CNN
-F 2 "Resistor_SMD:R_0603_1608Metric" H 8300 3500 60  0001 C CNN
-F 3 "" H 8400 3600 60  0001 C CNN
-	1    8800 3600
+F 0 "R1608" V 8778 3800 20  0000 L CNN
+F 1 "1k" V 8821 3800 20  0000 L CNN
+F 2 "Resistor_SMD:R_0603_1608Metric" H 8300 3650 60  0001 C CNN
+F 3 "" H 8400 3750 60  0001 C CNN
+	1    8800 3750
 	0    1    1    0   
 $EndComp
 $Comp
@@ -281,7 +279,7 @@ AR Path="/5DE49152/5E1AD3C1" Ref="L?"  Part="1"
 AR Path="/605BEC04/5E1AD3C1" Ref="L1601"  Part="1" 
 F 0 "L1601" V 8594 2500 20  0000 C CNN
 F 1 "L_Small" V 8637 2500 20  0000 C CNN
-F 2 "Inductor_SMD:L_0603_1608Metric" H 8630 2440 50  0001 C CNN
+F 2 "Inductor_SMD:L_1206_3216Metric_Pad1.42x1.75mm_HandSolder" H 8630 2440 50  0001 C CNN
 F 3 "~" H 8730 2540 50  0001 C CNN
 	1    8700 2500
 	0    1    1    0   
@@ -298,7 +296,7 @@ AR Path="/5DE49152/5E1AD3CB" Ref="L?"  Part="1"
 AR Path="/605BEC04/5E1AD3CB" Ref="L1603"  Part="1" 
 F 0 "L1603" H 10398 2222 20  0000 L CNN
 F 1 "L_Small" H 10398 2179 20  0000 L CNN
-F 2 "Inductor_SMD:L_0603_1608Metric" H 10280 2140 50  0001 C CNN
+F 2 "Inductor_SMD:L_1206_3216Metric_Pad1.42x1.75mm_HandSolder" H 10280 2140 50  0001 C CNN
 F 3 "~" H 10380 2240 50  0001 C CNN
 	1    10350 2200
 	1    0    0    -1  
@@ -504,16 +502,16 @@ $EndComp
 $Comp
 L servo:Capacitor C?
 U 1 1 5E1B9A85
-P 8350 5850
+P 8350 6000
 AR Path="/5DEE980E/5E1B9A85" Ref="C?"  Part="1" 
 AR Path="/5E2F3BE3/5E1B9A85" Ref="C?"  Part="1" 
 AR Path="/605BEC04/5E1B9A85" Ref="C1606"  Part="1" 
 AR Path="/5DE49152/5E1B9A85" Ref="C?"  Part="1" 
-F 0 "C1606" V 8378 5741 20  0000 R CNN
-F 1 "330p" V 8421 5741 20  0000 R CNN
-F 2 "servo:C_0603_1608Metric" H 8350 5750 60  0001 C CNN
-F 3 "" H 8350 5850 60  0000 C CNN
-	1    8350 5850
+F 0 "C1606" V 8378 5891 20  0000 R CNN
+F 1 "330p" V 8421 5891 20  0000 R CNN
+F 2 "servo:C_0603_1608Metric" H 8350 5900 60  0001 C CNN
+F 3 "" H 8350 6000 60  0000 C CNN
+	1    8350 6000
 	0    1    1    0   
 $EndComp
 Wire Wire Line
@@ -573,7 +571,6 @@ $EndComp
 Wire Wire Line
 	8200 5600 8350 5600
 Connection ~ 8350 5600
-Connection ~ 7950 5500
 Wire Wire Line
 	7950 5200 8900 5200
 Connection ~ 7950 5200
@@ -597,58 +594,43 @@ Wire Wire Line
 Wire Wire Line
 	8200 5300 8200 5600
 Wire Wire Line
-	7950 5500 7950 6200
+	7950 5500 7950 6350
 Wire Wire Line
-	7950 6200 8350 6200
+	7950 6350 8350 6350
 Text Notes 6800 5750 0    20   ~ 0
 It's an isolated specialized IC for volttage measurement that acept\n unipolar signal until 2V, so it has more dynamic range than AMC1301\n for example 
 Wire Wire Line
-	8350 5600 8350 5750
-Connection ~ 8350 6200
+	8350 5600 8350 5900
+Connection ~ 8350 6350
 Wire Wire Line
-	8350 6050 8350 6200
+	8350 6200 8350 6350
 Wire Wire Line
 	9000 5600 8900 5600
 Wire Wire Line
 	8350 5600 8400 5600
-$Comp
-L servo:Resistor R?
-U 1 1 5E1B9AC2
-P 9200 5600
-AR Path="/5DEE980E/5E1B9AC2" Ref="R?"  Part="1" 
-AR Path="/5E2F3BE3/5E1B9AC2" Ref="R?"  Part="1" 
-AR Path="/605BEC04/5E1B9AC2" Ref="R1612"  Part="1" 
-AR Path="/5DE49152/5E1B9AC2" Ref="R?"  Part="1" 
-F 0 "R1612" H 9200 5715 20  0000 C CNN
-F 1 "1M" H 9200 5672 20  0000 C CNN
-F 2 "Resistor_SMD:R_0603_1608Metric" H 8700 5500 60  0001 C CNN
-F 3 "" H 8800 5600 60  0001 C CNN
-	1    9200 5600
-	1    0    0    -1  
-$EndComp
 Wire Wire Line
-	8350 6200 8900 6200
-Connection ~ 8900 6200
+	8350 6350 8900 6350
+Connection ~ 8900 6350
 Wire Wire Line
-	8900 6100 8900 6200
+	8900 6250 8900 6350
 Connection ~ 8900 5600
 Wire Wire Line
-	8900 5700 8900 5600
+	8900 5850 8900 5750
 Wire Wire Line
 	8900 5600 8800 5600
 $Comp
 L servo:Resistor R?
 U 1 1 5E1B9AD0
-P 8900 5900
+P 8900 6050
 AR Path="/5DEE980E/5E1B9AD0" Ref="R?"  Part="1" 
 AR Path="/5E2F3BE3/5E1B9AD0" Ref="R?"  Part="1" 
 AR Path="/605BEC04/5E1B9AD0" Ref="R1610"  Part="1" 
 AR Path="/5DE49152/5E1B9AD0" Ref="R?"  Part="1" 
-F 0 "R1610" V 8878 5950 20  0000 L CNN
-F 1 "1k" V 8921 5950 20  0000 L CNN
-F 2 "Resistor_SMD:R_0603_1608Metric" H 8400 5800 60  0001 C CNN
-F 3 "" H 8500 5900 60  0001 C CNN
-	1    8900 5900
+F 0 "R1610" V 8878 6100 20  0000 L CNN
+F 1 "1k" V 8921 6100 20  0000 L CNN
+F 2 "Resistor_SMD:R_0603_1608Metric" H 8400 5950 60  0001 C CNN
+F 3 "" H 8500 6050 60  0001 C CNN
+	1    8900 6050
 	0    1    1    0   
 $EndComp
 $Comp
@@ -695,7 +677,7 @@ AR Path="/5DE49152/5E1B9AEA" Ref="L?"  Part="1"
 AR Path="/605BEC04/5E1B9AEA" Ref="L1602"  Part="1" 
 F 0 "L1602" V 8694 4800 20  0000 C CNN
 F 1 "L_Small" V 8737 4800 20  0000 C CNN
-F 2 "Inductor_SMD:L_0603_1608Metric" H 8730 4740 50  0001 C CNN
+F 2 "Inductor_SMD:L_1206_3216Metric_Pad1.42x1.75mm_HandSolder" H 8730 4740 50  0001 C CNN
 F 3 "~" H 8830 4840 50  0001 C CNN
 	1    8800 4800
 	0    1    1    0   
@@ -712,7 +694,7 @@ AR Path="/5DE49152/5E1B9AF3" Ref="L?"  Part="1"
 AR Path="/605BEC04/5E1B9AF3" Ref="L1604"  Part="1" 
 F 0 "L1604" H 10498 4522 20  0000 L CNN
 F 1 "L_Small" H 10498 4479 20  0000 L CNN
-F 2 "Inductor_SMD:L_0603_1608Metric" H 10380 4440 50  0001 C CNN
+F 2 "Inductor_SMD:L_1206_3216Metric_Pad1.42x1.75mm_HandSolder" H 10380 4440 50  0001 C CNN
 F 3 "~" H 10480 4540 50  0001 C CNN
 	1    10450 4500
 	1    0    0    -1  
@@ -881,21 +863,6 @@ $EndComp
 Connection ~ 7850 2500
 $Comp
 L servo:Resistor R?
-U 1 1 5E256CA8
-P 9600 5600
-AR Path="/5DEE980E/5E256CA8" Ref="R?"  Part="1" 
-AR Path="/5E2F3BE3/5E256CA8" Ref="R?"  Part="1" 
-AR Path="/605BEC04/5E256CA8" Ref="R1614"  Part="1" 
-AR Path="/5DE49152/5E256CA8" Ref="R?"  Part="1" 
-F 0 "R1614" H 9600 5715 20  0000 C CNN
-F 1 "1M" H 9600 5672 20  0000 C CNN
-F 2 "Resistor_SMD:R_0603_1608Metric" H 9100 5500 60  0001 C CNN
-F 3 "" H 9200 5600 60  0001 C CNN
-	1    9600 5600
-	1    0    0    -1  
-$EndComp
-$Comp
-L servo:Resistor R?
 U 1 1 5E26C457
 P 9500 3300
 AR Path="/5DEE980E/5E26C457" Ref="R?"  Part="1" 
@@ -904,26 +871,147 @@ AR Path="/605BEC04/5E26C457" Ref="R1613"  Part="1"
 AR Path="/5DE49152/5E26C457" Ref="R?"  Part="1" 
 F 0 "R1613" H 9500 3415 20  0000 C CNN
 F 1 "1M" H 9500 3372 20  0000 C CNN
-F 2 "Resistor_SMD:R_0603_1608Metric" H 9000 3200 60  0001 C CNN
+F 2 "Resistor_SMD:R_1206_3216Metric_Pad1.42x1.75mm_HandSolder" H 9000 3200 60  0001 C CNN
 F 3 "" H 9100 3300 60  0001 C CNN
 	1    9500 3300
 	1    0    0    -1  
 $EndComp
-Connection ~ 8800 3900
-Text GLabel 9900 6200 2    50   Input ~ 0
+Connection ~ 8800 4050
+Text GLabel 9900 6350 2    50   Input ~ 0
 VBUS_B_N_H
-Text GLabel 9850 3900 2    50   Input ~ 0
+Text GLabel 9850 4050 2    50   Input ~ 0
 VBUS_A_N_H
 Text GLabel 9900 5600 2    50   Input ~ 0
 VBUS_B_P_H
 Text GLabel 9850 3300 2    50   Input ~ 0
 VBUS_A_P_H
 Wire Wire Line
-	8900 6200 9900 6200
+	8900 6350 9900 6350
 Wire Wire Line
 	9900 5600 9800 5600
 Wire Wire Line
-	8800 3900 9850 3900
+	8800 4050 9850 4050
 Wire Wire Line
 	9700 3300 9850 3300
+$Comp
+L servo:Resistor R?
+U 1 1 5E256879
+P 9100 3450
+AR Path="/5DEE980E/5E256879" Ref="R?"  Part="1" 
+AR Path="/5E2F3BE3/5E256879" Ref="R?"  Part="1" 
+AR Path="/605BEC04/5E256879" Ref="R1612"  Part="1" 
+AR Path="/5DE49152/5E256879" Ref="R?"  Part="1" 
+F 0 "R1612" H 9100 3565 20  0000 C CNN
+F 1 "1M" H 9100 3522 20  0000 C CNN
+F 2 "Resistor_SMD:R_1206_3216Metric_Pad1.42x1.75mm_HandSolder" H 8600 3350 60  0001 C CNN
+F 3 "" H 8700 3450 60  0001 C CNN
+	1    9100 3450
+	1    0    0    -1  
+$EndComp
+$Comp
+L servo:Resistor R?
+U 1 1 5E256880
+P 9500 3450
+AR Path="/5DEE980E/5E256880" Ref="R?"  Part="1" 
+AR Path="/5E2F3BE3/5E256880" Ref="R?"  Part="1" 
+AR Path="/605BEC04/5E256880" Ref="R1616"  Part="1" 
+AR Path="/5DE49152/5E256880" Ref="R?"  Part="1" 
+F 0 "R1616" H 9500 3565 20  0000 C CNN
+F 1 "1M" H 9500 3522 20  0000 C CNN
+F 2 "Resistor_SMD:R_1206_3216Metric_Pad1.42x1.75mm_HandSolder" H 9000 3350 60  0001 C CNN
+F 3 "" H 9100 3450 60  0001 C CNN
+	1    9500 3450
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	8900 3450 8800 3450
+Wire Wire Line
+	8800 3300 8800 3450
+Connection ~ 8800 3450
+Wire Wire Line
+	8800 3450 8800 3550
+Wire Wire Line
+	9700 3450 9700 3300
+Connection ~ 9700 3300
+Text Notes 9100 3600 0    20   ~ 0
+I've leave 2 for disipation \nporpouses and also for \nachive better precision
+$Comp
+L servo:Resistor R?
+U 1 1 5E2642A2
+P 9200 5600
+AR Path="/5DEE980E/5E2642A2" Ref="R?"  Part="1" 
+AR Path="/5E2F3BE3/5E2642A2" Ref="R?"  Part="1" 
+AR Path="/605BEC04/5E2642A2" Ref="R1614"  Part="1" 
+AR Path="/5DE49152/5E2642A2" Ref="R?"  Part="1" 
+F 0 "R1614" H 9200 5715 20  0000 C CNN
+F 1 "1M" H 9200 5672 20  0000 C CNN
+F 2 "Resistor_SMD:R_1206_3216Metric_Pad1.42x1.75mm_HandSolder" H 8700 5500 60  0001 C CNN
+F 3 "" H 8800 5600 60  0001 C CNN
+	1    9200 5600
+	1    0    0    -1  
+$EndComp
+$Comp
+L servo:Resistor R?
+U 1 1 5E2642A9
+P 9600 5600
+AR Path="/5DEE980E/5E2642A9" Ref="R?"  Part="1" 
+AR Path="/5E2F3BE3/5E2642A9" Ref="R?"  Part="1" 
+AR Path="/605BEC04/5E2642A9" Ref="R1617"  Part="1" 
+AR Path="/5DE49152/5E2642A9" Ref="R?"  Part="1" 
+F 0 "R1617" H 9600 5715 20  0000 C CNN
+F 1 "1M" H 9600 5672 20  0000 C CNN
+F 2 "Resistor_SMD:R_1206_3216Metric_Pad1.42x1.75mm_HandSolder" H 9100 5500 60  0001 C CNN
+F 3 "" H 9200 5600 60  0001 C CNN
+	1    9600 5600
+	1    0    0    -1  
+$EndComp
+$Comp
+L servo:Resistor R?
+U 1 1 5E2642B0
+P 9200 5750
+AR Path="/5DEE980E/5E2642B0" Ref="R?"  Part="1" 
+AR Path="/5E2F3BE3/5E2642B0" Ref="R?"  Part="1" 
+AR Path="/605BEC04/5E2642B0" Ref="R1615"  Part="1" 
+AR Path="/5DE49152/5E2642B0" Ref="R?"  Part="1" 
+F 0 "R1615" H 9200 5865 20  0000 C CNN
+F 1 "1M" H 9200 5822 20  0000 C CNN
+F 2 "Resistor_SMD:R_1206_3216Metric_Pad1.42x1.75mm_HandSolder" H 8700 5650 60  0001 C CNN
+F 3 "" H 8800 5750 60  0001 C CNN
+	1    9200 5750
+	1    0    0    -1  
+$EndComp
+$Comp
+L servo:Resistor R?
+U 1 1 5E2642B7
+P 9600 5750
+AR Path="/5DEE980E/5E2642B7" Ref="R?"  Part="1" 
+AR Path="/5E2F3BE3/5E2642B7" Ref="R?"  Part="1" 
+AR Path="/605BEC04/5E2642B7" Ref="R1618"  Part="1" 
+AR Path="/5DE49152/5E2642B7" Ref="R?"  Part="1" 
+F 0 "R1618" H 9600 5865 20  0000 C CNN
+F 1 "1M" H 9600 5822 20  0000 C CNN
+F 2 "Resistor_SMD:R_1206_3216Metric_Pad1.42x1.75mm_HandSolder" H 9100 5650 60  0001 C CNN
+F 3 "" H 9200 5750 60  0001 C CNN
+	1    9600 5750
+	1    0    0    -1  
+$EndComp
+Text Notes 9200 5900 0    20   ~ 0
+I've leave 2 for disipation \nporpouses and also for \nachive better precision
+Connection ~ 7950 5500
+Wire Wire Line
+	9000 5750 8900 5750
+Connection ~ 8900 5750
+Wire Wire Line
+	8900 5750 8900 5600
+Wire Wire Line
+	9800 5750 9800 5600
+Connection ~ 9800 5600
+Wire Wire Line
+	9400 5750 9400 5600
+Connection ~ 9400 5750
+Connection ~ 9400 5600
+Wire Wire Line
+	9300 3450 9300 3300
+Connection ~ 9300 3450
+Connection ~ 9300 3300
 $EndSCHEMATC

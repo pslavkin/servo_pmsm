@@ -1,4 +1,4 @@
-(module HD-4.3-480272 (layer F.Cu) (tedit 5E1DC320)
+(module HD-4.3-480272 (layer F.Cu) (tedit 5E2582CA)
   (descr "Through hole straight IDC box header, 2x10, 2.54mm pitch, double rows")
   (tags "Through hole IDC box header THT 2x10 2.54mm double row")
   (fp_text reference REF** (at 1.21 -6.5615) (layer F.SilkS)
@@ -55,7 +55,7 @@
   (pad 18 thru_hole oval (at 2.48 20.3625) (size 1.7272 1.7272) (drill 1.016) (layers *.Cu *.Mask))
   (pad 19 thru_hole oval (at -0.06 22.9025) (size 1.7272 1.7272) (drill 1.016) (layers *.Cu *.Mask))
   (pad 20 thru_hole oval (at 2.48 22.9025) (size 1.7272 1.7272) (drill 1.016) (layers *.Cu *.Mask))
-  (model ${KIPRJMOD}/shapes3D/NHD-4.3-480272FT-EVE2-T.STEP
+  (model ${KISYS3DMOD}/Connector_IDC.3dshapes/IDC-Header_2x10_P2.54mm_Vertical.step
     (at (xyz 0 0 0))
     (scale (xyz 1 1 1))
     (rotate (xyz 0 0 0))

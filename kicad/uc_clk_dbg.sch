@@ -14,23 +14,6 @@ Comment2 ""
 Comment3 ""
 Comment4 ""
 $EndDescr
-$Comp
-L servo:3V3 #PWR_0601
-U 1 1 5DB38F8D
-P 3150 7050
-F 0 "#PWR_0601" H 3155 7260 20  0001 C CNN
-F 1 "3V3" H 3155 7208 30  0000 C CNN
-F 2 "" H 3150 7050 70  0000 C CNN
-F 3 "" H 3150 7050 70  0000 C CNN
-	1    3150 7050
-	1    0    0    -1  
-$EndComp
-Wire Wire Line
-	3300 7700 3300 7600
-Wire Wire Line
-	2950 7600 2950 7700
-Wire Wire Line
-	3300 8250 3300 7950
 Text Notes 6150 6800 0    20   ~ 0
 I left fixed in flash mode\nif you need to change it you'll get dirty\n\n
 $Comp
@@ -100,8 +83,6 @@ F 3 "" H 10050 3400 70  0000 C CNN
 $EndComp
 Wire Wire Line
 	10050 2800 10050 3000
-Wire Wire Line
-	2500 8100 2950 8100
 Text Label 13400 3600 0    60   ~ 0
 MCU_XRSn
 Text Label 13300 2900 2    60   ~ 0
@@ -122,18 +103,6 @@ F 2 "" H 13550 2700 70  0000 C CNN
 F 3 "" H 13550 2700 70  0000 C CNN
 	1    13550 2700
 	-1   0    0    -1  
-$EndComp
-$Comp
-L servo:LED_A2_K1 D602
-U 1 1 5E170B21
-P 3300 7800
-F 0 "D602" V 3306 7930 20  0000 L CNN
-F 1 "blue@2mA" V 3346 7930 16  0000 L CNN
-F 2 "servo:LED_0603_1608Metric" H 3100 7600 60  0001 C CNN
-F 3 "" H 3100 7600 60  0001 C CNN
-F 4 "Red" V -5700 8000 60  0001 C CNN "VALUE"
-	1    3300 7800
-	0    1    1    0   
 $EndComp
 $Comp
 L servo:Resistor R610
@@ -165,7 +134,7 @@ U 1 1 5DB38F64
 P 6300 7550
 F 0 "R604" V 6278 7600 20  0000 L CNN
 F 1 "56k" V 6321 7600 20  0000 L CNN
-F 2 "Resistor_SMD:R_0603_1608Metric" H 5800 7450 60  0001 C CNN
+F 2 "Resistor_SMD:R_0805_2012Metric_Pad1.15x1.40mm_HandSolder" H 5800 7450 60  0001 C CNN
 F 3 "" H 5900 7550 60  0001 C CNN
 F 4 "56k" V -7900 4050 60  0001 C CNN "ValueDisplayed"
 	1    6300 7550
@@ -177,22 +146,10 @@ U 1 1 5DB38F63
 P 6600 7550
 F 0 "R605" V 6578 7600 20  0000 L CNN
 F 1 "56k" V 6621 7600 20  0000 L CNN
-F 2 "Resistor_SMD:R_0603_1608Metric" H 6100 7450 60  0001 C CNN
+F 2 "Resistor_SMD:R_0805_2012Metric_Pad1.15x1.40mm_HandSolder" H 6100 7450 60  0001 C CNN
 F 3 "" H 6200 7550 60  0001 C CNN
 F 4 "56k" V -7900 4050 60  0001 C CNN "ValueDisplayed"
 	1    6600 7550
-	0    1    1    0   
-$EndComp
-$Comp
-L servo:Resistor R601
-U 1 1 5E170B20
-P 2950 7400
-F 0 "R601" V 2928 7450 20  0000 L CNN
-F 1 "680" V 2971 7450 20  0000 L CNN
-F 2 "Resistor_SMD:R_0603_1608Metric" H 2450 7300 60  0001 C CNN
-F 3 "" H 2550 7400 60  0001 C CNN
-F 4 "680" V -5450 8200 60  0001 C CNN "ValueDisplayed"
-	1    2950 7400
 	0    1    1    0   
 $EndComp
 $Comp
@@ -206,18 +163,6 @@ F 3 "" H 10050 3200 50  0001 C CNN
 F 4 "2.2k" V 9950 2500 60  0001 C CNN "ValueDisplayed"
 	1    10050 3200
 	0    -1   -1   0   
-$EndComp
-$Comp
-L servo:Resistor R602
-U 1 1 5DB38F54
-P 3300 7400
-F 0 "R602" V 3278 7450 20  0000 L CNN
-F 1 "680" V 3321 7450 20  0000 L CNN
-F 2 "Resistor_SMD:R_0603_1608Metric" H 2800 7300 60  0001 C CNN
-F 3 "" H 2900 7400 60  0001 C CNN
-F 4 "680" V -5700 8200 60  0001 C CNN "ValueDisplayed"
-	1    3300 7400
-	0    1    1    0   
 $EndComp
 $Comp
 L servo:OSC_4P_1_TRI-STATE Y601
@@ -242,18 +187,6 @@ F 4 "TMS320F28388DZWTS" V 10250 2600 60  0001 C CNN "PartNumber"
 	3    11650 2800
 	1    0    0    -1  
 $EndComp
-$Comp
-L servo:LED_A2_K1 D601
-U 1 1 5E170B1E
-P 2950 7800
-F 0 "D601" V 2956 7930 20  0000 L CNN
-F 1 "blue@2mA" V 2996 7930 16  0000 L CNN
-F 2 "servo:LED_0603_1608Metric" H 2750 7600 60  0001 C CNN
-F 3 "" H 2750 7600 60  0001 C CNN
-F 4 "Red" V -5450 8000 60  0001 C CNN "VALUE"
-	1    2950 7800
-	0    1    1    0   
-$EndComp
 Connection ~ 6450 7200
 Wire Wire Line
 	6450 7200 6300 7200
@@ -261,27 +194,10 @@ Text Notes 14200 3200 0    120  ~ 0
 Reset\n
 Wire Wire Line
 	6100 8050 6600 8050
-Wire Wire Line
-	2500 8250 3300 8250
-Text GLabel 2500 8100 0    50   Input ~ 0
-RUN_LED0
-Text GLabel 2500 8250 0    50   Input ~ 0
-RUN_LED1
 Text GLabel 6100 7850 0    50   Input ~ 0
 BOOT1
 Text GLabel 6100 8050 0    50   Input ~ 0
 BOOT2
-Wire Wire Line
-	2950 7150 3150 7150
-Wire Wire Line
-	3300 7150 3300 7200
-Wire Wire Line
-	2950 7200 2950 7150
-Connection ~ 3150 7150
-Wire Wire Line
-	3150 7150 3300 7150
-Wire Wire Line
-	3150 7050 3150 7150
 Wire Wire Line
 	6450 7100 6450 7200
 Connection ~ 13900 3600
@@ -394,8 +310,6 @@ Text Label 9800 2700 2    60   ~ 0
 MCU_TMS
 Text Label 9800 2800 2    60   ~ 0
 MCU_TRSTn
-Wire Wire Line
-	2950 7950 2950 8100
 Text GLabel 7450 3800 2    60   BiDi ~ 0
 SCIA_TX
 Text GLabel 8500 4000 2    60   BiDi ~ 0
@@ -777,8 +691,6 @@ Text Notes 8000 1600 0    197  ~ 39
 CLK + JTAG + SCI\n
 Text Notes 5700 6550 0    197  ~ 39
 BOOTSRAP R's
-Text Notes 1750 6800 0    197  ~ 39
-MULTI PORPOUSE \nLEDS
 Wire Wire Line
 	13250 8200 13100 8200
 Wire Wire Line
@@ -802,19 +714,6 @@ NoConn ~ 12650 2600
 NoConn ~ 12650 2400
 Wire Wire Line
 	10800 7350 10700 7350
-Wire Wire Line
-	13900 3600 14250 3600
-$Comp
-L servo:TestPoint TP601
-U 1 1 5E22502E
-P 14250 3600
-F 0 "TP601" H 14308 3720 50  0000 L CNN
-F 1 "TestPoint" H 14308 3629 50  0000 L CNN
-F 2 "TestPoint:TestPoint_Loop_D2.50mm_Drill1.0mm" H 14450 3600 50  0001 C CNN
-F 3 "~" H 14450 3600 50  0001 C CNN
-	1    14250 3600
-	1    0    0    -1  
-$EndComp
 $Comp
 L Connector_Generic:Conn_02x06_Counter_Clockwise J601
 U 1 1 5E245156

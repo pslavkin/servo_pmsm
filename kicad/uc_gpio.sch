@@ -74,8 +74,6 @@ Text GLabel 9700 7200 2    50   Input ~ 0
 ECAT1_TX_D3
 Text GLabel 9700 9000 2    50   Input ~ 0
 ECAT_MDIO
-Text GLabel 9700 8900 2    50   Input ~ 0
-ECAT_MDC
 Text GLabel 9700 9200 2    50   Input ~ 0
 ECAT_RST
 Text GLabel 9700 8600 2    50   Input ~ 0
@@ -173,7 +171,7 @@ ENET_CRS
 Text GLabel 9700 4300 2    50   Input ~ 0
 ENET_MDIO
 Text GLabel 9700 4200 2    50   Input ~ 0
-ENET_MDC
+ENET_MDCLK
 Text GLabel 9700 5600 2    50   Input ~ 0
 ENET_RST
 Text GLabel 9700 4500 2    50   Input ~ 0
@@ -449,9 +447,9 @@ ECAT0_RJ_LED1
 Text GLabel 9700 8000 2    50   Input ~ 0
 ECAT0_RJ_LED0
 Text GLabel 9700 8300 2    50   Input ~ 0
-ECAT_LED1
+ECAT_LED_RUN
 Text GLabel 9700 8200 2    50   Input ~ 0
-ECAT_LED0
+ECAT_LED_ERR
 Text GLabel 9700 8100 2    50   Input ~ 0
 ECAT1_RJ_LED0
 Text GLabel 9700 7900 2    50   Input ~ 0
@@ -651,4 +649,6 @@ NoConn ~ 4800 9800
 NoConn ~ 4800 9900
 NoConn ~ 4800 10000
 NoConn ~ 4800 10100
+Text GLabel 9700 8900 2    50   Input ~ 0
+ECAT_MDCLK
 $EndSCHEMATC
