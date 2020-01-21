@@ -441,4 +441,318 @@ Text GLabel 8850 4750 2    50   Input ~ 0
 FAN_RPM2_H
 Text GLabel 8850 4850 2    50   Input ~ 0
 IGBT_ALARM2_H
+$Comp
+L servo:5VH #PWR?
+U 1 1 5E2DD113
+P 2000 1450
+AR Path="/5DDE8C5E/5E2DD113" Ref="#PWR?"  Part="1" 
+AR Path="/5EC40F3C/5E2DD113" Ref="#PWR0265"  Part="1" 
+F 0 "#PWR0265" H 2000 1250 20  0001 C CNN
+F 1 "5VH" H 2005 1607 28  0000 C CNN
+F 2 "" H 2000 1450 50  0001 C CNN
+F 3 "" H 2000 1450 50  0001 C CNN
+	1    2000 1450
+	-1   0    0    -1  
+$EndComp
+$Comp
+L servo:15VH #PWR?
+U 1 1 5E2DD119
+P 2750 1450
+AR Path="/5DDE8C5E/5E2DD119" Ref="#PWR?"  Part="1" 
+AR Path="/5EC40F3C/5E2DD119" Ref="#PWR0266"  Part="1" 
+F 0 "#PWR0266" H 2750 1250 20  0001 C CNN
+F 1 "15VH" H 2750 1607 28  0000 C CNN
+F 2 "" H 2750 1450 50  0001 C CNN
+F 3 "" H 2750 1450 50  0001 C CNN
+	1    2750 1450
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	2750 1450 2750 1700
+Wire Wire Line
+	2750 1700 2650 1700
+Wire Wire Line
+	2000 1450 2000 1700
+Wire Wire Line
+	2000 1700 2150 1700
+Wire Wire Line
+	3000 1900 2650 1900
+Wire Wire Line
+	2650 2000 3000 2000
+Wire Wire Line
+	3000 2100 2650 2100
+Wire Wire Line
+	2650 2200 3000 2200
+Wire Wire Line
+	3000 2300 2650 2300
+Wire Wire Line
+	3000 2500 2650 2500
+Wire Wire Line
+	3000 2400 2650 2400
+Wire Wire Line
+	2650 1800 3000 1800
+Text GLabel 3000 1800 2    50   Input ~ 0
+PWM_A_1H_H
+Text GLabel 3000 1900 2    50   Input ~ 0
+PWM_A_1L_H
+Text GLabel 3000 2000 2    50   Input ~ 0
+PWM_A_2H_H
+Text GLabel 3000 2100 2    50   Input ~ 0
+PWM_A_2L_H
+Text GLabel 3000 2200 2    50   Input ~ 0
+PWM_A_3H_H
+Text GLabel 3000 2300 2    50   Input ~ 0
+PWM_A_3L_H
+Text GLabel 3000 2400 2    50   Input ~ 0
+PWM_A_BRK_RES_H
+Text GLabel 3000 2500 2    50   Input ~ 0
+BRK_A_MEC_H
+Wire Wire Line
+	2150 2000 1800 2000
+Wire Wire Line
+	1800 2100 2150 2100
+Wire Wire Line
+	2150 2200 1800 2200
+Wire Wire Line
+	1800 2300 2150 2300
+Wire Wire Line
+	1800 2400 2150 2400
+Wire Wire Line
+	1800 1900 2150 1900
+Wire Wire Line
+	1800 1800 2150 1800
+Text GLabel 1800 1800 0    50   Input ~ 0
+SD_A1_H
+Text GLabel 1800 1900 0    50   Input ~ 0
+SD_A2_H
+Text GLabel 1800 2000 0    50   Input ~ 0
+SD_A3_H
+Text GLabel 1800 2100 0    50   Input ~ 0
+SD_A4_H
+Text GLabel 1800 2200 0    50   Input ~ 0
+SD_A_CLK_H
+Text GLabel 1800 2300 0    50   Input ~ 0
+PWM4SD_A_CLK_H
+Text GLabel 1800 2400 0    50   Input ~ 0
+NTCA1_H
+Text GLabel 1800 2500 0    50   Input ~ 0
+NTCA2_H
+Wire Wire Line
+	1800 2500 2150 2500
+Text GLabel 3000 2800 2    50   Input ~ 0
+1-WIREN_H
+Wire Wire Line
+	2650 2600 3000 2600
+Wire Wire Line
+	2650 2700 3000 2700
+Wire Wire Line
+	2650 2800 3000 2800
+Text GLabel 1800 2800 0    50   Input ~ 0
+1-WIREP_H
+Text GLabel 1800 2600 0    50   Input ~ 0
+FREE_OUT_A1_H
+Text GLabel 1800 2700 0    50   Input ~ 0
+FAN_RPM1_H
+Text GLabel 3000 2700 2    50   Input ~ 0
+IGBT_ALARM1_H
+Wire Wire Line
+	2150 2600 1800 2600
+Wire Wire Line
+	1800 2700 2150 2700
+Wire Wire Line
+	2150 2800 1800 2800
+$Comp
+L servo:GNDH #PWR?
+U 1 1 5E341B46
+P 2400 3200
+AR Path="/5DDE8C5E/5E341B46" Ref="#PWR?"  Part="1" 
+AR Path="/5EC40F3C/5E341B46" Ref="#PWR0264"  Part="1" 
+F 0 "#PWR0264" H 2400 2950 30  0001 C CNN
+F 1 "GNDH" H 2400 3042 30  0000 C CNN
+F 2 "" H 2400 3200 50  0001 C CNN
+F 3 "" H 2400 3200 50  0001 C CNN
+	1    2400 3200
+	-1   0    0    -1  
+$EndComp
+Wire Wire Line
+	2650 3150 2400 3150
+Wire Wire Line
+	2400 3150 2400 3200
+Wire Wire Line
+	2150 3150 2400 3150
+Connection ~ 2400 3150
+Text GLabel 3000 2600 2    50   Input ~ 0
+FREE_OUT_A2_H
+$Comp
+L Connector_Generic:Conn_02x13_Odd_Even J1704
+U 1 1 5E3873C9
+P 2350 2300
+F 0 "J1704" H 2400 3117 50  0000 C CNN
+F 1 "tblock2x13" H 2400 3026 50  0000 C CNN
+F 2 "Connector_IDC:IDC-Header_2x13_P2.54mm_Vertical" H 2350 2300 50  0001 C CNN
+F 3 "~" H 2350 2300 50  0001 C CNN
+	1    2350 2300
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	2650 2900 2650 3150
+Wire Wire Line
+	2150 2900 2150 3150
+$Comp
+L servo:5VH #PWR?
+U 1 1 5E3BE8B8
+P 2300 3800
+AR Path="/5DDE8C5E/5E3BE8B8" Ref="#PWR?"  Part="1" 
+AR Path="/5EC40F3C/5E3BE8B8" Ref="#PWR0267"  Part="1" 
+F 0 "#PWR0267" H 2300 3600 20  0001 C CNN
+F 1 "5VH" H 2305 3957 28  0000 C CNN
+F 2 "" H 2300 3800 50  0001 C CNN
+F 3 "" H 2300 3800 50  0001 C CNN
+	1    2300 3800
+	-1   0    0    -1  
+$EndComp
+Wire Wire Line
+	3050 4050 2950 4050
+Wire Wire Line
+	2300 3800 2300 4050
+Wire Wire Line
+	2300 4050 2450 4050
+Wire Wire Line
+	3300 4250 2950 4250
+Wire Wire Line
+	2950 4350 3300 4350
+Wire Wire Line
+	3300 4450 2950 4450
+Wire Wire Line
+	2950 4550 3300 4550
+Wire Wire Line
+	3300 4650 2950 4650
+Wire Wire Line
+	3300 4850 2950 4850
+Wire Wire Line
+	3300 4750 2950 4750
+Wire Wire Line
+	2950 4150 3300 4150
+Wire Wire Line
+	2450 4350 2100 4350
+Wire Wire Line
+	2100 4450 2450 4450
+Wire Wire Line
+	2450 4550 2100 4550
+Wire Wire Line
+	2100 4650 2450 4650
+Wire Wire Line
+	2100 4750 2450 4750
+Wire Wire Line
+	2100 4250 2450 4250
+Wire Wire Line
+	2100 4150 2450 4150
+Wire Wire Line
+	2100 4850 2450 4850
+Wire Wire Line
+	2950 4950 3300 4950
+Wire Wire Line
+	2950 5050 3300 5050
+Wire Wire Line
+	2950 5150 3300 5150
+Wire Wire Line
+	2450 4950 2100 4950
+Wire Wire Line
+	2100 5050 2450 5050
+Wire Wire Line
+	2450 5150 2100 5150
+$Comp
+L servo:GNDH #PWR?
+U 1 1 5E3BE8D7
+P 2700 5550
+AR Path="/5DDE8C5E/5E3BE8D7" Ref="#PWR?"  Part="1" 
+AR Path="/5EC40F3C/5E3BE8D7" Ref="#PWR0268"  Part="1" 
+F 0 "#PWR0268" H 2700 5300 30  0001 C CNN
+F 1 "GNDH" H 2700 5392 30  0000 C CNN
+F 2 "" H 2700 5550 50  0001 C CNN
+F 3 "" H 2700 5550 50  0001 C CNN
+	1    2700 5550
+	-1   0    0    -1  
+$EndComp
+Wire Wire Line
+	2950 5500 2700 5500
+Wire Wire Line
+	2700 5500 2700 5550
+Wire Wire Line
+	2450 5500 2700 5500
+Connection ~ 2700 5500
+$Comp
+L Connector_Generic:Conn_02x13_Odd_Even J1705
+U 1 1 5E3BE8E1
+P 2650 4650
+F 0 "J1705" H 2700 5467 50  0000 C CNN
+F 1 "tblock2x13" H 2700 5376 50  0000 C CNN
+F 2 "Connector_IDC:IDC-Header_2x13_P2.54mm_Vertical" H 2650 4650 50  0001 C CNN
+F 3 "~" H 2650 4650 50  0001 C CNN
+	1    2650 4650
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	2950 5250 2950 5500
+Wire Wire Line
+	2450 5250 2450 5500
+$Comp
+L servo:15VH #PWR?
+U 1 1 5E3C868C
+P 3050 3800
+AR Path="/5DDE8C5E/5E3C868C" Ref="#PWR?"  Part="1" 
+AR Path="/5EC40F3C/5E3C868C" Ref="#PWR0269"  Part="1" 
+F 0 "#PWR0269" H 3050 3600 20  0001 C CNN
+F 1 "15VH" H 3050 3957 28  0000 C CNN
+F 2 "" H 3050 3800 50  0001 C CNN
+F 3 "" H 3050 3800 50  0001 C CNN
+	1    3050 3800
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	3050 3800 3050 4050
+Text GLabel 3300 4150 2    50   Input ~ 0
+PWM_B_1H_H
+Text GLabel 3300 4250 2    50   Input ~ 0
+PWM_B_1L_H
+Text GLabel 3300 4350 2    50   Input ~ 0
+PWM_B_2H_H
+Text GLabel 3300 4450 2    50   Input ~ 0
+PWM_B_2L_H
+Text GLabel 3300 4550 2    50   Input ~ 0
+PWM_B_3H_H
+Text GLabel 3300 4650 2    50   Input ~ 0
+PWM_B_3L_H
+Text GLabel 3300 4750 2    50   Input ~ 0
+PWM_B_BRK_RES_H
+Text GLabel 3300 4850 2    50   Input ~ 0
+BRK_B_MEC_H
+Text GLabel 2100 4150 0    50   Input ~ 0
+SD_B1_H
+Text GLabel 2100 4250 0    50   Input ~ 0
+SD_B2_H
+Text GLabel 2100 4350 0    50   Input ~ 0
+SD_B3_H
+Text GLabel 2100 4450 0    50   Input ~ 0
+SD_B4_H
+Text GLabel 2100 4550 0    50   Input ~ 0
+SD_B_CLK_H
+Text GLabel 2100 4650 0    50   Input ~ 0
+PWM4SD_B_CLK_H
+Text GLabel 2100 4750 0    50   Input ~ 0
+NTCB1_H
+Text GLabel 2100 4850 0    50   Input ~ 0
+NTCB2_H
+Text GLabel 2100 4950 0    50   Input ~ 0
+FREE_OUT_B1_H
+Text GLabel 3300 4950 2    50   Input ~ 0
+FREE_OUT_B2_H
+Text GLabel 2100 5050 0    50   Input ~ 0
+FAN_RPM2_H
+Text GLabel 3300 5050 2    50   Input ~ 0
+IGBT_ALARM2_H
+Text GLabel 2100 5150 0    50   Input ~ 0
+1-WIREP_H
+Text GLabel 3300 5150 2    50   Input ~ 0
+1-WIREN_H
 $EndSCHEMATC

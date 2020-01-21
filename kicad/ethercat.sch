@@ -2621,4 +2621,12 @@ Text Notes 7050 9900 0    20   ~ 0
 It's a good idea to have them on \nthese fitst stage but could be \nthrought away on next release.
 Text GLabel 8350 6800 2    50   Input ~ 0
 ECAT_MDCLK
+Text Label 4850 3750 0    39   ~ 0
+ecat0_col
+Text Label 4850 3850 0    39   ~ 0
+ecat0_crs
+Text Label 4900 7900 0    39   ~ 0
+ecat1_col
+Text Label 4900 8000 0    39   ~ 0
+ecat1_crs
 $EndSCHEMATC

@@ -720,7 +720,7 @@ U 1 1 5E245156
 P 3300 2600
 F 0 "J601" H 3350 3017 50  0000 C CNN
 F 1 "dbg_conn" H 3350 2926 50  0000 C CNN
-F 2 "Connector_PinSocket_2.54mm:PinSocket_2x06_P2.54mm_Horizontal" H 3300 2600 50  0001 C CNN
+F 2 "Connector_PinSocket_2.54mm:PinSocket_2x06_P2.54mm_Vertical" H 3300 2600 50  0001 C CNN
 F 3 "~" H 3300 2600 50  0001 C CNN
 	1    3300 2600
 	1    0    0    -1  

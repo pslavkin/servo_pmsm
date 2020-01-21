@@ -162,12 +162,6 @@ Wire Wire Line
 Wire Wire Line
 	11500 2350 11500 2450
 Wire Wire Line
-	5650 5200 5750 5200
-Wire Wire Line
-	5650 5300 5750 5300
-Wire Wire Line
-	8650 4700 8550 4700
-Wire Wire Line
 	8550 4000 8550 3900
 Wire Wire Line
 	9150 4000 8550 4000
@@ -931,9 +925,9 @@ F 3 "" H 12900 2600 70  0000 C CNN
 $EndComp
 Wire Wire Line
 	13650 2600 12900 2600
-Text GLabel 7350 8250 0    50   Input ~ 0
-USB_D+
 Text GLabel 7350 8450 0    50   Input ~ 0
+USB_D+
+Text GLabel 7350 8250 0    50   Input ~ 0
 USB_D-
 Wire Wire Line
 	10950 1950 11100 1950
@@ -1051,7 +1045,7 @@ U 1 1 5E6ED74D
 P 8500 8350
 F 0 "R210" H 8500 8465 20  0000 C CNN
 F 1 "1oe" H 8500 8422 20  0000 C CNN
-F 2 "Resistor_SMD:R_0603_1608Metric" H 8000 8250 60  0001 C CNN
+F 2 "Resistor_SMD:R_1206_3216Metric_Pad1.42x1.75mm_HandSolder" H 8000 8250 60  0001 C CNN
 F 3 "" H 8100 8350 60  0001 C CNN
 F 4 "10.0k" V -500 7150 60  0001 C CNN "ValueDisplayed"
 	1    8500 8350
@@ -1187,4 +1181,24 @@ Wire Wire Line
 	13500 4100 13500 4550
 Wire Wire Line
 	10550 4550 10550 4900
+Text Label 8900 4900 0    39   ~ 0
+enet_led1
+Text Label 8800 3600 0    39   ~ 0
+enet_led0
+Wire Wire Line
+	5350 5200 5750 5200
+Wire Wire Line
+	5350 5300 5750 5300
+Text Label 5450 5200 0    39   ~ 0
+nc13
+Text Label 5450 5300 0    39   ~ 0
+nc15
+Wire Wire Line
+	8550 4700 9050 4700
+Text Label 8900 4700 0    39   ~ 0
+nc22
+Text Notes 9150 4300 0    20   ~ 0
+have interna\nl 60k pullip
+Text Label 8600 4500 0    39   ~ 0
+clk_xi
 $EndSCHEMATC
