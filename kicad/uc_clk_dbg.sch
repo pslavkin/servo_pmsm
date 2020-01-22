@@ -635,7 +635,7 @@ U 1 1 5EE6E621
 P 6300 3200
 F 0 "U601" H 6700 4600 60  0000 C CNN
 F 1 "SN74ALVC244PW" H 6800 4500 60  0000 C CNN
-F 2 "Package_SO:TSSOP-20_4.4x6.5mm_P0.65mm" H 6300 3200 60  0001 C CNN
+F 2 "Package_SO:SO-20_12.8x7.5mm_P1.27mm" H 6300 3200 60  0001 C CNN
 F 3 "../doc/datasheets/sn74alvc244.pdf" H 6300 4483 60  0001 C CNN
 	1    6300 3200
 	1    0    0    -1  
@@ -714,17 +714,6 @@ NoConn ~ 12650 2600
 NoConn ~ 12650 2400
 Wire Wire Line
 	10800 7350 10700 7350
-$Comp
-L Connector_Generic:Conn_02x06_Counter_Clockwise J601
-U 1 1 5E245156
-P 3300 2600
-F 0 "J601" H 3350 3017 50  0000 C CNN
-F 1 "dbg_conn" H 3350 2926 50  0000 C CNN
-F 2 "Connector_PinSocket_2.54mm:PinSocket_2x06_P2.54mm_Vertical" H 3300 2600 50  0001 C CNN
-F 3 "~" H 3300 2600 50  0001 C CNN
-	1    3300 2600
-	1    0    0    -1  
-$EndComp
 Text GLabel 10800 7350 2    50   Input ~ 0
 DACB_DBG_OUT
 Text GLabel 3600 2900 2    50   Input ~ 0
@@ -736,4 +725,15 @@ Wire Wire Line
 Wire Wire Line
 	3000 2800 3100 2800
 Connection ~ 3000 2900
+$Comp
+L Connector_Generic:Conn_02x06_Odd_Even J601
+U 1 1 5E9506B9
+P 3300 2600
+F 0 "J601" H 3350 3017 50  0000 C CNN
+F 1 "Conn_02x06_Odd_Even" H 3350 2926 50  0000 C CNN
+F 2 "Connector_PinSocket_2.54mm:PinSocket_2x06_P2.54mm_Vertical_SMD" H 3300 2600 50  0001 C CNN
+F 3 "~" H 3300 2600 50  0001 C CNN
+	1    3300 2600
+	1    0    0    -1  
+$EndComp
 $EndSCHEMATC

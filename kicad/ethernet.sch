@@ -53,23 +53,23 @@ ENET_PWDN
 $Comp
 L servo:GND #GND_0206
 U 1 1 63C6809C
-P 10100 2400
-F 0 "#GND_0206" H 10105 2251 20  0001 C CNN
-F 1 "GND" H 10100 2243 30  0000 C CNN
-F 2 "" H 10100 2400 70  0000 C CNN
-F 3 "" H 10100 2400 70  0000 C CNN
-	1    10100 2400
+P 10000 2300
+F 0 "#GND_0206" H 10005 2151 20  0001 C CNN
+F 1 "GND" H 10000 2143 30  0000 C CNN
+F 2 "" H 10000 2300 70  0000 C CNN
+F 3 "" H 10000 2300 70  0000 C CNN
+	1    10000 2300
 	1    0    0    -1  
 $EndComp
 $Comp
 L servo:GND #GND_0207
 U 1 1 63C680A2
-P 11400 2500
-F 0 "#GND_0207" H 11322 2493 20  0001 R CNN
-F 1 "GND" H 11400 2342 30  0000 C CNN
-F 2 "" H 11400 2500 70  0000 C CNN
-F 3 "" H 11400 2500 70  0000 C CNN
-	1    11400 2500
+P 11250 2450
+F 0 "#GND_0207" H 11172 2443 20  0001 R CNN
+F 1 "GND" H 11250 2292 30  0000 C CNN
+F 2 "" H 11250 2450 70  0000 C CNN
+F 3 "" H 11250 2450 70  0000 C CNN
+	1    11250 2450
 	1    0    0    -1  
 $EndComp
 Text Label 10050 2800 0    39   ~ 0
@@ -102,39 +102,39 @@ F 3 "" H 8550 5450 70  0000 C CNN
 	1    8550 5450
 	1    0    0    -1  
 $EndComp
-NoConn ~ 5650 5200
-NoConn ~ 5650 5300
+NoConn ~ 5750 5200
+NoConn ~ 5750 5300
 $Comp
 L servo:GND #GND_0208
 U 1 1 63C680C4
-P 12300 4050
-F 0 "#GND_0208" H 12305 3901 20  0001 C CNN
-F 1 "GND" H 12305 3849 30  0000 C CNN
-F 2 "" H 12300 4050 70  0000 C CNN
-F 3 "" H 12300 4050 70  0000 C CNN
-	1    12300 4050
+P 12450 4050
+F 0 "#GND_0208" H 12455 3901 20  0001 C CNN
+F 1 "GND" H 12450 3893 30  0000 C CNN
+F 2 "" H 12450 4050 70  0000 C CNN
+F 3 "" H 12450 4050 70  0000 C CNN
+	1    12450 4050
 	1    0    0    -1  
 $EndComp
 $Comp
 L servo:GND #GND_0202
 U 1 1 63C680CA
-P 4600 3500
-F 0 "#GND_0202" H 4605 3351 20  0001 C CNN
-F 1 "GND" H 4600 3342 30  0000 C CNN
-F 2 "" H 4600 3500 70  0000 C CNN
-F 3 "" H 4600 3500 70  0000 C CNN
-	1    4600 3500
+P 4600 3600
+F 0 "#GND_0202" H 4605 3451 20  0001 C CNN
+F 1 "GND" H 4600 3443 30  0000 C CNN
+F 2 "" H 4600 3600 70  0000 C CNN
+F 3 "" H 4600 3600 70  0000 C CNN
+	1    4600 3600
 	1    0    0    -1  
 $EndComp
 $Comp
 L servo:GND #GND_0201
 U 1 1 63C680D0
-P 3550 3100
-F 0 "#GND_0201" H 3638 3093 20  0001 L CNN
-F 1 "GND" H 3638 3041 30  0000 L CNN
-F 2 "" H 3550 3100 70  0000 C CNN
-F 3 "" H 3550 3100 70  0000 C CNN
-	1    3550 3100
+P 4050 3350
+F 0 "#GND_0201" H 4138 3343 20  0001 L CNN
+F 1 "GND" H 4050 3193 30  0000 C CNN
+F 2 "" H 4050 3350 70  0000 C CNN
+F 3 "" H 4050 3350 70  0000 C CNN
+	1    4050 3350
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
@@ -156,11 +156,7 @@ Wire Wire Line
 Wire Wire Line
 	10100 4100 10100 4000
 Wire Wire Line
-	11400 2450 11400 2500
-Wire Wire Line
 	11250 2450 11250 2350
-Wire Wire Line
-	11500 2350 11500 2450
 Wire Wire Line
 	8550 4000 8550 3900
 Wire Wire Line
@@ -170,63 +166,19 @@ Wire Wire Line
 Wire Wire Line
 	10100 4000 10100 3900
 Wire Wire Line
-	12350 3950 12350 3900
-Wire Wire Line
-	12550 3900 12550 3950
-Wire Wire Line
-	12350 3400 12350 3600
-Wire Wire Line
-	4250 3000 4250 3100
-Wire Wire Line
-	4500 3000 4250 3000
-Wire Wire Line
-	4750 3000 4500 3000
-Wire Wire Line
-	5000 3000 4850 3000
-Wire Wire Line
-	5000 3100 5000 3000
+	4450 3000 4450 3100
 Wire Wire Line
 	4750 3100 4750 3000
 Wire Wire Line
-	4500 3100 4500 3000
-Wire Wire Line
-	5000 3500 5000 3400
-Wire Wire Line
-	4750 3500 5000 3500
-Wire Wire Line
-	4500 3500 4600 3500
-Wire Wire Line
-	4250 3500 4500 3500
-Wire Wire Line
-	4250 3400 4250 3500
-Wire Wire Line
-	4500 3500 4500 3400
+	4450 3400 4450 3500
 Wire Wire Line
 	4750 3500 4750 3400
 Wire Wire Line
-	3250 2800 3450 2800
-Wire Wire Line
-	3450 3100 3250 3100
-Wire Wire Line
-	10000 2400 10000 2300
-Wire Wire Line
-	10200 2300 10200 2400
-Wire Wire Line
 	10000 1900 10000 2000
 Wire Wire Line
-	10200 2000 10200 1900
-Wire Wire Line
 	11250 1950 11250 2050
-Wire Wire Line
-	11500 2050 11500 1950
-Connection ~ 4500 3500
-Connection ~ 4500 3000
-Connection ~ 4750 3500
 Connection ~ 4750 3000
 Connection ~ 4850 3000
-Connection ~ 5000 3000
-Connection ~ 3450 3100
-Connection ~ 3450 2800
 Connection ~ 10100 4000
 $Comp
 L servo:DP83822 U201
@@ -267,25 +219,25 @@ $EndComp
 $Comp
 L servo:Capacitor C214
 U 1 1 63C68154
-P 12100 3700
-F 0 "C214" V 12128 3810 20  0000 L CNN
-F 1 "0.1uF" V 12171 3810 20  0000 L CNN
-F 2 "servo:C_0603_1608Metric" H 12100 3600 60  0001 C CNN
-F 3 "" H 12100 3700 60  0000 C CNN
-F 4 "0.1uF" V 0   4000 60  0001 C CNN "ValueDisplayed"
-	1    12100 3700
+P 12150 3850
+F 0 "C214" V 12178 3960 20  0000 L CNN
+F 1 "1uF" V 12221 3960 20  0000 L CNN
+F 2 "servo:C_0603_1608Metric" H 12150 3750 60  0001 C CNN
+F 3 "" H 12150 3850 60  0000 C CNN
+F 4 "0.1uF" V 50  4150 60  0001 C CNN "ValueDisplayed"
+	1    12150 3850
 	0    1    1    0   
 $EndComp
 $Comp
 L servo:Capacitor C216
 U 1 1 63C6815C
-P 12550 3700
-F 0 "C216" V 12578 3810 20  0000 L CNN
-F 1 "0.1uF" V 12621 3810 20  0000 L CNN
-F 2 "servo:C_0603_1608Metric" H 12550 3600 60  0001 C CNN
-F 3 "" H 12550 3700 60  0000 C CNN
-F 4 "0.1uF" V 450 3000 60  0001 C CNN "ValueDisplayed"
-	1    12550 3700
+P 12450 3850
+F 0 "C216" V 12478 3960 20  0000 L CNN
+F 1 "1uF" V 12521 3960 20  0000 L CNN
+F 2 "servo:C_0603_1608Metric" H 12450 3750 60  0001 C CNN
+F 3 "" H 12450 3850 60  0000 C CNN
+F 4 "0.1uF" V 350 3150 60  0001 C CNN "ValueDisplayed"
+	1    12450 3850
 	0    1    1    0   
 $EndComp
 $Comp
@@ -301,23 +253,11 @@ F 4 "0.1uF" V 350 850 60  0001 C CNN "ValueDisplayed"
 	0    -1   -1   0   
 $EndComp
 $Comp
-L servo:Capacitor C208
-U 1 1 63C6816C
-P 5000 3300
-F 0 "C208" V 5150 3300 20  0000 R CNN
-F 1 "0.01uF" V 4950 3300 20  0000 R CNN
-F 2 "servo:C_0603_1608Metric" H 5000 3200 60  0001 C CNN
-F 3 "" H 5000 3300 60  0000 C CNN
-F 4 "0.01uF" V 300 4300 60  0001 C CNN "ValueDisplayed"
-	1    5000 3300
-	0    -1   -1   0   
-$EndComp
-$Comp
 L servo:Capacitor C207
 U 1 1 63C68173
 P 4750 3300
-F 0 "C207" V 4900 3300 20  0000 R CNN
-F 1 "0.1uF" V 4700 3300 20  0000 R CNN
+F 0 "C207" V 4822 3190 20  0000 R CNN
+F 1 "0.1uF" V 4779 3190 20  0000 R CNN
 F 2 "servo:C_0603_1608Metric" H 4750 3200 60  0001 C CNN
 F 3 "" H 4750 3300 60  0000 C CNN
 F 4 "0.1uF" V 450 4300 60  0001 C CNN "ValueDisplayed"
@@ -325,27 +265,15 @@ F 4 "0.1uF" V 450 4300 60  0001 C CNN "ValueDisplayed"
 	0    -1   -1   0   
 $EndComp
 $Comp
-L servo:Capacitor C201
-U 1 1 63C6817A
-P 3250 2900
-F 0 "C201" V 3200 3000 20  0000 R CNN
-F 1 "0.01uF" V 3400 3000 20  0000 R CNN
-F 2 "servo:C_0603_1608Metric" H 3250 2800 60  0001 C CNN
-F 3 "" H 3250 2900 60  0000 C CNN
-F 4 "0.01uF" V -2950 3900 60  0001 C CNN "ValueDisplayed"
-	1    3250 2900
-	0    1    1    0   
-$EndComp
-$Comp
 L servo:Capacitor C202
 U 1 1 63C68181
-P 3450 2900
-F 0 "C202" V 3400 2900 20  0000 L CNN
-F 1 "0.1uF" V 3600 2900 20  0000 L CNN
-F 2 "servo:C_0603_1608Metric" H 3450 2800 60  0001 C CNN
-F 3 "" H 3450 2900 60  0000 C CNN
-F 4 "0.1uF" V -3150 3900 60  0001 C CNN "ValueDisplayed"
-	1    3450 2900
+P 3900 3000
+F 0 "C202" V 3928 2890 20  0000 R CNN
+F 1 "0.1uF" V 3971 2890 20  0000 R CNN
+F 2 "servo:C_0603_1608Metric" H 3900 2900 60  0001 C CNN
+F 3 "" H 3900 3000 60  0000 C CNN
+F 4 "0.1uF" V -2700 4000 60  0001 C CNN "ValueDisplayed"
+	1    3900 3000
 	0    1    1    0   
 $EndComp
 $Comp
@@ -421,99 +349,27 @@ F 4 "49.9" V 150 1400 60  0001 C CNN "ValueDisplayed"
 	0    1    1    0   
 $EndComp
 $Comp
-L servo:Capacitor C210
-U 1 1 63C681F2
-P 10200 2200
-F 0 "C210" V 10272 2090 20  0000 R CNN
-F 1 "1uF" V 10229 2090 20  0000 R CNN
-F 2 "servo:C_0603_1608Metric" H 10200 2100 60  0001 C CNN
-F 3 "" H 10200 2200 60  0000 C CNN
-F 4 "1uF" V -600 3000 60  0001 C CNN "ValueDisplayed"
-	1    10200 2200
-	0    -1   -1   0   
-$EndComp
-$Comp
-L servo:Capacitor C212
-U 1 1 63C681FA
-P 11500 2250
-F 0 "C212" V 11572 2140 20  0000 R CNN
-F 1 "1uF" V 11529 2140 20  0000 R CNN
-F 2 "servo:C_0603_1608Metric" H 11500 2150 60  0001 C CNN
-F 3 "" H 11500 2250 60  0000 C CNN
-F 4 "1uF" V 200 850 60  0001 C CNN "ValueDisplayed"
-	1    11500 2250
-	0    -1   -1   0   
-$EndComp
-$Comp
-L servo:Capacitor C213
-U 1 1 63C68202
-P 11900 3700
-F 0 "C213" V 11928 3590 20  0000 R CNN
-F 1 "1uF" V 11971 3590 20  0000 R CNN
-F 2 "servo:C_0603_1608Metric" H 11900 3600 60  0001 C CNN
-F 3 "" H 11900 3700 60  0000 C CNN
-F 4 "1uF" V -200 4200 60  0001 C CNN "ValueDisplayed"
-	1    11900 3700
-	0    1    1    0   
-$EndComp
-$Comp
-L servo:Capacitor C215
-U 1 1 63C6820A
-P 12350 3700
-F 0 "C215" V 12378 3810 20  0000 L CNN
-F 1 "1uF" V 12421 3810 20  0000 L CNN
-F 2 "servo:C_0603_1608Metric" H 12350 3600 60  0001 C CNN
-F 3 "" H 12350 3700 60  0000 C CNN
-F 4 "1uF" V 250 3200 60  0001 C CNN "ValueDisplayed"
-	1    12350 3700
-	0    1    1    0   
-$EndComp
-$Comp
 L servo:Capacitor C205
 U 1 1 63C68212
-P 4250 3300
-F 0 "C205" V 4400 3200 20  0000 L CNN
-F 1 "10uF" V 4200 3200 20  0000 L CNN
-F 2 "servo:C_0603_1608Metric" H 4250 3200 60  0001 C CNN
-F 3 "" H 4250 3300 60  0000 C CNN
-F 4 "10uF" V 750 4300 60  0001 C CNN "ValueDisplayed"
-	1    4250 3300
+P 4450 3300
+F 0 "C205" V 4522 3190 20  0000 R CNN
+F 1 "10uF" V 4479 3190 20  0000 R CNN
+F 2 "servo:C_0603_1608Metric" H 4450 3200 60  0001 C CNN
+F 3 "" H 4450 3300 60  0000 C CNN
+F 4 "10uF" V 950 4300 60  0001 C CNN "ValueDisplayed"
+	1    4450 3300
 	0    -1   -1   0   
 $EndComp
 $Comp
 L servo:Capacitor C204
 U 1 1 63C68219
-P 3850 3000
-F 0 "C204" V 4000 3000 20  0000 R CNN
-F 1 "10uF" V 3800 3000 20  0000 R CNN
-F 2 "servo:C_0603_1608Metric" H 3850 2900 60  0001 C CNN
-F 3 "" H 3850 3000 60  0000 C CNN
-F 4 "10uF" V -3550 4000 60  0001 C CNN "ValueDisplayed"
-	1    3850 3000
-	0    -1   -1   0   
-$EndComp
-$Comp
-L servo:Capacitor C206
-U 1 1 63C68220
-P 4500 3300
-F 0 "C206" V 4650 3300 20  0000 R CNN
-F 1 "1uF" V 4450 3300 20  0000 R CNN
-F 2 "servo:C_0603_1608Metric" H 4500 3200 60  0001 C CNN
-F 3 "" H 4500 3300 60  0000 C CNN
-F 4 "1uF" V 600 4300 60  0001 C CNN "ValueDisplayed"
-	1    4500 3300
-	0    -1   -1   0   
-$EndComp
-$Comp
-L servo:Capacitor C203
-U 1 1 63C68227
-P 3650 3000
-F 0 "C203" V 3800 3000 20  0000 R CNN
-F 1 "1uF" V 3600 3000 20  0000 R CNN
-F 2 "servo:C_0603_1608Metric" H 3650 2900 60  0001 C CNN
-F 3 "" H 3650 3000 60  0000 C CNN
-F 4 "1uF" V -3350 4000 60  0001 C CNN "ValueDisplayed"
-	1    3650 3000
+P 4150 3100
+F 0 "C204" V 4222 2990 20  0000 R CNN
+F 1 "10uF" V 4179 2990 20  0000 R CNN
+F 2 "servo:C_0603_1608Metric" H 4150 3000 60  0001 C CNN
+F 3 "" H 4150 3100 60  0000 C CNN
+F 4 "10uF" V -3250 4100 60  0001 C CNN "ValueDisplayed"
+	1    4150 3100
 	0    -1   -1   0   
 $EndComp
 $Comp
@@ -530,8 +386,6 @@ F 4 "2.2k" V -450 1800 60  0001 C CNN "ValueDisplayed"
 $EndComp
 Wire Wire Line
 	8550 3900 8700 3900
-Wire Wire Line
-	10000 2400 10100 2400
 Connection ~ 8550 3900
 $Comp
 L servo:3V3 #PWR0202
@@ -547,17 +401,17 @@ $EndComp
 $Comp
 L servo:3V3 #PWR0201
 U 1 1 63C68240
-P 3850 2700
-F 0 "#PWR0201" H 3855 2907 20  0001 C CNN
-F 1 "3V3" H 3855 2857 28  0000 C CNN
-F 2 "" H 3850 2700 50  0001 C CNN
-F 3 "" H 3850 2700 50  0001 C CNN
-	1    3850 2700
+P 4150 2700
+F 0 "#PWR0201" H 4155 2907 20  0001 C CNN
+F 1 "3V3" H 4155 2857 28  0000 C CNN
+F 2 "" H 4150 2700 50  0001 C CNN
+F 3 "" H 4150 2700 50  0001 C CNN
+	1    4150 2700
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
-	3850 2700 3850 2800
-Connection ~ 3850 2800
+	4150 2700 4150 2800
+Connection ~ 4150 2800
 $Comp
 L servo:3V3 #PWR0204
 U 1 1 63C68248
@@ -572,12 +426,12 @@ $EndComp
 $Comp
 L servo:3V3 #PWR0208
 U 1 1 63C6824E
-P 12200 1850
-F 0 "#PWR0208" H 12205 2057 20  0000 C CNN
-F 1 "3V3" H 12205 2007 28  0000 C CNN
-F 2 "" H 12200 1850 50  0001 C CNN
-F 3 "" H 12200 1850 50  0001 C CNN
-	1    12200 1850
+P 12450 3750
+F 0 "#PWR0208" H 12350 3850 20  0001 C CNN
+F 1 "3V3" H 12450 3900 28  0000 C CNN
+F 2 "" H 12450 3750 50  0001 C CNN
+F 3 "" H 12450 3750 50  0001 C CNN
+	1    12450 3750
 	1    0    0    -1  
 $EndComp
 $Comp
@@ -643,7 +497,7 @@ F 1 "dnp" H 9250 5568 39  0000 C CNN
 F 2 "Oscillator:Oscillator_SMD_SeikoEpson_SG210-4Pin_2.5x2.0mm" H 9300 5300 60  0001 C CNN
 F 3 "../doc/datasheets//ECS-2520S.pdf" H 9150 5900 60  0001 C CNN
 	1    9250 5350
-	1    0    0    -1  
+	-1   0    0    -1  
 $EndComp
 $Comp
 L servo:3V3 #PWR?
@@ -696,36 +550,8 @@ Text Notes 11100 4300 0    20   ~ 0
 the pullup of led_0 is mandatory, but to\n drive the led you could choose between \nPHY or uC populating/unpopulating the resistor
 Text Notes 6700 2000 0    20   ~ 0
 I choose transfeormer spare part instead of the embedded shielded RJ45\n plus leds, cause noy I can choose any format connector  RJ45 and\n maybe add PoE then. And are halt the price\n\n
-Connection ~ 4600 3500
 Wire Wire Line
-	4600 3500 4750 3500
-Wire Wire Line
-	3850 2800 5750 2800
-Connection ~ 3550 3100
-Wire Wire Line
-	3550 3100 3450 3100
-Wire Wire Line
-	12350 3400 12550 3400
-Connection ~ 12550 3400
-Wire Wire Line
-	12350 3950 12300 3950
-Wire Wire Line
-	11900 3950 11900 3900
-Connection ~ 12350 3950
-Wire Wire Line
-	12100 3900 12100 3950
-Connection ~ 12100 3950
-Wire Wire Line
-	12100 3950 11900 3950
-Wire Wire Line
-	12350 3400 12350 2900
-Connection ~ 12350 3400
-Connection ~ 12350 2900
-Wire Wire Line
-	11900 3600 11900 2900
-Connection ~ 12200 2900
-Wire Wire Line
-	12200 2900 12350 2900
+	4150 2800 5750 2800
 Wire Wire Line
 	11750 3000 11750 2900
 Wire Wire Line
@@ -745,13 +571,7 @@ Wire Wire Line
 	9550 2300 9550 2800
 Connection ~ 9550 2800
 Wire Wire Line
-	10000 1900 10200 1900
-Wire Wire Line
 	9850 1750 9850 1900
-Connection ~ 10100 2400
-Wire Wire Line
-	10100 2400 10200 2400
-Connection ~ 10000 1900
 Connection ~ 9850 1900
 Wire Wire Line
 	9850 1900 10000 1900
@@ -770,22 +590,12 @@ Wire Wire Line
 Wire Wire Line
 	8550 3200 10950 3200
 Wire Wire Line
-	11250 1950 11500 1950
-Connection ~ 11400 2450
-Wire Wire Line
-	11400 2450 11250 2450
-Wire Wire Line
-	11400 2450 11500 2450
-Wire Wire Line
 	10800 1950 10800 2000
-Connection ~ 11250 1950
 Wire Wire Line
 	10950 2000 10950 1950
 Connection ~ 10950 1950
 Wire Wire Line
 	10950 1950 10800 1950
-Wire Wire Line
-	12550 3400 12550 3600
 Wire Wire Line
 	5750 4900 5550 4900
 Wire Wire Line
@@ -805,8 +615,6 @@ Wire Wire Line
 Wire Wire Line
 	4850 3000 4750 3000
 Wire Wire Line
-	5000 3000 5750 3000
-Wire Wire Line
 	5750 3800 5700 3800
 Wire Wire Line
 	5750 3700 5700 3700
@@ -823,7 +631,7 @@ Wire Wire Line
 Wire Wire Line
 	8650 4200 8650 4100
 Connection ~ 8650 4100
-NoConn ~ 8650 4700
+NoConn ~ 8550 4700
 $Comp
 L servo:3V3 #PWR0209
 U 1 1 5E379A32
@@ -856,30 +664,9 @@ Wire Wire Line
 Wire Wire Line
 	10550 4400 10550 3600
 Wire Wire Line
-	3450 2800 3650 2800
-Wire Wire Line
-	3550 3100 3650 3100
-Connection ~ 3650 2800
-Wire Wire Line
-	3650 2800 3850 2800
-Connection ~ 3650 3100
-Wire Wire Line
-	3650 3100 3850 3100
-Wire Wire Line
 	11750 3300 13000 3300
 Wire Wire Line
-	12350 3950 12550 3950
-Wire Wire Line
-	12300 4050 12300 3950
-Connection ~ 12300 3950
-Wire Wire Line
-	12300 3950 12100 3950
-Wire Wire Line
-	11900 2900 12100 2900
-Wire Wire Line
 	9550 2800 13650 2800
-Wire Wire Line
-	12350 2900 13650 2900
 Wire Wire Line
 	13650 3100 13000 3100
 Wire Wire Line
@@ -1078,13 +865,6 @@ NoConn ~ 8100 8250
 NoConn ~ 8100 8450
 Wire Wire Line
 	11750 3000 13650 3000
-Wire Wire Line
-	12100 2900 12100 3600
-Connection ~ 12100 2900
-Wire Wire Line
-	12100 2900 12200 2900
-Wire Wire Line
-	12200 1850 12200 2900
 Text GLabel 8700 3800 2    50   Input ~ 0
 ENET_MDCLK
 $Comp
@@ -1185,20 +965,70 @@ Text Label 8900 4900 0    39   ~ 0
 enet_led1
 Text Label 8800 3600 0    39   ~ 0
 enet_led0
-Wire Wire Line
-	5350 5200 5750 5200
-Wire Wire Line
-	5350 5300 5750 5300
-Text Label 5450 5200 0    39   ~ 0
-nc13
-Text Label 5450 5300 0    39   ~ 0
-nc15
-Wire Wire Line
-	8550 4700 9050 4700
-Text Label 8900 4700 0    39   ~ 0
-nc22
 Text Notes 9150 4300 0    20   ~ 0
 have interna\nl 60k pullip
 Text Label 8600 4500 0    39   ~ 0
 clk_xi
+$Comp
+L servo:GND #GND_0114
+U 1 1 603B4765
+P 12150 4050
+F 0 "#GND_0114" H 12155 3901 20  0001 C CNN
+F 1 "GND" H 12150 3893 30  0000 C CNN
+F 2 "" H 12150 4050 70  0000 C CNN
+F 3 "" H 12150 4050 70  0000 C CNN
+	1    12150 4050
+	1    0    0    -1  
+$EndComp
+$Comp
+L servo:3V3 #PWR0267
+U 1 1 603B47AC
+P 12150 3750
+F 0 "#PWR0267" H 12050 3850 20  0001 C CNN
+F 1 "3V3" H 12150 3900 28  0000 C CNN
+F 2 "" H 12150 3750 50  0001 C CNN
+F 3 "" H 12150 3750 50  0001 C CNN
+	1    12150 3750
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	11950 2900 11950 3750
+Wire Wire Line
+	11950 3750 12150 3750
+Wire Wire Line
+	11950 2900 13650 2900
+Connection ~ 12150 3750
+Wire Wire Line
+	12550 3750 12450 3750
+Wire Wire Line
+	12550 3400 12550 3750
+Connection ~ 12450 3750
+Wire Wire Line
+	4850 3000 5750 3000
+Wire Wire Line
+	4450 3000 4750 3000
+Wire Wire Line
+	3900 2800 4150 2800
+Wire Wire Line
+	3900 3250 4050 3250
+Wire Wire Line
+	4050 3350 4050 3250
+Connection ~ 4050 3250
+Wire Wire Line
+	4050 3250 4150 3250
+Wire Wire Line
+	3900 2900 3900 2800
+Wire Wire Line
+	4150 2900 4150 2800
+Wire Wire Line
+	4150 3200 4150 3250
+Wire Wire Line
+	3900 3200 3900 3250
+Wire Wire Line
+	4450 3500 4600 3500
+Wire Wire Line
+	4600 3600 4600 3500
+Connection ~ 4600 3500
+Wire Wire Line
+	4600 3500 4750 3500
 $EndSCHEMATC

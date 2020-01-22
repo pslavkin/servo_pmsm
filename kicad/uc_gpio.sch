@@ -20,30 +20,6 @@ Wire Wire Line
 	3150 10300 4800 10300
 Wire Wire Line
 	3150 10200 4800 10200
-Text GLabel 3200 2100 0    50   Input ~ 0
-PWM_A_1H_C
-Text GLabel 3200 2300 0    50   Input ~ 0
-PWM_A_2H_C
-Text GLabel 3200 2500 0    50   Input ~ 0
-PWM_A_3H_C
-Text GLabel 3200 2200 0    50   Input ~ 0
-PWM_A_1L_C
-Text GLabel 3200 2400 0    50   Input ~ 0
-PWM_A_2L_C
-Text GLabel 3200 2600 0    50   Input ~ 0
-PWM_A_3L_C
-Text GLabel 3200 2900 0    50   Input ~ 0
-PWM_B_2H_C
-Text GLabel 3200 2700 0    50   Input ~ 0
-PWM_B_1H_C
-Text GLabel 3200 2800 0    50   Input ~ 0
-PWM_B_1L_C
-Text GLabel 3200 3100 0    50   Input ~ 0
-PWM_B_3H_C
-Text GLabel 3200 3200 0    50   Input ~ 0
-PWM_B_3L_C
-Text GLabel 3200 3000 0    50   Input ~ 0
-PWM_B_2L_C
 Wire Wire Line
 	3150 5500 4800 5500
 Wire Wire Line
@@ -302,34 +278,14 @@ Wire Wire Line
 	3200 4900 4800 4900
 Wire Wire Line
 	3200 5000 4800 5000
-Text GLabel 3150 5700 0    50   Input ~ 0
-SD_A1
-Text GLabel 3150 5800 0    50   Input ~ 0
-SD_A2
-Text GLabel 3150 5900 0    50   Input ~ 0
-SD_A3
-Text GLabel 3150 6000 0    50   Input ~ 0
-SD_A4
-Text GLabel 3200 3300 0    50   Input ~ 0
-PWM_A_BRK_RES_C
-Text GLabel 3200 3400 0    50   Input ~ 0
-PWM_B_BRK_RES_C
-Text GLabel 3150 7000 0    50   Input ~ 0
-SD_B1
-Text GLabel 3150 7100 0    50   Input ~ 0
-SD_B2
-Text GLabel 3150 7200 0    50   Input ~ 0
-SD_B3
 Wire Wire Line
 	3150 7000 4800 7000
 Text Notes 2400 3900 0    20   ~ 0
 SD C2/3/4 goes \ndirectly inside uC\nonly and MUST  \nC1 required
 Wire Wire Line
 	3200 3800 4800 3800
-Text GLabel 3200 3800 0    50   Input ~ 0
-SD_A_CLK
 Text GLabel 3200 3700 0    50   Input ~ 0
-PWM4SD_CLK
+SD_CLK_OUT
 Wire Wire Line
 	3200 3700 4800 3700
 Text Notes 2350 3750 0    20   ~ 0
@@ -374,12 +330,8 @@ Wire Wire Line
 	3150 6700 4800 6700
 Text Notes 2400 7850 0    20   ~ 0
 SD C2/3/4 goes\ndirectly inside uC\nonly and MUST  \nC1 required
-Text GLabel 3150 7800 0    50   Input ~ 0
-SD_B_CLK
 Wire Wire Line
 	3150 7300 4800 7300
-Text GLabel 3150 7300 0    50   Input ~ 0
-SD_B4
 Text GLabel 3150 7600 0    50   Input ~ 0
 RS485_RX
 Text GLabel 3150 7500 0    50   Output ~ 0
@@ -534,20 +486,8 @@ Wire Wire Line
 	8350 2700 9700 2700
 Wire Wire Line
 	8350 2600 9700 2600
-Text GLabel 3150 6100 0    50   Input ~ 0
-FREE_OUT_A1
-Text GLabel 3150 6200 0    50   Input ~ 0
-FREE_OUT_A2
-Text GLabel 3150 6700 0    50   Input ~ 0
-FREE_OUT_B1
-Text GLabel 3150 6800 0    50   Input ~ 0
-FREE_OUT_B2
 Wire Wire Line
 	3200 2100 4800 2100
-Text GLabel 3150 5400 0    50   Input ~ 0
-BRK_B_MEC_C
-Text GLabel 3150 5300 0    50   Input ~ 0
-BRK_A_MEC_C
 Wire Wire Line
 	3150 5300 4800 5300
 Wire Wire Line
@@ -555,11 +495,11 @@ Wire Wire Line
 Wire Wire Line
 	8350 9600 9700 9600
 Text GLabel 3150 10400 0    50   Input ~ 0
-1Wire_OUT
+1WIRE_OUT
 Text GLabel 3150 10200 0    50   Input ~ 0
-1Wire_IN
+1WIRE_IN
 Text GLabel 3150 10300 0    50   Input ~ 0
-1Wire_EN
+1WIRE_EN
 NoConn ~ 4800 9200
 NoConn ~ 4800 9400
 NoConn ~ 4800 9500
@@ -609,14 +549,6 @@ Wire Wire Line
 	4800 6900 3150 6900
 Wire Wire Line
 	4800 7700 3150 7700
-Text GLabel 3150 6900 0    50   Input ~ 0
-FAN_RPM2
-Text GLabel 3150 7400 0    50   Input ~ 0
-IGBT_ALARM2
-Text GLabel 3150 6500 0    50   Input ~ 0
-FAN_RPM1
-Text GLabel 3150 6600 0    50   Input ~ 0
-IGBT_ALARM1
 Text GLabel 3150 8800 0    50   Input ~ 0
 STEP1
 Text GLabel 3150 8900 0    50   Input ~ 0
@@ -651,4 +583,72 @@ NoConn ~ 4800 10000
 NoConn ~ 4800 10100
 Text GLabel 9700 8900 2    50   Input ~ 0
 ECAT_MDCLK
+Text GLabel 3200 3400 0    50   Input ~ 0
+BRK_RES2
+Text GLabel 3150 6800 0    50   Input ~ 0
+FREE_OUT2_2
+Text GLabel 3150 6900 0    50   Input ~ 0
+FAN_RPM2
+Text GLabel 3150 5400 0    50   Input ~ 0
+BRK_MEC2
+Text GLabel 3150 6700 0    50   Input ~ 0
+FREE_OUT2_1
+Text GLabel 3150 7400 0    50   Input ~ 0
+IGBT_ALARM2
+Text GLabel 3200 3300 0    50   Input ~ 0
+BRK_RES1
+Text GLabel 3150 6200 0    50   Input ~ 0
+FREE_OUT1_2
+Text GLabel 3150 6500 0    50   Input ~ 0
+FAN_RPM1
+Text GLabel 3150 5300 0    50   Input ~ 0
+BRK_MEC1
+Text GLabel 3150 6100 0    50   Input ~ 0
+FREE_OUT1_1
+Text GLabel 3150 6600 0    50   Input ~ 0
+IGBT_ALARM1
+Text GLabel 3200 2100 0    50   Input ~ 0
+IGBT1_UH
+Text GLabel 3200 2200 0    50   Input ~ 0
+IGBT1_UL
+Text GLabel 3200 2300 0    50   Input ~ 0
+IGBT1_VH
+Text GLabel 3200 2400 0    50   Input ~ 0
+IGBT1_VL
+Text GLabel 3200 2500 0    50   Input ~ 0
+IGBT1_WH
+Text GLabel 3200 2600 0    50   Input ~ 0
+IGBT1_WL
+Text GLabel 3200 2700 0    50   Input ~ 0
+IGBT2_UH
+Text GLabel 3200 2800 0    50   Input ~ 0
+IGBT2_UL
+Text GLabel 3200 2900 0    50   Input ~ 0
+IGBT2_VH
+Text GLabel 3200 3000 0    50   Input ~ 0
+IGBT2_VL
+Text GLabel 3200 3100 0    50   Input ~ 0
+IGBT2_WH
+Text GLabel 3200 3200 0    50   Input ~ 0
+IGBT2_WL
+Text GLabel 3200 3800 0    50   Input ~ 0
+SD_CLK_IN1
+Text GLabel 3150 5700 0    50   Input ~ 0
+SD1_U
+Text GLabel 3150 5800 0    50   Input ~ 0
+SD1_V
+Text GLabel 3150 5900 0    50   Input ~ 0
+SD1_W
+Text GLabel 3150 6000 0    50   Input ~ 0
+SD1_A
+Text GLabel 3150 7800 0    50   Input ~ 0
+SD_CLK_IN2
+Text GLabel 3150 7000 0    50   Input ~ 0
+SD2_U
+Text GLabel 3150 7100 0    50   Input ~ 0
+SD2_V
+Text GLabel 3150 7200 0    50   Input ~ 0
+SD2_W
+Text GLabel 3150 7300 0    50   Input ~ 0
+SD2_A
 $EndSCHEMATC

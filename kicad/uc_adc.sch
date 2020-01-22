@@ -180,18 +180,10 @@ Text GLabel 1800 3650 0    50   Input ~ 0
 LEM_B_ALL
 Wire Wire Line
 	6700 3750 7050 3750
-Text GLabel 1800 3850 0    50   Input ~ 0
-VBUS_B_P
-Text GLabel 1800 3950 0    50   Input ~ 0
-VBUS_B_N
-Text GLabel 1800 5050 0    50   Input ~ 0
-VBUS_A_P
-Text GLabel 1800 5150 0    50   Input ~ 0
-VBUS_A_N
 Text GLabel 1800 4350 0    50   Input ~ 0
-NTCB2_P
+NTC2_2_P
 Text GLabel 1800 4450 0    50   Input ~ 0
-NTCB2_N
+NTC2_2_N
 Text Notes 600  4750 0    20   ~ 0
 lem all hast to be connected on positive pin\n of comparator CMPINxP, becose the internal\n DAC reference work on the negative side only.\n 
 Text Notes 7150 1600 0    197  ~ 39
@@ -221,17 +213,17 @@ $EndComp
 NoConn ~ 7050 3150
 NoConn ~ 7050 3250
 Text GLabel 1800 4150 0    50   Input ~ 0
-NTCA2_P
+NTC2_1_P
 Text GLabel 1800 4250 0    50   Input ~ 0
-NTCA2_N
+NTC2_1_N
 Text GLabel 1800 2850 0    50   Input ~ 0
-NTCB1_P
+NTC1_2_P
 Text GLabel 1800 2950 0    50   Input ~ 0
-NTCB1_N
+NTC1_2_N
 Text GLabel 1800 2650 0    50   Input ~ 0
-NTCA1_P
+NTC1_1_P
 Text GLabel 1800 2750 0    50   Input ~ 0
-NTCA1_N
+NTC1_1_N
 $Comp
 L servo:TMS320F28388 U301
 U 1 1 5DB3916E
@@ -684,4 +676,16 @@ Text Notes 10750 3900 0    20   ~ 0
 it's just for lower the \nreference of the ADC
 Text Label 9950 3450 0    39   ~ 0
 adc_refh
+Text GLabel 1800 5050 0    50   Input ~ 0
+VBUS1_P
+Text GLabel 1800 5150 0    50   Input ~ 0
+VBUS1_N
+Text GLabel 1800 3850 0    50   Input ~ 0
+VBUS2_P
+Text GLabel 1800 3950 0    50   Input ~ 0
+VBUS2_N
+NoConn ~ 4150 1550
+NoConn ~ 4750 1550
+NoConn ~ 6050 1550
+NoConn ~ 5900 2150
 $EndSCHEMATC

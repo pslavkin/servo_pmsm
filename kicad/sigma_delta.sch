@@ -17,7 +17,7 @@ $EndDescr
 Text Notes 6950 1800 0    197  ~ 39
 Isolated sigma delta ADC
 Text GLabel 2700 3350 0    50   Input ~ 0
-SD_A_CLK
+SD_CLK_IN1
 $Comp
 L servo:GND #PWR?
 U 1 1 5E4779CD
@@ -31,8 +31,6 @@ F 3 "" H 2700 3650 50  0001 C CNN
 	1    2700 3650
 	-1   0    0    -1  
 $EndComp
-Text GLabel 2700 3450 0    50   Input ~ 0
-PWM4SD_CLK
 $Comp
 L servo:3V3 #PWR?
 U 1 1 5ECC6BF2
@@ -49,13 +47,13 @@ $EndComp
 Wire Wire Line
 	2750 2650 2750 2850
 Text GLabel 2700 2950 0    50   Input ~ 0
-SD_A1
+SD1_U
 Text GLabel 2700 3050 0    50   Input ~ 0
-SD_A2
+SD1_V
 Text GLabel 2700 3150 0    50   Input ~ 0
-SD_A3
+SD1_W
 Text GLabel 2700 3250 0    50   Input ~ 0
-SD_A4
+SD1_A
 $Comp
 L servo:GNDH #PWR?
 U 1 1 5ECC8031
@@ -330,8 +328,6 @@ Wire Wire Line
 	7900 3250 7450 3250
 Wire Wire Line
 	7450 3350 7900 3350
-Text GLabel 15100 3350 2    50   Input ~ 0
-SD_B_CLK
 $Comp
 L servo:GND #PWR?
 U 1 1 5E2A4858
@@ -345,8 +341,6 @@ F 3 "" H 15100 3650 50  0001 C CNN
 	1    15100 3650
 	1    0    0    -1  
 $EndComp
-Text GLabel 15100 3450 2    50   Input ~ 0
-PWM4SD_CLK
 $Comp
 L servo:3V3 #PWR?
 U 1 1 5E2A485F
@@ -362,14 +356,6 @@ F 3 "" H 15050 2650 50  0001 C CNN
 $EndComp
 Wire Wire Line
 	15050 2650 15050 2850
-Text GLabel 15100 2950 2    50   Input ~ 0
-SD_B1
-Text GLabel 15100 3050 2    50   Input ~ 0
-SD_B2
-Text GLabel 15100 3150 2    50   Input ~ 0
-SD_B3
-Text GLabel 15100 3250 2    50   Input ~ 0
-SD_B4
 $Comp
 L servo:GNDH #PWR?
 U 1 1 5E2A486A
@@ -688,30 +674,6 @@ Wire Wire Line
 	11650 4150 11850 4150
 Wire Wire Line
 	11250 4250 11250 4150
-Text GLabel 7900 2950 2    50   Input ~ 0
-SD_A1_H
-Text GLabel 7900 3050 2    50   Input ~ 0
-SD_A2_H
-Text GLabel 7900 3150 2    50   Input ~ 0
-SD_A3_H
-Text GLabel 7900 3250 2    50   Input ~ 0
-SD_A4_H
-Text GLabel 7900 3350 2    50   Input ~ 0
-SD_A_CLK_H
-Text GLabel 7900 3450 2    50   Input ~ 0
-PWM4SD_A_CLK_H
-Text GLabel 9950 2950 0    50   Input ~ 0
-SD_B1_H
-Text GLabel 9950 3050 0    50   Input ~ 0
-SD_B2_H
-Text GLabel 9950 3150 0    50   Input ~ 0
-SD_B3_H
-Text GLabel 9950 3250 0    50   Input ~ 0
-SD_B4_H
-Text GLabel 9950 3350 0    50   Input ~ 0
-SD_B_CLK_H
-Text GLabel 9950 3450 0    50   Input ~ 0
-PWM4SD_B_CLK_H
 $Comp
 L servo:SN74LVC2G17DBVR U?
 U 1 1 5E51FE73
@@ -1067,8 +1029,8 @@ U 1 1 5E3CAD23
 P 15250 2650
 AR Path="/5EC40F3C/5E3CAD23" Ref="C?"  Part="1" 
 AR Path="/6056AA11/5E3CAD23" Ref="C1818"  Part="1" 
-F 0 "C1818" V 15400 2700 20  0000 R CNN
-F 1 "100pF" V 15350 2750 20  0000 R CNN
+F 0 "C1818" V 15322 2540 20  0000 R CNN
+F 1 "100pF" V 15279 2540 20  0000 R CNN
 F 2 "servo:C_0603_1608Metric" H 15250 2550 60  0001 C CNN
 F 3 "" H 15250 2650 60  0000 C CNN
 	1    15250 2650
@@ -1094,7 +1056,7 @@ P 15250 2750
 AR Path="/5EC40F3C/5E3CAD30" Ref="#PWR?"  Part="1" 
 AR Path="/6056AA11/5E3CAD30" Ref="#PWR0245"  Part="1" 
 F 0 "#PWR0245" H 15250 2500 30  0001 C CNN
-F 1 "GND" H 15250 2592 30  0000 C CNN
+F 1 "GND" H 15150 2700 30  0000 C CNN
 F 2 "" H 15250 2750 50  0001 C CNN
 F 3 "" H 15250 2750 50  0001 C CNN
 	1    15250 2750
@@ -1127,4 +1089,42 @@ F 3 "" H 12050 4100 50  0001 C CNN
 	1    12050 4100
 	1    0    0    -1  
 $EndComp
+Text GLabel 2700 3450 0    50   Input ~ 0
+SD_CLK_OUT
+Text GLabel 15100 3350 2    50   Input ~ 0
+SD_CLK_IN2
+Text GLabel 15100 2950 2    50   Input ~ 0
+SD2_U
+Text GLabel 15100 3050 2    50   Input ~ 0
+SD2_V
+Text GLabel 15100 3150 2    50   Input ~ 0
+SD2_W
+Text GLabel 15100 3250 2    50   Input ~ 0
+SD2_A
+Text GLabel 15100 3450 2    50   Input ~ 0
+SD_CLK_OUT
+Text GLabel 9950 3350 0    50   Input ~ 0
+SD_CLK_IN2_H
+Text GLabel 9950 2950 0    50   Input ~ 0
+SD2_U_H
+Text GLabel 9950 3050 0    50   Input ~ 0
+SD2_V_H
+Text GLabel 9950 3150 0    50   Input ~ 0
+SD2_W_H
+Text GLabel 9950 3250 0    50   Input ~ 0
+SD2_A_H
+Text GLabel 9950 3450 0    50   Input ~ 0
+SD_CLK_OUT2_H
+Text GLabel 7900 3350 2    50   Input ~ 0
+SD_CLK_IN1_H
+Text GLabel 7900 2950 2    50   Input ~ 0
+SD1_U_H
+Text GLabel 7900 3050 2    50   Input ~ 0
+SD1_V_H
+Text GLabel 7900 3150 2    50   Input ~ 0
+SD1_W_H
+Text GLabel 7900 3250 2    50   Input ~ 0
+SD1_A_H
+Text GLabel 7900 3450 2    50   Input ~ 0
+SD_CLK_OUT1_H
 $EndSCHEMATC

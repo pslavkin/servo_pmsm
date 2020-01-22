@@ -14,44 +14,10 @@ Comment2 ""
 Comment3 ""
 Comment4 ""
 $EndDescr
-Text GLabel 14550 5950 2    50   Input ~ 0
-PWM_B_2H_C
-Text GLabel 14550 6150 2    50   Input ~ 0
-PWM_B_3H_C
-Text GLabel 14550 6050 2    50   Input ~ 0
-PWM_B_2L_C
-Text GLabel 14550 6250 2    50   Input ~ 0
-PWM_B_3L_C
-Text GLabel 14550 7100 2    50   Input ~ 0
-PWM_B_BRK_RES_C
-Text GLabel 14550 5750 2    50   Input ~ 0
-PWM_B_1H_C
-Text GLabel 14550 5850 2    50   Input ~ 0
-PWM_B_1L_C
 Text Notes 5950 950  0    197  ~ 39
 PWM OUT -> ISOLATOR -> BUFFER -> FILTER\n
 Text Notes 8650 1600 0    39   ~ 0
 these pins has isolation and a buffer. They could be directly connected\n to a IGBT module for test porpouses or to a power board and another\n isolation stage for production porpouses to have a reinforced isolation.\n In next stages of the development of the board, the buffers could be\n eliminated, but not the isolation Scmith trigger stage\n\nI left other multiporpouse IN/OUT using the free \npins on isolators
-Text GLabel 14550 7300 2    50   Input ~ 0
-FREE_OUT_B1
-Text GLabel 14550 7400 2    50   Input ~ 0
-FREE_OUT_B2
-Text GLabel 14550 7200 2    50   Input ~ 0
-BRK_B_MEC_C
-Text GLabel 1950 2300 0    50   Input ~ 0
-PWM_A_2H_C
-Text GLabel 1950 2500 0    50   Input ~ 0
-PWM_A_3H_C
-Text GLabel 1950 2400 0    50   Input ~ 0
-PWM_A_2L_C
-Text GLabel 1950 2600 0    50   Input ~ 0
-PWM_A_3L_C
-Text GLabel 1950 3450 0    50   Input ~ 0
-PWM_A_BRK_RES_C
-Text GLabel 1950 2100 0    50   Input ~ 0
-PWM_A_1H_C
-Text GLabel 1950 2200 0    50   Input ~ 0
-PWM_A_1L_C
 $Comp
 L servo:3V3 #PWR0801
 U 1 1 5E60CB33
@@ -305,10 +271,6 @@ Wire Wire Line
 Connection ~ 2250 4050
 Text Notes 2700 2900 0    20   ~ 0
 Choose a package pin-to-pin compatible with\nTI ISO7760. But SIlabs cost halt the price as TI
-Text GLabel 1950 3650 0    50   Input ~ 0
-FREE_OUT_A1
-Text GLabel 1950 3750 0    50   Input ~ 0
-FREE_OUT_A2
 Wire Wire Line
 	2350 3650 1950 3650
 Wire Wire Line
@@ -336,8 +298,6 @@ F 3 "../doc/datasheets/Si8660.pdf" H 2950 4250 60  0001 C CNN
 	1    3050 3650
 	1    0    0    -1  
 $EndComp
-Text GLabel 1950 3550 0    50   Input ~ 0
-BRK_A_MEC_C
 $Comp
 L servo:SN74LVC2G17DBVR U807
 U 1 1 5E60CBE0
@@ -1595,46 +1555,6 @@ F 3 "" H 4850 1550 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 Connection ~ 4850 1650
-Text GLabel 6750 6150 0    50   Input ~ 0
-PWM_B_1H_H
-Text GLabel 6750 6250 0    50   Input ~ 0
-PWM_B_1L_H
-Text GLabel 6750 6350 0    50   Input ~ 0
-PWM_B_2H_H
-Text GLabel 6750 6450 0    50   Input ~ 0
-PWM_B_2L_H
-Text GLabel 6750 6550 0    50   Input ~ 0
-PWM_B_3H_H
-Text GLabel 6750 6650 0    50   Input ~ 0
-PWM_B_3L_H
-Text GLabel 6750 6750 0    50   Input ~ 0
-PWM_B_BRK_RES_H
-Text GLabel 6750 6850 0    50   Input ~ 0
-BRK_B_MEC_H
-Text GLabel 6750 6950 0    50   Input ~ 0
-FREE_OUT_B1_H
-Text GLabel 6750 7050 0    50   Input ~ 0
-FREE_OUT_B2_H
-Text GLabel 9250 2500 2    50   Input ~ 0
-PWM_A_1H_H
-Text GLabel 9250 2600 2    50   Input ~ 0
-PWM_A_1L_H
-Text GLabel 9250 2700 2    50   Input ~ 0
-PWM_A_2H_H
-Text GLabel 9250 2800 2    50   Input ~ 0
-PWM_A_2L_H
-Text GLabel 9250 2900 2    50   Input ~ 0
-PWM_A_3H_H
-Text GLabel 9250 3000 2    50   Input ~ 0
-PWM_A_3L_H
-Text GLabel 9250 3100 2    50   Input ~ 0
-PWM_A_BRK_RES_H
-Text GLabel 9250 3200 2    50   Input ~ 0
-BRK_A_MEC_H
-Text GLabel 9250 3300 2    50   Input ~ 0
-FREE_OUT_A1_H
-Text GLabel 9250 3400 2    50   Input ~ 0
-FREE_OUT_A2_H
 $Comp
 L servo:SN74LVC2G17DBVR U803
 U 1 1 5E60CBFC
@@ -1646,22 +1566,6 @@ F 3 "../doc/datasheets/sn74lvc2g17.pdf" H 4650 2500 60  0001 C CNN
 	1    4950 2050
 	1    0    0    -1  
 $EndComp
-Text GLabel 1950 3850 0    50   Input ~ 0
-FAN_RPM1
-Text GLabel 1950 3950 0    50   Input ~ 0
-IGBT_ALARM1
-Text GLabel 9250 3500 2    50   Input ~ 0
-FAN_RPM1_H
-Text GLabel 9250 3600 2    50   Input ~ 0
-IGBT_ALARM1_H
-Text GLabel 6750 7150 0    50   Input ~ 0
-FAN_RPM2_H
-Text GLabel 6750 7250 0    50   Input ~ 0
-IGBT_ALARM2_H
-Text GLabel 14550 7500 2    50   Input ~ 0
-FAN_RPM2
-Text GLabel 14550 7600 2    50   Input ~ 0
-IGBT_ALARM2
 Wire Wire Line
 	3750 2400 4250 2400
 Wire Wire Line
@@ -2238,4 +2142,100 @@ Wire Wire Line
 Connection ~ 10150 5700
 Wire Wire Line
 	10150 5700 9900 5700
+Text GLabel 1950 2100 0    50   Input ~ 0
+IGBT1_UH
+Text GLabel 1950 2200 0    50   Input ~ 0
+IGBT1_UL
+Text GLabel 1950 2300 0    50   Input ~ 0
+IGBT1_VH
+Text GLabel 1950 2400 0    50   Input ~ 0
+IGBT1_VL
+Text GLabel 1950 2500 0    50   Input ~ 0
+IGBT1_WH
+Text GLabel 1950 2600 0    50   Input ~ 0
+IGBT1_WL
+Text GLabel 1950 3450 0    50   Input ~ 0
+BRK_RES1
+Text GLabel 1950 3750 0    50   Input ~ 0
+FREE_OUT1_2
+Text GLabel 1950 3850 0    50   Input ~ 0
+FAN_RPM1
+Text GLabel 1950 3550 0    50   Input ~ 0
+BRK_MEC1
+Text GLabel 1950 3650 0    50   Input ~ 0
+FREE_OUT1_1
+Text GLabel 1950 3950 0    50   Input ~ 0
+IGBT_ALARM1
+Text GLabel 9250 2500 2    50   Input ~ 0
+IGBT1_UH_H
+Text GLabel 9250 2600 2    50   Input ~ 0
+IGBT1_UL_H
+Text GLabel 9250 2700 2    50   Input ~ 0
+IGBT1_VH_H
+Text GLabel 9250 2800 2    50   Input ~ 0
+IGBT1_VL_H
+Text GLabel 9250 2900 2    50   Input ~ 0
+IGBT1_WH_H
+Text GLabel 9250 3000 2    50   Input ~ 0
+IGBT1_WL_H
+Text GLabel 9250 3100 2    50   Input ~ 0
+BRK_RES1_H
+Text GLabel 9250 3400 2    50   Input ~ 0
+FREE_OUT1_2_H
+Text GLabel 9250 3500 2    50   Input ~ 0
+FAN_RPM1_H
+Text GLabel 9250 3200 2    50   Input ~ 0
+BRK_MEC1_H
+Text GLabel 9250 3300 2    50   Input ~ 0
+FREE_OUT1_1_H
+Text GLabel 9250 3600 2    50   Input ~ 0
+IGBT_ALARM1_H
+Text GLabel 6750 6150 0    50   Input ~ 0
+IGBT2_UH_H
+Text GLabel 6750 6250 0    50   Input ~ 0
+IGBT2_UL_H
+Text GLabel 6750 6350 0    50   Input ~ 0
+IGBT2_VH_H
+Text GLabel 6750 6450 0    50   Input ~ 0
+IGBT2_VL_H
+Text GLabel 6750 6550 0    50   Input ~ 0
+IGBT2_WH_H
+Text GLabel 6750 6650 0    50   Input ~ 0
+IGBT2_WL_H
+Text GLabel 6750 6750 0    50   Input ~ 0
+BRK_RES2_H
+Text GLabel 6750 7050 0    50   Input ~ 0
+FREE_OUT2_2_H
+Text GLabel 6750 7150 0    50   Input ~ 0
+FAN_RPM2_H
+Text GLabel 6750 6850 0    50   Input ~ 0
+BRK_MEC2_H
+Text GLabel 6750 6950 0    50   Input ~ 0
+FREE_OUT2_1_H
+Text GLabel 6750 7250 0    50   Input ~ 0
+IGBT_ALARM2_H
+Text GLabel 14550 5750 2    50   Input ~ 0
+IGBT2_UH
+Text GLabel 14550 5850 2    50   Input ~ 0
+IGBT2_UL
+Text GLabel 14550 5950 2    50   Input ~ 0
+IGBT2_VH
+Text GLabel 14550 6050 2    50   Input ~ 0
+IGBT2_VL
+Text GLabel 14550 6150 2    50   Input ~ 0
+IGBT2_WH
+Text GLabel 14550 6250 2    50   Input ~ 0
+IGBT2_WL
+Text GLabel 14550 7100 2    50   Input ~ 0
+BRK_RES2
+Text GLabel 14550 7400 2    50   Input ~ 0
+FREE_OUT2_2
+Text GLabel 14550 7500 2    50   Input ~ 0
+FAN_RPM2
+Text GLabel 14550 7200 2    50   Input ~ 0
+BRK_MEC2
+Text GLabel 14550 7300 2    50   Input ~ 0
+FREE_OUT2_1
+Text GLabel 14550 7600 2    50   Input ~ 0
+IGBT_ALARM2
 $EndSCHEMATC

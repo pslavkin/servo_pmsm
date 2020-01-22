@@ -15,9 +15,9 @@ Comment3 ""
 Comment4 ""
 $EndDescr
 Text GLabel 6550 3000 0    50   Input ~ 0
-1Wire_OUT
+1WIRE_OUT
 Text GLabel 6550 2700 0    50   Input ~ 0
-1Wire_IN
+1WIRE_IN
 $Comp
 L servo:ADM2483 U903
 U 1 1 5E068643
@@ -155,7 +155,7 @@ Wire Wire Line
 Wire Wire Line
 	7250 2700 6550 2700
 Text GLabel 6550 2850 0    50   Input ~ 0
-1Wire_EN
+1WIRE_EN
 Wire Wire Line
 	7250 2800 7200 2800
 Wire Wire Line
@@ -281,9 +281,9 @@ Wire Wire Line
 	6950 4950 6950 5100
 Connection ~ 6950 4950
 Text GLabel 5950 4600 0    50   Input ~ 0
-NTCA1_P
+NTC1_1_P
 Text GLabel 5950 5000 0    50   Input ~ 0
-NTCA1_N
+NTC1_1_N
 $Comp
 L servo:AMC1311B U901
 U 1 1 5E50963F
@@ -463,8 +463,6 @@ Wire Wire Line
 	6750 5000 6750 4850
 Wire Wire Line
 	6750 4850 7200 4850
-Text GLabel 9400 5050 2    50   Input ~ 0
-NTCA1_H
 $Comp
 L servo:5VH #PWR0906
 U 1 1 5FDF9BF4
@@ -622,9 +620,9 @@ Wire Wire Line
 	12750 4950 12750 5100
 Connection ~ 12750 4950
 Text GLabel 13750 4600 2    50   Input ~ 0
-NTCB1_P
+NTC2_1_P
 Text GLabel 13750 5000 2    50   Input ~ 0
-NTCB1_N
+NTC2_1_N
 $Comp
 L servo:AMC1311B U904
 U 1 1 5FE9D1AB
@@ -762,8 +760,6 @@ Wire Wire Line
 	12950 5000 12950 4850
 Wire Wire Line
 	12950 4850 12500 4850
-Text GLabel 10300 5050 0    50   Input ~ 0
-NTCB1_H
 $Comp
 L servo:5VH #PWR0914
 U 1 1 5FE9D205
@@ -800,9 +796,9 @@ Wire Wire Line
 Wire Wire Line
 	10450 5050 10300 5050
 Text GLabel 9350 2750 2    50   Input ~ 0
-1-WIREP_H
+1-WIRE_P_H
 Text GLabel 9350 2850 2    50   Input ~ 0
-1-WIREN_H
+1-WIRE_N_H
 Wire Wire Line
 	9250 2750 9350 2750
 Wire Wire Line
@@ -919,9 +915,9 @@ Wire Wire Line
 	6950 6600 6950 6750
 Connection ~ 6950 6600
 Text GLabel 5950 6250 0    50   Input ~ 0
-NTCA2_P
+NTC1_2_P
 Text GLabel 5950 6650 0    50   Input ~ 0
-NTCA2_N
+NTC1_2_N
 $Comp
 L servo:AMC1311B U902
 U 1 1 5E1BD534
@@ -1061,8 +1057,6 @@ Wire Wire Line
 	6750 6650 6750 6500
 Wire Wire Line
 	6750 6500 7200 6500
-Text GLabel 9400 6700 2    50   Input ~ 0
-NTCA2_H
 $Comp
 L servo:5VH #PWR0907
 U 1 1 5E1BD57E
@@ -1220,9 +1214,9 @@ Wire Wire Line
 	12750 6600 12750 6750
 Connection ~ 12750 6600
 Text GLabel 13750 6250 2    50   Input ~ 0
-NTCB2_P
+NTC2_2_P
 Text GLabel 13750 6650 2    50   Input ~ 0
-NTCB2_N
+NTC2_2_N
 $Comp
 L servo:AMC1311B U905
 U 1 1 5E1BD5CA
@@ -1360,8 +1354,6 @@ Wire Wire Line
 	12950 6650 12950 6500
 Wire Wire Line
 	12950 6500 12500 6500
-Text GLabel 10300 6700 0    50   Input ~ 0
-NTCB2_H
 $Comp
 L servo:5VH #PWR0915
 U 1 1 5E1BD613
@@ -1502,4 +1494,12 @@ F 3 "" H 6750 2450 70  0000 C CNN
 	1    6750 2450
 	1    0    0    -1  
 $EndComp
+Text GLabel 9400 5050 2    50   Input ~ 0
+NTC1_1_H
+Text GLabel 9400 6700 2    50   Input ~ 0
+NTC1_2_H
+Text GLabel 10300 6700 0    50   Input ~ 0
+NTC2_2_H
+Text GLabel 10300 5050 0    50   Input ~ 0
+NTC2_1_H
 $EndSCHEMATC

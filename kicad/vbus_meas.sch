@@ -15,9 +15,9 @@ Comment3 ""
 Comment4 ""
 $EndDescr
 Text GLabel 5400 2850 0    50   Input ~ 0
-VBUS_A_P
+VBUS1_P
 Text GLabel 5400 3250 0    50   Input ~ 0
-VBUS_A_N
+VBUS1_N
 Text Notes 4700 1100 0    197  ~ 39
 VBUS -> R divider -> ISO ADC -> uC\n
 $Comp
@@ -184,9 +184,9 @@ Wire Wire Line
 Text Notes 6700 3450 0    20   ~ 0
 It's an isolated specialized IC for volttage measurement that acept\n unipolar signal until 2V, so it has more dynamic range than AMC1301\n for example 
 Text GLabel 5500 5150 0    50   Input ~ 0
-VBUS_B_P
+VBUS2_P
 Text GLabel 5500 5550 0    50   Input ~ 0
-VBUS_B_N
+VBUS2_N
 Text Notes 6850 1750 0    39   ~ 0
 It's intended to measure the Vbus, one per motor, but they cold be\n joined if both motor share same VBus. The Vbus informatio will be\n used by the control algorith and to drive the break resistor PWM to\n protect the rise of the Vbus more than a threshold\n\nThe input is expected not to be 220v or 380v. It's supoused to be a\n isolated low voltage to maintaint the reinforced insulation. In case\n you can't you could input 220v directly but the isolation would be\n simple
 Wire Wire Line
@@ -878,13 +878,13 @@ F 3 "" H 9100 3300 60  0001 C CNN
 $EndComp
 Connection ~ 8800 4050
 Text GLabel 9900 6350 2    50   Input ~ 0
-VBUS_B_N_H
+VBUS2_N_H
 Text GLabel 9850 4050 2    50   Input ~ 0
-VBUS_A_N_H
+VBUS1_N_H
 Text GLabel 9900 5600 2    50   Input ~ 0
-VBUS_B_P_H
+VBUS2_P_H
 Text GLabel 9850 3300 2    50   Input ~ 0
-VBUS_A_P_H
+VBUS1_P_H
 Wire Wire Line
 	8900 6350 9900 6350
 Wire Wire Line

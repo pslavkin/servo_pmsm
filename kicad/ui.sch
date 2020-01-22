@@ -408,28 +408,6 @@ Wire Wire Line
 	5450 2450 6250 2450
 NoConn ~ 5450 2050
 $Comp
-L servo:SW_Push SW1403
-U 1 1 5EF4E22E
-P 7350 3350
-F 0 "SW1403" H 7600 3400 39  0000 C CNN
-F 1 "SW_Push" H 7350 3536 39  0001 C CNN
-F 2 "Button_Switch_SMD:SW_SPST_PTS645" H 7350 3550 50  0001 C CNN
-F 3 "" H 7350 3550 50  0001 C CNN
-	1    7350 3350
-	1    0    0    -1  
-$EndComp
-$Comp
-L servo:SW_Push SW1404
-U 1 1 5EF4EBD2
-P 7350 3550
-F 0 "SW1404" H 7600 3600 39  0000 C CNN
-F 1 "SW_Push" H 7350 3736 39  0001 C CNN
-F 2 "Button_Switch_SMD:SW_SPST_PTS645" H 7350 3750 50  0001 C CNN
-F 3 "" H 7350 3750 50  0001 C CNN
-	1    7350 3550
-	1    0    0    -1  
-$EndComp
-$Comp
 L servo:GND #PWR?
 U 1 1 5EF4F67A
 P 7750 3700
@@ -488,7 +466,7 @@ U 1 1 5EED15B1
 P 5150 2050
 F 0 "J1401" H 5200 2651 50  0000 C CNN
 F 1 "NHD-4.3-480272FT-CTXL-T" H 5200 2568 39  0000 C CNN
-F 2 "servo:HD-4.3-480272" H 5150 2050 50  0001 C CNN
+F 2 "servo:idc2x10_smd" H 5150 2050 50  0001 C CNN
 F 3 "../doc/datasheets/NHD-4.3-480272FT-CTXL-T.pdf" H 5200 2550 50  0001 C CNN
 	1    5150 2050
 	1    0    0    -1  
@@ -505,40 +483,9 @@ Text Notes 5750 1350 0    20   ~ 0
 I leve a multi LCD/Touch/button 20 pins IDC connector to interfase with\n some UI. It could be simple leds,, a character LCD or an EVE graphic\n LCD as I recomment  'cause for same price you've all in one piece and\n it's already done, clean, usefull and intuitive interfase.\n\n\nI've added 2 more GPIO's 4 and 5 apart of LCD to manage an 8080 \n motorola LCD interfase as well. Using 4 bits for data/address plus CS0\n/CS1 plus R/W plus E = 7 pins plus 4 buttons = 11 ( amd you have 12\n available) Just made another board with 4 buttons and a LCD and you're\n done 
 Wire Wire Line
 	8600 1500 8600 1000
-$Comp
-L servo:Capacitor C?
-U 1 1 618D8220
-P 8150 1200
-AR Path="/5E092156/618D8220" Ref="C?"  Part="1" 
-AR Path="/5E72D841/618D8220" Ref="C1405"  Part="1" 
-F 0 "C1405" V 8222 1090 20  0000 R CNN
-F 1 "10u" V 8179 1090 20  0000 R CNN
-F 2 "servo:C_0603_1608Metric" H 8150 1100 60  0001 C CNN
-F 3 "" H 8150 1200 60  0000 C CNN
-	1    8150 1200
-	0    -1   -1   0   
-$EndComp
-Wire Wire Line
-	8150 1000 8600 1000
 Connection ~ 8600 1000
 Wire Wire Line
 	8600 1000 8600 900 
-$Comp
-L servo:GND #PWR?
-U 1 1 618DC4D7
-P 8150 1300
-AR Path="/5DCD812E/618DC4D7" Ref="#PWR?"  Part="1" 
-AR Path="/5EAA846A/618DC4D7" Ref="#PWR?"  Part="1" 
-AR Path="/5F1E3CD5/618DC4D7" Ref="#PWR?"  Part="1" 
-AR Path="/5DD76B18/618DC4D7" Ref="#PWR?"  Part="1" 
-AR Path="/5E72D841/618DC4D7" Ref="#PWR01409"  Part="1" 
-F 0 "#PWR01409" H 8155 1151 20  0001 C CNN
-F 1 "GND" H 8155 1142 30  0000 C CNN
-F 2 "" H 8150 1300 70  0000 C CNN
-F 3 "" H 8150 1300 70  0000 C CNN
-	1    8150 1300
-	1    0    0    -1  
-$EndComp
 $Comp
 L servo:Capacitor C?
 U 1 1 618DDB4B
@@ -597,9 +544,6 @@ F 3 "" H 7650 1300 70  0000 C CNN
 	1    7650 1300
 	1    0    0    -1  
 $EndComp
-Wire Wire Line
-	8150 1000 7900 1000
-Connection ~ 8150 1000
 Connection ~ 7900 1000
 Wire Wire Line
 	7900 1000 7650 1000
@@ -616,4 +560,6 @@ F 3 "~" H 9500 1750 50  0001 C CNN
 $EndComp
 Text Notes 7900 950  0    20   ~ 4
 for bulk capacitor
+Wire Wire Line
+	7900 1000 8600 1000
 $EndSCHEMATC
