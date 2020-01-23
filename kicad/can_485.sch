@@ -383,18 +383,18 @@ Wire Wire Line
 $Comp
 L servo:Earth #PWR01210
 U 1 1 5E47A129
-P 7750 4050
-F 0 "#PWR01210" H 7750 3800 20  0001 C CNN
-F 1 "Earth" H 7750 3885 39  0000 C CNN
-F 2 "" H 7750 4050 50  0001 C CNN
-F 3 "~" H 7750 4050 50  0001 C CNN
-	1    7750 4050
+P 7750 4000
+F 0 "#PWR01210" H 7750 3750 20  0001 C CNN
+F 1 "Earth" H 7750 3835 39  0000 C CNN
+F 2 "" H 7750 4000 50  0001 C CNN
+F 3 "~" H 7750 4000 50  0001 C CNN
+	1    7750 4000
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
 	7900 3950 7750 3950
 Wire Wire Line
-	7750 3950 7750 4050
+	7750 3950 7750 4000
 $Comp
 L servo:R_Small R?
 U 1 1 5E47F52D
@@ -695,4 +695,9 @@ F 3 "" H 11650 3200 70  0000 C CNN
 	1    11650 3200
 	-1   0    0    -1  
 $EndComp
+Connection ~ 7750 4000
+Wire Wire Line
+	7750 4000 7750 4050
+Text Notes 10050 2450 0    20   ~ 0
+at endat page the isolator has 4 pins free, so I'd use them plus an\n SN651167 to make a RS485 isolated driver  cheaper.. The thing is\n that I will need to have endat chip to have 485, what if I need 485\n without endat.. and what if I need more isolated I/O next... so my\n decision now is to use these IC, that has one only mision, and if I\n depopulate it, nothing change.. and also has more driver current..\n
 $EndSCHEMATC

@@ -730,8 +730,8 @@ L Connector_Generic:Conn_02x06_Odd_Even J601
 U 1 1 5E9506B9
 P 3300 2600
 F 0 "J601" H 3350 3017 50  0000 C CNN
-F 1 "Conn_02x06_Odd_Even" H 3350 2926 50  0000 C CNN
-F 2 "Connector_PinSocket_2.54mm:PinSocket_2x06_P2.54mm_Vertical_SMD" H 3300 2600 50  0001 C CNN
+F 1 "pinHeader" H 3350 2926 50  0000 C CNN
+F 2 "servo:PinSocket_2x06_P2.54mm_Vertical_SMD" H 3300 2600 50  0001 C CNN
 F 3 "~" H 3300 2600 50  0001 C CNN
 	1    3300 2600
 	1    0    0    -1  

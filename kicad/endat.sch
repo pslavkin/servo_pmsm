@@ -168,23 +168,6 @@ F 3 "" H 8050 4500 50  0001 C CNN
 	1    8050 4500
 	1    0    0    -1  
 $EndComp
-Wire Wire Line
-	7900 5450 7900 5400
-$Comp
-L servo:GNDH #PWR?
-U 1 1 5E51CFF4
-P 7900 5450
-AR Path="/5DE49152/5E51CFF4" Ref="#PWR?"  Part="1" 
-AR Path="/5E1BAEAA/5E51CFF4" Ref="#PWR?"  Part="1" 
-AR Path="/5DE3DF56/5E51CFF4" Ref="#PWR?"  Part="1" 
-AR Path="/5F8D42C2/5E51CFF4" Ref="#PWR0222"  Part="1" 
-F 0 "#PWR0222" H 7900 5200 30  0001 C CNN
-F 1 "GNDH" H 7900 5292 30  0000 C CNN
-F 2 "" H 7900 5450 50  0001 C CNN
-F 3 "" H 7900 5450 50  0001 C CNN
-	1    7900 5450
-	-1   0    0    -1  
-$EndComp
 $Comp
 L servo:Jumper_3_Bridged12 JP?
 U 1 1 5E51CFFA
@@ -222,8 +205,6 @@ Wire Wire Line
 Wire Wire Line
 	8050 4550 8150 4550
 Wire Wire Line
-	7800 5000 8100 5000
-Wire Wire Line
 	7900 5400 8100 5400
 $Comp
 L servo:tblock2x6 J?
@@ -238,33 +219,6 @@ F 3 "../doc/datasheets/tblock2rows.pdf" H 8350 5400 50  0001 C CNN
 	1    8300 5100
 	1    0    0    -1  
 $EndComp
-Wire Wire Line
-	7650 5100 8100 5100
-Wire Wire Line
-	7650 5200 7650 5250
-Wire Wire Line
-	7650 5200 8100 5200
-Wire Wire Line
-	7800 5300 8100 5300
-Wire Wire Line
-	8800 5450 8800 5400
-$Comp
-L servo:GNDH #PWR?
-U 1 1 5E607856
-P 8800 5450
-AR Path="/5DE49152/5E607856" Ref="#PWR?"  Part="1" 
-AR Path="/5E1BAEAA/5E607856" Ref="#PWR?"  Part="1" 
-AR Path="/5DE3DF56/5E607856" Ref="#PWR?"  Part="1" 
-AR Path="/5F8D42C2/5E607856" Ref="#PWR0224"  Part="1" 
-F 0 "#PWR0224" H 8800 5200 30  0001 C CNN
-F 1 "GNDH" H 8800 5292 30  0000 C CNN
-F 2 "" H 8800 5450 50  0001 C CNN
-F 3 "" H 8800 5450 50  0001 C CNN
-	1    8800 5450
-	1    0    0    -1  
-$EndComp
-Wire Wire Line
-	8800 5400 8600 5400
 Text Label 4350 4550 0    39   ~ 0
 ENDAT1_MISO_H
 Text Label 4350 4150 0    39   ~ 0
@@ -982,22 +936,6 @@ Connection ~ 7300 4350
 Wire Wire Line
 	7100 4150 7300 4150
 Connection ~ 7300 4150
-Wire Wire Line
-	7650 5050 7650 5100
-Wire Wire Line
-	7800 4950 7800 5000
-Wire Wire Line
-	6850 5050 7200 5050
-Wire Wire Line
-	6750 4950 7100 4950
-Wire Wire Line
-	7100 4150 7100 4950
-Connection ~ 7100 4950
-Wire Wire Line
-	7100 4950 7800 4950
-Connection ~ 7200 5050
-Wire Wire Line
-	7200 5050 7650 5050
 $Comp
 L servo:R_Small R?
 U 1 1 6375BF43
@@ -1077,24 +1015,6 @@ Connection ~ 7650 4350
 Wire Wire Line
 	7450 4150 7650 4150
 Connection ~ 7650 4150
-Wire Wire Line
-	7200 4350 7200 5050
-Wire Wire Line
-	7800 5350 7800 5300
-Wire Wire Line
-	6550 5250 7450 5250
-Wire Wire Line
-	6550 5350 7550 5350
-Wire Wire Line
-	7550 4350 7550 5350
-Connection ~ 7550 5350
-Wire Wire Line
-	7550 5350 7800 5350
-Wire Wire Line
-	7450 4150 7450 5250
-Connection ~ 7450 5250
-Wire Wire Line
-	7450 5250 7650 5250
 NoConn ~ 13850 4250
 NoConn ~ 13850 4650
 NoConn ~ 12450 4250
@@ -1109,12 +1029,6 @@ NoConn ~ 5500 5350
 NoConn ~ 11250 5150
 NoConn ~ 11250 5250
 NoConn ~ 11250 5350
-Wire Wire Line
-	9050 5100 8600 5100
-Wire Wire Line
-	9050 5200 9050 5250
-Wire Wire Line
-	9050 5200 8600 5200
 $Comp
 L servo:R_Small R?
 U 1 1 5E3D483F
@@ -1194,16 +1108,6 @@ Connection ~ 9400 4350
 Wire Wire Line
 	9600 4150 9400 4150
 Connection ~ 9400 4150
-Wire Wire Line
-	9050 5050 9050 5100
-Wire Wire Line
-	9600 4150 9600 4950
-Connection ~ 9600 4950
-Wire Wire Line
-	9600 4950 8900 4950
-Connection ~ 9500 5050
-Wire Wire Line
-	9500 5050 9050 5050
 $Comp
 L servo:R_Small R?
 U 1 1 5E3D486C
@@ -1283,32 +1187,170 @@ Connection ~ 9050 4350
 Wire Wire Line
 	9250 4150 9050 4150
 Connection ~ 9050 4150
+$Comp
+L servo:GNDH #PWR?
+U 1 1 5E31EAC9
+P 8700 5800
+AR Path="/5DDE8C5E/5E31EAC9" Ref="#PWR?"  Part="1" 
+AR Path="/5E092156/5E31EAC9" Ref="#PWR?"  Part="1" 
+AR Path="/5F8D42C2/5E31EAC9" Ref="#PWR0268"  Part="1" 
+F 0 "#PWR0268" H 8700 5550 30  0001 C CNN
+F 1 "GNDH" H 8700 5650 20  0000 C CNN
+F 2 "" H 8700 5800 50  0001 C CNN
+F 3 "" H 8700 5800 50  0001 C CNN
+	1    8700 5800
+	-1   0    0    -1  
+$EndComp
+$Comp
+L servo:Jumper_3_Bridged12 JP?
+U 1 1 5E31EACF
+P 8350 5700
+AR Path="/5E1BAEAA/5E31EACF" Ref="JP?"  Part="1" 
+AR Path="/5E21534F/5E31EACF" Ref="JP?"  Part="1" 
+AR Path="/5DE3DF56/5E31EACF" Ref="JP?"  Part="1" 
+AR Path="/5F8D42C2/5E31EACF" Ref="JP1902"  Part="1" 
+F 0 "JP1902" H 8350 5869 39  0000 C CNN
+F 1 "jumper" H 8350 5794 39  0000 C CNN
+F 2 "Jumper:SolderJumper-3_P1.3mm_Open_RoundedPad1.0x1.5mm" H 8150 5500 50  0001 C CNN
+F 3 "~" H 8250 5600 50  0001 C CNN
+	1    8350 5700
+	1    0    0    1   
+$EndComp
 Wire Wire Line
-	9500 4350 9500 5050
+	8550 5700 8700 5700
 Wire Wire Line
-	9150 4350 9150 5350
-Connection ~ 9150 5350
+	8700 5700 8700 5800
+$Comp
+L servo:Earth #PWR?
+U 1 1 5E31EAD8
+P 8000 5800
+AR Path="/5E21534F/5E31EAD8" Ref="#PWR?"  Part="1" 
+AR Path="/5DE3DF56/5E31EAD8" Ref="#PWR?"  Part="1" 
+AR Path="/5F8D42C2/5E31EAD8" Ref="#PWR0269"  Part="1" 
+F 0 "#PWR0269" H 8000 5550 20  0001 C CNN
+F 1 "Earth" H 8000 5650 20  0000 C CNN
+F 2 "" H 8000 5800 50  0001 C CNN
+F 3 "~" H 8000 5800 50  0001 C CNN
+	1    8000 5800
+	1    0    0    -1  
+$EndComp
 Wire Wire Line
-	9150 5350 8900 5350
+	8150 5700 8000 5700
 Wire Wire Line
-	9250 4150 9250 5250
-Connection ~ 9250 5250
+	8000 5700 8000 5850
 Wire Wire Line
-	9250 5250 9050 5250
+	7900 5600 8350 5600
 Wire Wire Line
-	8900 4950 8900 5000
+	7900 5400 7900 5600
 Wire Wire Line
-	8900 5000 8600 5000
+	8800 5400 8800 5600
+Connection ~ 8350 5600
 Wire Wire Line
-	8600 5300 8900 5300
+	8350 5600 8800 5600
+Text Label 6900 4950 0    39   ~ 0
+ENDAT1_DATA_H_P
+Text Label 6900 5050 0    39   ~ 0
+ENDAT1_DATA_H_N
+Text Label 6850 5350 0    39   ~ 0
+ENDAT1_CLK_H_P
+Text Label 6850 5250 0    39   ~ 0
+ENDAT1_CLK_H_N
 Wire Wire Line
-	8900 5300 8900 5350
+	6750 4950 7450 4950
 Wire Wire Line
-	9500 5050 9900 5050
+	7450 4150 7450 4950
 Wire Wire Line
-	9600 4950 10000 4950
+	7550 4350 7550 5050
 Wire Wire Line
-	9250 5250 10200 5250
+	6850 5050 7550 5050
+Connection ~ 7550 5050
 Wire Wire Line
-	9150 5350 10200 5350
+	7550 5050 7800 5050
+Wire Wire Line
+	6550 5250 7200 5250
+Wire Wire Line
+	6550 5350 7100 5350
+Wire Wire Line
+	7100 4150 7100 5350
+Wire Wire Line
+	7200 4350 7200 5250
+Wire Wire Line
+	7100 5350 7950 5350
+Wire Wire Line
+	7950 5350 7950 5000
+Wire Wire Line
+	7950 5000 8100 5000
+Connection ~ 7100 5350
+Wire Wire Line
+	7200 5250 8000 5250
+Wire Wire Line
+	8000 5250 8000 5100
+Wire Wire Line
+	8000 5100 8100 5100
+Connection ~ 7200 5250
+Wire Wire Line
+	7450 4950 7900 4950
+Wire Wire Line
+	7900 4950 7900 5200
+Wire Wire Line
+	7900 5200 8100 5200
+Connection ~ 7450 4950
+Wire Wire Line
+	7800 5050 7800 5300
+Wire Wire Line
+	7800 5300 8100 5300
+Wire Wire Line
+	8600 5000 8900 5000
+Wire Wire Line
+	8900 5000 8900 5350
+Wire Wire Line
+	8850 5250 8850 5100
+Wire Wire Line
+	8850 5100 8600 5100
+Wire Wire Line
+	9000 4950 9000 5200
+Wire Wire Line
+	9000 5200 8600 5200
+Wire Wire Line
+	8600 5300 9050 5300
+Wire Wire Line
+	9050 5300 9050 5050
+Wire Wire Line
+	8850 5250 9500 5250
+Wire Wire Line
+	9150 4350 9150 5050
+Wire Wire Line
+	9050 5050 9150 5050
+Connection ~ 9150 5050
+Wire Wire Line
+	9150 5050 9900 5050
+Wire Wire Line
+	9250 4150 9250 4950
+Wire Wire Line
+	9000 4950 9250 4950
+Connection ~ 9250 4950
+Wire Wire Line
+	9250 4950 10000 4950
+Wire Wire Line
+	9500 4350 9500 5250
+Connection ~ 9500 5250
+Wire Wire Line
+	9500 5250 10200 5250
+Wire Wire Line
+	9600 4150 9600 5350
+Wire Wire Line
+	8900 5350 9600 5350
+Connection ~ 9600 5350
+Wire Wire Line
+	9600 5350 10200 5350
+Text Label 9350 4950 0    39   ~ 0
+ENDAT2_DATA_H_P
+Text Label 9350 5050 0    39   ~ 0
+ENDAT2_DATA_H_N
+Text Label 9250 5250 0    39   ~ 0
+ENDAT2_CLK_H_N
+Text Label 9250 5350 0    39   ~ 0
+ENDAT2_CLK_H_P
+Wire Wire Line
+	8600 5400 8800 5400
 $EndSCHEMATC

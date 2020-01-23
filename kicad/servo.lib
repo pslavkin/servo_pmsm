@@ -1043,7 +1043,7 @@ ENDDEF
 #
 DEF Earth #PWR 0 0 N N 1 F P
 F0 "#PWR" 0 -250 20 H I C CNN
-F1 "Earth" 0 -150 39 H V C CNN
+F1 "Earth" 0 -150 20 H V C CNN
 F2 "" 0 0 50 H I C CNN
 F3 "" 0 0 50 H I C CNN
 DRAW
