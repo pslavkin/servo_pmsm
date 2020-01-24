@@ -687,4 +687,6 @@ Wire Wire Line
 	8650 3300 9050 3300
 Text Label 8400 3300 0    20   ~ 0
 STEP_DiR_5VH
+Text Label 8800 4250 0    20   ~ 0
+STEP_DiR_GND
 $EndSCHEMATC
