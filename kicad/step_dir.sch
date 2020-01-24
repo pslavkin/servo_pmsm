@@ -156,14 +156,12 @@ F 3 "" H 7500 3400 50  0001 C CNN
 	1    7500 3400
 	1    0    0    -1  
 $EndComp
-Text Label 8150 3750 0    20   ~ 0
-STEP1_A+_H
-Text Label 8150 3850 0    20   ~ 0
-STEP1_A-_H
 Text Label 8150 3950 0    20   ~ 0
-STEP1_B+_H
-Text Label 8150 4050 0    20   ~ 0
-STEP1_B-_H
+DIR1_A_P_H
+Text Label 8150 3750 0    20   ~ 0
+STEP1_P_H
+Text Label 8150 3850 0    20   ~ 0
+STEP1_N_H
 Wire Wire Line
 	7000 3200 7000 3850
 Wire Wire Line
@@ -513,8 +511,6 @@ Wire Wire Line
 	7300 3950 7300 4800
 Wire Wire Line
 	7400 4050 7400 4700
-Wire Wire Line
-	7400 4700 8300 4700
 Connection ~ 7400 4050
 Wire Wire Line
 	8800 5550 8800 4700
@@ -527,15 +523,7 @@ Wire Wire Line
 Wire Wire Line
 	8900 4800 8900 5550
 Wire Wire Line
-	9000 5550 9000 4900
-Wire Wire Line
-	9000 4900 10400 4900
-Wire Wire Line
 	10400 3750 10400 4900
-Wire Wire Line
-	10300 5000 9100 5000
-Wire Wire Line
-	9100 5000 9100 5550
 Wire Wire Line
 	10300 3850 10300 5000
 Wire Wire Line
@@ -548,51 +536,21 @@ Wire Wire Line
 Wire Wire Line
 	8250 6550 8250 6400
 Wire Wire Line
-	8450 6400 8450 6650
-Wire Wire Line
 	8850 6650 8850 6400
-Wire Wire Line
-	9050 6400 9050 6550
 Text GLabel 8000 6550 0    50   Input ~ 0
 STEP1_H
-Text GLabel 8000 6650 0    50   Input ~ 0
+Text GLabel 8000 6750 0    50   Input ~ 0
 DIR1_H
 Wire Wire Line
 	8250 6550 8000 6550
-Wire Wire Line
-	8000 6650 8450 6650
 Text GLabel 9300 6550 2    50   Input ~ 0
 STEP2_H
 Text GLabel 9300 6650 2    50   Input ~ 0
 DIR2_H
 Wire Wire Line
-	9300 6550 9050 6550
-Wire Wire Line
 	8850 6650 9300 6650
 Text Notes 8400 1350 0    20   ~ 0
 The isolation part is shared with QEP
-Wire Wire Line
-	8500 4900 8500 5550
-Wire Wire Line
-	7000 4900 8500 4900
-Wire Wire Line
-	8400 5000 8400 5550
-Wire Wire Line
-	6900 5000 8400 5000
-Wire Wire Line
-	8300 5550 8300 4700
-Wire Wire Line
-	8200 5550 8200 4800
-Wire Wire Line
-	8200 4800 7300 4800
-Text Label 8950 3750 0    20   ~ 0
-STEP2_A+_H
-Text Label 8950 3850 0    20   ~ 0
-STEP2_A-_H
-Text Label 8950 3950 0    20   ~ 0
-STEP2_B+_H
-Text Label 8950 4050 0    20   ~ 0
-STEP2_B-_H
 Wire Wire Line
 	7500 5800 7500 5850
 Wire Wire Line
@@ -694,4 +652,54 @@ Wire Wire Line
 Wire Wire Line
 	8650 4250 9000 4250
 Connection ~ 8650 4250
+Text Label 8150 4050 0    20   ~ 0
+DIR1_A_N_H
+Text Label 9000 3950 0    20   ~ 0
+DIR2_A_P_H
+Text Label 9000 4050 0    20   ~ 0
+DIR2_A_N_H
+Text Label 9000 3750 0    20   ~ 0
+STEP2_P_H
+Text Label 9000 3850 0    20   ~ 0
+STEP2_N_H
+Wire Wire Line
+	8300 5550 8300 4900
+Wire Wire Line
+	8300 4900 7000 4900
+Wire Wire Line
+	6900 5000 8200 5000
+Wire Wire Line
+	8200 5000 8200 5550
+Wire Wire Line
+	9050 6750 9050 6400
+Wire Wire Line
+	8000 6750 9050 6750
+Wire Wire Line
+	8450 6400 8450 6550
+Wire Wire Line
+	8450 6550 9300 6550
+Wire Wire Line
+	8400 4900 8400 5550
+Wire Wire Line
+	8400 4900 10400 4900
+Wire Wire Line
+	8500 5550 8500 5000
+Wire Wire Line
+	8500 5000 10300 5000
+Wire Wire Line
+	8600 4800 8600 5200
+Wire Wire Line
+	8600 5200 9000 5200
+Wire Wire Line
+	9000 5200 9000 5550
+Wire Wire Line
+	7300 4800 8600 4800
+Wire Wire Line
+	8700 4700 8700 5100
+Wire Wire Line
+	8700 5100 9100 5100
+Wire Wire Line
+	9100 5100 9100 5550
+Wire Wire Line
+	7400 4700 8700 4700
 $EndSCHEMATC

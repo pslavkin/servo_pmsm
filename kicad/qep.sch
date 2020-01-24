@@ -15,7 +15,7 @@ Comment3 ""
 Comment4 ""
 $EndDescr
 Text Notes 2050 1450 0    197  ~ 39
-2x Isolated Idifferential ncremental encoder  interfase\n5v input A-B-I-S\n
+2x Isolated Idifferential incremental encoder  interfase\n5v input A-B-I-S\n
 Text Notes 3650 1650 0    20   ~ 4
 I left the input for two isolated incremental encoders.\nI left the 4 signals input plus two auxiliary output for eny porpous plus\n the ability to choose between 5 or 15vH
 $Comp
@@ -30,9 +30,9 @@ F 3 "~" H 5800 3750 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 Text Label 5400 3650 0    20   ~ 0
-QEP1_B+_H
+QEP1_B_P_H
 Text Label 5400 3750 0    20   ~ 0
-QEP1_B-_H
+QEP1_B_N_H
 Text GLabel 1100 3500 0    50   Input ~ 0
 QEP1_A
 Text GLabel 1100 3600 0    50   Input ~ 0
@@ -212,21 +212,21 @@ Wire Wire Line
 Text Notes 9200 3800 2    20   ~ 0
 optional one to hi \nor/and one to low
 Text Label 6500 3350 2    20   ~ 0
-QEP2_A+_H
+QEP2_A_P_H
 Text Label 6500 3450 2    20   ~ 0
-QEP2_A-_H
+QEP2_A_N_H
 Text Label 6300 3650 2    20   ~ 0
-QEP2_B+_H
+QEP2_B_P_H
 Text Label 6300 3750 2    20   ~ 0
-QEP2_B-_H
+QEP2_B_N_H
 Text Label 6300 3850 2    20   ~ 0
-QEP2_I+_H
+QEP2_I_P_H
 Text Label 6300 3950 2    20   ~ 0
-QEP2_I-_H
+QEP2_I_N_H
 Text Label 6500 4150 2    20   ~ 0
-QEP2_S+_H
+QEP2_S_P_H
 Text Label 6500 4250 2    20   ~ 0
-QEP2_S-_H
+QEP2_S_N_H
 Text GLabel 10600 3500 2    50   Input ~ 0
 QEP2_A
 Text GLabel 10600 3600 2    50   Input ~ 0
@@ -857,17 +857,17 @@ Wire Wire Line
 Text Notes 2500 3800 0    20   ~ 0
 optional one to hi \nor/and one to low
 Text Label 5200 3350 0    20   ~ 0
-QEP1_A+_H
+QEP1_A_P_H
 Text Label 5200 3450 0    20   ~ 0
-QEP1_A-_H
+QEP1_A_N_H
 Text Label 5400 3850 0    20   ~ 0
-QEP1_I+_H
+QEP1_I_P_H
 Text Label 5400 3950 0    20   ~ 0
-QEP1_I-_H
+QEP1_I_N_H
 Text Label 5200 4150 0    20   ~ 0
-QEP1_S+_H
+QEP1_S_P_H
 Text Label 5200 4250 0    20   ~ 0
-QEP1_S-_H
+QEP1_S_N_H
 $Comp
 L servo:GND #PWR?
 U 1 1 63457659
@@ -1557,4 +1557,20 @@ Wire Wire Line
 Connection ~ 5500 4600
 Wire Wire Line
 	5500 4600 5500 4650
+Text Label 8900 3800 2    20   ~ 0
+QEP2_S_H
+Text Label 8900 3700 2    20   ~ 0
+QEP2_I_H
+Text Label 8900 3600 2    20   ~ 0
+QEP2_B_H
+Text Label 8900 3500 2    20   ~ 0
+QEP2_A_H
+Text Label 2700 3500 0    20   ~ 0
+QEP1_A_H
+Text Label 2700 3600 0    20   ~ 0
+QEP1_B_H
+Text Label 2700 3700 0    20   ~ 0
+QEP1_I_H
+Text Label 2700 3800 0    20   ~ 0
+QEP1_S_H
 $EndSCHEMATC

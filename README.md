@@ -44,7 +44,9 @@ I'll let pins to aquire and filter it.
   eliminated, two buttons eliminated. 2 LEM's eliminated
 - :construction:        all footprints choosen, but deserves some comprobation
 - :heavy_check_mark:    placement rought done
-- :construction:        rounting..
+- :construction:        ronting..
+- :construction:        moving ethernet connector to right and remove 15vh->5vh and debuh
+  driver
  
 
 ---
@@ -96,10 +98,13 @@ first pic, easy, doesn't it?
 <img src="doc/pics/layout2.jpg"      width="400"/>
 <img src="doc/pics/layout3.jpg"      width="400"/>
 <img src="doc/pics/layout3_back.jpg" width="400"/>
+<img src="doc/pics/layout4.jpg"      width="400"/>
+<img src="doc/pics/layout4_back.jpg" width="400"/>
 
 <img src="doc/pics/ratsnets1.jpg" width="400"/>
 <img src="doc/pics/ratsnets2.jpg" width="400"/>
 <img src="doc/pics/ratsnets3.jpg" width="400"/>
+<img src="doc/pics/ratsnets4.jpg" width="400"/>
 
 
 ## Hierarchy

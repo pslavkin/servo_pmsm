@@ -893,4 +893,5 @@ Wire Wire Line
 Connection ~ 6350 6450
 Wire Wire Line
 	6350 6450 6000 6450
+NoConn ~ 12550 5550
 $EndSCHEMATC

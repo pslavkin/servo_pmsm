@@ -578,7 +578,7 @@ Text GLabel 1800 3950 0    50   Input ~ 0
 VBUS2_N
 NoConn ~ 4150 1550
 NoConn ~ 4750 1550
-NoConn ~ 6050 1550
+NoConn ~ 5700 1550
 $Comp
 L servo:3V3 #PWR?
 U 1 1 5E2B3CC5
@@ -672,14 +672,16 @@ F 3 "../doc/datasheets/tpd4e001-q1.pdf" H 5850 2150 60  0001 C CNN
 $EndComp
 Wire Wire Line
 	1800 2550 5550 2550
-Wire Wire Line
-	5550 2550 5550 1550
-Wire Wire Line
-	5550 1550 5700 1550
 Connection ~ 5550 2550
 Wire Wire Line
 	5900 2150 5900 2450
 Wire Wire Line
 	5550 2550 7050 2550
 NoConn ~ 5700 2150
+Wire Wire Line
+	5550 1350 6050 1350
+Wire Wire Line
+	6050 1350 6050 1550
+Wire Wire Line
+	5550 1350 5550 2550
 $EndSCHEMATC
