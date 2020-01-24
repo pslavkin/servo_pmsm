@@ -216,13 +216,12 @@ P 8250 3800
 AR Path="/5DC1676A/5DE66EAC" Ref="R?"  Part="1" 
 AR Path="/5DCD812E/5DE66EAC" Ref="R?"  Part="1" 
 AR Path="/5DD4DF4C/5DE66EAC" Ref="R606"  Part="1" 
-F 0 "R606" V 8197 3850 60  0000 L CNN
-F 1 "1.0k" H 8250 3800 50  0001 C CNN
-F 2 "Resistor_SMD:R_0603_1608Metric" H 8250 3800 50  0001 C CNN
-F 3 "" H 8250 3800 50  0001 C CNN
-F 4 "1.0k" V 8303 3850 60  0000 L CNN "ValueDisplayed"
+F 0 "R606" V 8325 3750 20  0000 R CNN
+F 1 "1.0k" V 8282 3750 20  0000 R CNN
+F 2 "Resistor_SMD:R_0603_1608Metric" H 7750 3700 60  0001 C CNN
+F 3 "" H 7850 3800 60  0001 C CNN
 	1    8250 3800
-	0    1    1    0   
+	0    -1   -1   0   
 $EndComp
 $Comp
 L servo:LED_A2_K1 D?
@@ -230,11 +229,11 @@ U 1 1 5DE66EBC
 P 4400 3250
 AR Path="/5DCD812E/5DE66EBC" Ref="D?"  Part="1" 
 AR Path="/5DD4DF4C/5DE66EBC" Ref="D603"  Part="1" 
-F 0 "D603" V 4404 3172 60  0000 R CNN
-F 1 "green" H 4400 3250 50  0001 C CNN
-F 2 "servo:LED_0603_1608Metric" H 4400 3250 50  0001 C CNN
-F 3 "" H 4400 3250 50  0001 C CNN
-F 4 "green@2mA" V 4478 3172 20  0000 R CNN "VALUE"
+F 0 "D603" V 4385 3172 20  0000 R CNN
+F 1 "green" V 4425 3172 16  0000 R CNN
+F 2 "servo:LED_0603_1608Metric" H 4200 3050 60  0001 C CNN
+F 3 "" H 4200 3050 60  0001 C CNN
+F 4 "green@2mA" V 4465 3172 20  0000 R CNN "VALUE"
 	1    4400 3250
 	0    1    1    0   
 $EndComp
@@ -244,11 +243,11 @@ U 1 1 5DE66EC4
 P 8250 3450
 AR Path="/5DCD812E/5DE66EC4" Ref="D?"  Part="1" 
 AR Path="/5DD4DF4C/5DE66EC4" Ref="D604"  Part="1" 
-F 0 "D604" V 8197 3321 60  0000 R CNN
-F 1 "blue" H 8250 3450 50  0001 C CNN
-F 2 "servo:LED_0603_1608Metric" H 8250 3450 50  0001 C CNN
-F 3 "" H 8250 3450 50  0001 C CNN
-F 4 "blue@2mA" V 8303 3321 20  0000 R CNN "VALUE"
+F 0 "D604" V 8235 3580 20  0000 L CNN
+F 1 "blue" V 8275 3580 16  0000 L CNN
+F 2 "servo:LED_0603_1608Metric" H 8050 3250 60  0001 C CNN
+F 3 "" H 8050 3250 60  0001 C CNN
+F 4 "blue@2mA" V 8315 3580 20  0000 L CNN "VALUE"
 	1    8250 3450
 	0    1    1    0   
 $EndComp
@@ -451,23 +450,6 @@ Wire Wire Line
 	2750 2200 2750 2500
 Wire Wire Line
 	2750 2500 3100 2500
-Wire Wire Line
-	5500 3200 5100 3200
-Wire Wire Line
-	5100 3200 5100 2200
-Wire Wire Line
-	5100 2200 5500 2200
-$Comp
-L servo:3V3 #PWR0605
-U 1 1 5EEBF59C
-P 6300 1700
-F 0 "#PWR0605" H 6305 1907 20  0001 C CNN
-F 1 "3V3" H 6305 1857 28  0000 C CNN
-F 2 "" H 6300 1700 50  0001 C CNN
-F 3 "" H 6300 1700 50  0001 C CNN
-	1    6300 1700
-	1    0    0    -1  
-$EndComp
 $Comp
 L servo:GND #PWR_0602
 U 1 1 5EEC9C34
@@ -480,16 +462,7 @@ F 3 "" H 6300 4350 70  0000 C CNN
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
-	7100 2600 7500 2600
-Wire Wire Line
 	7700 2800 10050 2800
-Wire Wire Line
-	7450 4900 7450 4800
-Wire Wire Line
-	5100 1800 5100 2200
-Wire Wire Line
-	6300 1800 6300 1700
-Connection ~ 5100 2200
 $Comp
 L servo:GND #PWR_0604
 U 1 1 5EF4D354
@@ -587,21 +560,13 @@ Text Notes 9400 6800 0    197  ~ 39
 ADC/DAC DBG OUT
 Text Notes 9900 7050 0    20   ~ 0
 it's just optional for debug porpouses to monitor\n some analog signal out from the board, it could \nbe very handy
-Wire Wire Line
-	6300 1800 5100 1800
 NoConn ~ -1800 600 
 Text Label 4150 3800 2    60   ~ 0
 PRG_SCI_RX
 Text Label 4150 4000 2    60   ~ 0
 PRG_SCI_TX
 Wire Wire Line
-	3600 2400 5500 2400
-Wire Wire Line
 	5250 2500 5250 2600
-Wire Wire Line
-	5250 2600 5500 2600
-Wire Wire Line
-	5500 2800 5000 2800
 Wire Wire Line
 	5000 2800 5000 2600
 Wire Wire Line
@@ -613,11 +578,7 @@ Wire Wire Line
 Wire Wire Line
 	3600 2700 4900 2700
 Wire Wire Line
-	4900 3000 5500 3000
-Wire Wire Line
 	4700 2800 4700 3400
-Wire Wire Line
-	4700 3400 5500 3400
 Wire Wire Line
 	3600 2800 4700 2800
 Wire Wire Line
@@ -625,50 +586,19 @@ Wire Wire Line
 Wire Wire Line
 	2800 2600 2800 4000
 Wire Wire Line
-	5500 3800 4400 3800
-Wire Wire Line
-	2800 4000 5500 4000
-Connection ~ 6300 1800
-$Comp
-L servo:SN74ALVC244PW U601
-U 1 1 5EE6E621
-P 6300 3200
-F 0 "U601" H 6700 4600 60  0000 C CNN
-F 1 "SN74ALVC244PW" H 6800 4500 60  0000 C CNN
-F 2 "Package_SO:SO-20_12.8x7.5mm_P1.27mm" H 6300 3200 60  0001 C CNN
-F 3 "../doc/datasheets/sn74alvc244.pdf" H 6300 4483 60  0001 C CNN
-	1    6300 3200
-	1    0    0    -1  
-$EndComp
-Wire Wire Line
-	7100 3800 7450 3800
-Wire Wire Line
-	7100 2400 10650 2400
-Wire Wire Line
 	7500 2500 7500 2600
 Wire Wire Line
 	7500 2500 10650 2500
 Wire Wire Line
 	7550 2700 7550 2800
 Wire Wire Line
-	7100 2800 7550 2800
-Wire Wire Line
 	7550 2700 10650 2700
 Wire Wire Line
 	7700 2800 7700 3000
 Wire Wire Line
-	7100 3000 7700 3000
-Wire Wire Line
-	7950 3400 7100 3400
-Wire Wire Line
 	7950 2600 7950 3400
 Wire Wire Line
 	8250 3300 8250 3350
-Wire Wire Line
-	7100 4000 8250 4000
-Connection ~ 8250 4000
-Wire Wire Line
-	8250 4000 8500 4000
 Connection ~ 4400 3800
 Wire Wire Line
 	4400 3800 2900 3800
@@ -685,7 +615,7 @@ F 3 "" H 4400 3100 70  0000 C CNN
 	1    4400 3100
 	1    0    0    -1  
 $EndComp
-Text Notes 3200 2250 0    20   ~ 0
+Text Notes 3200 2100 0    20   ~ 0
 Programmer connector plus SCI for debug porpouses.. take in account\n that it's not isolated, only buffered to minimize risk. It's supoussed that\n th 3v3 cold side never touch 220v\n
 Text Notes 8000 1600 0    197  ~ 39
 CLK + JTAG + SCI\n
@@ -707,7 +637,6 @@ Wire Wire Line
 	13100 8100 13100 7400
 Wire Wire Line
 	7100 3600 7250 3600
-NoConn ~ 5500 3600
 NoConn ~ 12650 3100
 NoConn ~ 12650 2700
 NoConn ~ 12650 2600
@@ -736,4 +665,22 @@ F 3 "~" H 3300 2600 50  0001 C CNN
 	1    3300 2600
 	1    0    0    -1  
 $EndComp
+Wire Wire Line
+	3600 2400 10650 2400
+Wire Wire Line
+	5250 2600 7500 2600
+Wire Wire Line
+	4700 3400 7950 3400
+Wire Wire Line
+	4900 3000 7700 3000
+Wire Wire Line
+	5000 2800 7550 2800
+Wire Wire Line
+	4400 3800 7450 3800
+NoConn ~ 5500 3600
+Wire Wire Line
+	2800 4000 8250 4000
+Connection ~ 8250 4000
+Wire Wire Line
+	8250 4000 8500 4000
 $EndSCHEMATC

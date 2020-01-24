@@ -167,95 +167,46 @@ F 4 "22uF" V -5250 6350 60  0001 C CNN "ValueDisplayed"
 	0    1    1    0   
 $EndComp
 $Comp
-L servo:Capacitor C?
-U 1 1 5E2F90CF
-P 14300 6050
-AR Path="/5EAA846A/5E2F90CF" Ref="C?"  Part="1" 
-AR Path="/5DD76B18/5E2F90CF" Ref="C708"  Part="1" 
-F 0 "C708" V 14328 6160 20  0000 L CNN
-F 1 "22uF" V 14371 6160 20  0000 L CNN
-F 2 "servo:C_0603_1608Metric" H 14300 5950 60  0001 C CNN
-F 3 "" H 14300 6050 60  0000 C CNN
-F 4 "22uF" V 1300 6450 60  0001 C CNN "ValueDisplayed"
-	1    14300 6050
-	0    1    1    0   
-$EndComp
-$Comp
-L servo:Capacitor C?
-U 1 1 5E18DDC4
-P 14600 6050
-AR Path="/5EAA846A/5E18DDC4" Ref="C?"  Part="1" 
-AR Path="/5DD76B18/5E18DDC4" Ref="C710"  Part="1" 
-F 0 "C710" V 14628 6160 20  0000 L CNN
-F 1 "100nF" V 14671 6160 20  0000 L CNN
-F 2 "servo:C_0603_1608Metric" H 14600 5950 60  0001 C CNN
-F 3 "" H 14600 6050 60  0000 C CNN
-F 4 "22uF" V 1600 6450 60  0001 C CNN "ValueDisplayed"
-	1    14600 6050
-	0    1    1    0   
-$EndComp
-Wire Wire Line
-	13850 6050 13850 6550
-Wire Wire Line
-	13350 5650 13350 5750
-$Comp
-L servo:15VH #PWR0710
-U 1 1 5E18DDC5
-P 13350 5650
-F 0 "#PWR0710" H 13350 5450 20  0001 C CNN
-F 1 "15VH" H 13355 5807 28  0000 C CNN
-F 2 "" H 13350 5650 50  0001 C CNN
-F 3 "" H 13350 5650 50  0001 C CNN
-	1    13350 5650
-	1    0    0    -1  
-$EndComp
-Wire Wire Line
-	13350 5750 13550 5750
-$Comp
 L servo:5VH #PWR0717
 U 1 1 5E309ABD
-P 15000 5650
-F 0 "#PWR0717" H 15000 5450 20  0001 C CNN
-F 1 "5VH" H 15005 5807 28  0000 C CNN
-F 2 "" H 15000 5650 50  0001 C CNN
-F 3 "" H 15000 5650 50  0001 C CNN
-	1    15000 5650
+P 13650 5450
+F 0 "#PWR0717" H 13650 5250 20  0001 C CNN
+F 1 "5VH" H 13655 5607 28  0000 C CNN
+F 2 "" H 13650 5450 50  0001 C CNN
+F 3 "" H 13650 5450 50  0001 C CNN
+	1    13650 5450
 	1    0    0    -1  
 $EndComp
-Wire Wire Line
-	13850 6550 14000 6550
 $Comp
 L servo:Resistor R?
 U 1 1 5E38D647
-P 15000 6000
+P 13650 5800
 AR Path="/5EAA846A/5E38D647" Ref="R?"  Part="1" 
 AR Path="/5DD76B18/5E38D647" Ref="R704"  Part="1" 
-F 0 "R704" V 14978 6050 20  0000 L CNN
-F 1 "680" V 15021 6050 20  0000 L CNN
-F 2 "Resistor_SMD:R_0603_1608Metric" H 14500 5900 60  0001 C CNN
-F 3 "" H 14600 6000 60  0001 C CNN
-F 4 "680" V 2600 6400 60  0001 C CNN "ValueDisplayed"
-	1    15000 6000
+F 0 "R704" V 13628 5850 20  0000 L CNN
+F 1 "680" V 13671 5850 20  0000 L CNN
+F 2 "Resistor_SMD:R_0603_1608Metric" H 13150 5700 60  0001 C CNN
+F 3 "" H 13250 5800 60  0001 C CNN
+F 4 "680" V 1250 6200 60  0001 C CNN "ValueDisplayed"
+	1    13650 5800
 	0    1    1    0   
 $EndComp
 $Comp
 L servo:LED_A2_K1 D?
 U 1 1 5E38D64F
-P 15000 6300
+P 13650 6100
 AR Path="/5EAA846A/5E38D64F" Ref="D?"  Part="1" 
 AR Path="/5DD76B18/5E38D64F" Ref="D704"  Part="1" 
-F 0 "D704" V 15025 6430 20  0000 L CNN
-F 1 "red" H 15000 6450 16  0001 C CNN
-F 2 "servo:LED_0603_1608Metric" H 14800 6100 60  0001 C CNN
-F 3 "" H 14800 6100 60  0000 C CNN
-F 4 "red" V 2600 6200 60  0001 C CNN "VALUE"
-	1    15000 6300
+F 0 "D704" V 13675 6230 20  0000 L CNN
+F 1 "red" H 13650 6250 16  0001 C CNN
+F 2 "servo:LED_0603_1608Metric" H 13450 5900 60  0001 C CNN
+F 3 "" H 13450 5900 60  0000 C CNN
+F 4 "red" V 1250 6000 60  0001 C CNN "VALUE"
+	1    13650 6100
 	0    1    1    0   
 $EndComp
 Wire Wire Line
-	15000 6450 15000 6550
-Wire Wire Line
-	15000 5800 15000 5750
+	13650 6250 13650 6350
 $Comp
 L servo:GND #PWR?
 U 1 1 5E18DDCA
@@ -272,47 +223,16 @@ F 3 "" H 3550 6400 70  0000 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L servo:15VH #PWR0704
-U 1 1 5E18DDCC
-P 12800 5450
-F 0 "#PWR0704" H 12800 5250 20  0001 C CNN
-F 1 "15VH" H 12853 5494 28  0000 L CNN
-F 2 "" H 12800 5450 50  0001 C CNN
-F 3 "" H 12800 5450 50  0001 C CNN
-	1    12800 5450
-	1    0    0    -1  
-$EndComp
-$Comp
 L servo:GNDH #PWR0702
 U 1 1 5E18DDCD
-P 12300 6350
-F 0 "#PWR0702" H 12300 6100 30  0001 C CNN
-F 1 "GNDH" H 12300 6192 30  0000 C CNN
-F 2 "" H 12300 6350 50  0001 C CNN
-F 3 "" H 12300 6350 50  0001 C CNN
-	1    12300 6350
+P 12300 6400
+F 0 "#PWR0702" H 12300 6150 30  0001 C CNN
+F 1 "GNDH" H 12300 6242 30  0000 C CNN
+F 2 "" H 12300 6400 50  0001 C CNN
+F 3 "" H 12300 6400 50  0001 C CNN
+	1    12300 6400
 	1    0    0    -1  
 $EndComp
-$Comp
-L servo:Capacitor C?
-U 1 1 5E18DDCF
-P 13350 6050
-AR Path="/5EAA846A/5E18DDCF" Ref="C?"  Part="1" 
-AR Path="/5DD76B18/5E18DDCF" Ref="C702"  Part="1" 
-F 0 "C702" V 13378 5941 20  0000 R CNN
-F 1 "220uF" V 13421 5941 20  0000 R CNN
-F 2 "servo:C_0603_1608Metric" H 13350 5950 60  0001 C CNN
-F 3 "" H 13350 6050 60  0000 C CNN
-F 4 "22uF" V 350 6450 60  0001 C CNN "ValueDisplayed"
-	1    13350 6050
-	0    1    1    0   
-$EndComp
-Wire Wire Line
-	13350 5750 13350 5950
-Connection ~ 13350 5750
-Wire Wire Line
-	13850 6550 13350 6550
-Connection ~ 13850 6550
 Text Notes 5550 4700 0    197  ~ 39
 COLD SUPPLY\n
 Text Notes 13050 4900 0    197  ~ 39
@@ -327,9 +247,6 @@ Connection ~ 7200 5650
 Wire Wire Line
 	6850 6050 6850 6450
 Connection ~ 6850 6450
-Connection ~ 15000 5750
-Wire Wire Line
-	15000 5650 15000 5750
 Connection ~ 2000 5900
 Wire Wire Line
 	2000 5900 1900 5900
@@ -337,28 +254,12 @@ Text Notes 7550 1650 0    197  ~ 39
 Main Power
 Text Notes 13500 5100 0    20   ~ 0
 Take in account that hot doesn't mean that it is refered to high voltage\n AC socket input path like 220v/380v. It is intended to isolate the uC\n/logic/user interfase side from accidentally high voltage contact on the\n hot side and prevent injuries as to make the reinforced isolation\n possible with one single isolateion added
-Text Notes 13650 5500 0    20   ~ 0
-sip 3 package, cheap, easy to \nreplace and many options
 Text Notes 5000 5400 0    20   ~ 0
 sip 3 package, cheap, easy to \nreplace and many options
 Text Notes 7900 2350 0    20   ~ 0
 In case the control board have to be supply directly with socket voltage\n (220v) populate these. It's not a good idea cause I'll like to keep hight\n voltage outside these controller board, but it's a requeriment, so I let it\n as an option. But you have the low voltage input 15vc and 15vh\n connectors also\n\nI've choosen to add 2 power supply for Cold and Hot sides because\n it's cheaper than have only one double sized power supply and add\n a DC/DC isolated controller, and it has the advantage to choose\n which one to use and if there is some isue in the HOT side, the Cold\n side keeps working without affect. I've choosen 15W size beouse\n has similar price as 10.2W and is pin-to-pin compatible with 20W, so\n you could change if you need more power\n\n\nI wrote 15v on the DC voltage side, but it's better to use 12v. But the\n range coulg be from 8 to 18 more or less
 Text Notes 6050 4950 0    20   ~ 0
 It is inteded to use only, I mean ONLY inside the control board, none of\n these coopers wires has to leave the board. I isolate every single pin\n from these supply to go outside, take these in account\n
-$Comp
-L servo:GNDH #PWR0713
-U 1 1 5EC79A03
-P 14000 6600
-F 0 "#PWR0713" H 14000 6350 30  0001 C CNN
-F 1 "GNDH" H 14000 6442 30  0000 C CNN
-F 2 "" H 14000 6600 50  0001 C CNN
-F 3 "" H 14000 6600 50  0001 C CNN
-	1    14000 6600
-	1    0    0    -1  
-$EndComp
-Wire Wire Line
-	14000 6600 14000 6550
-Connection ~ 14000 6550
 Wire Wire Line
 	2000 5750 2000 5900
 Wire Wire Line
@@ -419,43 +320,6 @@ Wire Wire Line
 	7750 5650 8100 5650
 Text Notes 6400 6250 0    20   ~ 0
 the intention of the LCD it to clean \nthe noise without using big filters\n and L's. It's recommended and \ntested that these method works \npretty\nlow noise \nLDO <30uV
-$Comp
-L servo:R-78E5.0-1.0 U704
-U 1 1 5E2CE6E1
-P 13850 5750
-F 0 "U704" H 13850 5968 39  0000 C CNN
-F 1 "R-78E5.0-1.0" H 13850 5893 39  0000 C CNN
-F 2 "Converter_DCDC:Converter_DCDC_RECOM_R-78E-0.5_THT" H 13900 5500 50  0001 L CIN
-F 3 "https://www.recom-power.com/pdf/Innoline/R-78Exx-1.0.pdf" H 13850 5750 50  0001 C CNN
-	1    13850 5750
-	1    0    0    -1  
-$EndComp
-Wire Wire Line
-	14150 5750 14300 5750
-Wire Wire Line
-	14000 6550 14300 6550
-Wire Wire Line
-	13350 6250 13350 6550
-Wire Wire Line
-	14300 5950 14300 5750
-Connection ~ 14300 5750
-Wire Wire Line
-	14300 5750 14600 5750
-Wire Wire Line
-	14600 5950 14600 5750
-Connection ~ 14600 5750
-Wire Wire Line
-	14600 5750 15000 5750
-Wire Wire Line
-	14300 6250 14300 6550
-Connection ~ 14300 6550
-Wire Wire Line
-	14300 6550 14600 6550
-Wire Wire Line
-	14600 6250 14600 6550
-Connection ~ 14600 6550
-Wire Wire Line
-	14600 6550 15000 6550
 $Comp
 L servo:PWR_FLAG #FLG0701
 U 1 1 5E1BE0A4
@@ -601,9 +465,9 @@ F 4 "red" V -100 6000 60  0001 C CNN "VALUE"
 	0    1    1    0   
 $EndComp
 Wire Wire Line
-	12300 6250 12300 6300
+	12300 6250 12300 6350
 Wire Wire Line
-	12100 6300 12100 6050
+	12100 6350 12100 6050
 Wire Wire Line
 	12100 5850 12100 5550
 Wire Wire Line
@@ -625,14 +489,12 @@ $EndComp
 Wire Wire Line
 	12650 5550 12700 5550
 Wire Wire Line
-	12800 5450 12800 5550
-Wire Wire Line
 	12300 5550 12450 5550
 Wire Wire Line
-	12300 6350 12300 6300
-Connection ~ 12300 6300
+	12300 6400 12300 6350
+Connection ~ 12300 6350
 Wire Wire Line
-	12100 6300 12300 6300
+	12100 6350 12300 6350
 Wire Wire Line
 	3550 6350 3550 6400
 Connection ~ 3550 6350
@@ -650,8 +512,6 @@ F 3 "~" H 12700 5450 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 Connection ~ 12700 5550
-Wire Wire Line
-	12700 5550 12800 5550
 $Comp
 L servo:PWR_FLAG #FLG0704
 U 1 1 5E6C456D
@@ -813,7 +673,7 @@ AC_N
 Text Label 1400 6100 0    39   ~ 0
 AC_N
 Text Label 12150 5550 0    20   ~ 0
-15VH_IN
+5VH_IN
 Text Label 3150 5900 0    20   ~ 0
 5VC_IN
 Text GLabel 8200 3400 0    50   Input ~ 0
@@ -893,5 +753,63 @@ Wire Wire Line
 Connection ~ 6350 6450
 Wire Wire Line
 	6350 6450 6000 6450
-NoConn ~ 12550 5550
+Wire Wire Line
+	13250 6350 13650 6350
+Connection ~ 13250 6350
+Wire Wire Line
+	13250 6050 13250 6350
+Wire Wire Line
+	12950 6350 13250 6350
+Wire Wire Line
+	13650 5450 13650 5550
+Wire Wire Line
+	13650 5600 13650 5550
+Connection ~ 13650 5550
+Wire Wire Line
+	13250 5550 13650 5550
+Wire Wire Line
+	13250 5750 13250 5550
+Connection ~ 13250 5550
+Wire Wire Line
+	12950 5550 13250 5550
+Wire Wire Line
+	12950 5750 12950 5550
+Connection ~ 12950 5550
+$Comp
+L servo:Capacitor C?
+U 1 1 5E18DDC4
+P 13250 5850
+AR Path="/5EAA846A/5E18DDC4" Ref="C?"  Part="1" 
+AR Path="/5DD76B18/5E18DDC4" Ref="C710"  Part="1" 
+F 0 "C710" V 13278 5960 20  0000 L CNN
+F 1 "100nF" V 13321 5960 20  0000 L CNN
+F 2 "servo:C_0603_1608Metric" H 13250 5750 60  0001 C CNN
+F 3 "" H 13250 5850 60  0000 C CNN
+F 4 "22uF" V 250 6250 60  0001 C CNN "ValueDisplayed"
+	1    13250 5850
+	0    1    1    0   
+$EndComp
+$Comp
+L servo:Capacitor C?
+U 1 1 5E2F90CF
+P 12950 5850
+AR Path="/5EAA846A/5E2F90CF" Ref="C?"  Part="1" 
+AR Path="/5DD76B18/5E2F90CF" Ref="C708"  Part="1" 
+F 0 "C708" V 12978 5960 20  0000 L CNN
+F 1 "22uF" V 13021 5960 20  0000 L CNN
+F 2 "servo:C_0603_1608Metric" H 12950 5750 60  0001 C CNN
+F 3 "" H 12950 5850 60  0000 C CNN
+F 4 "22uF" V -50 6250 60  0001 C CNN "ValueDisplayed"
+	1    12950 5850
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	12700 5550 12950 5550
+Wire Wire Line
+	12300 6350 12950 6350
+Connection ~ 12950 6350
+Wire Wire Line
+	12950 6300 12950 6350
+Wire Wire Line
+	12950 6050 12950 6350
 $EndSCHEMATC

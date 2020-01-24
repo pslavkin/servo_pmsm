@@ -2296,4 +2296,8 @@ Wire Wire Line
 	3250 5850 3250 5800
 Wire Wire Line
 	3450 5850 3450 5800
+Text Label 8200 6400 0    20   ~ 0
+ecat1_bias
+Text Label 8050 2950 0    20   ~ 0
+ecat0_bias
 $EndSCHEMATC

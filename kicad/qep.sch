@@ -531,47 +531,12 @@ F 3 "" H 6150 2950 50  0001 C CNN
 	1    6150 2950
 	-1   0    0    -1  
 $EndComp
-$Comp
-L servo:Jumper_3_Bridged12 JP?
-U 1 1 603AC069
-P 5850 3000
-AR Path="/5E1BAEAA/603AC069" Ref="JP?"  Part="1" 
-AR Path="/5DE3DF56/603AC069" Ref="JP?"  Part="1" 
-AR Path="/5E092156/603AC069" Ref="JP1101"  Part="1" 
-F 0 "JP1101" H 5850 3169 39  0000 C CNN
-F 1 "jumper" H 5850 3094 39  0000 C CNN
-F 2 "Jumper:SolderJumper-3_P1.3mm_Open_RoundedPad1.0x1.5mm" H 5650 2800 50  0001 C CNN
-F 3 "~" H 5750 2900 50  0001 C CNN
-	1    5850 3000
-	-1   0    0    -1  
-$EndComp
-$Comp
-L servo:15VH #PWR?
-U 1 1 603AC070
-P 5550 2950
-AR Path="/5E1BAEAA/603AC070" Ref="#PWR?"  Part="1" 
-AR Path="/5DE3DF56/603AC070" Ref="#PWR?"  Part="1" 
-AR Path="/5E092156/603AC070" Ref="#PWR0168"  Part="1" 
-F 0 "#PWR0168" H 5550 2750 20  0001 C CNN
-F 1 "15VH" H 5550 3107 28  0000 C CNN
-F 2 "" H 5550 2950 50  0001 C CNN
-F 3 "" H 5550 2950 50  0001 C CNN
-	1    5550 2950
-	-1   0    0    -1  
-$EndComp
-Wire Wire Line
-	5550 3000 5550 2950
-Wire Wire Line
-	5650 3000 5550 3000
 Wire Wire Line
 	6150 2950 6150 3000
 Wire Wire Line
 	6150 3000 6050 3000
 Wire Wire Line
 	5600 3350 5600 3100
-Wire Wire Line
-	5600 3100 5850 3100
-Connection ~ 5850 3100
 $Comp
 L servo:GNDH #PWR?
 U 1 1 60472C0D
@@ -648,8 +613,6 @@ Wire Wire Line
 Connection ~ 8100 4500
 Wire Wire Line
 	6100 3350 6100 3100
-Wire Wire Line
-	5850 3100 6100 3100
 Wire Wire Line
 	6300 3450 7450 3450
 Wire Wire Line
@@ -1573,4 +1536,26 @@ Text Label 2700 3700 0    20   ~ 0
 QEP1_I_H
 Text Label 2700 3800 0    20   ~ 0
 QEP1_S_H
+$Comp
+L servo:jumper JP?
+U 1 1 5E3094E2
+P 5950 3000
+AR Path="/5DD76B18/5E3094E2" Ref="JP?"  Part="1" 
+AR Path="/5E092156/5E3094E2" Ref="JP1101"  Part="1" 
+F 0 "JP1101" H 5950 3161 39  0000 C CNN
+F 1 "jumper" H 5950 3086 39  0000 C CNN
+F 2 "servo:SolderJumper-2_P1.3mm_Open_RoundedPad1.0x1.5mm" H 5850 2980 50  0001 C CNN
+F 3 "~" H 5950 3080 50  0001 C CNN
+	1    5950 3000
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	5600 3100 5850 3100
+Wire Wire Line
+	5850 3000 5850 3100
+Connection ~ 5850 3100
+Wire Wire Line
+	5850 3100 6100 3100
+Text Label 5650 3100 0    20   ~ 0
+QEP_5VH
 $EndSCHEMATC

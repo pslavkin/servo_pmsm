@@ -125,20 +125,6 @@ F 3 "" H 6500 2750 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L servo:15VH #PWR?
-U 1 1 5E33F748
-P 8500 2850
-AR Path="/5DE3DF56/5E33F748" Ref="#PWR?"  Part="1" 
-AR Path="/5E1BAEAA/5E33F748" Ref="#PWR?"  Part="1" 
-AR Path="/5E21534F/5E33F748" Ref="#PWR01208"  Part="1" 
-F 0 "#PWR01208" H 8500 2650 20  0001 C CNN
-F 1 "15VH" H 8505 3007 28  0000 C CNN
-F 2 "" H 8500 2850 50  0001 C CNN
-F 3 "" H 8500 2850 50  0001 C CNN
-	1    8500 2850
-	1    0    0    -1  
-$EndComp
-$Comp
 L servo:GNDH #PWR?
 U 1 1 5E3402F1
 P 6800 3900
@@ -161,23 +147,6 @@ Wire Wire Line
 	6800 3000 6800 2800
 Wire Wire Line
 	4800 3300 4800 3850
-$Comp
-L servo:Jumper_3_Bridged12 JP?
-U 1 1 60724F1C
-P 8100 2900
-AR Path="/5E1BAEAA/60724F1C" Ref="JP?"  Part="1" 
-AR Path="/5E21534F/60724F1C" Ref="JP1201"  Part="1" 
-F 0 "JP1201" H 8100 3069 39  0000 C CNN
-F 1 "jumper" H 8100 2994 39  0000 C CNN
-F 2 "Jumper:SolderJumper-3_P1.3mm_Open_RoundedPad1.0x1.5mm" H 7900 2700 50  0001 C CNN
-F 3 "~" H 8000 2800 50  0001 C CNN
-	1    8100 2900
-	1    0    0    -1  
-$EndComp
-Wire Wire Line
-	8300 2900 8500 2900
-Wire Wire Line
-	8500 2850 8500 2900
 Wire Wire Line
 	6800 3300 6800 3850
 Connection ~ 6800 3850
@@ -594,14 +563,9 @@ Wire Wire Line
 Wire Wire Line
 	8400 3300 8400 3000
 Wire Wire Line
-	8400 3000 8100 3000
-Wire Wire Line
-	8100 3000 7750 3000
-Wire Wire Line
 	7750 3000 7750 3300
 Wire Wire Line
 	7750 3300 7850 3300
-Connection ~ 8100 3000
 Wire Wire Line
 	9800 2950 9800 3150
 Wire Wire Line
@@ -700,4 +664,30 @@ Wire Wire Line
 	7750 4000 7750 4050
 Text Notes 10050 2450 0    20   ~ 0
 at endat page the isolator has 4 pins free, so I'd use them plus an\n SN651167 to make a RS485 isolated driver  cheaper.. The thing is\n that I will need to have endat chip to have 485, what if I need 485\n without endat.. and what if I need more isolated I/O next... so my\n decision now is to use these IC, that has one only mision, and if I\n depopulate it, nothing change.. and also has more driver current..\n
+$Comp
+L servo:jumper JP?
+U 1 1 5E33CFFA
+P 8000 2900
+AR Path="/5DD76B18/5E33CFFA" Ref="JP?"  Part="1" 
+AR Path="/5E21534F/5E33CFFA" Ref="JP1201"  Part="1" 
+F 0 "JP1201" H 8000 3061 39  0000 C CNN
+F 1 "jumper" H 8000 2986 39  0000 C CNN
+F 2 "servo:SolderJumper-2_P1.3mm_Open_RoundedPad1.0x1.5mm" H 7900 2880 50  0001 C CNN
+F 3 "~" H 8000 2980 50  0001 C CNN
+	1    8000 2900
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	7750 3000 8100 3000
+Wire Wire Line
+	8100 2900 8100 3000
+Connection ~ 8100 3000
+Wire Wire Line
+	8100 3000 8400 3000
+Text Label 6900 3350 0    20   ~ 0
+CAN_P_H
+Text Label 6900 3450 0    20   ~ 0
+CAN_N_H
+Text Label 8200 3000 0    20   ~ 0
+CAN_5VH
 $EndSCHEMATC
