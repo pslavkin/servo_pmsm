@@ -185,9 +185,9 @@ Wire Wire Line
 	9350 3700 9550 3700
 Wire Wire Line
 	10600 3700 10300 3700
-Text GLabel 9350 3600 0    50   Input ~ 0
+Text GLabel 9350 2400 0    50   Input ~ 0
 1-WIRE_P_H
-Text GLabel 10550 3600 2    50   Input ~ 0
+Text GLabel 10550 2400 2    50   Input ~ 0
 1-WIRE_N_H
 Wire Wire Line
 	10200 3600 10550 3600
@@ -225,25 +225,25 @@ Text GLabel 10550 3400 2    50   Input ~ 0
 BRK_RES2_H
 Text GLabel 9350 3400 0    50   Input ~ 0
 BRK_MEC2_H
-Text GLabel 9350 2400 0    50   Input ~ 0
+Text GLabel 9350 3600 0    50   Input ~ 0
 FREE_OUT2_1_H
-Text GLabel 10550 2400 2    50   Input ~ 0
+Text GLabel 10550 3600 2    50   Input ~ 0
 FREE_OUT2_2_H
 Text GLabel 10550 2500 2    50   Input ~ 0
 FAN_RPM2_H
 Text GLabel 9350 2500 0    50   Input ~ 0
 IGBT_ALARM2_H
-Text GLabel 9350 2700 0    50   Input ~ 0
-SD2_U_H
-Text GLabel 9350 2800 0    50   Input ~ 0
-SD2_V_H
-Text GLabel 9350 2900 0    50   Input ~ 0
-SD2_W_H
-Text GLabel 9350 3000 0    50   Input ~ 0
-SD2_A_H
-Text GLabel 9350 3100 0    50   Input ~ 0
-SD_CLK_IN2_H
 Text GLabel 9350 3200 0    50   Input ~ 0
+SD2_U_H
+Text GLabel 9350 3100 0    50   Input ~ 0
+SD2_V_H
+Text GLabel 9350 3000 0    50   Input ~ 0
+SD2_W_H
+Text GLabel 9350 2900 0    50   Input ~ 0
+SD2_A_H
+Text GLabel 9350 2700 0    50   Input ~ 0
+SD_CLK_IN2_H
+Text GLabel 9350 2800 0    50   Input ~ 0
 SD_CLK_OUT2_H
 Text GLabel 9350 3500 0    50   Input ~ 0
 NTC2_1_H
@@ -383,9 +383,9 @@ Wire Wire Line
 	6050 3750 6250 3750
 Wire Wire Line
 	7300 3750 7000 3750
-Text GLabel 6050 3650 0    50   Input ~ 0
+Text GLabel 6050 2450 0    50   Input ~ 0
 1-WIRE_P_H
-Text GLabel 7250 3650 2    50   Input ~ 0
+Text GLabel 7250 2450 2    50   Input ~ 0
 1-WIRE_N_H
 Wire Wire Line
 	6900 3650 7250 3650
@@ -423,25 +423,25 @@ Text GLabel 7250 3450 2    50   Input ~ 0
 BRK_RES1_H
 Text GLabel 6050 3450 0    50   Input ~ 0
 BRK_MEC1_H
-Text GLabel 6050 2450 0    50   Input ~ 0
+Text GLabel 6050 3650 0    50   Input ~ 0
 FREE_OUT1_1_H
-Text GLabel 7250 2450 2    50   Input ~ 0
+Text GLabel 7250 3650 2    50   Input ~ 0
 FREE_OUT1_2_H
 Text GLabel 7250 2550 2    50   Input ~ 0
 FAN_RPM1_H
 Text GLabel 6050 2550 0    50   Input ~ 0
 IGBT_ALARM1_H
-Text GLabel 6050 2750 0    50   Input ~ 0
-SD1_U_H
-Text GLabel 6050 2850 0    50   Input ~ 0
-SD1_V_H
-Text GLabel 6050 2950 0    50   Input ~ 0
-SD1_W_H
-Text GLabel 6050 3050 0    50   Input ~ 0
-SD1_A_H
-Text GLabel 6050 3150 0    50   Input ~ 0
-SD_CLK_IN1_H
 Text GLabel 6050 3250 0    50   Input ~ 0
+SD1_U_H
+Text GLabel 6050 3150 0    50   Input ~ 0
+SD1_V_H
+Text GLabel 6050 3050 0    50   Input ~ 0
+SD1_W_H
+Text GLabel 6050 2950 0    50   Input ~ 0
+SD1_A_H
+Text GLabel 6050 2750 0    50   Input ~ 0
+SD_CLK_IN1_H
+Text GLabel 6050 2850 0    50   Input ~ 0
 SD_CLK_OUT1_H
 Text GLabel 6050 3550 0    50   Input ~ 0
 NTC1_1_H

@@ -2142,53 +2142,53 @@ Wire Wire Line
 Connection ~ 10150 5700
 Wire Wire Line
 	10150 5700 9900 5700
-Text GLabel 1950 2100 0    50   Input ~ 0
-IGBT1_UH
-Text GLabel 1950 2200 0    50   Input ~ 0
-IGBT1_UL
-Text GLabel 1950 2300 0    50   Input ~ 0
-IGBT1_VH
-Text GLabel 1950 2400 0    50   Input ~ 0
-IGBT1_VL
-Text GLabel 1950 2500 0    50   Input ~ 0
-IGBT1_WH
 Text GLabel 1950 2600 0    50   Input ~ 0
+IGBT1_UH
+Text GLabel 1950 2500 0    50   Input ~ 0
+IGBT1_UL
+Text GLabel 1950 2400 0    50   Input ~ 0
+IGBT1_VH
+Text GLabel 1950 2300 0    50   Input ~ 0
+IGBT1_VL
+Text GLabel 1950 2200 0    50   Input ~ 0
+IGBT1_WH
+Text GLabel 1950 2100 0    50   Input ~ 0
 IGBT1_WL
-Text GLabel 1950 3450 0    50   Input ~ 0
-BRK_RES1
 Text GLabel 1950 3750 0    50   Input ~ 0
+BRK_RES1
+Text GLabel 1950 3450 0    50   Input ~ 0
 FREE_OUT1_2
-Text GLabel 1950 3850 0    50   Input ~ 0
-FAN_RPM1
-Text GLabel 1950 3550 0    50   Input ~ 0
-BRK_MEC1
-Text GLabel 1950 3650 0    50   Input ~ 0
-FREE_OUT1_1
 Text GLabel 1950 3950 0    50   Input ~ 0
+FAN_RPM1
+Text GLabel 1950 3650 0    50   Input ~ 0
+BRK_MEC1
+Text GLabel 1950 3550 0    50   Input ~ 0
+FREE_OUT1_1
+Text GLabel 1950 3850 0    50   Input ~ 0
 IGBT_ALARM1
-Text GLabel 9250 2500 2    50   Input ~ 0
-IGBT1_UH_H
-Text GLabel 9250 2600 2    50   Input ~ 0
-IGBT1_UL_H
-Text GLabel 9250 2700 2    50   Input ~ 0
-IGBT1_VH_H
-Text GLabel 9250 2800 2    50   Input ~ 0
-IGBT1_VL_H
-Text GLabel 9250 2900 2    50   Input ~ 0
-IGBT1_WH_H
 Text GLabel 9250 3000 2    50   Input ~ 0
+IGBT1_UH_H
+Text GLabel 9250 2900 2    50   Input ~ 0
+IGBT1_UL_H
+Text GLabel 9250 2800 2    50   Input ~ 0
+IGBT1_VH_H
+Text GLabel 9250 2700 2    50   Input ~ 0
+IGBT1_VL_H
+Text GLabel 9250 2600 2    50   Input ~ 0
+IGBT1_WH_H
+Text GLabel 9250 2500 2    50   Input ~ 0
 IGBT1_WL_H
-Text GLabel 9250 3100 2    50   Input ~ 0
-BRK_RES1_H
 Text GLabel 9250 3400 2    50   Input ~ 0
+BRK_RES1_H
+Text GLabel 9250 3100 2    50   Input ~ 0
 FREE_OUT1_2_H
-Text GLabel 9250 3500 2    50   Input ~ 0
-FAN_RPM1_H
-Text GLabel 9250 3200 2    50   Input ~ 0
-BRK_MEC1_H
-Text GLabel 9250 3300 2    50   Input ~ 0
-FREE_OUT1_1_H
 Text GLabel 9250 3600 2    50   Input ~ 0
+FAN_RPM1_H
+Text GLabel 9250 3300 2    50   Input ~ 0
+BRK_MEC1_H
+Text GLabel 9250 3200 2    50   Input ~ 0
+FREE_OUT1_1_H
+Text GLabel 9250 3500 2    50   Input ~ 0
 IGBT_ALARM1_H
 Text GLabel 6750 6150 0    50   Input ~ 0
 IGBT2_UH_H
@@ -2202,13 +2202,13 @@ Text GLabel 6750 6550 0    50   Input ~ 0
 IGBT2_WH_H
 Text GLabel 6750 6650 0    50   Input ~ 0
 IGBT2_WL_H
-Text GLabel 6750 6750 0    50   Input ~ 0
+Text GLabel 6750 6850 0    50   Input ~ 0
 BRK_RES2_H
 Text GLabel 6750 7050 0    50   Input ~ 0
 FREE_OUT2_2_H
 Text GLabel 6750 7150 0    50   Input ~ 0
 FAN_RPM2_H
-Text GLabel 6750 6850 0    50   Input ~ 0
+Text GLabel 6750 6750 0    50   Input ~ 0
 BRK_MEC2_H
 Text GLabel 6750 6950 0    50   Input ~ 0
 FREE_OUT2_1_H
@@ -2226,13 +2226,13 @@ Text GLabel 14550 6150 2    50   Input ~ 0
 IGBT2_WH
 Text GLabel 14550 6250 2    50   Input ~ 0
 IGBT2_WL
-Text GLabel 14550 7100 2    50   Input ~ 0
+Text GLabel 14550 7200 2    50   Input ~ 0
 BRK_RES2
 Text GLabel 14550 7400 2    50   Input ~ 0
 FREE_OUT2_2
 Text GLabel 14550 7500 2    50   Input ~ 0
 FAN_RPM2
-Text GLabel 14550 7200 2    50   Input ~ 0
+Text GLabel 14550 7100 2    50   Input ~ 0
 BRK_MEC2
 Text GLabel 14550 7300 2    50   Input ~ 0
 FREE_OUT2_1
