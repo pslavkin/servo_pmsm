@@ -160,8 +160,6 @@ Wire Wire Line
 Connection ~ 9850 4850
 Wire Wire Line
 	10050 5050 10050 4850
-Wire Wire Line
-	7050 4950 6700 4950
 Text GLabel 1800 4650 0    50   Input ~ 0
 LEM_A_U
 Text GLabel 1800 3450 0    50   Input ~ 0
@@ -178,8 +176,6 @@ Text GLabel 1800 4850 0    50   Input ~ 0
 LEM_A_ALL
 Text GLabel 1800 3650 0    50   Input ~ 0
 LEM_B_ALL
-Wire Wire Line
-	6700 3750 7050 3750
 Text GLabel 1800 4350 0    50   Input ~ 0
 NTC2_2_P
 Text GLabel 1800 4450 0    50   Input ~ 0
@@ -222,8 +218,8 @@ F 4 "TMS320F28388DZWTS" V 1350 -350 60  0001 C CNN "PartNumber"
 	1    8150 3750
 	1    0    0    -1  
 $EndComp
-NoConn ~ 6700 3750
-NoConn ~ 6700 4950
+NoConn ~ 7050 3750
+NoConn ~ 7050 4950
 $Comp
 L servo:TPD4E001QDBV IC?
 U 1 1 5E7ECD00
@@ -513,7 +509,7 @@ Wire Wire Line
 Text Notes 10750 3900 0    20   ~ 0
 it's just for lower the \nreference of the ADC
 Text Label 9950 3450 0    39   ~ 0
-adc_refh
+ADC_REFH
 Text GLabel 1800 5050 0    50   Input ~ 0
 VBUS1_P
 Text GLabel 1800 5150 0    50   Input ~ 0
@@ -660,8 +656,6 @@ Wire Wire Line
 	2900 1550 2800 1550
 Wire Wire Line
 	2750 2400 2900 2400
-Entry Wire Line
-	8050 3100 8150 3200
 Wire Wire Line
 	3200 2300 3400 2300
 Wire Wire Line
