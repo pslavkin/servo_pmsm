@@ -196,20 +196,6 @@ Text Notes 1450 2350 0    20   ~ 0
 using the DAC out to manage audio \nor other multiporpouse signals
 Text GLabel 1800 2550 0    50   Input ~ 0
 DACB_DBG
-$Comp
-L servo:GND #PWR?
-U 1 1 5E9C32E8
-P 10050 5050
-AR Path="/5DCD812E/5E9C32E8" Ref="#PWR?"  Part="1" 
-AR Path="/5EAA846A/5E9C32E8" Ref="#PWR?"  Part="1" 
-AR Path="/5DD0E9D6/5E9C32E8" Ref="#PWR0301"  Part="1" 
-F 0 "#PWR0301" H 10055 4901 20  0001 C CNN
-F 1 "GND" H 10055 4849 30  0000 C CNN
-F 2 "" H 10050 5050 70  0000 C CNN
-F 3 "" H 10050 5050 70  0000 C CNN
-	1    10050 5050
-	1    0    0    -1  
-$EndComp
 NoConn ~ 7050 3150
 NoConn ~ 7050 3250
 Text GLabel 1800 4150 0    50   Input ~ 0
@@ -736,4 +722,15 @@ Wire Wire Line
 	5100 2250 5100 2150
 Wire Wire Line
 	5300 2400 5300 5050
+$Comp
+L servo:GNDA #PWR0168
+U 1 1 5E36020D
+P 10050 5050
+F 0 "#PWR0168" H 10050 4800 30  0001 C CNN
+F 1 "GNDA" H 10050 4893 30  0000 C CNN
+F 2 "" H 10050 5050 50  0001 C CNN
+F 3 "" H 10050 5050 50  0001 C CNN
+	1    10050 5050
+	1    0    0    -1  
+$EndComp
 $EndSCHEMATC

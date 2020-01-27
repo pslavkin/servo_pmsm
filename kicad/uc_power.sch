@@ -506,11 +506,11 @@ $EndComp
 Wire Wire Line
 	12350 4450 12350 4650
 Wire Wire Line
-	12350 4950 12350 5050
+	12350 4950 12350 5000
 Wire Wire Line
 	11650 4450 11650 4650
 Wire Wire Line
-	11650 4950 11650 5050
+	11650 4950 11650 5000
 Text Notes 11750 2300 0    84   ~ 0
 Place near U1
 Wire Wire Line
@@ -792,7 +792,6 @@ Wire Wire Line
 Wire Wire Line
 	4450 6650 4450 6550
 Connection ~ 4450 6650
-Connection ~ 4450 3550
 Wire Wire Line
 	4450 3550 4450 3450
 Connection ~ 4450 3450
@@ -803,11 +802,6 @@ Connection ~ 4450 6150
 Wire Wire Line
 	4450 3450 4450 3350
 Connection ~ 4450 3350
-Wire Wire Line
-	4450 6550 4450 6450
-Connection ~ 4450 6450
-Wire Wire Line
-	4450 6450 4450 6350
 Wire Wire Line
 	4450 6350 4450 6250
 Connection ~ 4450 6350
@@ -825,16 +819,7 @@ Wire Wire Line
 	4450 6050 4450 5950
 Connection ~ 4450 5950
 Wire Wire Line
-	4450 5950 4450 5850
-Connection ~ 4450 5850
-Wire Wire Line
-	4450 5850 4450 5750
-Wire Wire Line
-	4450 5750 4450 5650
-Connection ~ 4450 5750
-Wire Wire Line
 	4450 3250 4450 3150
-Connection ~ 4450 3150
 Wire Wire Line
 	4450 5550 4450 5450
 Connection ~ 4450 5450
@@ -870,10 +855,7 @@ Wire Wire Line
 	4450 4050 4450 3950
 Connection ~ 4450 3950
 Wire Wire Line
-	4450 3850 4450 3550
-Wire Wire Line
 	4450 3950 4450 3850
-Connection ~ 4450 3850
 Wire Wire Line
 	2650 7050 2650 6650
 Connection ~ 2650 6650
@@ -938,10 +920,7 @@ Wire Wire Line
 	2650 4650 2650 4550
 Connection ~ 2650 4550
 Wire Wire Line
-	4450 3150 4450 2950
-Wire Wire Line
 	4450 2950 4450 2850
-Connection ~ 4450 2950
 Wire Wire Line
 	2650 5250 2650 5150
 Connection ~ 2650 5150
@@ -1047,19 +1026,6 @@ Wire Wire Line
 	9100 4150 9100 4350
 $Comp
 L servo:GND #PWR?
-U 1 1 5E91E79A
-P 12350 5050
-AR Path="/5DCD812E/5E91E79A" Ref="#PWR?"  Part="1" 
-AR Path="/5EAA846A/5E91E79A" Ref="#PWR0517"  Part="1" 
-F 0 "#PWR0517" H 12355 4901 20  0001 C CNN
-F 1 "GND" H 12355 4849 30  0000 C CNN
-F 2 "" H 12350 5050 70  0000 C CNN
-F 3 "" H 12350 5050 70  0000 C CNN
-	1    12350 5050
-	1    0    0    -1  
-$EndComp
-$Comp
-L servo:GND #PWR?
 U 1 1 5E939F88
 P 12400 3550
 AR Path="/5DCD812E/5E939F88" Ref="#PWR?"  Part="1" 
@@ -1082,19 +1048,6 @@ F 1 "GND" H 11655 3349 30  0000 C CNN
 F 2 "" H 11650 3550 70  0000 C CNN
 F 3 "" H 11650 3550 70  0000 C CNN
 	1    11650 3550
-	1    0    0    -1  
-$EndComp
-$Comp
-L servo:GND #PWR?
-U 1 1 5E98C064
-P 10300 4350
-AR Path="/5DCD812E/5E98C064" Ref="#PWR?"  Part="1" 
-AR Path="/5EAA846A/5E98C064" Ref="#PWR0509"  Part="1" 
-F 0 "#PWR0509" H 10305 4201 20  0001 C CNN
-F 1 "GND" H 10305 4149 30  0000 C CNN
-F 2 "" H 10300 4350 70  0000 C CNN
-F 3 "" H 10300 4350 70  0000 C CNN
-	1    10300 4350
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
@@ -1453,4 +1406,86 @@ Wire Wire Line
 	4750 5300 5200 5300
 Wire Wire Line
 	4750 2200 4750 5300
+$Comp
+L servo:GNDA #PWR0223
+U 1 1 5E37365C
+P 12350 5050
+F 0 "#PWR0223" H 12350 4800 30  0001 C CNN
+F 1 "GNDA" H 12350 4893 30  0000 C CNN
+F 2 "" H 12350 5050 50  0001 C CNN
+F 3 "" H 12350 5050 50  0001 C CNN
+	1    12350 5050
+	1    0    0    -1  
+$EndComp
+$Comp
+L servo:GNDA #PWR0278
+U 1 1 5E38EC1E
+P 10300 4350
+F 0 "#PWR0278" H 10300 4100 30  0001 C CNN
+F 1 "GNDA" H 10300 4193 30  0000 C CNN
+F 2 "" H 10300 4350 50  0001 C CNN
+F 3 "" H 10300 4350 50  0001 C CNN
+	1    10300 4350
+	1    0    0    -1  
+$EndComp
+$Comp
+L servo:GNDA #PWR0280
+U 1 1 5E3AAD19
+P 4650 7150
+F 0 "#PWR0280" H 4650 6900 30  0001 C CNN
+F 1 "GNDA" H 4650 6993 30  0000 C CNN
+F 2 "" H 4650 7150 50  0001 C CNN
+F 3 "" H 4650 7150 50  0001 C CNN
+	1    4650 7150
+	1    0    0    -1  
+$EndComp
+Connection ~ 4450 5750
+Wire Wire Line
+	4450 5750 4450 5650
+Connection ~ 4450 5850
+Wire Wire Line
+	4450 5850 4450 5750
+Wire Wire Line
+	4450 5950 4450 5850
+Connection ~ 4450 6450
+Wire Wire Line
+	4450 6450 4450 6350
+Wire Wire Line
+	4450 6550 4450 6450
+Wire Wire Line
+	4450 3550 4650 3550
+Wire Wire Line
+	4650 3550 4650 7150
+Connection ~ 4450 3550
+Wire Wire Line
+	4450 2950 4550 2950
+Wire Wire Line
+	4550 2950 4550 3850
+Wire Wire Line
+	4550 3850 4450 3850
+Connection ~ 4450 2950
+Connection ~ 4450 3850
+Wire Wire Line
+	11650 5000 11900 5000
+Connection ~ 11650 5000
+Wire Wire Line
+	11650 5000 11650 5050
+Wire Wire Line
+	12100 5000 12350 5000
+Connection ~ 12350 5000
+Wire Wire Line
+	12350 5000 12350 5050
+$Comp
+L servo:jumper JP?
+U 1 1 5E490CCD
+P 12000 5000
+AR Path="/5DD76B18/5E490CCD" Ref="JP?"  Part="1" 
+AR Path="/5EAA846A/5E490CCD" Ref="JP501"  Part="1" 
+F 0 "JP501" H 12000 5161 39  0000 C CNN
+F 1 "jumper" H 12000 5086 39  0000 C CNN
+F 2 "servo:SolderJumper-2_P1.3mm_Open_RoundedPad1.0x1.5mm" H 11900 4980 50  0001 C CNN
+F 3 "~" H 12000 5080 50  0001 C CNN
+	1    12000 5000
+	1    0    0    -1  
+$EndComp
 $EndSCHEMATC

@@ -108,6 +108,8 @@ first pic, easy, doesn't it?
 <img src="doc/pics/ratsnets5.jpg" width="400"/>
 <img src="doc/pics/ratsnets6.jpg" width="400"/>
 
+##BGA layout progress
+<img src="doc/pics/bga1.jpg" width="400"/>
 
 ## Hierarchy
 
