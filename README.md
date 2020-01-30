@@ -119,6 +119,10 @@ first pic, easy, doesn't it?
 <img src="doc/pics/layout6.jpg"      width="400"/>
 <img src="doc/pics/layout6_back.jpg" width="400"/>
 
+## A mounting optional case shape
+<img src="doc/pics/layout7.jpg"      width="400"/>
+<img src="doc/pics/layout7_back.jpg" width="400"/>
+
 
 ## Hierarchy
 

@@ -530,4 +530,15 @@ Text Notes 7900 950  0    20   ~ 4
 for bulk capacitor
 Wire Wire Line
 	7900 1000 8600 1000
+$Comp
+L Mechanical:Housing N?
+U 1 1 5E32F2AD
+P 4150 4150
+F 0 "N?" H 4303 4184 50  0000 L CNN
+F 1 "Housing" H 4303 4093 50  0000 L CNN
+F 2 "servo:case" H 4200 4200 50  0001 C CNN
+F 3 "~" H 4200 4200 50  0001 C CNN
+	1    4150 4150
+	1    0    0    -1  
+$EndComp
 $EndSCHEMATC
