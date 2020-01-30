@@ -408,10 +408,6 @@ PRG_TMS
 Text Label 4100 2800 2    60   ~ 0
 PRG_TDO
 Wire Wire Line
-	3100 2700 2900 2700
-Wire Wire Line
-	3100 2600 2800 2600
-Wire Wire Line
 	3100 2400 2900 2400
 $Comp
 L servo:3V3 #PWR0601
@@ -560,10 +556,6 @@ Wire Wire Line
 Wire Wire Line
 	3600 2800 4700 2800
 Wire Wire Line
-	2900 2700 2900 3800
-Wire Wire Line
-	2800 2600 2800 4000
-Wire Wire Line
 	7500 2500 7500 2600
 Wire Wire Line
 	7500 2500 10650 2500
@@ -687,4 +679,12 @@ F 3 "" H 13900 3150 50  0001 C CNN
 	1    13900 3150
 	1    0    0    -1  
 $EndComp
+Wire Wire Line
+	2900 2600 3100 2600
+Wire Wire Line
+	2900 2600 2900 3800
+Wire Wire Line
+	3100 2700 2800 2700
+Wire Wire Line
+	2800 2700 2800 4000
 $EndSCHEMATC
