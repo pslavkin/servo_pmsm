@@ -189,7 +189,7 @@ F 3 "../doc/datasheets/tblock2rows.pdf" H 8350 5400 50  0001 C CNN
 $EndComp
 Text Label 4350 4550 0    39   ~ 0
 ENDAT1_MISO_H
-Text Label 4350 4150 0    39   ~ 0
+Text Label 3200 4000 0    39   ~ 0
 ENDAT1_MOSI_H
 Text Label 4350 4450 0    39   ~ 0
 ENDAT1_CLK_H

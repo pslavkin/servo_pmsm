@@ -516,47 +516,15 @@ F 3 "" H 7900 1300 70  0000 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L servo:Capacitor C?
-U 1 1 618DEC86
-P 7650 1200
-AR Path="/5E092156/618DEC86" Ref="C?"  Part="1" 
-AR Path="/5E72D841/618DEC86" Ref="C1402"  Part="1" 
-F 0 "C1402" V 7722 1090 20  0000 R CNN
-F 1 "10u" V 7679 1090 20  0000 R CNN
-F 2 "servo:C_0603_1608Metric" H 7650 1100 60  0001 C CNN
-F 3 "" H 7650 1200 60  0000 C CNN
-	1    7650 1200
-	0    -1   -1   0   
-$EndComp
-$Comp
-L servo:GND #PWR?
-U 1 1 618DEC8D
-P 7650 1300
-AR Path="/5DCD812E/618DEC8D" Ref="#PWR?"  Part="1" 
-AR Path="/5EAA846A/618DEC8D" Ref="#PWR?"  Part="1" 
-AR Path="/5F1E3CD5/618DEC8D" Ref="#PWR?"  Part="1" 
-AR Path="/5DD76B18/618DEC8D" Ref="#PWR?"  Part="1" 
-AR Path="/5E72D841/618DEC8D" Ref="#PWR01406"  Part="1" 
-F 0 "#PWR01406" H 7655 1151 20  0001 C CNN
-F 1 "GND" H 7655 1142 30  0000 C CNN
-F 2 "" H 7650 1300 70  0000 C CNN
-F 3 "" H 7650 1300 70  0000 C CNN
-	1    7650 1300
-	1    0    0    -1  
-$EndComp
-Connection ~ 7900 1000
-Wire Wire Line
-	7900 1000 7650 1000
-$Comp
 L servo:Conn_01x02 J1402
 U 1 1 618ED4ED
-P 9500 1750
-F 0 "J1402" H 9580 1738 39  0000 L CNN
-F 1 "Conn_01x02" H 9580 1663 39  0000 L CNN
-F 2 "Connector_Molex:Molex_KK-254_AE-6410-02A_1x02_P2.54mm_Vertical" H 9500 1750 50  0001 C CNN
-F 3 "~" H 9500 1750 50  0001 C CNN
-	1    9500 1750
-	1    0    0    -1  
+P 9500 1850
+F 0 "J1402" H 9580 1838 39  0000 L CNN
+F 1 "Conn_01x02" H 9580 1763 39  0000 L CNN
+F 2 "Connector_Molex:Molex_KK-254_AE-6410-02A_1x02_P2.54mm_Vertical" H 9500 1850 50  0001 C CNN
+F 3 "~" H 9500 1850 50  0001 C CNN
+	1    9500 1850
+	1    0    0    1   
 $EndComp
 Text Notes 7900 950  0    20   ~ 4
 for bulk capacitor

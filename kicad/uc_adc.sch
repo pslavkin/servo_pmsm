@@ -411,8 +411,6 @@ Wire Wire Line
 	4600 2150 4600 4850
 Connection ~ 4600 4850
 Wire Wire Line
-	1800 2450 5900 2450
-Wire Wire Line
 	2450 1550 2450 2650
 Connection ~ 2450 2650
 Wire Wire Line
@@ -473,9 +471,6 @@ F 3 "" H 5800 2150 70  0000 C CNN
 	1    5800 2150
 	1    0    0    -1  
 $EndComp
-Connection ~ 5900 2450
-Wire Wire Line
-	5900 2450 7050 2450
 Connection ~ 10250 3450
 Connection ~ 10250 4850
 Wire Wire Line
@@ -610,22 +605,13 @@ F 1 "TPD4E001QDBV" V 6400 2050 39  0000 R CNN
 F 2 "Package_TO_SOT_SMD:SOT-23-6" H 5800 1850 60  0001 C CNN
 F 3 "../doc/datasheets/tpd4e001-q1.pdf" H 5850 2150 60  0001 C CNN
 	1    5800 1850
-	0    -1   -1   0   
+	0    1    -1   0   
 $EndComp
-Wire Wire Line
-	1800 2550 5550 2550
-Connection ~ 5550 2550
-Wire Wire Line
-	5900 2150 5900 2450
-Wire Wire Line
-	5550 2550 7050 2550
 NoConn ~ 5700 2150
 Wire Wire Line
 	5550 1350 6050 1350
 Wire Wire Line
 	6050 1350 6050 1550
-Wire Wire Line
-	5550 1350 5550 2550
 Wire Wire Line
 	2750 2750 2750 2400
 Connection ~ 2750 2750
@@ -727,4 +713,18 @@ F 3 "" H 10050 5050 50  0001 C CNN
 	1    10050 5050
 	1    0    0    -1  
 $EndComp
+Wire Wire Line
+	1800 2450 5550 2450
+Wire Wire Line
+	5900 2150 5900 2550
+Connection ~ 5900 2550
+Wire Wire Line
+	5900 2550 7050 2550
+Wire Wire Line
+	1800 2550 5900 2550
+Wire Wire Line
+	5550 1350 5550 2450
+Connection ~ 5550 2450
+Wire Wire Line
+	5550 2450 7050 2450
 $EndSCHEMATC

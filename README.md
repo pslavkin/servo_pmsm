@@ -44,12 +44,11 @@ I'll let pins to aquire and filter it.
   eliminated, two buttons eliminated. 2 LEM's eliminated
 - :construction:        all footprints choosen, but deserves some comprobation
 - :heavy_check_mark:    placement rought done
-- :construction:        ronting..
-- :construction:        moving ethernet connector to right and remove 15vh->5vh and debuh
-  driver
+- :heavy_check_mark:    ronting..
+- :heavy_check_mark:    moving ethernet connector to right and remove 15vh->5vh and debuh
+- :heavy_check_mark:    ronting DONE!!! begin to improve nets..
  
 
----
 ## Welcome back Moldova 3.0
 
 <img src = "doc/pics/moldova3.0.jpg" width = "400"/>
@@ -69,6 +68,11 @@ I've come back to finish PCB, there we are... sdarobia!
 ---
 ## schematics
 There are the actual schematics generated until now:
+
+## complete pdf link
+[complete pdf schematic](./doc/pics/servo.pdf)
+
+## schematic in pics
 
 <img src="doc/pics/servo-0.jpg" width="800"/>
 <img src="doc/pics/servo-1.jpg" width="800"/>
@@ -91,15 +95,8 @@ There are the actual schematics generated until now:
 <img src="doc/pics/servo-18.jpg" width="800"/>
 
 ## Layout
-Let's begin with layout!
+Met's begin with layout!
 first pic, easy, doesn't it?
-
-<img src="doc/pics/layout1.jpg"      width="400"/>
-<img src="doc/pics/layout2.jpg"      width="400"/>
-<img src="doc/pics/layout3.jpg"      width="400"/>
-<img src="doc/pics/layout3_back.jpg" width="400"/>
-<img src="doc/pics/layout4.jpg"      width="400"/>
-<img src="doc/pics/layout4_back.jpg" width="400"/>
 
 <img src="doc/pics/ratsnets1.jpg" width="400"/>
 <img src="doc/pics/ratsnets2.jpg" width="400"/>
@@ -107,9 +104,21 @@ first pic, easy, doesn't it?
 <img src="doc/pics/ratsnets4.jpg" width="400"/>
 <img src="doc/pics/ratsnets5.jpg" width="400"/>
 <img src="doc/pics/ratsnets6.jpg" width="400"/>
+<img src="doc/pics/ratsnets7.jpg" width="400"/>
+<img src="doc/pics/ratsnets8.jpg" width="400"/>
+<img src="doc/pics/ratsnets9.jpg" width="400"/>
 
-##BGA layout progress
-<img src="doc/pics/bga1.jpg" width="400"/>
+<img src="doc/pics/layout1.jpg"      width="400"/>
+<img src="doc/pics/layout2.jpg"      width="400"/>
+<img src="doc/pics/layout3.jpg"      width="400"/>
+<img src="doc/pics/layout3_back.jpg" width="400"/>
+<img src="doc/pics/layout4.jpg"      width="400"/>
+<img src="doc/pics/layout4_back.jpg" width="400"/>
+<img src="doc/pics/layout5.jpg"      width="400"/>
+<img src="doc/pics/layout5_back.jpg" width="400"/>
+<img src="doc/pics/layout6.jpg"      width="400"/>
+<img src="doc/pics/layout6_back.jpg" width="400"/>
+
 
 ## Hierarchy
 

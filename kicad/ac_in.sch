@@ -153,20 +153,6 @@ F 4 "22uF" V -5600 6350 60  0001 C CNN "ValueDisplayed"
 	0    1    1    0   
 $EndComp
 $Comp
-L servo:Capacitor C?
-U 1 1 5E286219
-P 7750 5950
-AR Path="/5EAA846A/5E286219" Ref="C?"  Part="1" 
-AR Path="/5DD76B18/5E286219" Ref="C714"  Part="1" 
-F 0 "C714" V 7778 6060 20  0000 L CNN
-F 1 "100nF" V 7821 6060 20  0000 L CNN
-F 2 "servo:C_0603_1608Metric" H 7750 5850 60  0001 C CNN
-F 3 "" H 7750 5950 60  0000 C CNN
-F 4 "22uF" V -5250 6350 60  0001 C CNN "ValueDisplayed"
-	1    7750 5950
-	0    1    1    0   
-$EndComp
-$Comp
 L servo:5VH #PWR0717
 U 1 1 5E309ABD
 P 13650 5450
@@ -302,22 +288,8 @@ Wire Wire Line
 	6850 6450 7400 6450
 Connection ~ 7400 6450
 Wire Wire Line
-	7400 6450 7750 6450
-Wire Wire Line
-	7750 6150 7750 6450
-Connection ~ 7750 6450
-Wire Wire Line
-	7750 6450 8100 6450
-Wire Wire Line
 	7400 5850 7400 5650
 Connection ~ 7400 5650
-Wire Wire Line
-	7750 5850 7750 5650
-Wire Wire Line
-	7400 5650 7750 5650
-Connection ~ 7750 5650
-Wire Wire Line
-	7750 5650 8100 5650
 Text Notes 6400 6250 0    20   ~ 0
 the intention of the LCD it to clean \nthe noise without using big filters\n and L's. It's recommended and \ntested that these method works \npretty\nlow noise \nLDO <30uV
 $Comp
@@ -812,4 +784,55 @@ Wire Wire Line
 	12950 6300 12950 6350
 Wire Wire Line
 	12950 6050 12950 6350
+Wire Wire Line
+	7750 5650 8100 5650
+Wire Wire Line
+	7400 5650 7750 5650
+Connection ~ 7750 5650
+Wire Wire Line
+	7750 5850 7750 5650
+Wire Wire Line
+	7750 6450 8100 6450
+Wire Wire Line
+	7400 6450 7750 6450
+Connection ~ 7750 6450
+Wire Wire Line
+	7750 6150 7750 6450
+$Comp
+L servo:Capacitor C?
+U 1 1 5E286219
+P 7750 5950
+AR Path="/5EAA846A/5E286219" Ref="C?"  Part="1" 
+AR Path="/5DD76B18/5E286219" Ref="C714"  Part="1" 
+F 0 "C714" V 7778 6060 20  0000 L CNN
+F 1 "100nF" V 7821 6060 20  0000 L CNN
+F 2 "servo:C_0603_1608Metric" H 7750 5850 60  0001 C CNN
+F 3 "" H 7750 5950 60  0000 C CNN
+F 4 "22uF" V -5250 6350 60  0001 C CNN "ValueDisplayed"
+	1    7750 5950
+	0    1    1    0   
+$EndComp
+$Comp
+L servo:Capacitor C?
+U 1 1 5E4CBAA0
+P 4400 5950
+AR Path="/5EAA846A/5E4CBAA0" Ref="C?"  Part="1" 
+AR Path="/5DD76B18/5E4CBAA0" Ref="C702"  Part="1" 
+F 0 "C702" V 4428 6060 20  0000 L CNN
+F 1 "2.2uF" V 4471 6060 20  0000 L CNN
+F 2 "servo:C_0603_1608Metric" H 4400 5850 60  0001 C CNN
+F 3 "" H 4400 5950 60  0000 C CNN
+F 4 "2.2uF" V -8100 1750 60  0001 C CNN "ValueDisplayed"
+	1    4400 5950
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	4400 5850 4400 5650
+Wire Wire Line
+	4400 5650 4700 5650
+Wire Wire Line
+	4700 6450 4400 6450
+Wire Wire Line
+	4400 6450 4400 6150
+Connection ~ 4700 6450
 $EndSCHEMATC
