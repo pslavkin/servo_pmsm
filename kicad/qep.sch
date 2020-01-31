@@ -1558,4 +1558,6 @@ Wire Wire Line
 	5850 3100 6100 3100
 Text Label 5650 3100 0    20   ~ 0
 QEP_5VH
+Text Label 5950 4400 0    20   ~ 0
+QEP_GND
 $EndSCHEMATC

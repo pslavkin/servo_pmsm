@@ -690,4 +690,10 @@ Text Label 6900 3450 0    20   ~ 0
 CAN_N_H
 Text Label 8200 3000 0    20   ~ 0
 CAN_5VH
+Text Label 8250 3750 0    20   ~ 0
+CAN_GND
+Text Label 8600 3400 0    20   ~ 0
+RS485_P_H
+Text Label 8600 3500 0    20   ~ 0
+RS485_N_H
 $EndSCHEMATC

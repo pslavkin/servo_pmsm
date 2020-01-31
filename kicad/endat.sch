@@ -1338,4 +1338,8 @@ Wire Wire Line
 	8050 5700 8150 5700
 Text Label 8450 4650 0    20   ~ 0
 ENDAT_5VH
+Text Label 8400 5600 0    20   ~ 0
+ENDAT_GND
+Text Label 4350 4150 0    39   ~ 0
+ENDAT1_MOSI_H
 $EndSCHEMATC
