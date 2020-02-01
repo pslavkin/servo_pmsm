@@ -523,7 +523,7 @@ Text GLabel 9700 2400 2    50   Input ~ 0
 LCD_GPIO1
 Text GLabel 9700 2300 2    50   Input ~ 0
 LCD_GPIO2
-Text GLabel 9700 2200 2    50   Input ~ 0
+Text GLabel 9700 3300 2    50   Input ~ 0
 LCD_GPIO3
 Wire Wire Line
 	8350 2200 9700 2200
@@ -533,7 +533,7 @@ Wire Wire Line
 	8350 2400 9700 2400
 Wire Wire Line
 	9700 2500 8350 2500
-Text GLabel 9700 3300 2    50   Input ~ 0
+Text GLabel 9700 2200 2    50   Input ~ 0
 LCD_GPIO5
 Text GLabel 9700 3200 2    50   Input ~ 0
 LCD_GPIO4

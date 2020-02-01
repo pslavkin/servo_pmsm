@@ -123,6 +123,11 @@ first pic, easy, doesn't it?
 <img src="doc/pics/layout7.jpg"      width="400"/>
 <img src="doc/pics/layout7_back.jpg" width="400"/>
 
+## nets
+plane 2d and 3d nets
+<img src="doc/pics/nets2d_1.jpg" width="400"/>
+<img src="doc/pics/nets3d_1.jpg" width="400"/>
+
 
 ## Hierarchy
 
