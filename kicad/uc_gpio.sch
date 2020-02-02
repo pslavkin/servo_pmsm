@@ -517,13 +517,13 @@ NoConn ~ 8350 6400
 NoConn ~ 8350 6500
 NoConn ~ 8350 7000
 NoConn ~ 8350 8400
-Text GLabel 9700 2500 2    50   Input ~ 0
+Text GLabel 9700 3200 2    50   Input ~ 0
 LCD_GPIO0
-Text GLabel 9700 2400 2    50   Input ~ 0
-LCD_GPIO1
-Text GLabel 9700 2300 2    50   Input ~ 0
-LCD_GPIO2
 Text GLabel 9700 3300 2    50   Input ~ 0
+LCD_GPIO1
+Text GLabel 9700 2500 2    50   Input ~ 0
+LCD_GPIO2
+Text GLabel 9700 2400 2    50   Input ~ 0
 LCD_GPIO3
 Wire Wire Line
 	8350 2200 9700 2200
@@ -535,7 +535,7 @@ Wire Wire Line
 	9700 2500 8350 2500
 Text GLabel 9700 2200 2    50   Input ~ 0
 LCD_GPIO5
-Text GLabel 9700 3200 2    50   Input ~ 0
+Text GLabel 9700 2300 2    50   Input ~ 0
 LCD_GPIO4
 Wire Wire Line
 	9700 3200 8350 3200
