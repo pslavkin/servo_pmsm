@@ -144,9 +144,7 @@ Wire Wire Line
 Wire Wire Line
 	8900 4150 9000 4150
 Wire Wire Line
-	8850 2050 8950 2050
-Wire Wire Line
-	8950 2050 8950 2000
+	8650 2150 8650 2100
 Wire Wire Line
 	7400 4050 8400 4050
 Wire Wire Line
@@ -361,25 +359,6 @@ F 3 "" H 7500 5600 60  0000 C CNN
 	1    7500 5600
 	0    1    1    0   
 $EndComp
-$Comp
-L servo:Jumper_3_Bridged12 JP?
-U 1 1 5E302920
-P 8650 4350
-AR Path="/5E1BAEAA/5E302920" Ref="JP?"  Part="1" 
-AR Path="/5E21534F/5E302920" Ref="JP?"  Part="1" 
-AR Path="/5DE3DF56/5E302920" Ref="JP1002"  Part="1" 
-F 0 "JP1002" H 8650 4519 39  0000 C CNN
-F 1 "jumper" H 8650 4444 39  0000 C CNN
-F 2 "Jumper:SolderJumper-3_P1.3mm_Open_RoundedPad1.0x1.5mm" H 8450 4150 50  0001 C CNN
-F 3 "~" H 8550 4250 50  0001 C CNN
-	1    8650 4350
-	1    0    0    1   
-$EndComp
-Wire Wire Line
-	8300 4250 8650 4250
-Wire Wire Line
-	8650 4250 9000 4250
-Connection ~ 8650 4250
 Text Label 8150 4050 0    20   ~ 0
 DIR1_A_N_H
 Text Label 9000 3950 0    20   ~ 0
@@ -430,54 +409,20 @@ Wire Wire Line
 	9100 5100 9100 5550
 Wire Wire Line
 	7400 4700 8700 4700
-$Comp
-L servo:Earth #PWR?
-U 1 1 5E302929
-P 8300 4450
-AR Path="/5E21534F/5E302929" Ref="#PWR?"  Part="1" 
-AR Path="/5DE3DF56/5E302929" Ref="#PWR0222"  Part="1" 
-F 0 "#PWR0222" H 8300 4200 20  0001 C CNN
-F 1 "Earth" H 8300 4300 20  0000 C CNN
-F 2 "" H 8300 4450 50  0001 C CNN
-F 3 "~" H 8300 4450 50  0001 C CNN
-	1    8300 4450
-	1    0    0    -1  
-$EndComp
-Wire Wire Line
-	8300 4450 8300 4350
-Wire Wire Line
-	8300 4350 8450 4350
-$Comp
-L servo:jumper JP?
-U 1 1 5E2CFB11
-P 8750 2050
-AR Path="/5DD76B18/5E2CFB11" Ref="JP?"  Part="1" 
-AR Path="/5DE3DF56/5E2CFB11" Ref="JP1001"  Part="1" 
-F 0 "JP1001" H 8750 2211 39  0000 C CNN
-F 1 "jumper" H 8750 2136 39  0000 C CNN
-F 2 "servo:SolderJumper-2_P1.3mm_Open_RoundedPad1.0x1.5mm" H 8650 2030 50  0001 C CNN
-F 3 "~" H 8750 2130 50  0001 C CNN
-	1    8750 2050
-	1    0    0    -1  
-$EndComp
-Wire Wire Line
-	8650 2050 8650 2150
 Connection ~ 8650 2150
-Text Label 8400 2150 0    20   ~ 0
-STEP_DiR_5VH
 Text Label 8800 4250 0    20   ~ 0
 STEP_DiR_GND
 $Comp
 L servo:5VI #PWR?
 U 1 1 5E388B36
-P 8950 2000
+P 8650 2100
 AR Path="/5DD76B18/5E388B36" Ref="#PWR?"  Part="1" 
-AR Path="/5DE3DF56/5E388B36" Ref="#PWR?"  Part="1" 
-F 0 "#PWR?" H 8950 1800 20  0001 C CNN
-F 1 "5VI" H 8950 2157 28  0000 C CNN
-F 2 "" H 8950 2000 50  0001 C CNN
-F 3 "" H 8950 2000 50  0001 C CNN
-	1    8950 2000
+AR Path="/5DE3DF56/5E388B36" Ref="#PWR0141"  Part="1" 
+F 0 "#PWR0141" H 8650 1900 20  0001 C CNN
+F 1 "5VI" H 8650 2257 28  0000 C CNN
+F 2 "" H 8650 2100 50  0001 C CNN
+F 3 "" H 8650 2100 50  0001 C CNN
+	1    8650 2100
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
@@ -495,20 +440,18 @@ Wire Wire Line
 	10150 2150 10150 2800
 Connection ~ 9800 2150
 $Comp
-L servo:GNDI #PWR?
+L servo:GNDI #PWR0142
 U 1 1 5E39F025
-P 9000 4350
-F 0 "#PWR?" H 9000 4100 30  0001 C CNN
-F 1 "GNDI" H 9000 4201 20  0000 C CNN
-F 2 "" H 9000 4350 50  0001 C CNN
-F 3 "" H 9000 4350 50  0001 C CNN
-	1    9000 4350
+P 8600 7100
+F 0 "#PWR0142" H 8600 6850 30  0001 C CNN
+F 1 "GNDI" H 8600 6951 20  0000 C CNN
+F 2 "" H 8600 7100 50  0001 C CNN
+F 3 "" H 8600 7100 50  0001 C CNN
+	1    8600 7100
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
 	10100 5950 10100 7100
-Wire Wire Line
-	8850 4350 9000 4350
 Wire Wire Line
 	7800 5450 7500 5450
 Wire Wire Line
@@ -523,7 +466,7 @@ Connection ~ 7500 5450
 Wire Wire Line
 	7500 5450 6750 5450
 Wire Wire Line
-	7500 7100 10100 7100
+	7500 7100 8600 7100
 Wire Wire Line
 	7500 5800 7500 7100
 Wire Wire Line
@@ -561,4 +504,9 @@ Wire Wire Line
 Connection ~ 8650 3550
 Wire Wire Line
 	8650 3550 9050 3550
+Wire Wire Line
+	8300 4250 9000 4250
+Connection ~ 8600 7100
+Wire Wire Line
+	8600 7100 10100 7100
 $EndSCHEMATC

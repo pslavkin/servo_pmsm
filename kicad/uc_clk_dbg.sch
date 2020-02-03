@@ -137,7 +137,7 @@ U 1 1 5DB38F52
 P 13900 2600
 F 0 "Y601" H 13900 2367 60  0000 C CNN
 F 1 "~" H 13900 2600 50  0001 C CNN
-F 2 "Oscillator:Oscillator_SMD_SeikoEpson_SG210-4Pin_2.5x2.0mm" H 13900 2600 50  0001 C CNN
+F 2 "servo:Crystal_SMD_2520-4Pin_2.5x2.0mm" H 13900 2600 50  0001 C CNN
 F 3 "../doc/datasheets//ECS-2520S.pdf" H 13900 2600 50  0001 C CNN
 	1    13900 2600
 	-1   0    0    -1  

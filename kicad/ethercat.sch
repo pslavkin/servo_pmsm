@@ -830,7 +830,7 @@ AR Path="/5DC3DC9E/5F22F490" Ref="Y?"  Part="1"
 AR Path="/5DC4A59D/5F22F490" Ref="Y401"  Part="1" 
 F 0 "Y401" H 8750 4273 60  0000 C CNN
 F 1 "dnp" H 8750 4175 50  0000 C CNN
-F 2 "Oscillator:Oscillator_SMD_SeikoEpson_SG210-4Pin_2.5x2.0mm" H 8750 3950 50  0001 C CNN
+F 2 "servo:Crystal_SMD_2520-4Pin_2.5x2.0mm" H 8750 3950 50  0001 C CNN
 F 3 "../doc/datasheets//ECS-2520S.pdf" H 8750 3950 50  0001 C CNN
 	1    8750 3950
 	-1   0    0    -1  
@@ -1542,7 +1542,7 @@ AR Path="/5DC3DC9E/6322F0E3" Ref="Y?"  Part="1"
 AR Path="/5DC4A59D/6322F0E3" Ref="Y402"  Part="1" 
 F 0 "Y402" H 8900 8393 39  0000 C CNN
 F 1 "dnp" H 8900 8318 39  0000 C CNN
-F 2 "Oscillator:Oscillator_SMD_SeikoEpson_SG210-4Pin_2.5x2.0mm" H 8950 8050 60  0001 C CNN
+F 2 "servo:Crystal_SMD_2520-4Pin_2.5x2.0mm" H 8950 8050 60  0001 C CNN
 F 3 "../doc/datasheets//ECS-2520S.pdf" H 8800 8650 60  0001 C CNN
 	1    8900 8100
 	-1   0    0    -1  

@@ -125,8 +125,8 @@ first pic, easy, doesn't it?
 
 ## nets
 plane 2d and 3d nets
-<img src="doc/pics/nets2d_1.jpg" width="400"/>
-<img src="doc/pics/nets3d_1.jpg" width="400"/>
+<img src="doc/pics/nets2d_1.png" width="400"/>
+<img src="doc/pics/nets3d_1.png" width="400"/>
 
 
 ## Hierarchy
