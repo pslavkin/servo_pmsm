@@ -251,6 +251,21 @@ P 7 0 1 0 -225 0 -225 -175 -25 -175 125 -25 125 150 -75 150 -225 0 f
 ENDDRAW
 ENDDEF
 #
+# Mechanical_MountingHole
+#
+DEF Mechanical_MountingHole H 0 40 Y Y 1 F N
+F0 "H" 0 200 50 H V C CNN
+F1 "Mechanical_MountingHole" 0 125 50 H V C CNN
+F2 "" 0 0 50 H I C CNN
+F3 "" 0 0 50 H I C CNN
+$FPLIST
+ MountingHole*
+$ENDFPLIST
+DRAW
+C 0 0 50 0 1 50 N
+ENDDRAW
+ENDDEF
+#
 # power_PWR_FLAG
 #
 DEF power_PWR_FLAG #FLG 0 0 N N 1 F P
@@ -511,6 +526,34 @@ DRAW
 C 0 75 25 0 1 0 N
 P 2 0 1 0 0 0 0 50 N
 X 5VH 1 0 0 0 U 2 2 1 1 W N
+ENDDRAW
+ENDDEF
+#
+# servo_5VI
+#
+DEF servo_5VI #PWR 0 0 Y Y 1 F P
+F0 "#PWR" 0 -200 20 H I C CNN
+F1 "servo_5VI" 0 150 28 H V C CNN
+F2 "" 0 0 50 H I C CNN
+F3 "" 0 0 50 H I C CNN
+DRAW
+C 0 75 25 0 1 0 N
+P 2 0 1 0 0 0 0 50 N
+X 5VI 1 0 0 0 U 2 2 1 1 W N
+ENDDRAW
+ENDDEF
+#
+# servo_5VP
+#
+DEF servo_5VP #PWR 0 0 Y Y 1 F P
+F0 "#PWR" 0 -200 20 H I C CNN
+F1 "servo_5VP" 0 150 28 H V C CNN
+F2 "" 0 0 50 H I C CNN
+F3 "" 0 0 50 H I C CNN
+DRAW
+C 0 75 25 0 1 0 N
+P 2 0 1 0 0 0 0 50 N
+X 5VP 1 0 0 0 U 2 2 1 1 W N
 ENDDRAW
 ENDDEF
 #
@@ -832,6 +875,32 @@ F3 "" 0 0 50 H I C CNN
 DRAW
 P 6 0 1 0 0 0 0 -50 50 -50 0 -100 -50 -50 0 -50 N
 X GNDH 1 0 0 0 D 2 2 1 1 W N
+ENDDRAW
+ENDDEF
+#
+# servo_GNDI
+#
+DEF servo_GNDI #PWR 0 0 Y Y 1 F P
+F0 "#PWR" 0 -250 30 H I C CNN
+F1 "servo_GNDI" 0 -150 20 H V C CNN
+F2 "" 0 0 50 H I C CNN
+F3 "" 0 0 50 H I C CNN
+DRAW
+P 6 0 1 0 0 0 0 -50 50 -50 0 -100 -50 -50 0 -50 N
+X GNDI 1 0 0 0 D 2 2 1 1 W N
+ENDDRAW
+ENDDEF
+#
+# servo_GNDP
+#
+DEF servo_GNDP #PWR 0 0 Y Y 1 F P
+F0 "#PWR" 0 -250 30 H I C CNN
+F1 "servo_GNDP" 0 -150 20 H V C CNN
+F2 "" 0 0 50 H I C CNN
+F3 "" 0 0 50 H I C CNN
+DRAW
+P 6 0 1 0 0 0 0 -50 50 -50 0 -100 -50 -50 0 -50 N
+X GNDP 1 0 0 0 D 2 2 1 1 W N
 ENDDRAW
 ENDDEF
 #

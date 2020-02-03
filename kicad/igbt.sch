@@ -4,7 +4,7 @@ EELAYER 26 0
 EELAYER END
 $Descr A3 16535 11693
 encoding utf-8
-Sheet 8 19
+Sheet 8 20
 Title "Igbt interface"
 Date "2020-01-09"
 Rev "1.0"
@@ -136,9 +136,9 @@ Wire Wire Line
 Wire Wire Line
 	5450 2500 5450 2800
 Wire Wire Line
-	5200 2750 5350 2750
+	5200 2750 5400 2750
 Wire Wire Line
-	5350 2750 5350 2900
+	5400 2750 5400 2900
 Wire Wire Line
 	5200 2950 5350 2950
 Wire Wire Line
@@ -164,26 +164,26 @@ Wire Wire Line
 Wire Wire Line
 	3750 3450 4100 3450
 Wire Wire Line
-	5250 1950 5200 1950
+	5300 1950 5200 1950
 Wire Wire Line
-	5200 2400 5250 2400
-Connection ~ 5250 2400
+	5200 2400 5300 2400
+Connection ~ 5300 2400
 Wire Wire Line
-	5250 2400 5250 1950
+	5300 2400 5300 1950
 Wire Wire Line
-	5200 2850 5250 2850
-Connection ~ 5250 2850
+	5200 2850 5300 2850
+Connection ~ 5300 2850
 Wire Wire Line
-	5250 2850 5250 2400
+	5300 2850 5300 2400
 Wire Wire Line
-	5200 3300 5250 3300
-Connection ~ 5250 3300
+	5200 3300 5300 3300
+Connection ~ 5300 3300
 Wire Wire Line
-	5250 3300 5250 2850
+	5300 3300 5300 2850
 Wire Wire Line
-	5200 3750 5250 3750
+	5200 3750 5300 3750
 Wire Wire Line
-	5250 3750 5250 3300
+	5300 3750 5300 3300
 Wire Wire Line
 	4400 1950 4450 1950
 Wire Wire Line
@@ -206,20 +206,8 @@ Wire Wire Line
 Connection ~ 4400 3750
 Wire Wire Line
 	4400 3750 4400 3300
-$Comp
-L servo:GNDH #PWR0803
-U 1 1 5E60CBA1
-P 4400 4550
-F 0 "#PWR0803" H 4400 4300 30  0001 C CNN
-F 1 "GNDH" H 4400 4392 30  0000 C CNN
-F 2 "" H 4400 4550 50  0001 C CNN
-F 3 "" H 4400 4550 50  0001 C CNN
-	1    4400 4550
-	1    0    0    -1  
-$EndComp
-Connection ~ 5250 1950
 Wire Wire Line
-	3850 1650 3850 2000
+	3850 1550 3850 2000
 Wire Wire Line
 	5750 2500 6500 2500
 Wire Wire Line
@@ -229,7 +217,7 @@ Wire Wire Line
 Wire Wire Line
 	6500 2800 5450 2800
 Wire Wire Line
-	5350 2900 6500 2900
+	5400 2900 6500 2900
 Wire Wire Line
 	6500 3000 5350 3000
 Wire Wire Line
@@ -257,8 +245,6 @@ Wire Wire Line
 Wire Wire Line
 	3950 4050 3950 4500
 Connection ~ 4400 4500
-Wire Wire Line
-	4400 4500 4400 4550
 Wire Wire Line
 	2150 3350 2150 2000
 Wire Wire Line
@@ -538,34 +524,34 @@ Wire Wire Line
 Wire Wire Line
 	8850 2500 8850 3800
 Wire Wire Line
-	8650 2600 9250 2600
+	8650 2600 9900 2600
 Connection ~ 8650 2600
 Wire Wire Line
-	9250 2700 8450 2700
+	9900 2700 8450 2700
 Connection ~ 8450 2700
 Wire Wire Line
-	8250 2800 9250 2800
+	8250 2800 9900 2800
 Connection ~ 8250 2800
 Wire Wire Line
-	9250 2900 8050 2900
+	9900 2900 8050 2900
 Connection ~ 8050 2900
 Wire Wire Line
-	7850 3000 9250 3000
+	7850 3000 9900 3000
 Connection ~ 7850 3000
 Connection ~ 7650 3100
 Wire Wire Line
-	7450 3200 9250 3200
+	7450 3200 9900 3200
 Connection ~ 7450 3200
 Wire Wire Line
-	7650 3100 9250 3100
+	7650 3100 9900 3100
 Wire Wire Line
-	9250 3300 7250 3300
+	9900 3300 7250 3300
 Connection ~ 7250 3300
 Connection ~ 7050 3400
 Wire Wire Line
-	6900 3500 9250 3500
+	6900 3500 9900 3500
 Wire Wire Line
-	6900 3600 9250 3600
+	6900 3600 9900 3600
 Wire Wire Line
 	4400 4500 6200 4500
 Wire Wire Line
@@ -596,9 +582,7 @@ Wire Wire Line
 Wire Wire Line
 	8850 4100 8850 4500
 Wire Wire Line
-	4850 1550 4850 1650
-Wire Wire Line
-	8850 2500 9250 2500
+	8850 2500 9900 2500
 Connection ~ 8850 2500
 Connection ~ 6400 4500
 Wire Wire Line
@@ -768,9 +752,9 @@ Wire Wire Line
 Wire Wire Line
 	11050 6150 11050 6450
 Wire Wire Line
-	11300 6400 11150 6400
+	11300 6400 11100 6400
 Wire Wire Line
-	11150 6400 11150 6550
+	11100 6400 11100 6550
 Wire Wire Line
 	11300 6600 11150 6600
 Wire Wire Line
@@ -796,26 +780,26 @@ Wire Wire Line
 Wire Wire Line
 	12750 7100 12400 7100
 Wire Wire Line
-	11250 5600 11300 5600
+	11200 5600 11300 5600
 Wire Wire Line
-	11300 6050 11250 6050
-Connection ~ 11250 6050
+	11300 6050 11200 6050
+Connection ~ 11200 6050
 Wire Wire Line
-	11250 6050 11250 5600
+	11200 6050 11200 5600
 Wire Wire Line
-	11300 6500 11250 6500
-Connection ~ 11250 6500
+	11300 6500 11200 6500
+Connection ~ 11200 6500
 Wire Wire Line
-	11250 6500 11250 6050
+	11200 6500 11200 6050
 Wire Wire Line
-	11300 6950 11250 6950
-Connection ~ 11250 6950
+	11300 6950 11200 6950
+Connection ~ 11200 6950
 Wire Wire Line
-	11250 6950 11250 6500
+	11200 6950 11200 6500
 Wire Wire Line
-	11300 7400 11250 7400
+	11300 7400 11200 7400
 Wire Wire Line
-	11250 7400 11250 6950
+	11200 7400 11200 6950
 Wire Wire Line
 	12100 5600 12050 5600
 Wire Wire Line
@@ -838,18 +822,7 @@ Wire Wire Line
 Connection ~ 12100 7400
 Wire Wire Line
 	12100 7400 12100 6950
-$Comp
-L servo:GNDH #PWR0806
-U 1 1 5ED1834E
-P 12100 8200
-F 0 "#PWR0806" H 12100 7950 30  0001 C CNN
-F 1 "GNDH" H 12100 8042 30  0000 C CNN
-F 2 "" H 12100 8200 50  0001 C CNN
-F 3 "" H 12100 8200 50  0001 C CNN
-	1    12100 8200
-	-1   0    0    -1  
-$EndComp
-Connection ~ 11250 5600
+Connection ~ 11200 5600
 Wire Wire Line
 	12650 5300 12650 5650
 Wire Wire Line
@@ -861,7 +834,7 @@ Wire Wire Line
 Wire Wire Line
 	10000 6450 11050 6450
 Wire Wire Line
-	11150 6550 10000 6550
+	11100 6550 10000 6550
 Wire Wire Line
 	10000 6650 11150 6650
 Wire Wire Line
@@ -889,8 +862,6 @@ Wire Wire Line
 Wire Wire Line
 	12550 7700 12550 8150
 Connection ~ 12100 8150
-Wire Wire Line
-	12100 8150 12100 8200
 Wire Wire Line
 	14350 7000 14350 5650
 Wire Wire Line
@@ -930,8 +901,6 @@ F 3 "../doc/datasheets/Si8660.pdf" H 13350 7900 60  0001 C CNN
 	1    13450 7300
 	-1   0    0    -1  
 $EndComp
-Wire Wire Line
-	11300 5500 11250 5500
 $Comp
 L servo:SN74LVC2G17DBVR U812
 U 1 1 5ED1838C
@@ -1233,24 +1202,9 @@ Wire Wire Line
 	7850 7750 7850 8150
 Wire Wire Line
 	7650 7750 7650 8150
-$Comp
-L servo:5VH #PWR0805
-U 1 1 5ED184A2
-P 11650 5200
-F 0 "#PWR0805" H 11650 5000 20  0001 C CNN
-F 1 "5VH" H 11655 5357 28  0000 C CNN
-F 2 "" H 11650 5200 50  0001 C CNN
-F 3 "" H 11650 5200 50  0001 C CNN
-	1    11650 5200
-	-1   0    0    -1  
-$EndComp
-Wire Wire Line
-	11650 5200 11650 5300
 Wire Wire Line
 	7650 6150 6750 6150
 Connection ~ 7650 6150
-Wire Wire Line
-	11250 5500 10750 5500
 Connection ~ 10100 8150
 Wire Wire Line
 	10100 8150 9450 8150
@@ -1284,7 +1238,7 @@ Wire Wire Line
 Wire Wire Line
 	7050 3400 6900 3400
 Wire Wire Line
-	7050 3400 9250 3400
+	7050 3400 9900 3400
 $Comp
 L servo:Resistor R802
 U 1 1 5EFCB1E2
@@ -1539,22 +1493,7 @@ F 3 "" H 9400 7250 60  0001 C CNN
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
-	5250 1650 5250 1950
-Wire Wire Line
-	11250 5300 11250 5600
-Connection ~ 11650 5300
-$Comp
-L servo:5VH #PWR0804
-U 1 1 5EB25496
-P 4850 1550
-F 0 "#PWR0804" H 4850 1350 20  0001 C CNN
-F 1 "5VH" H 4855 1707 28  0000 C CNN
-F 2 "" H 4850 1550 50  0001 C CNN
-F 3 "" H 4850 1550 50  0001 C CNN
-	1    4850 1550
-	1    0    0    -1  
-$EndComp
-Connection ~ 4850 1650
+	11200 5300 11200 5600
 $Comp
 L servo:SN74LVC2G17DBVR U803
 U 1 1 5E60CBFC
@@ -1579,10 +1518,6 @@ Wire Wire Line
 Wire Wire Line
 	5650 2050 5650 2600
 Wire Wire Line
-	5200 1850 5250 1850
-Wire Wire Line
-	5250 1850 5750 1850
-Wire Wire Line
 	5200 2050 5650 2050
 Wire Wire Line
 	4250 2200 4250 2050
@@ -1590,14 +1525,6 @@ Wire Wire Line
 	4150 1850 4450 1850
 Wire Wire Line
 	4250 2050 4450 2050
-Wire Wire Line
-	3850 1650 4850 1650
-Wire Wire Line
-	4850 1650 5250 1650
-Wire Wire Line
-	11650 5300 12650 5300
-Wire Wire Line
-	11250 5300 11650 5300
 $Comp
 L servo:Capacitor C?
 U 1 1 5F157327
@@ -1766,42 +1693,6 @@ F 3 "" H 1950 2900 50  0001 C CNN
 	1    1950 2900
 	-1   0    0    -1  
 $EndComp
-$Comp
-L servo:Capacitor C?
-U 1 1 5F339B9E
-P 6050 1800
-AR Path="/5E092156/5F339B9E" Ref="C?"  Part="1" 
-AR Path="/5E72D841/5F339B9E" Ref="C?"  Part="1" 
-AR Path="/5DDE8C5E/5F339B9E" Ref="C827"  Part="1" 
-F 0 "C827" V 6150 1750 20  0000 R CNN
-F 1 "0.1u" V 6050 1750 20  0000 R CNN
-F 2 "servo:C_0603_1608Metric" H 6050 1700 60  0001 C CNN
-F 3 "" H 6050 1800 60  0000 C CNN
-	1    6050 1800
-	0    1    -1   0   
-$EndComp
-$Comp
-L servo:5VH #PWR0256
-U 1 1 5F339BA5
-P 6050 1500
-F 0 "#PWR0256" H 6050 1300 20  0001 C CNN
-F 1 "5VH" H 6055 1657 28  0000 C CNN
-F 2 "" H 6050 1500 50  0001 C CNN
-F 3 "" H 6050 1500 50  0001 C CNN
-	1    6050 1500
-	-1   0    0    -1  
-$EndComp
-$Comp
-L servo:GNDH #PWR0257
-U 1 1 5F339BAB
-P 6050 2100
-F 0 "#PWR0257" H 6050 1850 30  0001 C CNN
-F 1 "GNDH" H 6050 1942 30  0000 C CNN
-F 2 "" H 6050 2100 50  0001 C CNN
-F 3 "" H 6050 2100 50  0001 C CNN
-	1    6050 2100
-	-1   0    0    -1  
-$EndComp
 Wire Wire Line
 	6050 1900 6050 1950
 Wire Wire Line
@@ -1926,9 +1817,6 @@ Wire Wire Line
 	6050 1950 6300 1950
 Wire Wire Line
 	7550 1950 7550 1900
-Connection ~ 6050 1950
-Wire Wire Line
-	6050 1950 6050 2100
 Wire Wire Line
 	7300 1900 7300 1950
 Connection ~ 7300 1950
@@ -1967,28 +1855,6 @@ F 2 "servo:C_0603_1608Metric" H 10400 5450 60  0001 C CNN
 F 3 "" H 10400 5550 60  0000 C CNN
 	1    10400 5550
 	0    -1   -1   0   
-$EndComp
-$Comp
-L servo:5VH #PWR0254
-U 1 1 5F66FBE7
-P 10400 5250
-F 0 "#PWR0254" H 10400 5050 20  0001 C CNN
-F 1 "5VH" H 10405 5407 28  0000 C CNN
-F 2 "" H 10400 5250 50  0001 C CNN
-F 3 "" H 10400 5250 50  0001 C CNN
-	1    10400 5250
-	1    0    0    -1  
-$EndComp
-$Comp
-L servo:GNDH #PWR0255
-U 1 1 5F66FBED
-P 10400 5850
-F 0 "#PWR0255" H 10400 5600 30  0001 C CNN
-F 1 "GNDH" H 10400 5692 30  0000 C CNN
-F 2 "" H 10400 5850 50  0001 C CNN
-F 3 "" H 10400 5850 50  0001 C CNN
-	1    10400 5850
-	1    0    0    -1  
 $EndComp
 Wire Wire Line
 	10400 5650 10400 5700
@@ -2114,9 +1980,6 @@ Wire Wire Line
 	10400 5700 10150 5700
 Wire Wire Line
 	8900 5700 8900 5650
-Connection ~ 10400 5700
-Wire Wire Line
-	10400 5700 10400 5850
 Wire Wire Line
 	9150 5650 9150 5700
 Connection ~ 9150 5700
@@ -2166,29 +2029,29 @@ Text GLabel 1950 3550 0    50   Input ~ 0
 FREE_OUT1_1
 Text GLabel 1950 3850 0    50   Input ~ 0
 IGBT_ALARM1
-Text GLabel 9250 3000 2    50   Input ~ 0
+Text GLabel 9900 3000 2    50   Input ~ 0
 IGBT1_UH_H
-Text GLabel 9250 2900 2    50   Input ~ 0
+Text GLabel 9900 2900 2    50   Input ~ 0
 IGBT1_UL_H
-Text GLabel 9250 2800 2    50   Input ~ 0
+Text GLabel 9900 2800 2    50   Input ~ 0
 IGBT1_VH_H
-Text GLabel 9250 2700 2    50   Input ~ 0
+Text GLabel 9900 2700 2    50   Input ~ 0
 IGBT1_VL_H
-Text GLabel 9250 2600 2    50   Input ~ 0
+Text GLabel 9900 2600 2    50   Input ~ 0
 IGBT1_WH_H
-Text GLabel 9250 2500 2    50   Input ~ 0
+Text GLabel 9900 2500 2    50   Input ~ 0
 IGBT1_WL_H
-Text GLabel 9250 3400 2    50   Input ~ 0
+Text GLabel 9900 3400 2    50   Input ~ 0
 BRK_RES1_H
-Text GLabel 9250 3100 2    50   Input ~ 0
+Text GLabel 9900 3100 2    50   Input ~ 0
 FREE_OUT1_2_H
-Text GLabel 9250 3600 2    50   Input ~ 0
+Text GLabel 9900 3600 2    50   Input ~ 0
 FAN_RPM1_H
-Text GLabel 9250 3300 2    50   Input ~ 0
+Text GLabel 9900 3300 2    50   Input ~ 0
 BRK_MEC1_H
-Text GLabel 9250 3200 2    50   Input ~ 0
+Text GLabel 9900 3200 2    50   Input ~ 0
 FREE_OUT1_1_H
-Text GLabel 9250 3500 2    50   Input ~ 0
+Text GLabel 9900 3500 2    50   Input ~ 0
 IGBT_ALARM1_H
 Text GLabel 6750 6150 0    50   Input ~ 0
 IGBT2_UH_H
@@ -2238,4 +2101,85 @@ Text GLabel 14550 7300 2    50   Input ~ 0
 FREE_OUT2_1
 Text GLabel 14550 7600 2    50   Input ~ 0
 IGBT_ALARM2
+$Comp
+L servo:5VP #PWR0138
+U 1 1 5E3A1F46
+P 6050 1500
+F 0 "#PWR0138" H 6050 1300 20  0001 C CNN
+F 1 "5VP" H 6050 1657 28  0000 C CNN
+F 2 "" H 6050 1500 50  0001 C CNN
+F 3 "" H 6050 1500 50  0001 C CNN
+	1    6050 1500
+	1    0    0    -1  
+$EndComp
+$Comp
+L servo:5VP #PWR0140
+U 1 1 5E3A231C
+P 10400 5250
+F 0 "#PWR0140" H 10400 5050 20  0001 C CNN
+F 1 "5VP" H 10400 5407 28  0000 C CNN
+F 2 "" H 10400 5250 50  0001 C CNN
+F 3 "" H 10400 5250 50  0001 C CNN
+	1    10400 5250
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	10400 5300 11200 5300
+Connection ~ 11200 5300
+Wire Wire Line
+	11200 5300 12650 5300
+Wire Wire Line
+	10750 5500 11300 5500
+Wire Wire Line
+	3850 1550 5300 1550
+Wire Wire Line
+	5200 1850 5750 1850
+Wire Wire Line
+	5300 1950 5300 1550
+Connection ~ 5300 1950
+Connection ~ 5300 1550
+Wire Wire Line
+	5300 1550 6050 1550
+$Comp
+L servo:GNDP #PWR0137
+U 1 1 5E8FBE61
+P 10100 8500
+F 0 "#PWR0137" H 10100 8250 30  0001 C CNN
+F 1 "GNDP" H 10100 8351 20  0000 C CNN
+F 2 "" H 10100 8500 50  0001 C CNN
+F 3 "" H 10100 8500 50  0001 C CNN
+	1    10100 8500
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	10100 8150 10100 8500
+Wire Wire Line
+	7650 8150 7450 8150
+Wire Wire Line
+	7450 8150 7450 5700
+Wire Wire Line
+	7450 5700 8900 5700
+Connection ~ 7650 8150
+Connection ~ 8900 5700
+$Comp
+L servo:GNDP #PWR0139
+U 1 1 5E9E0460
+P 6400 4850
+F 0 "#PWR0139" H 6400 4600 30  0001 C CNN
+F 1 "GNDP" H 6400 4701 20  0000 C CNN
+F 2 "" H 6400 4850 50  0001 C CNN
+F 3 "" H 6400 4850 50  0001 C CNN
+	1    6400 4850
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	6400 4500 6400 4850
+Wire Wire Line
+	8850 4500 9150 4500
+Wire Wire Line
+	9150 4500 9150 1950
+Wire Wire Line
+	9150 1950 7550 1950
+Connection ~ 8850 4500
+Connection ~ 7550 1950
 $EndSCHEMATC

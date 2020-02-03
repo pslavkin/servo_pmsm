@@ -4,7 +4,7 @@ EELAYER 26 0
 EELAYER END
 $Descr A3 16535 11693
 encoding utf-8
-Sheet 15 19
+Sheet 15 20
 Title "LEM currente measurement"
 Date "2020-01-09"
 Rev "1.0"

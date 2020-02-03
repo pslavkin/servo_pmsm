@@ -4,7 +4,7 @@ EELAYER 26 0
 EELAYER END
 $Descr A4 11693 8268
 encoding utf-8
-Sheet 14 19
+Sheet 14 20
 Title "clk"
 Date "2020-01-09"
 Rev "1.0"
@@ -522,17 +522,6 @@ Text Notes 7900 950  0    20   ~ 4
 for bulk capacitor
 Wire Wire Line
 	7900 1000 8600 1000
-$Comp
-L Mechanical:Housing N1401
-U 1 1 5E32F2AD
-P 4150 4150
-F 0 "N1401" H 4303 4184 50  0000 L CNN
-F 1 "Housing" H 4303 4093 50  0000 L CNN
-F 2 "servo:case" H 4200 4200 50  0001 C CNN
-F 3 "~" H 4200 4200 50  0001 C CNN
-	1    4150 4150
-	1    0    0    -1  
-$EndComp
 Text Label 9200 1750 0    20   ~ 0
 speaker+
 Text Label 9200 1850 0    20   ~ 0

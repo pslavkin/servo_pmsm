@@ -24,6 +24,16 @@ D Power flag, positive voltage
 K power-flag
 $ENDCMP
 #
+$CMP 5VI
+D Power flag, positive voltage
+K power-flag
+$ENDCMP
+#
+$CMP 5VP
+D Power flag, positive voltage
+K power-flag
+$ENDCMP
+#
 $CMP 5V_SHUNT_U
 D Power flag, positive voltage
 K power-flag
@@ -252,6 +262,16 @@ K power-flag
 $ENDCMP
 #
 $CMP GNDH
+D Power flag, ground
+K power-flag
+$ENDCMP
+#
+$CMP GNDI
+D Power flag, ground
+K power-flag
+$ENDCMP
+#
+$CMP GNDP
 D Power flag, ground
 K power-flag
 $ENDCMP

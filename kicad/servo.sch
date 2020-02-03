@@ -4,7 +4,7 @@ EELAYER 26 0
 EELAYER END
 $Descr A3 16535 11693
 encoding utf-8
-Sheet 1 19
+Sheet 1 20
 Title "servo drive"
 Date "2020-01-09"
 Rev "1.0"
@@ -103,13 +103,13 @@ $EndSheet
 Text Notes 12550 4700 0    197  ~ 39
 CAN\nRS485
 $Sheet
-S 7050 2400 1300 1150
+S 1850 3900 1300 1150
 U 5E033FE4
-F0 "uc_gpio" 50
-F1 "uc_gpio.sch" 50
+F0 "symbols" 50
+F1 "symbols.sch" 50
 $EndSheet
-Text Notes 7350 3250 0    197  ~ 39
-uC\nGPIO
+Text Notes 2200 4600 0    197  ~ 39
+SYM\n
 $Sheet
 S 8800 5400 1300 1150
 U 5E72D841
@@ -162,4 +162,12 @@ U 5F8D42C2
 F0 "endat" 50
 F1 "endat.sch" 50
 $EndSheet
+$Sheet
+S 7050 2300 1300 1150
+U 5ED1E8B7
+F0 "uc_gpio" 50
+F1 "uc_gpio.sch" 50
+$EndSheet
+Text Notes 7350 3150 0    197  ~ 39
+uC\nGPIO
 $EndSCHEMATC
