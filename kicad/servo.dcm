@@ -788,9 +788,21 @@ K receiver rs485 rs422 differential
 F http://www.ti.com/lit/ds/symlink/am26ls32a.pdf
 $ENDCMP
 #
+$CMP high_voltage
+D Flash symbol, small
+K graphic symbol flash VAC 220VAC 110VAC power
+F ~
+$ENDCMP
+#
 $CMP jumper
 D Jumper, normally open, small symbol
 K jumper link bridge NO
+F ~
+$ENDCMP
+#
+$CMP logo
+D Open Hardware logo, large
+K Logo
 F ~
 $ENDCMP
 #

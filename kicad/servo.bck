@@ -271,6 +271,11 @@ D Power flag, ground
 K power-flag
 $ENDCMP
 #
+$CMP GNDB
+D Power flag, ground
+K power-flag
+$ENDCMP
+#
 $CMP GNDH
 D Power flag, ground
 K power-flag
@@ -781,6 +786,12 @@ $CMP am26ls32a
 D AM26LS32Ax,AM26LS33AxQuadrupleDifferentialLine Receivers
 K receiver rs485 rs422 differential
 F http://www.ti.com/lit/ds/symlink/am26ls32a.pdf
+$ENDCMP
+#
+$CMP high_voltage
+D Flash symbol, small
+K graphic symbol flash VAC 220VAC 110VAC power
+F ~
 $ENDCMP
 #
 $CMP jumper

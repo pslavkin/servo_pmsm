@@ -1,0 +1,9 @@
+(module slot2 (layer F.Cu) (tedit 5E3824DA)
+  (fp_text reference H1311 (at 0 -3.5) (layer F.SilkS) hide
+    (effects (font (size 0.4 0.4) (thickness 0.1)))
+  )
+  (fp_text value Slot (at 0 -4.5) (layer F.Fab) hide
+    (effects (font (size 1 1) (thickness 0.15)))
+  )
+  (pad "" np_thru_hole oval (at 0 0) (size 10 0.8) (drill oval 10 0.8) (layers *.Cu *.Mask))
+)
