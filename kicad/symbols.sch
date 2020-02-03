@@ -566,10 +566,10 @@ F 3 "~" H 8100 4500 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L Mechanical:MountingHole H?
+L Mechanical:MountingHole H1349
 U 1 1 5E41C227
 P 7050 4800
-F 0 "H?" H 7150 4846 50  0000 L CNN
+F 0 "H1349" H 7150 4846 50  0000 L CNN
 F 1 "Slot" H 7150 4755 50  0000 L CNN
 F 2 "servo:slot_v" H 7050 4800 50  0001 C CNN
 F 3 "~" H 7050 4800 50  0001 C CNN
@@ -577,10 +577,10 @@ F 3 "~" H 7050 4800 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L Mechanical:MountingHole H?
+L Mechanical:MountingHole H1351
 U 1 1 5E41C22E
 P 7550 4800
-F 0 "H?" H 7650 4846 50  0000 L CNN
+F 0 "H1351" H 7650 4846 50  0000 L CNN
 F 1 "Slot" H 7650 4755 50  0000 L CNN
 F 2 "servo:slot_v" H 7550 4800 50  0001 C CNN
 F 3 "~" H 7550 4800 50  0001 C CNN
@@ -588,10 +588,10 @@ F 3 "~" H 7550 4800 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L Mechanical:MountingHole H?
+L Mechanical:MountingHole H1355
 U 1 1 5E41C235
 P 8650 4800
-F 0 "H?" H 8750 4846 50  0000 L CNN
+F 0 "H1355" H 8750 4846 50  0000 L CNN
 F 1 "Slot" H 8750 4755 50  0000 L CNN
 F 2 "servo:slot_v" H 8650 4800 50  0001 C CNN
 F 3 "~" H 8650 4800 50  0001 C CNN
@@ -599,10 +599,10 @@ F 3 "~" H 8650 4800 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L Mechanical:MountingHole H?
+L Mechanical:MountingHole H1353
 U 1 1 5E41C23C
 P 8100 4800
-F 0 "H?" H 8200 4846 50  0000 L CNN
+F 0 "H1353" H 8200 4846 50  0000 L CNN
 F 1 "Slot" H 8200 4755 50  0000 L CNN
 F 2 "servo:slot_v" H 8100 4800 50  0001 C CNN
 F 3 "~" H 8100 4800 50  0001 C CNN
@@ -610,10 +610,10 @@ F 3 "~" H 8100 4800 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L Mechanical:MountingHole H?
+L Mechanical:MountingHole H1350
 U 1 1 5E41C3B7
 P 7050 5100
-F 0 "H?" H 7150 5146 50  0000 L CNN
+F 0 "H1350" H 7150 5146 50  0000 L CNN
 F 1 "Slot" H 7150 5055 50  0000 L CNN
 F 2 "servo:slot_v" H 7050 5100 50  0001 C CNN
 F 3 "~" H 7050 5100 50  0001 C CNN
@@ -621,10 +621,10 @@ F 3 "~" H 7050 5100 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L Mechanical:MountingHole H?
+L Mechanical:MountingHole H1352
 U 1 1 5E41C3BE
 P 7550 5100
-F 0 "H?" H 7650 5146 50  0000 L CNN
+F 0 "H1352" H 7650 5146 50  0000 L CNN
 F 1 "Slot" H 7650 5055 50  0000 L CNN
 F 2 "servo:slot_v" H 7550 5100 50  0001 C CNN
 F 3 "~" H 7550 5100 50  0001 C CNN
@@ -632,10 +632,10 @@ F 3 "~" H 7550 5100 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L Mechanical:MountingHole H?
+L Mechanical:MountingHole H1356
 U 1 1 5E41C3C5
 P 8650 5100
-F 0 "H?" H 8750 5146 50  0000 L CNN
+F 0 "H1356" H 8750 5146 50  0000 L CNN
 F 1 "Slot" H 8750 5055 50  0000 L CNN
 F 2 "servo:slot_v" H 8650 5100 50  0001 C CNN
 F 3 "~" H 8650 5100 50  0001 C CNN
@@ -643,10 +643,10 @@ F 3 "~" H 8650 5100 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L Mechanical:MountingHole H?
+L Mechanical:MountingHole H1354
 U 1 1 5E41C3CC
 P 8100 5100
-F 0 "H?" H 8200 5146 50  0000 L CNN
+F 0 "H1354" H 8200 5146 50  0000 L CNN
 F 1 "Slot" H 8200 5055 50  0000 L CNN
 F 2 "servo:slot_v" H 8100 5100 50  0001 C CNN
 F 3 "~" H 8100 5100 50  0001 C CNN
