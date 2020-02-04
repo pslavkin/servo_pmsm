@@ -1,4 +1,4 @@
-(module wire_bridge_38mm (layer F.Cu) (tedit 5E38109F)
+(module wire_bridge_38mm locked (layer F.Cu) (tedit 5E396938)
   (fp_text reference JP703 (at 17 -6.499999) (layer F.SilkS)
     (effects (font (size 0.2 0.4) (thickness 0.05)))
   )
@@ -643,9 +643,10 @@
   (fp_line (start 0.400002 0) (end 0.4 0) (layer F.CrtYd) (width 0.01))
   (fp_line (start 0.4 0) (end -0.394347 0) (layer F.CrtYd) (width 0.01))
   (fp_line (start 33.7124 -0.0508) (end 30.7124 -0.0508) (layer F.SilkS) (width 0.2))
-  (fp_line (start 31.7124 -1.0508) (end 30.7124 -0.0508) (layer F.SilkS) (width 0.2))
-  (fp_line (start 31.7124 0.9492) (end 31.7124 -1.0508) (layer F.SilkS) (width 0.2))
+  (fp_line (start 31.712401 -1.0508) (end 30.7124 -0.0508) (layer F.SilkS) (width 0.2))
+  (fp_line (start 31.7124 0.9492) (end 31.712401 -1.0508) (layer F.SilkS) (width 0.2))
   (fp_line (start 30.7124 -0.0508) (end 31.7124 0.9492) (layer F.SilkS) (width 0.2))
+  (fp_line (start 5.8 0) (end 29.8 0) (layer F.SilkS) (width 0.2))
   (pad 2 thru_hole circle (at 38 0.000001) (size 2 2) (drill 0.9) (layers *.Cu *.Mask))
   (pad 1 thru_hole circle (at 0 0) (size 2 2) (drill 0.9) (layers *.Cu *.Mask))
   (model ${KIPRJMOD}/shapes3D/wire_bridge_38mm.stp

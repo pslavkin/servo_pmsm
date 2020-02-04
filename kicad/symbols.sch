@@ -767,28 +767,39 @@ F 3 "~" H 5050 7600 50  0001 C CNN
 	1    5050 7600
 	1    0    0    -1  
 $EndComp
-$Comp
-L Mechanical:MountingHole H1359
-U 1 1 5E3A215E
-P 10250 4400
-F 0 "H1359" H 10350 4446 50  0000 L CNN
-F 1 "Slot" H 10350 4355 50  0000 L CNN
-F 2 "MountingHole:MountingHole_3.2mm_M3_Pad_Via" H 10250 4400 50  0001 C CNN
-F 3 "~" H 10250 4400 50  0001 C CNN
-	1    10250 4400
-	1    0    0    -1  
-$EndComp
 Text Notes 9750 4100 0    118  ~ 24
 mounting holes\n
 $Comp
-L servo:logo logo1304
-U 1 1 5E3A5304
+L servo:logo logo1305
+U 1 1 5E3B996A
 P 13350 3900
-F 0 "logo1304" H 13350 4100 50  0001 C CNN
-F 1 "servo_driver" H 13678 3900 50  0000 L CNN
-F 2 "servo:logo_pslavkin" H 13350 3900 50  0001 C CNN
+F 0 "logo1305" H 13350 4100 50  0001 C CNN
+F 1 "neurona" H 13678 3900 50  0000 L CNN
+F 2 "servo:logo_neurona_20mm" H 13350 3900 50  0001 C CNN
 F 3 "~" H 13350 3900 50  0001 C CNN
 	1    13350 3900
+	1    0    0    1   
+$EndComp
+$Comp
+L Graphic:Logo_Open_Hardware_Large LOGO1301
+U 1 1 5E3C6A52
+P 13350 4650
+F 0 "LOGO1301" H 13350 5150 50  0001 C CNN
+F 1 "Logo_Open_Hardware_Large" H 13350 4250 50  0001 C CNN
+F 2 "Symbol:OSHW-Symbol_13.4x12mm_SilkScreen" H 13350 4650 50  0001 C CNN
+F 3 "~" H 13350 4650 50  0001 C CNN
+	1    13350 4650
 	1    0    0    -1  
+$EndComp
+$Comp
+L servo:logo logo1304
+U 1 1 5E3C6E44
+P 13250 5250
+F 0 "logo1304" H 13250 5450 50  0001 C CNN
+F 1 "GNU" H 13578 5250 50  0000 L CNN
+F 2 "Symbol:Symbol_GNU-Logo_SilkscreenTop" H 13250 5250 50  0001 C CNN
+F 3 "~" H 13250 5250 50  0001 C CNN
+	1    13250 5250
+	1    0    0    1   
 $EndComp
 $EndSCHEMATC
