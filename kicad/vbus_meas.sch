@@ -133,7 +133,7 @@ AR Path="/5DE49152/5E1AD3FA" Ref="U?"  Part="1"
 AR Path="/605BEC04/5E1AD3FA" Ref="U1601"  Part="1" 
 F 0 "U1601" H 7250 3317 50  0000 C CNN
 F 1 "AMC1311B" H 7250 3226 50  0000 C CNN
-F 2 "servo:SSO-8_6.8x5.9mm_P1.27mm_Clearance8mm" H 7300 1950 50  0001 C CIN
+F 2 "servo:SSO-8_7.6x5.9mm_P1.27mm_Clearance9.1mm" H 7300 1950 50  0001 C CIN
 F 3 "../doc/datasheets/amc1311.pdf" H 7200 2450 50  0001 C CNN
 	1    7250 2950
 	-1   0    0    -1  
@@ -521,7 +521,7 @@ AR Path="/5DE49152/5E1B9AA1" Ref="U?"  Part="1"
 AR Path="/605BEC04/5E1B9AA1" Ref="U1602"  Part="1" 
 F 0 "U1602" H 7350 5617 50  0000 C CNN
 F 1 "AMC1311B" H 7350 5526 50  0000 C CNN
-F 2 "servo:SSO-8_6.8x5.9mm_P1.27mm_Clearance8mm" H 7400 4250 50  0001 C CIN
+F 2 "servo:SSO-8_7.6x5.9mm_P1.27mm_Clearance9.1mm" H 7400 4250 50  0001 C CIN
 F 3 "../doc/datasheets/amc1311.pdf" H 7300 4750 50  0001 C CNN
 	1    7350 5250
 	-1   0    0    -1  

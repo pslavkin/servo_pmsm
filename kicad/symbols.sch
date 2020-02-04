@@ -660,12 +660,12 @@ SLOT 'I' anyware\n\n\n
 $Comp
 L servo:high_voltage ref1302
 U 1 1 5E38C9D6
-P 12250 3100
-F 0 "ref1302" V 12160 3100 50  0001 C CNN
-F 1 "high_voltage" V 12340 3100 50  0001 C CNN
-F 2 "servo:Symbol_Highvoltage_Type1_CopperTop_Small" H 12450 3600 50  0001 C CNN
-F 3 "~" H 12650 3000 50  0001 C CNN
-	1    12250 3100
+P 13200 3450
+F 0 "ref1302" V 13110 3450 50  0001 C CNN
+F 1 "high_voltage" V 13290 3450 50  0001 C CNN
+F 2 "servo:Symbol_Highvoltage_Type1_CopperTop_Small" H 13400 3950 50  0001 C CNN
+F 3 "~" H 13600 3350 50  0001 C CNN
+	1    13200 3450
 	1    0    0    -1  
 $EndComp
 $Comp
@@ -715,34 +715,80 @@ $EndComp
 $Comp
 L servo:high_voltage ref1303
 U 1 1 5E39D206
-P 12400 3100
-F 0 "ref1303" V 12310 3100 50  0001 C CNN
-F 1 "high_voltage" V 12490 3100 50  0001 C CNN
-F 2 "servo:Symbol_Highvoltage_Type1_CopperTop_Small" H 12600 3600 50  0001 C CNN
-F 3 "~" H 12800 3000 50  0001 C CNN
-	1    12400 3100
+P 13350 3450
+F 0 "ref1303" V 13260 3450 50  0001 C CNN
+F 1 "high_voltage" V 13440 3450 50  0001 C CNN
+F 2 "servo:Symbol_Highvoltage_Type1_CopperTop_Small" H 13550 3950 50  0001 C CNN
+F 3 "~" H 13750 3350 50  0001 C CNN
+	1    13350 3450
 	1    0    0    -1  
 $EndComp
 $Comp
 L servo:high_voltage ref1304
 U 1 1 5E39D283
-P 12550 3100
-F 0 "ref1304" V 12460 3100 50  0001 C CNN
-F 1 "high_voltage" V 12640 3100 50  0001 C CNN
-F 2 "servo:Symbol_Highvoltage_Type1_CopperTop_Small" H 12750 3600 50  0001 C CNN
-F 3 "~" H 12950 3000 50  0001 C CNN
-	1    12550 3100
+P 13500 3450
+F 0 "ref1304" V 13410 3450 50  0001 C CNN
+F 1 "high_voltage" V 13590 3450 50  0001 C CNN
+F 2 "servo:Symbol_Highvoltage_Type1_CopperTop_Small" H 13700 3950 50  0001 C CNN
+F 3 "~" H 13900 3350 50  0001 C CNN
+	1    13500 3450
 	1    0    0    -1  
 $EndComp
 $Comp
 L servo:high_voltage ref1305
 U 1 1 5E39D300
-P 12700 3100
-F 0 "ref1305" V 12610 3100 50  0001 C CNN
-F 1 "high_voltage" V 12790 3100 50  0001 C CNN
-F 2 "servo:Symbol_Highvoltage_Type1_CopperTop_Small" H 12900 3600 50  0001 C CNN
-F 3 "~" H 13100 3000 50  0001 C CNN
-	1    12700 3100
+P 13650 3450
+F 0 "ref1305" V 13560 3450 50  0001 C CNN
+F 1 "high_voltage" V 13740 3450 50  0001 C CNN
+F 2 "servo:Symbol_Highvoltage_Type1_CopperTop_Small" H 13850 3950 50  0001 C CNN
+F 3 "~" H 14050 3350 50  0001 C CNN
+	1    13650 3450
+	1    0    0    -1  
+$EndComp
+$Comp
+L Mechanical:MountingHole H1357
+U 1 1 5E39587A
+P 5450 7600
+F 0 "H1357" H 5550 7646 50  0000 L CNN
+F 1 "Slot" H 5550 7555 50  0000 L CNN
+F 2 "servo:slot2" H 5450 7600 50  0001 C CNN
+F 3 "~" H 5450 7600 50  0001 C CNN
+	1    5450 7600
+	1    0    0    -1  
+$EndComp
+$Comp
+L Mechanical:MountingHole H1358
+U 1 1 5E397C76
+P 5050 7600
+F 0 "H1358" H 5150 7646 50  0000 L CNN
+F 1 "Slot" H 5150 7555 50  0000 L CNN
+F 2 "servo:slot2" H 5050 7600 50  0001 C CNN
+F 3 "~" H 5050 7600 50  0001 C CNN
+	1    5050 7600
+	1    0    0    -1  
+$EndComp
+$Comp
+L Mechanical:MountingHole H1359
+U 1 1 5E3A215E
+P 10250 4400
+F 0 "H1359" H 10350 4446 50  0000 L CNN
+F 1 "Slot" H 10350 4355 50  0000 L CNN
+F 2 "MountingHole:MountingHole_3.2mm_M3_Pad_Via" H 10250 4400 50  0001 C CNN
+F 3 "~" H 10250 4400 50  0001 C CNN
+	1    10250 4400
+	1    0    0    -1  
+$EndComp
+Text Notes 9750 4100 0    118  ~ 24
+mounting holes\n
+$Comp
+L servo:logo logo1304
+U 1 1 5E3A5304
+P 13350 3900
+F 0 "logo1304" H 13350 4100 50  0001 C CNN
+F 1 "servo_driver" H 13678 3900 50  0000 L CNN
+F 2 "servo:logo_pslavkin" H 13350 3900 50  0001 C CNN
+F 3 "~" H 13350 3900 50  0001 C CNN
+	1    13350 3900
 	1    0    0    -1  
 $EndComp
 $EndSCHEMATC
