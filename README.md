@@ -78,16 +78,16 @@ There are the actual schematics generated until now:
 Met's begin with layout!
 first pic, easy, doesn't it?
 
-<img src="doc/pics/ratsnets1.jpg" width="400"/>
-<img src="doc/pics/ratsnets2.jpg" width="400"/>
-<img src="doc/pics/ratsnets3.jpg" width="400"/>
-<img src="doc/pics/ratsnets4.jpg" width="400"/>
-<img src="doc/pics/ratsnets5.jpg" width="400"/>
-<img src="doc/pics/ratsnets6.jpg" width="400"/>
-<img src="doc/pics/ratsnets7.jpg" width="400"/>
-<img src="doc/pics/ratsnets8.jpg" width="400"/>
-<img src="doc/pics/ratsnets9.jpg" width="400"/>
-<img src="doc/pics/ratsnets10.jpg" width="400"/>
+<img src="doc/pics/ratsnets1.png" width="400"/>
+<img src="doc/pics/ratsnets2.png" width="400"/>
+<img src="doc/pics/ratsnets3.png" width="400"/>
+<img src="doc/pics/ratsnets4.png" width="400"/>
+<img src="doc/pics/ratsnets5.png" width="400"/>
+<img src="doc/pics/ratsnets6.png" width="400"/>
+<img src="doc/pics/ratsnets7.png" width="400"/>
+<img src="doc/pics/ratsnets8.png" width="400"/>
+<img src="doc/pics/ratsnets9.png" width="400"/>
+<img src="doc/pics/ratsnets10.png" width="400"/>
 
 <img src="doc/pics/layout1.jpg"      width="400"/>
 <img src="doc/pics/layout2.jpg"      width="400"/>
@@ -107,14 +107,12 @@ first pic, easy, doesn't it?
 <img src="doc/pics/layout8.jpg" width="400"/>
 <img src="doc/pics/layout8_case.jpg" width="400"/>
 
-## nets
-plane 2d and 3d nets
+## Nets plane 2d and 3d nets
 <img src="doc/pics/nets2d_1.png" width="400"/>
 <img src="doc/pics/nets3d_1.png" width="400"/>
 
 
-##video 3d rotating PCB
-
+## Video 3d rotating PCB
 <img src="doc/videos/pcb_3d_1.gif" width="400" height="400"/>
 
 
