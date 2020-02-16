@@ -1049,7 +1049,7 @@ $EndComp
 Wire Wire Line
 	8350 6800 8200 6800
 Wire Wire Line
-	9750 7100 8700 7100
+	9750 7100 9050 7100
 Wire Wire Line
 	9300 7300 8200 7300
 Wire Wire Line
@@ -1115,7 +1115,7 @@ Wire Wire Line
 Wire Wire Line
 	3800 8450 3800 8550
 Wire Wire Line
-	8200 7100 8300 7100
+	8200 7100 8650 7100
 Wire Wire Line
 	8200 6400 8300 6400
 Wire Wire Line
@@ -1299,13 +1299,13 @@ $EndComp
 $Comp
 L servo:Resistor R425
 U 1 1 6322F022
-P 8500 7100
-F 0 "R425" H 8500 7029 20  0000 C CNN
-F 1 "10.0k" H 8500 6986 20  0000 C CNN
-F 2 "servo:R_0603_1608Metric" H 8000 7000 60  0001 C CNN
-F 3 "" H 8100 7100 60  0001 C CNN
-F 4 "10.0k" V -500 5900 60  0001 C CNN "ValueDisplayed"
-	1    8500 7100
+P 8850 7100
+F 0 "R425" H 8850 7029 20  0000 C CNN
+F 1 "10.0k" H 8850 6986 20  0000 C CNN
+F 2 "servo:R_0603_1608Metric" H 8350 7000 60  0001 C CNN
+F 3 "" H 8450 7100 60  0001 C CNN
+F 4 "10.0k" V -150 5900 60  0001 C CNN "ValueDisplayed"
+	1    8850 7100
 	1    0    0    -1  
 $EndComp
 $Comp
@@ -2302,4 +2302,6 @@ Text Label 8050 2950 0    20   ~ 0
 ecat0_bias
 Text Label 8350 6600 0    20   ~ 0
 ecat1_led0
+Text Label 8350 7100 0    20   ~ 0
+ecat1_pwrdn
 $EndSCHEMATC
