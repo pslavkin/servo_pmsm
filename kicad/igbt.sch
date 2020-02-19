@@ -826,8 +826,6 @@ Connection ~ 11200 5600
 Wire Wire Line
 	12650 5300 12650 5650
 Wire Wire Line
-	10750 6150 10000 6150
-Wire Wire Line
 	10850 6250 10000 6250
 Wire Wire Line
 	10950 6350 10000 6350
@@ -2182,4 +2180,6 @@ Wire Wire Line
 	9150 1950 7550 1950
 Connection ~ 8850 4500
 Connection ~ 7550 1950
+Wire Wire Line
+	10750 6150 10000 6150
 $EndSCHEMATC
