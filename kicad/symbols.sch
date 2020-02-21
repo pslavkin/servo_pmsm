@@ -24,7 +24,7 @@ U 1 1 5ED2BAA2
 P 4100 2000
 F 0 "H1301" H 4200 2046 50  0000 L CNN
 F 1 "fiducials" H 4200 1955 50  0000 L CNN
-F 2 "Fiducial:Fiducial_1mm_Dia_2.54mm_Outer_CopperTop" H 4100 2000 50  0001 C CNN
+F 2 "servo:Fiducial_1mm_Dia_2.54mm_Outer_CopperTop" H 4100 2000 50  0001 C CNN
 F 3 "~" H 4100 2000 50  0001 C CNN
 	1    4100 2000
 	1    0    0    -1  
@@ -54,7 +54,7 @@ U 1 1 5ED41A7E
 P 4150 2900
 F 0 "H1302" H 4250 2946 50  0000 L CNN
 F 1 "fiducials" H 4250 2855 50  0000 L CNN
-F 2 "Fiducial:Fiducial_1mm_Dia_2.54mm_Outer_CopperBottom" H 4150 2900 50  0001 C CNN
+F 2 "servo:Fiducial_1mm_Dia_2.54mm_Outer_CopperBottom" H 4150 2900 50  0001 C CNN
 F 3 "~" H 4150 2900 50  0001 C CNN
 	1    4150 2900
 	1    0    0    -1  
@@ -65,7 +65,7 @@ U 1 1 5ED41B8F
 P 4800 2000
 F 0 "H1303" H 4900 2046 50  0000 L CNN
 F 1 "fiducials" H 4900 1955 50  0000 L CNN
-F 2 "Fiducial:Fiducial_1mm_Dia_2.54mm_Outer_CopperTop" H 4800 2000 50  0001 C CNN
+F 2 "servo:Fiducial_1mm_Dia_2.54mm_Outer_CopperTop" H 4800 2000 50  0001 C CNN
 F 3 "~" H 4800 2000 50  0001 C CNN
 	1    4800 2000
 	1    0    0    -1  
@@ -76,7 +76,7 @@ U 1 1 5ED41BCB
 P 5450 2000
 F 0 "H1305" H 5550 2046 50  0000 L CNN
 F 1 "fiducials" H 5550 1955 50  0000 L CNN
-F 2 "Fiducial:Fiducial_1mm_Dia_2.54mm_Outer_CopperTop" H 5450 2000 50  0001 C CNN
+F 2 "servo:Fiducial_1mm_Dia_2.54mm_Outer_CopperTop" H 5450 2000 50  0001 C CNN
 F 3 "~" H 5450 2000 50  0001 C CNN
 	1    5450 2000
 	1    0    0    -1  
@@ -87,7 +87,7 @@ U 1 1 5ED41C03
 P 6150 2000
 F 0 "H1307" H 6250 2046 50  0000 L CNN
 F 1 "fiducials" H 6250 1955 50  0000 L CNN
-F 2 "Fiducial:Fiducial_1mm_Dia_2.54mm_Outer_CopperTop" H 6150 2000 50  0001 C CNN
+F 2 "servo:Fiducial_1mm_Dia_2.54mm_Outer_CopperTop" H 6150 2000 50  0001 C CNN
 F 3 "~" H 6150 2000 50  0001 C CNN
 	1    6150 2000
 	1    0    0    -1  
@@ -98,7 +98,7 @@ U 1 1 5ED41C41
 P 4850 2900
 F 0 "H1304" H 4950 2946 50  0000 L CNN
 F 1 "fiducials" H 4950 2855 50  0000 L CNN
-F 2 "Fiducial:Fiducial_1mm_Dia_2.54mm_Outer_CopperBottom" H 4850 2900 50  0001 C CNN
+F 2 "servo:Fiducial_1mm_Dia_2.54mm_Outer_CopperBottom" H 4850 2900 50  0001 C CNN
 F 3 "~" H 4850 2900 50  0001 C CNN
 	1    4850 2900
 	1    0    0    -1  
@@ -109,7 +109,7 @@ U 1 1 5ED41C7F
 P 5500 2900
 F 0 "H1306" H 5600 2946 50  0000 L CNN
 F 1 "fiducials" H 5600 2855 50  0000 L CNN
-F 2 "Fiducial:Fiducial_1mm_Dia_2.54mm_Outer_CopperBottom" H 5500 2900 50  0001 C CNN
+F 2 "servo:Fiducial_1mm_Dia_2.54mm_Outer_CopperBottom" H 5500 2900 50  0001 C CNN
 F 3 "~" H 5500 2900 50  0001 C CNN
 	1    5500 2900
 	1    0    0    -1  
@@ -120,7 +120,7 @@ U 1 1 5ED41CB5
 P 6150 2900
 F 0 "H1308" H 6250 2946 50  0000 L CNN
 F 1 "fiducials" H 6250 2855 50  0000 L CNN
-F 2 "Fiducial:Fiducial_1mm_Dia_2.54mm_Outer_CopperBottom" H 6150 2900 50  0001 C CNN
+F 2 "servo:Fiducial_1mm_Dia_2.54mm_Outer_CopperBottom" H 6150 2900 50  0001 C CNN
 F 3 "~" H 6150 2900 50  0001 C CNN
 	1    6150 2900
 	1    0    0    -1  
