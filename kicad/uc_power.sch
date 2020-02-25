@@ -278,7 +278,12 @@ F 0 "C501" V 8000 5700 20  0000 L CNN
 F 1 "0.1uF" V 7800 5700 20  0000 L CNN
 F 2 "servo:C_0603_1608Metric" H 7850 5600 60  0001 C CNN
 F 3 "" H 7850 5700 60  0000 C CNN
-F 4 "0.1uF" V 2050 -1200 60  0001 C CNN "ValueDisplayed"
+F 4 "" V 2050 -1200 60  0001 C CNN "ValueDisplayed"
+F 5 "" H 0   0   50  0001 C CNN "VALUE"
+F 6 "311-1335-1-ND" H 0   0   50  0001 C CNN "digikey"
+F 7 "CAP CER 0.1UF 16V X7R 0603 " H 0   0   50  0001 C CNN "Description"
+F 8 "" H 0   0   50  0001 C CNN "Mfr part number"
+F 9 "CC0603KPX7R7BB104" H 0   0   50  0001 C CNN "PartNumber"
 	1    7850 5700
 	0    -1   -1   0   
 $EndComp
@@ -286,11 +291,14 @@ $Comp
 L servo:Capacitor C520
 U 1 1 5DB38FA5
 P 12750 4850
-F 0 "C520" V 12822 4960 20  0000 L CNN
-F 1 "0.1uF" V 12779 4960 20  0000 L CNN
+F 0 "C520" V 12822 4740 20  0000 R CNN
+F 1 "0.1uF" V 12779 4740 20  0000 R CNN
 F 2 "servo:C_0603_1608Metric" H 12750 4750 60  0001 C CNN
 F 3 "" H 12750 4850 60  0000 C CNN
-F 4 "0.1uF" V 4750 50  60  0001 C CNN "ValueDisplayed"
+F 4 "311-1335-1-ND" H 0   0   50  0001 C CNN "digikey"
+F 5 "CAP CER 0.1UF 16V X7R 0603 " H 0   0   50  0001 C CNN "Description"
+F 6 "" H 0   0   50  0001 C CNN "Mfr part number"
+F 7 "CC0603KPX7R7BB104" H 0   0   50  0001 C CNN "PartNumber"
 	1    12750 4850
 	0    -1   -1   0   
 $EndComp
@@ -548,7 +556,8 @@ F 0 "C530" V 12422 6140 20  0000 R CNN
 F 1 "10uF" V 12379 6140 20  0000 R CNN
 F 2 "servo:C_0603_1608Metric" H 12350 6150 60  0001 C CNN
 F 3 "" H 12350 6250 60  0000 C CNN
-F 4 "10uF" V -1350 -950 60  0001 C CNN "ValueDisplayed"
+F 4 "490-10475-1-ND" H 0   0   50  0001 C CNN "digikey"
+F 5 "GRM188R61A106ME69D " H 0   0   50  0001 C CNN "PartNumber"
 	1    12350 6250
 	0    -1   -1   0   
 $EndComp
@@ -560,7 +569,6 @@ F 0 "C531" V 12428 3360 20  0000 L CNN
 F 1 "2.2uF" V 12471 3360 20  0000 L CNN
 F 2 "servo:C_0603_1608Metric" H 12400 3150 60  0001 C CNN
 F 3 "" H 12400 3250 60  0000 C CNN
-F 4 "2.2uF" V -1300 -950 60  0001 C CNN "ValueDisplayed"
 	1    12400 3250
 	0    1    1    0   
 $EndComp
@@ -572,7 +580,6 @@ F 0 "C529" V 12378 4860 20  0000 L CNN
 F 1 "2.2uF" V 12421 4860 20  0000 L CNN
 F 2 "servo:C_0603_1608Metric" H 12350 4650 60  0001 C CNN
 F 3 "" H 12350 4750 60  0000 C CNN
-F 4 "2.2uF" V -1350 -950 60  0001 C CNN "ValueDisplayed"
 	1    12350 4750
 	0    1    1    0   
 $EndComp
@@ -584,7 +591,6 @@ F 0 "C528" V 11678 4860 20  0000 L CNN
 F 1 "2.2uF" V 11721 4860 20  0000 L CNN
 F 2 "servo:C_0603_1608Metric" H 11650 4650 60  0001 C CNN
 F 3 "" H 11650 4750 60  0000 C CNN
-F 4 "2.2uF" V -850 -950 60  0001 C CNN "ValueDisplayed"
 	1    11650 4750
 	0    1    1    0   
 $EndComp
@@ -1003,7 +1009,12 @@ F 0 "C502" V 8200 5700 20  0000 L CNN
 F 1 "0.1uF" V 8000 5700 20  0000 L CNN
 F 2 "servo:C_0603_1608Metric" H 8050 5600 60  0001 C CNN
 F 3 "" H 8050 5700 60  0000 C CNN
-F 4 "0.1uF" V 2250 -1200 60  0001 C CNN "ValueDisplayed"
+F 4 "" V 2250 -1200 60  0001 C CNN "ValueDisplayed"
+F 5 "" H 0   0   50  0001 C CNN "VALUE"
+F 6 "311-1335-1-ND" H 0   0   50  0001 C CNN "digikey"
+F 7 "CAP CER 0.1UF 16V X7R 0603 " H 0   0   50  0001 C CNN "Description"
+F 8 "" H 0   0   50  0001 C CNN "Mfr part number"
+F 9 "CC0603KPX7R7BB104" H 0   0   50  0001 C CNN "PartNumber"
 	1    8050 5700
 	0    -1   -1   0   
 $EndComp
@@ -1015,7 +1026,12 @@ F 0 "C503" V 8400 5700 20  0000 L CNN
 F 1 "0.1uF" V 8200 5700 20  0000 L CNN
 F 2 "servo:C_0603_1608Metric" H 8250 5600 60  0001 C CNN
 F 3 "" H 8250 5700 60  0000 C CNN
-F 4 "0.1uF" V 2450 -1200 60  0001 C CNN "ValueDisplayed"
+F 4 "" V 2450 -1200 60  0001 C CNN "ValueDisplayed"
+F 5 "" H 0   0   50  0001 C CNN "VALUE"
+F 6 "311-1335-1-ND" H 0   0   50  0001 C CNN "digikey"
+F 7 "CAP CER 0.1UF 16V X7R 0603 " H 0   0   50  0001 C CNN "Description"
+F 8 "" H 0   0   50  0001 C CNN "Mfr part number"
+F 9 "CC0603KPX7R7BB104" H 0   0   50  0001 C CNN "PartNumber"
 	1    8250 5700
 	0    -1   -1   0   
 $EndComp
@@ -1027,7 +1043,12 @@ F 0 "C505" V 8600 5700 20  0000 L CNN
 F 1 "0.1uF" V 8400 5700 20  0000 L CNN
 F 2 "servo:C_0603_1608Metric" H 8450 5600 60  0001 C CNN
 F 3 "" H 8450 5700 60  0000 C CNN
-F 4 "0.1uF" V 2650 -1200 60  0001 C CNN "ValueDisplayed"
+F 4 "" V 2650 -1200 60  0001 C CNN "ValueDisplayed"
+F 5 "" H 0   0   50  0001 C CNN "VALUE"
+F 6 "311-1335-1-ND" H 0   0   50  0001 C CNN "digikey"
+F 7 "CAP CER 0.1UF 16V X7R 0603 " H 0   0   50  0001 C CNN "Description"
+F 8 "" H 0   0   50  0001 C CNN "Mfr part number"
+F 9 "CC0603KPX7R7BB104" H 0   0   50  0001 C CNN "PartNumber"
 	1    8450 5700
 	0    -1   -1   0   
 $EndComp
@@ -1039,7 +1060,12 @@ F 0 "C507" V 8800 5700 20  0000 L CNN
 F 1 "0.1uF" V 8600 5700 20  0000 L CNN
 F 2 "servo:C_0603_1608Metric" H 8650 5600 60  0001 C CNN
 F 3 "" H 8650 5700 60  0000 C CNN
-F 4 "0.1uF" V 2850 -1200 60  0001 C CNN "ValueDisplayed"
+F 4 "" V 2850 -1200 60  0001 C CNN "ValueDisplayed"
+F 5 "" H 0   0   50  0001 C CNN "VALUE"
+F 6 "311-1335-1-ND" H 0   0   50  0001 C CNN "digikey"
+F 7 "CAP CER 0.1UF 16V X7R 0603 " H 0   0   50  0001 C CNN "Description"
+F 8 "" H 0   0   50  0001 C CNN "Mfr part number"
+F 9 "CC0603KPX7R7BB104" H 0   0   50  0001 C CNN "PartNumber"
 	1    8650 5700
 	0    -1   -1   0   
 $EndComp
@@ -1051,7 +1077,12 @@ F 0 "C511" V 9200 5700 20  0000 L CNN
 F 1 "0.1uF" V 9000 5700 20  0000 L CNN
 F 2 "servo:C_0603_1608Metric" H 9050 5600 60  0001 C CNN
 F 3 "" H 9050 5700 60  0000 C CNN
-F 4 "0.1uF" V 3250 -1200 60  0001 C CNN "ValueDisplayed"
+F 4 "" V 3250 -1200 60  0001 C CNN "ValueDisplayed"
+F 5 "" H 0   0   50  0001 C CNN "VALUE"
+F 6 "311-1335-1-ND" H 0   0   50  0001 C CNN "digikey"
+F 7 "CAP CER 0.1UF 16V X7R 0603 " H 0   0   50  0001 C CNN "Description"
+F 8 "" H 0   0   50  0001 C CNN "Mfr part number"
+F 9 "CC0603KPX7R7BB104" H 0   0   50  0001 C CNN "PartNumber"
 	1    9050 5700
 	0    -1   -1   0   
 $EndComp
@@ -1063,7 +1094,12 @@ F 0 "C515" V 9600 5700 20  0000 L CNN
 F 1 "0.1uF" V 9400 5700 20  0000 L CNN
 F 2 "servo:C_0603_1608Metric" H 9450 5600 60  0001 C CNN
 F 3 "" H 9450 5700 60  0000 C CNN
-F 4 "0.1uF" V 3650 -1200 60  0001 C CNN "ValueDisplayed"
+F 4 "" V 3650 -1200 60  0001 C CNN "ValueDisplayed"
+F 5 "" H 0   0   50  0001 C CNN "VALUE"
+F 6 "311-1335-1-ND" H 0   0   50  0001 C CNN "digikey"
+F 7 "CAP CER 0.1UF 16V X7R 0603 " H 0   0   50  0001 C CNN "Description"
+F 8 "" H 0   0   50  0001 C CNN "Mfr part number"
+F 9 "CC0603KPX7R7BB104" H 0   0   50  0001 C CNN "PartNumber"
 	1    9450 5700
 	0    -1   -1   0   
 $EndComp
@@ -1075,7 +1111,12 @@ F 0 "C517" V 9800 5700 20  0000 L CNN
 F 1 "0.1uF" V 9600 5700 20  0000 L CNN
 F 2 "servo:C_0603_1608Metric" H 9650 5600 60  0001 C CNN
 F 3 "" H 9650 5700 60  0000 C CNN
-F 4 "0.1uF" V 3850 -1200 60  0001 C CNN "ValueDisplayed"
+F 4 "" V 3850 -1200 60  0001 C CNN "ValueDisplayed"
+F 5 "" H 0   0   50  0001 C CNN "VALUE"
+F 6 "311-1335-1-ND" H 0   0   50  0001 C CNN "digikey"
+F 7 "CAP CER 0.1UF 16V X7R 0603 " H 0   0   50  0001 C CNN "Description"
+F 8 "" H 0   0   50  0001 C CNN "Mfr part number"
+F 9 "CC0603KPX7R7BB104" H 0   0   50  0001 C CNN "PartNumber"
 	1    9650 5700
 	0    -1   -1   0   
 $EndComp
@@ -1087,7 +1128,12 @@ F 0 "C518" V 10000 5700 20  0000 L CNN
 F 1 "0.1uF" V 9800 5700 20  0000 L CNN
 F 2 "servo:C_0603_1608Metric" H 9850 5600 60  0001 C CNN
 F 3 "" H 9850 5700 60  0000 C CNN
-F 4 "0.1uF" V 4050 -1200 60  0001 C CNN "ValueDisplayed"
+F 4 "" V 4050 -1200 60  0001 C CNN "ValueDisplayed"
+F 5 "" H 0   0   50  0001 C CNN "VALUE"
+F 6 "311-1335-1-ND" H 0   0   50  0001 C CNN "digikey"
+F 7 "CAP CER 0.1UF 16V X7R 0603 " H 0   0   50  0001 C CNN "Description"
+F 8 "" H 0   0   50  0001 C CNN "Mfr part number"
+F 9 "CC0603KPX7R7BB104" H 0   0   50  0001 C CNN "PartNumber"
 	1    9850 5700
 	0    -1   -1   0   
 $EndComp
@@ -1099,7 +1145,12 @@ F 0 "C519" V 10200 5700 20  0000 L CNN
 F 1 "0.1uF" V 10000 5700 20  0000 L CNN
 F 2 "servo:C_0603_1608Metric" H 10050 5600 60  0001 C CNN
 F 3 "" H 10050 5700 60  0000 C CNN
-F 4 "0.1uF" V 4250 -1200 60  0001 C CNN "ValueDisplayed"
+F 4 "" V 4250 -1200 60  0001 C CNN "ValueDisplayed"
+F 5 "" H 0   0   50  0001 C CNN "VALUE"
+F 6 "311-1335-1-ND" H 0   0   50  0001 C CNN "digikey"
+F 7 "CAP CER 0.1UF 16V X7R 0603 " H 0   0   50  0001 C CNN "Description"
+F 8 "" H 0   0   50  0001 C CNN "Mfr part number"
+F 9 "CC0603KPX7R7BB104" H 0   0   50  0001 C CNN "PartNumber"
 	1    10050 5700
 	0    -1   -1   0   
 $EndComp
@@ -1111,7 +1162,12 @@ F 0 "C521" V 10400 5700 20  0000 L CNN
 F 1 "0.1uF" V 10200 5700 20  0000 L CNN
 F 2 "servo:C_0603_1608Metric" H 10250 5600 60  0001 C CNN
 F 3 "" H 10250 5700 60  0000 C CNN
-F 4 "0.1uF" V 4450 -1200 60  0001 C CNN "ValueDisplayed"
+F 4 "" V 4450 -1200 60  0001 C CNN "ValueDisplayed"
+F 5 "" H 0   0   50  0001 C CNN "VALUE"
+F 6 "311-1335-1-ND" H 0   0   50  0001 C CNN "digikey"
+F 7 "CAP CER 0.1UF 16V X7R 0603 " H 0   0   50  0001 C CNN "Description"
+F 8 "" H 0   0   50  0001 C CNN "Mfr part number"
+F 9 "CC0603KPX7R7BB104" H 0   0   50  0001 C CNN "PartNumber"
 	1    10250 5700
 	0    -1   -1   0   
 $EndComp
@@ -1123,7 +1179,12 @@ F 0 "C523" V 9400 5700 20  0000 L CNN
 F 1 "0.1uF" V 9200 5700 20  0000 L CNN
 F 2 "servo:C_0603_1608Metric" H 9250 5600 60  0001 C CNN
 F 3 "" H 9250 5700 60  0000 C CNN
-F 4 "0.1uF" V 3450 -1200 60  0001 C CNN "ValueDisplayed"
+F 4 "" V 3450 -1200 60  0001 C CNN "ValueDisplayed"
+F 5 "" H 0   0   50  0001 C CNN "VALUE"
+F 6 "311-1335-1-ND" H 0   0   50  0001 C CNN "digikey"
+F 7 "CAP CER 0.1UF 16V X7R 0603 " H 0   0   50  0001 C CNN "Description"
+F 8 "" H 0   0   50  0001 C CNN "Mfr part number"
+F 9 "CC0603KPX7R7BB104" H 0   0   50  0001 C CNN "PartNumber"
 	1    9250 5700
 	0    -1   -1   0   
 $EndComp
@@ -1135,7 +1196,12 @@ F 0 "C524" V 9050 3850 20  0000 L CNN
 F 1 "0.1uF" V 8850 3850 20  0000 L CNN
 F 2 "servo:C_0603_1608Metric" H 8900 3750 60  0001 C CNN
 F 3 "" H 8900 3850 60  0000 C CNN
-F 4 "0.1uF" V 3100 -3050 60  0001 C CNN "ValueDisplayed"
+F 4 "" V 3100 -3050 60  0001 C CNN "ValueDisplayed"
+F 5 "" H 0   0   50  0001 C CNN "VALUE"
+F 6 "311-1335-1-ND" H 0   0   50  0001 C CNN "digikey"
+F 7 "CAP CER 0.1UF 16V X7R 0603 " H 0   0   50  0001 C CNN "Description"
+F 8 "" H 0   0   50  0001 C CNN "Mfr part number"
+F 9 "CC0603KPX7R7BB104" H 0   0   50  0001 C CNN "PartNumber"
 	1    8900 3850
 	0    -1   -1   0   
 $EndComp
@@ -1147,7 +1213,12 @@ F 0 "C525" V 11000 5700 20  0000 L CNN
 F 1 "0.1uF" V 10800 5700 20  0000 L CNN
 F 2 "servo:C_0603_1608Metric" H 10850 5600 60  0001 C CNN
 F 3 "" H 10850 5700 60  0000 C CNN
-F 4 "0.1uF" V 5050 -1200 60  0001 C CNN "ValueDisplayed"
+F 4 "" V 5050 -1200 60  0001 C CNN "ValueDisplayed"
+F 5 "" H 0   0   50  0001 C CNN "VALUE"
+F 6 "311-1335-1-ND" H 0   0   50  0001 C CNN "digikey"
+F 7 "CAP CER 0.1UF 16V X7R 0603 " H 0   0   50  0001 C CNN "Description"
+F 8 "" H 0   0   50  0001 C CNN "Mfr part number"
+F 9 "CC0603KPX7R7BB104" H 0   0   50  0001 C CNN "PartNumber"
 	1    10850 5700
 	0    -1   -1   0   
 $EndComp
@@ -1159,7 +1230,12 @@ F 0 "C504" V 8450 3850 20  0000 L CNN
 F 1 "0.1uF" V 8250 3850 20  0000 L CNN
 F 2 "servo:C_0603_1608Metric" H 8300 3750 60  0001 C CNN
 F 3 "" H 8300 3850 60  0000 C CNN
-F 4 "0.1uF" V 2500 -3050 60  0001 C CNN "ValueDisplayed"
+F 4 "" V 2500 -3050 60  0001 C CNN "ValueDisplayed"
+F 5 "" H 0   0   50  0001 C CNN "VALUE"
+F 6 "311-1335-1-ND" H 0   0   50  0001 C CNN "digikey"
+F 7 "CAP CER 0.1UF 16V X7R 0603 " H 0   0   50  0001 C CNN "Description"
+F 8 "" H 0   0   50  0001 C CNN "Mfr part number"
+F 9 "CC0603KPX7R7BB104" H 0   0   50  0001 C CNN "PartNumber"
 	1    8300 3850
 	0    -1   -1   0   
 $EndComp
@@ -1171,7 +1247,12 @@ F 0 "C506" V 8650 3850 20  0000 L CNN
 F 1 "0.1uF" V 8450 3850 20  0000 L CNN
 F 2 "servo:C_0603_1608Metric" H 8500 3750 60  0001 C CNN
 F 3 "" H 8500 3850 60  0000 C CNN
-F 4 "0.1uF" V 2700 -3050 60  0001 C CNN "ValueDisplayed"
+F 4 "" V 2700 -3050 60  0001 C CNN "ValueDisplayed"
+F 5 "" H 0   0   50  0001 C CNN "VALUE"
+F 6 "311-1335-1-ND" H 0   0   50  0001 C CNN "digikey"
+F 7 "CAP CER 0.1UF 16V X7R 0603 " H 0   0   50  0001 C CNN "Description"
+F 8 "" H 0   0   50  0001 C CNN "Mfr part number"
+F 9 "CC0603KPX7R7BB104" H 0   0   50  0001 C CNN "PartNumber"
 	1    8500 3850
 	0    -1   -1   0   
 $EndComp
@@ -1183,7 +1264,12 @@ F 0 "C512" V 9250 3850 20  0000 L CNN
 F 1 "0.1uF" V 9050 3850 20  0000 L CNN
 F 2 "servo:C_0603_1608Metric" H 9100 3750 60  0001 C CNN
 F 3 "" H 9100 3850 60  0000 C CNN
-F 4 "0.1uF" V 3300 -3050 60  0001 C CNN "ValueDisplayed"
+F 4 "" V 3300 -3050 60  0001 C CNN "ValueDisplayed"
+F 5 "" H 0   0   50  0001 C CNN "VALUE"
+F 6 "311-1335-1-ND" H 0   0   50  0001 C CNN "digikey"
+F 7 "CAP CER 0.1UF 16V X7R 0603 " H 0   0   50  0001 C CNN "Description"
+F 8 "" H 0   0   50  0001 C CNN "Mfr part number"
+F 9 "CC0603KPX7R7BB104" H 0   0   50  0001 C CNN "PartNumber"
 	1    9100 3850
 	0    -1   -1   0   
 $EndComp
@@ -1195,7 +1281,12 @@ F 0 "C514" V 9450 3850 20  0000 L CNN
 F 1 "0.1uF" V 9250 3850 20  0000 L CNN
 F 2 "servo:C_0603_1608Metric" H 9300 3750 60  0001 C CNN
 F 3 "" H 9300 3850 60  0000 C CNN
-F 4 "0.1uF" V 3500 -3050 60  0001 C CNN "ValueDisplayed"
+F 4 "" V 3500 -3050 60  0001 C CNN "ValueDisplayed"
+F 5 "" H 0   0   50  0001 C CNN "VALUE"
+F 6 "311-1335-1-ND" H 0   0   50  0001 C CNN "digikey"
+F 7 "CAP CER 0.1UF 16V X7R 0603 " H 0   0   50  0001 C CNN "Description"
+F 8 "" H 0   0   50  0001 C CNN "Mfr part number"
+F 9 "CC0603KPX7R7BB104" H 0   0   50  0001 C CNN "PartNumber"
 	1    9300 3850
 	0    -1   -1   0   
 $EndComp
@@ -1207,7 +1298,12 @@ F 0 "C516" V 9650 3850 20  0000 L CNN
 F 1 "0.1uF" V 9450 3850 20  0000 L CNN
 F 2 "servo:C_0603_1608Metric" H 9500 3750 60  0001 C CNN
 F 3 "" H 9500 3850 60  0000 C CNN
-F 4 "0.1uF" V 3700 -3050 60  0001 C CNN "ValueDisplayed"
+F 4 "" V 3700 -3050 60  0001 C CNN "ValueDisplayed"
+F 5 "" H 0   0   50  0001 C CNN "VALUE"
+F 6 "311-1335-1-ND" H 0   0   50  0001 C CNN "digikey"
+F 7 "CAP CER 0.1UF 16V X7R 0603 " H 0   0   50  0001 C CNN "Description"
+F 8 "" H 0   0   50  0001 C CNN "Mfr part number"
+F 9 "CC0603KPX7R7BB104" H 0   0   50  0001 C CNN "PartNumber"
 	1    9500 3850
 	0    -1   -1   0   
 $EndComp
@@ -1369,7 +1465,8 @@ F 0 "C526" V 11628 6260 20  0000 L CNN
 F 1 "10uF" V 11671 6260 20  0000 L CNN
 F 2 "servo:C_0603_1608Metric" H 11600 6050 60  0001 C CNN
 F 3 "" H 11600 6150 60  0000 C CNN
-F 4 "10uF" V -900 -950 60  0001 C CNN "ValueDisplayed"
+F 4 "490-10475-1-ND" H 0   0   50  0001 C CNN "digikey"
+F 5 "GRM188R61A106ME69D " H 0   0   50  0001 C CNN "PartNumber"
 	1    11600 6150
 	0    1    1    0   
 $EndComp

@@ -382,6 +382,11 @@ K 1 A very low dropout fast transient ultra-low noise linear regulator
 F https://www.mouser.com/datasheet/2/389/ld56100-1374969.pdf
 $ENDCMP
 #
+$CMP LED_A2_K1
+D led 2mA
+F https://dammedia.osram.info/media/resource/hires/osram-dam-2493517/LS%20L29K.pdf
+$ENDCMP
+#
 $CMP LTC2865
 D 20Mbps RS485 transceiver with tntegrated switchable termination
 K RS485
@@ -840,6 +845,12 @@ $CMP tblock2x8
 D Generic connector, double row, 02x08, row letter last pin numbering scheme (pin number consists of a letter for the row and a number for the pin index in this row. 1a, ..., Na; 1b, ..., Nb)), script generated (kicad-library-utils/schlib/autogen/connector/)
 K connector
 F 1762431
+$ENDCMP
+#
+$CMP zener
+D 1000mW Zener Diode, SMA(DO-214AC)
+K zener diode
+F https://diotec.com/tl_files/diotec/files/pdf/datasheets/z1sma1.pdf
 $ENDCMP
 #
 #End Doc Library
