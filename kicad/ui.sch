@@ -45,6 +45,7 @@ F 2 "servo:LED_0603_1608Metric" H 2450 1500 60  0001 C CNN
 F 3 "../doc/datasheets/LS L29K.pdf" H 2450 1500 60  0001 C CNN
 F 4 "LS L29K-G1H2-1-Z " H 2650 1700 50  0001 C CNN "digikey"
 F 5 "LS L29K-G1H2-1-Z" H 0   0   50  0001 C CNN "PartNumber"
+F 6 "LED RED DIFFUSED 0603 SMD " H 0   0   50  0001 C CNN "Description"
 	1    2650 1700
 	0    1    1    0   
 $EndComp
@@ -89,6 +90,7 @@ F 2 "servo:LED_0603_1608Metric" H 2150 1500 60  0001 C CNN
 F 3 "../doc/datasheets/LY L29K.pdf" H 2150 1500 60  0001 C CNN
 F 4 "475-1196-1-ND" H 2350 1700 50  0001 C CNN "digikey"
 F 5 "LY L29K-H1K2-26-Z " H 0   0   50  0001 C CNN "PartNumber"
+F 6 "LED YELLOW DIFFUSED 0603 SMD " H 0   0   50  0001 C CNN "Description"
 	1    2350 1700
 	0    1    1    0   
 $EndComp
@@ -156,6 +158,9 @@ F 0 "C1401" V 7528 2010 20  0000 L CNN
 F 1 "1nF" V 7571 2010 20  0000 L CNN
 F 2 "servo:C_0603_1608Metric" H 7500 1800 60  0001 C CNN
 F 3 "" H 7500 1900 60  0000 C CNN
+F 4 "CAP CER 1000PF 16V X7R 0603 " H 0   0   50  0001 C CNN "Description"
+F 5 "0603B102K160CT" H 0   0   50  0001 C CNN "PartNumber"
+F 6 "1292-1378-1-ND " H 0   0   50  0001 C CNN "digikey"
 	1    7500 1900
 	0    1    1    0   
 $EndComp
@@ -265,7 +270,7 @@ Wire Wire Line
 Text Notes 5050 900  0    197  ~ 39
 LCD UI interfase
 Text Notes 4650 3200 0    39   ~ 8
-interfase directly using f20 wires flat cable\n for NHD-4.3-480272FT-CTXL-T newheaven LCD\nor hand wiring\nEA eDIP128B-6LWTP\nor using any paralel 8080 3v3 interfase bitbanging \nthe SPI and GPIO pins
+interfase directly using 20 wires flat cable\n for NHD-4.3-480272FT-CTXL-T newheaven LCD\nor hand wiring\nEA eDIP128B-6LWTP\nor using any paralel 8080 3v3 interfase bitbanging \nthe SPI and GPIO pins
 $Comp
 L servo:5VC #PWR01405
 U 1 1 5E35B3A6
@@ -459,9 +464,13 @@ L servo:NHD-4.3-480272FT-CTXL-T J1401
 U 1 1 5EED15B1
 P 5150 2050
 F 0 "J1401" H 5200 2651 50  0000 C CNN
-F 1 "NHD-4.3-480272FT-CTXL-T" H 5200 2568 39  0000 C CNN
+F 1 "idc2x10" H 5200 2568 39  0000 C CNN
 F 2 "servo:idc2x10_smd" H 5150 2050 50  0001 C CNN
 F 3 "../doc/datasheets/NHD-4.3-480272FT-CTXL-T.pdf" H 5200 2550 50  0001 C CNN
+F 4 " Connector Header Surface Mount 20 position 0.100\" (2.54mm) " H 0   0   50  0001 C CNN "Description"
+F 5 "SBH11-NBPC-D10-SM-BK" H 0   0   50  0001 C CNN "PartNumber"
+F 6 "S9188-ND" H 0   0   50  0001 C CNN "digikey"
+F 7 "4.42400" H 0   0   50  0001 C CNN "price@10"
 	1    5150 2050
 	1    0    0    -1  
 $EndComp
@@ -487,9 +496,12 @@ P 7900 1200
 AR Path="/5E092156/618DDB4B" Ref="C?"  Part="1" 
 AR Path="/5E72D841/618DDB4B" Ref="C1403"  Part="1" 
 F 0 "C1403" V 7972 1090 20  0000 R CNN
-F 1 "10u" V 7929 1090 20  0000 R CNN
+F 1 "10uF" V 7929 1090 20  0000 R CNN
 F 2 "servo:C_0603_1608Metric" H 7900 1100 60  0001 C CNN
 F 3 "" H 7900 1200 60  0000 C CNN
+F 4 "10µF ±20% 10V Ceramic Capacitor X5R 0603 (1608 Metric) " H 0   0   50  0001 C CNN "Description"
+F 5 "GRM188R61A106ME69D " H 0   0   50  0001 C CNN "PartNumber"
+F 6 "490-10475-1-ND" H 0   0   50  0001 C CNN "digikey"
 	1    7900 1200
 	0    -1   -1   0   
 $EndComp
@@ -514,9 +526,13 @@ L servo:Conn_01x02 J1402
 U 1 1 618ED4ED
 P 9500 1850
 F 0 "J1402" H 9580 1838 39  0000 L CNN
-F 1 "Conn_01x02" H 9580 1763 39  0000 L CNN
+F 1 "header 1x2 2.54 molex" H 9580 1763 39  0000 L CNN
 F 2 "servo:Molex_KK-254_AE-6410-02A_1x02_P2.54mm_Vertical" H 9500 1850 50  0001 C CNN
-F 3 "~" H 9500 1850 50  0001 C CNN
+F 3 "" H 9500 1850 50  0001 C CNN
+F 4 "Connector Header Through Hole 2 position 0.100\" (2.54mm) " H 0   0   50  0001 C CNN "Description"
+F 5 "0022232023 " H 0   0   50  0001 C CNN "PartNumber"
+F 6 " WM19468-ND " H 0   0   50  0001 C CNN "digikey"
+F 7 "0.23100" H 0   0   50  0001 C CNN "price@10"
 	1    9500 1850
 	1    0    0    1   
 $EndComp

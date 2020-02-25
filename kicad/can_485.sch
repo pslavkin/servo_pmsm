@@ -52,6 +52,7 @@ F 2 "servo:C_0603_1608Metric" H 6800 3000 60  0001 C CNN
 F 3 "" H 6800 3100 60  0000 C CNN
 F 4 "CC0603KPX7R7BB104" H 0   0   50  0001 C CNN "PartNumber"
 F 5 "311-1335-1-ND" H 0   0   50  0001 C CNN "digikey"
+F 6 "CAP CER 0.1UF 16V X7R 0603 " H 0   0   50  0001 C CNN "Description"
 	1    6800 3100
 	0    1    1    0   
 $EndComp
@@ -68,6 +69,7 @@ F 2 "servo:C_0603_1608Metric" H 4800 3000 60  0001 C CNN
 F 3 "" H 4800 3100 60  0000 C CNN
 F 4 "CC0603KPX7R7BB104" H 0   0   50  0001 C CNN "PartNumber"
 F 5 "311-1335-1-ND" H 0   0   50  0001 C CNN "digikey"
+F 6 "CAP CER 0.1UF 16V X7R 0603 " H 0   0   50  0001 C CNN "Description"
 	1    4800 3100
 	0    1    1    0   
 $EndComp
@@ -254,9 +256,13 @@ L servo:tblock2x4 J1201
 U 1 1 5E248598
 P 8050 3400
 F 0 "J1201" H 8100 3693 39  0000 C CNN
-F 1 "tblock2x4" H 8100 3618 39  0000 C CNN
+F 1 "tblock 2x4 3.81" H 8100 3618 39  0000 C CNN
 F 2 "servo:tblock02x4_3.81" H 8000 3500 50  0001 C CNN
 F 3 "../doc/datsheets/tblock2xrows.pdf" H 8100 3600 50  0001 C CNN
+F 4 "8 Position Terminal Block Header, Male Pins, Shrouded (4 Side) 0.150\" (3.81mm) 90°, Right Angle Through Hole" H 0   0   50  0001 C CNN "Description"
+F 5 "1843091" H 0   0   50  0001 C CNN "PartNumber"
+F 6 "277-6025-ND" H 0   0   50  0001 C CNN "digikey"
+F 7 "5.01100" H 0   0   50  0001 C CNN "price@10"
 	1    8050 3400
 	1    0    0    -1  
 $EndComp
@@ -398,6 +404,7 @@ F 2 "servo:C_0603_1608Metric" H 9450 2800 60  0001 C CNN
 F 3 "" H 9450 2900 60  0000 C CNN
 F 4 "CC0603KPX7R7BB104" H 0   0   50  0001 C CNN "PartNumber"
 F 5 "311-1335-1-ND" H 0   0   50  0001 C CNN "digikey"
+F 6 "CAP CER 0.1UF 16V X7R 0603 " H 0   0   50  0001 C CNN "Description"
 	1    9450 2900
 	0    1    1    0   
 $EndComp
@@ -414,6 +421,7 @@ F 2 "servo:C_0603_1608Metric" H 11650 2900 60  0001 C CNN
 F 3 "" H 11650 3000 60  0000 C CNN
 F 4 "CC0603KPX7R7BB104" H 0   0   50  0001 C CNN "PartNumber"
 F 5 "311-1335-1-ND" H 0   0   50  0001 C CNN "digikey"
+F 6 "CAP CER 0.1UF 16V X7R 0603 " H 0   0   50  0001 C CNN "Description"
 	1    11650 3000
 	0    1    1    0   
 $EndComp

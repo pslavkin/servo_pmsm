@@ -43,6 +43,9 @@ F 0 "C303" V 11372 4040 20  0000 R CNN
 F 1 "2.2uF" V 11329 4040 20  0000 R CNN
 F 2 "servo:C_0603_1608Metric" H 11300 4050 60  0001 C CNN
 F 3 "" H 11300 4150 60  0000 C CNN
+F 4 "CAP CER 2.2UF 16V X6S 0603 " H 0   0   50  0001 C CNN "Description"
+F 5 "GRT188C81C225KE13D" H 0   0   50  0001 C CNN "PartNumber"
+F 6 "490-12287-2-ND" H 0   0   50  0001 C CNN "digikey"
 	1    11300 4150
 	0    -1   -1   0   
 $EndComp
@@ -69,6 +72,9 @@ F 0 "C301" V 9922 4040 20  0000 R CNN
 F 1 "22uF" V 9879 4040 20  0000 R CNN
 F 2 "servo:C_0603_1608Metric" H 9850 4050 60  0001 C CNN
 F 3 "" H 9850 4150 60  0000 C CNN
+F 4 "490-7611-1-ND" H 9850 4150 50  0001 C CNN "digikey"
+F 5 "CAP CER 22UF 6.3V X5R 0603 " H 0   0   50  0001 C CNN "Description"
+F 6 "GRM188R60J226MEA0D" H 0   0   50  0001 C CNN "PartNumber"
 	1    9850 4150
 	0    -1   -1   0   
 $EndComp
@@ -211,6 +217,8 @@ F 1 "TMS320F28388DZWTS" H 8150 2069 50  0000 C CNN
 F 2 "servo:BGA337CP80_19X19_1600X1600X140B50N" H 8150 3750 50  0001 C CNN
 F 3 "../doc/datasheets/tms320f28388d_datasheet.pdf" H 8150 3750 50  0001 C CNN
 F 4 "TMS320F28388DZWTS" V 1350 -350 60  0001 C CNN "PartNumber"
+F 5 "32-bit MCU with connectivity manager, 2x C28x+CLA CPU, 1.5 MB flash, FPU64, CLB, Ethernet, EtherCAT" H 0   0   50  0001 C CNN "Description"
+F 6 "14.96" H 0   0   50  0001 C CNN "price@10"
 	1    8150 3750
 	1    0    0    -1  
 $EndComp
@@ -226,6 +234,9 @@ F 0 "IC301" V 3250 1900 39  0000 R CNN
 F 1 "TPD4E001QDBV" V 3300 2050 39  0000 R CNN
 F 2 "servo:SOT-23-6" H 2700 1850 60  0001 C CNN
 F 3 "../doc/datasheets/tpd4e001-q1.pdf" H 2750 2150 60  0001 C CNN
+F 4 "TVS DIODE 5.5V 16V SOT23-6 " H 0   0   50  0001 C CNN "Description"
+F 5 "TPD4E001QDBVRQ1" H 0   0   50  0001 C CNN "PartNumber"
+F 6 " 296-39344-1-ND" H 0   0   50  0001 C CNN "digikey"
 	1    2700 1850
 	0    -1   -1   0   
 $EndComp
@@ -254,6 +265,9 @@ F 0 "IC302" V 3850 1950 39  0000 R CNN
 F 1 "TPD4E001QDBV" V 3900 2050 39  0000 R CNN
 F 2 "servo:SOT-23-6" H 3300 1850 60  0001 C CNN
 F 3 "../doc/datasheets/tpd4e001-q1.pdf" H 3350 2150 60  0001 C CNN
+F 4 "TVS DIODE 5.5V 16V SOT23-6 " H 0   0   50  0001 C CNN "Description"
+F 5 "TPD4E001QDBVRQ1" H 0   0   50  0001 C CNN "PartNumber"
+F 6 " 296-39344-1-ND" H 0   0   50  0001 C CNN "digikey"
 	1    3300 1850
 	0    1    -1   0   
 $EndComp
@@ -280,6 +294,9 @@ F 0 "IC303" V 4400 1950 39  0000 R CNN
 F 1 "TPD4E001QDBV" V 4500 2050 39  0000 R CNN
 F 2 "servo:SOT-23-6" H 3900 1850 60  0001 C CNN
 F 3 "../doc/datasheets/tpd4e001-q1.pdf" H 3950 2150 60  0001 C CNN
+F 4 "TVS DIODE 5.5V 16V SOT23-6 " H 0   0   50  0001 C CNN "Description"
+F 5 "TPD4E001QDBVRQ1" H 0   0   50  0001 C CNN "PartNumber"
+F 6 " 296-39344-1-ND" H 0   0   50  0001 C CNN "digikey"
 	1    3900 1850
 	0    -1   -1   0   
 $EndComp
@@ -310,6 +327,9 @@ F 0 "IC304" V 5700 1950 39  0000 R CNN
 F 1 "TPD4E001QDBV" V 5800 2050 39  0000 R CNN
 F 2 "servo:SOT-23-6" H 5200 1850 60  0001 C CNN
 F 3 "../doc/datasheets/tpd4e001-q1.pdf" H 5250 2150 60  0001 C CNN
+F 4 "TVS DIODE 5.5V 16V SOT23-6 " H 0   0   50  0001 C CNN "Description"
+F 5 "TPD4E001QDBVRQ1" H 0   0   50  0001 C CNN "PartNumber"
+F 6 " 296-39344-1-ND" H 0   0   50  0001 C CNN "digikey"
 	1    5200 1850
 	0    -1   -1   0   
 $EndComp
@@ -375,6 +395,9 @@ F 0 "IC306" V 5000 1900 39  0000 R CNN
 F 1 "TPD4E001QDBV" V 5100 2050 39  0000 R CNN
 F 2 "servo:SOT-23-6" H 4500 1850 60  0001 C CNN
 F 3 "../doc/datasheets/tpd4e001-q1.pdf" H 4550 2150 60  0001 C CNN
+F 4 "TVS DIODE 5.5V 16V SOT23-6 " H 0   0   50  0001 C CNN "Description"
+F 5 "TPD4E001QDBVRQ1" H 0   0   50  0001 C CNN "PartNumber"
+F 6 " 296-39344-1-ND" H 0   0   50  0001 C CNN "digikey"
 	1    4500 1850
 	0    -1   -1   0   
 $EndComp
@@ -599,6 +622,9 @@ F 0 "IC305" V 6350 1950 39  0000 R CNN
 F 1 "TPD4E001QDBV" V 6400 2050 39  0000 R CNN
 F 2 "servo:SOT-23-6" H 5800 1850 60  0001 C CNN
 F 3 "../doc/datasheets/tpd4e001-q1.pdf" H 5850 2150 60  0001 C CNN
+F 4 "TVS DIODE 5.5V 16V SOT23-6 " H 0   0   50  0001 C CNN "Description"
+F 5 "TPD4E001QDBVRQ1" H 0   0   50  0001 C CNN "PartNumber"
+F 6 " 296-39344-1-ND" H 0   0   50  0001 C CNN "digikey"
 	1    5800 1850
 	0    1    -1   0   
 $EndComp

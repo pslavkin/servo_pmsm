@@ -66,6 +66,7 @@ F 2 "servo:LED_0603_1608Metric" H 5800 6050 60  0001 C CNN
 F 3 "" H 5800 6050 60  0000 C CNN
 F 4 "LG L29K-G2J1-24-Z " H 6000 6250 50  0001 C CNN "digikey"
 F 5 "LG L29K-G2J1-24-Z" H 0   0   50  0001 C CNN "PartNumber"
+F 6 "LED GREEN DIFFUSED 0603 SMD " H 0   0   50  0001 C CNN "Description"
 	1    6000 6250
 	0    1    1    0   
 $EndComp
@@ -85,6 +86,7 @@ F 2 "servo:C_0603_1608Metric" H 5650 5850 60  0001 C CNN
 F 3 "" H 5650 5950 60  0000 C CNN
 F 4 "490-10475-1-ND" H 0   0   50  0001 C CNN "digikey"
 F 5 "GRM188R61A106ME69D " H 0   0   50  0001 C CNN "PartNumber"
+F 6 "10µF ±20% 10V Ceramic Capacitor X5R 0603 (1608 Metric) " H 0   0   50  0001 C CNN "Description"
 	1    5650 5950
 	0    1    1    0   
 $EndComp
@@ -116,6 +118,7 @@ F 2 "servo:C_0603_1608Metric" H 7850 5850 60  0001 C CNN
 F 3 "" H 7850 5950 60  0000 C CNN
 F 4 "490-10475-1-ND" H 0   0   50  0001 C CNN "digikey"
 F 5 "GRM188R61A106ME69D " H 0   0   50  0001 C CNN "PartNumber"
+F 6 "10µF ±20% 10V Ceramic Capacitor X5R 0603 (1608 Metric) " H 0   0   50  0001 C CNN "Description"
 	1    7850 5950
 	0    1    1    0   
 $EndComp
@@ -258,7 +261,10 @@ P 1250 5900
 F 0 "F701" V 1330 5900 39  0000 C CNN
 F 1 "Fuse" V 1175 5900 39  0000 C CNN
 F 2 "servo:fuse_3912" V 1180 5900 50  0001 C CNN
-F 3 "../doc/datasheets/fuse_3912pdf" V 1330 5900 50  0001 C CNN
+F 3 "../doc/datasheets/fuse_3912.pdf" V 1330 5900 50  0001 C CNN
+F 4 "2A 600V AC 250V DC Fuse Board Mount (Cartridge Style Excluded) Surface Mount 2-SMD, Square End Block" H 0   0   50  0001 C CNN "Description"
+F 5 "SF-3812TM200T-2" H 0   0   50  0001 C CNN "PartNumber"
+F 6 "SF-3812TM200T-2CT-ND" H 0   0   50  0001 C CNN "digikey"
 	1    1250 5900
 	0    1    1    0   
 $EndComp
@@ -287,6 +293,7 @@ F 2 "servo:LED_0603_1608Metric" H 2850 5950 60  0001 C CNN
 F 3 "../doc/datasheets/LS L29K.pdf" H 2850 5950 60  0001 C CNN
 F 4 "LS L29K-G1H2-1-Z " H 3050 6150 50  0001 C CNN "digikey"
 F 5 "LS L29K-G1H2-1-Z" H 0   0   50  0001 C CNN "PartNumber"
+F 6 "LED RED DIFFUSED 0603 SMD " H 0   0   50  0001 C CNN "Description"
 	1    3050 6150
 	0    1    1    0   
 $EndComp
@@ -311,6 +318,10 @@ F 0 "JP701" H 3300 5761 39  0000 C CNN
 F 1 "jumper" H 3300 5686 39  0000 C CNN
 F 2 "servo:SolderJumper-2_P1.3mm_Open_RoundedPad1.0x1.5mm" H 3200 5580 50  0001 C CNN
 F 3 "~" H 3300 5680 50  0001 C CNN
+F 4 "jumper smd bridge using tin" H 0   0   50  0001 C CNN "Description"
+F 5 "-" H 0   0   50  0001 C CNN "PartNumber"
+F 6 "-" H 0   0   50  0001 C CNN "digikey"
+F 7 "0" H 0   0   50  0001 C CNN "price@10"
 	1    3300 5600
 	1    0    0    -1  
 $EndComp
@@ -341,7 +352,11 @@ P 10550 5850
 F 0 "F702" V 10630 5850 39  0000 C CNN
 F 1 "Fuse" V 10475 5850 39  0000 C CNN
 F 2 "servo:fuse_3912" V 10480 5850 50  0001 C CNN
-F 3 "../doc/datasheets/fuse_3912pdf" V 10630 5850 50  0001 C CNN
+F 3 "../doc/datasheets/fuse_3912.pdf" V 10630 5850 50  0001 C CNN
+F 4 "1.70000" H 10550 5850 50  0001 C CNN "price@10"
+F 5 "2A 600V AC 250V DC Fuse Board Mount (Cartridge Style Excluded) Surface Mount 2-SMD, Square End Block" H 0   0   50  0001 C CNN "Description"
+F 6 "SF-3812TM200T-2" H 0   0   50  0001 C CNN "PartNumber"
+F 7 "SF-3812TM200T-2CT-ND" H 0   0   50  0001 C CNN "digikey"
 	1    10550 5850
 	0    1    1    0   
 $EndComp
@@ -370,6 +385,7 @@ F 2 "servo:LED_0603_1608Metric" H 12100 5900 60  0001 C CNN
 F 3 "../doc/datasheets/LY L29K.pdf" H 12100 5900 60  0001 C CNN
 F 4 "475-1196-1-ND" H 12300 6100 50  0001 C CNN "digikey"
 F 5 "LY L29K-H1K2-26-Z " H 0   0   50  0001 C CNN "PartNumber"
+F 6 "LED YELLOW DIFFUSED 0603 SMD " H 0   0   50  0001 C CNN "Description"
 	1    12300 6100
 	0    1    1    0   
 $EndComp
@@ -420,9 +436,12 @@ AR Path="/5E21534F/5E229E8E" Ref="J?"  Part="1"
 AR Path="/5DD76B18/5E229E8E" Ref="J701"  Part="1" 
 AR Path="/5EC40F3C/5E229E8E" Ref="J?"  Part="1" 
 F 0 "J701" H 8700 3717 50  0000 C CNN
-F 1 "tblock" H 8700 3626 50  0000 C CNN
+F 1 "tblock 2x4 5.08" H 8700 3626 50  0000 C CNN
 F 2 "servo:tblock02x04" H 8650 3400 50  0001 C CNN
 F 3 "" H 8650 3400 50  0001 C CNN
+F 4 "8 Position Terminal Block Header, Male Pins, Shrouded (4 Side) 0.200\" (5.08mm) 90°, Right Angle Through Hole " H 0   0   50  0001 C CNN "Description"
+F 5 "1736713" H 0   0   50  0001 C CNN "PartNumber"
+F 6 "277-1401-ND " H 0   0   50  0001 C CNN "digikey"
 	1    8650 3400
 	-1   0    0    -1  
 $EndComp
@@ -434,6 +453,10 @@ F 0 "PS701" H 2200 6301 39  0000 C CNN
 F 1 "IRM-10-5" H 2200 6226 39  0000 C CNN
 F 2 "servo:Converter_ACDC_MeanWell_IRM-10-xx_THT" H 2200 5700 50  0001 C CNN
 F 3 "../doc/datasheets/irm-10.pdf" H 2600 5650 50  0001 C CNN
+F 4 "Enclosed AC DC Converter 1 Output 5V 2A 85 ~ 305 VAC, 120 ~ 430 VDC Input " H 0   0   50  0001 C CNN "Description"
+F 5 "RM-10-5 " H 0   0   50  0001 C CNN "PartNumber"
+F 6 "1866-3032-ND " H 0   0   50  0001 C CNN "digikey"
+F 7 "8.89300" H 0   0   50  0001 C CNN "price@10"
 	1    2200 6000
 	1    0    0    -1  
 $EndComp
@@ -463,9 +486,13 @@ L servo:irm-10-12 PS702
 U 1 1 5E299A6A
 P 11450 5950
 F 0 "PS702" H 11450 6251 39  0000 C CNN
-F 1 "irm-10-12" H 11450 6176 39  0000 C CNN
+F 1 "IRM-10-5" H 11450 6176 39  0000 C CNN
 F 2 "servo:Converter_ACDC_MeanWell_IRM-10-xx_THT" H 11450 5650 50  0001 C CNN
 F 3 "../doc/datasheets/irm-10.pdf" H 11850 5600 50  0001 C CNN
+F 4 "Enclosed AC DC Converter 1 Output 5V 2A 85 ~ 305 VAC, 120 ~ 430 VDC Input " H 0   0   50  0001 C CNN "Description"
+F 5 "RM-10-5 " H 0   0   50  0001 C CNN "PartNumber"
+F 6 "1866-3032-ND " H 0   0   50  0001 C CNN "digikey"
+F 7 "8.89300" H 0   0   50  0001 C CNN "price@10"
 	1    11450 5950
 	1    0    0    -1  
 $EndComp
@@ -572,6 +599,9 @@ F 0 "C701" V 4728 6060 20  0000 L CNN
 F 1 "22uF" V 4771 6060 20  0000 L CNN
 F 2 "servo:C_0603_1608Metric" H 4700 5850 60  0001 C CNN
 F 3 "" H 4700 5950 60  0000 C CNN
+F 4 "CAP CER 22UF 6.3V X5R 0603 " H 0   0   50  0001 C CNN "Description"
+F 5 "GRM188R60J226MEA0D" H 0   0   50  0001 C CNN "PartNumber"
+F 6 "490-7611-1-ND" H 0   0   50  0001 C CNN "digikey"
 	1    4700 5950
 	0    1    1    0   
 $EndComp
@@ -618,6 +648,7 @@ F 2 "servo:C_0603_1608Metric" H 6800 5850 60  0001 C CNN
 F 3 "" H 6800 5950 60  0000 C CNN
 F 4 "CC0603KPX7R7BB104" H 0   0   50  0001 C CNN "PartNumber"
 F 5 "311-1335-1-ND" H 0   0   50  0001 C CNN "digikey"
+F 6 "CAP CER 0.1UF 16V X7R 0603 " H 0   0   50  0001 C CNN "Description"
 	1    6800 5950
 	0    1    1    0   
 $EndComp
@@ -657,6 +688,9 @@ F 0 "C710" V 12978 5960 20  0000 L CNN
 F 1 "2.2uF" V 13021 5960 20  0000 L CNN
 F 2 "servo:C_0603_1608Metric" H 12950 5750 60  0001 C CNN
 F 3 "" H 12950 5850 60  0000 C CNN
+F 4 "CAP CER 2.2UF 16V X6S 0603 " H 0   0   50  0001 C CNN "Description"
+F 5 "GRT188C81C225KE13D" H 0   0   50  0001 C CNN "PartNumber"
+F 6 "490-12287-2-ND" H 0   0   50  0001 C CNN "digikey"
 	1    12950 5850
 	0    1    1    0   
 $EndComp
@@ -670,6 +704,9 @@ F 0 "C708" V 12678 5960 20  0000 L CNN
 F 1 "22uF" V 12721 5960 20  0000 L CNN
 F 2 "servo:C_0603_1608Metric" H 12650 5750 60  0001 C CNN
 F 3 "" H 12650 5850 60  0000 C CNN
+F 4 "CAP CER 22UF 6.3V X5R 0603 " H 0   0   50  0001 C CNN "Description"
+F 5 "GRM188R60J226MEA0D" H 0   0   50  0001 C CNN "PartNumber"
+F 6 "490-7611-1-ND" H 0   0   50  0001 C CNN "digikey"
 	1    12650 5850
 	0    1    1    0   
 $EndComp
@@ -696,6 +733,7 @@ F 2 "servo:C_0603_1608Metric" H 8200 5850 60  0001 C CNN
 F 3 "" H 8200 5950 60  0000 C CNN
 F 4 "CC0603KPX7R7BB104" H 0   0   50  0001 C CNN "PartNumber"
 F 5 "311-1335-1-ND" H 0   0   50  0001 C CNN "digikey"
+F 6 "CAP CER 0.1UF 16V X7R 0603 " H 0   0   50  0001 C CNN "Description"
 	1    8200 5950
 	0    1    1    0   
 $EndComp
@@ -709,6 +747,9 @@ F 0 "C702" V 4428 6060 20  0000 L CNN
 F 1 "2.2uF" V 4471 6060 20  0000 L CNN
 F 2 "servo:C_0603_1608Metric" H 4400 5850 60  0001 C CNN
 F 3 "" H 4400 5950 60  0000 C CNN
+F 4 "CAP CER 2.2UF 16V X6S 0603 " H 0   0   50  0001 C CNN "Description"
+F 5 "GRT188C81C225KE13D" H 0   0   50  0001 C CNN "PartNumber"
+F 6 "490-12287-2-ND" H 0   0   50  0001 C CNN "digikey"
 	1    4400 5950
 	0    1    1    0   
 $EndComp
@@ -751,6 +792,10 @@ F 0 "JP703" H 14300 8261 39  0000 C CNN
 F 1 "jumper" H 14300 8186 39  0000 C CNN
 F 2 "servo:wire_bridge_38mm" H 14200 8080 50  0001 C CNN
 F 3 "~" H 14300 8180 50  0001 C CNN
+F 4 "jumper smd bridge using tin" H 0   0   50  0001 C CNN "Description"
+F 5 "-" H 0   0   50  0001 C CNN "PartNumber"
+F 6 "-" H 0   0   50  0001 C CNN "digikey"
+F 7 "0" H 0   0   50  0001 C CNN "price@10"
 	1    14300 8100
 	1    0    0    -1  
 $EndComp
@@ -829,6 +874,10 @@ F 0 "JP704" H 14300 7861 39  0000 C CNN
 F 1 "jumper" H 14300 7786 39  0000 C CNN
 F 2 "servo:wire_bridge_44mm" H 14200 7680 50  0001 C CNN
 F 3 "~" H 14300 7780 50  0001 C CNN
+F 4 "jumper smd bridge using tin" H 0   0   50  0001 C CNN "Description"
+F 5 "-" H 0   0   50  0001 C CNN "PartNumber"
+F 6 "-" H 0   0   50  0001 C CNN "digikey"
+F 7 "0" H 0   0   50  0001 C CNN "price@10"
 	1    14300 7700
 	1    0    0    -1  
 $EndComp
@@ -840,6 +889,10 @@ F 0 "JP705" H 14300 6561 39  0000 C CNN
 F 1 "jumper" H 14300 6486 39  0000 C CNN
 F 2 "servo:R_1806_4516Metric_Pad1.57x1.80mm_HandSolder" H 14200 6380 50  0001 C CNN
 F 3 "~" H 14300 6480 50  0001 C CNN
+F 4 "jumper smd bridge using tin" H 0   0   50  0001 C CNN "Description"
+F 5 "-" H 0   0   50  0001 C CNN "PartNumber"
+F 6 "-" H 0   0   50  0001 C CNN "digikey"
+F 7 "0" H 0   0   50  0001 C CNN "price@10"
 	1    14300 6400
 	1    0    0    -1  
 $EndComp
@@ -898,6 +951,10 @@ F 0 "JP706" H 14300 6961 39  0000 C CNN
 F 1 "jumper" H 14300 6886 39  0000 C CNN
 F 2 "servo:R_1806_4516Metric_Pad1.57x1.80mm_HandSolder" H 14200 6780 50  0001 C CNN
 F 3 "~" H 14300 6880 50  0001 C CNN
+F 4 "jumper smd bridge using tin" H 0   0   50  0001 C CNN "Description"
+F 5 "-" H 0   0   50  0001 C CNN "PartNumber"
+F 6 "-" H 0   0   50  0001 C CNN "digikey"
+F 7 "0" H 0   0   50  0001 C CNN "price@10"
 	1    14300 6800
 	1    0    0    -1  
 $EndComp
@@ -936,6 +993,10 @@ F 0 "JP702" H 14300 8961 39  0000 C CNN
 F 1 "jumper" H 14300 8886 39  0000 C CNN
 F 2 "servo:R_1806_4516Metric_Pad1.57x1.80mm_HandSolder" H 14200 8780 50  0001 C CNN
 F 3 "~" H 14300 8880 50  0001 C CNN
+F 4 "jumper smd bridge using tin" H 0   0   50  0001 C CNN "Description"
+F 5 "-" H 0   0   50  0001 C CNN "PartNumber"
+F 6 "-" H 0   0   50  0001 C CNN "digikey"
+F 7 "0" H 0   0   50  0001 C CNN "price@10"
 	1    14300 8800
 	1    0    0    -1  
 $EndComp
@@ -958,6 +1019,10 @@ F 0 "JP707" H 14300 9361 39  0000 C CNN
 F 1 "jumper" H 14300 9286 39  0000 C CNN
 F 2 "servo:R_1806_4516Metric_Pad1.57x1.80mm_HandSolder" H 14200 9180 50  0001 C CNN
 F 3 "~" H 14300 9280 50  0001 C CNN
+F 4 "jumper smd bridge using tin" H 0   0   50  0001 C CNN "Description"
+F 5 "-" H 0   0   50  0001 C CNN "PartNumber"
+F 6 "-" H 0   0   50  0001 C CNN "digikey"
+F 7 "0" H 0   0   50  0001 C CNN "price@10"
 	1    14300 9200
 	1    0    0    -1  
 $EndComp
@@ -994,9 +1059,12 @@ L servo:zener D704
 U 1 1 5E3BEF67
 P 14950 7900
 F 0 "D704" V 14928 7979 20  0000 L CNN
-F 1 "5v1" V 14971 7979 20  0000 L CNN
+F 1 "zener 5v1" V 14971 7979 20  0000 L CNN
 F 2 "servo:D_SMA" H 14950 7725 20  0001 C CNN
 F 3 "https://diotec.com/tl_files/diotec/files/pdf/datasheets/z1sma1.pdf" H 14950 8000 50  0001 C CNN
+F 4 "Zener Diode 5.1V 1.25W ±5.88% Surface Mount DO-214AC (SMA) " H 0   0   50  0001 C CNN "Description"
+F 5 "BZG05C5V1-M3-08" H 0   0   50  0001 C CNN "PartNumber"
+F 6 "BZG05C5V1-M3-08GICT-ND" H 0   0   50  0001 C CNN "digikey"
 	1    14950 7900
 	0    1    1    0   
 $EndComp
@@ -1015,9 +1083,12 @@ L servo:zener D703
 U 1 1 5E3CE25B
 P 14900 6600
 F 0 "D703" V 14878 6679 20  0000 L CNN
-F 1 "5v1" V 14921 6679 20  0000 L CNN
+F 1 "zener 5v1" V 14921 6679 20  0000 L CNN
 F 2 "servo:D_SMA" H 14900 6425 20  0001 C CNN
 F 3 "https://diotec.com/tl_files/diotec/files/pdf/datasheets/z1sma1.pdf" H 14900 6700 50  0001 C CNN
+F 4 "Zener Diode 5.1V 1.25W ±5.88% Surface Mount DO-214AC (SMA) " H 0   0   50  0001 C CNN "Description"
+F 5 "BZG05C5V1-M3-08" H 0   0   50  0001 C CNN "PartNumber"
+F 6 "BZG05C5V1-M3-08GICT-ND" H 0   0   50  0001 C CNN "digikey"
 	1    14900 6600
 	0    1    1    0   
 $EndComp
@@ -1042,9 +1113,12 @@ L servo:zener D707
 U 1 1 5E5CEB8C
 P 4150 6000
 F 0 "D707" V 4128 6079 20  0000 L CNN
-F 1 "5v1" V 4171 6079 20  0000 L CNN
+F 1 "zener 5v1" V 4171 6079 20  0000 L CNN
 F 2 "servo:D_SMA" H 4150 5825 20  0001 C CNN
 F 3 "https://diotec.com/tl_files/diotec/files/pdf/datasheets/z1sma1.pdf" H 4150 6100 50  0001 C CNN
+F 4 "Zener Diode 5.1V 1.25W ±5.88% Surface Mount DO-214AC (SMA) " H 0   0   50  0001 C CNN "Description"
+F 5 "BZG05C5V1-M3-08" H 0   0   50  0001 C CNN "PartNumber"
+F 6 "BZG05C5V1-M3-08GICT-ND" H 0   0   50  0001 C CNN "digikey"
 	1    4150 6000
 	0    1    1    0   
 $EndComp
@@ -1063,9 +1137,12 @@ L servo:zener D708
 U 1 1 5E600820
 P 6400 6050
 F 0 "D708" V 6378 6129 20  0000 L CNN
-F 1 "3v5" V 6421 6129 20  0000 L CNN
+F 1 "zener 3v6" V 6421 6129 20  0000 L CNN
 F 2 "servo:D_SMA" H 6400 5875 20  0001 C CNN
 F 3 "https://diotec.com/tl_files/diotec/files/pdf/datasheets/z1sma1.pdf" H 6400 6150 50  0001 C CNN
+F 4 "Zener Diode 3.6V 1.25W ±5.56% Surface Mount DO-214AC (SMA) " H 0   0   50  0001 C CNN "Description"
+F 5 "BZG05C3V6-M3-08" H 0   0   50  0001 C CNN "PartNumber"
+F 6 "BZG05C3V6-M3-08GICT-ND" H 0   0   50  0001 C CNN "digikey"
 	1    6400 6050
 	0    1    1    0   
 $EndComp

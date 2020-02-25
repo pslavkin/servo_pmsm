@@ -60,6 +60,7 @@ F 2 "servo:C_0603_1608Metric" H 3950 3350 60  0001 C CNN
 F 3 "" H 3950 3450 60  0000 C CNN
 F 4 "CC0603KPX7R7BB104" H 0   0   50  0001 C CNN "PartNumber"
 F 5 "311-1335-1-ND" H 0   0   50  0001 C CNN "digikey"
+F 6 "CAP CER 0.1UF 16V X7R 0603 " H 0   0   50  0001 C CNN "Description"
 	1    3950 3450
 	0    -1   1    0   
 $EndComp
@@ -124,9 +125,12 @@ L servo:Capacitor C1509
 U 1 1 5E3E8E03
 P 3600 4350
 F 0 "C1509" V 3628 4460 20  0000 L CNN
-F 1 "100pF" V 3671 4460 20  0000 L CNN
+F 1 "1nF" V 3671 4460 20  0000 L CNN
 F 2 "servo:C_0603_1608Metric" H 3600 4250 60  0001 C CNN
 F 3 "" H 3600 4350 60  0000 C CNN
+F 4 "CAP CER 1000PF 16V X7R 0603 " H 0   0   50  0001 C CNN "Description"
+F 5 "0603B102K160CT" H 0   0   50  0001 C CNN "PartNumber"
+F 6 "1292-1378-1-ND " H 0   0   50  0001 C CNN "digikey"
 	1    3600 4350
 	0    -1   1    0   
 $EndComp
@@ -226,6 +230,7 @@ F 2 "servo:C_0603_1608Metric" H 3750 5300 60  0001 C CNN
 F 3 "" H 3750 5400 60  0000 C CNN
 F 4 "CC0603KPX7R7BB104" H 0   0   50  0001 C CNN "PartNumber"
 F 5 "311-1335-1-ND" H 0   0   50  0001 C CNN "digikey"
+F 6 "CAP CER 0.1UF 16V X7R 0603 " H 0   0   50  0001 C CNN "Description"
 	1    3750 5400
 	0    -1   1    0   
 $EndComp
@@ -274,9 +279,12 @@ L servo:Capacitor C1501
 U 1 1 5E275000
 P 3400 6300
 F 0 "C1501" V 3428 6410 20  0000 L CNN
-F 1 "100pF" V 3471 6410 20  0000 L CNN
+F 1 "1nF" V 3471 6410 20  0000 L CNN
 F 2 "servo:C_0603_1608Metric" H 3400 6200 60  0001 C CNN
 F 3 "" H 3400 6300 60  0000 C CNN
+F 4 "CAP CER 1000PF 16V X7R 0603 " H 0   0   50  0001 C CNN "Description"
+F 5 "0603B102K160CT" H 0   0   50  0001 C CNN "PartNumber"
+F 6 "1292-1378-1-ND " H 0   0   50  0001 C CNN "digikey"
 	1    3400 6300
 	0    -1   1    0   
 $EndComp
@@ -361,6 +369,7 @@ F 2 "servo:C_0603_1608Metric" H 3850 7900 60  0001 C CNN
 F 3 "" H 3850 8000 60  0000 C CNN
 F 4 "CC0603KPX7R7BB104" H 0   0   50  0001 C CNN "PartNumber"
 F 5 "311-1335-1-ND" H 0   0   50  0001 C CNN "digikey"
+F 6 "CAP CER 0.1UF 16V X7R 0603 " H 0   0   50  0001 C CNN "Description"
 	1    3850 8000
 	0    -1   1    0   
 $EndComp
@@ -409,9 +418,12 @@ L servo:Capacitor C1502
 U 1 1 5E27624A
 P 3500 8900
 F 0 "C1502" V 3528 9010 20  0000 L CNN
-F 1 "100pF" V 3571 9010 20  0000 L CNN
+F 1 "1nF" V 3571 9010 20  0000 L CNN
 F 2 "servo:C_0603_1608Metric" H 3500 8800 60  0001 C CNN
 F 3 "" H 3500 8900 60  0000 C CNN
+F 4 "CAP CER 1000PF 16V X7R 0603 " H 0   0   50  0001 C CNN "Description"
+F 5 "0603B102K160CT" H 0   0   50  0001 C CNN "PartNumber"
+F 6 "1292-1378-1-ND " H 0   0   50  0001 C CNN "digikey"
 	1    3500 8900
 	0    -1   1    0   
 $EndComp
@@ -485,6 +497,7 @@ F 2 "servo:C_0603_1608Metric" H 8750 3350 60  0001 C CNN
 F 3 "" H 8750 3450 60  0000 C CNN
 F 4 "CC0603KPX7R7BB104" H 0   0   50  0001 C CNN "PartNumber"
 F 5 "311-1335-1-ND" H 0   0   50  0001 C CNN "digikey"
+F 6 "CAP CER 0.1UF 16V X7R 0603 " H 0   0   50  0001 C CNN "Description"
 	1    8750 3450
 	0    1    1    0   
 $EndComp
@@ -500,9 +513,12 @@ L servo:Capacitor C1513
 U 1 1 5E27867A
 P 8800 4350
 F 0 "C1513" V 8828 4460 20  0000 L CNN
-F 1 "100pF" V 8871 4460 20  0000 L CNN
+F 1 "1nF" V 8871 4460 20  0000 L CNN
 F 2 "servo:C_0603_1608Metric" H 8800 4250 60  0001 C CNN
 F 3 "" H 8800 4350 60  0000 C CNN
+F 4 "CAP CER 1000PF 16V X7R 0603 " H 0   0   50  0001 C CNN "Description"
+F 5 "0603B102K160CT" H 0   0   50  0001 C CNN "PartNumber"
+F 6 "1292-1378-1-ND " H 0   0   50  0001 C CNN "digikey"
 	1    8800 4350
 	0    1    1    0   
 $EndComp
@@ -620,6 +636,7 @@ F 2 "servo:C_0603_1608Metric" H 8750 5300 60  0001 C CNN
 F 3 "" H 8750 5400 60  0000 C CNN
 F 4 "CC0603KPX7R7BB104" H 0   0   50  0001 C CNN "PartNumber"
 F 5 "311-1335-1-ND" H 0   0   50  0001 C CNN "digikey"
+F 6 "CAP CER 0.1UF 16V X7R 0603 " H 0   0   50  0001 C CNN "Description"
 	1    8750 5400
 	0    1    1    0   
 $EndComp
@@ -635,9 +652,12 @@ L servo:Capacitor C1514
 U 1 1 5E2833A1
 P 8800 6300
 F 0 "C1514" V 8828 6410 20  0000 L CNN
-F 1 "100pF" V 8871 6410 20  0000 L CNN
+F 1 "1nF" V 8871 6410 20  0000 L CNN
 F 2 "servo:C_0603_1608Metric" H 8800 6200 60  0001 C CNN
 F 3 "" H 8800 6300 60  0000 C CNN
+F 4 "CAP CER 1000PF 16V X7R 0603 " H 0   0   50  0001 C CNN "Description"
+F 5 "0603B102K160CT" H 0   0   50  0001 C CNN "PartNumber"
+F 6 "1292-1378-1-ND " H 0   0   50  0001 C CNN "digikey"
 	1    8800 6300
 	0    1    1    0   
 $EndComp
@@ -755,6 +775,7 @@ F 2 "servo:C_0603_1608Metric" H 8750 7900 60  0001 C CNN
 F 3 "" H 8750 8000 60  0000 C CNN
 F 4 "CC0603KPX7R7BB104" H 0   0   50  0001 C CNN "PartNumber"
 F 5 "311-1335-1-ND" H 0   0   50  0001 C CNN "digikey"
+F 6 "CAP CER 0.1UF 16V X7R 0603 " H 0   0   50  0001 C CNN "Description"
 	1    8750 8000
 	0    1    1    0   
 $EndComp
@@ -770,9 +791,12 @@ L servo:Capacitor C1515
 U 1 1 5E288A0F
 P 8800 8900
 F 0 "C1515" V 8828 9010 20  0000 L CNN
-F 1 "100pF" V 8871 9010 20  0000 L CNN
+F 1 "1nF" V 8871 9010 20  0000 L CNN
 F 2 "servo:C_0603_1608Metric" H 8800 8800 60  0001 C CNN
 F 3 "" H 8800 8900 60  0000 C CNN
+F 4 "CAP CER 1000PF 16V X7R 0603 " H 0   0   50  0001 C CNN "Description"
+F 5 "0603B102K160CT" H 0   0   50  0001 C CNN "PartNumber"
+F 6 "1292-1378-1-ND " H 0   0   50  0001 C CNN "digikey"
 	1    8800 8900
 	0    1    1    0   
 $EndComp
@@ -853,9 +877,13 @@ L servo:tblock2x3 J1503
 U 1 1 5E261EDA
 P 5450 3700
 F 0 "J1503" V 5462 3880 39  0000 L CNN
-F 1 "tblock2x3" V 5537 3880 39  0000 L CNN
+F 1 "tblock 2x3 5.08" V 5537 3880 39  0000 L CNN
 F 2 "servo:tblock02x03" H 5400 3800 50  0001 C CNN
 F 3 "../doc/dfatasheets/tblock2rows.pdf" H 5500 3900 50  0001 C CNN
+F 4 "6 Position Terminal Block Header, Male Pins, Shrouded (4 Side) 0.200\" (5.08mm) 90°, Right Angle Through Hole " H 0   0   50  0001 C CNN "Description"
+F 5 "1762376 " H 0   0   50  0001 C CNN "PartNumber"
+F 6 " 277-1400-ND " H 0   0   50  0001 C CNN "digikey"
+F 7 "3.95500" H 0   0   50  0001 C CNN "price@10"
 	1    5450 3700
 	0    -1   -1   0   
 $EndComp
@@ -864,9 +892,13 @@ L servo:tblock2x3 J1504
 U 1 1 5E270F16
 P 7250 3700
 F 0 "J1504" V 7262 3880 39  0000 L CNN
-F 1 "tblock2x3" V 7337 3880 39  0000 L CNN
+F 1 "tblock 2x3 5.08" V 7337 3880 39  0000 L CNN
 F 2 "servo:tblock02x03" H 7200 3800 50  0001 C CNN
 F 3 "../doc/dfatasheets/tblock2rows.pdf" H 7300 3900 50  0001 C CNN
+F 4 "6 Position Terminal Block Header, Male Pins, Shrouded (4 Side) 0.200\" (5.08mm) 90°, Right Angle Through Hole " H 0   0   50  0001 C CNN "Description"
+F 5 "1762376 " H 0   0   50  0001 C CNN "PartNumber"
+F 6 " 277-1400-ND " H 0   0   50  0001 C CNN "digikey"
+F 7 "3.95500" H 0   0   50  0001 C CNN "price@10"
 	1    7250 3700
 	0    1    -1   0   
 $EndComp
@@ -875,9 +907,13 @@ L servo:tblock2x3 J1501
 U 1 1 5E2787AF
 P 5250 5650
 F 0 "J1501" V 5338 5462 39  0000 R CNN
-F 1 "tblock2x3" V 5263 5462 39  0000 R CNN
+F 1 "tblock 2x3 5.08" V 5263 5462 39  0000 R CNN
 F 2 "servo:tblock02x03" H 5200 5750 50  0001 C CNN
 F 3 "../doc/dfatasheets/tblock2rows.pdf" H 5300 5850 50  0001 C CNN
+F 4 "6 Position Terminal Block Header, Male Pins, Shrouded (4 Side) 0.200\" (5.08mm) 90°, Right Angle Through Hole " H 0   0   50  0001 C CNN "Description"
+F 5 "1762376 " H 0   0   50  0001 C CNN "PartNumber"
+F 6 " 277-1400-ND " H 0   0   50  0001 C CNN "digikey"
+F 7 "3.95500" H 0   0   50  0001 C CNN "price@10"
 	1    5250 5650
 	0    -1   -1   0   
 $EndComp
@@ -886,9 +922,13 @@ L servo:tblock2x3 J1505
 U 1 1 5E27FF32
 P 7250 5650
 F 0 "J1505" V 7262 5830 39  0000 L CNN
-F 1 "tblock2x3" V 7337 5830 39  0000 L CNN
+F 1 "tblock 2x3 5.08" V 7337 5830 39  0000 L CNN
 F 2 "servo:tblock02x03" H 7200 5750 50  0001 C CNN
 F 3 "../doc/dfatasheets/tblock2rows.pdf" H 7300 5850 50  0001 C CNN
+F 4 "6 Position Terminal Block Header, Male Pins, Shrouded (4 Side) 0.200\" (5.08mm) 90°, Right Angle Through Hole " H 0   0   50  0001 C CNN "Description"
+F 5 "1762376 " H 0   0   50  0001 C CNN "PartNumber"
+F 6 " 277-1400-ND " H 0   0   50  0001 C CNN "digikey"
+F 7 "3.95500" H 0   0   50  0001 C CNN "price@10"
 	1    7250 5650
 	0    1    -1   0   
 $EndComp
@@ -897,9 +937,13 @@ L servo:tblock2x3 J1502
 U 1 1 5E296823
 P 5350 8250
 F 0 "J1502" V 5362 8430 39  0000 L CNN
-F 1 "tblock2x3" V 5437 8430 39  0000 L CNN
+F 1 "tblock 2x3 5.08" V 5437 8430 39  0000 L CNN
 F 2 "servo:tblock02x03" H 5300 8350 50  0001 C CNN
 F 3 "../doc/dfatasheets/tblock2rows.pdf" H 5400 8450 50  0001 C CNN
+F 4 "6 Position Terminal Block Header, Male Pins, Shrouded (4 Side) 0.200\" (5.08mm) 90°, Right Angle Through Hole " H 0   0   50  0001 C CNN "Description"
+F 5 "1762376 " H 0   0   50  0001 C CNN "PartNumber"
+F 6 " 277-1400-ND " H 0   0   50  0001 C CNN "digikey"
+F 7 "3.95500" H 0   0   50  0001 C CNN "price@10"
 	1    5350 8250
 	0    -1   -1   0   
 $EndComp
@@ -908,9 +952,13 @@ L servo:tblock2x3 J1506
 U 1 1 5E29DFAC
 P 7250 8250
 F 0 "J1506" V 7262 8430 39  0000 L CNN
-F 1 "tblock2x3" V 7337 8430 39  0000 L CNN
+F 1 "tblock 2x3 5.08" V 7337 8430 39  0000 L CNN
 F 2 "servo:tblock02x03" H 7200 8350 50  0001 C CNN
 F 3 "../doc/datasheets/tblock2rows.pdf" H 7300 8450 50  0001 C CNN
+F 4 "6 Position Terminal Block Header, Male Pins, Shrouded (4 Side) 0.200\" (5.08mm) 90°, Right Angle Through Hole " H 0   0   50  0001 C CNN "Description"
+F 5 "1762376 " H 0   0   50  0001 C CNN "PartNumber"
+F 6 " 277-1400-ND " H 0   0   50  0001 C CNN "digikey"
+F 7 "3.95500" H 0   0   50  0001 C CNN "price@10"
 	1    7250 8250
 	0    1    -1   0   
 $EndComp

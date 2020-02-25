@@ -37,6 +37,10 @@ F 0 "J1704" H 6650 4067 50  0000 C CNN
 F 1 "idc2x17" H 6650 3976 50  0000 C CNN
 F 2 "servo:idc2x17_smd" H 6600 3050 50  0001 C CNN
 F 3 "~" H 6600 3050 50  0001 C CNN
+F 4 "Connector Header Surface Mount 34 position 0.100\" (2.54mm) " H 0   0   50  0001 C CNN "Description"
+F 5 "SBH11-NBPC-D17-SM-BK" H 0   0   50  0001 C CNN "PartNumber"
+F 6 "S9191-ND" H 0   0   50  0001 C CNN "digikey"
+F 7 "1.31900" H 0   0   50  0001 C CNN "price@10"
 	1    6600 3050
 	1    0    0    -1  
 $EndComp
@@ -48,6 +52,10 @@ F 0 "J1705" H 9950 4017 50  0000 C CNN
 F 1 "idc2x17" H 9950 3926 50  0000 C CNN
 F 2 "servo:idc2x17_smd" H 9900 3000 50  0001 C CNN
 F 3 "~" H 9900 3000 50  0001 C CNN
+F 4 "Connector Header Surface Mount 34 position 0.100\" (2.54mm) " H 0   0   50  0001 C CNN "Description"
+F 5 "SBH11-NBPC-D17-SM-BK" H 0   0   50  0001 C CNN "PartNumber"
+F 6 "S9191-ND" H 0   0   50  0001 C CNN "digikey"
+F 7 "1.31900" H 0   0   50  0001 C CNN "price@10"
 	1    9900 3000
 	1    0    0    -1  
 $EndComp

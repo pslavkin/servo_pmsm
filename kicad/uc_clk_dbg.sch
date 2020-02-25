@@ -150,6 +150,8 @@ F 1 "TMS320F28388DZWTS" H 11650 3475 50  0000 C CNN
 F 2 "servo:BGA337CP80_19X19_1600X1600X140B50N" H 11650 2800 50  0001 C CNN
 F 3 "../doc/datasheets/tms320f28388d_datasheet.pdf" H 11650 2800 50  0001 C CNN
 F 4 "TMS320F28388DZWTS" V 10250 2600 60  0001 C CNN "PartNumber"
+F 5 "32-bit MCU with connectivity manager, 2x C28x+CLA CPU, 1.5 MB flash, FPU64, CLB, Ethernet, EtherCAT" H 0   0   50  0001 C CNN "Description"
+F 6 "14.96" H 0   0   50  0001 C CNN "price@10"
 	3    11650 2800
 	1    0    0    -1  
 $EndComp
@@ -200,6 +202,7 @@ F 2 "servo:LED_0603_1608Metric" H 4200 3050 60  0001 C CNN
 F 3 "../doc/datasheets/LB_Q39G_v1.4_9-1-15.pdf" H 4200 3050 60  0001 C CNN
 F 4 "LB Q39G-L2OO-35-1" H 4400 3250 50  0001 C CNN "digikey"
 F 5 "LB Q39G-L2OO-35-1" H 0   0   50  0001 C CNN "PartNumber"
+F 6 "LED BLUE DIFFUSED 0603 SMD " H 0   0   50  0001 C CNN "Description"
 	1    4400 3250
 	0    1    1    0   
 $EndComp
@@ -215,6 +218,7 @@ F 2 "servo:LED_0603_1608Metric" H 8050 3250 60  0001 C CNN
 F 3 "../doc/datasheets/LB_Q39G_v1.4_9-1-15.pdf" H 8050 3250 60  0001 C CNN
 F 4 "LB Q39G-L2OO-35-1" H 8250 3450 50  0001 C CNN "digikey"
 F 5 "LB Q39G-L2OO-35-1" H 0   0   50  0001 C CNN "PartNumber"
+F 6 "LED BLUE DIFFUSED 0603 SMD " H 0   0   50  0001 C CNN "Description"
 	1    8250 3450
 	0    1    1    0   
 $EndComp
@@ -459,9 +463,12 @@ AR Path="/5E092156/5E22877E" Ref="C?"  Part="1"
 AR Path="/5E72D841/5E22877E" Ref="C?"  Part="1" 
 AR Path="/5DD4DF4C/5E22877E" Ref="C601"  Part="1" 
 F 0 "C601" V 10328 7660 20  0000 L CNN
-F 1 "10nF" V 10371 7660 20  0000 L CNN
+F 1 "0.1uF" V 10371 7660 20  0000 L CNN
 F 2 "servo:C_0603_1608Metric" H 10300 7450 60  0001 C CNN
 F 3 "" H 10300 7550 60  0000 C CNN
+F 4 "CAP CER 0.1UF 16V X7R 0603 " H 0   0   50  0001 C CNN "Description"
+F 5 "CC0603KPX7R7BB104" H 0   0   50  0001 C CNN "PartNumber"
+F 6 "311-1335-1-ND" H 0   0   50  0001 C CNN "digikey"
 	1    10300 7550
 	0    1    1    0   
 $EndComp
@@ -572,9 +579,13 @@ L Connector_Generic:Conn_02x06_Odd_Even J601
 U 1 1 5E9506B9
 P 3300 2600
 F 0 "J601" H 3350 3017 50  0000 C CNN
-F 1 "pinHeader" H 3350 2926 50  0000 C CNN
+F 1 "pin header 2x6 2.54" H 3350 2926 50  0000 C CNN
 F 2 "servo:PinSocket_2x06_P2.54mm_Vertical_SMD" H 3300 2600 50  0001 C CNN
 F 3 "~" H 3300 2600 50  0001 C CNN
+F 4 "Connector Header Surface Mount 12 position 0.100\" (2.54mm) " H 0   0   50  0001 C CNN "Description"
+F 5 "GBC06DABN-M30" H 0   0   50  0001 C CNN "PartNumber"
+F 6 "S2351E-06-ND" H 0   0   50  0001 C CNN "digikey"
+F 7 "1.10200" H 0   0   50  0001 C CNN "price@10"
 	1    3300 2600
 	1    0    0    -1  
 $EndComp

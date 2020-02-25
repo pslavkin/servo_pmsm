@@ -189,6 +189,9 @@ F 1 "DP83822" H 7150 5475 50  0000 C CNN
 F 2 "servo:QFN-32-1EP_5x5mm_P0.5mm_EP2.9x2.9mm_ThermalVias" H 7150 4000 50  0001 C CNN
 F 3 "../doc/datasheets/dp83822i.pdf" H 7150 4000 50  0001 C CNN
 F 4 "DP83822IRHBR" V -150 2900 60  0001 C CNN "PartNumber"
+F 5 "Ethernet Interface 32-VQFN (5x5) " H 0   0   50  0001 C CNN "Description"
+F 6 "296-47256-1-ND" H 0   0   50  0001 C CNN "digikey"
+F 7 "2.37700" H 0   0   50  0001 C CNN "price@10"
 	1    7150 4000
 	1    0    0    -1  
 $EndComp
@@ -366,6 +369,7 @@ F 2 "servo:C_0603_1608Metric" H 4450 3200 60  0001 C CNN
 F 3 "" H 4450 3300 60  0000 C CNN
 F 4 "490-10475-1-ND" H 0   0   50  0001 C CNN "digikey"
 F 5 "GRM188R61A106ME69D " H 0   0   50  0001 C CNN "PartNumber"
+F 6 "10µF ±20% 10V Ceramic Capacitor X5R 0603 (1608 Metric) " H 0   0   50  0001 C CNN "Description"
 	1    4450 3300
 	0    -1   -1   0   
 $EndComp
@@ -379,6 +383,7 @@ F 2 "servo:C_0603_1608Metric" H 4150 3000 60  0001 C CNN
 F 3 "" H 4150 3100 60  0000 C CNN
 F 4 "490-10475-1-ND" H 0   0   50  0001 C CNN "digikey"
 F 5 "GRM188R61A106ME69D " H 0   0   50  0001 C CNN "PartNumber"
+F 6 "10µF ±20% 10V Ceramic Capacitor X5R 0603 (1608 Metric) " H 0   0   50  0001 C CNN "Description"
 	1    4150 3100
 	0    -1   -1   0   
 $EndComp
@@ -483,7 +488,7 @@ L servo:Resistor R203
 U 1 1 63C68282
 P 8950 4500
 F 0 "R203" H 8950 4615 20  0000 C CNN
-F 1 "0e" H 8950 4572 20  0000 C CNN
+F 1 "0" H 8950 4572 20  0000 C CNN
 F 2 "servo:R_0603_1608Metric" H 8450 4400 60  0001 C CNN
 F 3 "" H 8550 4500 60  0001 C CNN
 	1    8950 4500
@@ -766,6 +771,7 @@ F 2 "servo:C_1206_3216Metric" H 15400 4350 60  0001 C CNN
 F 3 "" H 15400 4450 60  0000 C CNN
 F 4 "12061C472KAT2A" H 0   0   50  0001 C CNN "PartNumber"
 F 5 "478-1521-1-ND" H 0   0   50  0001 C CNN "digikey"
+F 6 "4700pF ±10% 100V Ceramic Capacitor X7R 1206 (3216 Metric) " H 0   0   50  0001 C CNN "Description"
 	1    15400 4450
 	0    1    1    0   
 $EndComp
@@ -797,6 +803,9 @@ F 0 "IC201" H 7800 8643 39  0000 C CNN
 F 1 "TPD4E001QDBV" H 7800 8568 39  0000 C CNN
 F 2 "servo:SOT-23-6" H 7800 8350 60  0001 C CNN
 F 3 "../doc/datasheets/tpd4e001-q1.pdf" H 7850 8650 60  0001 C CNN
+F 4 "TVS DIODE 5.5V 16V SOT23-6 " H 0   0   50  0001 C CNN "Description"
+F 5 "TPD4E001QDBVRQ1" H 0   0   50  0001 C CNN "PartNumber"
+F 6 " 296-39344-1-ND" H 0   0   50  0001 C CNN "digikey"
 	1    7800 8350
 	1    0    0    -1  
 $EndComp
@@ -839,7 +848,7 @@ L servo:Resistor R210
 U 1 1 5E6ED74D
 P 8500 8350
 F 0 "R210" H 8500 8465 20  0000 C CNN
-F 1 "10e" H 8500 8422 20  0000 C CNN
+F 1 "10" H 8500 8422 20  0000 C CNN
 F 2 "servo:R_1206_3216Metric_Pad1.42x1.75mm_HandSolder" H 8000 8250 60  0001 C CNN
 F 3 "" H 8100 8350 60  0001 C CNN
 	1    8500 8350
@@ -929,9 +938,12 @@ L servo:0821-1X1T-36-F J201
 U 1 1 5E23A3EB
 P 14150 3300
 F 0 "J201" H 14400 4565 50  0000 C CNN
-F 1 "0821-1X1T-36-F" H 14400 4474 50  0000 C CNN
+F 1 "RJ45 USB" H 14400 4474 50  0000 C CNN
 F 2 "servo:BEL_0821-1X1T-36-F" H 14000 4650 50  0001 L BNN
 F 3 "../doc/datasheets/dr-MAG-0821-1X1T-36-F.pdf" H 14150 4550 50  0001 L BNN
+F 4 "1 Port RJ45 with USB A Magjack Connector Through Hole 10/100 Base-T, AutoMDIX " H 0   0   50  0001 C CNN "Description"
+F 5 "0821-1X1T-36-F " H 0   0   50  0001 C CNN "PartNumber"
+F 6 "0821-1X1T-36-F " H 0   0   50  0001 C CNN "digikey"
 	1    14150 3300
 	1    0    0    -1  
 $EndComp

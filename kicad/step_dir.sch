@@ -131,9 +131,13 @@ P 8600 3850
 AR Path="/5DE3DF56/6322E1B9" Ref="J1001"  Part="1" 
 AR Path="/5F8D42C2/6322E1B9" Ref="J?"  Part="1" 
 F 0 "J1001" H 8650 4243 39  0000 C CNN
-F 1 "tblock2x6" H 8650 4168 39  0000 C CNN
+F 1 "tblock 2x6 3.81" H 8650 4168 39  0000 C CNN
 F 2 "servo:tblock02x6_3.81" H 8550 4050 50  0001 C CNN
-F 3 "../doc/datasheets/tblock2rows.pdf" H 8650 4150 50  0001 C CNN
+F 3 "" H 8650 4150 50  0001 C CNN
+F 4 "12 Position Terminal Block Header, Male Pins, Shrouded (4 Side) 0.150\" (3.81mm) 90°, Right Angle Through Hole " H 0   0   50  0001 C CNN "Description"
+F 5 "1843114 " H 0   0   50  0001 C CNN "PartNumber"
+F 6 "277-6009-ND " H 0   0   50  0001 C CNN "digikey"
+F 7 "7.50500" H 0   0   50  0001 C CNN "price@10"
 	1    8600 3850
 	1    0    0    -1  
 $EndComp
@@ -358,6 +362,7 @@ F 2 "servo:C_0603_1608Metric" H 7500 5500 60  0001 C CNN
 F 3 "" H 7500 5600 60  0000 C CNN
 F 4 "CC0603KPX7R7BB104" H 0   0   50  0001 C CNN "PartNumber"
 F 5 "311-1335-1-ND" H 0   0   50  0001 C CNN "digikey"
+F 6 "CAP CER 0.1UF 16V X7R 0603 " H 0   0   50  0001 C CNN "Description"
 	1    7500 5600
 	0    1    1    0   
 $EndComp

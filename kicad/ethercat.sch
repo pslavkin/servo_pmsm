@@ -264,6 +264,9 @@ F 1 "DP83822" H 6650 4325 50  0000 C CNN
 F 2 "servo:QFN-32-1EP_5x5mm_P0.5mm_EP2.9x2.9mm_ThermalVias" H 6650 2850 50  0001 C CNN
 F 3 "../doc/datasheets/dp83822i.pdf" H 6650 2850 50  0001 C CNN
 F 4 "DP83822IRHBR" V -650 1750 60  0001 C CNN "PartNumber"
+F 5 "Ethernet Interface 32-VQFN (5x5) " H 0   0   50  0001 C CNN "Description"
+F 6 "296-47256-1-ND" H 0   0   50  0001 C CNN "digikey"
+F 7 "2.37700" H 0   0   50  0001 C CNN "price@10"
 	1    6650 2850
 	1    0    0    -1  
 $EndComp
@@ -328,6 +331,10 @@ F 1 "CAT24C16WI" H 4200 10468 39  0000 C CNN
 F 2 "servo:SOIC-8_3.9x4.9mm_P1.27mm" H 3700 10500 60  0001 C CNN
 F 3 "../doc/datasheets/CAT24C01-D.PDF" H 3800 10600 60  0001 C CNN
 F 4 "CAT24C16WI-GT3" H 4200 10200 50  0001 C CNN "Fieldname"
+F 5 "EEPROM Memory IC 16Kb (2K x 8) I²C 400kHz 900ns 8-SOIC" H 0   0   50  0001 C CNN "Description"
+F 6 "CAT24C16WI-GT3" H 0   0   50  0001 C CNN "PartNumber"
+F 7 "CAT24C16WI-GT3CT-ND " H 0   0   50  0001 C CNN "digikey"
+F 8 "0.16300" H 0   0   50  0001 C CNN "price@10"
 	1    4200 10200
 	1    0    0    -1  
 $EndComp
@@ -532,6 +539,7 @@ F 2 "servo:C_0603_1608Metric" H 3700 2050 60  0001 C CNN
 F 3 "" H 3700 2150 60  0000 C CNN
 F 4 "490-10475-1-ND" H 0   0   50  0001 C CNN "digikey"
 F 5 "GRM188R61A106ME69D " H 0   0   50  0001 C CNN "PartNumber"
+F 6 "10µF ±20% 10V Ceramic Capacitor X5R 0603 (1608 Metric) " H 0   0   50  0001 C CNN "Description"
 	1    3700 2150
 	0    -1   -1   0   
 $EndComp
@@ -545,6 +553,7 @@ F 2 "servo:C_0603_1608Metric" H 3350 1750 60  0001 C CNN
 F 3 "" H 3350 1850 60  0000 C CNN
 F 4 "490-10475-1-ND" H 0   0   50  0001 C CNN "digikey"
 F 5 "GRM188R61A106ME69D " H 0   0   50  0001 C CNN "PartNumber"
+F 6 "10µF ±20% 10V Ceramic Capacitor X5R 0603 (1608 Metric) " H 0   0   50  0001 C CNN "Description"
 	1    3350 1850
 	0    -1   -1   0   
 $EndComp
@@ -685,6 +694,7 @@ F 2 "servo:LED_0603_1608Metric" H 7200 10300 60  0001 C CNN
 F 3 "../doc/datasheets/LS L29K.pdf" H 7200 10300 60  0001 C CNN
 F 4 "LS L29K-G1H2-1-Z " H 7400 10500 50  0001 C CNN "digikey"
 F 5 "LS L29K-G1H2-1-Z" H 0   0   50  0001 C CNN "PartNumber"
+F 6 "LED RED DIFFUSED 0603 SMD " H 0   0   50  0001 C CNN "Description"
 	1    7400 10500
 	-1   0    0    1   
 $EndComp
@@ -698,6 +708,7 @@ F 2 "servo:LED_0603_1608Metric" H 7200 10050 60  0001 C CNN
 F 3 "../doc/datasheets/LG L29K.pdf" H 7200 10050 60  0001 C CNN
 F 4 "LG L29K-G2J1-24-Z " H 7400 10250 50  0001 C CNN "digikey"
 F 5 "LG L29K-G2J1-24-Z" H 0   0   50  0001 C CNN "PartNumber"
+F 6 "LED GREEN DIFFUSED 0603 SMD " H 0   0   50  0001 C CNN "Description"
 	1    7400 10250
 	-1   0    0    1   
 $EndComp
@@ -808,7 +819,7 @@ L servo:Resistor R423
 U 1 1 5E74B0E2
 P 8450 3350
 F 0 "R423" H 8450 3465 20  0000 C CNN
-F 1 "0e" H 8450 3422 20  0000 C CNN
+F 1 "0" H 8450 3422 20  0000 C CNN
 F 2 "servo:R_0603_1608Metric" H 7950 3250 60  0001 C CNN
 F 3 "" H 8050 3350 60  0001 C CNN
 	1    8450 3350
@@ -1160,6 +1171,9 @@ F 1 "DP83822" H 6800 8475 50  0000 C CNN
 F 2 "servo:QFN-32-1EP_5x5mm_P0.5mm_EP2.9x2.9mm_ThermalVias" H 6800 7000 50  0001 C CNN
 F 3 "../doc/datasheets/dp83822i.pdf" H 6800 7000 50  0001 C CNN
 F 4 "DP83822IRHBR" V -500 5900 60  0001 C CNN "PartNumber"
+F 5 "Ethernet Interface 32-VQFN (5x5) " H 0   0   50  0001 C CNN "Description"
+F 6 "296-47256-1-ND" H 0   0   50  0001 C CNN "digikey"
+F 7 "2.37700" H 0   0   50  0001 C CNN "price@10"
 	1    6800 7000
 	1    0    0    -1  
 $EndComp
@@ -1372,6 +1386,7 @@ F 2 "servo:C_0603_1608Metric" H 3700 6200 60  0001 C CNN
 F 3 "" H 3700 6300 60  0000 C CNN
 F 4 "490-10475-1-ND" H 0   0   50  0001 C CNN "digikey"
 F 5 "GRM188R61A106ME69D " H 0   0   50  0001 C CNN "PartNumber"
+F 6 "10µF ±20% 10V Ceramic Capacitor X5R 0603 (1608 Metric) " H 0   0   50  0001 C CNN "Description"
 	1    3700 6300
 	0    -1   -1   0   
 $EndComp
@@ -1385,6 +1400,7 @@ F 2 "servo:C_0603_1608Metric" H 3450 5950 60  0001 C CNN
 F 3 "" H 3450 6050 60  0000 C CNN
 F 4 "490-10475-1-ND" H 0   0   50  0001 C CNN "digikey"
 F 5 "GRM188R61A106ME69D " H 0   0   50  0001 C CNN "PartNumber"
+F 6 "10µF ±20% 10V Ceramic Capacitor X5R 0603 (1608 Metric) " H 0   0   50  0001 C CNN "Description"
 	1    3450 6050
 	0    -1   -1   0   
 $EndComp
@@ -1522,7 +1538,7 @@ L servo:Resistor R426
 U 1 1 6322F0DA
 P 8600 7500
 F 0 "R426" H 8600 7615 20  0000 C CNN
-F 1 "0e" H 8600 7572 20  0000 C CNN
+F 1 "0" H 8600 7572 20  0000 C CNN
 F 2 "servo:R_0603_1608Metric" H 8100 7400 60  0001 C CNN
 F 3 "" H 8200 7500 60  0001 C CNN
 	1    8600 7500
@@ -1855,9 +1871,13 @@ L servo:rj45x2_0845-2G1T-H5 U404
 U 1 1 5E2209F6
 P 14800 4900
 F 0 "U404" H 15277 4938 39  0000 L CNN
-F 1 "rj45x2" H 15277 4863 39  0000 L CNN
+F 1 "RJ45x2" H 15277 4863 39  0000 L CNN
 F 2 "servo:rj45x2_0845-2G1T-H5" H 15300 5200 20  0001 C CNN
 F 3 "../doc/datasheets/rj45x2_dr-MAG-0845-2G1T-H5-1309698.pdf" H 15400 5300 20  0001 C CNN
+F 4 "2 Port RJ45 Magjack Connector Through Hole 10/100 Base-T, AutoMDIX " H 0   0   50  0001 C CNN "Description"
+F 5 "0845-2G1T-H5 " H 0   0   50  0001 C CNN "PartNumber"
+F 6 "380-1123-ND" H 0   0   50  0001 C CNN "digikey"
+F 7 "7.17400" H 0   0   50  0001 C CNN "price@10"
 	1    14800 4900
 	1    0    0    -1  
 $EndComp
@@ -2040,6 +2060,7 @@ F 2 "servo:C_1206_3216Metric" H 14850 6400 60  0001 C CNN
 F 3 "" H 14850 6500 60  0000 C CNN
 F 4 "12061C472KAT2A" H 0   0   50  0001 C CNN "PartNumber"
 F 5 "478-1521-1-ND" H 0   0   50  0001 C CNN "digikey"
+F 6 "4700pF ±10% 100V Ceramic Capacitor X7R 1206 (3216 Metric) " H 0   0   50  0001 C CNN "Description"
 	1    14850 6500
 	0    1    1    0   
 $EndComp

@@ -1114,10 +1114,10 @@ ENDDEF
 # Ferrite_Bead
 #
 DEF Ferrite_Bead L 0 40 Y Y 1 F N
-F0 "L" 40 -20 60 H V L BNN
-F1 "Ferrite_Bead" 0 0 60 H V C CNN
-F2 "" 0 0 60 H V C CNN
-F3 "" 0 0 60 H V C CNN
+F0 "L" -50 100 20 H V L BNN
+F1 "Ferrite_Bead" 50 -100 20 H V C CNN
+F2 "" -150 0 60 H I C CNN
+F3 "" -50 100 60 H I C CNN
 DRAW
 S -80 40 80 -40 0 1 10 f
 P 2 0 1 10 -50 0 50 0 N

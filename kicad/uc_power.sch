@@ -311,6 +311,8 @@ F 1 "TMS320F28388DZWTS" H 6300 5975 50  0000 C CNN
 F 2 "servo:BGA337CP80_19X19_1600X1600X140B50N" H 6300 4300 50  0001 C CNN
 F 3 "../doc/datasheets/tms320f28388d_datasheet.pdf" H 6300 4300 50  0001 C CNN
 F 4 "TMS320F28388DZWTS" H 4700 -1800 60  0001 C CNN "PartNumber"
+F 5 "32-bit MCU with connectivity manager, 2x C28x+CLA CPU, 1.5 MB flash, FPU64, CLB, Ethernet, EtherCAT" H 0   0   50  0001 C CNN "Description"
+F 6 "14.96" H 0   0   50  0001 C CNN "price@10"
 	4    6300 4300
 	1    0    0    -1  
 $EndComp
@@ -519,10 +521,14 @@ $Comp
 L servo:Ferrite_Bead L502
 U 1 1 5DF0B53E
 P 12000 4450
-F 0 "L502" H 12000 4679 60  0000 C CNN
-F 1 "60 ohm" H 12000 4573 60  0000 C CNN
-F 2 "servo:L_1206_3216Metric_Pad1.42x1.75mm_HandSolder" H 11920 4310 60  0001 C CNN
-F 3 "" H 11920 4310 60  0000 C CNN
+F 0 "L502" H 11950 4550 20  0000 L BNN
+F 1 "50 ohm@100Mhz" H 12050 4350 20  0000 C CNN
+F 2 "servo:L_1206_3216Metric_Pad1.42x1.75mm_HandSolder" H 11850 4450 60  0001 C CNN
+F 3 "" H 11950 4550 60  0001 C CNN
+F 4 "50 Ohms @ 100MHz 1 Power Line Ferrite Bead 1206 (3216 Metric) 3A 30mOhm " H 0   0   50  0001 C CNN "Description"
+F 5 "PE-1206PFB500ST" H 0   0   50  0001 C CNN "PartNumber"
+F 6 "553-2403-1-ND" H 0   0   50  0001 C CNN "digikey"
+F 7 "0.14900" H 0   0   50  0001 C CNN "price@10"
 	1    12000 4450
 	1    0    0    -1  
 $EndComp
@@ -530,10 +536,14 @@ $Comp
 L servo:Ferrite_Bead L501
 U 1 1 5DF0B545
 P 12000 2950
-F 0 "L501" H 11920 2990 60  0000 L BNN
-F 1 "60 ohm" H 11920 2810 60  0000 L BNN
-F 2 "servo:L_1206_3216Metric_Pad1.42x1.75mm_HandSolder" H 11920 2810 60  0001 C CNN
-F 3 "" H 11920 2810 60  0000 C CNN
+F 0 "L501" H 11950 3050 20  0000 L BNN
+F 1 "50 ohm@100Mhz" H 12000 2850 20  0000 C CNN
+F 2 "servo:L_1206_3216Metric_Pad1.42x1.75mm_HandSolder" H 11850 2950 60  0001 C CNN
+F 3 "" H 11950 3050 60  0001 C CNN
+F 4 "50 Ohms @ 100MHz 1 Power Line Ferrite Bead 1206 (3216 Metric) 3A 30mOhm " H 0   0   50  0001 C CNN "Description"
+F 5 "PE-1206PFB500ST" H 0   0   50  0001 C CNN "PartNumber"
+F 6 "553-2403-1-ND" H 0   0   50  0001 C CNN "digikey"
+F 7 "0.14900" H 0   0   50  0001 C CNN "price@10"
 	1    12000 2950
 	1    0    0    -1  
 $EndComp
@@ -542,9 +552,13 @@ L servo:Ferrite_Bead L503
 U 1 1 5DF0B54C
 P 12000 5950
 F 0 "L503" H 11920 5990 60  0000 L BNN
-F 1 "220 ohm" H 11920 5810 60  0000 L BNN
+F 1 "120 ohm@100mHz" H 11920 5810 60  0000 L BNN
 F 2 "servo:L_1206_3216Metric_Pad1.42x1.75mm_HandSolder" H 11920 5810 60  0001 C CNN
 F 3 "" H 11920 5810 60  0000 C CNN
+F 4 "120 Ohms @ 100MHz 1 Power Line Ferrite Bead 1206 (3216 Metric) 3A 30mOhm " H 0   0   50  0001 C CNN "Description"
+F 5 "PE-1206PFB121ST" H 0   0   50  0001 C CNN "PartNumber"
+F 6 "553-2402-1-ND" H 0   0   50  0001 C CNN "digikey"
+F 7 "0.14900" H 0   0   50  0001 C CNN "price@10"
 	1    12000 5950
 	1    0    0    -1  
 $EndComp
@@ -558,6 +572,7 @@ F 2 "servo:C_0603_1608Metric" H 12350 6150 60  0001 C CNN
 F 3 "" H 12350 6250 60  0000 C CNN
 F 4 "490-10475-1-ND" H 0   0   50  0001 C CNN "digikey"
 F 5 "GRM188R61A106ME69D " H 0   0   50  0001 C CNN "PartNumber"
+F 6 "10µF ±20% 10V Ceramic Capacitor X5R 0603 (1608 Metric) " H 0   0   50  0001 C CNN "Description"
 	1    12350 6250
 	0    -1   -1   0   
 $EndComp
@@ -569,6 +584,9 @@ F 0 "C531" V 12428 3360 20  0000 L CNN
 F 1 "2.2uF" V 12471 3360 20  0000 L CNN
 F 2 "servo:C_0603_1608Metric" H 12400 3150 60  0001 C CNN
 F 3 "" H 12400 3250 60  0000 C CNN
+F 4 "CAP CER 2.2UF 16V X6S 0603 " H 0   0   50  0001 C CNN "Description"
+F 5 "GRT188C81C225KE13D" H 0   0   50  0001 C CNN "PartNumber"
+F 6 "490-12287-2-ND" H 0   0   50  0001 C CNN "digikey"
 	1    12400 3250
 	0    1    1    0   
 $EndComp
@@ -580,6 +598,9 @@ F 0 "C529" V 12378 4860 20  0000 L CNN
 F 1 "2.2uF" V 12421 4860 20  0000 L CNN
 F 2 "servo:C_0603_1608Metric" H 12350 4650 60  0001 C CNN
 F 3 "" H 12350 4750 60  0000 C CNN
+F 4 "CAP CER 2.2UF 16V X6S 0603 " H 0   0   50  0001 C CNN "Description"
+F 5 "GRT188C81C225KE13D" H 0   0   50  0001 C CNN "PartNumber"
+F 6 "490-12287-2-ND" H 0   0   50  0001 C CNN "digikey"
 	1    12350 4750
 	0    1    1    0   
 $EndComp
@@ -591,6 +612,9 @@ F 0 "C528" V 11678 4860 20  0000 L CNN
 F 1 "2.2uF" V 11721 4860 20  0000 L CNN
 F 2 "servo:C_0603_1608Metric" H 11650 4650 60  0001 C CNN
 F 3 "" H 11650 4750 60  0000 C CNN
+F 4 "CAP CER 2.2UF 16V X6S 0603 " H 0   0   50  0001 C CNN "Description"
+F 5 "GRT188C81C225KE13D" H 0   0   50  0001 C CNN "PartNumber"
+F 6 "490-12287-2-ND" H 0   0   50  0001 C CNN "digikey"
 	1    11650 4750
 	0    1    1    0   
 $EndComp
@@ -914,6 +938,8 @@ F 1 "TMS320F28388DZWTS" H 3550 6925 50  0000 C CNN
 F 2 "servo:BGA337CP80_19X19_1600X1600X140B50N" H 3550 4750 50  0001 C CNN
 F 3 "../doc/datasheets/tms320f28388d_datasheet.pdf" H 3550 4750 50  0001 C CNN
 F 4 "TMS320F28388DZWTS" H 1950 4250 60  0001 C CNN "PartNumber"
+F 5 "32-bit MCU with connectivity manager, 2x C28x+CLA CPU, 1.5 MB flash, FPU64, CLB, Ethernet, EtherCAT" H 0   0   50  0001 C CNN "Description"
+F 6 "14.96" H 0   0   50  0001 C CNN "price@10"
 	5    3550 4750
 	1    0    0    -1  
 $EndComp
@@ -1467,6 +1493,7 @@ F 2 "servo:C_0603_1608Metric" H 11600 6050 60  0001 C CNN
 F 3 "" H 11600 6150 60  0000 C CNN
 F 4 "490-10475-1-ND" H 0   0   50  0001 C CNN "digikey"
 F 5 "GRM188R61A106ME69D " H 0   0   50  0001 C CNN "PartNumber"
+F 6 "10µF ±20% 10V Ceramic Capacitor X5R 0603 (1608 Metric) " H 0   0   50  0001 C CNN "Description"
 	1    11600 6150
 	0    1    1    0   
 $EndComp

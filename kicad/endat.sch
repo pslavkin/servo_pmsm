@@ -41,6 +41,7 @@ F 2 "servo:C_0603_1608Metric" H 6350 3200 60  0001 C CNN
 F 3 "" H 6350 3300 60  0000 C CNN
 F 4 "CC0603KPX7R7BB104" H 0   0   50  0001 C CNN "PartNumber"
 F 5 "311-1335-1-ND" H 0   0   50  0001 C CNN "digikey"
+F 6 "CAP CER 0.1UF 16V X7R 0603 " H 0   0   50  0001 C CNN "Description"
 	1    6350 3300
 	0    1    1    0   
 $EndComp
@@ -114,9 +115,12 @@ P 8300 5100
 AR Path="/5DE3DF56/5E51D037" Ref="J?"  Part="1" 
 AR Path="/5F8D42C2/5E51D037" Ref="J1901"  Part="1" 
 F 0 "J1901" H 8350 5493 39  0000 C CNN
-F 1 "tblock2x6" H 8350 5418 39  0000 C CNN
+F 1 "tblock 2x6 3.81" H 8350 5418 39  0000 C CNN
 F 2 "servo:tblock02x6_3.81" H 8250 5300 50  0001 C CNN
 F 3 "../doc/datasheets/tblock2rows.pdf" H 8350 5400 50  0001 C CNN
+F 4 "12 Position Terminal Block Header, Male Pins, Shrouded (4 Side) 0.150\" (3.81mm) 90°, Right Angle Through Hole " H 0   0   50  0001 C CNN "Description"
+F 5 "1843114 " H 0   0   50  0001 C CNN "PartNumber"
+F 6 "277-6009-ND " H 0   0   50  0001 C CNN "digikey"
 	1    8300 5100
 	1    0    0    -1  
 $EndComp
@@ -138,6 +142,7 @@ F 2 "servo:C_0603_1608Metric" H 4600 3200 60  0001 C CNN
 F 3 "" H 4600 3300 60  0000 C CNN
 F 4 "CC0603KPX7R7BB104" H 0   0   50  0001 C CNN "PartNumber"
 F 5 "311-1335-1-ND" H 0   0   50  0001 C CNN "digikey"
+F 6 "CAP CER 0.1UF 16V X7R 0603 " H 0   0   50  0001 C CNN "Description"
 	1    4600 3300
 	0    -1   1    0   
 $EndComp
@@ -209,7 +214,7 @@ AR Path="/5E1BAEAA/5F0FCE0B" Ref="R?"  Part="1"
 AR Path="/5DE49152/5F0FCE0B" Ref="R?"  Part="1" 
 AR Path="/5F8D42C2/5F0FCE0B" Ref="R1901"  Part="1" 
 F 0 "R1901" H 2500 5815 20  0000 C CNN
-F 1 "0e" H 2500 5772 20  0000 C CNN
+F 1 "0" H 2500 5772 20  0000 C CNN
 F 2 "servo:R_0603_1608Metric" H 2000 5600 60  0001 C CNN
 F 3 "" H 2100 5700 60  0001 C CNN
 	1    2500 5700
@@ -251,6 +256,7 @@ F 2 "servo:C_0603_1608Metric" H 2500 3600 60  0001 C CNN
 F 3 "" H 2500 3700 60  0000 C CNN
 F 4 "CC0603KPX7R7BB104" H 0   0   50  0001 C CNN "PartNumber"
 F 5 "311-1335-1-ND" H 0   0   50  0001 C CNN "digikey"
+F 6 "CAP CER 0.1UF 16V X7R 0603 " H 0   0   50  0001 C CNN "Description"
 	1    2500 3700
 	0    1    1    0   
 $EndComp
@@ -351,6 +357,7 @@ F 2 "servo:C_0603_1608Metric" H 10400 3200 60  0001 C CNN
 F 3 "" H 10400 3300 60  0000 C CNN
 F 4 "CC0603KPX7R7BB104" H 0   0   50  0001 C CNN "PartNumber"
 F 5 "311-1335-1-ND" H 0   0   50  0001 C CNN "digikey"
+F 6 "CAP CER 0.1UF 16V X7R 0603 " H 0   0   50  0001 C CNN "Description"
 	1    10400 3300
 	0    -1   1    0   
 $EndComp
@@ -431,6 +438,7 @@ F 2 "servo:C_0603_1608Metric" H 12150 3200 60  0001 C CNN
 F 3 "" H 12150 3300 60  0000 C CNN
 F 4 "CC0603KPX7R7BB104" H 0   0   50  0001 C CNN "PartNumber"
 F 5 "311-1335-1-ND" H 0   0   50  0001 C CNN "digikey"
+F 6 "CAP CER 0.1UF 16V X7R 0603 " H 0   0   50  0001 C CNN "Description"
 	1    12150 3300
 	0    1    1    0   
 $EndComp
@@ -495,7 +503,7 @@ AR Path="/5E1BAEAA/5F749C9A" Ref="R?"  Part="1"
 AR Path="/5DE49152/5F749C9A" Ref="R?"  Part="1" 
 AR Path="/5F8D42C2/5F749C9A" Ref="R1932"  Part="1" 
 F 0 "R1932" H 14250 5815 20  0000 C CNN
-F 1 "0e" H 14250 5772 20  0000 C CNN
+F 1 "0" H 14250 5772 20  0000 C CNN
 F 2 "servo:R_0603_1608Metric" H 13750 5600 60  0001 C CNN
 F 3 "" H 13850 5700 60  0001 C CNN
 	1    14250 5700
@@ -537,6 +545,7 @@ F 2 "servo:C_0603_1608Metric" H 14250 3600 60  0001 C CNN
 F 3 "" H 14250 3700 60  0000 C CNN
 F 4 "CC0603KPX7R7BB104" H 0   0   50  0001 C CNN "PartNumber"
 F 5 "311-1335-1-ND" H 0   0   50  0001 C CNN "digikey"
+F 6 "CAP CER 0.1UF 16V X7R 0603 " H 0   0   50  0001 C CNN "Description"
 	1    14250 3700
 	0    -1   1    0   
 $EndComp
