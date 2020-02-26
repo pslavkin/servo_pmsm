@@ -39,6 +39,10 @@ F 0 "U801" H 3050 2889 60  0000 C CNN
 F 1 "SI8660BD" H 3050 2783 60  0000 C CNN
 F 2 "servo:SOIC-16W_7.5x10.3mm_P1.27mm" H 2450 2600 60  0001 C CNN
 F 3 "../doc/datasheets/Si8660.pdf" H 2950 2900 60  0001 C CNN
+F 4 "General Purpose Digital Isolator 5000Vrms 6 Channel 150Mbps 35kV/µs CMTI 16-SOIC (0.295\", 7.50mm Width) " H 0   0   50  0001 C CNN "Description"
+F 5 "SI8660BD-B-ISR" H 0   0   50  0001 C CNN "PartNumber"
+F 6 " 336-4786-1-ND" H 0   0   50  0001 C CNN "digikey"
+F 7 "2.75000" H 0   0   50  0001 C CNN "price@10"
 	1    3050 2300
 	1    0    0    -1  
 $EndComp
@@ -281,6 +285,10 @@ F 0 "U802" H 3050 4239 60  0000 C CNN
 F 1 "SI8662BD" H 3050 4133 60  0000 C CNN
 F 2 "servo:SOIC-16W_7.5x10.3mm_P1.27mm" H 2450 3950 60  0001 C CNN
 F 3 "../doc/datasheets/Si8660.pdf" H 2950 4250 60  0001 C CNN
+F 4 "General Purpose Digital Isolator 5000Vrms 6 Channel 150Mbps 35kV/µs CMTI 16-SOIC (0.295\", 7.50mm Width)" H 0   0   50  0001 C CNN "Description"
+F 5 "SI8662BD-B-IS" H 0   0   50  0001 C CNN "PartNumber"
+F 6 "336-2125-5-ND " H 0   0   50  0001 C CNN "digikey"
+F 7 "2.75000" H 0   0   50  0001 C CNN "price@10"
 	1    3050 3650
 	1    0    0    -1  
 $EndComp
@@ -292,6 +300,10 @@ F 0 "U807" H 4450 3750 39  0000 L BNN
 F 1 "SN74LVC2G17DBVR" H 5150 3800 20  0000 L BNN
 F 2 "servo:SOT-23-6" H 4450 4050 60  0001 C CNN
 F 3 "../doc/datasheets/sn74lvc2g17.pdf" H 4650 4300 60  0001 C CNN
+F 4 "Buffer, Non-Inverting 2 Element 1 Bit per Element Push-Pull Output SOT-23-6" H 0   0   50  0001 C CNN "Description"
+F 5 "SN74LVC2G17DBVR" H 0   0   50  0001 C CNN "PartNumber"
+F 6 " 296-SN74LVC2G17DBVRCT-ND " H 0   0   50  0001 C CNN "digikey"
+F 7 "0.30200" H 0   0   50  0001 C CNN "price@10"
 	1    4950 3850
 	1    0    0    -1  
 $EndComp
@@ -303,6 +315,10 @@ F 0 "U806" H 4450 3300 39  0000 L BNN
 F 1 "SN74LVC2G17DBVR" H 5150 3350 20  0000 L BNN
 F 2 "servo:SOT-23-6" H 4450 3600 60  0001 C CNN
 F 3 "../doc/datasheets/sn74lvc2g17.pdf" H 4650 3850 60  0001 C CNN
+F 4 "Buffer, Non-Inverting 2 Element 1 Bit per Element Push-Pull Output SOT-23-6" H 0   0   50  0001 C CNN "Description"
+F 5 "SN74LVC2G17DBVR" H 0   0   50  0001 C CNN "PartNumber"
+F 6 " 296-SN74LVC2G17DBVRCT-ND " H 0   0   50  0001 C CNN "digikey"
+F 7 "0.30200" H 0   0   50  0001 C CNN "price@10"
 	1    4950 3400
 	1    0    0    -1  
 $EndComp
@@ -314,6 +330,10 @@ F 0 "U805" H 4450 2850 39  0000 L BNN
 F 1 "SN74LVC2G17DBVR" H 5150 2900 20  0000 L BNN
 F 2 "servo:SOT-23-6" H 4450 3150 60  0001 C CNN
 F 3 "../doc/datasheets/sn74lvc2g17.pdf" H 4650 3400 60  0001 C CNN
+F 4 "Buffer, Non-Inverting 2 Element 1 Bit per Element Push-Pull Output SOT-23-6" H 0   0   50  0001 C CNN "Description"
+F 5 "SN74LVC2G17DBVR" H 0   0   50  0001 C CNN "PartNumber"
+F 6 " 296-SN74LVC2G17DBVRCT-ND " H 0   0   50  0001 C CNN "digikey"
+F 7 "0.30200" H 0   0   50  0001 C CNN "price@10"
 	1    4950 2950
 	1    0    0    -1  
 $EndComp
@@ -325,6 +345,10 @@ F 0 "U804" H 4450 2400 39  0000 L BNN
 F 1 "SN74LVC2G17DBVR" H 5150 2450 20  0000 L BNN
 F 2 "servo:SOT-23-6" H 4450 2700 60  0001 C CNN
 F 3 "../doc/datasheets/sn74lvc2g17.pdf" H 4650 2950 60  0001 C CNN
+F 4 "Buffer, Non-Inverting 2 Element 1 Bit per Element Push-Pull Output SOT-23-6" H 0   0   50  0001 C CNN "Description"
+F 5 "SN74LVC2G17DBVR" H 0   0   50  0001 C CNN "PartNumber"
+F 6 " 296-SN74LVC2G17DBVRCT-ND " H 0   0   50  0001 C CNN "digikey"
+F 7 "0.30200" H 0   0   50  0001 C CNN "price@10"
 	1    4950 2500
 	1    0    0    -1  
 $EndComp
@@ -354,6 +378,7 @@ F 3 "" H 6200 3900 60  0000 C CNN
 F 4 "CAP CER 100PF 10V X7R 0603 " H 0   0   50  0001 C CNN "Description"
 F 5 "885012206003" H 0   0   50  0001 C CNN "PartNumber"
 F 6 " 732-7922-1-ND" H 0   0   50  0001 C CNN "digikey"
+F 7 "0.02100" H 0   0   50  0001 C CNN "price@10"
 	1    6200 3900
 	0    1    1    0   
 $EndComp
@@ -368,6 +393,7 @@ F 3 "" H 6400 3900 60  0000 C CNN
 F 4 "CAP CER 100PF 10V X7R 0603 " H 0   0   50  0001 C CNN "Description"
 F 5 "885012206003" H 0   0   50  0001 C CNN "PartNumber"
 F 6 " 732-7922-1-ND" H 0   0   50  0001 C CNN "digikey"
+F 7 "0.02100" H 0   0   50  0001 C CNN "price@10"
 	1    6400 3900
 	0    1    1    0   
 $EndComp
@@ -382,6 +408,7 @@ F 3 "" H 7050 3900 60  0000 C CNN
 F 4 "CAP CER 100PF 10V X7R 0603 " H 0   0   50  0001 C CNN "Description"
 F 5 "885012206003" H 0   0   50  0001 C CNN "PartNumber"
 F 6 " 732-7922-1-ND" H 0   0   50  0001 C CNN "digikey"
+F 7 "0.02100" H 0   0   50  0001 C CNN "price@10"
 	1    7050 3900
 	0    1    1    0   
 $EndComp
@@ -396,6 +423,7 @@ F 3 "" H 7250 3900 60  0000 C CNN
 F 4 "CAP CER 100PF 10V X7R 0603 " H 0   0   50  0001 C CNN "Description"
 F 5 "885012206003" H 0   0   50  0001 C CNN "PartNumber"
 F 6 " 732-7922-1-ND" H 0   0   50  0001 C CNN "digikey"
+F 7 "0.02100" H 0   0   50  0001 C CNN "price@10"
 	1    7250 3900
 	0    1    1    0   
 $EndComp
@@ -410,6 +438,7 @@ F 3 "" H 7450 3900 60  0000 C CNN
 F 4 "CAP CER 100PF 10V X7R 0603 " H 0   0   50  0001 C CNN "Description"
 F 5 "885012206003" H 0   0   50  0001 C CNN "PartNumber"
 F 6 " 732-7922-1-ND" H 0   0   50  0001 C CNN "digikey"
+F 7 "0.02100" H 0   0   50  0001 C CNN "price@10"
 	1    7450 3900
 	0    1    1    0   
 $EndComp
@@ -424,6 +453,7 @@ F 3 "" H 7650 3900 60  0000 C CNN
 F 4 "CAP CER 100PF 10V X7R 0603 " H 0   0   50  0001 C CNN "Description"
 F 5 "885012206003" H 0   0   50  0001 C CNN "PartNumber"
 F 6 " 732-7922-1-ND" H 0   0   50  0001 C CNN "digikey"
+F 7 "0.02100" H 0   0   50  0001 C CNN "price@10"
 	1    7650 3900
 	0    1    1    0   
 $EndComp
@@ -438,6 +468,7 @@ F 3 "" H 7850 3900 60  0000 C CNN
 F 4 "CAP CER 100PF 10V X7R 0603 " H 0   0   50  0001 C CNN "Description"
 F 5 "885012206003" H 0   0   50  0001 C CNN "PartNumber"
 F 6 " 732-7922-1-ND" H 0   0   50  0001 C CNN "digikey"
+F 7 "0.02100" H 0   0   50  0001 C CNN "price@10"
 	1    7850 3900
 	0    1    1    0   
 $EndComp
@@ -452,6 +483,7 @@ F 3 "" H 8050 3900 60  0000 C CNN
 F 4 "CAP CER 100PF 10V X7R 0603 " H 0   0   50  0001 C CNN "Description"
 F 5 "885012206003" H 0   0   50  0001 C CNN "PartNumber"
 F 6 " 732-7922-1-ND" H 0   0   50  0001 C CNN "digikey"
+F 7 "0.02100" H 0   0   50  0001 C CNN "price@10"
 	1    8050 3900
 	0    1    1    0   
 $EndComp
@@ -466,6 +498,7 @@ F 3 "" H 8250 3900 60  0000 C CNN
 F 4 "CAP CER 100PF 10V X7R 0603 " H 0   0   50  0001 C CNN "Description"
 F 5 "885012206003" H 0   0   50  0001 C CNN "PartNumber"
 F 6 " 732-7922-1-ND" H 0   0   50  0001 C CNN "digikey"
+F 7 "0.02100" H 0   0   50  0001 C CNN "price@10"
 	1    8250 3900
 	0    1    1    0   
 $EndComp
@@ -480,6 +513,7 @@ F 3 "" H 8450 3900 60  0000 C CNN
 F 4 "CAP CER 100PF 10V X7R 0603 " H 0   0   50  0001 C CNN "Description"
 F 5 "885012206003" H 0   0   50  0001 C CNN "PartNumber"
 F 6 " 732-7922-1-ND" H 0   0   50  0001 C CNN "digikey"
+F 7 "0.02100" H 0   0   50  0001 C CNN "price@10"
 	1    8450 3900
 	0    1    1    0   
 $EndComp
@@ -494,6 +528,7 @@ F 3 "" H 8650 3900 60  0000 C CNN
 F 4 "CAP CER 100PF 10V X7R 0603 " H 0   0   50  0001 C CNN "Description"
 F 5 "885012206003" H 0   0   50  0001 C CNN "PartNumber"
 F 6 " 732-7922-1-ND" H 0   0   50  0001 C CNN "digikey"
+F 7 "0.02100" H 0   0   50  0001 C CNN "price@10"
 	1    8650 3900
 	0    1    1    0   
 $EndComp
@@ -508,6 +543,7 @@ F 3 "" H 8850 3900 60  0000 C CNN
 F 4 "CAP CER 100PF 10V X7R 0603 " H 0   0   50  0001 C CNN "Description"
 F 5 "885012206003" H 0   0   50  0001 C CNN "PartNumber"
 F 6 " 732-7922-1-ND" H 0   0   50  0001 C CNN "digikey"
+F 7 "0.02100" H 0   0   50  0001 C CNN "price@10"
 	1    8850 3900
 	0    1    1    0   
 $EndComp
@@ -671,6 +707,10 @@ F 0 "U813" H 13450 6539 60  0000 C CNN
 F 1 "SI8660BD" H 13450 6433 60  0000 C CNN
 F 2 "servo:SOIC-16W_7.5x10.3mm_P1.27mm" H 12850 6250 60  0001 C CNN
 F 3 "../doc/datasheets/Si8660.pdf" H 13350 6550 60  0001 C CNN
+F 4 "General Purpose Digital Isolator 5000Vrms 6 Channel 150Mbps 35kV/µs CMTI 16-SOIC (0.295\", 7.50mm Width) " H 0   0   50  0001 C CNN "Description"
+F 5 "SI8660BD-B-ISR" H 0   0   50  0001 C CNN "PartNumber"
+F 6 " 336-4786-1-ND" H 0   0   50  0001 C CNN "digikey"
+F 7 "2.75000" H 0   0   50  0001 C CNN "price@10"
 	1    13450 5950
 	-1   0    0    -1  
 $EndComp
@@ -932,6 +972,10 @@ F 0 "U814" H 13450 7889 60  0000 C CNN
 F 1 "SI8662BD" H 13450 7783 60  0000 C CNN
 F 2 "servo:SOIC-16W_7.5x10.3mm_P1.27mm" H 12850 7600 60  0001 C CNN
 F 3 "../doc/datasheets/Si8660.pdf" H 13350 7900 60  0001 C CNN
+F 4 "General Purpose Digital Isolator 5000Vrms 6 Channel 150Mbps 35kV/µs CMTI 16-SOIC (0.295\", 7.50mm Width)" H 0   0   50  0001 C CNN "Description"
+F 5 "SI8662BD-B-IS" H 0   0   50  0001 C CNN "PartNumber"
+F 6 "336-2125-5-ND " H 0   0   50  0001 C CNN "digikey"
+F 7 "2.75000" H 0   0   50  0001 C CNN "price@10"
 	1    13450 7300
 	-1   0    0    -1  
 $EndComp
@@ -943,6 +987,10 @@ F 0 "U812" H 11050 7400 39  0000 L BNN
 F 1 "SN74LVC2G17DBVR" H 11750 7450 20  0000 L BNN
 F 2 "servo:SOT-23-6" H 11050 7700 60  0001 C CNN
 F 3 "../doc/datasheets/sn74lvc2g17.pdf" H 11250 7950 60  0001 C CNN
+F 4 "Buffer, Non-Inverting 2 Element 1 Bit per Element Push-Pull Output SOT-23-6" H 0   0   50  0001 C CNN "Description"
+F 5 "SN74LVC2G17DBVR" H 0   0   50  0001 C CNN "PartNumber"
+F 6 " 296-SN74LVC2G17DBVRCT-ND " H 0   0   50  0001 C CNN "digikey"
+F 7 "0.30200" H 0   0   50  0001 C CNN "price@10"
 	1    11550 7500
 	-1   0    0    -1  
 $EndComp
@@ -954,6 +1002,10 @@ F 0 "U811" H 11050 6950 39  0000 L BNN
 F 1 "SN74LVC2G17DBVR" H 11750 7000 20  0000 L BNN
 F 2 "servo:SOT-23-6" H 11050 7250 60  0001 C CNN
 F 3 "../doc/datasheets/sn74lvc2g17.pdf" H 11250 7500 60  0001 C CNN
+F 4 "Buffer, Non-Inverting 2 Element 1 Bit per Element Push-Pull Output SOT-23-6" H 0   0   50  0001 C CNN "Description"
+F 5 "SN74LVC2G17DBVR" H 0   0   50  0001 C CNN "PartNumber"
+F 6 " 296-SN74LVC2G17DBVRCT-ND " H 0   0   50  0001 C CNN "digikey"
+F 7 "0.30200" H 0   0   50  0001 C CNN "price@10"
 	1    11550 7050
 	-1   0    0    -1  
 $EndComp
@@ -965,6 +1017,10 @@ F 0 "U810" H 11050 6500 39  0000 L BNN
 F 1 "SN74LVC2G17DBVR" H 11750 6550 20  0000 L BNN
 F 2 "servo:SOT-23-6" H 11050 6800 60  0001 C CNN
 F 3 "../doc/datasheets/sn74lvc2g17.pdf" H 11250 7050 60  0001 C CNN
+F 4 "Buffer, Non-Inverting 2 Element 1 Bit per Element Push-Pull Output SOT-23-6" H 0   0   50  0001 C CNN "Description"
+F 5 "SN74LVC2G17DBVR" H 0   0   50  0001 C CNN "PartNumber"
+F 6 " 296-SN74LVC2G17DBVRCT-ND " H 0   0   50  0001 C CNN "digikey"
+F 7 "0.30200" H 0   0   50  0001 C CNN "price@10"
 	1    11550 6600
 	-1   0    0    -1  
 $EndComp
@@ -976,6 +1032,10 @@ F 0 "U809" H 11050 6050 39  0000 L BNN
 F 1 "SN74LVC2G17DBVR" H 11750 6100 20  0000 L BNN
 F 2 "servo:SOT-23-6" H 11050 6350 60  0001 C CNN
 F 3 "../doc/datasheets/sn74lvc2g17.pdf" H 11250 6600 60  0001 C CNN
+F 4 "Buffer, Non-Inverting 2 Element 1 Bit per Element Push-Pull Output SOT-23-6" H 0   0   50  0001 C CNN "Description"
+F 5 "SN74LVC2G17DBVR" H 0   0   50  0001 C CNN "PartNumber"
+F 6 " 296-SN74LVC2G17DBVRCT-ND " H 0   0   50  0001 C CNN "digikey"
+F 7 "0.30200" H 0   0   50  0001 C CNN "price@10"
 	1    11550 6150
 	-1   0    0    -1  
 $EndComp
@@ -987,6 +1047,10 @@ F 0 "U808" H 11050 5600 39  0000 L BNN
 F 1 "SN74LVC2G17DBVR" H 11750 5650 20  0000 L BNN
 F 2 "servo:SOT-23-6" H 11050 5900 60  0001 C CNN
 F 3 "../doc/datasheets/sn74lvc2g17.pdf" H 11250 6150 60  0001 C CNN
+F 4 "Buffer, Non-Inverting 2 Element 1 Bit per Element Push-Pull Output SOT-23-6" H 0   0   50  0001 C CNN "Description"
+F 5 "SN74LVC2G17DBVR" H 0   0   50  0001 C CNN "PartNumber"
+F 6 " 296-SN74LVC2G17DBVRCT-ND " H 0   0   50  0001 C CNN "digikey"
+F 7 "0.30200" H 0   0   50  0001 C CNN "price@10"
 	1    11550 5700
 	-1   0    0    -1  
 $EndComp
@@ -1005,6 +1069,7 @@ F 3 "" H 10300 7550 60  0000 C CNN
 F 4 "CAP CER 100PF 10V X7R 0603 " H 0   0   50  0001 C CNN "Description"
 F 5 "885012206003" H 0   0   50  0001 C CNN "PartNumber"
 F 6 " 732-7922-1-ND" H 0   0   50  0001 C CNN "digikey"
+F 7 "0.02100" H 0   0   50  0001 C CNN "price@10"
 	1    10300 7550
 	0    -1   1    0   
 $EndComp
@@ -1019,6 +1084,7 @@ F 3 "" H 10100 7550 60  0000 C CNN
 F 4 "CAP CER 100PF 10V X7R 0603 " H 0   0   50  0001 C CNN "Description"
 F 5 "885012206003" H 0   0   50  0001 C CNN "PartNumber"
 F 6 " 732-7922-1-ND" H 0   0   50  0001 C CNN "digikey"
+F 7 "0.02100" H 0   0   50  0001 C CNN "price@10"
 	1    10100 7550
 	0    -1   1    0   
 $EndComp
@@ -1033,6 +1099,7 @@ F 3 "" H 9450 7550 60  0000 C CNN
 F 4 "CAP CER 100PF 10V X7R 0603 " H 0   0   50  0001 C CNN "Description"
 F 5 "885012206003" H 0   0   50  0001 C CNN "PartNumber"
 F 6 " 732-7922-1-ND" H 0   0   50  0001 C CNN "digikey"
+F 7 "0.02100" H 0   0   50  0001 C CNN "price@10"
 	1    9450 7550
 	0    -1   1    0   
 $EndComp
@@ -1047,6 +1114,7 @@ F 3 "" H 9250 7550 60  0000 C CNN
 F 4 "CAP CER 100PF 10V X7R 0603 " H 0   0   50  0001 C CNN "Description"
 F 5 "885012206003" H 0   0   50  0001 C CNN "PartNumber"
 F 6 " 732-7922-1-ND" H 0   0   50  0001 C CNN "digikey"
+F 7 "0.02100" H 0   0   50  0001 C CNN "price@10"
 	1    9250 7550
 	0    -1   1    0   
 $EndComp
@@ -1061,6 +1129,7 @@ F 3 "" H 9050 7550 60  0000 C CNN
 F 4 "CAP CER 100PF 10V X7R 0603 " H 0   0   50  0001 C CNN "Description"
 F 5 "885012206003" H 0   0   50  0001 C CNN "PartNumber"
 F 6 " 732-7922-1-ND" H 0   0   50  0001 C CNN "digikey"
+F 7 "0.02100" H 0   0   50  0001 C CNN "price@10"
 	1    9050 7550
 	0    -1   1    0   
 $EndComp
@@ -1075,6 +1144,7 @@ F 3 "" H 8850 7550 60  0000 C CNN
 F 4 "CAP CER 100PF 10V X7R 0603 " H 0   0   50  0001 C CNN "Description"
 F 5 "885012206003" H 0   0   50  0001 C CNN "PartNumber"
 F 6 " 732-7922-1-ND" H 0   0   50  0001 C CNN "digikey"
+F 7 "0.02100" H 0   0   50  0001 C CNN "price@10"
 	1    8850 7550
 	0    -1   1    0   
 $EndComp
@@ -1089,6 +1159,7 @@ F 3 "" H 8650 7550 60  0000 C CNN
 F 4 "CAP CER 100PF 10V X7R 0603 " H 0   0   50  0001 C CNN "Description"
 F 5 "885012206003" H 0   0   50  0001 C CNN "PartNumber"
 F 6 " 732-7922-1-ND" H 0   0   50  0001 C CNN "digikey"
+F 7 "0.02100" H 0   0   50  0001 C CNN "price@10"
 	1    8650 7550
 	0    -1   1    0   
 $EndComp
@@ -1103,6 +1174,7 @@ F 3 "" H 8450 7550 60  0000 C CNN
 F 4 "CAP CER 100PF 10V X7R 0603 " H 0   0   50  0001 C CNN "Description"
 F 5 "885012206003" H 0   0   50  0001 C CNN "PartNumber"
 F 6 " 732-7922-1-ND" H 0   0   50  0001 C CNN "digikey"
+F 7 "0.02100" H 0   0   50  0001 C CNN "price@10"
 	1    8450 7550
 	0    -1   1    0   
 $EndComp
@@ -1117,6 +1189,7 @@ F 3 "" H 8250 7550 60  0000 C CNN
 F 4 "CAP CER 100PF 10V X7R 0603 " H 0   0   50  0001 C CNN "Description"
 F 5 "885012206003" H 0   0   50  0001 C CNN "PartNumber"
 F 6 " 732-7922-1-ND" H 0   0   50  0001 C CNN "digikey"
+F 7 "0.02100" H 0   0   50  0001 C CNN "price@10"
 	1    8250 7550
 	0    -1   1    0   
 $EndComp
@@ -1131,6 +1204,7 @@ F 3 "" H 8050 7550 60  0000 C CNN
 F 4 "CAP CER 100PF 10V X7R 0603 " H 0   0   50  0001 C CNN "Description"
 F 5 "885012206003" H 0   0   50  0001 C CNN "PartNumber"
 F 6 " 732-7922-1-ND" H 0   0   50  0001 C CNN "digikey"
+F 7 "0.02100" H 0   0   50  0001 C CNN "price@10"
 	1    8050 7550
 	0    -1   1    0   
 $EndComp
@@ -1145,6 +1219,7 @@ F 3 "" H 7850 7550 60  0000 C CNN
 F 4 "CAP CER 100PF 10V X7R 0603 " H 0   0   50  0001 C CNN "Description"
 F 5 "885012206003" H 0   0   50  0001 C CNN "PartNumber"
 F 6 " 732-7922-1-ND" H 0   0   50  0001 C CNN "digikey"
+F 7 "0.02100" H 0   0   50  0001 C CNN "price@10"
 	1    7850 7550
 	0    -1   1    0   
 $EndComp
@@ -1159,6 +1234,7 @@ F 3 "" H 7650 7550 60  0000 C CNN
 F 4 "CAP CER 100PF 10V X7R 0603 " H 0   0   50  0001 C CNN "Description"
 F 5 "885012206003" H 0   0   50  0001 C CNN "PartNumber"
 F 6 " 732-7922-1-ND" H 0   0   50  0001 C CNN "digikey"
+F 7 "0.02100" H 0   0   50  0001 C CNN "price@10"
 	1    7650 7550
 	0    -1   1    0   
 $EndComp
@@ -1572,6 +1648,10 @@ F 0 "U803" H 4450 1950 39  0000 L BNN
 F 1 "SN74LVC2G17DBVR" H 5150 2000 20  0000 L BNN
 F 2 "servo:SOT-23-6" H 4450 2250 60  0001 C CNN
 F 3 "../doc/datasheets/sn74lvc2g17.pdf" H 4650 2500 60  0001 C CNN
+F 4 "Buffer, Non-Inverting 2 Element 1 Bit per Element Push-Pull Output SOT-23-6" H 0   0   50  0001 C CNN "Description"
+F 5 "SN74LVC2G17DBVR" H 0   0   50  0001 C CNN "PartNumber"
+F 6 " 296-SN74LVC2G17DBVRCT-ND " H 0   0   50  0001 C CNN "digikey"
+F 7 "0.30200" H 0   0   50  0001 C CNN "price@10"
 	1    4950 2050
 	1    0    0    -1  
 $EndComp
@@ -1609,6 +1689,7 @@ F 3 "" H 14550 5300 60  0000 C CNN
 F 4 "10µF ±20% 10V Ceramic Capacitor X5R 0603 (1608 Metric) " H 0   0   50  0001 C CNN "Description"
 F 5 "GRM188R61A106ME69D " H 0   0   50  0001 C CNN "PartNumber"
 F 6 "490-10475-1-ND" H 0   0   50  0001 C CNN "digikey"
+F 7 "0.15400" H 0   0   50  0001 C CNN "price@10"
 	1    14550 5300
 	0    -1   -1   0   
 $EndComp
@@ -1654,6 +1735,7 @@ F 3 "" H 14500 6800 60  0000 C CNN
 F 4 "10µF ±20% 10V Ceramic Capacitor X5R 0603 (1608 Metric) " H 0   0   50  0001 C CNN "Description"
 F 5 "GRM188R61A106ME69D " H 0   0   50  0001 C CNN "PartNumber"
 F 6 "490-10475-1-ND" H 0   0   50  0001 C CNN "digikey"
+F 7 "0.15400" H 0   0   50  0001 C CNN "price@10"
 	1    14500 6800
 	0    -1   -1   0   
 $EndComp
@@ -1699,6 +1781,7 @@ F 3 "" H 2000 1650 60  0000 C CNN
 F 4 "10µF ±20% 10V Ceramic Capacitor X5R 0603 (1608 Metric) " H 0   0   50  0001 C CNN "Description"
 F 5 "GRM188R61A106ME69D " H 0   0   50  0001 C CNN "PartNumber"
 F 6 "490-10475-1-ND" H 0   0   50  0001 C CNN "digikey"
+F 7 "0.15400" H 0   0   50  0001 C CNN "price@10"
 	1    2000 1650
 	0    -1   -1   0   
 $EndComp
@@ -1744,6 +1827,7 @@ F 3 "" H 1950 3100 60  0000 C CNN
 F 4 "10µF ±20% 10V Ceramic Capacitor X5R 0603 (1608 Metric) " H 0   0   50  0001 C CNN "Description"
 F 5 "GRM188R61A106ME69D " H 0   0   50  0001 C CNN "PartNumber"
 F 6 "490-10475-1-ND" H 0   0   50  0001 C CNN "digikey"
+F 7 "0.15400" H 0   0   50  0001 C CNN "price@10"
 	1    1950 3100
 	0    -1   -1   0   
 $EndComp
@@ -1793,6 +1877,7 @@ F 3 "" H 6300 1800 60  0000 C CNN
 F 4 "CAP CER 0.1UF 16V X7R 0603 " H 0   0   50  0001 C CNN "Description"
 F 5 "CC0603KPX7R7BB104" H 0   0   50  0001 C CNN "PartNumber"
 F 6 "311-1335-1-ND" H 0   0   50  0001 C CNN "digikey"
+F 7 "0.05800" H 0   0   50  0001 C CNN "price@10"
 	1    6300 1800
 	0    1    -1   0   
 $EndComp
@@ -1810,6 +1895,7 @@ F 3 "" H 6550 1800 60  0000 C CNN
 F 4 "CAP CER 0.1UF 16V X7R 0603 " H 0   0   50  0001 C CNN "Description"
 F 5 "CC0603KPX7R7BB104" H 0   0   50  0001 C CNN "PartNumber"
 F 6 "311-1335-1-ND" H 0   0   50  0001 C CNN "digikey"
+F 7 "0.05800" H 0   0   50  0001 C CNN "price@10"
 	1    6550 1800
 	0    1    -1   0   
 $EndComp
@@ -1827,6 +1913,7 @@ F 3 "" H 6800 1800 60  0000 C CNN
 F 4 "CAP CER 0.1UF 16V X7R 0603 " H 0   0   50  0001 C CNN "Description"
 F 5 "CC0603KPX7R7BB104" H 0   0   50  0001 C CNN "PartNumber"
 F 6 "311-1335-1-ND" H 0   0   50  0001 C CNN "digikey"
+F 7 "0.05800" H 0   0   50  0001 C CNN "price@10"
 	1    6800 1800
 	0    1    -1   0   
 $EndComp
@@ -1844,6 +1931,7 @@ F 3 "" H 7050 1800 60  0000 C CNN
 F 4 "CAP CER 0.1UF 16V X7R 0603 " H 0   0   50  0001 C CNN "Description"
 F 5 "CC0603KPX7R7BB104" H 0   0   50  0001 C CNN "PartNumber"
 F 6 "311-1335-1-ND" H 0   0   50  0001 C CNN "digikey"
+F 7 "0.05800" H 0   0   50  0001 C CNN "price@10"
 	1    7050 1800
 	0    1    -1   0   
 $EndComp
@@ -1861,6 +1949,7 @@ F 3 "" H 7300 1800 60  0000 C CNN
 F 4 "CAP CER 0.1UF 16V X7R 0603 " H 0   0   50  0001 C CNN "Description"
 F 5 "CC0603KPX7R7BB104" H 0   0   50  0001 C CNN "PartNumber"
 F 6 "311-1335-1-ND" H 0   0   50  0001 C CNN "digikey"
+F 7 "0.05800" H 0   0   50  0001 C CNN "price@10"
 	1    7300 1800
 	0    1    -1   0   
 $EndComp
@@ -1878,6 +1967,7 @@ F 3 "" H 7550 1800 60  0000 C CNN
 F 4 "CAP CER 0.1UF 16V X7R 0603 " H 0   0   50  0001 C CNN "Description"
 F 5 "CC0603KPX7R7BB104" H 0   0   50  0001 C CNN "PartNumber"
 F 6 "311-1335-1-ND" H 0   0   50  0001 C CNN "digikey"
+F 7 "0.05800" H 0   0   50  0001 C CNN "price@10"
 	1    7550 1800
 	0    1    -1   0   
 $EndComp
@@ -1956,6 +2046,7 @@ F 3 "" H 10400 5550 60  0000 C CNN
 F 4 "CAP CER 0.1UF 16V X7R 0603 " H 0   0   50  0001 C CNN "Description"
 F 5 "CC0603KPX7R7BB104" H 0   0   50  0001 C CNN "PartNumber"
 F 6 "311-1335-1-ND" H 0   0   50  0001 C CNN "digikey"
+F 7 "0.05800" H 0   0   50  0001 C CNN "price@10"
 	1    10400 5550
 	0    -1   -1   0   
 $EndComp
@@ -1977,6 +2068,7 @@ F 3 "" H 10150 5550 60  0000 C CNN
 F 4 "CAP CER 0.1UF 16V X7R 0603 " H 0   0   50  0001 C CNN "Description"
 F 5 "CC0603KPX7R7BB104" H 0   0   50  0001 C CNN "PartNumber"
 F 6 "311-1335-1-ND" H 0   0   50  0001 C CNN "digikey"
+F 7 "0.05800" H 0   0   50  0001 C CNN "price@10"
 	1    10150 5550
 	0    -1   -1   0   
 $EndComp
@@ -1994,6 +2086,7 @@ F 3 "" H 9900 5550 60  0000 C CNN
 F 4 "CAP CER 0.1UF 16V X7R 0603 " H 0   0   50  0001 C CNN "Description"
 F 5 "CC0603KPX7R7BB104" H 0   0   50  0001 C CNN "PartNumber"
 F 6 "311-1335-1-ND" H 0   0   50  0001 C CNN "digikey"
+F 7 "0.05800" H 0   0   50  0001 C CNN "price@10"
 	1    9900 5550
 	0    -1   -1   0   
 $EndComp
@@ -2011,6 +2104,7 @@ F 3 "" H 9650 5550 60  0000 C CNN
 F 4 "CAP CER 0.1UF 16V X7R 0603 " H 0   0   50  0001 C CNN "Description"
 F 5 "CC0603KPX7R7BB104" H 0   0   50  0001 C CNN "PartNumber"
 F 6 "311-1335-1-ND" H 0   0   50  0001 C CNN "digikey"
+F 7 "0.05800" H 0   0   50  0001 C CNN "price@10"
 	1    9650 5550
 	0    -1   -1   0   
 $EndComp
@@ -2028,6 +2122,7 @@ F 3 "" H 9400 5550 60  0000 C CNN
 F 4 "CAP CER 0.1UF 16V X7R 0603 " H 0   0   50  0001 C CNN "Description"
 F 5 "CC0603KPX7R7BB104" H 0   0   50  0001 C CNN "PartNumber"
 F 6 "311-1335-1-ND" H 0   0   50  0001 C CNN "digikey"
+F 7 "0.05800" H 0   0   50  0001 C CNN "price@10"
 	1    9400 5550
 	0    -1   -1   0   
 $EndComp
@@ -2045,6 +2140,7 @@ F 3 "" H 9150 5550 60  0000 C CNN
 F 4 "CAP CER 0.1UF 16V X7R 0603 " H 0   0   50  0001 C CNN "Description"
 F 5 "CC0603KPX7R7BB104" H 0   0   50  0001 C CNN "PartNumber"
 F 6 "311-1335-1-ND" H 0   0   50  0001 C CNN "digikey"
+F 7 "0.05800" H 0   0   50  0001 C CNN "price@10"
 	1    9150 5550
 	0    -1   -1   0   
 $EndComp
@@ -2062,6 +2158,7 @@ F 3 "" H 8900 5550 60  0000 C CNN
 F 4 "CAP CER 0.1UF 16V X7R 0603 " H 0   0   50  0001 C CNN "Description"
 F 5 "CC0603KPX7R7BB104" H 0   0   50  0001 C CNN "PartNumber"
 F 6 "311-1335-1-ND" H 0   0   50  0001 C CNN "digikey"
+F 7 "0.05800" H 0   0   50  0001 C CNN "price@10"
 	1    8900 5550
 	0    -1   -1   0   
 $EndComp

@@ -22,6 +22,10 @@ F 0 "U1201" H 5750 4400 50  0000 C CNN
 F 1 "ISO1050" H 5750 4300 50  0000 C CNN
 F 2 "servo:SSO-8_6.7x9.8mm_P2.54mm_Clearance8mm" H 5700 2950 50  0001 C CNN
 F 3 "../doc/datasheets/iso1050.pdf" H 5850 4450 50  0001 C CNN
+F 4 "1/1 Transceiver Half CANbus 8-SOP " H 0   0   50  0001 C CNN "Description"
+F 5 "ISO1050DUB" H 0   0   50  0001 C CNN "PartNumber"
+F 6 "296-33295-5-ND" H 0   0   50  0001 C CNN "digikey"
+F 7 "5.27900" H 0   0   50  0001 C CNN "price@10"
 	1    5800 3650
 	1    0    0    -1  
 $EndComp
@@ -53,6 +57,7 @@ F 3 "" H 6800 3100 60  0000 C CNN
 F 4 "CC0603KPX7R7BB104" H 0   0   50  0001 C CNN "PartNumber"
 F 5 "311-1335-1-ND" H 0   0   50  0001 C CNN "digikey"
 F 6 "CAP CER 0.1UF 16V X7R 0603 " H 0   0   50  0001 C CNN "Description"
+F 7 "0.05800" H 0   0   50  0001 C CNN "price@10"
 	1    6800 3100
 	0    1    1    0   
 $EndComp
@@ -70,6 +75,7 @@ F 3 "" H 4800 3100 60  0000 C CNN
 F 4 "CC0603KPX7R7BB104" H 0   0   50  0001 C CNN "PartNumber"
 F 5 "311-1335-1-ND" H 0   0   50  0001 C CNN "digikey"
 F 6 "CAP CER 0.1UF 16V X7R 0603 " H 0   0   50  0001 C CNN "Description"
+F 7 "0.05800" H 0   0   50  0001 C CNN "price@10"
 	1    4800 3100
 	0    1    1    0   
 $EndComp
@@ -145,6 +151,10 @@ F 0 "U1202" H 10500 4117 50  0000 C CNN
 F 1 "ADM2483" H 10500 4026 50  0000 C CNN
 F 2 "servo:SOIC-16W_7.5x10.3mm_P1.27mm" H 10500 2800 50  0001 C CNN
 F 3 "../doc/datasheets/adm2483.pdf" H 9750 3400 50  0001 C CNN
+F 4 "RS422, RS485 Digital Isolator 2500Vrms 3 Channel 500kbps 25kV/µs CMTI 16-SOIC (0.295\", 7.50mm Width) " H 0   0   50  0001 C CNN "Description"
+F 5 "ADM2483BRWZ" H 0   0   50  0001 C CNN "PartNumber"
+F 6 "ADM2483BRWZ-ND" H 0   0   50  0001 C CNN "digikey"
+F 7 "5.59000" H 0   0   50  0001 C CNN "price@10"
 	1    10500 3500
 	-1   0    0    -1  
 $EndComp
@@ -405,6 +415,7 @@ F 3 "" H 9450 2900 60  0000 C CNN
 F 4 "CC0603KPX7R7BB104" H 0   0   50  0001 C CNN "PartNumber"
 F 5 "311-1335-1-ND" H 0   0   50  0001 C CNN "digikey"
 F 6 "CAP CER 0.1UF 16V X7R 0603 " H 0   0   50  0001 C CNN "Description"
+F 7 "0.05800" H 0   0   50  0001 C CNN "price@10"
 	1    9450 2900
 	0    1    1    0   
 $EndComp
@@ -422,6 +433,7 @@ F 3 "" H 11650 3000 60  0000 C CNN
 F 4 "CC0603KPX7R7BB104" H 0   0   50  0001 C CNN "PartNumber"
 F 5 "311-1335-1-ND" H 0   0   50  0001 C CNN "digikey"
 F 6 "CAP CER 0.1UF 16V X7R 0603 " H 0   0   50  0001 C CNN "Description"
+F 7 "0.05800" H 0   0   50  0001 C CNN "price@10"
 	1    11650 3000
 	0    1    1    0   
 $EndComp

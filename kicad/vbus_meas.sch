@@ -35,6 +35,7 @@ F 3 "" H 8450 2600 60  0000 C CNN
 F 4 "CC0603KPX7R7BB104" H 0   0   50  0001 C CNN "PartNumber"
 F 5 "311-1335-1-ND" H 0   0   50  0001 C CNN "digikey"
 F 6 "CAP CER 0.1UF 16V X7R 0603 " H 0   0   50  0001 C CNN "Description"
+F 7 "0.05800" H 0   0   50  0001 C CNN "price@10"
 	1    8450 2600
 	0    1    1    0   
 $EndComp
@@ -85,6 +86,7 @@ F 3 "" H 6500 2750 60  0000 C CNN
 F 4 "CC0603KPX7R7BB104" H 0   0   50  0001 C CNN "PartNumber"
 F 5 "311-1335-1-ND" H 0   0   50  0001 C CNN "digikey"
 F 6 "CAP CER 0.1UF 16V X7R 0603 " H 0   0   50  0001 C CNN "Description"
+F 7 "0.05800" H 0   0   50  0001 C CNN "price@10"
 	1    6500 2750
 	0    1    1    0   
 $EndComp
@@ -100,6 +102,10 @@ F 0 "C1605" V 8278 3591 20  0000 R CNN
 F 1 "0.1uF" V 8321 3591 20  0000 R CNN
 F 2 "servo:C_0603_1608Metric" H 8250 3600 60  0001 C CNN
 F 3 "" H 8250 3700 60  0000 C CNN
+F 4 "CAP CER 0.1UF 16V X7R 0603 " H 0   0   50  0001 C CNN "Description"
+F 5 "CC0603KPX7R7BB104" H 0   0   50  0001 C CNN "PartNumber"
+F 6 "311-1335-1-ND" H 0   0   50  0001 C CNN "digikey"
+F 7 "0.05800" H 0   0   50  0001 C CNN "price@10"
 	1    8250 3700
 	0    1    1    0   
 $EndComp
@@ -141,6 +147,10 @@ F 0 "U1601" H 7250 3317 50  0000 C CNN
 F 1 "AMC1311B" H 7250 3226 50  0000 C CNN
 F 2 "servo:SSO-8_7.6x5.9mm_P1.27mm_Clearance9.1mm" H 7300 1950 50  0001 C CIN
 F 3 "../doc/datasheets/amc1311.pdf" H 7200 2450 50  0001 C CNN
+F 4 "Isolation IC 8-SOIC " H 0   0   50  0001 C CNN "Description"
+F 5 "AMC1311BDWV" H 0   0   50  0001 C CNN "PartNumber"
+F 6 "296-47610-ND" H 0   0   50  0001 C CNN "digikey"
+F 7 "7.24300" H 0   0   50  0001 C CNN "price@10"
 	1    7250 2950
 	-1   0    0    -1  
 $EndComp
@@ -315,9 +325,13 @@ AR Path="/5E2F3BE3/5E1AD376" Ref="U?"  Part="1"
 AR Path="/605BEC04/5E1AD376" Ref="U1603"  Part="1" 
 AR Path="/5DE49152/5E1AD376" Ref="U?"  Part="1" 
 F 0 "U1603" H 9400 2967 50  0000 C CNN
-F 1 "RFM-0505S" H 9400 2876 50  0000 C CNN
+F 1 "DC/DC 5V 1W RFM-0505S" H 9400 2876 50  0000 C CNN
 F 2 "servo:rfm0505" H 9550 2300 50  0001 C CIN
 F 3 "../doc/datasheets/rfm0505s.pdf" H 9400 2150 50  0001 C CNN
+F 4 "Isolated Module DC DC Converter 1 Output 5V 200mA - 5V Input " H 0   0   50  0001 C CNN "Description"
+F 5 "RFM-0505S" H 0   0   50  0001 C CNN "PartNumber"
+F 6 "945-3159-ND" H 0   0   50  0001 C CNN "digikey"
+F 7 "1.36000" H 0   0   50  0001 C CNN "price@10"
 	1    9400 2600
 	-1   0    0    -1  
 $EndComp
@@ -343,6 +357,7 @@ F 3 "" H 10350 2450 60  0000 C CNN
 F 4 "CC0603KPX7R7BB104" H 0   0   50  0001 C CNN "PartNumber"
 F 5 "311-1335-1-ND" H 0   0   50  0001 C CNN "digikey"
 F 6 "CAP CER 0.1UF 16V X7R 0603 " H 0   0   50  0001 C CNN "Description"
+F 7 "0.05800" H 0   0   50  0001 C CNN "price@10"
 	1    10350 2450
 	0    1    1    0   
 $EndComp
@@ -375,6 +390,7 @@ F 3 "" H 5600 3000 60  0000 C CNN
 F 4 "CC0603KPX7R7BB104" H 0   0   50  0001 C CNN "PartNumber"
 F 5 "311-1335-1-ND" H 0   0   50  0001 C CNN "digikey"
 F 6 "CAP CER 0.1UF 16V X7R 0603 " H 0   0   50  0001 C CNN "Description"
+F 7 "0.05800" H 0   0   50  0001 C CNN "price@10"
 	1    5600 3000
 	0    1    1    0   
 $EndComp
@@ -443,6 +459,7 @@ F 3 "" H 8550 4900 60  0000 C CNN
 F 4 "CC0603KPX7R7BB104" H 0   0   50  0001 C CNN "PartNumber"
 F 5 "311-1335-1-ND" H 0   0   50  0001 C CNN "digikey"
 F 6 "CAP CER 0.1UF 16V X7R 0603 " H 0   0   50  0001 C CNN "Description"
+F 7 "0.05800" H 0   0   50  0001 C CNN "price@10"
 	1    8550 4900
 	0    1    1    0   
 $EndComp
@@ -493,6 +510,7 @@ F 3 "" H 6600 5050 60  0000 C CNN
 F 4 "CC0603KPX7R7BB104" H 0   0   50  0001 C CNN "PartNumber"
 F 5 "311-1335-1-ND" H 0   0   50  0001 C CNN "digikey"
 F 6 "CAP CER 0.1UF 16V X7R 0603 " H 0   0   50  0001 C CNN "Description"
+F 7 "0.05800" H 0   0   50  0001 C CNN "price@10"
 	1    6600 5050
 	0    1    1    0   
 $EndComp
@@ -508,6 +526,10 @@ F 0 "C1606" V 8378 5891 20  0000 R CNN
 F 1 "0.1uF" V 8421 5891 20  0000 R CNN
 F 2 "servo:C_0603_1608Metric" H 8350 5900 60  0001 C CNN
 F 3 "" H 8350 6000 60  0000 C CNN
+F 4 "CAP CER 0.1UF 16V X7R 0603 " H 0   0   50  0001 C CNN "Description"
+F 5 "CC0603KPX7R7BB104" H 0   0   50  0001 C CNN "PartNumber"
+F 6 "311-1335-1-ND" H 0   0   50  0001 C CNN "digikey"
+F 7 "0.05800" H 0   0   50  0001 C CNN "price@10"
 	1    8350 6000
 	0    1    1    0   
 $EndComp
@@ -549,6 +571,10 @@ F 0 "U1602" H 7350 5617 50  0000 C CNN
 F 1 "AMC1311B" H 7350 5526 50  0000 C CNN
 F 2 "servo:SSO-8_7.6x5.9mm_P1.27mm_Clearance9.1mm" H 7400 4250 50  0001 C CIN
 F 3 "../doc/datasheets/amc1311.pdf" H 7300 4750 50  0001 C CNN
+F 4 "Isolation IC 8-SOIC " H 0   0   50  0001 C CNN "Description"
+F 5 "AMC1311BDWV" H 0   0   50  0001 C CNN "PartNumber"
+F 6 "296-47610-ND" H 0   0   50  0001 C CNN "digikey"
+F 7 "7.24300" H 0   0   50  0001 C CNN "price@10"
 	1    7350 5250
 	-1   0    0    -1  
 $EndComp
@@ -704,9 +730,13 @@ AR Path="/5E2F3BE3/5E1B9AFC" Ref="U?"  Part="1"
 AR Path="/605BEC04/5E1B9AFC" Ref="U1604"  Part="1" 
 AR Path="/5DE49152/5E1B9AFC" Ref="U?"  Part="1" 
 F 0 "U1604" H 9500 5267 50  0000 C CNN
-F 1 "RFM-0505S" H 9500 5176 50  0000 C CNN
+F 1 "DC/DC 5V 1W RFM-0505S" H 9500 5176 50  0000 C CNN
 F 2 "servo:rfm0505" H 9650 4600 50  0001 C CIN
 F 3 "../doc/datasheets/rfm0505s.pdf" H 9500 4450 50  0001 C CNN
+F 4 "Isolated Module DC DC Converter 1 Output 5V 200mA - 5V Input " H 0   0   50  0001 C CNN "Description"
+F 5 "RFM-0505S" H 0   0   50  0001 C CNN "PartNumber"
+F 6 "945-3159-ND" H 0   0   50  0001 C CNN "digikey"
+F 7 "1.36000" H 0   0   50  0001 C CNN "price@10"
 	1    9500 4900
 	-1   0    0    -1  
 $EndComp
@@ -732,6 +762,7 @@ F 3 "" H 10450 4750 60  0000 C CNN
 F 4 "CC0603KPX7R7BB104" H 0   0   50  0001 C CNN "PartNumber"
 F 5 "311-1335-1-ND" H 0   0   50  0001 C CNN "digikey"
 F 6 "CAP CER 0.1UF 16V X7R 0603 " H 0   0   50  0001 C CNN "Description"
+F 7 "0.05800" H 0   0   50  0001 C CNN "price@10"
 	1    10450 4750
 	0    1    1    0   
 $EndComp
@@ -776,6 +807,7 @@ F 3 "" H 5700 5300 60  0000 C CNN
 F 4 "CC0603KPX7R7BB104" H 0   0   50  0001 C CNN "PartNumber"
 F 5 "311-1335-1-ND" H 0   0   50  0001 C CNN "digikey"
 F 6 "CAP CER 0.1UF 16V X7R 0603 " H 0   0   50  0001 C CNN "Description"
+F 7 "0.05800" H 0   0   50  0001 C CNN "price@10"
 	1    5700 5300
 	0    1    1    0   
 $EndComp

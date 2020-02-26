@@ -27,6 +27,7 @@ F 1 "fiducials" H 4200 1955 50  0000 L CNN
 F 2 "servo:Fiducial_1mm_Dia_2.54mm_Outer_CopperTop" H 4100 2000 50  0001 C CNN
 F 3 "~" H 4100 2000 50  0001 C CNN
 F 4 "fiducials" H 0   0   50  0001 C CNN "Description"
+F 5 "0" H 0   0   50  0001 C CNN "price@10"
 	1    4100 2000
 	1    0    0    -1  
 $EndComp
@@ -61,6 +62,7 @@ F 1 "fiducials" H 4250 2855 50  0000 L CNN
 F 2 "servo:Fiducial_1mm_Dia_2.54mm_Outer_CopperBottom" H 4150 2900 50  0001 C CNN
 F 3 "~" H 4150 2900 50  0001 C CNN
 F 4 "fiducials" H 0   0   50  0001 C CNN "Description"
+F 5 "0" H 0   0   50  0001 C CNN "price@10"
 	1    4150 2900
 	1    0    0    -1  
 $EndComp
@@ -73,6 +75,7 @@ F 1 "fiducials" H 4900 1955 50  0000 L CNN
 F 2 "servo:Fiducial_1mm_Dia_2.54mm_Outer_CopperTop" H 4800 2000 50  0001 C CNN
 F 3 "~" H 4800 2000 50  0001 C CNN
 F 4 "fiducials" H 0   0   50  0001 C CNN "Description"
+F 5 "0" H 0   0   50  0001 C CNN "price@10"
 	1    4800 2000
 	1    0    0    -1  
 $EndComp
@@ -85,6 +88,7 @@ F 1 "fiducials" H 5550 1955 50  0000 L CNN
 F 2 "servo:Fiducial_1mm_Dia_2.54mm_Outer_CopperTop" H 5450 2000 50  0001 C CNN
 F 3 "~" H 5450 2000 50  0001 C CNN
 F 4 "fiducials" H 0   0   50  0001 C CNN "Description"
+F 5 "0" H 0   0   50  0001 C CNN "price@10"
 	1    5450 2000
 	1    0    0    -1  
 $EndComp
@@ -97,6 +101,7 @@ F 1 "fiducials" H 6250 1955 50  0000 L CNN
 F 2 "servo:Fiducial_1mm_Dia_2.54mm_Outer_CopperTop" H 6150 2000 50  0001 C CNN
 F 3 "~" H 6150 2000 50  0001 C CNN
 F 4 "fiducials" H 0   0   50  0001 C CNN "Description"
+F 5 "0" H 0   0   50  0001 C CNN "price@10"
 	1    6150 2000
 	1    0    0    -1  
 $EndComp
@@ -109,6 +114,7 @@ F 1 "fiducials" H 4950 2855 50  0000 L CNN
 F 2 "servo:Fiducial_1mm_Dia_2.54mm_Outer_CopperBottom" H 4850 2900 50  0001 C CNN
 F 3 "~" H 4850 2900 50  0001 C CNN
 F 4 "fiducials" H 0   0   50  0001 C CNN "Description"
+F 5 "0" H 0   0   50  0001 C CNN "price@10"
 	1    4850 2900
 	1    0    0    -1  
 $EndComp
@@ -121,6 +127,7 @@ F 1 "fiducials" H 5600 2855 50  0000 L CNN
 F 2 "servo:Fiducial_1mm_Dia_2.54mm_Outer_CopperBottom" H 5500 2900 50  0001 C CNN
 F 3 "~" H 5500 2900 50  0001 C CNN
 F 4 "fiducials" H 0   0   50  0001 C CNN "Description"
+F 5 "0" H 0   0   50  0001 C CNN "price@10"
 	1    5500 2900
 	1    0    0    -1  
 $EndComp
@@ -133,6 +140,7 @@ F 1 "fiducials" H 6250 2855 50  0000 L CNN
 F 2 "servo:Fiducial_1mm_Dia_2.54mm_Outer_CopperBottom" H 6150 2900 50  0001 C CNN
 F 3 "~" H 6150 2900 50  0001 C CNN
 F 4 "fiducials" H 0   0   50  0001 C CNN "Description"
+F 5 "0" H 0   0   50  0001 C CNN "price@10"
 	1    6150 2900
 	1    0    0    -1  
 $EndComp
@@ -145,6 +153,7 @@ F 1 "Slot" H 4350 4505 50  0000 L CNN
 F 2 "servo:slot" H 4250 4550 50  0001 C CNN
 F 3 "~" H 4250 4550 50  0001 C CNN
 F 4 "slots for isolation" H 0   0   50  0001 C CNN "Description"
+F 5 "0" H 0   0   50  0001 C CNN "price@10"
 	1    4250 4550
 	1    0    0    -1  
 $EndComp
@@ -157,6 +166,7 @@ F 1 "Slot" H 4750 4505 50  0000 L CNN
 F 2 "servo:slot" H 4650 4550 50  0001 C CNN
 F 3 "~" H 4650 4550 50  0001 C CNN
 F 4 "slots for isolation" H 0   0   50  0001 C CNN "Description"
+F 5 "0" H 0   0   50  0001 C CNN "price@10"
 	1    4650 4550
 	1    0    0    -1  
 $EndComp
@@ -169,6 +179,7 @@ F 1 "Slot" H 5150 4505 50  0000 L CNN
 F 2 "servo:slot" H 5050 4550 50  0001 C CNN
 F 3 "~" H 5050 4550 50  0001 C CNN
 F 4 "slots for isolation" H 0   0   50  0001 C CNN "Description"
+F 5 "0" H 0   0   50  0001 C CNN "price@10"
 	1    5050 4550
 	1    0    0    -1  
 $EndComp
@@ -181,6 +192,7 @@ F 1 "Slot" H 5550 4505 50  0000 L CNN
 F 2 "servo:slot" H 5450 4550 50  0001 C CNN
 F 3 "~" H 5450 4550 50  0001 C CNN
 F 4 "slots for isolation" H 0   0   50  0001 C CNN "Description"
+F 5 "0" H 0   0   50  0001 C CNN "price@10"
 	1    5450 4550
 	1    0    0    -1  
 $EndComp
@@ -193,6 +205,7 @@ F 1 "Slot" H 4350 4855 50  0000 L CNN
 F 2 "servo:slot" H 4250 4900 50  0001 C CNN
 F 3 "~" H 4250 4900 50  0001 C CNN
 F 4 "slots for isolation" H 0   0   50  0001 C CNN "Description"
+F 5 "0" H 0   0   50  0001 C CNN "price@10"
 	1    4250 4900
 	1    0    0    -1  
 $EndComp
@@ -205,6 +218,7 @@ F 1 "Slot" H 4750 4855 50  0000 L CNN
 F 2 "servo:slot" H 4650 4900 50  0001 C CNN
 F 3 "~" H 4650 4900 50  0001 C CNN
 F 4 "slots for isolation" H 0   0   50  0001 C CNN "Description"
+F 5 "0" H 0   0   50  0001 C CNN "price@10"
 	1    4650 4900
 	1    0    0    -1  
 $EndComp
@@ -217,6 +231,7 @@ F 1 "Slot" H 5150 4855 50  0000 L CNN
 F 2 "servo:slot" H 5050 4900 50  0001 C CNN
 F 3 "~" H 5050 4900 50  0001 C CNN
 F 4 "slots for isolation" H 0   0   50  0001 C CNN "Description"
+F 5 "0" H 0   0   50  0001 C CNN "price@10"
 	1    5050 4900
 	1    0    0    -1  
 $EndComp
@@ -229,6 +244,7 @@ F 1 "Slot" H 5550 4855 50  0000 L CNN
 F 2 "servo:slot" H 5450 4900 50  0001 C CNN
 F 3 "~" H 5450 4900 50  0001 C CNN
 F 4 "slots for isolation" H 0   0   50  0001 C CNN "Description"
+F 5 "0" H 0   0   50  0001 C CNN "price@10"
 	1    5450 4900
 	1    0    0    -1  
 $EndComp
@@ -241,6 +257,7 @@ F 1 "Slot" H 4350 5155 50  0000 L CNN
 F 2 "servo:slot" H 4250 5200 50  0001 C CNN
 F 3 "~" H 4250 5200 50  0001 C CNN
 F 4 "slots for isolation" H 0   0   50  0001 C CNN "Description"
+F 5 "0" H 0   0   50  0001 C CNN "price@10"
 	1    4250 5200
 	1    0    0    -1  
 $EndComp
@@ -253,6 +270,7 @@ F 1 "Slot" H 4750 5155 50  0000 L CNN
 F 2 "servo:slot" H 4650 5200 50  0001 C CNN
 F 3 "~" H 4650 5200 50  0001 C CNN
 F 4 "slots for isolation" H 0   0   50  0001 C CNN "Description"
+F 5 "0" H 0   0   50  0001 C CNN "price@10"
 	1    4650 5200
 	1    0    0    -1  
 $EndComp
@@ -265,6 +283,7 @@ F 1 "Slot" H 5150 5155 50  0000 L CNN
 F 2 "servo:slot" H 5050 5200 50  0001 C CNN
 F 3 "~" H 5050 5200 50  0001 C CNN
 F 4 "slots for isolation" H 0   0   50  0001 C CNN "Description"
+F 5 "0" H 0   0   50  0001 C CNN "price@10"
 	1    5050 5200
 	1    0    0    -1  
 $EndComp
@@ -277,6 +296,7 @@ F 1 "Slot" H 5550 5155 50  0000 L CNN
 F 2 "servo:slot" H 5450 5200 50  0001 C CNN
 F 3 "~" H 5450 5200 50  0001 C CNN
 F 4 "slots for isolation" H 0   0   50  0001 C CNN "Description"
+F 5 "0" H 0   0   50  0001 C CNN "price@10"
 	1    5450 5200
 	1    0    0    -1  
 $EndComp
@@ -289,6 +309,7 @@ F 1 "Slot" H 4350 5505 50  0000 L CNN
 F 2 "servo:slot" H 4250 5550 50  0001 C CNN
 F 3 "~" H 4250 5550 50  0001 C CNN
 F 4 "slots for isolation" H 0   0   50  0001 C CNN "Description"
+F 5 "0" H 0   0   50  0001 C CNN "price@10"
 	1    4250 5550
 	1    0    0    -1  
 $EndComp
@@ -301,6 +322,7 @@ F 1 "Slot" H 4750 5505 50  0000 L CNN
 F 2 "servo:slot" H 4650 5550 50  0001 C CNN
 F 3 "~" H 4650 5550 50  0001 C CNN
 F 4 "slots for isolation" H 0   0   50  0001 C CNN "Description"
+F 5 "0" H 0   0   50  0001 C CNN "price@10"
 	1    4650 5550
 	1    0    0    -1  
 $EndComp
@@ -313,6 +335,7 @@ F 1 "Slot" H 5150 5505 50  0000 L CNN
 F 2 "servo:slot" H 5050 5550 50  0001 C CNN
 F 3 "~" H 5050 5550 50  0001 C CNN
 F 4 "slots for isolation" H 0   0   50  0001 C CNN "Description"
+F 5 "0" H 0   0   50  0001 C CNN "price@10"
 	1    5050 5550
 	1    0    0    -1  
 $EndComp
@@ -325,6 +348,7 @@ F 1 "Slot" H 5550 5505 50  0000 L CNN
 F 2 "servo:slot" H 5450 5550 50  0001 C CNN
 F 3 "~" H 5450 5550 50  0001 C CNN
 F 4 "slots for isolation" H 0   0   50  0001 C CNN "Description"
+F 5 "0" H 0   0   50  0001 C CNN "price@10"
 	1    5450 5550
 	1    0    0    -1  
 $EndComp
@@ -337,6 +361,7 @@ F 1 "Slot" H 4350 5855 50  0000 L CNN
 F 2 "servo:slot" H 4250 5900 50  0001 C CNN
 F 3 "~" H 4250 5900 50  0001 C CNN
 F 4 "slots for isolation" H 0   0   50  0001 C CNN "Description"
+F 5 "0" H 0   0   50  0001 C CNN "price@10"
 	1    4250 5900
 	1    0    0    -1  
 $EndComp
@@ -349,6 +374,7 @@ F 1 "Slot" H 4750 5855 50  0000 L CNN
 F 2 "servo:slot" H 4650 5900 50  0001 C CNN
 F 3 "~" H 4650 5900 50  0001 C CNN
 F 4 "slots for isolation" H 0   0   50  0001 C CNN "Description"
+F 5 "0" H 0   0   50  0001 C CNN "price@10"
 	1    4650 5900
 	1    0    0    -1  
 $EndComp
@@ -361,6 +387,7 @@ F 1 "Slot" H 5150 5855 50  0000 L CNN
 F 2 "servo:slot" H 5050 5900 50  0001 C CNN
 F 3 "~" H 5050 5900 50  0001 C CNN
 F 4 "slots for isolation" H 0   0   50  0001 C CNN "Description"
+F 5 "0" H 0   0   50  0001 C CNN "price@10"
 	1    5050 5900
 	1    0    0    -1  
 $EndComp
@@ -373,6 +400,7 @@ F 1 "Slot" H 5550 5855 50  0000 L CNN
 F 2 "servo:slot" H 5450 5900 50  0001 C CNN
 F 3 "~" H 5450 5900 50  0001 C CNN
 F 4 "slots for isolation" H 0   0   50  0001 C CNN "Description"
+F 5 "0" H 0   0   50  0001 C CNN "price@10"
 	1    5450 5900
 	1    0    0    -1  
 $EndComp
@@ -385,6 +413,7 @@ F 1 "Slot" H 4350 6155 50  0000 L CNN
 F 2 "servo:slot" H 4250 6200 50  0001 C CNN
 F 3 "~" H 4250 6200 50  0001 C CNN
 F 4 "slots for isolation" H 0   0   50  0001 C CNN "Description"
+F 5 "0" H 0   0   50  0001 C CNN "price@10"
 	1    4250 6200
 	1    0    0    -1  
 $EndComp
@@ -397,6 +426,7 @@ F 1 "Slot" H 4750 6155 50  0000 L CNN
 F 2 "servo:slot" H 4650 6200 50  0001 C CNN
 F 3 "~" H 4650 6200 50  0001 C CNN
 F 4 "slots for isolation" H 0   0   50  0001 C CNN "Description"
+F 5 "0" H 0   0   50  0001 C CNN "price@10"
 	1    4650 6200
 	1    0    0    -1  
 $EndComp
@@ -409,6 +439,7 @@ F 1 "Slot" H 5150 6155 50  0000 L CNN
 F 2 "servo:slot" H 5050 6200 50  0001 C CNN
 F 3 "~" H 5050 6200 50  0001 C CNN
 F 4 "slots for isolation" H 0   0   50  0001 C CNN "Description"
+F 5 "0" H 0   0   50  0001 C CNN "price@10"
 	1    5050 6200
 	1    0    0    -1  
 $EndComp
@@ -421,6 +452,7 @@ F 1 "Slot" H 5550 6155 50  0000 L CNN
 F 2 "servo:slot" H 5450 6200 50  0001 C CNN
 F 3 "~" H 5450 6200 50  0001 C CNN
 F 4 "slots for isolation" H 0   0   50  0001 C CNN "Description"
+F 5 "0" H 0   0   50  0001 C CNN "price@10"
 	1    5450 6200
 	1    0    0    -1  
 $EndComp
@@ -433,6 +465,7 @@ F 1 "Slot" H 4350 6505 50  0000 L CNN
 F 2 "servo:slot" H 4250 6550 50  0001 C CNN
 F 3 "~" H 4250 6550 50  0001 C CNN
 F 4 "slots for isolation" H 0   0   50  0001 C CNN "Description"
+F 5 "0" H 0   0   50  0001 C CNN "price@10"
 	1    4250 6550
 	1    0    0    -1  
 $EndComp
@@ -445,6 +478,7 @@ F 1 "Slot" H 4750 6505 50  0000 L CNN
 F 2 "servo:slot" H 4650 6550 50  0001 C CNN
 F 3 "~" H 4650 6550 50  0001 C CNN
 F 4 "slots for isolation" H 0   0   50  0001 C CNN "Description"
+F 5 "0" H 0   0   50  0001 C CNN "price@10"
 	1    4650 6550
 	1    0    0    -1  
 $EndComp
@@ -457,6 +491,7 @@ F 1 "Slot" H 5150 6505 50  0000 L CNN
 F 2 "servo:slot" H 5050 6550 50  0001 C CNN
 F 3 "~" H 5050 6550 50  0001 C CNN
 F 4 "slots for isolation" H 0   0   50  0001 C CNN "Description"
+F 5 "0" H 0   0   50  0001 C CNN "price@10"
 	1    5050 6550
 	1    0    0    -1  
 $EndComp
@@ -469,6 +504,7 @@ F 1 "Slot" H 5550 6505 50  0000 L CNN
 F 2 "servo:slot" H 5450 6550 50  0001 C CNN
 F 3 "~" H 5450 6550 50  0001 C CNN
 F 4 "slots for isolation" H 0   0   50  0001 C CNN "Description"
+F 5 "0" H 0   0   50  0001 C CNN "price@10"
 	1    5450 6550
 	1    0    0    -1  
 $EndComp
@@ -481,6 +517,7 @@ F 1 "Slot" H 4350 6855 50  0000 L CNN
 F 2 "servo:slot" H 4250 6900 50  0001 C CNN
 F 3 "~" H 4250 6900 50  0001 C CNN
 F 4 "slots for isolation" H 0   0   50  0001 C CNN "Description"
+F 5 "0" H 0   0   50  0001 C CNN "price@10"
 	1    4250 6900
 	1    0    0    -1  
 $EndComp
@@ -493,6 +530,7 @@ F 1 "Slot" H 4750 6855 50  0000 L CNN
 F 2 "servo:slot" H 4650 6900 50  0001 C CNN
 F 3 "~" H 4650 6900 50  0001 C CNN
 F 4 "slots for isolation" H 0   0   50  0001 C CNN "Description"
+F 5 "0" H 0   0   50  0001 C CNN "price@10"
 	1    4650 6900
 	1    0    0    -1  
 $EndComp
@@ -505,6 +543,7 @@ F 1 "Slot" H 5150 6855 50  0000 L CNN
 F 2 "servo:slot" H 5050 6900 50  0001 C CNN
 F 3 "~" H 5050 6900 50  0001 C CNN
 F 4 "slots for isolation" H 0   0   50  0001 C CNN "Description"
+F 5 "0" H 0   0   50  0001 C CNN "price@10"
 	1    5050 6900
 	1    0    0    -1  
 $EndComp
@@ -517,6 +556,7 @@ F 1 "Slot" H 5550 6855 50  0000 L CNN
 F 2 "servo:slot" H 5450 6900 50  0001 C CNN
 F 3 "~" H 5450 6900 50  0001 C CNN
 F 4 "slots for isolation" H 0   0   50  0001 C CNN "Description"
+F 5 "0" H 0   0   50  0001 C CNN "price@10"
 	1    5450 6900
 	1    0    0    -1  
 $EndComp
@@ -529,6 +569,7 @@ F 1 "Slot" H 4350 7255 50  0000 L CNN
 F 2 "servo:slot" H 4250 7300 50  0001 C CNN
 F 3 "~" H 4250 7300 50  0001 C CNN
 F 4 "slots for isolation" H 0   0   50  0001 C CNN "Description"
+F 5 "0" H 0   0   50  0001 C CNN "price@10"
 	1    4250 7300
 	1    0    0    -1  
 $EndComp
@@ -541,6 +582,7 @@ F 1 "Slot" H 4750 7255 50  0000 L CNN
 F 2 "servo:slot" H 4650 7300 50  0001 C CNN
 F 3 "~" H 4650 7300 50  0001 C CNN
 F 4 "slots for isolation" H 0   0   50  0001 C CNN "Description"
+F 5 "0" H 0   0   50  0001 C CNN "price@10"
 	1    4650 7300
 	1    0    0    -1  
 $EndComp
@@ -553,6 +595,7 @@ F 1 "Slot" H 5150 7255 50  0000 L CNN
 F 2 "servo:slot" H 5050 7300 50  0001 C CNN
 F 3 "~" H 5050 7300 50  0001 C CNN
 F 4 "slots for isolation" H 0   0   50  0001 C CNN "Description"
+F 5 "0" H 0   0   50  0001 C CNN "price@10"
 	1    5050 7300
 	1    0    0    -1  
 $EndComp
@@ -565,6 +608,7 @@ F 1 "Slot" H 5550 7255 50  0000 L CNN
 F 2 "servo:slot" H 5450 7300 50  0001 C CNN
 F 3 "~" H 5450 7300 50  0001 C CNN
 F 4 "slots for isolation" H 0   0   50  0001 C CNN "Description"
+F 5 "0" H 0   0   50  0001 C CNN "price@10"
 	1    5450 7300
 	1    0    0    -1  
 $EndComp
@@ -577,6 +621,7 @@ F 1 "Slot" H 7150 4455 50  0000 L CNN
 F 2 "servo:slot_v" H 7050 4500 50  0001 C CNN
 F 3 "~" H 7050 4500 50  0001 C CNN
 F 4 "slots for isolation" H 0   0   50  0001 C CNN "Description"
+F 5 "0" H 0   0   50  0001 C CNN "price@10"
 	1    7050 4500
 	1    0    0    -1  
 $EndComp
@@ -589,6 +634,7 @@ F 1 "Slot" H 7650 4455 50  0000 L CNN
 F 2 "servo:slot_v" H 7550 4500 50  0001 C CNN
 F 3 "~" H 7550 4500 50  0001 C CNN
 F 4 "slots for isolation" H 0   0   50  0001 C CNN "Description"
+F 5 "0" H 0   0   50  0001 C CNN "price@10"
 	1    7550 4500
 	1    0    0    -1  
 $EndComp
@@ -601,6 +647,7 @@ F 1 "Slot" H 8750 4455 50  0000 L CNN
 F 2 "servo:slot_v" H 8650 4500 50  0001 C CNN
 F 3 "~" H 8650 4500 50  0001 C CNN
 F 4 "slots for isolation" H 0   0   50  0001 C CNN "Description"
+F 5 "0" H 0   0   50  0001 C CNN "price@10"
 	1    8650 4500
 	1    0    0    -1  
 $EndComp
@@ -613,6 +660,7 @@ F 1 "Slot" H 8200 4455 50  0000 L CNN
 F 2 "servo:slot_v" H 8100 4500 50  0001 C CNN
 F 3 "~" H 8100 4500 50  0001 C CNN
 F 4 "slots for isolation" H 0   0   50  0001 C CNN "Description"
+F 5 "0" H 0   0   50  0001 C CNN "price@10"
 	1    8100 4500
 	1    0    0    -1  
 $EndComp
@@ -625,6 +673,7 @@ F 1 "Slot" H 7150 4755 50  0000 L CNN
 F 2 "servo:slot_v" H 7050 4800 50  0001 C CNN
 F 3 "~" H 7050 4800 50  0001 C CNN
 F 4 "slots for isolation" H 0   0   50  0001 C CNN "Description"
+F 5 "0" H 0   0   50  0001 C CNN "price@10"
 	1    7050 4800
 	1    0    0    -1  
 $EndComp
@@ -637,6 +686,7 @@ F 1 "Slot" H 7650 4755 50  0000 L CNN
 F 2 "servo:slot_v" H 7550 4800 50  0001 C CNN
 F 3 "~" H 7550 4800 50  0001 C CNN
 F 4 "slots for isolation" H 0   0   50  0001 C CNN "Description"
+F 5 "0" H 0   0   50  0001 C CNN "price@10"
 	1    7550 4800
 	1    0    0    -1  
 $EndComp
@@ -649,6 +699,7 @@ F 1 "Slot" H 8750 4755 50  0000 L CNN
 F 2 "servo:slot_v" H 8650 4800 50  0001 C CNN
 F 3 "~" H 8650 4800 50  0001 C CNN
 F 4 "slots for isolation" H 0   0   50  0001 C CNN "Description"
+F 5 "0" H 0   0   50  0001 C CNN "price@10"
 	1    8650 4800
 	1    0    0    -1  
 $EndComp
@@ -661,6 +712,7 @@ F 1 "Slot" H 8200 4755 50  0000 L CNN
 F 2 "servo:slot_v" H 8100 4800 50  0001 C CNN
 F 3 "~" H 8100 4800 50  0001 C CNN
 F 4 "slots for isolation" H 0   0   50  0001 C CNN "Description"
+F 5 "0" H 0   0   50  0001 C CNN "price@10"
 	1    8100 4800
 	1    0    0    -1  
 $EndComp
@@ -673,6 +725,7 @@ F 1 "Slot" H 7150 5055 50  0000 L CNN
 F 2 "servo:slot_v" H 7050 5100 50  0001 C CNN
 F 3 "~" H 7050 5100 50  0001 C CNN
 F 4 "slots for isolation" H 0   0   50  0001 C CNN "Description"
+F 5 "0" H 0   0   50  0001 C CNN "price@10"
 	1    7050 5100
 	1    0    0    -1  
 $EndComp
@@ -685,6 +738,7 @@ F 1 "Slot" H 7650 5055 50  0000 L CNN
 F 2 "servo:slot_v" H 7550 5100 50  0001 C CNN
 F 3 "~" H 7550 5100 50  0001 C CNN
 F 4 "slots for isolation" H 0   0   50  0001 C CNN "Description"
+F 5 "0" H 0   0   50  0001 C CNN "price@10"
 	1    7550 5100
 	1    0    0    -1  
 $EndComp
@@ -697,6 +751,7 @@ F 1 "Slot" H 8750 5055 50  0000 L CNN
 F 2 "servo:slot_v" H 8650 5100 50  0001 C CNN
 F 3 "~" H 8650 5100 50  0001 C CNN
 F 4 "slots for isolation" H 0   0   50  0001 C CNN "Description"
+F 5 "0" H 0   0   50  0001 C CNN "price@10"
 	1    8650 5100
 	1    0    0    -1  
 $EndComp
@@ -709,6 +764,7 @@ F 1 "Slot" H 8200 5055 50  0000 L CNN
 F 2 "servo:slot_v" H 8100 5100 50  0001 C CNN
 F 3 "~" H 8100 5100 50  0001 C CNN
 F 4 "slots for isolation" H 0   0   50  0001 C CNN "Description"
+F 5 "0" H 0   0   50  0001 C CNN "price@10"
 	1    8100 5100
 	1    0    0    -1  
 $EndComp
@@ -837,6 +893,7 @@ F 1 "Slot" H 5550 7555 50  0000 L CNN
 F 2 "servo:slot" H 5450 7600 50  0001 C CNN
 F 3 "~" H 5450 7600 50  0001 C CNN
 F 4 "slots for isolation" H 0   0   50  0001 C CNN "Description"
+F 5 "0" H 0   0   50  0001 C CNN "price@10"
 	1    5450 7600
 	1    0    0    -1  
 $EndComp
@@ -849,6 +906,7 @@ F 1 "Slot" H 5150 7555 50  0000 L CNN
 F 2 "servo:slot" H 5050 7600 50  0001 C CNN
 F 3 "~" H 5050 7600 50  0001 C CNN
 F 4 "slots for isolation" H 0   0   50  0001 C CNN "Description"
+F 5 "0" H 0   0   50  0001 C CNN "price@10"
 	1    5050 7600
 	1    0    0    -1  
 $EndComp
@@ -895,5 +953,19 @@ F 5 "-" H 0   0   50  0001 C CNN "PartNumber"
 F 6 "0" H 0   0   50  0001 C CNN "price@10"
 	1    13250 5250
 	1    0    0    1   
+$EndComp
+$Comp
+L servo:logo logo1306
+U 1 1 5E5637A5
+P 13250 5900
+F 0 "logo1306" H 13250 6100 50  0001 C CNN
+F 1 "stackup" H 13578 5900 50  0000 L CNN
+F 2 "servo:layers_stackup" H 13250 5900 50  0001 C CNN
+F 3 "~" H 13250 5900 50  0001 C CNN
+F 4 "stackup" H -150 2950 50  0001 C CNN "Description"
+F 5 "-" H -150 2950 50  0001 C CNN "PartNumber"
+F 6 "0" H -150 2950 50  0001 C CNN "price@10"
+	1    13250 5900
+	1    0    0    -1  
 $EndComp
 $EndSCHEMATC

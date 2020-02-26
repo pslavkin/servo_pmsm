@@ -43,9 +43,10 @@ F 0 "D1402" V 2656 1830 20  0000 L CNN
 F 1 "red@2mA" V 2696 1830 16  0000 L CNN
 F 2 "servo:LED_0603_1608Metric" H 2450 1500 60  0001 C CNN
 F 3 "../doc/datasheets/LS L29K.pdf" H 2450 1500 60  0001 C CNN
-F 4 "LS L29K-G1H2-1-Z " H 2650 1700 50  0001 C CNN "digikey"
+F 4 "475-3124-1-ND" H 2650 1700 50  0001 C CNN "digikey"
 F 5 "LS L29K-G1H2-1-Z" H 0   0   50  0001 C CNN "PartNumber"
 F 6 "LED RED DIFFUSED 0603 SMD " H 0   0   50  0001 C CNN "Description"
+F 7 "0.33900" H 0   0   50  0001 C CNN "price@10"
 	1    2650 1700
 	0    1    1    0   
 $EndComp
@@ -91,6 +92,7 @@ F 3 "../doc/datasheets/LY L29K.pdf" H 2150 1500 60  0001 C CNN
 F 4 "475-1196-1-ND" H 2350 1700 50  0001 C CNN "digikey"
 F 5 "LY L29K-H1K2-26-Z " H 0   0   50  0001 C CNN "PartNumber"
 F 6 "LED YELLOW DIFFUSED 0603 SMD " H 0   0   50  0001 C CNN "Description"
+F 7 "0.30100" H 0   0   50  0001 C CNN "price@10"
 	1    2350 1700
 	0    1    1    0   
 $EndComp
@@ -119,6 +121,10 @@ F 0 "U1401" H 8800 2150 39  0000 C CNN
 F 1 "PAM8301" H 8800 2050 39  0000 C CNN
 F 2 "servo:SOT-23-6" H 8600 1800 50  0001 C CNN
 F 3 "https://www.diodes.com/assets/Datasheets/PAM8301.pdf" H 8600 1800 50  0001 C CNN
+F 4 "Amplifier IC 1-Channel (Mono) Class D SOT-23-6" H 0   0   50  0001 C CNN "Description"
+F 5 "PAM8301AAF" H 0   0   50  0001 C CNN "PartNumber"
+F 6 "PAM8301AAFDICT-ND " H 0   0   50  0001 C CNN "digikey"
+F 7 "0.46800" H 0   0   50  0001 C CNN "price@10"
 	1    8600 1800
 	1    0    0    -1  
 $EndComp
@@ -161,6 +167,7 @@ F 3 "" H 7500 1900 60  0000 C CNN
 F 4 "CAP CER 1000PF 16V X7R 0603 " H 0   0   50  0001 C CNN "Description"
 F 5 "0603B102K160CT" H 0   0   50  0001 C CNN "PartNumber"
 F 6 "1292-1378-1-ND " H 0   0   50  0001 C CNN "digikey"
+F 7 "0.04100" H 0   0   50  0001 C CNN "price@10"
 	1    7500 1900
 	0    1    1    0   
 $EndComp
@@ -185,13 +192,13 @@ P 8100 1700
 AR Path="/5E092156/5E3524D7" Ref="C?"  Part="1" 
 AR Path="/5E72D841/5E3524D7" Ref="C1404"  Part="1" 
 F 0 "C1404" H 8150 1525 20  0000 C CNN
-F 1 "1uF" H 8150 1568 20  0000 C CNN
+F 1 "47Uf" H 8150 1568 20  0000 C CNN
 F 2 "servo:C_0603_1608Metric" H 8100 1600 60  0001 C CNN
 F 3 "" H 8100 1700 60  0000 C CNN
-F 4 "CAP CER 1UF 10V X7R 0603" H 0   0   50  0001 C CNN "Description"
-F 5 "" H 0   0   50  0001 C CNN "Mfr part number"
-F 6 "399-11133-1-ND" H 0   0   50  0001 C CNN "digikey"
-F 7 "C0603C105K8RACTU" H 0   0   50  0001 C CNN "PartNumber"
+F 4 "47µF ±20% 6.3V Ceramic Capacitor X5R 0603 (1608 Metric) " H 0   0   50  0001 C CNN "Description"
+F 5 "490-13247-6-ND" H 0   0   50  0001 C CNN "digikey"
+F 6 "GRM188R60J476ME15D" H 0   0   50  0001 C CNN "PartNumber"
+F 7 "0.46900" H 0   0   50  0001 C CNN "price@10"
 	1    8100 1700
 	-1   0    0    1   
 $EndComp
@@ -496,12 +503,13 @@ P 7900 1200
 AR Path="/5E092156/618DDB4B" Ref="C?"  Part="1" 
 AR Path="/5E72D841/618DDB4B" Ref="C1403"  Part="1" 
 F 0 "C1403" V 7972 1090 20  0000 R CNN
-F 1 "10uF" V 7929 1090 20  0000 R CNN
+F 1 "47Uf" V 7929 1090 20  0000 R CNN
 F 2 "servo:C_0603_1608Metric" H 7900 1100 60  0001 C CNN
 F 3 "" H 7900 1200 60  0000 C CNN
-F 4 "10µF ±20% 10V Ceramic Capacitor X5R 0603 (1608 Metric) " H 0   0   50  0001 C CNN "Description"
-F 5 "GRM188R61A106ME69D " H 0   0   50  0001 C CNN "PartNumber"
-F 6 "490-10475-1-ND" H 0   0   50  0001 C CNN "digikey"
+F 4 "47µF ±20% 6.3V Ceramic Capacitor X5R 0603 (1608 Metric) " H 0   0   50  0001 C CNN "Description"
+F 5 "GRM188R60J476ME15D" H 0   0   50  0001 C CNN "PartNumber"
+F 6 "490-13247-6-ND" H 0   0   50  0001 C CNN "digikey"
+F 7 "0.46900" H 0   0   50  0001 C CNN "price@10"
 	1    7900 1200
 	0    -1   -1   0   
 $EndComp

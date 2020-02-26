@@ -26,6 +26,10 @@ F 0 "U1904" H 6025 5712 60  0000 C CNN
 F 1 "SN75C1168DBR" H 6025 5606 60  0000 C CNN
 F 2 "servo:SOIC-16W_5.3x10.2mm_P1.27mm" H 5900 5665 60  0001 C CNN
 F 3 "../doc/datasheets/sn65c1168.pdf" H 5900 5825 60  0001 C CNN
+F 4 "2/2 Transceiver Full RS422, RS485 16-SSOP " H 0   0   50  0001 C CNN "Description"
+F 5 "SN75C1168DBR" H 0   0   50  0001 C CNN "PartNumber"
+F 6 "296-SN75C1168DBRCT-ND" H 0   0   50  0001 C CNN "digikey"
+F 7 "1.55300" H 0   0   50  0001 C CNN "price@10"
 	1    6000 5100
 	1    0    0    -1  
 $EndComp
@@ -42,6 +46,7 @@ F 3 "" H 6350 3300 60  0000 C CNN
 F 4 "CC0603KPX7R7BB104" H 0   0   50  0001 C CNN "PartNumber"
 F 5 "311-1335-1-ND" H 0   0   50  0001 C CNN "digikey"
 F 6 "CAP CER 0.1UF 16V X7R 0603 " H 0   0   50  0001 C CNN "Description"
+F 7 "0.05800" H 0   0   50  0001 C CNN "price@10"
 	1    6350 3300
 	0    1    1    0   
 $EndComp
@@ -71,6 +76,10 @@ F 0 "U1901" H 3600 4939 60  0000 C CNN
 F 1 "SI8662BD" H 3600 4833 60  0000 C CNN
 F 2 "servo:SOIC-16W_7.5x10.3mm_P1.27mm" H 3000 4650 60  0001 C CNN
 F 3 "../doc/datasheets/Si8660.pdf" H 3500 4950 60  0001 C CNN
+F 4 "General Purpose Digital Isolator 5000Vrms 6 Channel 150Mbps 35kV/µs CMTI 16-SOIC (0.295\", 7.50mm Width)" H 0   0   50  0001 C CNN "Description"
+F 5 "SI8662BD-B-IS" H 0   0   50  0001 C CNN "PartNumber"
+F 6 "336-2125-5-ND " H 0   0   50  0001 C CNN "digikey"
+F 7 "2.75000" H 0   0   50  0001 C CNN "price@10"
 	1    3600 4350
 	1    0    0    -1  
 $EndComp
@@ -121,6 +130,7 @@ F 3 "../doc/datasheets/tblock2rows.pdf" H 8350 5400 50  0001 C CNN
 F 4 "12 Position Terminal Block Header, Male Pins, Shrouded (4 Side) 0.150\" (3.81mm) 90°, Right Angle Through Hole " H 0   0   50  0001 C CNN "Description"
 F 5 "1843114 " H 0   0   50  0001 C CNN "PartNumber"
 F 6 "277-6009-ND " H 0   0   50  0001 C CNN "digikey"
+F 7 "7.50500" H 0   0   50  0001 C CNN "price@10"
 	1    8300 5100
 	1    0    0    -1  
 $EndComp
@@ -143,6 +153,7 @@ F 3 "" H 4600 3300 60  0000 C CNN
 F 4 "CC0603KPX7R7BB104" H 0   0   50  0001 C CNN "PartNumber"
 F 5 "311-1335-1-ND" H 0   0   50  0001 C CNN "digikey"
 F 6 "CAP CER 0.1UF 16V X7R 0603 " H 0   0   50  0001 C CNN "Description"
+F 7 "0.05800" H 0   0   50  0001 C CNN "price@10"
 	1    4600 3300
 	0    -1   1    0   
 $EndComp
@@ -257,6 +268,7 @@ F 3 "" H 2500 3700 60  0000 C CNN
 F 4 "CC0603KPX7R7BB104" H 0   0   50  0001 C CNN "PartNumber"
 F 5 "311-1335-1-ND" H 0   0   50  0001 C CNN "digikey"
 F 6 "CAP CER 0.1UF 16V X7R 0603 " H 0   0   50  0001 C CNN "Description"
+F 7 "0.05800" H 0   0   50  0001 C CNN "price@10"
 	1    2500 3700
 	0    1    1    0   
 $EndComp
@@ -342,6 +354,10 @@ F 0 "U1905" H 10775 5712 60  0000 C CNN
 F 1 "SN75C1168DBR" H 10775 5606 60  0000 C CNN
 F 2 "servo:SOIC-16W_5.3x10.2mm_P1.27mm" H 10650 5665 60  0001 C CNN
 F 3 "../doc/datasheets/sn65c1168.pdf" H 10650 5825 60  0001 C CNN
+F 4 "2/2 Transceiver Full RS422, RS485 16-SSOP " H 0   0   50  0001 C CNN "Description"
+F 5 "SN75C1168DBR" H 0   0   50  0001 C CNN "PartNumber"
+F 6 "296-SN75C1168DBRCT-ND" H 0   0   50  0001 C CNN "digikey"
+F 7 "1.55300" H 0   0   50  0001 C CNN "price@10"
 	1    10750 5100
 	-1   0    0    -1  
 $EndComp
@@ -358,6 +374,7 @@ F 3 "" H 10400 3300 60  0000 C CNN
 F 4 "CC0603KPX7R7BB104" H 0   0   50  0001 C CNN "PartNumber"
 F 5 "311-1335-1-ND" H 0   0   50  0001 C CNN "digikey"
 F 6 "CAP CER 0.1UF 16V X7R 0603 " H 0   0   50  0001 C CNN "Description"
+F 7 "0.05800" H 0   0   50  0001 C CNN "price@10"
 	1    10400 3300
 	0    -1   1    0   
 $EndComp
@@ -387,6 +404,10 @@ F 0 "U1908" H 13150 4939 60  0000 C CNN
 F 1 "SI8662BD" H 13150 4833 60  0000 C CNN
 F 2 "servo:SOIC-16W_7.5x10.3mm_P1.27mm" H 12550 4650 60  0001 C CNN
 F 3 "../doc/datasheets/Si8660.pdf" H 13050 4950 60  0001 C CNN
+F 4 "General Purpose Digital Isolator 5000Vrms 6 Channel 150Mbps 35kV/µs CMTI 16-SOIC (0.295\", 7.50mm Width)" H 0   0   50  0001 C CNN "Description"
+F 5 "SI8662BD-B-IS" H 0   0   50  0001 C CNN "PartNumber"
+F 6 "336-2125-5-ND " H 0   0   50  0001 C CNN "digikey"
+F 7 "2.75000" H 0   0   50  0001 C CNN "price@10"
 	1    13150 4350
 	-1   0    0    -1  
 $EndComp
@@ -439,6 +460,7 @@ F 3 "" H 12150 3300 60  0000 C CNN
 F 4 "CC0603KPX7R7BB104" H 0   0   50  0001 C CNN "PartNumber"
 F 5 "311-1335-1-ND" H 0   0   50  0001 C CNN "digikey"
 F 6 "CAP CER 0.1UF 16V X7R 0603 " H 0   0   50  0001 C CNN "Description"
+F 7 "0.05800" H 0   0   50  0001 C CNN "price@10"
 	1    12150 3300
 	0    1    1    0   
 $EndComp
@@ -546,6 +568,7 @@ F 3 "" H 14250 3700 60  0000 C CNN
 F 4 "CC0603KPX7R7BB104" H 0   0   50  0001 C CNN "PartNumber"
 F 5 "311-1335-1-ND" H 0   0   50  0001 C CNN "digikey"
 F 6 "CAP CER 0.1UF 16V X7R 0603 " H 0   0   50  0001 C CNN "Description"
+F 7 "0.05800" H 0   0   50  0001 C CNN "price@10"
 	1    14250 3700
 	0    -1   1    0   
 $EndComp

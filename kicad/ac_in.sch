@@ -64,9 +64,10 @@ F 0 "D705" V 6006 6380 20  0000 L CNN
 F 1 "green@2mA" V 6046 6380 16  0000 L CNN
 F 2 "servo:LED_0603_1608Metric" H 5800 6050 60  0001 C CNN
 F 3 "" H 5800 6050 60  0000 C CNN
-F 4 "LG L29K-G2J1-24-Z " H 6000 6250 50  0001 C CNN "digikey"
+F 4 "475-2709-1-ND" H 6000 6250 50  0001 C CNN "digikey"
 F 5 "LG L29K-G2J1-24-Z" H 0   0   50  0001 C CNN "PartNumber"
 F 6 "LED GREEN DIFFUSED 0603 SMD " H 0   0   50  0001 C CNN "Description"
+F 7 "0.31900" H 0   0   50  0001 C CNN "price@10"
 	1    6000 6250
 	0    1    1    0   
 $EndComp
@@ -87,6 +88,7 @@ F 3 "" H 5650 5950 60  0000 C CNN
 F 4 "490-10475-1-ND" H 0   0   50  0001 C CNN "digikey"
 F 5 "GRM188R61A106ME69D " H 0   0   50  0001 C CNN "PartNumber"
 F 6 "10µF ±20% 10V Ceramic Capacitor X5R 0603 (1608 Metric) " H 0   0   50  0001 C CNN "Description"
+F 7 "0.15400" H 0   0   50  0001 C CNN "price@10"
 	1    5650 5950
 	0    1    1    0   
 $EndComp
@@ -119,6 +121,7 @@ F 3 "" H 7850 5950 60  0000 C CNN
 F 4 "490-10475-1-ND" H 0   0   50  0001 C CNN "digikey"
 F 5 "GRM188R61A106ME69D " H 0   0   50  0001 C CNN "PartNumber"
 F 6 "10µF ±20% 10V Ceramic Capacitor X5R 0603 (1608 Metric) " H 0   0   50  0001 C CNN "Description"
+F 7 "0.15400" H 0   0   50  0001 C CNN "price@10"
 	1    7850 5950
 	0    1    1    0   
 $EndComp
@@ -195,9 +198,13 @@ L servo:R-78E3.3-1.0 U702
 U 1 1 5E18DDB9
 P 5200 5650
 F 0 "U702" H 5050 5775 39  0000 C CNN
-F 1 "R-78B3.3-2.0" H 5200 5775 39  0000 L CNN
+F 1 "R-78B3.3-2.0  Reg sw 3.3v 2A" H 5200 5775 39  0000 L CNN
 F 2 "servo:Converter_DCDC_RECOM_R-78E-0.5_THT" H 5250 5400 50  0001 L CIN
 F 3 "../doc/datasheets/R-78B-2.0.pdf" H 5050 5775 50  0001 C CNN
+F 4 "Linear Regulator Replacement DC DC Converter 1 Output 3.3V 2A 4.75V - 32V Input " H 0   0   50  0001 C CNN "Description"
+F 5 "R-78B3.3-2.0 " H 0   0   50  0001 C CNN "PartNumber"
+F 6 "945-3040-ND" H 0   0   50  0001 C CNN "digikey"
+F 7 "9.71800" H 0   0   50  0001 C CNN "price@10"
 	1    5200 5650
 	1    0    0    -1  
 $EndComp
@@ -216,9 +223,13 @@ L servo:AP2114 U706
 U 1 1 5E28622B
 P 7300 5750
 F 0 "U706" H 7300 6091 39  0000 C CNN
-F 1 "AP2114H-1.2TRG1" H 7300 6016 39  0000 C CNN
+F 1 "AP2114 Reg linear 1.2v 1A" H 7300 6016 39  0000 C CNN
 F 2 "servo:SOT-223" H 7400 6375 50  0001 C CNN
 F 3 "../doc/datasheets/AP2114.pdf" H 7350 6150 50  0001 C CNN
+F 4 "Linear Voltage Regulator IC Positive Fixed 1 Output 1A SOT-223 " H 0   0   50  0001 C CNN "Description"
+F 5 "AP2114H-1.2TRG1" H 0   0   50  0001 C CNN "PartNumber"
+F 6 "AP2114H-1.2TRG1DICT-ND" H 0   0   50  0001 C CNN "digikey"
+F 7 "0.29600" H 0   0   50  0001 C CNN "price@10"
 	1    7300 5750
 	1    0    0    -1  
 $EndComp
@@ -265,6 +276,7 @@ F 3 "../doc/datasheets/fuse_3912.pdf" V 1330 5900 50  0001 C CNN
 F 4 "2A 600V AC 250V DC Fuse Board Mount (Cartridge Style Excluded) Surface Mount 2-SMD, Square End Block" H 0   0   50  0001 C CNN "Description"
 F 5 "SF-3812TM200T-2" H 0   0   50  0001 C CNN "PartNumber"
 F 6 "SF-3812TM200T-2CT-ND" H 0   0   50  0001 C CNN "digikey"
+F 7 "1.70000" H 0   0   50  0001 C CNN "price@10"
 	1    1250 5900
 	0    1    1    0   
 $EndComp
@@ -291,9 +303,10 @@ F 0 "D701" V 3056 6280 20  0000 L CNN
 F 1 "red@2mA" V 3096 6280 16  0000 L CNN
 F 2 "servo:LED_0603_1608Metric" H 2850 5950 60  0001 C CNN
 F 3 "../doc/datasheets/LS L29K.pdf" H 2850 5950 60  0001 C CNN
-F 4 "LS L29K-G1H2-1-Z " H 3050 6150 50  0001 C CNN "digikey"
+F 4 "475-3124-1-ND" H 3050 6150 50  0001 C CNN "digikey"
 F 5 "LS L29K-G1H2-1-Z" H 0   0   50  0001 C CNN "PartNumber"
 F 6 "LED RED DIFFUSED 0603 SMD " H 0   0   50  0001 C CNN "Description"
+F 7 "0.33900" H 0   0   50  0001 C CNN "price@10"
 	1    3050 6150
 	0    1    1    0   
 $EndComp
@@ -386,6 +399,7 @@ F 3 "../doc/datasheets/LY L29K.pdf" H 12100 5900 60  0001 C CNN
 F 4 "475-1196-1-ND" H 12300 6100 50  0001 C CNN "digikey"
 F 5 "LY L29K-H1K2-26-Z " H 0   0   50  0001 C CNN "PartNumber"
 F 6 "LED YELLOW DIFFUSED 0603 SMD " H 0   0   50  0001 C CNN "Description"
+F 7 "0.30100" H 0   0   50  0001 C CNN "price@10"
 	1    12300 6100
 	0    1    1    0   
 $EndComp
@@ -442,6 +456,7 @@ F 3 "" H 8650 3400 50  0001 C CNN
 F 4 "8 Position Terminal Block Header, Male Pins, Shrouded (4 Side) 0.200\" (5.08mm) 90°, Right Angle Through Hole " H 0   0   50  0001 C CNN "Description"
 F 5 "1736713" H 0   0   50  0001 C CNN "PartNumber"
 F 6 "277-1401-ND " H 0   0   50  0001 C CNN "digikey"
+F 7 "5.37000" H 0   0   50  0001 C CNN "price@10"
 	1    8650 3400
 	-1   0    0    -1  
 $EndComp
@@ -602,6 +617,7 @@ F 3 "" H 4700 5950 60  0000 C CNN
 F 4 "CAP CER 22UF 6.3V X5R 0603 " H 0   0   50  0001 C CNN "Description"
 F 5 "GRM188R60J226MEA0D" H 0   0   50  0001 C CNN "PartNumber"
 F 6 "490-7611-1-ND" H 0   0   50  0001 C CNN "digikey"
+F 7 "0.19400" H 0   0   50  0001 C CNN "price@10"
 	1    4700 5950
 	0    1    1    0   
 $EndComp
@@ -649,6 +665,7 @@ F 3 "" H 6800 5950 60  0000 C CNN
 F 4 "CC0603KPX7R7BB104" H 0   0   50  0001 C CNN "PartNumber"
 F 5 "311-1335-1-ND" H 0   0   50  0001 C CNN "digikey"
 F 6 "CAP CER 0.1UF 16V X7R 0603 " H 0   0   50  0001 C CNN "Description"
+F 7 "0.05800" H 0   0   50  0001 C CNN "price@10"
 	1    6800 5950
 	0    1    1    0   
 $EndComp
@@ -690,7 +707,8 @@ F 2 "servo:C_0603_1608Metric" H 12950 5750 60  0001 C CNN
 F 3 "" H 12950 5850 60  0000 C CNN
 F 4 "CAP CER 2.2UF 16V X6S 0603 " H 0   0   50  0001 C CNN "Description"
 F 5 "GRT188C81C225KE13D" H 0   0   50  0001 C CNN "PartNumber"
-F 6 "490-12287-2-ND" H 0   0   50  0001 C CNN "digikey"
+F 6 "490-12287-1-ND" H 0   0   50  0001 C CNN "digikey"
+F 7 "0.35500" H 0   0   50  0001 C CNN "price@10"
 	1    12950 5850
 	0    1    1    0   
 $EndComp
@@ -707,6 +725,7 @@ F 3 "" H 12650 5850 60  0000 C CNN
 F 4 "CAP CER 22UF 6.3V X5R 0603 " H 0   0   50  0001 C CNN "Description"
 F 5 "GRM188R60J226MEA0D" H 0   0   50  0001 C CNN "PartNumber"
 F 6 "490-7611-1-ND" H 0   0   50  0001 C CNN "digikey"
+F 7 "0.19400" H 0   0   50  0001 C CNN "price@10"
 	1    12650 5850
 	0    1    1    0   
 $EndComp
@@ -734,6 +753,7 @@ F 3 "" H 8200 5950 60  0000 C CNN
 F 4 "CC0603KPX7R7BB104" H 0   0   50  0001 C CNN "PartNumber"
 F 5 "311-1335-1-ND" H 0   0   50  0001 C CNN "digikey"
 F 6 "CAP CER 0.1UF 16V X7R 0603 " H 0   0   50  0001 C CNN "Description"
+F 7 "0.05800" H 0   0   50  0001 C CNN "price@10"
 	1    8200 5950
 	0    1    1    0   
 $EndComp
@@ -749,7 +769,8 @@ F 2 "servo:C_0603_1608Metric" H 4400 5850 60  0001 C CNN
 F 3 "" H 4400 5950 60  0000 C CNN
 F 4 "CAP CER 2.2UF 16V X6S 0603 " H 0   0   50  0001 C CNN "Description"
 F 5 "GRT188C81C225KE13D" H 0   0   50  0001 C CNN "PartNumber"
-F 6 "490-12287-2-ND" H 0   0   50  0001 C CNN "digikey"
+F 6 "490-12287-1-ND" H 0   0   50  0001 C CNN "digikey"
+F 7 "0.35500" H 0   0   50  0001 C CNN "price@10"
 	1    4400 5950
 	0    1    1    0   
 $EndComp
@@ -1065,6 +1086,7 @@ F 3 "https://diotec.com/tl_files/diotec/files/pdf/datasheets/z1sma1.pdf" H 14950
 F 4 "Zener Diode 5.1V 1.25W ±5.88% Surface Mount DO-214AC (SMA) " H 0   0   50  0001 C CNN "Description"
 F 5 "BZG05C5V1-M3-08" H 0   0   50  0001 C CNN "PartNumber"
 F 6 "BZG05C5V1-M3-08GICT-ND" H 0   0   50  0001 C CNN "digikey"
+F 7 "0.32000" H 0   0   50  0001 C CNN "price@10"
 	1    14950 7900
 	0    1    1    0   
 $EndComp
@@ -1089,6 +1111,7 @@ F 3 "https://diotec.com/tl_files/diotec/files/pdf/datasheets/z1sma1.pdf" H 14900
 F 4 "Zener Diode 5.1V 1.25W ±5.88% Surface Mount DO-214AC (SMA) " H 0   0   50  0001 C CNN "Description"
 F 5 "BZG05C5V1-M3-08" H 0   0   50  0001 C CNN "PartNumber"
 F 6 "BZG05C5V1-M3-08GICT-ND" H 0   0   50  0001 C CNN "digikey"
+F 7 "0.32000" H 0   0   50  0001 C CNN "price@10"
 	1    14900 6600
 	0    1    1    0   
 $EndComp
@@ -1119,6 +1142,7 @@ F 3 "https://diotec.com/tl_files/diotec/files/pdf/datasheets/z1sma1.pdf" H 4150 
 F 4 "Zener Diode 5.1V 1.25W ±5.88% Surface Mount DO-214AC (SMA) " H 0   0   50  0001 C CNN "Description"
 F 5 "BZG05C5V1-M3-08" H 0   0   50  0001 C CNN "PartNumber"
 F 6 "BZG05C5V1-M3-08GICT-ND" H 0   0   50  0001 C CNN "digikey"
+F 7 "0.32000" H 0   0   50  0001 C CNN "price@10"
 	1    4150 6000
 	0    1    1    0   
 $EndComp
@@ -1143,6 +1167,7 @@ F 3 "https://diotec.com/tl_files/diotec/files/pdf/datasheets/z1sma1.pdf" H 6400 
 F 4 "Zener Diode 3.6V 1.25W ±5.56% Surface Mount DO-214AC (SMA) " H 0   0   50  0001 C CNN "Description"
 F 5 "BZG05C3V6-M3-08" H 0   0   50  0001 C CNN "PartNumber"
 F 6 "BZG05C3V6-M3-08GICT-ND" H 0   0   50  0001 C CNN "digikey"
+F 7 "0.32000" H 0   0   50  0001 C CNN "price@10"
 	1    6400 6050
 	0    1    1    0   
 $EndComp

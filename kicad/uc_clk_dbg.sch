@@ -92,8 +92,8 @@ F 2 "servo:C_0603_1608Metric" H 13900 3700 60  0001 C CNN
 F 3 "" H 13900 3800 60  0000 C CNN
 F 4 "311-1335-1-ND" H 0   0   50  0001 C CNN "digikey"
 F 5 "CAP CER 0.1UF 16V X7R 0603 " H 0   0   50  0001 C CNN "Description"
-F 6 "" H 0   0   50  0001 C CNN "Mfr part number"
-F 7 "CC0603KPX7R7BB104" H 0   0   50  0001 C CNN "PartNumber"
+F 6 "CC0603KPX7R7BB104" H 0   0   50  0001 C CNN "PartNumber"
+F 7 "0.05800" H 0   0   50  0001 C CNN "price@10"
 	1    13900 3800
 	0    -1   -1   0   
 $EndComp
@@ -135,9 +135,13 @@ L servo:OSC_4P_1_TRI-STATE Y601
 U 1 1 5DB38F52
 P 13900 2600
 F 0 "Y601" H 13900 2367 60  0000 C CNN
-F 1 "26mhz" H 13900 2600 50  0001 C CNN
+F 1 "osc 25Mhz" H 13900 2600 50  0001 C CNN
 F 2 "servo:Crystal_SMD_2520-4Pin_2.5x2.0mm" H 13900 2600 50  0001 C CNN
 F 3 "../doc/datasheets//ECS-2520S.pdf" H 13900 2600 50  0001 C CNN
+F 4 "25MHz XO (Standard) HCMOS Oscillator 3.3V Enable/Disable 4-SMD, No Lead " H 0   0   50  0001 C CNN "Description"
+F 5 "ECS-2520S33-250-FN-TR" H 0   0   50  0001 C CNN "PartNumber"
+F 6 "XC2198CT-ND " H 0   0   50  0001 C CNN "digikey"
+F 7 "1.41900" H 0   0   50  0001 C CNN "price@10"
 	1    13900 2600
 	-1   0    0    -1  
 $EndComp
@@ -200,9 +204,10 @@ F 0 "D603" V 4385 3172 20  0000 R CNN
 F 1 "blue@5mA" V 4425 3172 16  0000 R CNN
 F 2 "servo:LED_0603_1608Metric" H 4200 3050 60  0001 C CNN
 F 3 "../doc/datasheets/LB_Q39G_v1.4_9-1-15.pdf" H 4200 3050 60  0001 C CNN
-F 4 "LB Q39G-L2OO-35-1" H 4400 3250 50  0001 C CNN "digikey"
+F 4 "475-2816-1-ND" H 4400 3250 50  0001 C CNN "digikey"
 F 5 "LB Q39G-L2OO-35-1" H 0   0   50  0001 C CNN "PartNumber"
 F 6 "LED BLUE DIFFUSED 0603 SMD " H 0   0   50  0001 C CNN "Description"
+F 7 "0.40100" H 0   0   50  0001 C CNN "price@10"
 	1    4400 3250
 	0    1    1    0   
 $EndComp
@@ -216,9 +221,10 @@ F 0 "D604" V 8235 3580 20  0000 L CNN
 F 1 "blue@5mA" V 8275 3580 16  0000 L CNN
 F 2 "servo:LED_0603_1608Metric" H 8050 3250 60  0001 C CNN
 F 3 "../doc/datasheets/LB_Q39G_v1.4_9-1-15.pdf" H 8050 3250 60  0001 C CNN
-F 4 "LB Q39G-L2OO-35-1" H 8250 3450 50  0001 C CNN "digikey"
+F 4 "475-2816-1-ND" H 8250 3450 50  0001 C CNN "digikey"
 F 5 "LB Q39G-L2OO-35-1" H 0   0   50  0001 C CNN "PartNumber"
 F 6 "LED BLUE DIFFUSED 0603 SMD " H 0   0   50  0001 C CNN "Description"
+F 7 "0.40100" H 0   0   50  0001 C CNN "price@10"
 	1    8250 3450
 	0    1    1    0   
 $EndComp
@@ -312,8 +318,8 @@ F 2 "servo:C_0603_1608Metric" H 14300 7150 60  0001 C CNN
 F 3 "" H 14300 7250 60  0000 C CNN
 F 4 "311-1335-1-ND" H 0   0   50  0001 C CNN "digikey"
 F 5 "CAP CER 0.1UF 16V X7R 0603 " H 0   0   50  0001 C CNN "Description"
-F 6 "" H 0   0   50  0001 C CNN "Mfr part number"
-F 7 "CC0603KPX7R7BB104" H 0   0   50  0001 C CNN "PartNumber"
+F 6 "CC0603KPX7R7BB104" H 0   0   50  0001 C CNN "PartNumber"
+F 7 "0.05800" H 0   0   50  0001 C CNN "price@10"
 	1    14300 7250
 	0    1    1    0   
 $EndComp
@@ -381,10 +387,14 @@ $Comp
 L servo:M25PX32-VMW U602
 U 1 1 5ECE67BA
 P 13850 8000
-F 0 "U602" H 14491 8046 50  0000 L CNN
-F 1 "M25PX32-VMW" H 14491 7955 50  0000 L CNN
+F 0 "U602" H 14491 8046 39  0000 L CNN
+F 1 "SST26VF032B-104V/SM (M25PX32-VMW)" H 14491 7955 39  0000 L CNN
 F 2 "servo:SOIJ-8_5.3x5.3mm_P1.27mm" H 14500 8050 50  0001 C CNN
-F 3 "../doc/datasheets/m25px32.pdf" H 14000 7900 50  0001 C CNN
+F 3 "../doc/datasheets/SST26VF032B_nor_flash.pdf" H 14000 7900 50  0001 C CNN
+F 4 "FLASH Memory IC 32Mb (4M x 8) SPI - Quad I/O 104MHz 8-SOIJ" H 0   0   50  0001 C CNN "Description"
+F 5 "SST26VF032B-104V/SM" H 0   0   50  0001 C CNN "PartNumber"
+F 6 "SST26VF032B-104V/SM-ND " H 0   0   50  0001 C CNN "digikey"
+F 7 "1.67000" H 0   0   50  0001 C CNN "price@10"
 	1    13850 8000
 	1    0    0    -1  
 $EndComp
@@ -469,6 +479,7 @@ F 3 "" H 10300 7550 60  0000 C CNN
 F 4 "CAP CER 0.1UF 16V X7R 0603 " H 0   0   50  0001 C CNN "Description"
 F 5 "CC0603KPX7R7BB104" H 0   0   50  0001 C CNN "PartNumber"
 F 6 "311-1335-1-ND" H 0   0   50  0001 C CNN "digikey"
+F 7 "0.05800" H 0   0   50  0001 C CNN "price@10"
 	1    10300 7550
 	0    1    1    0   
 $EndComp

@@ -61,6 +61,7 @@ F 3 "" H 3950 3450 60  0000 C CNN
 F 4 "CC0603KPX7R7BB104" H 0   0   50  0001 C CNN "PartNumber"
 F 5 "311-1335-1-ND" H 0   0   50  0001 C CNN "digikey"
 F 6 "CAP CER 0.1UF 16V X7R 0603 " H 0   0   50  0001 C CNN "Description"
+F 7 "0.05800" H 0   0   50  0001 C CNN "price@10"
 	1    3950 3450
 	0    -1   1    0   
 $EndComp
@@ -131,6 +132,7 @@ F 3 "" H 3600 4350 60  0000 C CNN
 F 4 "CAP CER 1000PF 16V X7R 0603 " H 0   0   50  0001 C CNN "Description"
 F 5 "0603B102K160CT" H 0   0   50  0001 C CNN "PartNumber"
 F 6 "1292-1378-1-ND " H 0   0   50  0001 C CNN "digikey"
+F 7 "0.04100" H 0   0   50  0001 C CNN "price@10"
 	1    3600 4350
 	0    -1   1    0   
 $EndComp
@@ -159,6 +161,10 @@ F 0 "U1503" H 4350 4150 39  0000 L CNN
 F 1 "LXS6-NPS" H 4300 4050 39  0000 L CNN
 F 2 "servo:LEM_LXS-NP" H 4850 2850 50  0001 C CNN
 F 3 "../doc/datasheets/lem_lxs_series.pdf" H 4850 3000 50  0001 C CNN
+F 4 "Current Sensor 6A 1 Channel Hall Effect, Closed Loop Bidirectional Module " H 0   0   50  0001 C CNN "Description"
+F 5 "LXS 6-NPS" H 0   0   50  0001 C CNN "PartNumber"
+F 6 "398-1212-ND" H 0   0   50  0001 C CNN "digikey"
+F 7 "12.50000" H 0   0   50  0001 C CNN "price@10"
 	1    4850 3650
 	1    0    0    -1  
 $EndComp
@@ -231,6 +237,7 @@ F 3 "" H 3750 5400 60  0000 C CNN
 F 4 "CC0603KPX7R7BB104" H 0   0   50  0001 C CNN "PartNumber"
 F 5 "311-1335-1-ND" H 0   0   50  0001 C CNN "digikey"
 F 6 "CAP CER 0.1UF 16V X7R 0603 " H 0   0   50  0001 C CNN "Description"
+F 7 "0.05800" H 0   0   50  0001 C CNN "price@10"
 	1    3750 5400
 	0    -1   1    0   
 $EndComp
@@ -285,6 +292,7 @@ F 3 "" H 3400 6300 60  0000 C CNN
 F 4 "CAP CER 1000PF 16V X7R 0603 " H 0   0   50  0001 C CNN "Description"
 F 5 "0603B102K160CT" H 0   0   50  0001 C CNN "PartNumber"
 F 6 "1292-1378-1-ND " H 0   0   50  0001 C CNN "digikey"
+F 7 "0.04100" H 0   0   50  0001 C CNN "price@10"
 	1    3400 6300
 	0    -1   1    0   
 $EndComp
@@ -313,6 +321,10 @@ F 0 "U1501" H 4150 6100 39  0000 L CNN
 F 1 "LXS6-NPS" H 4100 6000 39  0000 L CNN
 F 2 "servo:LEM_LXS-NP" H 4650 4800 50  0001 C CNN
 F 3 "../doc/datasheets/lem_lxs_series.pdf" H 4650 4950 50  0001 C CNN
+F 4 "Current Sensor 6A 1 Channel Hall Effect, Closed Loop Bidirectional Module " H 0   0   50  0001 C CNN "Description"
+F 5 "LXS 6-NPS" H 0   0   50  0001 C CNN "PartNumber"
+F 6 "398-1212-ND" H 0   0   50  0001 C CNN "digikey"
+F 7 "12.50000" H 0   0   50  0001 C CNN "price@10"
 	1    4650 5600
 	1    0    0    -1  
 $EndComp
@@ -370,6 +382,7 @@ F 3 "" H 3850 8000 60  0000 C CNN
 F 4 "CC0603KPX7R7BB104" H 0   0   50  0001 C CNN "PartNumber"
 F 5 "311-1335-1-ND" H 0   0   50  0001 C CNN "digikey"
 F 6 "CAP CER 0.1UF 16V X7R 0603 " H 0   0   50  0001 C CNN "Description"
+F 7 "0.05800" H 0   0   50  0001 C CNN "price@10"
 	1    3850 8000
 	0    -1   1    0   
 $EndComp
@@ -424,6 +437,7 @@ F 3 "" H 3500 8900 60  0000 C CNN
 F 4 "CAP CER 1000PF 16V X7R 0603 " H 0   0   50  0001 C CNN "Description"
 F 5 "0603B102K160CT" H 0   0   50  0001 C CNN "PartNumber"
 F 6 "1292-1378-1-ND " H 0   0   50  0001 C CNN "digikey"
+F 7 "0.04100" H 0   0   50  0001 C CNN "price@10"
 	1    3500 8900
 	0    -1   1    0   
 $EndComp
@@ -498,6 +512,7 @@ F 3 "" H 8750 3450 60  0000 C CNN
 F 4 "CC0603KPX7R7BB104" H 0   0   50  0001 C CNN "PartNumber"
 F 5 "311-1335-1-ND" H 0   0   50  0001 C CNN "digikey"
 F 6 "CAP CER 0.1UF 16V X7R 0603 " H 0   0   50  0001 C CNN "Description"
+F 7 "0.05800" H 0   0   50  0001 C CNN "price@10"
 	1    8750 3450
 	0    1    1    0   
 $EndComp
@@ -519,6 +534,7 @@ F 3 "" H 8800 4350 60  0000 C CNN
 F 4 "CAP CER 1000PF 16V X7R 0603 " H 0   0   50  0001 C CNN "Description"
 F 5 "0603B102K160CT" H 0   0   50  0001 C CNN "PartNumber"
 F 6 "1292-1378-1-ND " H 0   0   50  0001 C CNN "digikey"
+F 7 "0.04100" H 0   0   50  0001 C CNN "price@10"
 	1    8800 4350
 	0    1    1    0   
 $EndComp
@@ -580,6 +596,10 @@ F 0 "U1504" H 7350 4150 39  0000 L CNN
 F 1 "LXS6-NPS" H 7300 4050 39  0000 L CNN
 F 2 "servo:LEM_LXS-NP" H 7850 2850 50  0001 C CNN
 F 3 "../doc/datasheets/lem_lxs_series.pdf" H 7850 3000 50  0001 C CNN
+F 4 "Current Sensor 6A 1 Channel Hall Effect, Closed Loop Bidirectional Module " H 0   0   50  0001 C CNN "Description"
+F 5 "LXS 6-NPS" H 0   0   50  0001 C CNN "PartNumber"
+F 6 "398-1212-ND" H 0   0   50  0001 C CNN "digikey"
+F 7 "12.50000" H 0   0   50  0001 C CNN "price@10"
 	1    7850 3650
 	-1   0    0    -1  
 $EndComp
@@ -637,6 +657,7 @@ F 3 "" H 8750 5400 60  0000 C CNN
 F 4 "CC0603KPX7R7BB104" H 0   0   50  0001 C CNN "PartNumber"
 F 5 "311-1335-1-ND" H 0   0   50  0001 C CNN "digikey"
 F 6 "CAP CER 0.1UF 16V X7R 0603 " H 0   0   50  0001 C CNN "Description"
+F 7 "0.05800" H 0   0   50  0001 C CNN "price@10"
 	1    8750 5400
 	0    1    1    0   
 $EndComp
@@ -658,6 +679,7 @@ F 3 "" H 8800 6300 60  0000 C CNN
 F 4 "CAP CER 1000PF 16V X7R 0603 " H 0   0   50  0001 C CNN "Description"
 F 5 "0603B102K160CT" H 0   0   50  0001 C CNN "PartNumber"
 F 6 "1292-1378-1-ND " H 0   0   50  0001 C CNN "digikey"
+F 7 "0.04100" H 0   0   50  0001 C CNN "price@10"
 	1    8800 6300
 	0    1    1    0   
 $EndComp
@@ -719,6 +741,10 @@ F 0 "U1505" H 7350 6100 39  0000 L CNN
 F 1 "LXS6-NPS" H 7300 6000 39  0000 L CNN
 F 2 "servo:LEM_LXS-NP" H 7850 4800 50  0001 C CNN
 F 3 "../doc/datasheets/lem_lxs_series.pdf" H 7850 4950 50  0001 C CNN
+F 4 "Current Sensor 6A 1 Channel Hall Effect, Closed Loop Bidirectional Module " H 0   0   50  0001 C CNN "Description"
+F 5 "LXS 6-NPS" H 0   0   50  0001 C CNN "PartNumber"
+F 6 "398-1212-ND" H 0   0   50  0001 C CNN "digikey"
+F 7 "12.50000" H 0   0   50  0001 C CNN "price@10"
 	1    7850 5600
 	-1   0    0    -1  
 $EndComp
@@ -776,6 +802,7 @@ F 3 "" H 8750 8000 60  0000 C CNN
 F 4 "CC0603KPX7R7BB104" H 0   0   50  0001 C CNN "PartNumber"
 F 5 "311-1335-1-ND" H 0   0   50  0001 C CNN "digikey"
 F 6 "CAP CER 0.1UF 16V X7R 0603 " H 0   0   50  0001 C CNN "Description"
+F 7 "0.05800" H 0   0   50  0001 C CNN "price@10"
 	1    8750 8000
 	0    1    1    0   
 $EndComp
@@ -797,6 +824,7 @@ F 3 "" H 8800 8900 60  0000 C CNN
 F 4 "CAP CER 1000PF 16V X7R 0603 " H 0   0   50  0001 C CNN "Description"
 F 5 "0603B102K160CT" H 0   0   50  0001 C CNN "PartNumber"
 F 6 "1292-1378-1-ND " H 0   0   50  0001 C CNN "digikey"
+F 7 "0.04100" H 0   0   50  0001 C CNN "price@10"
 	1    8800 8900
 	0    1    1    0   
 $EndComp
@@ -858,6 +886,10 @@ F 0 "U1506" H 7350 8700 39  0000 L CNN
 F 1 "LXS6-NPS" H 7300 8600 39  0000 L CNN
 F 2 "servo:LEM_LXS-NP" H 7850 7400 50  0001 C CNN
 F 3 "../doc/datasheets/lem_lxs_series.pdf" H 7850 7550 50  0001 C CNN
+F 4 "Current Sensor 6A 1 Channel Hall Effect, Closed Loop Bidirectional Module " H 0   0   50  0001 C CNN "Description"
+F 5 "LXS 6-NPS" H 0   0   50  0001 C CNN "PartNumber"
+F 6 "398-1212-ND" H 0   0   50  0001 C CNN "digikey"
+F 7 "12.50000" H 0   0   50  0001 C CNN "price@10"
 	1    7850 8200
 	-1   0    0    -1  
 $EndComp
@@ -982,6 +1014,10 @@ F 0 "U1502" H 4250 8700 39  0000 L CNN
 F 1 "LXS6-NPS" H 4200 8600 39  0000 L CNN
 F 2 "servo:LEM_LXS-NP" H 4750 7400 50  0001 C CNN
 F 3 "../doc/datasheets/lem_lxs_series.pdf" H 4750 7550 50  0001 C CNN
+F 4 "Current Sensor 6A 1 Channel Hall Effect, Closed Loop Bidirectional Module " H 0   0   50  0001 C CNN "Description"
+F 5 "LXS 6-NPS" H 0   0   50  0001 C CNN "PartNumber"
+F 6 "398-1212-ND" H 0   0   50  0001 C CNN "digikey"
+F 7 "12.50000" H 0   0   50  0001 C CNN "price@10"
 	1    4750 8200
 	1    0    0    -1  
 $EndComp

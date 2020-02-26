@@ -45,7 +45,8 @@ F 2 "servo:C_0603_1608Metric" H 11300 4050 60  0001 C CNN
 F 3 "" H 11300 4150 60  0000 C CNN
 F 4 "CAP CER 2.2UF 16V X6S 0603 " H 0   0   50  0001 C CNN "Description"
 F 5 "GRT188C81C225KE13D" H 0   0   50  0001 C CNN "PartNumber"
-F 6 "490-12287-2-ND" H 0   0   50  0001 C CNN "digikey"
+F 6 "490-12287-1-ND" H 0   0   50  0001 C CNN "digikey"
+F 7 "0.35500" H 0   0   50  0001 C CNN "price@10"
 	1    11300 4150
 	0    -1   -1   0   
 $EndComp
@@ -58,9 +59,9 @@ F 1 "1uF" V 10279 4040 20  0000 R CNN
 F 2 "servo:C_0603_1608Metric" H 10250 4050 60  0001 C CNN
 F 3 "" H 10250 4150 60  0000 C CNN
 F 4 "CAP CER 1UF 10V X7R 0603" H 0   0   50  0001 C CNN "Description"
-F 5 "" H 0   0   50  0001 C CNN "Mfr part number"
-F 6 "399-11133-1-ND" H 0   0   50  0001 C CNN "digikey"
-F 7 "C0603C105K8RACTU" H 0   0   50  0001 C CNN "PartNumber"
+F 5 "399-11133-1-ND" H 0   0   50  0001 C CNN "digikey"
+F 6 "C0603C105K8RACTU" H 0   0   50  0001 C CNN "PartNumber"
+F 7 "0.06400" H 0   0   50  0001 C CNN "price@10"
 	1    10250 4150
 	0    -1   -1   0   
 $EndComp
@@ -75,6 +76,7 @@ F 3 "" H 9850 4150 60  0000 C CNN
 F 4 "490-7611-1-ND" H 9850 4150 50  0001 C CNN "digikey"
 F 5 "CAP CER 22UF 6.3V X5R 0603 " H 0   0   50  0001 C CNN "Description"
 F 6 "GRM188R60J226MEA0D" H 0   0   50  0001 C CNN "PartNumber"
+F 7 "0.19400" H 0   0   50  0001 C CNN "price@10"
 	1    9850 4150
 	0    -1   -1   0   
 $EndComp
@@ -88,8 +90,8 @@ F 2 "servo:C_0603_1608Metric" H 11700 4050 60  0001 C CNN
 F 3 "" H 11700 4150 60  0000 C CNN
 F 4 "311-1335-1-ND" H 0   0   50  0001 C CNN "digikey"
 F 5 "CAP CER 0.1UF 16V X7R 0603 " H 0   0   50  0001 C CNN "Description"
-F 6 "" H 0   0   50  0001 C CNN "Mfr part number"
-F 7 "CC0603KPX7R7BB104" H 0   0   50  0001 C CNN "PartNumber"
+F 6 "CC0603KPX7R7BB104" H 0   0   50  0001 C CNN "PartNumber"
+F 7 "0.05800" H 0   0   50  0001 C CNN "price@10"
 	1    11700 4150
 	0    -1   -1   0   
 $EndComp
@@ -130,7 +132,6 @@ F 0 "R301" H 10950 3565 20  0000 C CNN
 F 1 "1k" H 10950 3522 20  0000 C CNN
 F 2 "servo:R_0603_1608Metric" H 10450 3350 60  0001 C CNN
 F 3 "" H 10550 3450 60  0001 C CNN
-F 4 "" V 950 650 60  0001 C CNN "ValueDisplayed"
 	1    10950 3450
 	1    0    0    -1  
 $EndComp
@@ -236,7 +237,8 @@ F 2 "servo:SOT-23-6" H 2700 1850 60  0001 C CNN
 F 3 "../doc/datasheets/tpd4e001-q1.pdf" H 2750 2150 60  0001 C CNN
 F 4 "TVS DIODE 5.5V 16V SOT23-6 " H 0   0   50  0001 C CNN "Description"
 F 5 "TPD4E001QDBVRQ1" H 0   0   50  0001 C CNN "PartNumber"
-F 6 " 296-39344-1-ND" H 0   0   50  0001 C CNN "digikey"
+F 6 "296-39344-1-ND" H 0   0   50  0001 C CNN "digikey"
+F 7 "0.56800" H 0   0   50  0001 C CNN "price@10"
 	1    2700 1850
 	0    -1   -1   0   
 $EndComp
@@ -267,7 +269,8 @@ F 2 "servo:SOT-23-6" H 3300 1850 60  0001 C CNN
 F 3 "../doc/datasheets/tpd4e001-q1.pdf" H 3350 2150 60  0001 C CNN
 F 4 "TVS DIODE 5.5V 16V SOT23-6 " H 0   0   50  0001 C CNN "Description"
 F 5 "TPD4E001QDBVRQ1" H 0   0   50  0001 C CNN "PartNumber"
-F 6 " 296-39344-1-ND" H 0   0   50  0001 C CNN "digikey"
+F 6 "296-39344-1-ND" H 0   0   50  0001 C CNN "digikey"
+F 7 "0.56800" H 0   0   50  0001 C CNN "price@10"
 	1    3300 1850
 	0    1    -1   0   
 $EndComp
@@ -296,7 +299,8 @@ F 2 "servo:SOT-23-6" H 3900 1850 60  0001 C CNN
 F 3 "../doc/datasheets/tpd4e001-q1.pdf" H 3950 2150 60  0001 C CNN
 F 4 "TVS DIODE 5.5V 16V SOT23-6 " H 0   0   50  0001 C CNN "Description"
 F 5 "TPD4E001QDBVRQ1" H 0   0   50  0001 C CNN "PartNumber"
-F 6 " 296-39344-1-ND" H 0   0   50  0001 C CNN "digikey"
+F 6 "296-39344-1-ND" H 0   0   50  0001 C CNN "digikey"
+F 7 "0.56800" H 0   0   50  0001 C CNN "price@10"
 	1    3900 1850
 	0    -1   -1   0   
 $EndComp
@@ -329,7 +333,8 @@ F 2 "servo:SOT-23-6" H 5200 1850 60  0001 C CNN
 F 3 "../doc/datasheets/tpd4e001-q1.pdf" H 5250 2150 60  0001 C CNN
 F 4 "TVS DIODE 5.5V 16V SOT23-6 " H 0   0   50  0001 C CNN "Description"
 F 5 "TPD4E001QDBVRQ1" H 0   0   50  0001 C CNN "PartNumber"
-F 6 " 296-39344-1-ND" H 0   0   50  0001 C CNN "digikey"
+F 6 "296-39344-1-ND" H 0   0   50  0001 C CNN "digikey"
+F 7 "0.56800" H 0   0   50  0001 C CNN "price@10"
 	1    5200 1850
 	0    -1   -1   0   
 $EndComp
@@ -397,7 +402,8 @@ F 2 "servo:SOT-23-6" H 4500 1850 60  0001 C CNN
 F 3 "../doc/datasheets/tpd4e001-q1.pdf" H 4550 2150 60  0001 C CNN
 F 4 "TVS DIODE 5.5V 16V SOT23-6 " H 0   0   50  0001 C CNN "Description"
 F 5 "TPD4E001QDBVRQ1" H 0   0   50  0001 C CNN "PartNumber"
-F 6 " 296-39344-1-ND" H 0   0   50  0001 C CNN "digikey"
+F 6 "296-39344-1-ND" H 0   0   50  0001 C CNN "digikey"
+F 7 "0.56800" H 0   0   50  0001 C CNN "price@10"
 	1    4500 1850
 	0    -1   -1   0   
 $EndComp
@@ -624,7 +630,8 @@ F 2 "servo:SOT-23-6" H 5800 1850 60  0001 C CNN
 F 3 "../doc/datasheets/tpd4e001-q1.pdf" H 5850 2150 60  0001 C CNN
 F 4 "TVS DIODE 5.5V 16V SOT23-6 " H 0   0   50  0001 C CNN "Description"
 F 5 "TPD4E001QDBVRQ1" H 0   0   50  0001 C CNN "PartNumber"
-F 6 " 296-39344-1-ND" H 0   0   50  0001 C CNN "digikey"
+F 6 "296-39344-1-ND" H 0   0   50  0001 C CNN "digikey"
+F 7 "0.56800" H 0   0   50  0001 C CNN "price@10"
 	1    5800 1850
 	0    1    -1   0   
 $EndComp

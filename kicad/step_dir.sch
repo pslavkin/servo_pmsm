@@ -283,6 +283,10 @@ F 0 "U1001" H 8800 7000 39  0000 C CNN
 F 1 "am26ls32a" H 8750 6900 39  0000 C CNN
 F 2 "servo:SOIC-16W_5.3x10.2mm_P1.27mm" H 9950 5000 50  0001 C CNN
 F 3 "../doc/datasheets/am26ls32a.pdf" H 8950 5550 50  0001 C CNN
+F 4 "0/4 Receiver RS422, RS423 16-SOIC " H 0   0   50  0001 C CNN "Description"
+F 5 "AM26LS32ACDR " H 0   0   50  0001 C CNN "PartNumber"
+F 6 "296-1011-1-ND" H 0   0   50  0001 C CNN "digikey"
+F 7 "0.57800" H 0   0   50  0001 C CNN "price@10"
 	1    8950 5950
 	0    -1   1    0   
 $EndComp
@@ -363,6 +367,7 @@ F 3 "" H 7500 5600 60  0000 C CNN
 F 4 "CC0603KPX7R7BB104" H 0   0   50  0001 C CNN "PartNumber"
 F 5 "311-1335-1-ND" H 0   0   50  0001 C CNN "digikey"
 F 6 "CAP CER 0.1UF 16V X7R 0603 " H 0   0   50  0001 C CNN "Description"
+F 7 "0.05800" H 0   0   50  0001 C CNN "price@10"
 	1    7500 5600
 	0    1    1    0   
 $EndComp

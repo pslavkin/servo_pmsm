@@ -211,6 +211,10 @@ F 0 "U1104" H 9750 4243 39  0000 C CNN
 F 1 "SI8660BD" H 9750 4168 39  0000 C CNN
 F 2 "servo:SOIC-16W_7.5x10.3mm_P1.27mm" H 9150 4000 60  0001 C CNN
 F 3 "../doc/datasheets/Si8660.pdf" H 9650 4300 60  0001 C CNN
+F 4 "General Purpose Digital Isolator 5000Vrms 6 Channel 150Mbps 35kV/µs CMTI 16-SOIC (0.295\", 7.50mm Width) " H 0   0   50  0001 C CNN "Description"
+F 5 "SI8660BD-B-ISR" H 0   0   50  0001 C CNN "PartNumber"
+F 6 " 336-4786-1-ND" H 0   0   50  0001 C CNN "digikey"
+F 7 "2.75000" H 0   0   50  0001 C CNN "price@10"
 	1    9750 3700
 	1    0    0    -1  
 $EndComp
@@ -404,6 +408,10 @@ F 0 "U1103" H 7950 5150 39  0000 C CNN
 F 1 "am26ls32a" H 7900 5050 39  0000 C CNN
 F 2 "servo:SOIC-16W_5.3x10.2mm_P1.27mm" H 9100 3150 50  0001 C CNN
 F 3 "../doc/datasheets/am26ls32a.pdf" H 8100 3700 50  0001 C CNN
+F 4 "0/4 Receiver RS422, RS423 16-SOIC " H 0   0   50  0001 C CNN "Description"
+F 5 "AM26LS32ACDR " H 0   0   50  0001 C CNN "PartNumber"
+F 6 "296-1011-1-ND" H 0   0   50  0001 C CNN "digikey"
+F 7 "0.57800" H 0   0   50  0001 C CNN "price@10"
 	1    8100 4100
 	1    0    0    -1  
 $EndComp
@@ -603,6 +611,10 @@ F 0 "U1101" H 1950 4243 39  0000 C CNN
 F 1 "SI8660BD" H 1950 4168 39  0000 C CNN
 F 2 "servo:SOIC-16W_7.5x10.3mm_P1.27mm" H 1350 4000 60  0001 C CNN
 F 3 "../doc/datasheets/Si8660.pdf" H 1850 4300 60  0001 C CNN
+F 4 "General Purpose Digital Isolator 5000Vrms 6 Channel 150Mbps 35kV/µs CMTI 16-SOIC (0.295\", 7.50mm Width) " H 0   0   50  0001 C CNN "Description"
+F 5 "SI8660BD-B-ISR" H 0   0   50  0001 C CNN "PartNumber"
+F 6 " 336-4786-1-ND" H 0   0   50  0001 C CNN "digikey"
+F 7 "2.75000" H 0   0   50  0001 C CNN "price@10"
 	1    1950 3700
 	-1   0    0    -1  
 $EndComp
@@ -786,6 +798,10 @@ F 0 "U1102" H 3450 5150 39  0000 C CNN
 F 1 "am26ls32a" H 3400 5050 39  0000 C CNN
 F 2 "servo:SOIC-16W_5.3x10.2mm_P1.27mm" H 4600 3150 50  0001 C CNN
 F 3 "../doc/datasheets/am26ls32a.pdf" H 3600 3700 50  0001 C CNN
+F 4 "0/4 Receiver RS422, RS423 16-SOIC " H 0   0   50  0001 C CNN "Description"
+F 5 "AM26LS32ACDR " H 0   0   50  0001 C CNN "PartNumber"
+F 6 "296-1011-1-ND" H 0   0   50  0001 C CNN "digikey"
+F 7 "0.57800" H 0   0   50  0001 C CNN "price@10"
 	1    3600 4100
 	-1   0    0    -1  
 $EndComp
@@ -860,6 +876,7 @@ F 3 "" H 3250 2300 60  0000 C CNN
 F 4 "CC0603KPX7R7BB104" H 0   0   50  0001 C CNN "PartNumber"
 F 5 "311-1335-1-ND" H 0   0   50  0001 C CNN "digikey"
 F 6 "CAP CER 0.1UF 16V X7R 0603 " H 0   0   50  0001 C CNN "Description"
+F 7 "0.05800" H 0   0   50  0001 C CNN "price@10"
 	1    3250 2300
 	0    1    1    0   
 $EndComp
@@ -880,6 +897,7 @@ F 3 "" H 2950 2300 60  0000 C CNN
 F 4 "CC0603KPX7R7BB104" H 0   0   50  0001 C CNN "PartNumber"
 F 5 "311-1335-1-ND" H 0   0   50  0001 C CNN "digikey"
 F 6 "CAP CER 0.1UF 16V X7R 0603 " H 0   0   50  0001 C CNN "Description"
+F 7 "0.05800" H 0   0   50  0001 C CNN "price@10"
 	1    2950 2300
 	0    1    1    0   
 $EndComp
@@ -898,6 +916,7 @@ F 3 "" H 8750 2300 60  0000 C CNN
 F 4 "CC0603KPX7R7BB104" H 0   0   50  0001 C CNN "PartNumber"
 F 5 "311-1335-1-ND" H 0   0   50  0001 C CNN "digikey"
 F 6 "CAP CER 0.1UF 16V X7R 0603 " H 0   0   50  0001 C CNN "Description"
+F 7 "0.05800" H 0   0   50  0001 C CNN "price@10"
 	1    8750 2300
 	0    1    1    0   
 $EndComp
@@ -916,6 +935,7 @@ F 3 "" H 8450 2300 60  0000 C CNN
 F 4 "CC0603KPX7R7BB104" H 0   0   50  0001 C CNN "PartNumber"
 F 5 "311-1335-1-ND" H 0   0   50  0001 C CNN "digikey"
 F 6 "CAP CER 0.1UF 16V X7R 0603 " H 0   0   50  0001 C CNN "Description"
+F 7 "0.05800" H 0   0   50  0001 C CNN "price@10"
 	1    8450 2300
 	0    1    1    0   
 $EndComp
@@ -936,6 +956,7 @@ F 3 "" H 10900 3000 60  0000 C CNN
 F 4 "CC0603KPX7R7BB104" H 0   0   50  0001 C CNN "PartNumber"
 F 5 "311-1335-1-ND" H 0   0   50  0001 C CNN "digikey"
 F 6 "CAP CER 0.1UF 16V X7R 0603 " H 0   0   50  0001 C CNN "Description"
+F 7 "0.05800" H 0   0   50  0001 C CNN "price@10"
 	1    10900 3000
 	0    1    1    0   
 $EndComp
@@ -982,6 +1003,7 @@ F 3 "" H 850 2950 60  0000 C CNN
 F 4 "CC0603KPX7R7BB104" H 0   0   50  0001 C CNN "PartNumber"
 F 5 "311-1335-1-ND" H 0   0   50  0001 C CNN "digikey"
 F 6 "CAP CER 0.1UF 16V X7R 0603 " H 0   0   50  0001 C CNN "Description"
+F 7 "0.05800" H 0   0   50  0001 C CNN "price@10"
 	1    850  2950
 	0    1    1    0   
 $EndComp

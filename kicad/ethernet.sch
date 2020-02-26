@@ -206,6 +206,7 @@ F 3 "" H 10000 2200 60  0000 C CNN
 F 4 "311-1335-1-ND" H 0   0   50  0001 C CNN "digikey"
 F 5 "CAP CER 0.1UF 16V X7R 0603 " H 0   0   50  0001 C CNN "Description"
 F 6 "CC0603KPX7R7BB104" H 0   0   50  0001 C CNN "PartNumber"
+F 7 "0.05800" H 0   0   50  0001 C CNN "price@10"
 	1    10000 2200
 	0    -1   -1   0   
 $EndComp
@@ -229,9 +230,9 @@ F 1 "1uF" V 12221 3960 20  0000 L CNN
 F 2 "servo:C_0603_1608Metric" H 12150 3750 60  0001 C CNN
 F 3 "" H 12150 3850 60  0000 C CNN
 F 4 "CAP CER 1UF 10V X7R 0603" H 0   0   50  0001 C CNN "Description"
-F 5 "" H 0   0   50  0001 C CNN "Mfr part number"
-F 6 "399-11133-1-ND" H 0   0   50  0001 C CNN "digikey"
-F 7 "C0603C105K8RACTU" H 0   0   50  0001 C CNN "PartNumber"
+F 5 "399-11133-1-ND" H 0   0   50  0001 C CNN "digikey"
+F 6 "C0603C105K8RACTU" H 0   0   50  0001 C CNN "PartNumber"
+F 7 "0.06400" H 0   0   50  0001 C CNN "price@10"
 	1    12150 3850
 	0    1    1    0   
 $EndComp
@@ -243,11 +244,10 @@ F 0 "C216" V 12478 3960 20  0000 L CNN
 F 1 "1uF" V 12521 3960 20  0000 L CNN
 F 2 "servo:C_0603_1608Metric" H 12450 3750 60  0001 C CNN
 F 3 "" H 12450 3850 60  0000 C CNN
-F 4 "" V 350 3150 60  0001 C CNN "ValueDisplayed"
-F 5 "CAP CER 1UF 10V X7R 0603" H 0   0   50  0001 C CNN "Description"
-F 6 "" H 0   0   50  0001 C CNN "Mfr part number"
-F 7 "399-11133-1-ND" H 0   0   50  0001 C CNN "digikey"
-F 8 "C0603C105K8RACTU" H 0   0   50  0001 C CNN "PartNumber"
+F 4 "CAP CER 1UF 10V X7R 0603" H 0   0   50  0001 C CNN "Description"
+F 5 "399-11133-1-ND" H 0   0   50  0001 C CNN "digikey"
+F 6 "C0603C105K8RACTU" H 0   0   50  0001 C CNN "PartNumber"
+F 7 "0.06400" H 0   0   50  0001 C CNN "price@10"
 	1    12450 3850
 	0    1    1    0   
 $EndComp
@@ -262,6 +262,7 @@ F 3 "" H 11250 2250 60  0000 C CNN
 F 4 "CAP CER 0.1UF 16V X7R 0603 " H 11250 2250 50  0001 C CNN "Description"
 F 5 "311-1335-1-ND" H 0   0   50  0001 C CNN "digikey"
 F 6 "CC0603KPX7R7BB104" H 0   0   50  0001 C CNN "PartNumber"
+F 7 "0.05800" H 0   0   50  0001 C CNN "price@10"
 	1    11250 2250
 	0    -1   -1   0   
 $EndComp
@@ -276,6 +277,7 @@ F 3 "" H 4750 3300 60  0000 C CNN
 F 4 "311-1335-1-ND" H 0   0   50  0001 C CNN "digikey"
 F 5 "CAP CER 0.1UF 16V X7R 0603 " H 0   0   50  0001 C CNN "Description"
 F 6 "CC0603KPX7R7BB104" H 0   0   50  0001 C CNN "PartNumber"
+F 7 "0.05800" H 0   0   50  0001 C CNN "price@10"
 	1    4750 3300
 	0    -1   -1   0   
 $EndComp
@@ -290,6 +292,7 @@ F 3 "" H 3900 3000 60  0000 C CNN
 F 4 "311-1335-1-ND" H 0   0   50  0001 C CNN "digikey"
 F 5 "CAP CER 0.1UF 16V X7R 0603 " H 0   0   50  0001 C CNN "Description"
 F 6 "CC0603KPX7R7BB104" H 0   0   50  0001 C CNN "PartNumber"
+F 7 "0.05800" H 0   0   50  0001 C CNN "price@10"
 	1    3900 3000
 	0    1    1    0   
 $EndComp
@@ -370,6 +373,7 @@ F 3 "" H 4450 3300 60  0000 C CNN
 F 4 "490-10475-1-ND" H 0   0   50  0001 C CNN "digikey"
 F 5 "GRM188R61A106ME69D " H 0   0   50  0001 C CNN "PartNumber"
 F 6 "10µF ±20% 10V Ceramic Capacitor X5R 0603 (1608 Metric) " H 0   0   50  0001 C CNN "Description"
+F 7 "0.15400" H 0   0   50  0001 C CNN "price@10"
 	1    4450 3300
 	0    -1   -1   0   
 $EndComp
@@ -384,6 +388,7 @@ F 3 "" H 4150 3100 60  0000 C CNN
 F 4 "490-10475-1-ND" H 0   0   50  0001 C CNN "digikey"
 F 5 "GRM188R61A106ME69D " H 0   0   50  0001 C CNN "PartNumber"
 F 6 "10µF ±20% 10V Ceramic Capacitor X5R 0603 (1608 Metric) " H 0   0   50  0001 C CNN "Description"
+F 7 "0.15400" H 0   0   50  0001 C CNN "price@10"
 	1    4150 3100
 	0    -1   -1   0   
 $EndComp
@@ -506,9 +511,13 @@ AR Path="/5DD4DF4C/63C6828B" Ref="Y?"  Part="1"
 AR Path="/5DC3DC9E/63C6828B" Ref="Y201"  Part="1" 
 AR Path="/5DC4A59D/63C6828B" Ref="Y?"  Part="1" 
 F 0 "Y201" H 9250 5643 39  0000 C CNN
-F 1 "dnp" H 9250 5568 39  0000 C CNN
+F 1 "osc 25Mhz" H 9250 5568 39  0000 C CNN
 F 2 "servo:Crystal_SMD_2520-4Pin_2.5x2.0mm" H 9300 5300 60  0001 C CNN
 F 3 "../doc/datasheets//ECS-2520S.pdf" H 9150 5900 60  0001 C CNN
+F 4 "25MHz XO (Standard) HCMOS Oscillator 3.3V Enable/Disable 4-SMD, No Lead " H 0   0   50  0001 C CNN "Description"
+F 5 "ECS-2520S33-250-FN-TR" H 0   0   50  0001 C CNN "PartNumber"
+F 6 "XC2198CT-ND " H 0   0   50  0001 C CNN "digikey"
+F 7 "1.41900" H 0   0   50  0001 C CNN "price@10"
 	1    9250 5350
 	-1   0    0    -1  
 $EndComp
@@ -540,10 +549,7 @@ Wire Wire Line
 Wire Wire Line
 	8550 4500 8750 4500
 Wire Wire Line
-	8750 4500 8750 5250
-Wire Wire Line
 	8750 5250 9000 5250
-Connection ~ 8750 4500
 $Comp
 L servo:GND #GND_0204
 U 1 1 63C682A2
@@ -772,6 +778,7 @@ F 3 "" H 15400 4450 60  0000 C CNN
 F 4 "12061C472KAT2A" H 0   0   50  0001 C CNN "PartNumber"
 F 5 "478-1521-1-ND" H 0   0   50  0001 C CNN "digikey"
 F 6 "4700pF ±10% 100V Ceramic Capacitor X7R 1206 (3216 Metric) " H 0   0   50  0001 C CNN "Description"
+F 7 "0.18700" H 0   0   50  0001 C CNN "price@10"
 	1    15400 4450
 	0    1    1    0   
 $EndComp
@@ -805,7 +812,8 @@ F 2 "servo:SOT-23-6" H 7800 8350 60  0001 C CNN
 F 3 "../doc/datasheets/tpd4e001-q1.pdf" H 7850 8650 60  0001 C CNN
 F 4 "TVS DIODE 5.5V 16V SOT23-6 " H 0   0   50  0001 C CNN "Description"
 F 5 "TPD4E001QDBVRQ1" H 0   0   50  0001 C CNN "PartNumber"
-F 6 " 296-39344-1-ND" H 0   0   50  0001 C CNN "digikey"
+F 6 "296-39344-1-ND" H 0   0   50  0001 C CNN "digikey"
+F 7 "0.56800" H 0   0   50  0001 C CNN "price@10"
 	1    7800 8350
 	1    0    0    -1  
 $EndComp
@@ -943,7 +951,8 @@ F 2 "servo:BEL_0821-1X1T-36-F" H 14000 4650 50  0001 L BNN
 F 3 "../doc/datasheets/dr-MAG-0821-1X1T-36-F.pdf" H 14150 4550 50  0001 L BNN
 F 4 "1 Port RJ45 with USB A Magjack Connector Through Hole 10/100 Base-T, AutoMDIX " H 0   0   50  0001 C CNN "Description"
 F 5 "0821-1X1T-36-F " H 0   0   50  0001 C CNN "PartNumber"
-F 6 "0821-1X1T-36-F " H 0   0   50  0001 C CNN "digikey"
+F 6 "507-1424-ND " H 0   0   50  0001 C CNN "digikey"
+F 7 "4.89600" H 0   0   50  0001 C CNN "price@10"
 	1    14150 3300
 	1    0    0    -1  
 $EndComp
@@ -1048,4 +1057,27 @@ Wire Wire Line
 Connection ~ 4600 3500
 Wire Wire Line
 	4600 3500 4750 3500
+$Comp
+L servo:jumper JP?
+U 1 1 5EBCD9AF
+P 8750 4700
+AR Path="/5DD76B18/5EBCD9AF" Ref="JP?"  Part="1" 
+AR Path="/5DC4A59D/5EBCD9AF" Ref="JP?"  Part="1" 
+AR Path="/5DC3DC9E/5EBCD9AF" Ref="JP201"  Part="1" 
+F 0 "JP201" V 8712 4748 39  0000 L CNN
+F 1 "jumper" V 8787 4748 39  0000 L CNN
+F 2 "servo:SolderJumper-2_P1.3mm_Open_RoundedPad1.0x1.5mm" H 8650 4680 50  0001 C CNN
+F 3 "~" H 8750 4780 50  0001 C CNN
+F 4 "jumper smd bridge using tin" H 5450 -900 50  0001 C CNN "Description"
+F 5 "-" H 5450 -900 50  0001 C CNN "PartNumber"
+F 6 "-" H 5450 -900 50  0001 C CNN "digikey"
+F 7 "0" H 5450 -900 50  0001 C CNN "price@10"
+	1    8750 4700
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	8750 4600 8750 4500
+Connection ~ 8750 4500
+Wire Wire Line
+	8750 4800 8750 5250
 $EndSCHEMATC
