@@ -51,6 +51,10 @@ F 0 "R705" V 5978 6000 20  0000 L CNN
 F 1 "680" V 6021 6000 20  0000 L CNN
 F 2 "servo:R_0603_1608Metric" H 5500 5850 60  0001 C CNN
 F 3 "" H 5600 5950 60  0001 C CNN
+F 4 "680 Ohms ±5% 0.1W, 1/10W Chip Resistor 0603 (1608 Metric) Automotive AEC-Q200 Thick Film" H 0   0   50  0001 C CNN "Description"
+F 5 "RMCF0603JT680R" H 0   0   50  0001 C CNN "PartNumber"
+F 6 "RMCF0603JT680RCT-ND" H 0   0   50  0001 C CNN "digikey"
+F 7 "0.01400" H 0   0   50  0001 C CNN "price@10"
 	1    6000 5950
 	0    1    1    0   
 $EndComp
@@ -287,9 +291,13 @@ P 3050 5850
 AR Path="/5EAA846A/5E45F0A3" Ref="R?"  Part="1" 
 AR Path="/5DD76B18/5E45F0A3" Ref="R701"  Part="1" 
 F 0 "R701" V 3028 5900 20  0000 L CNN
-F 1 "1k2" V 3071 5900 20  0000 L CNN
+F 1 "1.2k" V 3071 5900 20  0000 L CNN
 F 2 "servo:R_0603_1608Metric" H 2550 5750 60  0001 C CNN
 F 3 "" H 2650 5850 60  0001 C CNN
+F 4 "1.2 kOhms ±5% 0.25W, 1/4W Chip Resistor 0603 (1608 Metric) Automotive AEC-Q200, Pulse Withstanding Thick Film " H 0   0   50  0001 C CNN "Description"
+F 5 "ESR03EZPJ122" H 0   0   50  0001 C CNN "PartNumber"
+F 6 "RHM1.2KDCT-ND" H 0   0   50  0001 C CNN "digikey"
+F 7 "0.07900" H 0   0   50  0001 C CNN "price@10"
 	1    3050 5850
 	0    1    1    0   
 $EndComp
@@ -380,9 +388,13 @@ P 12300 5800
 AR Path="/5EAA846A/5E548518" Ref="R?"  Part="1" 
 AR Path="/5DD76B18/5E548518" Ref="R702"  Part="1" 
 F 0 "R702" V 12278 5850 20  0000 L CNN
-F 1 "1k2" V 12321 5850 20  0000 L CNN
+F 1 "1.2k" V 12321 5850 20  0000 L CNN
 F 2 "servo:R_0603_1608Metric" H 11800 5700 60  0001 C CNN
 F 3 "" H 11900 5800 60  0001 C CNN
+F 4 "1.2 kOhms ±5% 0.25W, 1/4W Chip Resistor 0603 (1608 Metric) Automotive AEC-Q200, Pulse Withstanding Thick Film " H 0   0   50  0001 C CNN "Description"
+F 5 "ESR03EZPJ122" H 0   0   50  0001 C CNN "PartNumber"
+F 6 "RHM1.2KDCT-ND" H 0   0   50  0001 C CNN "digikey"
+F 7 "0.07900" H 0   0   50  0001 C CNN "price@10"
 	1    12300 5800
 	0    1    1    0   
 $EndComp

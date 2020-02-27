@@ -61,6 +61,10 @@ F 0 "R1401" V 2328 2100 20  0000 L CNN
 F 1 "560" V 2371 2100 20  0000 L CNN
 F 2 "servo:R_0603_1608Metric" H 1850 1950 60  0001 C CNN
 F 3 "" H 1950 2050 60  0001 C CNN
+F 4 "560 Ohms ±5% 0.1W, 1/10W Chip Resistor 0603 (1608 Metric) Moisture Resistant Thick Film " H 0   0   50  0001 C CNN "Description"
+F 5 "CR0603-JW-561ELF" H 0   0   50  0001 C CNN "PartNumber"
+F 6 "118-CR0603-JW-561ELFCT-ND" H 0   0   50  0001 C CNN "digikey"
+F 7 "0.02600" H 0   0   50  0001 C CNN "price@10"
 	1    2350 2050
 	0    1    1    0   
 $EndComp
@@ -75,6 +79,10 @@ F 0 "R1402" V 2628 2100 20  0000 L CNN
 F 1 "560" V 2671 2100 20  0000 L CNN
 F 2 "servo:R_0603_1608Metric" H 2150 1950 60  0001 C CNN
 F 3 "" H 2250 2050 60  0001 C CNN
+F 4 "560 Ohms ±5% 0.1W, 1/10W Chip Resistor 0603 (1608 Metric) Moisture Resistant Thick Film " H 0   0   50  0001 C CNN "Description"
+F 5 "CR0603-JW-561ELF" H 0   0   50  0001 C CNN "PartNumber"
+F 6 "118-CR0603-JW-561ELFCT-ND" H 0   0   50  0001 C CNN "digikey"
+F 7 "0.02600" H 0   0   50  0001 C CNN "price@10"
 	1    2650 2050
 	0    1    1    0   
 $EndComp
@@ -151,6 +159,10 @@ F 0 "R1403" H 7300 1815 20  0000 C CNN
 F 1 "680" H 7300 1772 20  0000 C CNN
 F 2 "servo:R_0603_1608Metric" H 6800 1600 60  0001 C CNN
 F 3 "" H 6900 1700 60  0001 C CNN
+F 4 "680 Ohms ±5% 0.1W, 1/10W Chip Resistor 0603 (1608 Metric) Automotive AEC-Q200 Thick Film" H 0   0   50  0001 C CNN "Description"
+F 5 "RMCF0603JT680R" H 0   0   50  0001 C CNN "PartNumber"
+F 6 "RMCF0603JT680RCT-ND" H 0   0   50  0001 C CNN "digikey"
+F 7 "0.01400" H 0   0   50  0001 C CNN "price@10"
 	1    7300 1700
 	1    0    0    -1  
 $EndComp
@@ -182,6 +194,10 @@ F 0 "R1404" H 7700 1815 20  0000 C CNN
 F 1 "220" H 7700 1772 20  0000 C CNN
 F 2 "servo:R_0603_1608Metric" H 7200 1600 60  0001 C CNN
 F 3 "" H 7300 1700 60  0001 C CNN
+F 4 "220 Ohms ±5% 0.25W, 1/4W Chip Resistor 0603 (1608 Metric) Automotive AEC-Q200, Pulse Withstanding Thick Film " H 0   0   50  0001 C CNN "Description"
+F 5 "ESR03EZPJ221" H 0   0   50  0001 C CNN "PartNumber"
+F 6 "RHM220DCT-ND" H 0   0   50  0001 C CNN "digikey"
+F 7 "0.07900" H 0   0   50  0001 C CNN "price@10"
 	1    7700 1700
 	1    0    0    -1  
 $EndComp

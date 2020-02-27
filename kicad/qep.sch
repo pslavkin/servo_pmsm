@@ -57,6 +57,10 @@ F 0 "R1122" H 7359 2272 20  0000 L CNN
 F 1 "10k" H 7359 2229 20  0000 L CNN
 F 2 "servo:R_0603_1608Metric" H 7300 2250 50  0001 C CNN
 F 3 "~" H 7300 2250 50  0001 C CNN
+F 4 "10 kOhms ±5% 0.1W, 1/10W Chip Resistor 0603 (1608 Metric) Moisture Resistant Thick Film " H 0   0   50  0001 C CNN "Description"
+F 5 "RC0603JR-0710KL" H 0   0   50  0001 C CNN "PartNumber"
+F 6 "311-10KGRCT-ND" H 0   0   50  0001 C CNN "digikey"
+F 7 "0.01900" H 0   0   50  0001 C CNN "price@10"
 	1    7300 2250
 	-1   0    0    -1  
 $EndComp
@@ -68,6 +72,10 @@ F 0 "R1123" H 7359 2472 20  0000 L CNN
 F 1 "1k" H 7359 2429 20  0000 L CNN
 F 2 "servo:R_0603_1608Metric" H 7300 2450 50  0001 C CNN
 F 3 "~" H 7300 2450 50  0001 C CNN
+F 4 "1 kOhms ±5% 0.1W, 1/10W Chip Resistor 0603 (1608 Metric) Moisture Resistant Thick Film " H 0   0   50  0001 C CNN "Description"
+F 5 "RC0603JR-071KL" H 0   0   50  0001 C CNN "PartNumber"
+F 6 "311-1.0KGRCT-ND" H 0   0   50  0001 C CNN "digikey"
+F 7 "0.01900" H 0   0   50  0001 C CNN "price@10"
 	1    7300 2450
 	-1   0    0    -1  
 $EndComp
@@ -79,6 +87,10 @@ F 0 "R1124" H 7359 2672 20  0000 L CNN
 F 1 "10k" H 7359 2629 20  0000 L CNN
 F 2 "servo:R_0603_1608Metric" H 7300 2650 50  0001 C CNN
 F 3 "~" H 7300 2650 50  0001 C CNN
+F 4 "10 kOhms ±5% 0.1W, 1/10W Chip Resistor 0603 (1608 Metric) Moisture Resistant Thick Film " H 0   0   50  0001 C CNN "Description"
+F 5 "RC0603JR-0710KL" H 0   0   50  0001 C CNN "PartNumber"
+F 6 "311-10KGRCT-ND" H 0   0   50  0001 C CNN "digikey"
+F 7 "0.01900" H 0   0   50  0001 C CNN "price@10"
 	1    7300 2650
 	-1   0    0    -1  
 $EndComp
@@ -94,6 +106,10 @@ F 0 "R1119" H 7109 2272 20  0000 L CNN
 F 1 "10k" H 7109 2229 20  0000 L CNN
 F 2 "servo:R_0603_1608Metric" H 7050 2250 50  0001 C CNN
 F 3 "~" H 7050 2250 50  0001 C CNN
+F 4 "10 kOhms ±5% 0.1W, 1/10W Chip Resistor 0603 (1608 Metric) Moisture Resistant Thick Film " H 0   0   50  0001 C CNN "Description"
+F 5 "RC0603JR-0710KL" H 0   0   50  0001 C CNN "PartNumber"
+F 6 "311-10KGRCT-ND" H 0   0   50  0001 C CNN "digikey"
+F 7 "0.01900" H 0   0   50  0001 C CNN "price@10"
 	1    7050 2250
 	-1   0    0    -1  
 $EndComp
@@ -105,6 +121,10 @@ F 0 "R1120" H 7109 2472 20  0000 L CNN
 F 1 "1k" H 7109 2429 20  0000 L CNN
 F 2 "servo:R_0603_1608Metric" H 7050 2450 50  0001 C CNN
 F 3 "~" H 7050 2450 50  0001 C CNN
+F 4 "1 kOhms ±5% 0.1W, 1/10W Chip Resistor 0603 (1608 Metric) Moisture Resistant Thick Film " H 0   0   50  0001 C CNN "Description"
+F 5 "RC0603JR-071KL" H 0   0   50  0001 C CNN "PartNumber"
+F 6 "311-1.0KGRCT-ND" H 0   0   50  0001 C CNN "digikey"
+F 7 "0.01900" H 0   0   50  0001 C CNN "price@10"
 	1    7050 2450
 	-1   0    0    -1  
 $EndComp
@@ -116,6 +136,10 @@ F 0 "R1121" H 7109 2672 20  0000 L CNN
 F 1 "10k" H 7109 2629 20  0000 L CNN
 F 2 "servo:R_0603_1608Metric" H 7050 2650 50  0001 C CNN
 F 3 "~" H 7050 2650 50  0001 C CNN
+F 4 "10 kOhms ±5% 0.1W, 1/10W Chip Resistor 0603 (1608 Metric) Moisture Resistant Thick Film " H 0   0   50  0001 C CNN "Description"
+F 5 "RC0603JR-0710KL" H 0   0   50  0001 C CNN "PartNumber"
+F 6 "311-10KGRCT-ND" H 0   0   50  0001 C CNN "digikey"
+F 7 "0.01900" H 0   0   50  0001 C CNN "price@10"
 	1    7050 2650
 	-1   0    0    -1  
 $EndComp
@@ -294,6 +318,10 @@ F 0 "R1116" H 6859 2272 20  0000 L CNN
 F 1 "10k" H 6859 2229 20  0000 L CNN
 F 2 "servo:R_0603_1608Metric" H 6800 2250 50  0001 C CNN
 F 3 "~" H 6800 2250 50  0001 C CNN
+F 4 "10 kOhms ±5% 0.1W, 1/10W Chip Resistor 0603 (1608 Metric) Moisture Resistant Thick Film " H 0   0   50  0001 C CNN "Description"
+F 5 "RC0603JR-0710KL" H 0   0   50  0001 C CNN "PartNumber"
+F 6 "311-10KGRCT-ND" H 0   0   50  0001 C CNN "digikey"
+F 7 "0.01900" H 0   0   50  0001 C CNN "price@10"
 	1    6800 2250
 	-1   0    0    -1  
 $EndComp
@@ -305,6 +333,10 @@ F 0 "R1117" H 6859 2472 20  0000 L CNN
 F 1 "1k" H 6859 2429 20  0000 L CNN
 F 2 "servo:R_0603_1608Metric" H 6800 2450 50  0001 C CNN
 F 3 "~" H 6800 2450 50  0001 C CNN
+F 4 "1 kOhms ±5% 0.1W, 1/10W Chip Resistor 0603 (1608 Metric) Moisture Resistant Thick Film " H 0   0   50  0001 C CNN "Description"
+F 5 "RC0603JR-071KL" H 0   0   50  0001 C CNN "PartNumber"
+F 6 "311-1.0KGRCT-ND" H 0   0   50  0001 C CNN "digikey"
+F 7 "0.01900" H 0   0   50  0001 C CNN "price@10"
 	1    6800 2450
 	-1   0    0    -1  
 $EndComp
@@ -316,6 +348,10 @@ F 0 "R1118" H 6859 2672 20  0000 L CNN
 F 1 "10k" H 6859 2629 20  0000 L CNN
 F 2 "servo:R_0603_1608Metric" H 6800 2650 50  0001 C CNN
 F 3 "~" H 6800 2650 50  0001 C CNN
+F 4 "10 kOhms ±5% 0.1W, 1/10W Chip Resistor 0603 (1608 Metric) Moisture Resistant Thick Film " H 0   0   50  0001 C CNN "Description"
+F 5 "RC0603JR-0710KL" H 0   0   50  0001 C CNN "PartNumber"
+F 6 "311-10KGRCT-ND" H 0   0   50  0001 C CNN "digikey"
+F 7 "0.01900" H 0   0   50  0001 C CNN "price@10"
 	1    6800 2650
 	-1   0    0    -1  
 $EndComp
@@ -339,6 +375,10 @@ F 0 "R1113" H 6609 2272 20  0000 L CNN
 F 1 "10k" H 6609 2229 20  0000 L CNN
 F 2 "servo:R_0603_1608Metric" H 6550 2250 50  0001 C CNN
 F 3 "~" H 6550 2250 50  0001 C CNN
+F 4 "10 kOhms ±5% 0.1W, 1/10W Chip Resistor 0603 (1608 Metric) Moisture Resistant Thick Film " H 0   0   50  0001 C CNN "Description"
+F 5 "RC0603JR-0710KL" H 0   0   50  0001 C CNN "PartNumber"
+F 6 "311-10KGRCT-ND" H 0   0   50  0001 C CNN "digikey"
+F 7 "0.01900" H 0   0   50  0001 C CNN "price@10"
 	1    6550 2250
 	-1   0    0    -1  
 $EndComp
@@ -350,6 +390,10 @@ F 0 "R1114" H 6609 2472 20  0000 L CNN
 F 1 "1k" H 6609 2429 20  0000 L CNN
 F 2 "servo:R_0603_1608Metric" H 6550 2450 50  0001 C CNN
 F 3 "~" H 6550 2450 50  0001 C CNN
+F 4 "1 kOhms ±5% 0.1W, 1/10W Chip Resistor 0603 (1608 Metric) Moisture Resistant Thick Film " H 0   0   50  0001 C CNN "Description"
+F 5 "RC0603JR-071KL" H 0   0   50  0001 C CNN "PartNumber"
+F 6 "311-1.0KGRCT-ND" H 0   0   50  0001 C CNN "digikey"
+F 7 "0.01900" H 0   0   50  0001 C CNN "price@10"
 	1    6550 2450
 	-1   0    0    -1  
 $EndComp
@@ -361,6 +405,10 @@ F 0 "R1115" H 6609 2672 20  0000 L CNN
 F 1 "10k" H 6609 2629 20  0000 L CNN
 F 2 "servo:R_0603_1608Metric" H 6550 2650 50  0001 C CNN
 F 3 "~" H 6550 2650 50  0001 C CNN
+F 4 "10 kOhms ±5% 0.1W, 1/10W Chip Resistor 0603 (1608 Metric) Moisture Resistant Thick Film " H 0   0   50  0001 C CNN "Description"
+F 5 "RC0603JR-0710KL" H 0   0   50  0001 C CNN "PartNumber"
+F 6 "311-10KGRCT-ND" H 0   0   50  0001 C CNN "digikey"
+F 7 "0.01900" H 0   0   50  0001 C CNN "price@10"
 	1    6550 2650
 	-1   0    0    -1  
 $EndComp
@@ -473,6 +521,10 @@ F 0 "R1101" H 4459 2272 20  0000 L CNN
 F 1 "10k" H 4459 2229 20  0000 L CNN
 F 2 "servo:R_0603_1608Metric" H 4400 2250 50  0001 C CNN
 F 3 "~" H 4400 2250 50  0001 C CNN
+F 4 "10 kOhms ±5% 0.1W, 1/10W Chip Resistor 0603 (1608 Metric) Moisture Resistant Thick Film " H 0   0   50  0001 C CNN "Description"
+F 5 "RC0603JR-0710KL" H 0   0   50  0001 C CNN "PartNumber"
+F 6 "311-10KGRCT-ND" H 0   0   50  0001 C CNN "digikey"
+F 7 "0.01900" H 0   0   50  0001 C CNN "price@10"
 	1    4400 2250
 	1    0    0    -1  
 $EndComp
@@ -484,6 +536,10 @@ F 0 "R1102" H 4459 2472 20  0000 L CNN
 F 1 "1k" H 4459 2429 20  0000 L CNN
 F 2 "servo:R_0603_1608Metric" H 4400 2450 50  0001 C CNN
 F 3 "~" H 4400 2450 50  0001 C CNN
+F 4 "1 kOhms ±5% 0.1W, 1/10W Chip Resistor 0603 (1608 Metric) Moisture Resistant Thick Film " H 0   0   50  0001 C CNN "Description"
+F 5 "RC0603JR-071KL" H 0   0   50  0001 C CNN "PartNumber"
+F 6 "311-1.0KGRCT-ND" H 0   0   50  0001 C CNN "digikey"
+F 7 "0.01900" H 0   0   50  0001 C CNN "price@10"
 	1    4400 2450
 	1    0    0    -1  
 $EndComp
@@ -495,6 +551,10 @@ F 0 "R1103" H 4459 2672 20  0000 L CNN
 F 1 "10k" H 4459 2629 20  0000 L CNN
 F 2 "servo:R_0603_1608Metric" H 4400 2650 50  0001 C CNN
 F 3 "~" H 4400 2650 50  0001 C CNN
+F 4 "10 kOhms ±5% 0.1W, 1/10W Chip Resistor 0603 (1608 Metric) Moisture Resistant Thick Film " H 0   0   50  0001 C CNN "Description"
+F 5 "RC0603JR-0710KL" H 0   0   50  0001 C CNN "PartNumber"
+F 6 "311-10KGRCT-ND" H 0   0   50  0001 C CNN "digikey"
+F 7 "0.01900" H 0   0   50  0001 C CNN "price@10"
 	1    4400 2650
 	1    0    0    -1  
 $EndComp
@@ -510,6 +570,10 @@ F 0 "R1104" H 4709 2272 20  0000 L CNN
 F 1 "10k" H 4709 2229 20  0000 L CNN
 F 2 "servo:R_0603_1608Metric" H 4650 2250 50  0001 C CNN
 F 3 "~" H 4650 2250 50  0001 C CNN
+F 4 "10 kOhms ±5% 0.1W, 1/10W Chip Resistor 0603 (1608 Metric) Moisture Resistant Thick Film " H 0   0   50  0001 C CNN "Description"
+F 5 "RC0603JR-0710KL" H 0   0   50  0001 C CNN "PartNumber"
+F 6 "311-10KGRCT-ND" H 0   0   50  0001 C CNN "digikey"
+F 7 "0.01900" H 0   0   50  0001 C CNN "price@10"
 	1    4650 2250
 	1    0    0    -1  
 $EndComp
@@ -521,6 +585,10 @@ F 0 "R1105" H 4709 2472 20  0000 L CNN
 F 1 "1k" H 4709 2429 20  0000 L CNN
 F 2 "servo:R_0603_1608Metric" H 4650 2450 50  0001 C CNN
 F 3 "~" H 4650 2450 50  0001 C CNN
+F 4 "1 kOhms ±5% 0.1W, 1/10W Chip Resistor 0603 (1608 Metric) Moisture Resistant Thick Film " H 0   0   50  0001 C CNN "Description"
+F 5 "RC0603JR-071KL" H 0   0   50  0001 C CNN "PartNumber"
+F 6 "311-1.0KGRCT-ND" H 0   0   50  0001 C CNN "digikey"
+F 7 "0.01900" H 0   0   50  0001 C CNN "price@10"
 	1    4650 2450
 	1    0    0    -1  
 $EndComp
@@ -532,6 +600,10 @@ F 0 "R1106" H 4709 2672 20  0000 L CNN
 F 1 "10k" H 4709 2629 20  0000 L CNN
 F 2 "servo:R_0603_1608Metric" H 4650 2650 50  0001 C CNN
 F 3 "~" H 4650 2650 50  0001 C CNN
+F 4 "10 kOhms ±5% 0.1W, 1/10W Chip Resistor 0603 (1608 Metric) Moisture Resistant Thick Film " H 0   0   50  0001 C CNN "Description"
+F 5 "RC0603JR-0710KL" H 0   0   50  0001 C CNN "PartNumber"
+F 6 "311-10KGRCT-ND" H 0   0   50  0001 C CNN "digikey"
+F 7 "0.01900" H 0   0   50  0001 C CNN "price@10"
 	1    4650 2650
 	1    0    0    -1  
 $EndComp
@@ -692,6 +764,10 @@ F 0 "R1107" H 4959 2272 20  0000 L CNN
 F 1 "10k" H 4959 2229 20  0000 L CNN
 F 2 "servo:R_0603_1608Metric" H 4900 2250 50  0001 C CNN
 F 3 "~" H 4900 2250 50  0001 C CNN
+F 4 "10 kOhms ±5% 0.1W, 1/10W Chip Resistor 0603 (1608 Metric) Moisture Resistant Thick Film " H 0   0   50  0001 C CNN "Description"
+F 5 "RC0603JR-0710KL" H 0   0   50  0001 C CNN "PartNumber"
+F 6 "311-10KGRCT-ND" H 0   0   50  0001 C CNN "digikey"
+F 7 "0.01900" H 0   0   50  0001 C CNN "price@10"
 	1    4900 2250
 	1    0    0    -1  
 $EndComp
@@ -703,6 +779,10 @@ F 0 "R1108" H 4959 2472 20  0000 L CNN
 F 1 "1k" H 4959 2429 20  0000 L CNN
 F 2 "servo:R_0603_1608Metric" H 4900 2450 50  0001 C CNN
 F 3 "~" H 4900 2450 50  0001 C CNN
+F 4 "1 kOhms ±5% 0.1W, 1/10W Chip Resistor 0603 (1608 Metric) Moisture Resistant Thick Film " H 0   0   50  0001 C CNN "Description"
+F 5 "RC0603JR-071KL" H 0   0   50  0001 C CNN "PartNumber"
+F 6 "311-1.0KGRCT-ND" H 0   0   50  0001 C CNN "digikey"
+F 7 "0.01900" H 0   0   50  0001 C CNN "price@10"
 	1    4900 2450
 	1    0    0    -1  
 $EndComp
@@ -714,6 +794,10 @@ F 0 "R1109" H 4959 2672 20  0000 L CNN
 F 1 "10k" H 4959 2629 20  0000 L CNN
 F 2 "servo:R_0603_1608Metric" H 4900 2650 50  0001 C CNN
 F 3 "~" H 4900 2650 50  0001 C CNN
+F 4 "10 kOhms ±5% 0.1W, 1/10W Chip Resistor 0603 (1608 Metric) Moisture Resistant Thick Film " H 0   0   50  0001 C CNN "Description"
+F 5 "RC0603JR-0710KL" H 0   0   50  0001 C CNN "PartNumber"
+F 6 "311-10KGRCT-ND" H 0   0   50  0001 C CNN "digikey"
+F 7 "0.01900" H 0   0   50  0001 C CNN "price@10"
 	1    4900 2650
 	1    0    0    -1  
 $EndComp
@@ -737,6 +821,10 @@ F 0 "R1110" H 5209 2272 20  0000 L CNN
 F 1 "10k" H 5209 2229 20  0000 L CNN
 F 2 "servo:R_0603_1608Metric" H 5150 2250 50  0001 C CNN
 F 3 "~" H 5150 2250 50  0001 C CNN
+F 4 "10 kOhms ±5% 0.1W, 1/10W Chip Resistor 0603 (1608 Metric) Moisture Resistant Thick Film " H 0   0   50  0001 C CNN "Description"
+F 5 "RC0603JR-0710KL" H 0   0   50  0001 C CNN "PartNumber"
+F 6 "311-10KGRCT-ND" H 0   0   50  0001 C CNN "digikey"
+F 7 "0.01900" H 0   0   50  0001 C CNN "price@10"
 	1    5150 2250
 	1    0    0    -1  
 $EndComp
@@ -748,6 +836,10 @@ F 0 "R1111" H 5209 2472 20  0000 L CNN
 F 1 "1k" H 5209 2429 20  0000 L CNN
 F 2 "servo:R_0603_1608Metric" H 5150 2450 50  0001 C CNN
 F 3 "~" H 5150 2450 50  0001 C CNN
+F 4 "1 kOhms ±5% 0.1W, 1/10W Chip Resistor 0603 (1608 Metric) Moisture Resistant Thick Film " H 0   0   50  0001 C CNN "Description"
+F 5 "RC0603JR-071KL" H 0   0   50  0001 C CNN "PartNumber"
+F 6 "311-1.0KGRCT-ND" H 0   0   50  0001 C CNN "digikey"
+F 7 "0.01900" H 0   0   50  0001 C CNN "price@10"
 	1    5150 2450
 	1    0    0    -1  
 $EndComp
@@ -759,6 +851,10 @@ F 0 "R1112" H 5209 2672 20  0000 L CNN
 F 1 "10k" H 5209 2629 20  0000 L CNN
 F 2 "servo:R_0603_1608Metric" H 5150 2650 50  0001 C CNN
 F 3 "~" H 5150 2650 50  0001 C CNN
+F 4 "10 kOhms ±5% 0.1W, 1/10W Chip Resistor 0603 (1608 Metric) Moisture Resistant Thick Film " H 0   0   50  0001 C CNN "Description"
+F 5 "RC0603JR-0710KL" H 0   0   50  0001 C CNN "PartNumber"
+F 6 "311-10KGRCT-ND" H 0   0   50  0001 C CNN "digikey"
+F 7 "0.01900" H 0   0   50  0001 C CNN "price@10"
 	1    5150 2650
 	1    0    0    -1  
 $EndComp

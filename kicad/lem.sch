@@ -104,9 +104,13 @@ L servo:Resistor R1506
 U 1 1 5E3E8DEC
 P 4200 4350
 F 0 "R1506" V 4178 4400 20  0000 L CNN
-F 1 "3.3k" V 4221 4400 20  0000 L CNN
+F 1 "6.8k" V 4221 4400 20  0000 L CNN
 F 2 "servo:R_0603_1608Metric" H 3700 4250 60  0001 C CNN
 F 3 "" H 3800 4350 60  0001 C CNN
+F 4 "6.8 kOhms ±5% 0.1W, 1/10W Chip Resistor 0603 (1608 Metric) Automotive AEC-Q200 Thick Film " H 0   0   50  0001 C CNN "Description"
+F 5 "RMCF0603JT6K80" H 0   0   50  0001 C CNN "PartNumber"
+F 6 " RMCF0603JT6K80CT-ND " H 0   0   50  0001 C CNN "digikey"
+F 7 "0.01400" H 0   0   50  0001 C CNN "price@10"
 	1    4200 4350
 	0    -1   1    0   
 $EndComp
@@ -115,9 +119,13 @@ L servo:Resistor R1505
 U 1 1 5E3E8DF3
 P 4200 3950
 F 0 "R1505" V 4178 4000 20  0000 L CNN
-F 1 "5k" V 4221 4000 20  0000 L CNN
+F 1 "3.3k" V 4221 4000 20  0000 L CNN
 F 2 "servo:R_0603_1608Metric" H 3700 3850 60  0001 C CNN
 F 3 "" H 3800 3950 60  0001 C CNN
+F 4 "3.3 kOhms ±5% 0.1W, 1/10W Chip Resistor 0603 (1608 Metric) Automotive AEC-Q200, Moisture Resistant Thick Film" H 0   0   50  0001 C CNN "Description"
+F 5 "CRGCQ0603J3K3" H 0   0   50  0001 C CNN "PartNumber"
+F 6 "A130094CT-ND" H 0   0   50  0001 C CNN "digikey"
+F 7 "0.02100" H 0   0   50  0001 C CNN "price@10"
 	1    4200 3950
 	0    -1   1    0   
 $EndComp
@@ -264,9 +272,13 @@ L servo:Resistor R1502
 U 1 1 5E274FE9
 P 4000 6300
 F 0 "R1502" V 3978 6350 20  0000 L CNN
-F 1 "3.3k" V 4021 6350 20  0000 L CNN
+F 1 "6.8k" V 4021 6350 20  0000 L CNN
 F 2 "servo:R_0603_1608Metric" H 3500 6200 60  0001 C CNN
 F 3 "" H 3600 6300 60  0001 C CNN
+F 4 "6.8 kOhms ±5% 0.1W, 1/10W Chip Resistor 0603 (1608 Metric) Automotive AEC-Q200 Thick Film " H 0   0   50  0001 C CNN "Description"
+F 5 "RMCF0603JT6K80" H 0   0   50  0001 C CNN "PartNumber"
+F 6 " RMCF0603JT6K80CT-ND " H 0   0   50  0001 C CNN "digikey"
+F 7 "0.01400" H 0   0   50  0001 C CNN "price@10"
 	1    4000 6300
 	0    -1   1    0   
 $EndComp
@@ -275,9 +287,13 @@ L servo:Resistor R1501
 U 1 1 5E274FF0
 P 4000 5900
 F 0 "R1501" V 3978 5950 20  0000 L CNN
-F 1 "5k" V 4021 5950 20  0000 L CNN
+F 1 "3.3k" V 4021 5950 20  0000 L CNN
 F 2 "servo:R_0603_1608Metric" H 3500 5800 60  0001 C CNN
 F 3 "" H 3600 5900 60  0001 C CNN
+F 4 "3.3 kOhms ±5% 0.1W, 1/10W Chip Resistor 0603 (1608 Metric) Automotive AEC-Q200, Moisture Resistant Thick Film" H 0   0   50  0001 C CNN "Description"
+F 5 "CRGCQ0603J3K3" H 0   0   50  0001 C CNN "PartNumber"
+F 6 "A130094CT-ND" H 0   0   50  0001 C CNN "digikey"
+F 7 "0.02100" H 0   0   50  0001 C CNN "price@10"
 	1    4000 5900
 	0    -1   1    0   
 $EndComp
@@ -409,9 +425,13 @@ L servo:Resistor R1504
 U 1 1 5E276233
 P 4100 8900
 F 0 "R1504" V 4078 8950 20  0000 L CNN
-F 1 "3.3k" V 4121 8950 20  0000 L CNN
+F 1 "6.8k" V 4121 8950 20  0000 L CNN
 F 2 "servo:R_0603_1608Metric" H 3600 8800 60  0001 C CNN
 F 3 "" H 3700 8900 60  0001 C CNN
+F 4 "6.8 kOhms ±5% 0.1W, 1/10W Chip Resistor 0603 (1608 Metric) Automotive AEC-Q200 Thick Film " H 0   0   50  0001 C CNN "Description"
+F 5 "RMCF0603JT6K80" H 0   0   50  0001 C CNN "PartNumber"
+F 6 " RMCF0603JT6K80CT-ND " H 0   0   50  0001 C CNN "digikey"
+F 7 "0.01400" H 0   0   50  0001 C CNN "price@10"
 	1    4100 8900
 	0    -1   1    0   
 $EndComp
@@ -420,9 +440,13 @@ L servo:Resistor R1503
 U 1 1 5E27623A
 P 4100 8500
 F 0 "R1503" V 4078 8550 20  0000 L CNN
-F 1 "5k" V 4121 8550 20  0000 L CNN
+F 1 "3.3k" V 4121 8550 20  0000 L CNN
 F 2 "servo:R_0603_1608Metric" H 3600 8400 60  0001 C CNN
 F 3 "" H 3700 8500 60  0001 C CNN
+F 4 "3.3 kOhms ±5% 0.1W, 1/10W Chip Resistor 0603 (1608 Metric) Automotive AEC-Q200, Moisture Resistant Thick Film" H 0   0   50  0001 C CNN "Description"
+F 5 "CRGCQ0603J3K3" H 0   0   50  0001 C CNN "PartNumber"
+F 6 "A130094CT-ND" H 0   0   50  0001 C CNN "digikey"
+F 7 "0.02100" H 0   0   50  0001 C CNN "price@10"
 	1    4100 8500
 	0    -1   1    0   
 $EndComp
@@ -554,9 +578,13 @@ L servo:Resistor R1508
 U 1 1 5E278687
 P 8500 4350
 F 0 "R1508" V 8478 4400 20  0000 L CNN
-F 1 "3.3k" V 8521 4400 20  0000 L CNN
+F 1 "6.8k" V 8521 4400 20  0000 L CNN
 F 2 "servo:R_0603_1608Metric" H 8000 4250 60  0001 C CNN
 F 3 "" H 8100 4350 60  0001 C CNN
+F 4 "6.8 kOhms ±5% 0.1W, 1/10W Chip Resistor 0603 (1608 Metric) Automotive AEC-Q200 Thick Film " H 0   0   50  0001 C CNN "Description"
+F 5 "RMCF0603JT6K80" H 0   0   50  0001 C CNN "PartNumber"
+F 6 " RMCF0603JT6K80CT-ND " H 0   0   50  0001 C CNN "digikey"
+F 7 "0.01400" H 0   0   50  0001 C CNN "price@10"
 	1    8500 4350
 	0    1    1    0   
 $EndComp
@@ -565,9 +593,13 @@ L servo:Resistor R1507
 U 1 1 5E27868E
 P 8500 3950
 F 0 "R1507" V 8478 4000 20  0000 L CNN
-F 1 "5k" V 8521 4000 20  0000 L CNN
+F 1 "3.3k" V 8521 4000 20  0000 L CNN
 F 2 "servo:R_0603_1608Metric" H 8000 3850 60  0001 C CNN
 F 3 "" H 8100 3950 60  0001 C CNN
+F 4 "3.3 kOhms ±5% 0.1W, 1/10W Chip Resistor 0603 (1608 Metric) Automotive AEC-Q200, Moisture Resistant Thick Film" H 0   0   50  0001 C CNN "Description"
+F 5 "CRGCQ0603J3K3" H 0   0   50  0001 C CNN "PartNumber"
+F 6 "A130094CT-ND" H 0   0   50  0001 C CNN "digikey"
+F 7 "0.02100" H 0   0   50  0001 C CNN "price@10"
 	1    8500 3950
 	0    1    1    0   
 $EndComp
@@ -699,9 +731,13 @@ L servo:Resistor R1510
 U 1 1 5E2833AE
 P 8500 6300
 F 0 "R1510" V 8478 6350 20  0000 L CNN
-F 1 "3.3k" V 8521 6350 20  0000 L CNN
+F 1 "6.8k" V 8521 6350 20  0000 L CNN
 F 2 "servo:R_0603_1608Metric" H 8000 6200 60  0001 C CNN
 F 3 "" H 8100 6300 60  0001 C CNN
+F 4 "6.8 kOhms ±5% 0.1W, 1/10W Chip Resistor 0603 (1608 Metric) Automotive AEC-Q200 Thick Film " H 0   0   50  0001 C CNN "Description"
+F 5 "RMCF0603JT6K80" H 0   0   50  0001 C CNN "PartNumber"
+F 6 " RMCF0603JT6K80CT-ND " H 0   0   50  0001 C CNN "digikey"
+F 7 "0.01400" H 0   0   50  0001 C CNN "price@10"
 	1    8500 6300
 	0    1    1    0   
 $EndComp
@@ -710,9 +746,13 @@ L servo:Resistor R1509
 U 1 1 5E2833B5
 P 8500 5900
 F 0 "R1509" V 8478 5950 20  0000 L CNN
-F 1 "5k" V 8521 5950 20  0000 L CNN
+F 1 "3.3k" V 8521 5950 20  0000 L CNN
 F 2 "servo:R_0603_1608Metric" H 8000 5800 60  0001 C CNN
 F 3 "" H 8100 5900 60  0001 C CNN
+F 4 "3.3 kOhms ±5% 0.1W, 1/10W Chip Resistor 0603 (1608 Metric) Automotive AEC-Q200, Moisture Resistant Thick Film" H 0   0   50  0001 C CNN "Description"
+F 5 "CRGCQ0603J3K3" H 0   0   50  0001 C CNN "PartNumber"
+F 6 "A130094CT-ND" H 0   0   50  0001 C CNN "digikey"
+F 7 "0.02100" H 0   0   50  0001 C CNN "price@10"
 	1    8500 5900
 	0    1    1    0   
 $EndComp
@@ -844,9 +884,13 @@ L servo:Resistor R1512
 U 1 1 5E288A1C
 P 8500 8900
 F 0 "R1512" V 8478 8950 20  0000 L CNN
-F 1 "3.3k" V 8521 8950 20  0000 L CNN
+F 1 "6.8k" V 8521 8950 20  0000 L CNN
 F 2 "servo:R_0603_1608Metric" H 8000 8800 60  0001 C CNN
 F 3 "" H 8100 8900 60  0001 C CNN
+F 4 "6.8 kOhms ±5% 0.1W, 1/10W Chip Resistor 0603 (1608 Metric) Automotive AEC-Q200 Thick Film " H 0   0   50  0001 C CNN "Description"
+F 5 "RMCF0603JT6K80" H 0   0   50  0001 C CNN "PartNumber"
+F 6 " RMCF0603JT6K80CT-ND " H 0   0   50  0001 C CNN "digikey"
+F 7 "0.01400" H 0   0   50  0001 C CNN "price@10"
 	1    8500 8900
 	0    1    1    0   
 $EndComp
@@ -855,9 +899,13 @@ L servo:Resistor R1511
 U 1 1 5E288A23
 P 8500 8500
 F 0 "R1511" V 8478 8550 20  0000 L CNN
-F 1 "5k" V 8521 8550 20  0000 L CNN
+F 1 "3.3k" V 8521 8550 20  0000 L CNN
 F 2 "servo:R_0603_1608Metric" H 8000 8400 60  0001 C CNN
 F 3 "" H 8100 8500 60  0001 C CNN
+F 4 "3.3 kOhms ±5% 0.1W, 1/10W Chip Resistor 0603 (1608 Metric) Automotive AEC-Q200, Moisture Resistant Thick Film" H 0   0   50  0001 C CNN "Description"
+F 5 "CRGCQ0603J3K3" H 0   0   50  0001 C CNN "PartNumber"
+F 6 "A130094CT-ND" H 0   0   50  0001 C CNN "digikey"
+F 7 "0.02100" H 0   0   50  0001 C CNN "price@10"
 	1    8500 8500
 	0    1    1    0   
 $EndComp

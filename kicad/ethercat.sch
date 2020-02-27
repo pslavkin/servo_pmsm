@@ -293,6 +293,10 @@ F 0 "R420" H 7800 10615 20  0000 C CNN
 F 1 "680" H 7800 10572 20  0000 C CNN
 F 2 "servo:R_0603_1608Metric" H 7300 10400 60  0001 C CNN
 F 3 "" H 7400 10500 60  0001 C CNN
+F 4 "680 Ohms ±5% 0.1W, 1/10W Chip Resistor 0603 (1608 Metric) Automotive AEC-Q200 Thick Film" H 0   0   50  0001 C CNN "Description"
+F 5 "RMCF0603JT680R" H 0   0   50  0001 C CNN "PartNumber"
+F 6 "RMCF0603JT680RCT-ND" H 0   0   50  0001 C CNN "digikey"
+F 7 "0.01400" H 0   0   50  0001 C CNN "price@10"
 	1    7800 10500
 	1    0    0    -1  
 $EndComp
@@ -304,6 +308,10 @@ F 0 "R427" V 1578 4950 20  0000 L CNN
 F 1 "2.2k" V 1621 4950 20  0000 L CNN
 F 2 "servo:R_0603_1608Metric" H 1100 4800 60  0001 C CNN
 F 3 "" H 1200 4900 60  0001 C CNN
+F 4 "2.2 kOhms ±5% 0.1W, 1/10W Chip Resistor 0603 (1608 Metric) Automotive AEC-Q200 Thick Film " H 0   0   50  0001 C CNN "Description"
+F 5 "ERJ-3GEYJ222V" H 0   0   50  0001 C CNN "PartNumber"
+F 6 "P2.2KGCT-ND " H 0   0   50  0001 C CNN "digikey"
+F 7 "0.04500" H 0   0   50  0001 C CNN "price@10"
 	1    1600 4900
 	0    1    1    0   
 $EndComp
@@ -346,6 +354,10 @@ F 0 "R419" H 7800 10365 20  0000 C CNN
 F 1 "680" H 7800 10322 20  0000 C CNN
 F 2 "servo:R_0603_1608Metric" H 7300 10150 60  0001 C CNN
 F 3 "" H 7400 10250 60  0001 C CNN
+F 4 "680 Ohms ±5% 0.1W, 1/10W Chip Resistor 0603 (1608 Metric) Automotive AEC-Q200 Thick Film" H 0   0   50  0001 C CNN "Description"
+F 5 "RMCF0603JT680R" H 0   0   50  0001 C CNN "PartNumber"
+F 6 "RMCF0603JT680RCT-ND" H 0   0   50  0001 C CNN "digikey"
+F 7 "0.01400" H 0   0   50  0001 C CNN "price@10"
 	1    7800 10250
 	1    0    0    -1  
 $EndComp
@@ -372,6 +384,10 @@ F 0 "R410" V 3928 4050 20  0000 L CNN
 F 1 "2.2k" V 3971 4050 20  0000 L CNN
 F 2 "servo:R_0603_1608Metric" H 3450 3900 60  0001 C CNN
 F 3 "" H 3550 4000 60  0001 C CNN
+F 4 "2.2 kOhms ±5% 0.1W, 1/10W Chip Resistor 0603 (1608 Metric) Automotive AEC-Q200 Thick Film " H 0   0   50  0001 C CNN "Description"
+F 5 "ERJ-3GEYJ222V" H 0   0   50  0001 C CNN "PartNumber"
+F 6 "P2.2KGCT-ND " H 0   0   50  0001 C CNN "digikey"
+F 7 "0.04500" H 0   0   50  0001 C CNN "price@10"
 	1    3950 4000
 	0    1    1    0   
 $EndComp
@@ -383,6 +399,10 @@ F 0 "R408" V 3828 4050 20  0000 L CNN
 F 1 "2.2k" V 3871 4050 20  0000 L CNN
 F 2 "servo:R_0603_1608Metric" H 3350 3900 60  0001 C CNN
 F 3 "" H 3450 4000 60  0001 C CNN
+F 4 "2.2 kOhms ±5% 0.1W, 1/10W Chip Resistor 0603 (1608 Metric) Automotive AEC-Q200 Thick Film " H 0   0   50  0001 C CNN "Description"
+F 5 "ERJ-3GEYJ222V" H 0   0   50  0001 C CNN "PartNumber"
+F 6 "P2.2KGCT-ND " H 0   0   50  0001 C CNN "digikey"
+F 7 "0.04500" H 0   0   50  0001 C CNN "price@10"
 	1    3850 4000
 	0    1    1    0   
 $EndComp
@@ -394,6 +414,10 @@ F 0 "R406" V 3728 4050 20  0000 L CNN
 F 1 "2.2k" V 3771 4050 20  0000 L CNN
 F 2 "servo:R_0603_1608Metric" H 3250 3900 60  0001 C CNN
 F 3 "" H 3350 4000 60  0001 C CNN
+F 4 "2.2 kOhms ±5% 0.1W, 1/10W Chip Resistor 0603 (1608 Metric) Automotive AEC-Q200 Thick Film " H 0   0   50  0001 C CNN "Description"
+F 5 "ERJ-3GEYJ222V" H 0   0   50  0001 C CNN "PartNumber"
+F 6 "P2.2KGCT-ND " H 0   0   50  0001 C CNN "digikey"
+F 7 "0.04500" H 0   0   50  0001 C CNN "price@10"
 	1    3750 4000
 	0    1    1    0   
 $EndComp
@@ -405,6 +429,10 @@ F 0 "R404" V 3628 4050 20  0000 L CNN
 F 1 "2.2k" V 3671 4050 20  0000 L CNN
 F 2 "servo:R_0603_1608Metric" H 3150 3900 60  0001 C CNN
 F 3 "" H 3250 4000 60  0001 C CNN
+F 4 "2.2 kOhms ±5% 0.1W, 1/10W Chip Resistor 0603 (1608 Metric) Automotive AEC-Q200 Thick Film " H 0   0   50  0001 C CNN "Description"
+F 5 "ERJ-3GEYJ222V" H 0   0   50  0001 C CNN "PartNumber"
+F 6 "P2.2KGCT-ND " H 0   0   50  0001 C CNN "digikey"
+F 7 "0.04500" H 0   0   50  0001 C CNN "price@10"
 	1    3650 4000
 	0    1    1    0   
 $EndComp
@@ -416,6 +444,10 @@ F 0 "R402" V 3528 4050 20  0000 L CNN
 F 1 "2.2k" V 3571 4050 20  0000 L CNN
 F 2 "servo:R_0603_1608Metric" H 3050 3900 60  0001 C CNN
 F 3 "" H 3150 4000 60  0001 C CNN
+F 4 "2.2 kOhms ±5% 0.1W, 1/10W Chip Resistor 0603 (1608 Metric) Automotive AEC-Q200 Thick Film " H 0   0   50  0001 C CNN "Description"
+F 5 "ERJ-3GEYJ222V" H 0   0   50  0001 C CNN "PartNumber"
+F 6 "P2.2KGCT-ND " H 0   0   50  0001 C CNN "digikey"
+F 7 "0.04500" H 0   0   50  0001 C CNN "price@10"
 	1    3550 4000
 	0    1    1    0   
 $EndComp
@@ -427,6 +459,10 @@ F 0 "R401" V 3428 3950 20  0000 R CNN
 F 1 "2.2k" V 3471 3950 20  0000 R CNN
 F 2 "servo:R_0603_1608Metric" H 2950 3900 60  0001 C CNN
 F 3 "" H 3050 4000 60  0001 C CNN
+F 4 "2.2 kOhms ±5% 0.1W, 1/10W Chip Resistor 0603 (1608 Metric) Automotive AEC-Q200 Thick Film " H 0   0   50  0001 C CNN "Description"
+F 5 "ERJ-3GEYJ222V" H 0   0   50  0001 C CNN "PartNumber"
+F 6 "P2.2KGCT-ND " H 0   0   50  0001 C CNN "digikey"
+F 7 "0.04500" H 0   0   50  0001 C CNN "price@10"
 	1    3450 4000
 	0    1    1    0   
 $EndComp
@@ -438,6 +474,10 @@ F 0 "R421" H 8350 2365 20  0000 C CNN
 F 1 "4.87k" H 8350 2322 20  0000 C CNN
 F 2 "servo:R_0603_1608Metric" H 7850 2150 60  0001 C CNN
 F 3 "" H 7950 2250 60  0001 C CNN
+F 4 "4.87 kOhms ±1% 0.1W, 1/10W Chip Resistor 0603 (1608 Metric) Automotive AEC-Q200 Thick Film" H 0   0   50  0001 C CNN "Description"
+F 5 "RMCF0603FT4K87" H 0   0   50  0001 C CNN "PartNumber"
+F 6 " RMCF0603FT4K87CT-ND" H 0   0   50  0001 C CNN "digikey"
+F 7 "0.01600" H 0   0   50  0001 C CNN "price@10"
 	1    8350 2250
 	1    0    0    -1  
 $EndComp
@@ -449,6 +489,10 @@ F 0 "R413" V 4228 2250 20  0000 L CNN
 F 1 "2.2k" V 4271 2250 20  0000 L CNN
 F 2 "servo:R_0603_1608Metric" H 3750 2100 60  0001 C CNN
 F 3 "" H 3850 2200 60  0001 C CNN
+F 4 "2.2 kOhms ±5% 0.1W, 1/10W Chip Resistor 0603 (1608 Metric) Automotive AEC-Q200 Thick Film " H 0   0   50  0001 C CNN "Description"
+F 5 "ERJ-3GEYJ222V" H 0   0   50  0001 C CNN "PartNumber"
+F 6 "P2.2KGCT-ND " H 0   0   50  0001 C CNN "digikey"
+F 7 "0.04500" H 0   0   50  0001 C CNN "price@10"
 	1    4250 2200
 	0    1    1    0   
 $EndComp
@@ -460,6 +504,10 @@ F 0 "R415" V 4428 2250 20  0000 L CNN
 F 1 "2.2k" V 4471 2250 20  0000 L CNN
 F 2 "servo:R_0603_1608Metric" H 3950 2100 60  0001 C CNN
 F 3 "" H 4050 2200 60  0001 C CNN
+F 4 "2.2 kOhms ±5% 0.1W, 1/10W Chip Resistor 0603 (1608 Metric) Automotive AEC-Q200 Thick Film " H 0   0   50  0001 C CNN "Description"
+F 5 "ERJ-3GEYJ222V" H 0   0   50  0001 C CNN "PartNumber"
+F 6 "P2.2KGCT-ND " H 0   0   50  0001 C CNN "digikey"
+F 7 "0.04500" H 0   0   50  0001 C CNN "price@10"
 	1    4450 2200
 	0    1    1    0   
 $EndComp
@@ -471,6 +519,10 @@ F 0 "R418" V 5078 10000 20  0000 L CNN
 F 1 "4.7k" V 5121 10000 20  0000 L CNN
 F 2 "servo:R_0603_1608Metric" H 4600 9850 60  0001 C CNN
 F 3 "" H 4700 9950 60  0001 C CNN
+F 4 "4.7 kOhms ±5% 0.1W, 1/10W Chip Resistor 0603 (1608 Metric) Moisture Resistant Thick Film " H 0   0   50  0001 C CNN "Description"
+F 5 "RC0603JR-074K7L" H 0   0   50  0001 C CNN "PartNumber"
+F 6 "311-4.7KGRCT-ND" H 0   0   50  0001 C CNN "digikey"
+F 7 "0.01900" H 0   0   50  0001 C CNN "price@10"
 	1    5100 9950
 	0    1    1    0   
 $EndComp
@@ -479,9 +531,13 @@ L servo:Resistor R422
 U 1 1 5DB3907F
 P 8350 2950
 F 0 "R422" H 8350 2879 20  0000 C CNN
-F 1 "10.0k" H 8350 2836 20  0000 C CNN
+F 1 "10k" H 8350 2836 20  0000 C CNN
 F 2 "servo:R_0603_1608Metric" H 7850 2850 60  0001 C CNN
 F 3 "" H 7950 2950 60  0001 C CNN
+F 4 "10 kOhms ±5% 0.1W, 1/10W Chip Resistor 0603 (1608 Metric) Moisture Resistant Thick Film " H 0   0   50  0001 C CNN "Description"
+F 5 "RC0603JR-0710KL" H 0   0   50  0001 C CNN "PartNumber"
+F 6 "311-10KGRCT-ND" H 0   0   50  0001 C CNN "digikey"
+F 7 "0.01900" H 0   0   50  0001 C CNN "price@10"
 	1    8350 2950
 	1    0    0    -1  
 $EndComp
@@ -493,6 +549,10 @@ F 0 "R429" V 9028 1100 20  0000 R CNN
 F 1 "49.9" V 9071 1100 20  0000 R CNN
 F 2 "servo:R_0603_1608Metric" H 8550 1050 60  0001 C CNN
 F 3 "" H 8650 1150 60  0001 C CNN
+F 4 "49.9 Ohms ±1% 0.1W, 1/10W Chip Resistor 0603 (1608 Metric) Moisture Resistant Thick Film " H 0   0   50  0001 C CNN "Description"
+F 5 "RC0603FR-0749R9L" H 0   0   50  0001 C CNN "PartNumber"
+F 6 "311-49.9HRCT-ND" H 0   0   50  0001 C CNN "digikey"
+F 7 "0.02300" H 0   0   50  0001 C CNN "price@10"
 	1    9050 1150
 	0    1    1    0   
 $EndComp
@@ -504,6 +564,10 @@ F 0 "R431" V 9228 1100 20  0000 R CNN
 F 1 "49.9" V 9271 1100 20  0000 R CNN
 F 2 "servo:R_0603_1608Metric" H 8750 1050 60  0001 C CNN
 F 3 "" H 8850 1150 60  0001 C CNN
+F 4 "49.9 Ohms ±1% 0.1W, 1/10W Chip Resistor 0603 (1608 Metric) Moisture Resistant Thick Film " H 0   0   50  0001 C CNN "Description"
+F 5 "RC0603FR-0749R9L" H 0   0   50  0001 C CNN "PartNumber"
+F 6 "311-49.9HRCT-ND" H 0   0   50  0001 C CNN "digikey"
+F 7 "0.02300" H 0   0   50  0001 C CNN "price@10"
 	1    9250 1150
 	0    1    1    0   
 $EndComp
@@ -515,6 +579,10 @@ F 0 "R435" V 10278 1150 20  0000 R CNN
 F 1 "49.9" V 10321 1150 20  0000 R CNN
 F 2 "servo:R_0603_1608Metric" H 9800 1100 60  0001 C CNN
 F 3 "" H 9900 1200 60  0001 C CNN
+F 4 "49.9 Ohms ±1% 0.1W, 1/10W Chip Resistor 0603 (1608 Metric) Moisture Resistant Thick Film " H 0   0   50  0001 C CNN "Description"
+F 5 "RC0603FR-0749R9L" H 0   0   50  0001 C CNN "PartNumber"
+F 6 "311-49.9HRCT-ND" H 0   0   50  0001 C CNN "digikey"
+F 7 "0.02300" H 0   0   50  0001 C CNN "price@10"
 	1    10300 1200
 	0    1    1    0   
 $EndComp
@@ -526,6 +594,10 @@ F 0 "R437" V 10428 1250 20  0000 L CNN
 F 1 "49.9" V 10471 1250 20  0000 L CNN
 F 2 "servo:R_0603_1608Metric" H 9950 1100 60  0001 C CNN
 F 3 "" H 10050 1200 60  0001 C CNN
+F 4 "49.9 Ohms ±1% 0.1W, 1/10W Chip Resistor 0603 (1608 Metric) Moisture Resistant Thick Film " H 0   0   50  0001 C CNN "Description"
+F 5 "RC0603FR-0749R9L" H 0   0   50  0001 C CNN "PartNumber"
+F 6 "311-49.9HRCT-ND" H 0   0   50  0001 C CNN "digikey"
+F 7 "0.02300" H 0   0   50  0001 C CNN "price@10"
 	1    10450 1200
 	0    1    1    0   
 $EndComp
@@ -597,6 +669,10 @@ F 0 "R433" V 10078 2800 20  0000 L CNN
 F 1 "2.2k" V 10121 2800 20  0000 L CNN
 F 2 "servo:R_0603_1608Metric" H 9600 2650 60  0001 C CNN
 F 3 "" H 9700 2750 60  0001 C CNN
+F 4 "2.2 kOhms ±5% 0.1W, 1/10W Chip Resistor 0603 (1608 Metric) Automotive AEC-Q200 Thick Film " H 0   0   50  0001 C CNN "Description"
+F 5 "ERJ-3GEYJ222V" H 0   0   50  0001 C CNN "PartNumber"
+F 6 "P2.2KGCT-ND " H 0   0   50  0001 C CNN "digikey"
+F 7 "0.04500" H 0   0   50  0001 C CNN "price@10"
 	1    10100 2750
 	0    1    1    0   
 $EndComp
@@ -818,17 +894,6 @@ Text Notes 4300 3700 0    20   ~ 0
 Address select. Be shure \nyou select two distinct\n
 Text GLabel 9050 3350 2    50   Input ~ 0
 ENET_CAT_XI
-$Comp
-L servo:Resistor R423
-U 1 1 5E74B0E2
-P 8450 3350
-F 0 "R423" H 8450 3465 20  0000 C CNN
-F 1 "0" H 8450 3422 20  0000 C CNN
-F 2 "servo:R_0603_1608Metric" H 7950 3250 60  0001 C CNN
-F 3 "" H 8050 3350 60  0001 C CNN
-	1    8450 3350
-	1    0    0    -1  
-$EndComp
 Wire Wire Line
 	9050 3350 8650 3350
 Text Notes 3950 9600 0    20   ~ 0
@@ -905,10 +970,8 @@ Wire Wire Line
 	10550 3250 10650 3250
 Wire Wire Line
 	10650 3250 10650 3450
-Wire Wire Line
-	10150 3250 10100 3250
-Text Notes 10200 3150 0    20   ~ 0
-the pullup of led_0 is mandatory, but to\n drive the led you could choose between \nPHY or uC populating/unpopulating the resistor
+Text Notes 10300 3000 0    20   ~ 0
+the pullup of led_0 is mandatory, but to\n drive the led you could choose between \nPHY or uC populating/unpopulating the jumper
 Text Notes 10450 3550 0    20   ~ 0
 It'd be optionall\n
 Text Notes 800  1400 0    20   ~ 0
@@ -1220,6 +1283,10 @@ F 0 "R412" V 4178 6400 20  0000 L CNN
 F 1 "2.2k" V 4221 6400 20  0000 L CNN
 F 2 "servo:R_0603_1608Metric" H 3700 6250 60  0001 C CNN
 F 3 "" H 3800 6350 60  0001 C CNN
+F 4 "2.2 kOhms ±5% 0.1W, 1/10W Chip Resistor 0603 (1608 Metric) Automotive AEC-Q200 Thick Film " H 0   0   50  0001 C CNN "Description"
+F 5 "ERJ-3GEYJ222V" H 0   0   50  0001 C CNN "PartNumber"
+F 6 "P2.2KGCT-ND " H 0   0   50  0001 C CNN "digikey"
+F 7 "0.04500" H 0   0   50  0001 C CNN "price@10"
 	1    4200 6350
 	0    1    1    0   
 $EndComp
@@ -1231,6 +1298,10 @@ F 0 "R411" V 3978 8200 20  0000 L CNN
 F 1 "2.2k" V 4021 8200 20  0000 L CNN
 F 2 "servo:R_0603_1608Metric" H 3500 8050 60  0001 C CNN
 F 3 "" H 3600 8150 60  0001 C CNN
+F 4 "2.2 kOhms ±5% 0.1W, 1/10W Chip Resistor 0603 (1608 Metric) Automotive AEC-Q200 Thick Film " H 0   0   50  0001 C CNN "Description"
+F 5 "ERJ-3GEYJ222V" H 0   0   50  0001 C CNN "PartNumber"
+F 6 "P2.2KGCT-ND " H 0   0   50  0001 C CNN "digikey"
+F 7 "0.04500" H 0   0   50  0001 C CNN "price@10"
 	1    4000 8150
 	0    1    1    0   
 $EndComp
@@ -1242,6 +1313,10 @@ F 0 "R409" V 3878 8200 20  0000 L CNN
 F 1 "2.2k" V 3921 8200 20  0000 L CNN
 F 2 "servo:R_0603_1608Metric" H 3400 8050 60  0001 C CNN
 F 3 "" H 3500 8150 60  0001 C CNN
+F 4 "2.2 kOhms ±5% 0.1W, 1/10W Chip Resistor 0603 (1608 Metric) Automotive AEC-Q200 Thick Film " H 0   0   50  0001 C CNN "Description"
+F 5 "ERJ-3GEYJ222V" H 0   0   50  0001 C CNN "PartNumber"
+F 6 "P2.2KGCT-ND " H 0   0   50  0001 C CNN "digikey"
+F 7 "0.04500" H 0   0   50  0001 C CNN "price@10"
 	1    3900 8150
 	0    1    1    0   
 $EndComp
@@ -1253,6 +1328,10 @@ F 0 "R407" V 3778 8200 20  0000 L CNN
 F 1 "2.2k" V 3821 8200 20  0000 L CNN
 F 2 "servo:R_0603_1608Metric" H 3300 8050 60  0001 C CNN
 F 3 "" H 3400 8150 60  0001 C CNN
+F 4 "2.2 kOhms ±5% 0.1W, 1/10W Chip Resistor 0603 (1608 Metric) Automotive AEC-Q200 Thick Film " H 0   0   50  0001 C CNN "Description"
+F 5 "ERJ-3GEYJ222V" H 0   0   50  0001 C CNN "PartNumber"
+F 6 "P2.2KGCT-ND " H 0   0   50  0001 C CNN "digikey"
+F 7 "0.04500" H 0   0   50  0001 C CNN "price@10"
 	1    3800 8150
 	0    1    1    0   
 $EndComp
@@ -1264,6 +1343,10 @@ F 0 "R405" V 3678 8200 20  0000 L CNN
 F 1 "2.2k" V 3721 8200 20  0000 L CNN
 F 2 "servo:R_0603_1608Metric" H 3200 8050 60  0001 C CNN
 F 3 "" H 3300 8150 60  0001 C CNN
+F 4 "2.2 kOhms ±5% 0.1W, 1/10W Chip Resistor 0603 (1608 Metric) Automotive AEC-Q200 Thick Film " H 0   0   50  0001 C CNN "Description"
+F 5 "ERJ-3GEYJ222V" H 0   0   50  0001 C CNN "PartNumber"
+F 6 "P2.2KGCT-ND " H 0   0   50  0001 C CNN "digikey"
+F 7 "0.04500" H 0   0   50  0001 C CNN "price@10"
 	1    3700 8150
 	0    1    1    0   
 $EndComp
@@ -1275,6 +1358,10 @@ F 0 "R403" V 3578 8100 20  0000 R CNN
 F 1 "2.2k" V 3621 8100 20  0000 R CNN
 F 2 "servo:R_0603_1608Metric" H 3100 8050 60  0001 C CNN
 F 3 "" H 3200 8150 60  0001 C CNN
+F 4 "2.2 kOhms ±5% 0.1W, 1/10W Chip Resistor 0603 (1608 Metric) Automotive AEC-Q200 Thick Film " H 0   0   50  0001 C CNN "Description"
+F 5 "ERJ-3GEYJ222V" H 0   0   50  0001 C CNN "PartNumber"
+F 6 "P2.2KGCT-ND " H 0   0   50  0001 C CNN "digikey"
+F 7 "0.04500" H 0   0   50  0001 C CNN "price@10"
 	1    3600 8150
 	0    1    1    0   
 $EndComp
@@ -1286,6 +1373,10 @@ F 0 "R424" H 8500 6515 20  0000 C CNN
 F 1 "4.87k" H 8500 6472 20  0000 C CNN
 F 2 "servo:R_0603_1608Metric" H 8000 6300 60  0001 C CNN
 F 3 "" H 8100 6400 60  0001 C CNN
+F 4 "4.87 kOhms ±1% 0.1W, 1/10W Chip Resistor 0603 (1608 Metric) Automotive AEC-Q200 Thick Film" H 0   0   50  0001 C CNN "Description"
+F 5 "RMCF0603FT4K87" H 0   0   50  0001 C CNN "PartNumber"
+F 6 " RMCF0603FT4K87CT-ND" H 0   0   50  0001 C CNN "digikey"
+F 7 "0.01600" H 0   0   50  0001 C CNN "price@10"
 	1    8500 6400
 	1    0    0    -1  
 $EndComp
@@ -1297,6 +1388,10 @@ F 0 "R414" V 4378 6400 20  0000 L CNN
 F 1 "2.2k" V 4421 6400 20  0000 L CNN
 F 2 "servo:R_0603_1608Metric" H 3900 6250 60  0001 C CNN
 F 3 "" H 4000 6350 60  0001 C CNN
+F 4 "2.2 kOhms ±5% 0.1W, 1/10W Chip Resistor 0603 (1608 Metric) Automotive AEC-Q200 Thick Film " H 0   0   50  0001 C CNN "Description"
+F 5 "ERJ-3GEYJ222V" H 0   0   50  0001 C CNN "PartNumber"
+F 6 "P2.2KGCT-ND " H 0   0   50  0001 C CNN "digikey"
+F 7 "0.04500" H 0   0   50  0001 C CNN "price@10"
 	1    4400 6350
 	0    1    1    0   
 $EndComp
@@ -1308,6 +1403,10 @@ F 0 "R416" V 4578 6400 20  0000 L CNN
 F 1 "2.2k" V 4621 6400 20  0000 L CNN
 F 2 "servo:R_0603_1608Metric" H 4100 6250 60  0001 C CNN
 F 3 "" H 4200 6350 60  0001 C CNN
+F 4 "2.2 kOhms ±5% 0.1W, 1/10W Chip Resistor 0603 (1608 Metric) Automotive AEC-Q200 Thick Film " H 0   0   50  0001 C CNN "Description"
+F 5 "ERJ-3GEYJ222V" H 0   0   50  0001 C CNN "PartNumber"
+F 6 "P2.2KGCT-ND " H 0   0   50  0001 C CNN "digikey"
+F 7 "0.04500" H 0   0   50  0001 C CNN "price@10"
 	1    4600 6350
 	0    1    1    0   
 $EndComp
@@ -1316,9 +1415,13 @@ L servo:Resistor R425
 U 1 1 6322F022
 P 8850 7100
 F 0 "R425" H 8850 7029 20  0000 C CNN
-F 1 "10.0k" H 8850 6986 20  0000 C CNN
+F 1 "10k" H 8850 6986 20  0000 C CNN
 F 2 "servo:R_0603_1608Metric" H 8350 7000 60  0001 C CNN
 F 3 "" H 8450 7100 60  0001 C CNN
+F 4 "10 kOhms ±5% 0.1W, 1/10W Chip Resistor 0603 (1608 Metric) Moisture Resistant Thick Film " H 0   0   50  0001 C CNN "Description"
+F 5 "RC0603JR-0710KL" H 0   0   50  0001 C CNN "PartNumber"
+F 6 "311-10KGRCT-ND" H 0   0   50  0001 C CNN "digikey"
+F 7 "0.01900" H 0   0   50  0001 C CNN "price@10"
 	1    8850 7100
 	1    0    0    -1  
 $EndComp
@@ -1330,6 +1433,10 @@ F 0 "R430" V 9178 5250 20  0000 R CNN
 F 1 "49.9" V 9221 5250 20  0000 R CNN
 F 2 "servo:R_0603_1608Metric" H 8700 5200 60  0001 C CNN
 F 3 "" H 8800 5300 60  0001 C CNN
+F 4 "49.9 Ohms ±1% 0.1W, 1/10W Chip Resistor 0603 (1608 Metric) Moisture Resistant Thick Film " H 0   0   50  0001 C CNN "Description"
+F 5 "RC0603FR-0749R9L" H 0   0   50  0001 C CNN "PartNumber"
+F 6 "311-49.9HRCT-ND" H 0   0   50  0001 C CNN "digikey"
+F 7 "0.02300" H 0   0   50  0001 C CNN "price@10"
 	1    9200 5300
 	0    1    1    0   
 $EndComp
@@ -1341,6 +1448,10 @@ F 0 "R432" V 9378 5250 20  0000 R CNN
 F 1 "49.9" V 9421 5250 20  0000 R CNN
 F 2 "servo:R_0603_1608Metric" H 8900 5200 60  0001 C CNN
 F 3 "" H 9000 5300 60  0001 C CNN
+F 4 "49.9 Ohms ±1% 0.1W, 1/10W Chip Resistor 0603 (1608 Metric) Moisture Resistant Thick Film " H 0   0   50  0001 C CNN "Description"
+F 5 "RC0603FR-0749R9L" H 0   0   50  0001 C CNN "PartNumber"
+F 6 "311-49.9HRCT-ND" H 0   0   50  0001 C CNN "digikey"
+F 7 "0.02300" H 0   0   50  0001 C CNN "price@10"
 	1    9400 5300
 	0    1    1    0   
 $EndComp
@@ -1352,6 +1463,10 @@ F 0 "R438" V 10428 5300 20  0000 R CNN
 F 1 "49.9" V 10471 5300 20  0000 R CNN
 F 2 "servo:R_0603_1608Metric" H 9950 5250 60  0001 C CNN
 F 3 "" H 10050 5350 60  0001 C CNN
+F 4 "49.9 Ohms ±1% 0.1W, 1/10W Chip Resistor 0603 (1608 Metric) Moisture Resistant Thick Film " H 0   0   50  0001 C CNN "Description"
+F 5 "RC0603FR-0749R9L" H 0   0   50  0001 C CNN "PartNumber"
+F 6 "311-49.9HRCT-ND" H 0   0   50  0001 C CNN "digikey"
+F 7 "0.02300" H 0   0   50  0001 C CNN "price@10"
 	1    10450 5350
 	0    1    1    0   
 $EndComp
@@ -1363,6 +1478,10 @@ F 0 "R440" V 10578 5400 20  0000 L CNN
 F 1 "49.9" V 10621 5400 20  0000 L CNN
 F 2 "servo:R_0603_1608Metric" H 10100 5250 60  0001 C CNN
 F 3 "" H 10200 5350 60  0001 C CNN
+F 4 "49.9 Ohms ±1% 0.1W, 1/10W Chip Resistor 0603 (1608 Metric) Moisture Resistant Thick Film " H 0   0   50  0001 C CNN "Description"
+F 5 "RC0603FR-0749R9L" H 0   0   50  0001 C CNN "PartNumber"
+F 6 "311-49.9HRCT-ND" H 0   0   50  0001 C CNN "digikey"
+F 7 "0.02300" H 0   0   50  0001 C CNN "price@10"
 	1    10600 5350
 	0    1    1    0   
 $EndComp
@@ -1434,6 +1553,10 @@ F 0 "R434" V 10228 6950 20  0000 L CNN
 F 1 "2.2k" V 10271 6950 20  0000 L CNN
 F 2 "servo:R_0603_1608Metric" H 9750 6800 60  0001 C CNN
 F 3 "" H 9850 6900 60  0001 C CNN
+F 4 "2.2 kOhms ±5% 0.1W, 1/10W Chip Resistor 0603 (1608 Metric) Automotive AEC-Q200 Thick Film " H 0   0   50  0001 C CNN "Description"
+F 5 "ERJ-3GEYJ222V" H 0   0   50  0001 C CNN "PartNumber"
+F 6 "P2.2KGCT-ND " H 0   0   50  0001 C CNN "digikey"
+F 7 "0.04500" H 0   0   50  0001 C CNN "price@10"
 	1    10250 6900
 	0    1    1    0   
 $EndComp
@@ -1540,17 +1663,6 @@ Text Notes 4450 7850 0    20   ~ 0
 Address select. Be shure \nyou select two distinct\n
 Text GLabel 9200 7500 2    50   Input ~ 0
 ENET_CAT_XI
-$Comp
-L servo:Resistor R426
-U 1 1 6322F0DA
-P 8600 7500
-F 0 "R426" H 8600 7615 20  0000 C CNN
-F 1 "0" H 8600 7572 20  0000 C CNN
-F 2 "servo:R_0603_1608Metric" H 8100 7400 60  0001 C CNN
-F 3 "" H 8200 7500 60  0001 C CNN
-	1    8600 7500
-	1    0    0    -1  
-$EndComp
 Wire Wire Line
 	9200 7500 8800 7500
 $Comp
@@ -1619,25 +1731,12 @@ Wire Wire Line
 	10250 7100 10250 7400
 Wire Wire Line
 	10600 7600 10800 7600
-$Comp
-L servo:Resistor R439
-U 1 1 6322F151
-P 10500 7400
-F 0 "R439" H 10500 7515 20  0000 C CNN
-F 1 "0e(dnp)" H 10500 7472 20  0000 C CNN
-F 2 "servo:R_0603_1608Metric" H 10000 7300 60  0001 C CNN
-F 3 "" H 10100 7400 60  0001 C CNN
-	1    10500 7400
-	1    0    0    -1  
-$EndComp
 Wire Wire Line
 	10700 7400 10800 7400
 Wire Wire Line
 	10800 7400 10800 7600
-Wire Wire Line
-	10300 7400 10250 7400
 Text Notes 10300 7200 0    20   ~ 0
-the pullup of led_0 is mandatory, but to\n drive the led you could choose between \nPHY or uC populating/unpopulating the resistor
+the pullup of led_0 is mandatory, but to\n drive the led you could choose between \nPHY or uC populating/unpopulating the jumper
 Text Notes 10600 7700 0    20   ~ 0
 It'd be optionall\n
 Connection ~ 4400 6000
@@ -1720,6 +1819,10 @@ F 0 "R417" V 4878 10000 20  0000 L CNN
 F 1 "4.7k" V 4921 10000 20  0000 L CNN
 F 2 "servo:R_0603_1608Metric" H 4400 9850 60  0001 C CNN
 F 3 "" H 4500 9950 60  0001 C CNN
+F 4 "4.7 kOhms ±5% 0.1W, 1/10W Chip Resistor 0603 (1608 Metric) Moisture Resistant Thick Film " H 0   0   50  0001 C CNN "Description"
+F 5 "RC0603JR-074K7L" H 0   0   50  0001 C CNN "PartNumber"
+F 6 "311-4.7KGRCT-ND" H 0   0   50  0001 C CNN "digikey"
+F 7 "0.01900" H 0   0   50  0001 C CNN "price@10"
 	1    4900 9950
 	0    1    1    0   
 $EndComp
@@ -1802,6 +1905,10 @@ F 0 "R446" V 14078 3300 20  0000 L CNN
 F 1 "470" V 14121 3300 20  0000 L CNN
 F 2 "servo:R_0603_1608Metric" H 13600 3150 60  0001 C CNN
 F 3 "" H 13700 3250 60  0001 C CNN
+F 4 "470 Ohms ±5% 0.1W, 1/10W Chip Resistor 0603 (1608 Metric) Automotive AEC-Q200, Moisture Resistant Thick Film " H 0   0   50  0001 C CNN "Description"
+F 5 "CRGCQ0603J470R" H 0   0   50  0001 C CNN "PartNumber"
+F 6 "A130089CT-ND" H 0   0   50  0001 C CNN "digikey"
+F 7 "0.02100" H 0   0   50  0001 C CNN "price@10"
 	1    14100 3250
 	0    1    1    0   
 $EndComp
@@ -1828,19 +1935,12 @@ F 0 "R445" V 13878 3300 20  0000 L CNN
 F 1 "470" V 13921 3300 20  0000 L CNN
 F 2 "servo:R_0603_1608Metric" H 13400 3150 60  0001 C CNN
 F 3 "" H 13500 3250 60  0001 C CNN
+F 4 "470 Ohms ±5% 0.1W, 1/10W Chip Resistor 0603 (1608 Metric) Automotive AEC-Q200, Moisture Resistant Thick Film " H 0   0   50  0001 C CNN "Description"
+F 5 "CRGCQ0603J470R" H 0   0   50  0001 C CNN "PartNumber"
+F 6 "A130089CT-ND" H 0   0   50  0001 C CNN "digikey"
+F 7 "0.02100" H 0   0   50  0001 C CNN "price@10"
 	1    13900 3250
 	0    1    1    0   
-$EndComp
-$Comp
-L servo:Resistor R436
-U 1 1 5EA49A39
-P 10350 3250
-F 0 "R436" H 10350 3179 20  0000 C CNN
-F 1 "0e(dnp)" H 10350 3136 20  0000 C CNN
-F 2 "servo:R_0603_1608Metric" H 9850 3150 60  0001 C CNN
-F 3 "" H 9950 3250 60  0001 C CNN
-	1    10350 3250
-	1    0    0    -1  
 $EndComp
 Wire Wire Line
 	10100 2450 10100 2550
@@ -1923,6 +2023,10 @@ F 0 "R442" V 13578 3250 20  0000 L CNN
 F 1 "470" V 13621 3250 20  0000 L CNN
 F 2 "servo:R_0603_1608Metric" H 13100 3100 60  0001 C CNN
 F 3 "" H 13200 3200 60  0001 C CNN
+F 4 "470 Ohms ±5% 0.1W, 1/10W Chip Resistor 0603 (1608 Metric) Automotive AEC-Q200, Moisture Resistant Thick Film " H 0   0   50  0001 C CNN "Description"
+F 5 "CRGCQ0603J470R" H 0   0   50  0001 C CNN "PartNumber"
+F 6 "A130089CT-ND" H 0   0   50  0001 C CNN "digikey"
+F 7 "0.02100" H 0   0   50  0001 C CNN "price@10"
 	1    13600 3200
 	0    1    1    0   
 $EndComp
@@ -1936,6 +2040,10 @@ F 0 "R441" V 13378 3250 20  0000 L CNN
 F 1 "470" V 13421 3250 20  0000 L CNN
 F 2 "servo:R_0603_1608Metric" H 12900 3100 60  0001 C CNN
 F 3 "" H 13000 3200 60  0001 C CNN
+F 4 "470 Ohms ±5% 0.1W, 1/10W Chip Resistor 0603 (1608 Metric) Automotive AEC-Q200, Moisture Resistant Thick Film " H 0   0   50  0001 C CNN "Description"
+F 5 "CRGCQ0603J470R" H 0   0   50  0001 C CNN "PartNumber"
+F 6 "A130089CT-ND" H 0   0   50  0001 C CNN "digikey"
+F 7 "0.02100" H 0   0   50  0001 C CNN "price@10"
 	1    13400 3200
 	0    1    1    0   
 $EndComp
@@ -2358,7 +2466,6 @@ Wire Wire Line
 	8250 3850 8250 3700
 Wire Wire Line
 	8250 3500 8250 3350
-Connection ~ 8250 3350
 $Comp
 L servo:jumper JP?
 U 1 1 5EB89DCF
@@ -2380,5 +2487,82 @@ Wire Wire Line
 	8400 8000 8400 7900
 Wire Wire Line
 	8400 7700 8400 7500
+$Comp
+L servo:jumper JP?
+U 1 1 5E5AA601
+P 8700 7500
+AR Path="/5DD76B18/5E5AA601" Ref="JP?"  Part="1" 
+AR Path="/5DC4A59D/5E5AA601" Ref="JP404"  Part="1" 
+F 0 "JP404" H 8700 7585 39  0000 C CNN
+F 1 "jumper" H 8700 7660 39  0000 C CNN
+F 2 "servo:SolderJumper-2_P1.3mm_Open_RoundedPad1.0x1.5mm" H 8600 7480 50  0001 C CNN
+F 3 "~" H 8700 7580 50  0001 C CNN
+F 4 "jumper smd bridge using tin" H 5400 1900 50  0001 C CNN "Description"
+F 5 "-" H 5400 1900 50  0001 C CNN "PartNumber"
+F 6 "-" H 5400 1900 50  0001 C CNN "digikey"
+F 7 "0" H 5400 1900 50  0001 C CNN "price@10"
+	1    8700 7500
+	-1   0    0    1   
+$EndComp
+Wire Wire Line
+	8600 7500 8400 7500
 Connection ~ 8400 7500
+$Comp
+L servo:jumper JP?
+U 1 1 5E5E812A
+P 8550 3350
+AR Path="/5DD76B18/5E5E812A" Ref="JP?"  Part="1" 
+AR Path="/5DC4A59D/5E5E812A" Ref="JP403"  Part="1" 
+F 0 "JP403" H 8550 3150 39  0000 C CNN
+F 1 "jumper" H 8550 3250 39  0000 C CNN
+F 2 "servo:SolderJumper-2_P1.3mm_Open_RoundedPad1.0x1.5mm" H 8450 3330 50  0001 C CNN
+F 3 "~" H 8550 3430 50  0001 C CNN
+F 4 "jumper smd bridge using tin" H 5250 -2250 50  0001 C CNN "Description"
+F 5 "-" H 5250 -2250 50  0001 C CNN "PartNumber"
+F 6 "-" H 5250 -2250 50  0001 C CNN "digikey"
+F 7 "0" H 5250 -2250 50  0001 C CNN "price@10"
+	1    8550 3350
+	-1   0    0    1   
+$EndComp
+Wire Wire Line
+	8450 3350 8250 3350
+Connection ~ 8250 3350
+$Comp
+L servo:jumper JP?
+U 1 1 5E5A5819
+P 10450 3250
+AR Path="/5DD76B18/5E5A5819" Ref="JP?"  Part="1" 
+AR Path="/5DC4A59D/5E5A5819" Ref="JP405"  Part="1" 
+F 0 "JP405" H 10450 3089 39  0000 C CNN
+F 1 "jumper" H 10450 3164 39  0000 C CNN
+F 2 "servo:SolderJumper-2_P1.3mm_Open_RoundedPad1.0x1.5mm" H 10350 3230 50  0001 C CNN
+F 3 "~" H 10450 3330 50  0001 C CNN
+F 4 "jumper smd bridge using tin" H 7150 -2350 50  0001 C CNN "Description"
+F 5 "-" H 7150 -2350 50  0001 C CNN "PartNumber"
+F 6 "-" H 7150 -2350 50  0001 C CNN "digikey"
+F 7 "0" H 7150 -2350 50  0001 C CNN "price@10"
+	1    10450 3250
+	-1   0    0    1   
+$EndComp
+Wire Wire Line
+	10100 3250 10350 3250
+$Comp
+L servo:jumper JP?
+U 1 1 5E5C6F5E
+P 10600 7400
+AR Path="/5DD76B18/5E5C6F5E" Ref="JP?"  Part="1" 
+AR Path="/5DC4A59D/5E5C6F5E" Ref="JP406"  Part="1" 
+F 0 "JP406" H 10600 7239 39  0000 C CNN
+F 1 "jumper" H 10600 7314 39  0000 C CNN
+F 2 "servo:SolderJumper-2_P1.3mm_Open_RoundedPad1.0x1.5mm" H 10500 7380 50  0001 C CNN
+F 3 "~" H 10600 7480 50  0001 C CNN
+F 4 "jumper smd bridge using tin" H 7300 1800 50  0001 C CNN "Description"
+F 5 "-" H 7300 1800 50  0001 C CNN "PartNumber"
+F 6 "-" H 7300 1800 50  0001 C CNN "digikey"
+F 7 "0" H 7300 1800 50  0001 C CNN "price@10"
+	1    10600 7400
+	-1   0    0    1   
+$EndComp
+Wire Wire Line
+	10250 7400 10500 7400
 $EndSCHEMATC

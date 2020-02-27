@@ -360,6 +360,10 @@ F 0 "R801" H 6550 2550 20  0000 L BNN
 F 1 "22" H 6800 2550 20  0000 C CNN
 F 2 "servo:R_0603_1608Metric" H 6200 2400 60  0001 C CNN
 F 3 "" H 6300 2500 60  0001 C CNN
+F 4 "22 Ohms ±5% 0.1W, 1/10W Chip Resistor 0603 (1608 Metric) Automotive AEC-Q200, Moisture Resistant Thick Film " H 0   0   50  0001 C CNN "Description"
+F 5 "CRGCQ0603J22R" H 0   0   50  0001 C CNN "PartNumber"
+F 6 "A130081CT-ND" H 0   0   50  0001 C CNN "digikey"
+F 7 "0.02100" H 0   0   50  0001 C CNN "price@10"
 	1    6700 2500
 	1    0    0    -1  
 $EndComp
@@ -1393,6 +1397,10 @@ F 0 "R802" H 6550 2650 20  0000 L BNN
 F 1 "22" H 6800 2650 20  0000 C CNN
 F 2 "servo:R_0603_1608Metric" H 6200 2500 60  0001 C CNN
 F 3 "" H 6300 2600 60  0001 C CNN
+F 4 "22 Ohms ±5% 0.1W, 1/10W Chip Resistor 0603 (1608 Metric) Automotive AEC-Q200, Moisture Resistant Thick Film " H 0   0   50  0001 C CNN "Description"
+F 5 "CRGCQ0603J22R" H 0   0   50  0001 C CNN "PartNumber"
+F 6 "A130081CT-ND" H 0   0   50  0001 C CNN "digikey"
+F 7 "0.02100" H 0   0   50  0001 C CNN "price@10"
 	1    6700 2600
 	1    0    0    -1  
 $EndComp
@@ -1404,6 +1412,10 @@ F 0 "R803" H 6550 2750 20  0000 L BNN
 F 1 "22" H 6800 2750 20  0000 C CNN
 F 2 "servo:R_0603_1608Metric" H 6200 2600 60  0001 C CNN
 F 3 "" H 6300 2700 60  0001 C CNN
+F 4 "22 Ohms ±5% 0.1W, 1/10W Chip Resistor 0603 (1608 Metric) Automotive AEC-Q200, Moisture Resistant Thick Film " H 0   0   50  0001 C CNN "Description"
+F 5 "CRGCQ0603J22R" H 0   0   50  0001 C CNN "PartNumber"
+F 6 "A130081CT-ND" H 0   0   50  0001 C CNN "digikey"
+F 7 "0.02100" H 0   0   50  0001 C CNN "price@10"
 	1    6700 2700
 	1    0    0    -1  
 $EndComp
@@ -1415,6 +1427,10 @@ F 0 "R804" H 6550 2850 20  0000 L BNN
 F 1 "22" H 6800 2850 20  0000 C CNN
 F 2 "servo:R_0603_1608Metric" H 6200 2700 60  0001 C CNN
 F 3 "" H 6300 2800 60  0001 C CNN
+F 4 "22 Ohms ±5% 0.1W, 1/10W Chip Resistor 0603 (1608 Metric) Automotive AEC-Q200, Moisture Resistant Thick Film " H 0   0   50  0001 C CNN "Description"
+F 5 "CRGCQ0603J22R" H 0   0   50  0001 C CNN "PartNumber"
+F 6 "A130081CT-ND" H 0   0   50  0001 C CNN "digikey"
+F 7 "0.02100" H 0   0   50  0001 C CNN "price@10"
 	1    6700 2800
 	1    0    0    -1  
 $EndComp
@@ -1426,6 +1442,10 @@ F 0 "R805" H 6550 2950 20  0000 L BNN
 F 1 "22" H 6800 2950 20  0000 C CNN
 F 2 "servo:R_0603_1608Metric" H 6200 2800 60  0001 C CNN
 F 3 "" H 6300 2900 60  0001 C CNN
+F 4 "22 Ohms ±5% 0.1W, 1/10W Chip Resistor 0603 (1608 Metric) Automotive AEC-Q200, Moisture Resistant Thick Film " H 0   0   50  0001 C CNN "Description"
+F 5 "CRGCQ0603J22R" H 0   0   50  0001 C CNN "PartNumber"
+F 6 "A130081CT-ND" H 0   0   50  0001 C CNN "digikey"
+F 7 "0.02100" H 0   0   50  0001 C CNN "price@10"
 	1    6700 2900
 	1    0    0    -1  
 $EndComp
@@ -1437,6 +1457,10 @@ F 0 "R806" H 6550 3050 20  0000 L BNN
 F 1 "22" H 6800 3050 20  0000 C CNN
 F 2 "servo:R_0603_1608Metric" H 6200 2900 60  0001 C CNN
 F 3 "" H 6300 3000 60  0001 C CNN
+F 4 "22 Ohms ±5% 0.1W, 1/10W Chip Resistor 0603 (1608 Metric) Automotive AEC-Q200, Moisture Resistant Thick Film " H 0   0   50  0001 C CNN "Description"
+F 5 "CRGCQ0603J22R" H 0   0   50  0001 C CNN "PartNumber"
+F 6 "A130081CT-ND" H 0   0   50  0001 C CNN "digikey"
+F 7 "0.02100" H 0   0   50  0001 C CNN "price@10"
 	1    6700 3000
 	1    0    0    -1  
 $EndComp
@@ -1448,6 +1472,10 @@ F 0 "R807" H 6550 3150 20  0000 L BNN
 F 1 "22" H 6800 3150 20  0000 C CNN
 F 2 "servo:R_0603_1608Metric" H 6200 3000 60  0001 C CNN
 F 3 "" H 6300 3100 60  0001 C CNN
+F 4 "22 Ohms ±5% 0.1W, 1/10W Chip Resistor 0603 (1608 Metric) Automotive AEC-Q200, Moisture Resistant Thick Film " H 0   0   50  0001 C CNN "Description"
+F 5 "CRGCQ0603J22R" H 0   0   50  0001 C CNN "PartNumber"
+F 6 "A130081CT-ND" H 0   0   50  0001 C CNN "digikey"
+F 7 "0.02100" H 0   0   50  0001 C CNN "price@10"
 	1    6700 3100
 	1    0    0    -1  
 $EndComp
@@ -1459,6 +1487,10 @@ F 0 "R808" H 6550 3250 20  0000 L BNN
 F 1 "22" H 6800 3250 20  0000 C CNN
 F 2 "servo:R_0603_1608Metric" H 6200 3100 60  0001 C CNN
 F 3 "" H 6300 3200 60  0001 C CNN
+F 4 "22 Ohms ±5% 0.1W, 1/10W Chip Resistor 0603 (1608 Metric) Automotive AEC-Q200, Moisture Resistant Thick Film " H 0   0   50  0001 C CNN "Description"
+F 5 "CRGCQ0603J22R" H 0   0   50  0001 C CNN "PartNumber"
+F 6 "A130081CT-ND" H 0   0   50  0001 C CNN "digikey"
+F 7 "0.02100" H 0   0   50  0001 C CNN "price@10"
 	1    6700 3200
 	1    0    0    -1  
 $EndComp
@@ -1470,6 +1502,10 @@ F 0 "R809" H 6550 3350 20  0000 L BNN
 F 1 "22" H 6800 3350 20  0000 C CNN
 F 2 "servo:R_0603_1608Metric" H 6200 3200 60  0001 C CNN
 F 3 "" H 6300 3300 60  0001 C CNN
+F 4 "22 Ohms ±5% 0.1W, 1/10W Chip Resistor 0603 (1608 Metric) Automotive AEC-Q200, Moisture Resistant Thick Film " H 0   0   50  0001 C CNN "Description"
+F 5 "CRGCQ0603J22R" H 0   0   50  0001 C CNN "PartNumber"
+F 6 "A130081CT-ND" H 0   0   50  0001 C CNN "digikey"
+F 7 "0.02100" H 0   0   50  0001 C CNN "price@10"
 	1    6700 3300
 	1    0    0    -1  
 $EndComp
@@ -1481,6 +1517,10 @@ F 0 "R810" H 6550 3450 20  0000 L BNN
 F 1 "22" H 6800 3450 20  0000 C CNN
 F 2 "servo:R_0603_1608Metric" H 6200 3300 60  0001 C CNN
 F 3 "" H 6300 3400 60  0001 C CNN
+F 4 "22 Ohms ±5% 0.1W, 1/10W Chip Resistor 0603 (1608 Metric) Automotive AEC-Q200, Moisture Resistant Thick Film " H 0   0   50  0001 C CNN "Description"
+F 5 "CRGCQ0603J22R" H 0   0   50  0001 C CNN "PartNumber"
+F 6 "A130081CT-ND" H 0   0   50  0001 C CNN "digikey"
+F 7 "0.02100" H 0   0   50  0001 C CNN "price@10"
 	1    6700 3400
 	1    0    0    -1  
 $EndComp
@@ -1492,6 +1532,10 @@ F 0 "R811" H 6550 3550 20  0000 L BNN
 F 1 "22" H 6800 3550 20  0000 C CNN
 F 2 "servo:R_0603_1608Metric" H 6200 3400 60  0001 C CNN
 F 3 "" H 6300 3500 60  0001 C CNN
+F 4 "22 Ohms ±5% 0.1W, 1/10W Chip Resistor 0603 (1608 Metric) Automotive AEC-Q200, Moisture Resistant Thick Film " H 0   0   50  0001 C CNN "Description"
+F 5 "CRGCQ0603J22R" H 0   0   50  0001 C CNN "PartNumber"
+F 6 "A130081CT-ND" H 0   0   50  0001 C CNN "digikey"
+F 7 "0.02100" H 0   0   50  0001 C CNN "price@10"
 	1    6700 3500
 	1    0    0    -1  
 $EndComp
@@ -1503,6 +1547,10 @@ F 0 "R812" H 6550 3650 20  0000 L BNN
 F 1 "22" H 6800 3650 20  0000 C CNN
 F 2 "servo:R_0603_1608Metric" H 6200 3500 60  0001 C CNN
 F 3 "" H 6300 3600 60  0001 C CNN
+F 4 "22 Ohms ±5% 0.1W, 1/10W Chip Resistor 0603 (1608 Metric) Automotive AEC-Q200, Moisture Resistant Thick Film " H 0   0   50  0001 C CNN "Description"
+F 5 "CRGCQ0603J22R" H 0   0   50  0001 C CNN "PartNumber"
+F 6 "A130081CT-ND" H 0   0   50  0001 C CNN "digikey"
+F 7 "0.02100" H 0   0   50  0001 C CNN "price@10"
 	1    6700 3600
 	1    0    0    -1  
 $EndComp
@@ -1514,6 +1562,10 @@ F 0 "R814" H 9650 6300 20  0000 L BNN
 F 1 "22" H 9900 6300 20  0000 C CNN
 F 2 "servo:R_0603_1608Metric" H 9300 6150 60  0001 C CNN
 F 3 "" H 9400 6250 60  0001 C CNN
+F 4 "22 Ohms ±5% 0.1W, 1/10W Chip Resistor 0603 (1608 Metric) Automotive AEC-Q200, Moisture Resistant Thick Film " H 0   0   50  0001 C CNN "Description"
+F 5 "CRGCQ0603J22R" H 0   0   50  0001 C CNN "PartNumber"
+F 6 "A130081CT-ND" H 0   0   50  0001 C CNN "digikey"
+F 7 "0.02100" H 0   0   50  0001 C CNN "price@10"
 	1    9800 6250
 	1    0    0    -1  
 $EndComp
@@ -1525,6 +1577,10 @@ F 0 "R813" H 9650 6200 20  0000 L BNN
 F 1 "22" H 9900 6200 20  0000 C CNN
 F 2 "servo:R_0603_1608Metric" H 9300 6050 60  0001 C CNN
 F 3 "" H 9400 6150 60  0001 C CNN
+F 4 "22 Ohms ±5% 0.1W, 1/10W Chip Resistor 0603 (1608 Metric) Automotive AEC-Q200, Moisture Resistant Thick Film " H 0   0   50  0001 C CNN "Description"
+F 5 "CRGCQ0603J22R" H 0   0   50  0001 C CNN "PartNumber"
+F 6 "A130081CT-ND" H 0   0   50  0001 C CNN "digikey"
+F 7 "0.02100" H 0   0   50  0001 C CNN "price@10"
 	1    9800 6150
 	1    0    0    -1  
 $EndComp
@@ -1536,6 +1592,10 @@ F 0 "R815" H 9650 6400 20  0000 L BNN
 F 1 "22" H 9900 6400 20  0000 C CNN
 F 2 "servo:R_0603_1608Metric" H 9300 6250 60  0001 C CNN
 F 3 "" H 9400 6350 60  0001 C CNN
+F 4 "22 Ohms ±5% 0.1W, 1/10W Chip Resistor 0603 (1608 Metric) Automotive AEC-Q200, Moisture Resistant Thick Film " H 0   0   50  0001 C CNN "Description"
+F 5 "CRGCQ0603J22R" H 0   0   50  0001 C CNN "PartNumber"
+F 6 "A130081CT-ND" H 0   0   50  0001 C CNN "digikey"
+F 7 "0.02100" H 0   0   50  0001 C CNN "price@10"
 	1    9800 6350
 	1    0    0    -1  
 $EndComp
@@ -1547,6 +1607,10 @@ F 0 "R816" H 9650 6500 20  0000 L BNN
 F 1 "22" H 9900 6500 20  0000 C CNN
 F 2 "servo:R_0603_1608Metric" H 9300 6350 60  0001 C CNN
 F 3 "" H 9400 6450 60  0001 C CNN
+F 4 "22 Ohms ±5% 0.1W, 1/10W Chip Resistor 0603 (1608 Metric) Automotive AEC-Q200, Moisture Resistant Thick Film " H 0   0   50  0001 C CNN "Description"
+F 5 "CRGCQ0603J22R" H 0   0   50  0001 C CNN "PartNumber"
+F 6 "A130081CT-ND" H 0   0   50  0001 C CNN "digikey"
+F 7 "0.02100" H 0   0   50  0001 C CNN "price@10"
 	1    9800 6450
 	1    0    0    -1  
 $EndComp
@@ -1558,6 +1622,10 @@ F 0 "R817" H 9650 6600 20  0000 L BNN
 F 1 "22" H 9900 6600 20  0000 C CNN
 F 2 "servo:R_0603_1608Metric" H 9300 6450 60  0001 C CNN
 F 3 "" H 9400 6550 60  0001 C CNN
+F 4 "22 Ohms ±5% 0.1W, 1/10W Chip Resistor 0603 (1608 Metric) Automotive AEC-Q200, Moisture Resistant Thick Film " H 0   0   50  0001 C CNN "Description"
+F 5 "CRGCQ0603J22R" H 0   0   50  0001 C CNN "PartNumber"
+F 6 "A130081CT-ND" H 0   0   50  0001 C CNN "digikey"
+F 7 "0.02100" H 0   0   50  0001 C CNN "price@10"
 	1    9800 6550
 	1    0    0    -1  
 $EndComp
@@ -1569,6 +1637,10 @@ F 0 "R818" H 9650 6700 20  0000 L BNN
 F 1 "22" H 9900 6700 20  0000 C CNN
 F 2 "servo:R_0603_1608Metric" H 9300 6550 60  0001 C CNN
 F 3 "" H 9400 6650 60  0001 C CNN
+F 4 "22 Ohms ±5% 0.1W, 1/10W Chip Resistor 0603 (1608 Metric) Automotive AEC-Q200, Moisture Resistant Thick Film " H 0   0   50  0001 C CNN "Description"
+F 5 "CRGCQ0603J22R" H 0   0   50  0001 C CNN "PartNumber"
+F 6 "A130081CT-ND" H 0   0   50  0001 C CNN "digikey"
+F 7 "0.02100" H 0   0   50  0001 C CNN "price@10"
 	1    9800 6650
 	1    0    0    -1  
 $EndComp
@@ -1580,6 +1652,10 @@ F 0 "R819" H 9650 6800 20  0000 L BNN
 F 1 "22" H 9900 6800 20  0000 C CNN
 F 2 "servo:R_0603_1608Metric" H 9300 6650 60  0001 C CNN
 F 3 "" H 9400 6750 60  0001 C CNN
+F 4 "22 Ohms ±5% 0.1W, 1/10W Chip Resistor 0603 (1608 Metric) Automotive AEC-Q200, Moisture Resistant Thick Film " H 0   0   50  0001 C CNN "Description"
+F 5 "CRGCQ0603J22R" H 0   0   50  0001 C CNN "PartNumber"
+F 6 "A130081CT-ND" H 0   0   50  0001 C CNN "digikey"
+F 7 "0.02100" H 0   0   50  0001 C CNN "price@10"
 	1    9800 6750
 	1    0    0    -1  
 $EndComp
@@ -1591,6 +1667,10 @@ F 0 "R820" H 9650 6900 20  0000 L BNN
 F 1 "22" H 9900 6900 20  0000 C CNN
 F 2 "servo:R_0603_1608Metric" H 9300 6750 60  0001 C CNN
 F 3 "" H 9400 6850 60  0001 C CNN
+F 4 "22 Ohms ±5% 0.1W, 1/10W Chip Resistor 0603 (1608 Metric) Automotive AEC-Q200, Moisture Resistant Thick Film " H 0   0   50  0001 C CNN "Description"
+F 5 "CRGCQ0603J22R" H 0   0   50  0001 C CNN "PartNumber"
+F 6 "A130081CT-ND" H 0   0   50  0001 C CNN "digikey"
+F 7 "0.02100" H 0   0   50  0001 C CNN "price@10"
 	1    9800 6850
 	1    0    0    -1  
 $EndComp
@@ -1602,6 +1682,10 @@ F 0 "R821" H 9650 7000 20  0000 L BNN
 F 1 "22" H 9900 7000 20  0000 C CNN
 F 2 "servo:R_0603_1608Metric" H 9300 6850 60  0001 C CNN
 F 3 "" H 9400 6950 60  0001 C CNN
+F 4 "22 Ohms ±5% 0.1W, 1/10W Chip Resistor 0603 (1608 Metric) Automotive AEC-Q200, Moisture Resistant Thick Film " H 0   0   50  0001 C CNN "Description"
+F 5 "CRGCQ0603J22R" H 0   0   50  0001 C CNN "PartNumber"
+F 6 "A130081CT-ND" H 0   0   50  0001 C CNN "digikey"
+F 7 "0.02100" H 0   0   50  0001 C CNN "price@10"
 	1    9800 6950
 	1    0    0    -1  
 $EndComp
@@ -1613,6 +1697,10 @@ F 0 "R822" H 9650 7100 20  0000 L BNN
 F 1 "22" H 9900 7100 20  0000 C CNN
 F 2 "servo:R_0603_1608Metric" H 9300 6950 60  0001 C CNN
 F 3 "" H 9400 7050 60  0001 C CNN
+F 4 "22 Ohms ±5% 0.1W, 1/10W Chip Resistor 0603 (1608 Metric) Automotive AEC-Q200, Moisture Resistant Thick Film " H 0   0   50  0001 C CNN "Description"
+F 5 "CRGCQ0603J22R" H 0   0   50  0001 C CNN "PartNumber"
+F 6 "A130081CT-ND" H 0   0   50  0001 C CNN "digikey"
+F 7 "0.02100" H 0   0   50  0001 C CNN "price@10"
 	1    9800 7050
 	1    0    0    -1  
 $EndComp
@@ -1624,6 +1712,10 @@ F 0 "R823" H 9650 7200 20  0000 L BNN
 F 1 "22" H 9900 7200 20  0000 C CNN
 F 2 "servo:R_0603_1608Metric" H 9300 7050 60  0001 C CNN
 F 3 "" H 9400 7150 60  0001 C CNN
+F 4 "22 Ohms ±5% 0.1W, 1/10W Chip Resistor 0603 (1608 Metric) Automotive AEC-Q200, Moisture Resistant Thick Film " H 0   0   50  0001 C CNN "Description"
+F 5 "CRGCQ0603J22R" H 0   0   50  0001 C CNN "PartNumber"
+F 6 "A130081CT-ND" H 0   0   50  0001 C CNN "digikey"
+F 7 "0.02100" H 0   0   50  0001 C CNN "price@10"
 	1    9800 7150
 	1    0    0    -1  
 $EndComp
@@ -1635,6 +1727,10 @@ F 0 "R824" H 9650 7300 20  0000 L BNN
 F 1 "22" H 9900 7300 20  0000 C CNN
 F 2 "servo:R_0603_1608Metric" H 9300 7150 60  0001 C CNN
 F 3 "" H 9400 7250 60  0001 C CNN
+F 4 "22 Ohms ±5% 0.1W, 1/10W Chip Resistor 0603 (1608 Metric) Automotive AEC-Q200, Moisture Resistant Thick Film " H 0   0   50  0001 C CNN "Description"
+F 5 "CRGCQ0603J22R" H 0   0   50  0001 C CNN "PartNumber"
+F 6 "A130081CT-ND" H 0   0   50  0001 C CNN "digikey"
+F 7 "0.02100" H 0   0   50  0001 C CNN "price@10"
 	1    9800 7250
 	1    0    0    -1  
 $EndComp

@@ -201,41 +201,10 @@ Text GLabel 2300 5500 0    50   Output ~ 0
 ENDAT1_Y_SKEW_CLK
 Wire Wire Line
 	2350 5350 3100 5350
-$Comp
-L servo:Resistor R?
-U 1 1 5F0FCE03
-P 2900 5700
-AR Path="/5DE3DF56/5F0FCE03" Ref="R?"  Part="1" 
-AR Path="/5E1BAEAA/5F0FCE03" Ref="R?"  Part="1" 
-AR Path="/5DE49152/5F0FCE03" Ref="R?"  Part="1" 
-AR Path="/5F8D42C2/5F0FCE03" Ref="R1902"  Part="1" 
-F 0 "R1902" H 2900 5815 20  0000 C CNN
-F 1 "0e(dnp)" H 2900 5772 20  0000 C CNN
-F 2 "servo:R_0603_1608Metric" H 2400 5600 60  0001 C CNN
-F 3 "" H 2500 5700 60  0001 C CNN
-	1    2900 5700
-	1    0    0    -1  
-$EndComp
-$Comp
-L servo:Resistor R?
-U 1 1 5F0FCE0B
-P 2500 5700
-AR Path="/5DE3DF56/5F0FCE0B" Ref="R?"  Part="1" 
-AR Path="/5E1BAEAA/5F0FCE0B" Ref="R?"  Part="1" 
-AR Path="/5DE49152/5F0FCE0B" Ref="R?"  Part="1" 
-AR Path="/5F8D42C2/5F0FCE0B" Ref="R1901"  Part="1" 
-F 0 "R1901" H 2500 5815 20  0000 C CNN
-F 1 "0" H 2500 5772 20  0000 C CNN
-F 2 "servo:R_0603_1608Metric" H 2000 5600 60  0001 C CNN
-F 3 "" H 2100 5700 60  0001 C CNN
-	1    2500 5700
-	1    0    0    -1  
-$EndComp
 Wire Wire Line
 	2300 5500 2700 5500
 Wire Wire Line
 	2700 5500 2700 5700
-Connection ~ 2700 5700
 Text Notes 1800 6050 0    20   ~ 0
 to choose between the spi clk out \ndirectly (useless for endat) or to \nsend a PWM clk and its pair acting\n as skewed spi clk input to the spi uC\n delayed and the SPI playing as a slave...\nvery strange, but it's a way to manage \nthe badly designed endat...\n
 Wire Wire Line
@@ -501,41 +470,10 @@ Text GLabel 14450 5500 2    50   Output ~ 0
 ENDAT2_Y_SKEW_CLK
 Wire Wire Line
 	14400 5350 13650 5350
-$Comp
-L servo:Resistor R?
-U 1 1 5F749C93
-P 13850 5700
-AR Path="/5DE3DF56/5F749C93" Ref="R?"  Part="1" 
-AR Path="/5E1BAEAA/5F749C93" Ref="R?"  Part="1" 
-AR Path="/5DE49152/5F749C93" Ref="R?"  Part="1" 
-AR Path="/5F8D42C2/5F749C93" Ref="R1931"  Part="1" 
-F 0 "R1931" H 13850 5815 20  0000 C CNN
-F 1 "0e(dnp)" H 13850 5772 20  0000 C CNN
-F 2 "servo:R_0603_1608Metric" H 13350 5600 60  0001 C CNN
-F 3 "" H 13450 5700 60  0001 C CNN
-	1    13850 5700
-	-1   0    0    -1  
-$EndComp
-$Comp
-L servo:Resistor R?
-U 1 1 5F749C9A
-P 14250 5700
-AR Path="/5DE3DF56/5F749C9A" Ref="R?"  Part="1" 
-AR Path="/5E1BAEAA/5F749C9A" Ref="R?"  Part="1" 
-AR Path="/5DE49152/5F749C9A" Ref="R?"  Part="1" 
-AR Path="/5F8D42C2/5F749C9A" Ref="R1932"  Part="1" 
-F 0 "R1932" H 14250 5815 20  0000 C CNN
-F 1 "0" H 14250 5772 20  0000 C CNN
-F 2 "servo:R_0603_1608Metric" H 13750 5600 60  0001 C CNN
-F 3 "" H 13850 5700 60  0001 C CNN
-	1    14250 5700
-	-1   0    0    -1  
-$EndComp
 Wire Wire Line
 	14450 5500 14050 5500
 Wire Wire Line
 	14050 5500 14050 5700
-Connection ~ 14050 5700
 Text Notes 15400 6050 2    20   ~ 0
 to choose between the spi clk out \ndirectly (useless for endat) or to \nsend a PWM clk and its pair acting\n as skewed spi clk input to the spi uC\n delayed and the SPI playing as a slave...\nvery strange, but it's a way to manage \nthe badly designed endat...\n
 Wire Wire Line
@@ -655,6 +593,10 @@ F 0 "R1911" H 7359 3272 20  0000 L CNN
 F 1 "10k" H 7359 3229 20  0000 L CNN
 F 2 "servo:R_0603_1608Metric" H 7300 3250 50  0001 C CNN
 F 3 "~" H 7300 3250 50  0001 C CNN
+F 4 "10 kOhms ±5% 0.1W, 1/10W Chip Resistor 0603 (1608 Metric) Moisture Resistant Thick Film " H 0   0   50  0001 C CNN "Description"
+F 5 "RC0603JR-0710KL" H 0   0   50  0001 C CNN "PartNumber"
+F 6 "311-10KGRCT-ND" H 0   0   50  0001 C CNN "digikey"
+F 7 "0.01900" H 0   0   50  0001 C CNN "price@10"
 	1    7300 3250
 	1    0    0    -1  
 $EndComp
@@ -669,6 +611,10 @@ F 0 "R1912" H 7359 3472 20  0000 L CNN
 F 1 "1k" H 7359 3429 20  0000 L CNN
 F 2 "servo:R_0603_1608Metric" H 7300 3450 50  0001 C CNN
 F 3 "~" H 7300 3450 50  0001 C CNN
+F 4 "1 kOhms ±5% 0.1W, 1/10W Chip Resistor 0603 (1608 Metric) Moisture Resistant Thick Film " H 0   0   50  0001 C CNN "Description"
+F 5 "RC0603JR-071KL" H 0   0   50  0001 C CNN "PartNumber"
+F 6 "311-1.0KGRCT-ND" H 0   0   50  0001 C CNN "digikey"
+F 7 "0.01900" H 0   0   50  0001 C CNN "price@10"
 	1    7300 3450
 	1    0    0    -1  
 $EndComp
@@ -683,6 +629,10 @@ F 0 "R1913" H 7359 3672 20  0000 L CNN
 F 1 "10k" H 7359 3629 20  0000 L CNN
 F 2 "servo:R_0603_1608Metric" H 7300 3650 50  0001 C CNN
 F 3 "~" H 7300 3650 50  0001 C CNN
+F 4 "10 kOhms ±5% 0.1W, 1/10W Chip Resistor 0603 (1608 Metric) Moisture Resistant Thick Film " H 0   0   50  0001 C CNN "Description"
+F 5 "RC0603JR-0710KL" H 0   0   50  0001 C CNN "PartNumber"
+F 6 "311-10KGRCT-ND" H 0   0   50  0001 C CNN "digikey"
+F 7 "0.01900" H 0   0   50  0001 C CNN "price@10"
 	1    7300 3650
 	1    0    0    -1  
 $EndComp
@@ -703,6 +653,10 @@ F 0 "R1914" H 7709 3272 20  0000 L CNN
 F 1 "10k" H 7709 3229 20  0000 L CNN
 F 2 "servo:R_0603_1608Metric" H 7650 3250 50  0001 C CNN
 F 3 "~" H 7650 3250 50  0001 C CNN
+F 4 "10 kOhms ±5% 0.1W, 1/10W Chip Resistor 0603 (1608 Metric) Moisture Resistant Thick Film " H 0   0   50  0001 C CNN "Description"
+F 5 "RC0603JR-0710KL" H 0   0   50  0001 C CNN "PartNumber"
+F 6 "311-10KGRCT-ND" H 0   0   50  0001 C CNN "digikey"
+F 7 "0.01900" H 0   0   50  0001 C CNN "price@10"
 	1    7650 3250
 	1    0    0    -1  
 $EndComp
@@ -717,6 +671,10 @@ F 0 "R1915" H 7709 3472 20  0000 L CNN
 F 1 "1k" H 7709 3429 20  0000 L CNN
 F 2 "servo:R_0603_1608Metric" H 7650 3450 50  0001 C CNN
 F 3 "~" H 7650 3450 50  0001 C CNN
+F 4 "1 kOhms ±5% 0.1W, 1/10W Chip Resistor 0603 (1608 Metric) Moisture Resistant Thick Film " H 0   0   50  0001 C CNN "Description"
+F 5 "RC0603JR-071KL" H 0   0   50  0001 C CNN "PartNumber"
+F 6 "311-1.0KGRCT-ND" H 0   0   50  0001 C CNN "digikey"
+F 7 "0.01900" H 0   0   50  0001 C CNN "price@10"
 	1    7650 3450
 	1    0    0    -1  
 $EndComp
@@ -731,6 +689,10 @@ F 0 "R1916" H 7709 3672 20  0000 L CNN
 F 1 "10k" H 7709 3629 20  0000 L CNN
 F 2 "servo:R_0603_1608Metric" H 7650 3650 50  0001 C CNN
 F 3 "~" H 7650 3650 50  0001 C CNN
+F 4 "10 kOhms ±5% 0.1W, 1/10W Chip Resistor 0603 (1608 Metric) Moisture Resistant Thick Film " H 0   0   50  0001 C CNN "Description"
+F 5 "RC0603JR-0710KL" H 0   0   50  0001 C CNN "PartNumber"
+F 6 "311-10KGRCT-ND" H 0   0   50  0001 C CNN "digikey"
+F 7 "0.01900" H 0   0   50  0001 C CNN "price@10"
 	1    7650 3650
 	1    0    0    -1  
 $EndComp
@@ -765,6 +727,10 @@ F 0 "R1906" H 9459 3272 20  0000 L CNN
 F 1 "10k" H 9459 3229 20  0000 L CNN
 F 2 "servo:R_0603_1608Metric" H 9400 3250 50  0001 C CNN
 F 3 "~" H 9400 3250 50  0001 C CNN
+F 4 "10 kOhms ±5% 0.1W, 1/10W Chip Resistor 0603 (1608 Metric) Moisture Resistant Thick Film " H 0   0   50  0001 C CNN "Description"
+F 5 "RC0603JR-0710KL" H 0   0   50  0001 C CNN "PartNumber"
+F 6 "311-10KGRCT-ND" H 0   0   50  0001 C CNN "digikey"
+F 7 "0.01900" H 0   0   50  0001 C CNN "price@10"
 	1    9400 3250
 	-1   0    0    -1  
 $EndComp
@@ -779,6 +745,10 @@ F 0 "R1907" H 9459 3472 20  0000 L CNN
 F 1 "1k" H 9459 3429 20  0000 L CNN
 F 2 "servo:R_0603_1608Metric" H 9400 3450 50  0001 C CNN
 F 3 "~" H 9400 3450 50  0001 C CNN
+F 4 "1 kOhms ±5% 0.1W, 1/10W Chip Resistor 0603 (1608 Metric) Moisture Resistant Thick Film " H 0   0   50  0001 C CNN "Description"
+F 5 "RC0603JR-071KL" H 0   0   50  0001 C CNN "PartNumber"
+F 6 "311-1.0KGRCT-ND" H 0   0   50  0001 C CNN "digikey"
+F 7 "0.01900" H 0   0   50  0001 C CNN "price@10"
 	1    9400 3450
 	-1   0    0    -1  
 $EndComp
@@ -793,6 +763,10 @@ F 0 "R1908" H 9459 3672 20  0000 L CNN
 F 1 "10k" H 9459 3629 20  0000 L CNN
 F 2 "servo:R_0603_1608Metric" H 9400 3650 50  0001 C CNN
 F 3 "~" H 9400 3650 50  0001 C CNN
+F 4 "10 kOhms ±5% 0.1W, 1/10W Chip Resistor 0603 (1608 Metric) Moisture Resistant Thick Film " H 0   0   50  0001 C CNN "Description"
+F 5 "RC0603JR-0710KL" H 0   0   50  0001 C CNN "PartNumber"
+F 6 "311-10KGRCT-ND" H 0   0   50  0001 C CNN "digikey"
+F 7 "0.01900" H 0   0   50  0001 C CNN "price@10"
 	1    9400 3650
 	-1   0    0    -1  
 $EndComp
@@ -813,6 +787,10 @@ F 0 "R1903" H 9109 3272 20  0000 L CNN
 F 1 "10k" H 9109 3229 20  0000 L CNN
 F 2 "servo:R_0603_1608Metric" H 9050 3250 50  0001 C CNN
 F 3 "~" H 9050 3250 50  0001 C CNN
+F 4 "10 kOhms ±5% 0.1W, 1/10W Chip Resistor 0603 (1608 Metric) Moisture Resistant Thick Film " H 0   0   50  0001 C CNN "Description"
+F 5 "RC0603JR-0710KL" H 0   0   50  0001 C CNN "PartNumber"
+F 6 "311-10KGRCT-ND" H 0   0   50  0001 C CNN "digikey"
+F 7 "0.01900" H 0   0   50  0001 C CNN "price@10"
 	1    9050 3250
 	-1   0    0    -1  
 $EndComp
@@ -827,6 +805,10 @@ F 0 "R1904" H 9109 3472 20  0000 L CNN
 F 1 "1k" H 9109 3429 20  0000 L CNN
 F 2 "servo:R_0603_1608Metric" H 9050 3450 50  0001 C CNN
 F 3 "~" H 9050 3450 50  0001 C CNN
+F 4 "1 kOhms ±5% 0.1W, 1/10W Chip Resistor 0603 (1608 Metric) Moisture Resistant Thick Film " H 0   0   50  0001 C CNN "Description"
+F 5 "RC0603JR-071KL" H 0   0   50  0001 C CNN "PartNumber"
+F 6 "311-1.0KGRCT-ND" H 0   0   50  0001 C CNN "digikey"
+F 7 "0.01900" H 0   0   50  0001 C CNN "price@10"
 	1    9050 3450
 	-1   0    0    -1  
 $EndComp
@@ -841,6 +823,10 @@ F 0 "R1905" H 9109 3672 20  0000 L CNN
 F 1 "10k" H 9109 3629 20  0000 L CNN
 F 2 "servo:R_0603_1608Metric" H 9050 3650 50  0001 C CNN
 F 3 "~" H 9050 3650 50  0001 C CNN
+F 4 "10 kOhms ±5% 0.1W, 1/10W Chip Resistor 0603 (1608 Metric) Moisture Resistant Thick Film " H 0   0   50  0001 C CNN "Description"
+F 5 "RC0603JR-0710KL" H 0   0   50  0001 C CNN "PartNumber"
+F 6 "311-10KGRCT-ND" H 0   0   50  0001 C CNN "digikey"
+F 7 "0.01900" H 0   0   50  0001 C CNN "price@10"
 	1    9050 3650
 	-1   0    0    -1  
 $EndComp
@@ -1085,4 +1071,94 @@ Connection ~ 8750 5400
 Connection ~ 8750 3750
 Wire Wire Line
 	8750 3750 9050 3750
+$Comp
+L servo:jumper JP?
+U 1 1 5E65DC22
+P 2900 5700
+AR Path="/5DD76B18/5E65DC22" Ref="JP?"  Part="1" 
+AR Path="/5DC4A59D/5E65DC22" Ref="JP?"  Part="1" 
+AR Path="/5F8D42C2/5E65DC22" Ref="JP1902"  Part="1" 
+F 0 "JP1902" H 2900 5539 39  0000 C CNN
+F 1 "jumper" H 2900 5614 39  0000 C CNN
+F 2 "servo:SolderJumper-2_P1.3mm_Open_RoundedPad1.0x1.5mm" H 2800 5680 50  0001 C CNN
+F 3 "~" H 2900 5780 50  0001 C CNN
+F 4 "jumper smd bridge using tin" H -400 100 50  0001 C CNN "Description"
+F 5 "-" H -400 100 50  0001 C CNN "PartNumber"
+F 6 "-" H -400 100 50  0001 C CNN "digikey"
+F 7 "0" H -400 100 50  0001 C CNN "price@10"
+	1    2900 5700
+	-1   0    0    1   
+$EndComp
+$Comp
+L servo:jumper JP?
+U 1 1 5E668E7F
+P 2500 5700
+AR Path="/5DD76B18/5E668E7F" Ref="JP?"  Part="1" 
+AR Path="/5DC4A59D/5E668E7F" Ref="JP?"  Part="1" 
+AR Path="/5F8D42C2/5E668E7F" Ref="JP1901"  Part="1" 
+F 0 "JP1901" H 2500 5450 39  0000 C CNN
+F 1 "jumper" H 2500 5550 39  0000 C CNN
+F 2 "servo:SolderJumper-2_P1.3mm_Open_RoundedPad1.0x1.5mm" H 2400 5680 50  0001 C CNN
+F 3 "~" H 2500 5780 50  0001 C CNN
+F 4 "jumper smd bridge using tin" H -800 100 50  0001 C CNN "Description"
+F 5 "-" H -800 100 50  0001 C CNN "PartNumber"
+F 6 "-" H -800 100 50  0001 C CNN "digikey"
+F 7 "0" H -800 100 50  0001 C CNN "price@10"
+	1    2500 5700
+	-1   0    0    1   
+$EndComp
+Wire Wire Line
+	2700 5700 2600 5700
+Wire Wire Line
+	2700 5700 2800 5700
+Connection ~ 2700 5700
+Wire Wire Line
+	3000 5700 3100 5700
+Wire Wire Line
+	2400 5700 2300 5700
+$Comp
+L servo:jumper JP?
+U 1 1 5E69BAAE
+P 13850 5700
+AR Path="/5DD76B18/5E69BAAE" Ref="JP?"  Part="1" 
+AR Path="/5DC4A59D/5E69BAAE" Ref="JP?"  Part="1" 
+AR Path="/5F8D42C2/5E69BAAE" Ref="JP1903"  Part="1" 
+F 0 "JP1903" H 13850 5539 39  0000 C CNN
+F 1 "jumper" H 13850 5614 39  0000 C CNN
+F 2 "servo:SolderJumper-2_P1.3mm_Open_RoundedPad1.0x1.5mm" H 13750 5680 50  0001 C CNN
+F 3 "~" H 13850 5780 50  0001 C CNN
+F 4 "jumper smd bridge using tin" H 10550 100 50  0001 C CNN "Description"
+F 5 "-" H 10550 100 50  0001 C CNN "PartNumber"
+F 6 "-" H 10550 100 50  0001 C CNN "digikey"
+F 7 "0" H 10550 100 50  0001 C CNN "price@10"
+	1    13850 5700
+	-1   0    0    1   
+$EndComp
+Wire Wire Line
+	13650 5700 13750 5700
+Wire Wire Line
+	13950 5700 14050 5700
+$Comp
+L servo:jumper JP?
+U 1 1 5E6BF75A
+P 14250 5700
+AR Path="/5DD76B18/5E6BF75A" Ref="JP?"  Part="1" 
+AR Path="/5DC4A59D/5E6BF75A" Ref="JP?"  Part="1" 
+AR Path="/5F8D42C2/5E6BF75A" Ref="JP1904"  Part="1" 
+F 0 "JP1904" H 14250 5785 39  0000 C CNN
+F 1 "jumper" H 14250 5860 39  0000 C CNN
+F 2 "servo:SolderJumper-2_P1.3mm_Open_RoundedPad1.0x1.5mm" H 14150 5680 50  0001 C CNN
+F 3 "~" H 14250 5780 50  0001 C CNN
+F 4 "jumper smd bridge using tin" H 10950 100 50  0001 C CNN "Description"
+F 5 "-" H 10950 100 50  0001 C CNN "PartNumber"
+F 6 "-" H 10950 100 50  0001 C CNN "digikey"
+F 7 "0" H 10950 100 50  0001 C CNN "price@10"
+	1    14250 5700
+	-1   0    0    1   
+$EndComp
+Wire Wire Line
+	14050 5700 14150 5700
+Connection ~ 14050 5700
+Wire Wire Line
+	14350 5700 14450 5700
 $EndSCHEMATC
