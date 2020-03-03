@@ -1779,13 +1779,13 @@ AR Path="/5E092156/5F157327" Ref="C?"  Part="1"
 AR Path="/5E72D841/5F157327" Ref="C?"  Part="1" 
 AR Path="/5DDE8C5E/5F157327" Ref="C834"  Part="1" 
 F 0 "C834" V 14622 5190 20  0000 R CNN
-F 1 "10uF" V 14579 5190 20  0000 R CNN
+F 1 "0.1uF" V 14579 5190 20  0000 R CNN
 F 2 "servo:C_0603_1608Metric" H 14550 5200 60  0001 C CNN
 F 3 "" H 14550 5300 60  0000 C CNN
-F 4 "10µF ±20% 10V Ceramic Capacitor X5R 0603 (1608 Metric) " H 0   0   50  0001 C CNN "Description"
-F 5 "GRM188R61A106ME69D " H 0   0   50  0001 C CNN "PartNumber"
-F 6 "490-10475-1-ND" H 0   0   50  0001 C CNN "digikey"
-F 7 "0.15400" H 0   0   50  0001 C CNN "price@10"
+F 4 "CAP CER 0.1UF 16V X7R 0603 " H 0   0   50  0001 C CNN "Description"
+F 5 "CC0603KPX7R7BB104" H 0   0   50  0001 C CNN "PartNumber"
+F 6 "311-1335-1-ND" H 0   0   50  0001 C CNN "digikey"
+F 7 "0.05800" H 0   0   50  0001 C CNN "price@10"
 	1    14550 5300
 	0    -1   -1   0   
 $EndComp
@@ -1825,13 +1825,13 @@ AR Path="/5E092156/5F1795FC" Ref="C?"  Part="1"
 AR Path="/5E72D841/5F1795FC" Ref="C?"  Part="1" 
 AR Path="/5DDE8C5E/5F1795FC" Ref="C833"  Part="1" 
 F 0 "C833" V 14572 6690 20  0000 R CNN
-F 1 "10uF" V 14529 6690 20  0000 R CNN
+F 1 "0.1uF" V 14529 6690 20  0000 R CNN
 F 2 "servo:C_0603_1608Metric" H 14500 6700 60  0001 C CNN
 F 3 "" H 14500 6800 60  0000 C CNN
-F 4 "10µF ±20% 10V Ceramic Capacitor X5R 0603 (1608 Metric) " H 0   0   50  0001 C CNN "Description"
-F 5 "GRM188R61A106ME69D " H 0   0   50  0001 C CNN "PartNumber"
-F 6 "490-10475-1-ND" H 0   0   50  0001 C CNN "digikey"
-F 7 "0.15400" H 0   0   50  0001 C CNN "price@10"
+F 4 "CAP CER 0.1UF 16V X7R 0603 " H 0   0   50  0001 C CNN "Description"
+F 5 "CC0603KPX7R7BB104" H 0   0   50  0001 C CNN "PartNumber"
+F 6 "311-1335-1-ND" H 0   0   50  0001 C CNN "digikey"
+F 7 "0.05800" H 0   0   50  0001 C CNN "price@10"
 	1    14500 6800
 	0    -1   -1   0   
 $EndComp
@@ -1871,13 +1871,13 @@ AR Path="/5E092156/5F19B896" Ref="C?"  Part="1"
 AR Path="/5E72D841/5F19B896" Ref="C?"  Part="1" 
 AR Path="/5DDE8C5E/5F19B896" Ref="C826"  Part="1" 
 F 0 "C826" V 2072 1540 20  0000 R CNN
-F 1 "10uF" V 2029 1540 20  0000 R CNN
+F 1 "0.1uF" V 2029 1540 20  0000 R CNN
 F 2 "servo:C_0603_1608Metric" H 2000 1550 60  0001 C CNN
 F 3 "" H 2000 1650 60  0000 C CNN
-F 4 "10µF ±20% 10V Ceramic Capacitor X5R 0603 (1608 Metric) " H 0   0   50  0001 C CNN "Description"
-F 5 "GRM188R61A106ME69D " H 0   0   50  0001 C CNN "PartNumber"
-F 6 "490-10475-1-ND" H 0   0   50  0001 C CNN "digikey"
-F 7 "0.15400" H 0   0   50  0001 C CNN "price@10"
+F 4 "CAP CER 0.1UF 16V X7R 0603 " H 0   0   50  0001 C CNN "Description"
+F 5 "CC0603KPX7R7BB104" H 0   0   50  0001 C CNN "PartNumber"
+F 6 "311-1335-1-ND" H 0   0   50  0001 C CNN "digikey"
+F 7 "0.05800" H 0   0   50  0001 C CNN "price@10"
 	1    2000 1650
 	0    -1   -1   0   
 $EndComp
@@ -1917,13 +1917,13 @@ AR Path="/5E092156/5F1BD8B6" Ref="C?"  Part="1"
 AR Path="/5E72D841/5F1BD8B6" Ref="C?"  Part="1" 
 AR Path="/5DDE8C5E/5F1BD8B6" Ref="C825"  Part="1" 
 F 0 "C825" V 2022 2990 20  0000 R CNN
-F 1 "10uF" V 1979 2990 20  0000 R CNN
+F 1 "0.1uF" V 1979 2990 20  0000 R CNN
 F 2 "servo:C_0603_1608Metric" H 1950 3000 60  0001 C CNN
 F 3 "" H 1950 3100 60  0000 C CNN
-F 4 "10µF ±20% 10V Ceramic Capacitor X5R 0603 (1608 Metric) " H 0   0   50  0001 C CNN "Description"
-F 5 "GRM188R61A106ME69D " H 0   0   50  0001 C CNN "PartNumber"
-F 6 "490-10475-1-ND" H 0   0   50  0001 C CNN "digikey"
-F 7 "0.15400" H 0   0   50  0001 C CNN "price@10"
+F 4 "CAP CER 0.1UF 16V X7R 0603 " H 0   0   50  0001 C CNN "Description"
+F 5 "CC0603KPX7R7BB104" H 0   0   50  0001 C CNN "PartNumber"
+F 6 "311-1335-1-ND" H 0   0   50  0001 C CNN "digikey"
+F 7 "0.05800" H 0   0   50  0001 C CNN "price@10"
 	1    1950 3100
 	0    -1   -1   0   
 $EndComp

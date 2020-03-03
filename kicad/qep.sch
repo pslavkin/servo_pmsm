@@ -453,11 +453,11 @@ L servo:am26ls32a U1103
 U 1 1 63383E83
 P 8100 4100
 F 0 "U1103" H 7950 5150 39  0000 C CNN
-F 1 "am26ls32a" H 7900 5050 39  0000 C CNN
+F 1 "AM26LS32A" H 7900 5050 39  0000 C CNN
 F 2 "servo:SOIC-16W_5.3x10.2mm_P1.27mm" H 9100 3150 50  0001 C CNN
 F 3 "../doc/datasheets/am26ls32a.pdf" H 8100 3700 50  0001 C CNN
 F 4 "0/4 Receiver RS422, RS423 16-SOIC " H 0   0   50  0001 C CNN "Description"
-F 5 "AM26LS32ACDR " H 0   0   50  0001 C CNN "PartNumber"
+F 5 "AM26LS32ACDR" H 0   0   50  0001 C CNN "PartNumber"
 F 6 "296-1011-1-ND" H 0   0   50  0001 C CNN "digikey"
 F 7 "0.57800" H 0   0   50  0001 C CNN "price@10"
 	1    8100 4100
@@ -891,11 +891,11 @@ L servo:am26ls32a U1102
 U 1 1 63457709
 P 3600 4100
 F 0 "U1102" H 3450 5150 39  0000 C CNN
-F 1 "am26ls32a" H 3400 5050 39  0000 C CNN
+F 1 "AM26LS32A" H 3400 5050 39  0000 C CNN
 F 2 "servo:SOIC-16W_5.3x10.2mm_P1.27mm" H 4600 3150 50  0001 C CNN
 F 3 "../doc/datasheets/am26ls32a.pdf" H 3600 3700 50  0001 C CNN
 F 4 "0/4 Receiver RS422, RS423 16-SOIC " H 0   0   50  0001 C CNN "Description"
-F 5 "AM26LS32ACDR " H 0   0   50  0001 C CNN "PartNumber"
+F 5 "AM26LS32ACDR" H 0   0   50  0001 C CNN "PartNumber"
 F 6 "296-1011-1-ND" H 0   0   50  0001 C CNN "digikey"
 F 7 "0.57800" H 0   0   50  0001 C CNN "price@10"
 	1    3600 4100
@@ -1305,4 +1305,6 @@ Wire Wire Line
 	5850 3100 6100 3100
 Wire Wire Line
 	5850 2050 6550 2050
+Text Notes 3250 4650 0    20   ~ 0
+I've chossen so16w but the landpattern is compatible\n with soic16 also 'cause soic has more available \npieces and are cheaper
 $EndSCHEMATC

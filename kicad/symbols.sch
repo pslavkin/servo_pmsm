@@ -968,4 +968,18 @@ F 6 "0" H -150 2950 50  0001 C CNN "price@10"
 	1    13250 5900
 	1    0    0    -1  
 $EndComp
+$Comp
+L servo:logo logo1307
+U 1 1 5E5C71DB
+P 13250 6200
+F 0 "logo1307" H 13250 6400 50  0001 C CNN
+F 1 "design" H 13578 6200 50  0000 L CNN
+F 2 "servo:layers_design" H 13250 6200 50  0001 C CNN
+F 3 "~" H 13250 6200 50  0001 C CNN
+F 4 "stackup" H -150 3250 50  0001 C CNN "Description"
+F 5 "-" H -150 3250 50  0001 C CNN "PartNumber"
+F 6 "0" H -150 3250 50  0001 C CNN "price@10"
+	1    13250 6200
+	1    0    0    -1  
+$EndComp
 $EndSCHEMATC

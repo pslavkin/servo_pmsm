@@ -156,13 +156,13 @@ AR Path="/5DD4DF4C/5E351E31" Ref="R?"  Part="1"
 AR Path="/5E0D58C4/5E351E31" Ref="R?"  Part="1" 
 AR Path="/5E72D841/5E351E31" Ref="R1403"  Part="1" 
 F 0 "R1403" H 7300 1815 20  0000 C CNN
-F 1 "680" H 7300 1772 20  0000 C CNN
+F 1 "1k" H 7300 1772 20  0000 C CNN
 F 2 "servo:R_0603_1608Metric" H 6800 1600 60  0001 C CNN
 F 3 "" H 6900 1700 60  0001 C CNN
-F 4 "680 Ohms ±5% 0.1W, 1/10W Chip Resistor 0603 (1608 Metric) Automotive AEC-Q200 Thick Film" H 0   0   50  0001 C CNN "Description"
-F 5 "RMCF0603JT680R" H 0   0   50  0001 C CNN "PartNumber"
-F 6 "RMCF0603JT680RCT-ND" H 0   0   50  0001 C CNN "digikey"
-F 7 "0.01400" H 0   0   50  0001 C CNN "price@10"
+F 4 "1 kOhms ±5% 0.1W, 1/10W Chip Resistor 0603 (1608 Metric) Moisture Resistant Thick Film " H 0   0   50  0001 C CNN "Description"
+F 5 "RC0603JR-071KL" H 0   0   50  0001 C CNN "PartNumber"
+F 6 "311-1.0KGRCT-ND" H 0   0   50  0001 C CNN "digikey"
+F 7 "0.01900" H 0   0   50  0001 C CNN "price@10"
 	1    7300 1700
 	1    0    0    -1  
 $EndComp
@@ -173,7 +173,7 @@ P 7500 1900
 AR Path="/5E092156/5E351EEC" Ref="C?"  Part="1" 
 AR Path="/5E72D841/5E351EEC" Ref="C1401"  Part="1" 
 F 0 "C1401" V 7528 2010 20  0000 L CNN
-F 1 "1nF" V 7571 2010 20  0000 L CNN
+F 1 "10nF" V 7571 2010 20  0000 L CNN
 F 2 "servo:C_0603_1608Metric" H 7500 1800 60  0001 C CNN
 F 3 "" H 7500 1900 60  0000 C CNN
 F 4 "CAP CER 1000PF 16V X7R 0603 " H 0   0   50  0001 C CNN "Description"
@@ -191,12 +191,12 @@ AR Path="/5DD4DF4C/5E352492" Ref="R?"  Part="1"
 AR Path="/5E0D58C4/5E352492" Ref="R?"  Part="1" 
 AR Path="/5E72D841/5E352492" Ref="R1404"  Part="1" 
 F 0 "R1404" H 7700 1815 20  0000 C CNN
-F 1 "220" H 7700 1772 20  0000 C CNN
+F 1 "100" H 7700 1772 20  0000 C CNN
 F 2 "servo:R_0603_1608Metric" H 7200 1600 60  0001 C CNN
 F 3 "" H 7300 1700 60  0001 C CNN
-F 4 "220 Ohms ±5% 0.25W, 1/4W Chip Resistor 0603 (1608 Metric) Automotive AEC-Q200, Pulse Withstanding Thick Film " H 0   0   50  0001 C CNN "Description"
-F 5 "ESR03EZPJ221" H 0   0   50  0001 C CNN "PartNumber"
-F 6 "RHM220DCT-ND" H 0   0   50  0001 C CNN "digikey"
+F 4 "100 Ohms ±5% 0.25W, 1/4W Chip Resistor 0603 (1608 Metric) Automotive AEC-Q200, Pulse Withstanding Thick Film " H 0   0   50  0001 C CNN "Description"
+F 5 "ESR03EZPJ101" H 0   0   50  0001 C CNN "PartNumber"
+F 6 "RHM100DCT-ND" H 0   0   50  0001 C CNN "digikey"
 F 7 "0.07900" H 0   0   50  0001 C CNN "price@10"
 	1    7700 1700
 	1    0    0    -1  
@@ -208,13 +208,13 @@ P 8100 1700
 AR Path="/5E092156/5E3524D7" Ref="C?"  Part="1" 
 AR Path="/5E72D841/5E3524D7" Ref="C1404"  Part="1" 
 F 0 "C1404" H 8150 1525 20  0000 C CNN
-F 1 "47Uf" H 8150 1568 20  0000 C CNN
+F 1 "10uF" H 8150 1568 20  0000 C CNN
 F 2 "servo:C_0603_1608Metric" H 8100 1600 60  0001 C CNN
 F 3 "" H 8100 1700 60  0000 C CNN
-F 4 "47µF ±20% 6.3V Ceramic Capacitor X5R 0603 (1608 Metric) " H 0   0   50  0001 C CNN "Description"
-F 5 "490-13247-6-ND" H 0   0   50  0001 C CNN "digikey"
-F 6 "GRM188R60J476ME15D" H 0   0   50  0001 C CNN "PartNumber"
-F 7 "0.46900" H 0   0   50  0001 C CNN "price@10"
+F 4 "10µF ±20% 10V Ceramic Capacitor X5R 0603 (1608 Metric) " H 0   0   50  0001 C CNN "Description"
+F 5 "490-10475-1-ND" H 0   0   50  0001 C CNN "digikey"
+F 6 "GRM188R61A106ME69D " H 0   0   50  0001 C CNN "PartNumber"
+F 7 "0.15400" H 0   0   50  0001 C CNN "price@10"
 	1    8100 1700
 	-1   0    0    1   
 $EndComp
