@@ -1,9 +1,13 @@
-(module slot (layer F.Cu) (tedit 5E5084E0)
-  (fp_text reference H1312 (at 0.499023 -0.859917) (layer F.SilkS) hide
+(module slot (layer F.Cu) (tedit 5E5F1594)
+  (fp_text reference H1335 (at 0.499023 -0.859917) (layer F.SilkS) hide
     (effects (font (size 0.4 0.4) (thickness 0.1)))
   )
   (fp_text value Slot (at 0 -4.5) (layer F.Fab) hide
     (effects (font (size 1 1) (thickness 0.15)))
   )
-  (pad "" np_thru_hole oval (at 0 0) (size 10 0.8) (drill oval 10 0.8) (layers *.Cu *.Mask))
+  (fp_line (start -4.6 -0.4) (end 4.6 -0.4) (layer Dwgs.User) (width 0.01))
+  (fp_line (start -4.6 0.4) (end 4.6 0.4) (layer Dwgs.User) (width 0.01))
+  (fp_arc (start -4.6 0) (end -4.6 -0.4) (angle -180) (layer Dwgs.User) (width 0.01))
+  (fp_arc (start 4.6 0) (end 4.6 0.4) (angle -180) (layer Dwgs.User) (width 0.01))
+  (pad "" smd oval (at 0 0) (size 0.01 0.01) (layers F.Cu F.Paste F.Mask))
 )

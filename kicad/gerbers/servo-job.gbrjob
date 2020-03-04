@@ -1,0 +1,203 @@
+{
+  "Header":
+  {
+    "GenerationSoftware":
+    {
+      "Vendor":      "KiCad",
+      "Application": "Pcbnew",
+      "Version":     "5.0.2+dfsg1-1"
+    },
+    "CreationDate":  "2020-03-03T23:04:45-03:00"
+  },
+  "GeneralSpecs":
+  {
+    "ProjectId":
+    {
+      "Name": "servo",
+      "GUID": "73657276-6f2e-46b6-9963-61645f706362",
+      "Revision": "1.0"
+    },
+    "Size":
+    {
+      "X": 160.100,
+      "Y": 150.100
+    },
+    "LayerNumber": 6,
+    "BoardThickness":  1.600
+  },
+  "DesignRules":
+  [
+    {
+      "Layers": "Outer",
+      "PadToPad":  0.010,
+      "PadToTrack":  0.010,
+      "TrackToTrack":  0.010,
+      "MinLineWidth":  0.152,
+      "TrackToRegion":  1.000,
+      "RegionToRegion":  1.000
+    },
+    {
+      "Layers": "Inner",
+      "PadToPad":  0.010,
+      "PadToTrack":  0.010,
+      "TrackToTrack":  0.010,
+      "MinLineWidth":  0.152,
+      "TrackToRegion":  1.000,
+      "RegionToRegion":  1.000
+    }
+  ],
+  "FilesAttributes":
+  [
+    {
+      "Path":  "servo-F.Cu.gbr",
+      "FileFunction":  "Copper,L1,Top",
+      "FilePolarity":  "Positive"
+    },
+    {
+      "Path":  "servo-GND.Cu.gbr",
+      "FileFunction":  "Copper,L2,Inr",
+      "FilePolarity":  "Positive"
+    },
+    {
+      "Path":  "servo-In2.Cu.gbr",
+      "FileFunction":  "Copper,L3,Inr",
+      "FilePolarity":  "Positive"
+    },
+    {
+      "Path":  "servo-In3.Cu.gbr",
+      "FileFunction":  "Copper,L4,Inr",
+      "FilePolarity":  "Positive"
+    },
+    {
+      "Path":  "servo-Vcc.Cu.gbr",
+      "FileFunction":  "Copper,L5,Inr",
+      "FilePolarity":  "Positive"
+    },
+    {
+      "Path":  "servo-B.Cu.gbr",
+      "FileFunction":  "Copper,L6,Bot",
+      "FilePolarity":  "Positive"
+    },
+    {
+      "Path":  "servo-F.Adhes.gbr",
+      "FileFunction":  "Glue,Top",
+      "FilePolarity":  "Positive"
+    },
+    {
+      "Path":  "servo-B.Adhes.gbr",
+      "FileFunction":  "Glue,Bot",
+      "FilePolarity":  "Positive"
+    },
+    {
+      "Path":  "servo-F.Paste.gbr",
+      "FileFunction":  "SolderPaste,Top",
+      "FilePolarity":  "Positive"
+    },
+    {
+      "Path":  "servo-B.Paste.gbr",
+      "FileFunction":  "SolderPaste,Bot",
+      "FilePolarity":  "Positive"
+    },
+    {
+      "Path":  "servo-F.SilkS.gbr",
+      "FileFunction":  "Legend,Top",
+      "FilePolarity":  "Positive"
+    },
+    {
+      "Path":  "servo-B.SilkS.gbr",
+      "FileFunction":  "Legend,Bot",
+      "FilePolarity":  "Positive"
+    },
+    {
+      "Path":  "servo-F.Mask.gbr",
+      "FileFunction":  "SolderMask,Top",
+      "FilePolarity":  "Negative"
+    },
+    {
+      "Path":  "servo-B.Mask.gbr",
+      "FileFunction":  "SolderMask,Bot",
+      "FilePolarity":  "Negative"
+    },
+    {
+      "Path":  "servo-Edge.Cuts.gbr",
+      "FileFunction":  "Profile",
+      "FilePolarity":  "Positive"
+    }
+  ],
+  "MaterialStackup":
+  [
+    {
+      "Type":  "Legend",
+      "Notes":  "Layer F.SilkS"
+    },
+    {
+      "Type":  "SolderPaste",
+      "Notes":  "Layer F.Paste"
+    },
+    {
+      "Type":  "SolderMask",
+      "Notes":  "Layer F.Mask"
+    },
+    {
+      "Type":  "Copper",
+      "Notes":  "Layer F.Cu"
+    },
+    {
+      "Type":  "Dielectric",
+      "Material":  "FR4",
+      "Notes":  "Layers L1/L2"
+    },
+    {
+      "Type":  "Copper",
+      "Notes":  "Layer GND.Cu"
+    },
+    {
+      "Type":  "Dielectric",
+      "Material":  "FR4",
+      "Notes":  "Layers L2/L3"
+    },
+    {
+      "Type":  "Copper",
+      "Notes":  "Layer In2.Cu"
+    },
+    {
+      "Type":  "Dielectric",
+      "Material":  "FR4",
+      "Notes":  "Layers L3/L4"
+    },
+    {
+      "Type":  "Copper",
+      "Notes":  "Layer In3.Cu"
+    },
+    {
+      "Type":  "Dielectric",
+      "Material":  "FR4",
+      "Notes":  "Layers L4/L5"
+    },
+    {
+      "Type":  "Copper",
+      "Notes":  "Layer Vcc.Cu"
+    },
+    {
+      "Type":  "Dielectric",
+      "Material":  "FR4",
+      "Notes":  "Layers L5/L6"
+    },
+    {
+      "Type":  "Copper",
+      "Notes":  "Layer B.Cu"
+    },
+    {
+      "Type":  "SolderMask",
+      "Notes":  "Layer B.Mask"
+    },
+    {
+      "Type":  "SolderPaste",
+      "Notes":  "Layer B.Paste"
+    },
+    {
+      "Type":  "Legend",
+      "Notes":  "Layer B.SilkS"
+    }
+  ]
+}
