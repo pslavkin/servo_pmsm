@@ -201,8 +201,8 @@ $Comp
 L servo:R-78E3.3-1.0 U702
 U 1 1 5E18DDB9
 P 5200 5650
-F 0 "U702" H 5050 5775 39  0000 C CNN
-F 1 "R-78B3.3-2.0  Reg sw 3.3v 2A" H 5200 5775 39  0000 L CNN
+F 0 "U702" H 5200 5792 39  0000 C CNN
+F 1 "R-78B3.3-2.0  Reg sw 3.3v 2A" H 5200 5775 39  0001 L CNN
 F 2 "servo:Converter_DCDC_RECOM_R-78E-0.5_THT" H 5250 5400 50  0001 L CIN
 F 3 "../doc/datasheets/R-78B-2.0.pdf" H 5050 5775 50  0001 C CNN
 F 4 "Linear Regulator Replacement DC DC Converter 1 Output 3.3V 2A 4.75V - 32V Input " H 0   0   50  0001 C CNN "Description"
@@ -226,8 +226,8 @@ $Comp
 L servo:AP2114 U706
 U 1 1 5E28622B
 P 7300 5750
-F 0 "U706" H 7300 6091 39  0000 C CNN
-F 1 "AP2114 Reg linear 1.2v 1A" H 7300 6016 39  0000 C CNN
+F 0 "U706" H 7300 6016 39  0000 C CNN
+F 1 "AP2114 Reg linear 1.2v 1A" H 7300 6016 39  0001 C CNN
 F 2 "servo:SOT-223" H 7400 6375 50  0001 C CNN
 F 3 "../doc/datasheets/AP2114.pdf" H 7350 6150 50  0001 C CNN
 F 4 "Linear Voltage Regulator IC Positive Fixed 1 Output 1A SOT-223 " H 0   0   50  0001 C CNN "Description"
@@ -335,8 +335,8 @@ $Comp
 L servo:jumper JP701
 U 1 1 5E4E5EBD
 P 3300 5600
-F 0 "JP701" H 3300 5761 39  0000 C CNN
-F 1 "jumper" H 3300 5686 39  0000 C CNN
+F 0 "JP701" H 3300 5713 20  0000 C CNN
+F 1 "jumper" H 3300 5670 20  0000 C CNN
 F 2 "servo:SolderJumper-2_P1.3mm_Open_RoundedPad1.0x1.5mm" H 3200 5580 50  0001 C CNN
 F 3 "~" H 3300 5680 50  0001 C CNN
 F 4 "jumper smd bridge using tin" H 0   0   50  0001 C CNN "Description"
@@ -1147,8 +1147,8 @@ $Comp
 L servo:zener D707
 U 1 1 5E5CEB8C
 P 4150 6000
-F 0 "D707" V 4128 6079 20  0000 L CNN
-F 1 "zener 5v1" V 4171 6079 20  0000 L CNN
+F 0 "D707" V 4128 5922 20  0000 R CNN
+F 1 "zener 5v1" V 4171 5922 20  0000 R CNN
 F 2 "servo:D_SMA" H 4150 5825 20  0001 C CNN
 F 3 "https://diotec.com/tl_files/diotec/files/pdf/datasheets/z1sma1.pdf" H 4150 6100 50  0001 C CNN
 F 4 "Zener Diode 5.1V 1.25W ±5.88% Surface Mount DO-214AC (SMA) " H 0   0   50  0001 C CNN "Description"

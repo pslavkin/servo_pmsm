@@ -40,12 +40,12 @@ P 7150 3100
 AR Path="/5E092156/6322E155" Ref="R?"  Part="1" 
 AR Path="/5DE3DF56/6322E155" Ref="R1002"  Part="1" 
 F 0 "R1002" H 7209 3122 20  0000 L CNN
-F 1 "1k" H 7209 3079 20  0000 L CNN
+F 1 "10k" H 7209 3079 20  0000 L CNN
 F 2 "servo:R_0603_1608Metric" H 7150 3100 50  0001 C CNN
 F 3 "~" H 7150 3100 50  0001 C CNN
-F 4 "1 kOhms ±5% 0.1W, 1/10W Chip Resistor 0603 (1608 Metric) Moisture Resistant Thick Film " H 0   0   50  0001 C CNN "Description"
-F 5 "RC0603JR-071KL" H 0   0   50  0001 C CNN "PartNumber"
-F 6 "311-1.0KGRCT-ND" H 0   0   50  0001 C CNN "digikey"
+F 4 "10 kOhms ±5% 0.1W, 1/10W Chip Resistor 0603 (1608 Metric) Moisture Resistant Thick Film " H 0   0   50  0001 C CNN "Description"
+F 5 "RC0603JR-0710KL" H 0   0   50  0001 C CNN "PartNumber"
+F 6 "311-10KGRCT-ND" H 0   0   50  0001 C CNN "digikey"
 F 7 "0.01900" H 0   0   50  0001 C CNN "price@10"
 	1    7150 3100
 	1    0    0    -1  
@@ -95,12 +95,12 @@ P 7500 3100
 AR Path="/5E092156/6322E179" Ref="R?"  Part="1" 
 AR Path="/5DE3DF56/6322E179" Ref="R1005"  Part="1" 
 F 0 "R1005" H 7559 3122 20  0000 L CNN
-F 1 "1k" H 7559 3079 20  0000 L CNN
+F 1 "10k" H 7559 3079 20  0000 L CNN
 F 2 "servo:R_0603_1608Metric" H 7500 3100 50  0001 C CNN
 F 3 "~" H 7500 3100 50  0001 C CNN
-F 4 "1 kOhms ±5% 0.1W, 1/10W Chip Resistor 0603 (1608 Metric) Moisture Resistant Thick Film " H 0   0   50  0001 C CNN "Description"
-F 5 "RC0603JR-071KL" H 0   0   50  0001 C CNN "PartNumber"
-F 6 "311-1.0KGRCT-ND" H 0   0   50  0001 C CNN "digikey"
+F 4 "10 kOhms ±5% 0.1W, 1/10W Chip Resistor 0603 (1608 Metric) Moisture Resistant Thick Film " H 0   0   50  0001 C CNN "Description"
+F 5 "RC0603JR-0710KL" H 0   0   50  0001 C CNN "PartNumber"
+F 6 "311-10KGRCT-ND" H 0   0   50  0001 C CNN "digikey"
 F 7 "0.01900" H 0   0   50  0001 C CNN "price@10"
 	1    7500 3100
 	1    0    0    -1  
@@ -205,12 +205,12 @@ P 10150 3100
 AR Path="/5E092156/6322E1D7" Ref="R?"  Part="1" 
 AR Path="/5DE3DF56/6322E1D7" Ref="R1011"  Part="1" 
 F 0 "R1011" H 10209 3122 20  0000 L CNN
-F 1 "1k" H 10209 3079 20  0000 L CNN
+F 1 "10k" H 10209 3079 20  0000 L CNN
 F 2 "servo:R_0603_1608Metric" H 10150 3100 50  0001 C CNN
 F 3 "~" H 10150 3100 50  0001 C CNN
-F 4 "1 kOhms ±5% 0.1W, 1/10W Chip Resistor 0603 (1608 Metric) Moisture Resistant Thick Film " H 0   0   50  0001 C CNN "Description"
-F 5 "RC0603JR-071KL" H 0   0   50  0001 C CNN "PartNumber"
-F 6 "311-1.0KGRCT-ND" H 0   0   50  0001 C CNN "digikey"
+F 4 "10 kOhms ±5% 0.1W, 1/10W Chip Resistor 0603 (1608 Metric) Moisture Resistant Thick Film " H 0   0   50  0001 C CNN "Description"
+F 5 "RC0603JR-0710KL" H 0   0   50  0001 C CNN "PartNumber"
+F 6 "311-10KGRCT-ND" H 0   0   50  0001 C CNN "digikey"
 F 7 "0.01900" H 0   0   50  0001 C CNN "price@10"
 	1    10150 3100
 	-1   0    0    -1  
@@ -260,12 +260,12 @@ P 9800 3100
 AR Path="/5E092156/6322E1FB" Ref="R?"  Part="1" 
 AR Path="/5DE3DF56/6322E1FB" Ref="R1008"  Part="1" 
 F 0 "R1008" H 9859 3122 20  0000 L CNN
-F 1 "1k" H 9859 3079 20  0000 L CNN
+F 1 "10k" H 9859 3079 20  0000 L CNN
 F 2 "servo:R_0603_1608Metric" H 9800 3100 50  0001 C CNN
 F 3 "~" H 9800 3100 50  0001 C CNN
-F 4 "1 kOhms ±5% 0.1W, 1/10W Chip Resistor 0603 (1608 Metric) Moisture Resistant Thick Film " H 0   0   50  0001 C CNN "Description"
-F 5 "RC0603JR-071KL" H 0   0   50  0001 C CNN "PartNumber"
-F 6 "311-1.0KGRCT-ND" H 0   0   50  0001 C CNN "digikey"
+F 4 "10 kOhms ±5% 0.1W, 1/10W Chip Resistor 0603 (1608 Metric) Moisture Resistant Thick Film " H 0   0   50  0001 C CNN "Description"
+F 5 "RC0603JR-0710KL" H 0   0   50  0001 C CNN "PartNumber"
+F 6 "311-10KGRCT-ND" H 0   0   50  0001 C CNN "digikey"
 F 7 "0.01900" H 0   0   50  0001 C CNN "price@10"
 	1    9800 3100
 	-1   0    0    -1  
@@ -347,7 +347,7 @@ Wire Wire Line
 Wire Wire Line
 	9350 5450 9350 5950
 Connection ~ 9350 5950
-Text Notes 8650 5250 1    20   ~ 0
+Text Notes 8800 5450 2    20   ~ 0
 optional one to hi \nor/and one to low
 Wire Wire Line
 	7800 5450 8600 5450
@@ -569,4 +569,6 @@ Wire Wire Line
 Connection ~ 8600 7100
 Wire Wire Line
 	8600 7100 10100 7100
+Text Notes 8450 3000 0    20   ~ 0
+for final release, remove pull-up \nand pull-down from bus, and \nreplace 10k to 120 as the Z
 $EndSCHEMATC

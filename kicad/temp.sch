@@ -362,7 +362,7 @@ Wire Wire Line
 Text Notes 7000 1300 0    197  ~ 39
 2 isolated NTC interfase +\n1 isolated 1-wire/485\n
 Text Notes 9600 5300 0    20   ~ 0
-it;d be used as a voltage sensor, \npullup/pulldown'ded NTC\n measurement, or general input aquire
+it'd be used as a voltage sensor, \npullup/pulldown'ded NTC\n measurement, or general input aquire
 Wire Wire Line
 	8450 2600 8600 2600
 Wire Wire Line
@@ -1017,7 +1017,7 @@ Wire Wire Line
 Wire Wire Line
 	8300 6600 8300 7250
 Text Notes 9600 6950 0    20   ~ 0
-it;d be used as a voltage sensor, \npullup/pulldown'ded NTC\n measurement, or general input aquire
+it'd be used as a voltage sensor, \npullup/pulldown'ded NTC\n measurement, or general input aquire
 $Comp
 L servo:Capacitor C?
 U 1 1 5E1BD552

@@ -1,4 +1,4 @@
-### Module positions - created on Wed 04 Mar 2020 01:08:17 AM -03 ###
+### Module positions - created on Wed 04 Mar 2020 11:27:28 AM -03 ###
 ### Printed by Pcbnew version kicad 5.0.2+dfsg1-1
 ## Unit = mm, Angle = deg.
 ## Side : bottom
@@ -106,6 +106,7 @@ C1914     0.1uF                      C_0603_1608Metric                          
 D701      red@2mA                    LED_0603_1608Metric                              -115.1010   101.2401  270.0000  bottom
 D702      yellow@2mA                 LED_0603_1608Metric                              -114.9010    74.4401  270.0000  bottom
 D703      zener_5v1                  D_SMA                                             -30.3000    10.1000   90.0000  bottom
+H1302     fiducials                  Fiducial_1mm_Dia_2.54mm_Outer_CopperBottom       -132.1010   141.6401   -0.0000  bottom
 IC201     TPD4E001QDBV               SOT-23-6                                         -128.9050     3.9370  270.0000  bottom
 IC301     TPD4E001QDBV               SOT-23-6                                          -54.3560   103.0986  270.0000  bottom
 IC302     TPD4E001QDBV               SOT-23-6                                          -59.7408   103.1748   90.0000  bottom

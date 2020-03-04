@@ -311,12 +311,12 @@ P 7300 3450
 AR Path="/5E092156/5E47F534" Ref="R?"  Part="1" 
 AR Path="/5E21534F/5E47F534" Ref="R1202"  Part="1" 
 F 0 "R1202" H 7359 3472 20  0000 L CNN
-F 1 "1k" H 7359 3429 20  0000 L CNN
+F 1 "10k" H 7359 3429 20  0000 L CNN
 F 2 "servo:R_0603_1608Metric" H 7300 3450 50  0001 C CNN
 F 3 "~" H 7300 3450 50  0001 C CNN
-F 4 "1 kOhms ±5% 0.1W, 1/10W Chip Resistor 0603 (1608 Metric) Moisture Resistant Thick Film " H 0   0   50  0001 C CNN "Description"
-F 5 "RC0603JR-071KL" H 0   0   50  0001 C CNN "PartNumber"
-F 6 "311-1.0KGRCT-ND" H 0   0   50  0001 C CNN "digikey"
+F 4 "10 kOhms ±5% 0.1W, 1/10W Chip Resistor 0603 (1608 Metric) Moisture Resistant Thick Film " H 0   0   50  0001 C CNN "Description"
+F 5 "RC0603JR-0710KL" H 0   0   50  0001 C CNN "PartNumber"
+F 6 "311-10KGRCT-ND" H 0   0   50  0001 C CNN "digikey"
 F 7 "0.01900" H 0   0   50  0001 C CNN "price@10"
 	1    7300 3450
 	1    0    0    -1  
@@ -374,12 +374,12 @@ P 9200 3500
 AR Path="/5E092156/5E496E84" Ref="R?"  Part="1" 
 AR Path="/5E21534F/5E496E84" Ref="R1205"  Part="1" 
 F 0 "R1205" H 9259 3522 20  0000 L CNN
-F 1 "1k" H 9259 3479 20  0000 L CNN
+F 1 "10k" H 9259 3479 20  0000 L CNN
 F 2 "servo:R_0603_1608Metric" H 9200 3500 50  0001 C CNN
 F 3 "~" H 9200 3500 50  0001 C CNN
-F 4 "1 kOhms ±5% 0.1W, 1/10W Chip Resistor 0603 (1608 Metric) Moisture Resistant Thick Film " H 0   0   50  0001 C CNN "Description"
-F 5 "RC0603JR-071KL" H 0   0   50  0001 C CNN "PartNumber"
-F 6 "311-1.0KGRCT-ND" H 0   0   50  0001 C CNN "digikey"
+F 4 "10 kOhms ±5% 0.1W, 1/10W Chip Resistor 0603 (1608 Metric) Moisture Resistant Thick Film " H 0   0   50  0001 C CNN "Description"
+F 5 "RC0603JR-0710KL" H 0   0   50  0001 C CNN "PartNumber"
+F 6 "311-10KGRCT-ND" H 0   0   50  0001 C CNN "digikey"
 F 7 "0.01900" H 0   0   50  0001 C CNN "price@10"
 	1    9200 3500
 	1    0    0    -1  
@@ -486,7 +486,7 @@ AR Path="/5DE49152/5E4C0C89" Ref="#PWR_?"  Part="1"
 AR Path="/5E1BAEAA/5E4C0C89" Ref="#PWR_?"  Part="1" 
 AR Path="/5E21534F/5E4C0C89" Ref="#PWR_0102"  Part="1" 
 F 0 "#PWR_0102" H 11655 3051 20  0001 C CNN
-F 1 "GND" H 11650 3042 30  0000 C CNN
+F 1 "GND" H 11650 3050 30  0000 C CNN
 F 2 "" H 11650 3200 70  0000 C CNN
 F 3 "" H 11650 3200 70  0000 C CNN
 	1    11650 3200
@@ -582,4 +582,6 @@ Wire Wire Line
 Connection ~ 9450 4100
 Wire Wire Line
 	9450 4100 9200 4100
+Text Notes 7900 2700 0    20   ~ 0
+for final release, remove pull-up \nand pull-down from bus, and \nreplace 10k to 120 as the Z
 $EndSCHEMATC

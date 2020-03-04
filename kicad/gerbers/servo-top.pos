@@ -1,4 +1,4 @@
-### Module positions - created on Wed 04 Mar 2020 01:08:17 AM -03 ###
+### Module positions - created on Wed 04 Mar 2020 11:27:28 AM -03 ###
 ### Printed by Pcbnew version kicad 5.0.2+dfsg1-1
 ## Unit = mm, Angle = deg.
 ## Side : top
@@ -99,8 +99,7 @@ D707      zener_5v1                          D_SMA                              
 D708      zener_3v6                          D_SMA                                              90.9010   103.6580  180.0000  top
 D1401     yellow@2mA                         LED_0603_1608Metric                                54.7060    63.3189    0.0000  top
 D1402     red@2mA                            LED_0603_1608Metric                                54.7060    61.2107    0.0000  top
-H1301     fiducials                          Fiducial_1mm_Dia_2.54mm_Outer_CopperTop           131.1010   140.4401    0.0000  top
-H1302     fiducials                          Fiducial_1mm_Dia_2.54mm_Outer_CopperBottom        131.1010   140.4401    0.0000  top
+H1301     fiducials                          Fiducial_1mm_Dia_2.54mm_Outer_CopperTop           132.1010   141.6401    0.0000  top
 H1303     fiducials                          Fiducial_1mm_Dia_2.54mm_Outer_CopperTop           140.1010    16.4401    0.0000  top
 H1304     fiducials                          Fiducial_1mm_Dia_2.54mm_Outer_CopperBottom         88.1010    82.4401    0.0000  top
 H1305     fiducials                          Fiducial_1mm_Dia_2.54mm_Outer_CopperTop            88.1010    82.4401    0.0000  top

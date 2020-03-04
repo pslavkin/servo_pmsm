@@ -22,8 +22,8 @@ $Comp
 L Connector_Generic:Conn_02x10_Row_Letter_Last J1101
 U 1 1 6027FD06
 P 5800 3750
-F 0 "J1101" H 5850 4367 50  0000 C CNN
-F 1 "tblock 2x10 3.81" H 5850 4276 50  0000 C CNN
+F 0 "J1101" H 5850 4295 20  0000 C CNN
+F 1 "tblock 2x10 3.81" H 5850 4252 20  0000 C CNN
 F 2 "servo:tblock02x10_3.81" H 5800 3750 50  0001 C CNN
 F 3 "~" H 5800 3750 50  0001 C CNN
 F 4 "20 Position Terminal Block Header, Male Pins, Shrouded (4 Side) 0.150\" (3.81mm) 90°, Right Angle Through Hole " H 0   0   50  0001 C CNN "Description"
@@ -69,12 +69,12 @@ L servo:R_Small R1123
 U 1 1 602AA386
 P 7300 2450
 F 0 "R1123" H 7359 2472 20  0000 L CNN
-F 1 "1k" H 7359 2429 20  0000 L CNN
+F 1 "10k" H 7359 2429 20  0000 L CNN
 F 2 "servo:R_0603_1608Metric" H 7300 2450 50  0001 C CNN
 F 3 "~" H 7300 2450 50  0001 C CNN
-F 4 "1 kOhms ±5% 0.1W, 1/10W Chip Resistor 0603 (1608 Metric) Moisture Resistant Thick Film " H 0   0   50  0001 C CNN "Description"
-F 5 "RC0603JR-071KL" H 0   0   50  0001 C CNN "PartNumber"
-F 6 "311-1.0KGRCT-ND" H 0   0   50  0001 C CNN "digikey"
+F 4 "10 kOhms ±5% 0.1W, 1/10W Chip Resistor 0603 (1608 Metric) Moisture Resistant Thick Film " H 0   0   50  0001 C CNN "Description"
+F 5 "RC0603JR-0710KL" H 0   0   50  0001 C CNN "PartNumber"
+F 6 "311-10KGRCT-ND" H 0   0   50  0001 C CNN "digikey"
 F 7 "0.01900" H 0   0   50  0001 C CNN "price@10"
 	1    7300 2450
 	-1   0    0    -1  
@@ -118,12 +118,12 @@ L servo:R_Small R1120
 U 1 1 602AA3AA
 P 7050 2450
 F 0 "R1120" H 7109 2472 20  0000 L CNN
-F 1 "1k" H 7109 2429 20  0000 L CNN
+F 1 "10k" H 7109 2429 20  0000 L CNN
 F 2 "servo:R_0603_1608Metric" H 7050 2450 50  0001 C CNN
 F 3 "~" H 7050 2450 50  0001 C CNN
-F 4 "1 kOhms ±5% 0.1W, 1/10W Chip Resistor 0603 (1608 Metric) Moisture Resistant Thick Film " H 0   0   50  0001 C CNN "Description"
-F 5 "RC0603JR-071KL" H 0   0   50  0001 C CNN "PartNumber"
-F 6 "311-1.0KGRCT-ND" H 0   0   50  0001 C CNN "digikey"
+F 4 "10 kOhms ±5% 0.1W, 1/10W Chip Resistor 0603 (1608 Metric) Moisture Resistant Thick Film " H 0   0   50  0001 C CNN "Description"
+F 5 "RC0603JR-0710KL" H 0   0   50  0001 C CNN "PartNumber"
+F 6 "311-10KGRCT-ND" H 0   0   50  0001 C CNN "digikey"
 F 7 "0.01900" H 0   0   50  0001 C CNN "price@10"
 	1    7050 2450
 	-1   0    0    -1  
@@ -151,7 +151,7 @@ Wire Wire Line
 	7600 3850 7600 4500
 Wire Wire Line
 	7600 4500 8100 4500
-Text Notes 9200 3800 2    20   ~ 0
+Text Notes 7650 3850 2    20   ~ 0
 optional one to hi \nor/and one to low
 Text Label 6500 3350 2    20   ~ 0
 QEP2_A_P_H
@@ -330,12 +330,12 @@ L servo:R_Small R1117
 U 1 1 602AA45A
 P 6800 2450
 F 0 "R1117" H 6859 2472 20  0000 L CNN
-F 1 "1k" H 6859 2429 20  0000 L CNN
+F 1 "10k" H 6859 2429 20  0000 L CNN
 F 2 "servo:R_0603_1608Metric" H 6800 2450 50  0001 C CNN
 F 3 "~" H 6800 2450 50  0001 C CNN
-F 4 "1 kOhms ±5% 0.1W, 1/10W Chip Resistor 0603 (1608 Metric) Moisture Resistant Thick Film " H 0   0   50  0001 C CNN "Description"
-F 5 "RC0603JR-071KL" H 0   0   50  0001 C CNN "PartNumber"
-F 6 "311-1.0KGRCT-ND" H 0   0   50  0001 C CNN "digikey"
+F 4 "10 kOhms ±5% 0.1W, 1/10W Chip Resistor 0603 (1608 Metric) Moisture Resistant Thick Film " H 0   0   50  0001 C CNN "Description"
+F 5 "RC0603JR-0710KL" H 0   0   50  0001 C CNN "PartNumber"
+F 6 "311-10KGRCT-ND" H 0   0   50  0001 C CNN "digikey"
 F 7 "0.01900" H 0   0   50  0001 C CNN "price@10"
 	1    6800 2450
 	-1   0    0    -1  
@@ -387,12 +387,12 @@ L servo:R_Small R1114
 U 1 1 602AA485
 P 6550 2450
 F 0 "R1114" H 6609 2472 20  0000 L CNN
-F 1 "1k" H 6609 2429 20  0000 L CNN
+F 1 "10k" H 6609 2429 20  0000 L CNN
 F 2 "servo:R_0603_1608Metric" H 6550 2450 50  0001 C CNN
 F 3 "~" H 6550 2450 50  0001 C CNN
-F 4 "1 kOhms ±5% 0.1W, 1/10W Chip Resistor 0603 (1608 Metric) Moisture Resistant Thick Film " H 0   0   50  0001 C CNN "Description"
-F 5 "RC0603JR-071KL" H 0   0   50  0001 C CNN "PartNumber"
-F 6 "311-1.0KGRCT-ND" H 0   0   50  0001 C CNN "digikey"
+F 4 "10 kOhms ±5% 0.1W, 1/10W Chip Resistor 0603 (1608 Metric) Moisture Resistant Thick Film " H 0   0   50  0001 C CNN "Description"
+F 5 "RC0603JR-0710KL" H 0   0   50  0001 C CNN "PartNumber"
+F 6 "311-10KGRCT-ND" H 0   0   50  0001 C CNN "digikey"
 F 7 "0.01900" H 0   0   50  0001 C CNN "price@10"
 	1    6550 2450
 	-1   0    0    -1  
@@ -533,12 +533,12 @@ L servo:R_Small R1102
 U 1 1 634575FE
 P 4400 2450
 F 0 "R1102" H 4459 2472 20  0000 L CNN
-F 1 "1k" H 4459 2429 20  0000 L CNN
+F 1 "10k" H 4459 2429 20  0000 L CNN
 F 2 "servo:R_0603_1608Metric" H 4400 2450 50  0001 C CNN
 F 3 "~" H 4400 2450 50  0001 C CNN
-F 4 "1 kOhms ±5% 0.1W, 1/10W Chip Resistor 0603 (1608 Metric) Moisture Resistant Thick Film " H 0   0   50  0001 C CNN "Description"
-F 5 "RC0603JR-071KL" H 0   0   50  0001 C CNN "PartNumber"
-F 6 "311-1.0KGRCT-ND" H 0   0   50  0001 C CNN "digikey"
+F 4 "10 kOhms ±5% 0.1W, 1/10W Chip Resistor 0603 (1608 Metric) Moisture Resistant Thick Film " H 0   0   50  0001 C CNN "Description"
+F 5 "RC0603JR-0710KL" H 0   0   50  0001 C CNN "PartNumber"
+F 6 "311-10KGRCT-ND" H 0   0   50  0001 C CNN "digikey"
 F 7 "0.01900" H 0   0   50  0001 C CNN "price@10"
 	1    4400 2450
 	1    0    0    -1  
@@ -582,12 +582,12 @@ L servo:R_Small R1105
 U 1 1 63457622
 P 4650 2450
 F 0 "R1105" H 4709 2472 20  0000 L CNN
-F 1 "1k" H 4709 2429 20  0000 L CNN
+F 1 "10k" H 4709 2429 20  0000 L CNN
 F 2 "servo:R_0603_1608Metric" H 4650 2450 50  0001 C CNN
 F 3 "~" H 4650 2450 50  0001 C CNN
-F 4 "1 kOhms ±5% 0.1W, 1/10W Chip Resistor 0603 (1608 Metric) Moisture Resistant Thick Film " H 0   0   50  0001 C CNN "Description"
-F 5 "RC0603JR-071KL" H 0   0   50  0001 C CNN "PartNumber"
-F 6 "311-1.0KGRCT-ND" H 0   0   50  0001 C CNN "digikey"
+F 4 "10 kOhms ±5% 0.1W, 1/10W Chip Resistor 0603 (1608 Metric) Moisture Resistant Thick Film " H 0   0   50  0001 C CNN "Description"
+F 5 "RC0603JR-0710KL" H 0   0   50  0001 C CNN "PartNumber"
+F 6 "311-10KGRCT-ND" H 0   0   50  0001 C CNN "digikey"
 F 7 "0.01900" H 0   0   50  0001 C CNN "price@10"
 	1    4650 2450
 	1    0    0    -1  
@@ -615,7 +615,7 @@ Wire Wire Line
 	4100 3850 4100 4500
 Wire Wire Line
 	4100 4500 3600 4500
-Text Notes 2500 3800 0    20   ~ 0
+Text Notes 4000 3850 0    20   ~ 0
 optional one to hi \nor/and one to low
 Text Label 5200 3350 0    20   ~ 0
 QEP1_A_P_H
@@ -776,12 +776,12 @@ L servo:R_Small R1108
 U 1 1 634576AA
 P 4900 2450
 F 0 "R1108" H 4959 2472 20  0000 L CNN
-F 1 "1k" H 4959 2429 20  0000 L CNN
+F 1 "10k" H 4959 2429 20  0000 L CNN
 F 2 "servo:R_0603_1608Metric" H 4900 2450 50  0001 C CNN
 F 3 "~" H 4900 2450 50  0001 C CNN
-F 4 "1 kOhms ±5% 0.1W, 1/10W Chip Resistor 0603 (1608 Metric) Moisture Resistant Thick Film " H 0   0   50  0001 C CNN "Description"
-F 5 "RC0603JR-071KL" H 0   0   50  0001 C CNN "PartNumber"
-F 6 "311-1.0KGRCT-ND" H 0   0   50  0001 C CNN "digikey"
+F 4 "10 kOhms ±5% 0.1W, 1/10W Chip Resistor 0603 (1608 Metric) Moisture Resistant Thick Film " H 0   0   50  0001 C CNN "Description"
+F 5 "RC0603JR-0710KL" H 0   0   50  0001 C CNN "PartNumber"
+F 6 "311-10KGRCT-ND" H 0   0   50  0001 C CNN "digikey"
 F 7 "0.01900" H 0   0   50  0001 C CNN "price@10"
 	1    4900 2450
 	1    0    0    -1  
@@ -833,12 +833,12 @@ L servo:R_Small R1111
 U 1 1 634576D3
 P 5150 2450
 F 0 "R1111" H 5209 2472 20  0000 L CNN
-F 1 "1k" H 5209 2429 20  0000 L CNN
+F 1 "10k" H 5209 2429 20  0000 L CNN
 F 2 "servo:R_0603_1608Metric" H 5150 2450 50  0001 C CNN
 F 3 "~" H 5150 2450 50  0001 C CNN
-F 4 "1 kOhms ±5% 0.1W, 1/10W Chip Resistor 0603 (1608 Metric) Moisture Resistant Thick Film " H 0   0   50  0001 C CNN "Description"
-F 5 "RC0603JR-071KL" H 0   0   50  0001 C CNN "PartNumber"
-F 6 "311-1.0KGRCT-ND" H 0   0   50  0001 C CNN "digikey"
+F 4 "10 kOhms ±5% 0.1W, 1/10W Chip Resistor 0603 (1608 Metric) Moisture Resistant Thick Film " H 0   0   50  0001 C CNN "Description"
+F 5 "RC0603JR-0710KL" H 0   0   50  0001 C CNN "PartNumber"
+F 6 "311-10KGRCT-ND" H 0   0   50  0001 C CNN "digikey"
 F 7 "0.01900" H 0   0   50  0001 C CNN "price@10"
 	1    5150 2450
 	1    0    0    -1  
@@ -956,7 +956,7 @@ Wire Wire Line
 Wire Wire Line
 	5200 3850 5600 3850
 Wire Wire Line
-	3250 2500 3250 2550
+	3250 2500 3250 2750
 Wire Wire Line
 	3250 2200 3250 2150
 $Comp
@@ -977,7 +977,7 @@ F 7 "0.05800" H 0   0   50  0001 C CNN "price@10"
 	0    1    1    0   
 $EndComp
 Wire Wire Line
-	2950 2500 2950 2550
+	2950 2500 2950 2750
 Wire Wire Line
 	2950 2200 2950 2150
 $Comp
@@ -1270,12 +1270,10 @@ Wire Wire Line
 Wire Wire Line
 	2750 2150 2750 3400
 Wire Wire Line
-	2950 2550 3250 2550
+	2950 2750 3250 2750
 Wire Wire Line
 	4400 2750 3250 2750
-Wire Wire Line
-	3250 2750 3250 2550
-Connection ~ 3250 2550
+Connection ~ 3250 2750
 Wire Wire Line
 	7300 2750 8450 2750
 Wire Wire Line
@@ -1307,4 +1305,6 @@ Wire Wire Line
 	5850 2050 6550 2050
 Text Notes 3250 4650 0    20   ~ 0
 I've chossen so16w but the landpattern is compatible\n with soic16 also 'cause soic has more available \npieces and are cheaper
+Text Notes 5650 2400 0    20   ~ 0
+for final release, remove pull-up \nand pull-down from bus, and \nreplace 10k to 120 as the Z
 $EndSCHEMATC
