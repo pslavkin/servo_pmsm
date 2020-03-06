@@ -49,6 +49,7 @@ I'll let pins to aquire and filter it.
 - :heavy_check_mark:    ronting DONE!!! begin to improve nets..
 - :heavy_check_mark:    Gerbers READY.. leaving Moldova...
 - :heavy_check_mark:    Gerbers RELOADED from Bariloche
+- :heavy_check_mark:    Gerbers RELEAED ... cross fingers..
  
 
 ## Welcome back Moldova 3.0

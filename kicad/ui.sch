@@ -29,7 +29,7 @@ F 3 "" H 2500 1450 70  0000 C CNN
 	1    0    0    -1  
 $EndComp
 Text Notes 1350 1250 0    197  ~ 39
-Multipropouse\nLEDs
+Multipurpose\nLEDs
 Wire Wire Line
 	2150 2550 2350 2550
 $Comp
@@ -147,6 +147,7 @@ F 6 "PAM8301AAFDICT-ND " H 0   0   50  0001 C CNN "digikey"
 F 7 "0.46800" H 0   0   50  0001 C CNN "price@10"
 F 8 "1" H 0   0   50  0001 C CNN "bom_2"
 F 9 "1" H 0   0   50  0001 C CNN "bom_3"
+F 10 "0" H 0   0   50  0001 C CNN "bom_1"
 	1    8600 1800
 	1    0    0    -1  
 $EndComp
@@ -515,13 +516,13 @@ P 5150 2050
 F 0 "J1401" H 5200 2651 50  0000 C CNN
 F 1 "idc2x10" H 5200 2568 39  0000 C CNN
 F 2 "servo:idc2x10_smd" H 5150 2050 50  0001 C CNN
-F 3 "../doc/datasheets/NHD-4.3-480272FT-CTXL-T.pdf" H 5200 2550 50  0001 C CNN
+F 3 "../doc/datasheets/PAGE122 .100 SBH11 SERIES MALE BOX HDR ST RA SMT.pdf" H 5200 2550 50  0001 C CNN
 F 4 " Connector Header Surface Mount 20 position 0.100\" (2.54mm) " H 0   0   50  0001 C CNN "Description"
 F 5 "SBH11-NBPC-D10-SM-BK" H 0   0   50  0001 C CNN "PartNumber"
 F 6 "S9188-ND" H 0   0   50  0001 C CNN "digikey"
 F 7 "1.10200" H 0   0   50  0001 C CNN "price@10"
-F 8 "" H 0   0   50  0001 C CNN "bom_1"
-F 9 "" H 0   0   50  0001 C CNN "bom_2"
+F 8 "0" H 5800 3251 50  0001 C CNN "bom_1"
+F 9 "0" H 5900 3351 50  0001 C CNN "bom_2"
 F 10 "1" H 0   0   50  0001 C CNN "bom_3"
 	1    5150 2050
 	1    0    0    -1  
@@ -589,8 +590,8 @@ F 4 "Connector Header Through Hole 2 position 0.100\" (2.54mm) " H 0   0   50  0
 F 5 "0022232023 " H 0   0   50  0001 C CNN "PartNumber"
 F 6 " WM19468-ND " H 0   0   50  0001 C CNN "digikey"
 F 7 "0.23100" H 0   0   50  0001 C CNN "price@10"
-F 8 "" H 0   0   50  0001 C CNN "bom_1"
-F 9 "" H 0   0   50  0001 C CNN "bom_2"
+F 8 "0" H 0   0   50  0001 C CNN "bom_1"
+F 9 "0" H 0   0   50  0001 C CNN "bom_2"
 F 10 "1" H 0   0   50  0001 C CNN "bom_3"
 	1    9500 1850
 	1    0    0    1   
@@ -615,6 +616,9 @@ F 0 "L1401" H 5250 4138 50  0000 L CNN
 F 1 "NHD-4.3-480272FT-CTXL-T" H 5250 4055 39  0000 L CNN
 F 2 "servo:lcd" H 5150 4100 50  0001 C CNN
 F 3 "../doc/datasheets/NHD-4.3-480272FT-CTXL-T.pdf" H 5200 4600 50  0001 C CNN
+F 4 "0" H 0   0   50  0001 C CNN "bom_1"
+F 5 "0" H 0   0   50  0001 C CNN "bom_2"
+F 6 "1" H 0   0   50  0001 C CNN "bom_3"
 	1    5150 4100
 	1    0    0    -1  
 $EndComp

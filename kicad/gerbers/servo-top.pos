@@ -1,4 +1,4 @@
-### Module positions - created on Fri 06 Mar 2020 02:19:38 AM -03 ###
+### Module positions - created on Fri 06 Mar 2020 12:37:00 PM -03 ###
 ### Printed by Pcbnew version kicad 5.0.2+dfsg1-1
 ## Unit = mm, Angle = deg.
 ## Side : top
@@ -209,7 +209,7 @@ U1401     PAM8301                            SOT-23-6                           
 U1801     SI8661BD                           SOIC-16W_7.5x10.3mm_P1.27mm                        23.6122    47.0662  270.0000  top
 U1802     SI8661BD                           SOIC-16W_7.5x10.3mm_P1.27mm                        35.7886    47.0916  270.0000  top
 U1803     SN74LVC2G17DBVR                    SOT-23-6                                           20.5486    55.5244    0.0000  top
-U1804     SN74LVC2G17DBVR                    SOT-23-6                                           32.7010    55.0401    0.0000  top
+U1804     SN74LVC2G17DBVR                    SOT-23-6                                           25.7010    60.8401   90.0000  top
 U1904     SN75C1168DBR                       SOIC-16W_5.3x10.2mm_P1.27mm                        77.6982    23.5110  270.0000  top
 U1905     SN75C1168DBR                       SOIC-16W_5.3x10.2mm_P1.27mm                        90.7542    23.4950  270.0000  top
 Y401      osc_25Mhz                          Crystal_SMD_2520-4Pin_2.5x2.0mm                   130.9010    40.2401  270.0000  top

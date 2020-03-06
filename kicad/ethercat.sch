@@ -269,6 +269,7 @@ F 6 "296-47256-1-ND" H 0   0   50  0001 C CNN "digikey"
 F 7 "2.37700" H 0   0   50  0001 C CNN "price@10"
 F 8 "1" H 0   0   50  0001 C CNN "bom_2"
 F 9 "1" H 0   0   50  0001 C CNN "bom_3"
+F 10 "0" H 0   0   50  0001 C CNN "bom_1"
 	1    6650 2850
 	1    0    0    -1  
 $EndComp
@@ -357,7 +358,7 @@ F 5 "EEPROM Memory IC 16Kb (2K x 8) I²C 400kHz 900ns 8-SOIC" H 0   0   50  0001
 F 6 "CAT24C16WI-GT3" H 0   0   50  0001 C CNN "PartNumber"
 F 7 "CAT24C16WI-GT3CT-ND " H 0   0   50  0001 C CNN "digikey"
 F 8 "0.16300" H 0   0   50  0001 C CNN "price@10"
-F 9 "" H 0   0   50  0001 C CNN "bom_1"
+F 9 "0" H 0   0   50  0001 C CNN "bom_1"
 F 10 "1" H 0   0   50  0001 C CNN "bom_2"
 F 11 "1" H 0   0   50  0001 C CNN "bom_3"
 	1    4200 10200
@@ -1336,6 +1337,7 @@ F 6 "296-47256-1-ND" H 0   0   50  0001 C CNN "digikey"
 F 7 "2.37700" H 0   0   50  0001 C CNN "price@10"
 F 8 "1" H 0   0   50  0001 C CNN "bom_2"
 F 9 "1" H 0   0   50  0001 C CNN "bom_3"
+F 10 "0" H 0   0   50  0001 C CNN "bom_1"
 	1    6800 7000
 	1    0    0    -1  
 $EndComp
@@ -2164,8 +2166,9 @@ F 4 "2 Port RJ45 Magjack Connector Through Hole 10/100 Base-T, AutoMDIX " H 0   
 F 5 "0845-2G1T-H5 " H 0   0   50  0001 C CNN "PartNumber"
 F 6 "380-1123-ND" H 0   0   50  0001 C CNN "digikey"
 F 7 "7.17400" H 0   0   50  0001 C CNN "price@10"
-F 8 "" H 0   0   50  0001 C CNN "bom_2"
+F 8 "0" H 0   0   50  0001 C CNN "bom_2"
 F 9 "1" H 0   0   50  0001 C CNN "bom_3"
+F 10 "0" H 0   0   50  0001 C CNN "bom_1"
 	1    14800 4900
 	1    0    0    -1  
 $EndComp
@@ -2651,8 +2654,8 @@ F 4 "jumper smd bridge using tin" H 4950 -2000 50  0001 C CNN "Description"
 F 5 "-" H 4950 -2000 50  0001 C CNN "PartNumber"
 F 6 "-" H 4950 -2000 50  0001 C CNN "digikey"
 F 7 "0" H 4950 -2000 50  0001 C CNN "price@10"
-F 8 "" H 0   0   50  0001 C CNN "bom_1"
-F 9 "" H 0   0   50  0001 C CNN "bom_2"
+F 8 "0" H 0   0   50  0001 C CNN "bom_1"
+F 9 "0" H 0   0   50  0001 C CNN "bom_2"
 	1    8250 3600
 	0    1    1    0   
 $EndComp
@@ -2674,8 +2677,8 @@ F 4 "jumper smd bridge using tin" H 5100 2200 50  0001 C CNN "Description"
 F 5 "-" H 5100 2200 50  0001 C CNN "PartNumber"
 F 6 "-" H 5100 2200 50  0001 C CNN "digikey"
 F 7 "0" H 5100 2200 50  0001 C CNN "price@10"
-F 8 "" H 0   0   50  0001 C CNN "bom_1"
-F 9 "" H 0   0   50  0001 C CNN "bom_2"
+F 8 "0" H 0   0   50  0001 C CNN "bom_1"
+F 9 "0" H 0   0   50  0001 C CNN "bom_2"
 	1    8400 7800
 	0    1    1    0   
 $EndComp
@@ -2697,8 +2700,8 @@ F 4 "jumper smd bridge using tin" H 5400 1900 50  0001 C CNN "Description"
 F 5 "-" H 5400 1900 50  0001 C CNN "PartNumber"
 F 6 "-" H 5400 1900 50  0001 C CNN "digikey"
 F 7 "0" H 5400 1900 50  0001 C CNN "price@10"
-F 8 "" H 0   0   50  0001 C CNN "bom_1"
-F 9 "" H 0   0   50  0001 C CNN "bom_2"
+F 8 "0" H 0   0   50  0001 C CNN "bom_1"
+F 9 "0" H 0   0   50  0001 C CNN "bom_2"
 	1    8700 7500
 	-1   0    0    1   
 $EndComp
@@ -2719,8 +2722,8 @@ F 4 "jumper smd bridge using tin" H 5250 -2250 50  0001 C CNN "Description"
 F 5 "-" H 5250 -2250 50  0001 C CNN "PartNumber"
 F 6 "-" H 5250 -2250 50  0001 C CNN "digikey"
 F 7 "0" H 5250 -2250 50  0001 C CNN "price@10"
-F 8 "" H 0   0   50  0001 C CNN "bom_1"
-F 9 "" H 0   0   50  0001 C CNN "bom_2"
+F 8 "0" H 0   0   50  0001 C CNN "bom_1"
+F 9 "0" H 0   0   50  0001 C CNN "bom_2"
 	1    8550 3350
 	-1   0    0    1   
 $EndComp
@@ -2741,8 +2744,8 @@ F 4 "jumper smd bridge using tin" H 7150 -2350 50  0001 C CNN "Description"
 F 5 "-" H 7150 -2350 50  0001 C CNN "PartNumber"
 F 6 "-" H 7150 -2350 50  0001 C CNN "digikey"
 F 7 "0" H 7150 -2350 50  0001 C CNN "price@10"
-F 8 "" H 0   0   50  0001 C CNN "bom_1"
-F 9 "" H 0   0   50  0001 C CNN "bom_2"
+F 8 "0" H 0   0   50  0001 C CNN "bom_1"
+F 9 "0" H 0   0   50  0001 C CNN "bom_2"
 	1    10450 3250
 	-1   0    0    1   
 $EndComp
@@ -2762,8 +2765,8 @@ F 4 "jumper smd bridge using tin" H 7300 1800 50  0001 C CNN "Description"
 F 5 "-" H 7300 1800 50  0001 C CNN "PartNumber"
 F 6 "-" H 7300 1800 50  0001 C CNN "digikey"
 F 7 "0" H 7300 1800 50  0001 C CNN "price@10"
-F 8 "" H 0   0   50  0001 C CNN "bom_1"
-F 9 "" H 0   0   50  0001 C CNN "bom_2"
+F 8 "0" H 0   0   50  0001 C CNN "bom_1"
+F 9 "0" H 0   0   50  0001 C CNN "bom_2"
 	1    10600 7400
 	-1   0    0    1   
 $EndComp

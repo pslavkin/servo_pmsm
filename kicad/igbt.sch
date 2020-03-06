@@ -43,7 +43,7 @@ F 4 "General Purpose Digital Isolator 5000Vrms 6 Channel 150Mbps 35kV/µs CMTI 1
 F 5 "SI8660BD-B-ISR" H 0   0   50  0001 C CNN "PartNumber"
 F 6 " 336-4786-1-ND" H 0   0   50  0001 C CNN "digikey"
 F 7 "2.75000" H 0   0   50  0001 C CNN "price@10"
-F 8 "" H 0   0   50  0001 C CNN "bom_1"
+F 8 "0" H 0   0   50  0001 C CNN "bom_1"
 F 9 "1" H 0   0   50  0001 C CNN "bom_2"
 F 10 "1" H 0   0   50  0001 C CNN "bom_3"
 	1    3050 2300
@@ -292,7 +292,7 @@ F 4 "General Purpose Digital Isolator 5000Vrms 6 Channel 150Mbps 35kV/µs CMTI 1
 F 5 "SI8662BD-B-IS" H 0   0   50  0001 C CNN "PartNumber"
 F 6 "336-2125-5-ND " H 0   0   50  0001 C CNN "digikey"
 F 7 "2.75000" H 0   0   50  0001 C CNN "price@10"
-F 8 "" H 0   0   50  0001 C CNN "bom_1"
+F 8 "0" H 0   0   50  0001 C CNN "bom_1"
 F 9 "1" H 0   0   50  0001 C CNN "bom_2"
 F 10 "1" H 0   0   50  0001 C CNN "bom_3"
 	1    3050 3650
@@ -310,7 +310,7 @@ F 4 "Buffer, Non-Inverting 2 Element 1 Bit per Element Push-Pull Output SOT-23-6
 F 5 "SN74LVC2G17DBVR" H 0   0   50  0001 C CNN "PartNumber"
 F 6 " 296-SN74LVC2G17DBVRCT-ND " H 0   0   50  0001 C CNN "digikey"
 F 7 "0.30200" H 0   0   50  0001 C CNN "price@10"
-F 8 "" H 0   0   50  0001 C CNN "bom_1"
+F 8 "0" H 0   0   50  0001 C CNN "bom_1"
 F 9 "1" H 0   0   50  0001 C CNN "bom_2"
 F 10 "1" H 0   0   50  0001 C CNN "bom_3"
 	1    4950 3850
@@ -328,7 +328,7 @@ F 4 "Buffer, Non-Inverting 2 Element 1 Bit per Element Push-Pull Output SOT-23-6
 F 5 "SN74LVC2G17DBVR" H 0   0   50  0001 C CNN "PartNumber"
 F 6 " 296-SN74LVC2G17DBVRCT-ND " H 0   0   50  0001 C CNN "digikey"
 F 7 "0.30200" H 0   0   50  0001 C CNN "price@10"
-F 8 "" H 0   0   50  0001 C CNN "bom_1"
+F 8 "0" H 0   0   50  0001 C CNN "bom_1"
 F 9 "1" H 0   0   50  0001 C CNN "bom_2"
 F 10 "1" H 0   0   50  0001 C CNN "bom_3"
 	1    4950 3400
@@ -346,7 +346,7 @@ F 4 "Buffer, Non-Inverting 2 Element 1 Bit per Element Push-Pull Output SOT-23-6
 F 5 "SN74LVC2G17DBVR" H 0   0   50  0001 C CNN "PartNumber"
 F 6 " 296-SN74LVC2G17DBVRCT-ND " H 0   0   50  0001 C CNN "digikey"
 F 7 "0.30200" H 0   0   50  0001 C CNN "price@10"
-F 8 "" H 0   0   50  0001 C CNN "bom_1"
+F 8 "0" H 0   0   50  0001 C CNN "bom_1"
 F 9 "1" H 0   0   50  0001 C CNN "bom_2"
 F 10 "1" H 0   0   50  0001 C CNN "bom_3"
 	1    4950 2950
@@ -364,7 +364,7 @@ F 4 "Buffer, Non-Inverting 2 Element 1 Bit per Element Push-Pull Output SOT-23-6
 F 5 "SN74LVC2G17DBVR" H 0   0   50  0001 C CNN "PartNumber"
 F 6 " 296-SN74LVC2G17DBVRCT-ND " H 0   0   50  0001 C CNN "digikey"
 F 7 "0.30200" H 0   0   50  0001 C CNN "price@10"
-F 8 "" H 0   0   50  0001 C CNN "bom_1"
+F 8 "0" H 0   0   50  0001 C CNN "bom_1"
 F 9 "1" H 0   0   50  0001 C CNN "bom_2"
 F 10 "1" H 0   0   50  0001 C CNN "bom_3"
 	1    4950 2500
@@ -772,7 +772,7 @@ F 4 "General Purpose Digital Isolator 5000Vrms 6 Channel 150Mbps 35kV/µs CMTI 1
 F 5 "SI8660BD-B-ISR" H 0   0   50  0001 C CNN "PartNumber"
 F 6 " 336-4786-1-ND" H 0   0   50  0001 C CNN "digikey"
 F 7 "2.75000" H 0   0   50  0001 C CNN "price@10"
-F 8 "" H 0   0   50  0001 C CNN "bom_1"
+F 8 "0" H 0   0   50  0001 C CNN "bom_1"
 F 9 "1" H 0   0   50  0001 C CNN "bom_2"
 F 10 "1" H 0   0   50  0001 C CNN "bom_3"
 	1    13450 5950
@@ -1040,7 +1040,7 @@ F 4 "General Purpose Digital Isolator 5000Vrms 6 Channel 150Mbps 35kV/µs CMTI 1
 F 5 "SI8662BD-B-IS" H 0   0   50  0001 C CNN "PartNumber"
 F 6 "336-2125-5-ND " H 0   0   50  0001 C CNN "digikey"
 F 7 "2.75000" H 0   0   50  0001 C CNN "price@10"
-F 8 "" H 0   0   50  0001 C CNN "bom_1"
+F 8 "0" H 0   0   50  0001 C CNN "bom_1"
 F 9 "1" H 0   0   50  0001 C CNN "bom_2"
 F 10 "1" H 0   0   50  0001 C CNN "bom_3"
 	1    13450 7300
@@ -1058,7 +1058,7 @@ F 4 "Buffer, Non-Inverting 2 Element 1 Bit per Element Push-Pull Output SOT-23-6
 F 5 "SN74LVC2G17DBVR" H 0   0   50  0001 C CNN "PartNumber"
 F 6 " 296-SN74LVC2G17DBVRCT-ND " H 0   0   50  0001 C CNN "digikey"
 F 7 "0.30200" H 0   0   50  0001 C CNN "price@10"
-F 8 "" H 0   0   50  0001 C CNN "bom_1"
+F 8 "0" H 0   0   50  0001 C CNN "bom_1"
 F 9 "1" H 0   0   50  0001 C CNN "bom_2"
 F 10 "1" H 0   0   50  0001 C CNN "bom_3"
 	1    11550 7500
@@ -1076,7 +1076,7 @@ F 4 "Buffer, Non-Inverting 2 Element 1 Bit per Element Push-Pull Output SOT-23-6
 F 5 "SN74LVC2G17DBVR" H 0   0   50  0001 C CNN "PartNumber"
 F 6 " 296-SN74LVC2G17DBVRCT-ND " H 0   0   50  0001 C CNN "digikey"
 F 7 "0.30200" H 0   0   50  0001 C CNN "price@10"
-F 8 "" H 0   0   50  0001 C CNN "bom_1"
+F 8 "0" H 0   0   50  0001 C CNN "bom_1"
 F 9 "1" H 0   0   50  0001 C CNN "bom_2"
 F 10 "1" H 0   0   50  0001 C CNN "bom_3"
 	1    11550 7050
@@ -1094,7 +1094,7 @@ F 4 "Buffer, Non-Inverting 2 Element 1 Bit per Element Push-Pull Output SOT-23-6
 F 5 "SN74LVC2G17DBVR" H 0   0   50  0001 C CNN "PartNumber"
 F 6 " 296-SN74LVC2G17DBVRCT-ND " H 0   0   50  0001 C CNN "digikey"
 F 7 "0.30200" H 0   0   50  0001 C CNN "price@10"
-F 8 "" H 0   0   50  0001 C CNN "bom_1"
+F 8 "0" H 0   0   50  0001 C CNN "bom_1"
 F 9 "1" H 0   0   50  0001 C CNN "bom_2"
 F 10 "1" H 0   0   50  0001 C CNN "bom_3"
 	1    11550 6600
@@ -1112,7 +1112,7 @@ F 4 "Buffer, Non-Inverting 2 Element 1 Bit per Element Push-Pull Output SOT-23-6
 F 5 "SN74LVC2G17DBVR" H 0   0   50  0001 C CNN "PartNumber"
 F 6 " 296-SN74LVC2G17DBVRCT-ND " H 0   0   50  0001 C CNN "digikey"
 F 7 "0.30200" H 0   0   50  0001 C CNN "price@10"
-F 8 "" H 0   0   50  0001 C CNN "bom_1"
+F 8 "0" H 0   0   50  0001 C CNN "bom_1"
 F 9 "1" H 0   0   50  0001 C CNN "bom_2"
 F 10 "1" H 0   0   50  0001 C CNN "bom_3"
 	1    11550 6150
@@ -1130,7 +1130,7 @@ F 4 "Buffer, Non-Inverting 2 Element 1 Bit per Element Push-Pull Output SOT-23-6
 F 5 "SN74LVC2G17DBVR" H 0   0   50  0001 C CNN "PartNumber"
 F 6 " 296-SN74LVC2G17DBVRCT-ND " H 0   0   50  0001 C CNN "digikey"
 F 7 "0.30200" H 0   0   50  0001 C CNN "price@10"
-F 8 "" H 0   0   50  0001 C CNN "bom_1"
+F 8 "0" H 0   0   50  0001 C CNN "bom_1"
 F 9 "1" H 0   0   50  0001 C CNN "bom_2"
 F 10 "1" H 0   0   50  0001 C CNN "bom_3"
 	1    11550 5700
@@ -1931,7 +1931,7 @@ F 4 "Buffer, Non-Inverting 2 Element 1 Bit per Element Push-Pull Output SOT-23-6
 F 5 "SN74LVC2G17DBVR" H 0   0   50  0001 C CNN "PartNumber"
 F 6 " 296-SN74LVC2G17DBVRCT-ND " H 0   0   50  0001 C CNN "digikey"
 F 7 "0.30200" H 0   0   50  0001 C CNN "price@10"
-F 8 "" H 0   0   50  0001 C CNN "bom_1"
+F 8 "0" H 0   0   50  0001 C CNN "bom_1"
 F 9 "1" H 0   0   50  0001 C CNN "bom_2"
 F 10 "1" H 0   0   50  0001 C CNN "bom_3"
 	1    4950 2050

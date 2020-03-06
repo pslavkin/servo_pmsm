@@ -186,6 +186,8 @@ F 5 "LXS 6-NPS" H 0   0   50  0001 C CNN "PartNumber"
 F 6 "398-1212-ND" H 0   0   50  0001 C CNN "digikey"
 F 7 "12.50000" H 0   0   50  0001 C CNN "price@10"
 F 8 "1" H 0   0   50  0001 C CNN "bom_3"
+F 9 "0" H 0   0   50  0001 C CNN "bom_1"
+F 10 "0" H 0   0   50  0001 C CNN "bom_2"
 	1    4850 3650
 	1    0    0    -1  
 $EndComp
@@ -367,6 +369,8 @@ F 5 "LXS 6-NPS" H 0   0   50  0001 C CNN "PartNumber"
 F 6 "398-1212-ND" H 0   0   50  0001 C CNN "digikey"
 F 7 "12.50000" H 0   0   50  0001 C CNN "price@10"
 F 8 "1" H 0   0   50  0001 C CNN "bom_3"
+F 9 "0" H 0   0   50  0001 C CNN "bom_1"
+F 10 "0" H 0   0   50  0001 C CNN "bom_2"
 	1    4650 5600
 	1    0    0    -1  
 $EndComp
@@ -683,6 +687,8 @@ F 5 "LXS 6-NPS" H 0   0   50  0001 C CNN "PartNumber"
 F 6 "398-1212-ND" H 0   0   50  0001 C CNN "digikey"
 F 7 "12.50000" H 0   0   50  0001 C CNN "price@10"
 F 8 "1" H 0   0   50  0001 C CNN "bom_3"
+F 9 "0" H 0   0   50  0001 C CNN "bom_1"
+F 10 "0" H 0   0   50  0001 C CNN "bom_2"
 	1    7850 3650
 	-1   0    0    -1  
 $EndComp
@@ -849,6 +855,8 @@ F 5 "LXS 6-NPS" H 0   0   50  0001 C CNN "PartNumber"
 F 6 "398-1212-ND" H 0   0   50  0001 C CNN "digikey"
 F 7 "12.50000" H 0   0   50  0001 C CNN "price@10"
 F 8 "1" H 0   0   50  0001 C CNN "bom_3"
+F 9 "0" H 0   0   50  0001 C CNN "bom_1"
+F 10 "0" H 0   0   50  0001 C CNN "bom_2"
 	1    7850 5600
 	-1   0    0    -1  
 $EndComp
@@ -1015,6 +1023,8 @@ F 5 "LXS 6-NPS" H 0   0   50  0001 C CNN "PartNumber"
 F 6 "398-1212-ND" H 0   0   50  0001 C CNN "digikey"
 F 7 "12.50000" H 0   0   50  0001 C CNN "price@10"
 F 8 "1" H 0   0   50  0001 C CNN "bom_3"
+F 9 "0" H 0   0   50  0001 C CNN "bom_1"
+F 10 "0" H 0   0   50  0001 C CNN "bom_2"
 	1    7850 8200
 	-1   0    0    -1  
 $EndComp
@@ -1042,6 +1052,8 @@ F 5 "1762376 " H 0   0   50  0001 C CNN "PartNumber"
 F 6 " 277-1400-ND " H 0   0   50  0001 C CNN "digikey"
 F 7 "3.95500" H 0   0   50  0001 C CNN "price@10"
 F 8 "1" H 0   0   50  0001 C CNN "bom_3"
+F 9 "0" H 0   0   50  0001 C CNN "bom_1"
+F 10 "0" H 0   0   50  0001 C CNN "bom_2"
 	1    5450 3700
 	0    -1   -1   0   
 $EndComp
@@ -1058,6 +1070,8 @@ F 5 "1762376 " H 0   0   50  0001 C CNN "PartNumber"
 F 6 " 277-1400-ND " H 0   0   50  0001 C CNN "digikey"
 F 7 "3.95500" H 0   0   50  0001 C CNN "price@10"
 F 8 "1" H 0   0   50  0001 C CNN "bom_3"
+F 9 "0" H 0   0   50  0001 C CNN "bom_1"
+F 10 "0" H 0   0   50  0001 C CNN "bom_2"
 	1    7250 3700
 	0    1    -1   0   
 $EndComp
@@ -1074,6 +1088,8 @@ F 5 "1762376 " H 0   0   50  0001 C CNN "PartNumber"
 F 6 " 277-1400-ND " H 0   0   50  0001 C CNN "digikey"
 F 7 "3.95500" H 0   0   50  0001 C CNN "price@10"
 F 8 "1" H 0   0   50  0001 C CNN "bom_3"
+F 9 "0" H 0   0   50  0001 C CNN "bom_1"
+F 10 "0" H 0   0   50  0001 C CNN "bom_2"
 	1    5250 5650
 	0    -1   -1   0   
 $EndComp
@@ -1090,6 +1106,8 @@ F 5 "1762376 " H 0   0   50  0001 C CNN "PartNumber"
 F 6 " 277-1400-ND " H 0   0   50  0001 C CNN "digikey"
 F 7 "3.95500" H 0   0   50  0001 C CNN "price@10"
 F 8 "1" H 0   0   50  0001 C CNN "bom_3"
+F 9 "0" H 0   0   50  0001 C CNN "bom_1"
+F 10 "0" H 0   0   50  0001 C CNN "bom_2"
 	1    7250 5650
 	0    1    -1   0   
 $EndComp
@@ -1106,6 +1124,8 @@ F 5 "1762376 " H 0   0   50  0001 C CNN "PartNumber"
 F 6 " 277-1400-ND " H 0   0   50  0001 C CNN "digikey"
 F 7 "3.95500" H 0   0   50  0001 C CNN "price@10"
 F 8 "1" H 0   0   50  0001 C CNN "bom_3"
+F 9 "0" H 0   0   50  0001 C CNN "bom_1"
+F 10 "0" H 0   0   50  0001 C CNN "bom_2"
 	1    5350 8250
 	0    -1   -1   0   
 $EndComp
@@ -1122,6 +1142,8 @@ F 5 "1762376 " H 0   0   50  0001 C CNN "PartNumber"
 F 6 " 277-1400-ND " H 0   0   50  0001 C CNN "digikey"
 F 7 "3.95500" H 0   0   50  0001 C CNN "price@10"
 F 8 "1" H 0   0   50  0001 C CNN "bom_3"
+F 9 "0" H 0   0   50  0001 C CNN "bom_1"
+F 10 "0" H 0   0   50  0001 C CNN "bom_2"
 	1    7250 8250
 	0    1    -1   0   
 $EndComp
@@ -1150,6 +1172,8 @@ F 5 "LXS 6-NPS" H 0   0   50  0001 C CNN "PartNumber"
 F 6 "398-1212-ND" H 0   0   50  0001 C CNN "digikey"
 F 7 "12.50000" H 0   0   50  0001 C CNN "price@10"
 F 8 "1" H 0   0   50  0001 C CNN "bom_3"
+F 9 "0" H 0   0   50  0001 C CNN "bom_1"
+F 10 "0" H 0   0   50  0001 C CNN "bom_2"
 	1    4750 8200
 	1    0    0    -1  
 $EndComp

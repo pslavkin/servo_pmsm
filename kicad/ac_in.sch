@@ -218,7 +218,7 @@ F 4 "Linear Regulator Replacement DC DC Converter 1 Output 3.3V 2A 4.75V - 32V I
 F 5 "R-78B3.3-2.0 " H 0   0   50  0001 C CNN "PartNumber"
 F 6 "945-3040-ND" H 0   0   50  0001 C CNN "digikey"
 F 7 "9.71800" H 0   0   50  0001 C CNN "price@10"
-F 8 "" H 0   0   50  0001 C CNN "bom_1"
+F 8 "0" H 0   0   50  0001 C CNN "bom_1"
 F 9 "1" H 0   0   50  0001 C CNN "bom_2"
 F 10 "1" H 0   0   50  0001 C CNN "bom_3"
 	1    5200 5650
@@ -244,7 +244,7 @@ F 4 "Linear Voltage Regulator IC Positive Fixed 1 Output 1A SOT-223 " H 600 0   
 F 5 "AP2114H-1.2TRG1" H 600 0   50  0001 C CNN "PartNumber"
 F 6 "AP2114H-1.2TRG1DICT-ND" H 600 0   50  0001 C CNN "digikey"
 F 7 "0.29600" H 600 0   50  0001 C CNN "price@10"
-F 8 "" H 0   0   50  0001 C CNN "bom_1"
+F 8 "0" H 0   0   50  0001 C CNN "bom_1"
 F 9 "1" H 0   0   50  0001 C CNN "bom_2"
 F 10 "1" H 0   0   50  0001 C CNN "bom_3"
 	1    7900 5750
@@ -363,8 +363,8 @@ F 4 "jumper smd bridge using tin" H 0   0   50  0001 C CNN "Description"
 F 5 "-" H 0   0   50  0001 C CNN "PartNumber"
 F 6 "-" H 0   0   50  0001 C CNN "digikey"
 F 7 "0" H 0   0   50  0001 C CNN "price@10"
-F 8 "" H 0   0   50  0001 C CNN "bom_1"
-F 9 "" H 0   0   50  0001 C CNN "bom_2"
+F 8 "0" H 0   0   50  0001 C CNN "bom_1"
+F 9 "0" H 0   0   50  0001 C CNN "bom_2"
 	1    3300 5600
 	1    0    0    -1  
 $EndComp
@@ -501,6 +501,8 @@ F 5 "1736713" H 0   0   50  0001 C CNN "PartNumber"
 F 6 "277-1401-ND " H 0   0   50  0001 C CNN "digikey"
 F 7 "5.37000" H 0   0   50  0001 C CNN "price@10"
 F 8 "1" H 0   0   50  0001 C CNN "bom_3"
+F 9 "0" H 0   0   50  0001 C CNN "bom_1"
+F 10 "0" H 0   0   50  0001 C CNN "bom_2"
 	1    8650 3400
 	-1   0    0    -1  
 $EndComp
@@ -516,8 +518,8 @@ F 4 "Enclosed AC DC Converter 1 Output 5V 2A 85 ~ 305 VAC, 120 ~ 430 VDC Input "
 F 5 "RM-10-5 " H 0   0   50  0001 C CNN "PartNumber"
 F 6 "1866-3032-ND " H 0   0   50  0001 C CNN "digikey"
 F 7 "8.89300" H 0   0   50  0001 C CNN "price@10"
-F 8 "" H 0   0   50  0001 C CNN "bom_1"
-F 9 "" H 0   0   50  0001 C CNN "bom_2"
+F 8 "0" H 0   0   50  0001 C CNN "bom_1"
+F 9 "0" H 0   0   50  0001 C CNN "bom_2"
 F 10 "1" H 0   0   50  0001 C CNN "bom_3"
 	1    2200 6000
 	1    0    0    -1  
@@ -555,8 +557,8 @@ F 4 "Enclosed AC DC Converter 1 Output 5V 2A 85 ~ 305 VAC, 120 ~ 430 VDC Input "
 F 5 "RM-10-5 " H 0   0   50  0001 C CNN "PartNumber"
 F 6 "1866-3032-ND " H 0   0   50  0001 C CNN "digikey"
 F 7 "8.89300" H 0   0   50  0001 C CNN "price@10"
-F 8 "" H 0   0   50  0001 C CNN "bom_1"
-F 9 "" H 0   0   50  0001 C CNN "bom_2"
+F 8 "0" H 0   0   50  0001 C CNN "bom_1"
+F 9 "0" H 0   0   50  0001 C CNN "bom_2"
 F 10 "1" H 0   0   50  0001 C CNN "bom_3"
 	1    11450 5950
 	1    0    0    -1  
@@ -848,8 +850,8 @@ F 4 "jumper smd bridge using tin" H 0   0   50  0001 C CNN "Description"
 F 5 "-" H 0   0   50  0001 C CNN "PartNumber"
 F 6 "-" H 0   0   50  0001 C CNN "digikey"
 F 7 "0" H 0   0   50  0001 C CNN "price@10"
-F 8 "" H 0   0   50  0001 C CNN "bom_1"
-F 9 "" H 0   0   50  0001 C CNN "bom_2"
+F 8 "0" H 0   0   50  0001 C CNN "bom_1"
+F 9 "0" H 0   0   50  0001 C CNN "bom_2"
 	1    14300 8100
 	1    0    0    -1  
 $EndComp
@@ -918,8 +920,8 @@ F 4 "jumper smd bridge using tin" H 0   0   50  0001 C CNN "Description"
 F 5 "-" H 0   0   50  0001 C CNN "PartNumber"
 F 6 "-" H 0   0   50  0001 C CNN "digikey"
 F 7 "0" H 0   0   50  0001 C CNN "price@10"
-F 8 "" H 0   0   50  0001 C CNN "bom_1"
-F 9 "" H 0   0   50  0001 C CNN "bom_2"
+F 8 "0" H 0   0   50  0001 C CNN "bom_1"
+F 9 "0" H 0   0   50  0001 C CNN "bom_2"
 	1    14300 7700
 	1    0    0    -1  
 $EndComp
@@ -1304,8 +1306,8 @@ F 4 "jumper smd bridge using tin" H 11400 800 50  0001 C CNN "Description"
 F 5 "-" H 11400 800 50  0001 C CNN "PartNumber"
 F 6 "-" H 11400 800 50  0001 C CNN "digikey"
 F 7 "0" H 11400 800 50  0001 C CNN "price@10"
-F 8 "" H 0   0   50  0001 C CNN "bom_1"
-F 9 "" H 0   0   50  0001 C CNN "bom_2"
+F 8 "0" H 0   0   50  0001 C CNN "bom_1"
+F 9 "0" H 0   0   50  0001 C CNN "bom_2"
 	1    14700 6400
 	1    0    0    -1  
 $EndComp
@@ -1326,8 +1328,8 @@ F 4 "jumper smd bridge using tin" H 11400 1200 50  0001 C CNN "Description"
 F 5 "-" H 11400 1200 50  0001 C CNN "PartNumber"
 F 6 "-" H 11400 1200 50  0001 C CNN "digikey"
 F 7 "0" H 11400 1200 50  0001 C CNN "price@10"
-F 8 "" H 0   0   50  0001 C CNN "bom_1"
-F 9 "" H 0   0   50  0001 C CNN "bom_2"
+F 8 "0" H 0   0   50  0001 C CNN "bom_1"
+F 9 "0" H 0   0   50  0001 C CNN "bom_2"
 	1    14700 6800
 	1    0    0    -1  
 $EndComp
@@ -1354,8 +1356,8 @@ F 4 "jumper smd bridge using tin" H 10650 3300 50  0001 C CNN "Description"
 F 5 "-" H 10650 3300 50  0001 C CNN "PartNumber"
 F 6 "-" H 10650 3300 50  0001 C CNN "digikey"
 F 7 "0" H 10650 3300 50  0001 C CNN "price@10"
-F 8 "" H 0   0   50  0001 C CNN "bom_1"
-F 9 "" H 0   0   50  0001 C CNN "bom_2"
+F 8 "0" H 0   0   50  0001 C CNN "bom_1"
+F 9 "0" H 0   0   50  0001 C CNN "bom_2"
 	1    13950 8900
 	1    0    0    -1  
 $EndComp
@@ -1371,8 +1373,8 @@ F 4 "jumper smd bridge using tin" H 6250 -2250 50  0001 C CNN "Description"
 F 5 "-" H 6250 -2250 50  0001 C CNN "PartNumber"
 F 6 "-" H 6250 -2250 50  0001 C CNN "digikey"
 F 7 "0" H 6250 -2250 50  0001 C CNN "price@10"
-F 8 "" H 0   0   50  0001 C CNN "bom_1"
-F 9 "" H 0   0   50  0001 C CNN "bom_2"
+F 8 "0" H 0   0   50  0001 C CNN "bom_1"
+F 9 "0" H 0   0   50  0001 C CNN "bom_2"
 	1    9550 3350
 	0    1    1    0   
 $EndComp
@@ -1396,8 +1398,8 @@ AR Path="/5DEE980E/5E699655" Ref="R?"  Part="1"
 AR Path="/5E2F3BE3/5E699655" Ref="R?"  Part="1" 
 AR Path="/605BEC04/5E699655" Ref="R?"  Part="1" 
 AR Path="/5DE49152/5E699655" Ref="R?"  Part="1" 
-AR Path="/5DD76B18/5E699655" Ref="R?"  Part="1" 
-F 0 "R?" H 9450 3965 20  0000 C CNN
+AR Path="/5DD76B18/5E699655" Ref="R708"  Part="1" 
+F 0 "R708" H 9450 3965 20  0000 C CNN
 F 1 "0" H 9450 3922 20  0000 C CNN
 F 2 "servo:R_1206_3216Metric_Pad1.42x1.75mm_HandSolder" H 8950 3750 60  0001 C CNN
 F 3 "" H 9050 3850 60  0001 C CNN
@@ -1414,10 +1416,10 @@ $EndComp
 Wire Wire Line
 	9200 3850 9250 3850
 $Comp
-L servo:jumper JP?
+L servo:jumper JP708
 U 1 1 5E699663
 P 9100 3850
-F 0 "JP?" H 9100 3963 20  0000 C CNN
+F 0 "JP708" H 9100 3963 20  0000 C CNN
 F 1 "jumper" H 9100 3920 20  0000 C CNN
 F 2 "servo:SolderJumper-2_P1.3mm_Open_RoundedPad1.0x1.5mm" H 9000 3830 50  0001 C CNN
 F 3 "~" H 9100 3930 50  0001 C CNN
@@ -1425,8 +1427,8 @@ F 4 "jumper smd bridge using tin" H 5800 -1750 50  0001 C CNN "Description"
 F 5 "-" H 5800 -1750 50  0001 C CNN "PartNumber"
 F 6 "-" H 5800 -1750 50  0001 C CNN "digikey"
 F 7 "0" H 5800 -1750 50  0001 C CNN "price@10"
-F 8 "" H -4850 -5050 50  0001 C CNN "bom_1"
-F 9 "" H -4850 -5050 50  0001 C CNN "bom_2"
+F 8 "0" H -4850 -5050 50  0001 C CNN "bom_1"
+F 9 "0" H -4850 -5050 50  0001 C CNN "bom_2"
 	1    9100 3850
 	1    0    0    -1  
 $EndComp
@@ -1435,8 +1437,8 @@ L servo:Earth #PWR?
 U 1 1 5E6A4127
 P 10150 4300
 AR Path="/5DC3DC9E/5E6A4127" Ref="#PWR?"  Part="1" 
-AR Path="/5DD76B18/5E6A4127" Ref="#PWR?"  Part="1" 
-F 0 "#PWR?" H 10150 4050 20  0001 C CNN
+AR Path="/5DD76B18/5E6A4127" Ref="#PWR0131"  Part="1" 
+F 0 "#PWR0131" H 10150 4050 20  0001 C CNN
 F 1 "Earth" H 10150 4151 20  0000 C CNN
 F 2 "" H 10150 4300 50  0001 C CNN
 F 3 "~" H 10150 4300 50  0001 C CNN
@@ -1444,10 +1446,10 @@ F 3 "~" H 10150 4300 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L servo:PWR_FLAG #FLG?
+L servo:PWR_FLAG #FLG0102
 U 1 1 5E6A412E
 P 10300 4150
-F 0 "#FLG?" H 10300 4225 20  0001 C CNN
+F 0 "#FLG0102" H 10300 4225 20  0001 C CNN
 F 1 "PWR_FLAG" H 10300 4300 20  0000 C CNN
 F 2 "" H 10300 4150 50  0001 C CNN
 F 3 "~" H 10300 4150 50  0001 C CNN

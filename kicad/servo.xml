@@ -2,7 +2,7 @@
 <export version="D">
   <design>
     <source>/home/pslavkin/servo_pmsm_orphano/kicad/servo.sch</source>
-    <date>Fri 06 Mar 2020 01:49:04 AM -03</date>
+    <date>Fri 06 Mar 2020 12:37:57 PM -03</date>
     <tool>Eeschema 5.0.2+dfsg1-1</tool>
     <sheet number="1" name="/" tstamps="/">
       <title_block>
@@ -273,6 +273,7 @@
       <fields>
         <field name="Description">Ethernet Interface 32-VQFN (5x5) </field>
         <field name="PartNumber">DP83822IRHBR</field>
+        <field name="bom_1">0</field>
         <field name="bom_2">1</field>
         <field name="bom_3">1</field>
         <field name="digikey">296-47256-1-ND</field>
@@ -594,6 +595,7 @@
       <fields>
         <field name="Description">TVS DIODE 5.5V 16V SOT23-6 </field>
         <field name="PartNumber">TPD4E001QDBVRQ1</field>
+        <field name="bom_1">0</field>
         <field name="bom_2">1</field>
         <field name="bom_3">1</field>
         <field name="digikey">296-39344-1-ND</field>
@@ -658,6 +660,8 @@
       <fields>
         <field name="Description">1 Port RJ45 with USB A Magjack Connector Through Hole 10/100 Base-T, AutoMDIX </field>
         <field name="PartNumber">0821-1X1T-36-F </field>
+        <field name="bom_1">0</field>
+        <field name="bom_2">0</field>
         <field name="bom_3">1</field>
         <field name="digikey">507-1424-ND </field>
         <field name="price@10">4.89600</field>
@@ -673,6 +677,8 @@
       <fields>
         <field name="Description">jumper smd bridge using tin</field>
         <field name="PartNumber">-</field>
+        <field name="bom_1">0</field>
+        <field name="bom_2">0</field>
         <field name="digikey">-</field>
         <field name="price@10">0</field>
       </fields>
@@ -687,6 +693,8 @@
       <fields>
         <field name="Description">jumper smd bridge using tin</field>
         <field name="PartNumber">-</field>
+        <field name="bom_1">0</field>
+        <field name="bom_2">0</field>
         <field name="digikey">-</field>
         <field name="price@10">0</field>
       </fields>
@@ -797,6 +805,7 @@
       <fields>
         <field name="Description">TVS DIODE 5.5V 16V SOT23-6 </field>
         <field name="PartNumber">TPD4E001QDBVRQ1</field>
+        <field name="bom_1">0</field>
         <field name="bom_2">1</field>
         <field name="bom_3">1</field>
         <field name="digikey">296-39344-1-ND</field>
@@ -813,6 +822,7 @@
       <fields>
         <field name="Description">TVS DIODE 5.5V 16V SOT23-6 </field>
         <field name="PartNumber">TPD4E001QDBVRQ1</field>
+        <field name="bom_1">0</field>
         <field name="bom_2">1</field>
         <field name="bom_3">1</field>
         <field name="digikey">296-39344-1-ND</field>
@@ -829,6 +839,7 @@
       <fields>
         <field name="Description">TVS DIODE 5.5V 16V SOT23-6 </field>
         <field name="PartNumber">TPD4E001QDBVRQ1</field>
+        <field name="bom_1">0</field>
         <field name="bom_2">1</field>
         <field name="bom_3">1</field>
         <field name="digikey">296-39344-1-ND</field>
@@ -845,6 +856,7 @@
       <fields>
         <field name="Description">TVS DIODE 5.5V 16V SOT23-6 </field>
         <field name="PartNumber">TPD4E001QDBVRQ1</field>
+        <field name="bom_1">0</field>
         <field name="bom_2">1</field>
         <field name="bom_3">1</field>
         <field name="digikey">296-39344-1-ND</field>
@@ -861,6 +873,7 @@
       <fields>
         <field name="Description">TVS DIODE 5.5V 16V SOT23-6 </field>
         <field name="PartNumber">TPD4E001QDBVRQ1</field>
+        <field name="bom_1">0</field>
         <field name="bom_2">1</field>
         <field name="bom_3">1</field>
         <field name="digikey">296-39344-1-ND</field>
@@ -893,6 +906,7 @@
       <fields>
         <field name="Description">TVS DIODE 5.5V 16V SOT23-6 </field>
         <field name="PartNumber">TPD4E001QDBVRQ1</field>
+        <field name="bom_1">0</field>
         <field name="bom_2">1</field>
         <field name="bom_3">1</field>
         <field name="digikey">296-39344-1-ND</field>
@@ -909,6 +923,7 @@
       <fields>
         <field name="Description">Ethernet Interface 32-VQFN (5x5) </field>
         <field name="PartNumber">DP83822IRHBR</field>
+        <field name="bom_1">0</field>
         <field name="bom_2">1</field>
         <field name="bom_3">1</field>
         <field name="digikey">296-47256-1-ND</field>
@@ -990,6 +1005,7 @@
         <field name="Description">EEPROM Memory IC 16Kb (2K x 8) I²C 400kHz 900ns 8-SOIC</field>
         <field name="Fieldname">CAT24C16WI-GT3</field>
         <field name="PartNumber">CAT24C16WI-GT3</field>
+        <field name="bom_1">0</field>
         <field name="bom_2">1</field>
         <field name="bom_3">1</field>
         <field name="digikey">CAT24C16WI-GT3CT-ND </field>
@@ -1409,6 +1425,7 @@
       <fields>
         <field name="Description">Ethernet Interface 32-VQFN (5x5) </field>
         <field name="PartNumber">DP83822IRHBR</field>
+        <field name="bom_1">0</field>
         <field name="bom_2">1</field>
         <field name="bom_3">1</field>
         <field name="digikey">296-47256-1-ND</field>
@@ -1874,6 +1891,8 @@
       <fields>
         <field name="Description">2 Port RJ45 Magjack Connector Through Hole 10/100 Base-T, AutoMDIX </field>
         <field name="PartNumber">0845-2G1T-H5 </field>
+        <field name="bom_1">0</field>
+        <field name="bom_2">0</field>
         <field name="bom_3">1</field>
         <field name="digikey">380-1123-ND</field>
         <field name="price@10">7.17400</field>
@@ -1953,6 +1972,8 @@
       <fields>
         <field name="Description">jumper smd bridge using tin</field>
         <field name="PartNumber">-</field>
+        <field name="bom_1">0</field>
+        <field name="bom_2">0</field>
         <field name="digikey">-</field>
         <field name="price@10">0</field>
       </fields>
@@ -1967,6 +1988,8 @@
       <fields>
         <field name="Description">jumper smd bridge using tin</field>
         <field name="PartNumber">-</field>
+        <field name="bom_1">0</field>
+        <field name="bom_2">0</field>
         <field name="digikey">-</field>
         <field name="price@10">0</field>
       </fields>
@@ -1981,6 +2004,8 @@
       <fields>
         <field name="Description">jumper smd bridge using tin</field>
         <field name="PartNumber">-</field>
+        <field name="bom_1">0</field>
+        <field name="bom_2">0</field>
         <field name="digikey">-</field>
         <field name="price@10">0</field>
       </fields>
@@ -1995,6 +2020,8 @@
       <fields>
         <field name="Description">jumper smd bridge using tin</field>
         <field name="PartNumber">-</field>
+        <field name="bom_1">0</field>
+        <field name="bom_2">0</field>
         <field name="digikey">-</field>
         <field name="price@10">0</field>
       </fields>
@@ -2009,6 +2036,8 @@
       <fields>
         <field name="Description">jumper smd bridge using tin</field>
         <field name="PartNumber">-</field>
+        <field name="bom_1">0</field>
+        <field name="bom_2">0</field>
         <field name="digikey">-</field>
         <field name="price@10">0</field>
       </fields>
@@ -2023,6 +2052,8 @@
       <fields>
         <field name="Description">jumper smd bridge using tin</field>
         <field name="PartNumber">-</field>
+        <field name="bom_1">0</field>
+        <field name="bom_2">0</field>
         <field name="digikey">-</field>
         <field name="price@10">0</field>
       </fields>
@@ -2469,6 +2500,8 @@
       <fields>
         <field name="Description">jumper smd bridge using tin</field>
         <field name="PartNumber">-</field>
+        <field name="bom_1">0</field>
+        <field name="bom_2">0</field>
         <field name="digikey">-</field>
         <field name="price@10">0</field>
       </fields>
@@ -2483,6 +2516,8 @@
       <fields>
         <field name="Description">jumper smd bridge using tin</field>
         <field name="PartNumber">-</field>
+        <field name="bom_1">0</field>
+        <field name="bom_2">0</field>
         <field name="digikey">-</field>
         <field name="price@10">0</field>
       </fields>
@@ -2497,6 +2532,8 @@
       <fields>
         <field name="Description">jumper smd bridge using tin</field>
         <field name="PartNumber">-</field>
+        <field name="bom_1">0</field>
+        <field name="bom_2">0</field>
         <field name="digikey">-</field>
         <field name="price@10">0</field>
       </fields>
@@ -2706,6 +2743,7 @@
       <fields>
         <field name="Description">FLASH Memory IC 32Mb (4M x 8) SPI - Quad I/O 104MHz 8-SOIJ</field>
         <field name="PartNumber">SST26VF032B-104V/SM</field>
+        <field name="bom_1">0</field>
         <field name="bom_2">1</field>
         <field name="bom_3">1</field>
         <field name="digikey">SST26VF032B-104V/SM-ND </field>
@@ -2770,6 +2808,8 @@
       <fields>
         <field name="Description">Connector Header Surface Mount 12 position 0.100" (2.54mm) </field>
         <field name="PartNumber">GBC06DABN-M30</field>
+        <field name="bom_1">0</field>
+        <field name="bom_2">0</field>
         <field name="bom_3">1</field>
         <field name="digikey">S2351E-06-ND</field>
         <field name="price@10">1.10200</field>
@@ -2817,6 +2857,8 @@
       <fields>
         <field name="Description">jumper smd bridge using tin</field>
         <field name="PartNumber">-</field>
+        <field name="bom_1">0</field>
+        <field name="bom_2">0</field>
         <field name="digikey">-</field>
         <field name="price@10">0</field>
       </fields>
@@ -2831,6 +2873,8 @@
       <fields>
         <field name="Description">jumper smd bridge using tin</field>
         <field name="PartNumber">-</field>
+        <field name="bom_1">0</field>
+        <field name="bom_2">0</field>
         <field name="digikey">-</field>
         <field name="price@10">0</field>
       </fields>
@@ -2909,6 +2953,7 @@
       <fields>
         <field name="Description">Linear Regulator Replacement DC DC Converter 1 Output 3.3V 2A 4.75V - 32V Input </field>
         <field name="PartNumber">R-78B3.3-2.0 </field>
+        <field name="bom_1">0</field>
         <field name="bom_2">1</field>
         <field name="bom_3">1</field>
         <field name="digikey">945-3040-ND</field>
@@ -2925,6 +2970,7 @@
       <fields>
         <field name="Description">Linear Voltage Regulator IC Positive Fixed 1 Output 1A SOT-223 </field>
         <field name="PartNumber">AP2114H-1.2TRG1</field>
+        <field name="bom_1">0</field>
         <field name="bom_2">1</field>
         <field name="bom_3">1</field>
         <field name="digikey">AP2114H-1.2TRG1DICT-ND</field>
@@ -2991,6 +3037,8 @@
       <fields>
         <field name="Description">jumper smd bridge using tin</field>
         <field name="PartNumber">-</field>
+        <field name="bom_1">0</field>
+        <field name="bom_2">0</field>
         <field name="digikey">-</field>
         <field name="price@10">0</field>
       </fields>
@@ -3054,6 +3102,8 @@
       <fields>
         <field name="Description">8 Position Terminal Block Header, Male Pins, Shrouded (4 Side) 0.200" (5.08mm) 90°, Right Angle Through Hole </field>
         <field name="PartNumber">1736713</field>
+        <field name="bom_1">0</field>
+        <field name="bom_2">0</field>
         <field name="bom_3">1</field>
         <field name="digikey">277-1401-ND </field>
         <field name="price@10">5.37000</field>
@@ -3069,6 +3119,8 @@
       <fields>
         <field name="Description">Enclosed AC DC Converter 1 Output 5V 2A 85 ~ 305 VAC, 120 ~ 430 VDC Input </field>
         <field name="PartNumber">RM-10-5 </field>
+        <field name="bom_1">0</field>
+        <field name="bom_2">0</field>
         <field name="bom_3">1</field>
         <field name="digikey">1866-3032-ND </field>
         <field name="price@10">8.89300</field>
@@ -3084,6 +3136,8 @@
       <fields>
         <field name="Description">Enclosed AC DC Converter 1 Output 5V 2A 85 ~ 305 VAC, 120 ~ 430 VDC Input </field>
         <field name="PartNumber">RM-10-5 </field>
+        <field name="bom_1">0</field>
+        <field name="bom_2">0</field>
         <field name="bom_3">1</field>
         <field name="digikey">1866-3032-ND </field>
         <field name="price@10">8.89300</field>
@@ -3195,6 +3249,8 @@
       <fields>
         <field name="Description">jumper smd bridge using tin</field>
         <field name="PartNumber">-</field>
+        <field name="bom_1">0</field>
+        <field name="bom_2">0</field>
         <field name="digikey">-</field>
         <field name="price@10">0</field>
       </fields>
@@ -3209,6 +3265,8 @@
       <fields>
         <field name="Description">jumper smd bridge using tin</field>
         <field name="PartNumber">-</field>
+        <field name="bom_1">0</field>
+        <field name="bom_2">0</field>
         <field name="digikey">-</field>
         <field name="price@10">0</field>
       </fields>
@@ -3371,6 +3429,8 @@
       <fields>
         <field name="Description">jumper smd bridge using tin</field>
         <field name="PartNumber">-</field>
+        <field name="bom_1">0</field>
+        <field name="bom_2">0</field>
         <field name="digikey">-</field>
         <field name="price@10">0</field>
       </fields>
@@ -3385,6 +3445,8 @@
       <fields>
         <field name="Description">jumper smd bridge using tin</field>
         <field name="PartNumber">-</field>
+        <field name="bom_1">0</field>
+        <field name="bom_2">0</field>
         <field name="digikey">-</field>
         <field name="price@10">0</field>
       </fields>
@@ -3399,6 +3461,8 @@
       <fields>
         <field name="Description">jumper smd bridge using tin</field>
         <field name="PartNumber">-</field>
+        <field name="bom_1">0</field>
+        <field name="bom_2">0</field>
         <field name="digikey">-</field>
         <field name="price@10">0</field>
       </fields>
@@ -3413,6 +3477,8 @@
       <fields>
         <field name="Description">jumper smd bridge using tin</field>
         <field name="PartNumber">-</field>
+        <field name="bom_1">0</field>
+        <field name="bom_2">0</field>
         <field name="digikey">-</field>
         <field name="price@10">0</field>
       </fields>
@@ -3443,6 +3509,8 @@
       <fields>
         <field name="Description">jumper smd bridge using tin</field>
         <field name="PartNumber">-</field>
+        <field name="bom_1">0</field>
+        <field name="bom_2">0</field>
         <field name="digikey">-</field>
         <field name="price@10">0</field>
       </fields>
@@ -3457,6 +3525,7 @@
       <fields>
         <field name="Description">General Purpose Digital Isolator 5000Vrms 6 Channel 150Mbps 35kV/µs CMTI 16-SOIC (0.295", 7.50mm Width) </field>
         <field name="PartNumber">SI8660BD-B-ISR</field>
+        <field name="bom_1">0</field>
         <field name="bom_2">1</field>
         <field name="bom_3">1</field>
         <field name="digikey"> 336-4786-1-ND</field>
@@ -3473,6 +3542,7 @@
       <fields>
         <field name="Description">General Purpose Digital Isolator 5000Vrms 6 Channel 150Mbps 35kV/µs CMTI 16-SOIC (0.295", 7.50mm Width)</field>
         <field name="PartNumber">SI8662BD-B-IS</field>
+        <field name="bom_1">0</field>
         <field name="bom_2">1</field>
         <field name="bom_3">1</field>
         <field name="digikey">336-2125-5-ND </field>
@@ -3489,6 +3559,7 @@
       <fields>
         <field name="Description">Buffer, Non-Inverting 2 Element 1 Bit per Element Push-Pull Output SOT-23-6</field>
         <field name="PartNumber">SN74LVC2G17DBVR</field>
+        <field name="bom_1">0</field>
         <field name="bom_2">1</field>
         <field name="bom_3">1</field>
         <field name="digikey"> 296-SN74LVC2G17DBVRCT-ND </field>
@@ -3505,6 +3576,7 @@
       <fields>
         <field name="Description">Buffer, Non-Inverting 2 Element 1 Bit per Element Push-Pull Output SOT-23-6</field>
         <field name="PartNumber">SN74LVC2G17DBVR</field>
+        <field name="bom_1">0</field>
         <field name="bom_2">1</field>
         <field name="bom_3">1</field>
         <field name="digikey"> 296-SN74LVC2G17DBVRCT-ND </field>
@@ -3521,6 +3593,7 @@
       <fields>
         <field name="Description">Buffer, Non-Inverting 2 Element 1 Bit per Element Push-Pull Output SOT-23-6</field>
         <field name="PartNumber">SN74LVC2G17DBVR</field>
+        <field name="bom_1">0</field>
         <field name="bom_2">1</field>
         <field name="bom_3">1</field>
         <field name="digikey"> 296-SN74LVC2G17DBVRCT-ND </field>
@@ -3537,6 +3610,7 @@
       <fields>
         <field name="Description">Buffer, Non-Inverting 2 Element 1 Bit per Element Push-Pull Output SOT-23-6</field>
         <field name="PartNumber">SN74LVC2G17DBVR</field>
+        <field name="bom_1">0</field>
         <field name="bom_2">1</field>
         <field name="bom_3">1</field>
         <field name="digikey"> 296-SN74LVC2G17DBVRCT-ND </field>
@@ -3761,6 +3835,7 @@
       <fields>
         <field name="Description">General Purpose Digital Isolator 5000Vrms 6 Channel 150Mbps 35kV/µs CMTI 16-SOIC (0.295", 7.50mm Width) </field>
         <field name="PartNumber">SI8660BD-B-ISR</field>
+        <field name="bom_1">0</field>
         <field name="bom_2">1</field>
         <field name="bom_3">1</field>
         <field name="digikey"> 336-4786-1-ND</field>
@@ -3777,6 +3852,7 @@
       <fields>
         <field name="Description">General Purpose Digital Isolator 5000Vrms 6 Channel 150Mbps 35kV/µs CMTI 16-SOIC (0.295", 7.50mm Width)</field>
         <field name="PartNumber">SI8662BD-B-IS</field>
+        <field name="bom_1">0</field>
         <field name="bom_2">1</field>
         <field name="bom_3">1</field>
         <field name="digikey">336-2125-5-ND </field>
@@ -3793,6 +3869,7 @@
       <fields>
         <field name="Description">Buffer, Non-Inverting 2 Element 1 Bit per Element Push-Pull Output SOT-23-6</field>
         <field name="PartNumber">SN74LVC2G17DBVR</field>
+        <field name="bom_1">0</field>
         <field name="bom_2">1</field>
         <field name="bom_3">1</field>
         <field name="digikey"> 296-SN74LVC2G17DBVRCT-ND </field>
@@ -3809,6 +3886,7 @@
       <fields>
         <field name="Description">Buffer, Non-Inverting 2 Element 1 Bit per Element Push-Pull Output SOT-23-6</field>
         <field name="PartNumber">SN74LVC2G17DBVR</field>
+        <field name="bom_1">0</field>
         <field name="bom_2">1</field>
         <field name="bom_3">1</field>
         <field name="digikey"> 296-SN74LVC2G17DBVRCT-ND </field>
@@ -3825,6 +3903,7 @@
       <fields>
         <field name="Description">Buffer, Non-Inverting 2 Element 1 Bit per Element Push-Pull Output SOT-23-6</field>
         <field name="PartNumber">SN74LVC2G17DBVR</field>
+        <field name="bom_1">0</field>
         <field name="bom_2">1</field>
         <field name="bom_3">1</field>
         <field name="digikey"> 296-SN74LVC2G17DBVRCT-ND </field>
@@ -3841,6 +3920,7 @@
       <fields>
         <field name="Description">Buffer, Non-Inverting 2 Element 1 Bit per Element Push-Pull Output SOT-23-6</field>
         <field name="PartNumber">SN74LVC2G17DBVR</field>
+        <field name="bom_1">0</field>
         <field name="bom_2">1</field>
         <field name="bom_3">1</field>
         <field name="digikey"> 296-SN74LVC2G17DBVRCT-ND </field>
@@ -3857,6 +3937,7 @@
       <fields>
         <field name="Description">Buffer, Non-Inverting 2 Element 1 Bit per Element Push-Pull Output SOT-23-6</field>
         <field name="PartNumber">SN74LVC2G17DBVR</field>
+        <field name="bom_1">0</field>
         <field name="bom_2">1</field>
         <field name="bom_3">1</field>
         <field name="digikey"> 296-SN74LVC2G17DBVRCT-ND </field>
@@ -4433,6 +4514,7 @@
       <fields>
         <field name="Description">Buffer, Non-Inverting 2 Element 1 Bit per Element Push-Pull Output SOT-23-6</field>
         <field name="PartNumber">SN74LVC2G17DBVR</field>
+        <field name="bom_1">0</field>
         <field name="bom_2">1</field>
         <field name="bom_3">1</field>
         <field name="digikey"> 296-SN74LVC2G17DBVRCT-ND </field>
@@ -4721,6 +4803,7 @@
       <fields>
         <field name="Description">RS422, RS485 Digital Isolator 2500Vrms 3 Channel 500kbps 25kV/µs CMTI 16-SOIC (0.295", 7.50mm Width) </field>
         <field name="PartNumber">ADM2483BRWZ</field>
+        <field name="bom_1">0</field>
         <field name="bom_2">1</field>
         <field name="bom_3">1</field>
         <field name="digikey">ADM2483BRWZ-ND</field>
@@ -4849,6 +4932,7 @@
       <fields>
         <field name="Description">Isolation IC 8-SOIC </field>
         <field name="PartNumber">AMC1311BDWV</field>
+        <field name="bom_1">0</field>
         <field name="bom_2">1</field>
         <field name="bom_3">1</field>
         <field name="digikey">296-47610-ND</field>
@@ -5009,6 +5093,7 @@
       <fields>
         <field name="Description">Isolation IC 8-SOIC </field>
         <field name="PartNumber">AMC1311BDWV</field>
+        <field name="bom_1">0</field>
         <field name="bom_2">1</field>
         <field name="bom_3">1</field>
         <field name="digikey">296-47610-ND</field>
@@ -5169,6 +5254,7 @@
       <fields>
         <field name="Description">Isolation IC 8-SOIC </field>
         <field name="PartNumber">AMC1311BDWV</field>
+        <field name="bom_1">0</field>
         <field name="bom_2">1</field>
         <field name="bom_3">1</field>
         <field name="digikey">296-47610-ND</field>
@@ -5329,6 +5415,7 @@
       <fields>
         <field name="Description">Isolation IC 8-SOIC </field>
         <field name="PartNumber">AMC1311BDWV</field>
+        <field name="bom_1">0</field>
         <field name="bom_2">1</field>
         <field name="bom_3">1</field>
         <field name="digikey">296-47610-ND</field>
@@ -5558,6 +5645,8 @@
       <fields>
         <field name="Description">12 Position Terminal Block Header, Male Pins, Shrouded (4 Side) 0.150" (3.81mm) 90°, Right Angle Through Hole </field>
         <field name="PartNumber">1843114 </field>
+        <field name="bom_1">0</field>
+        <field name="bom_2">0</field>
         <field name="bom_3">1</field>
         <field name="digikey">277-6009-ND </field>
         <field name="price@10">7.50500</field>
@@ -5675,6 +5764,7 @@
       <fields>
         <field name="Description">0/4 Receiver RS422, RS423 16-SOIC </field>
         <field name="PartNumber">AM26LS32ACDR</field>
+        <field name="bom_1">0</field>
         <field name="bom_2">1</field>
         <field name="bom_3">1</field>
         <field name="digikey">296-1011-1-ND</field>
@@ -5707,6 +5797,8 @@
       <fields>
         <field name="Description">20 Position Terminal Block Header, Male Pins, Shrouded (4 Side) 0.150" (3.81mm) 90°, Right Angle Through Hole </field>
         <field name="PartNumber">1843156 </field>
+        <field name="bom_1">0</field>
+        <field name="bom_2">0</field>
         <field name="bom_3">1</field>
         <field name="digikey">277-6029-ND</field>
         <field name="price@10">12.49300</field>
@@ -5824,6 +5916,7 @@
       <fields>
         <field name="Description">General Purpose Digital Isolator 5000Vrms 6 Channel 150Mbps 35kV/µs CMTI 16-SOIC (0.295", 7.50mm Width) </field>
         <field name="PartNumber">SI8660BD-B-ISR</field>
+        <field name="bom_1">0</field>
         <field name="bom_2">1</field>
         <field name="bom_3">1</field>
         <field name="digikey"> 336-4786-1-ND</field>
@@ -5942,6 +6035,7 @@
       <fields>
         <field name="Description">0/4 Receiver RS422, RS423 16-SOIC </field>
         <field name="PartNumber">AM26LS32ACDR</field>
+        <field name="bom_1">0</field>
         <field name="bom_2">1</field>
         <field name="bom_3">1</field>
         <field name="digikey">296-1011-1-ND</field>
@@ -6060,6 +6154,7 @@
       <fields>
         <field name="Description">General Purpose Digital Isolator 5000Vrms 6 Channel 150Mbps 35kV/µs CMTI 16-SOIC (0.295", 7.50mm Width) </field>
         <field name="PartNumber">SI8660BD-B-ISR</field>
+        <field name="bom_1">0</field>
         <field name="bom_2">1</field>
         <field name="bom_3">1</field>
         <field name="digikey"> 336-4786-1-ND</field>
@@ -6178,6 +6273,7 @@
       <fields>
         <field name="Description">0/4 Receiver RS422, RS423 16-SOIC </field>
         <field name="PartNumber">AM26LS32ACDR</field>
+        <field name="bom_1">0</field>
         <field name="bom_2">1</field>
         <field name="bom_3">1</field>
         <field name="digikey">296-1011-1-ND</field>
@@ -6290,6 +6386,7 @@
       <fields>
         <field name="Description">1/1 Transceiver Half CANbus 8-SOP </field>
         <field name="PartNumber">ISO1050DUB</field>
+        <field name="bom_1">0</field>
         <field name="bom_2">1</field>
         <field name="bom_3">1</field>
         <field name="digikey">296-33295-5-ND</field>
@@ -6338,6 +6435,7 @@
       <fields>
         <field name="Description">RS422, RS485 Digital Isolator 2500Vrms 3 Channel 500kbps 25kV/µs CMTI 16-SOIC (0.295", 7.50mm Width) </field>
         <field name="PartNumber">ADM2483BRWZ</field>
+        <field name="bom_1">0</field>
         <field name="bom_2">1</field>
         <field name="bom_3">1</field>
         <field name="digikey">ADM2483BRWZ-ND</field>
@@ -6354,6 +6452,8 @@
       <fields>
         <field name="Description">8 Position Terminal Block Header, Male Pins, Shrouded (4 Side) 0.150" (3.81mm) 90°, Right Angle Through Hole</field>
         <field name="PartNumber">1843091</field>
+        <field name="bom_1">0</field>
+        <field name="bom_2">0</field>
         <field name="bom_3">1</field>
         <field name="digikey">277-6025-ND</field>
         <field name="price@10">5.01100</field>
@@ -6502,6 +6602,9 @@
       <datasheet>~</datasheet>
       <fields>
         <field name="Description">fiducials</field>
+        <field name="bom_1">0</field>
+        <field name="bom_2">0</field>
+        <field name="bom_3">0</field>
         <field name="price@10">0</field>
       </fields>
       <libsource lib="Mechanical" part="MountingHole" description="Mounting Hole without connection"/>
@@ -6515,6 +6618,9 @@
       <fields>
         <field name="Description">case housing</field>
         <field name="PartNumber">-</field>
+        <field name="bom_1">0</field>
+        <field name="bom_2">0</field>
+        <field name="bom_3">0</field>
         <field name="price@10">0</field>
       </fields>
       <libsource lib="Mechanical" part="Housing" description="Housing"/>
@@ -6527,6 +6633,9 @@
       <datasheet>~</datasheet>
       <fields>
         <field name="Description">fiducials</field>
+        <field name="bom_1">0</field>
+        <field name="bom_2">0</field>
+        <field name="bom_3">0</field>
         <field name="price@10">0</field>
       </fields>
       <libsource lib="Mechanical" part="MountingHole" description="Mounting Hole without connection"/>
@@ -6539,6 +6648,9 @@
       <datasheet>~</datasheet>
       <fields>
         <field name="Description">fiducials</field>
+        <field name="bom_1">0</field>
+        <field name="bom_2">0</field>
+        <field name="bom_3">0</field>
         <field name="price@10">0</field>
       </fields>
       <libsource lib="Mechanical" part="MountingHole" description="Mounting Hole without connection"/>
@@ -6551,6 +6663,9 @@
       <datasheet>~</datasheet>
       <fields>
         <field name="Description">fiducials</field>
+        <field name="bom_1">0</field>
+        <field name="bom_2">0</field>
+        <field name="bom_3">0</field>
         <field name="price@10">0</field>
       </fields>
       <libsource lib="Mechanical" part="MountingHole" description="Mounting Hole without connection"/>
@@ -6563,6 +6678,9 @@
       <datasheet>~</datasheet>
       <fields>
         <field name="Description">fiducials</field>
+        <field name="bom_1">0</field>
+        <field name="bom_2">0</field>
+        <field name="bom_3">0</field>
         <field name="price@10">0</field>
       </fields>
       <libsource lib="Mechanical" part="MountingHole" description="Mounting Hole without connection"/>
@@ -6575,6 +6693,9 @@
       <datasheet>~</datasheet>
       <fields>
         <field name="Description">fiducials</field>
+        <field name="bom_1">0</field>
+        <field name="bom_2">0</field>
+        <field name="bom_3">0</field>
         <field name="price@10">0</field>
       </fields>
       <libsource lib="Mechanical" part="MountingHole" description="Mounting Hole without connection"/>
@@ -6587,6 +6708,9 @@
       <datasheet>~</datasheet>
       <fields>
         <field name="Description">fiducials</field>
+        <field name="bom_1">0</field>
+        <field name="bom_2">0</field>
+        <field name="bom_3">0</field>
         <field name="price@10">0</field>
       </fields>
       <libsource lib="Mechanical" part="MountingHole" description="Mounting Hole without connection"/>
@@ -6599,6 +6723,9 @@
       <datasheet>~</datasheet>
       <fields>
         <field name="Description">fiducials</field>
+        <field name="bom_1">0</field>
+        <field name="bom_2">0</field>
+        <field name="bom_3">0</field>
         <field name="price@10">0</field>
       </fields>
       <libsource lib="Mechanical" part="MountingHole" description="Mounting Hole without connection"/>
@@ -6611,6 +6738,9 @@
       <datasheet>~</datasheet>
       <fields>
         <field name="Description">slots for isolation</field>
+        <field name="bom_1">0</field>
+        <field name="bom_2">0</field>
+        <field name="bom_3">0</field>
         <field name="price@10">0</field>
       </fields>
       <libsource lib="Mechanical" part="MountingHole" description="Mounting Hole without connection"/>
@@ -6623,6 +6753,9 @@
       <datasheet>~</datasheet>
       <fields>
         <field name="Description">slots for isolation</field>
+        <field name="bom_1">0</field>
+        <field name="bom_2">0</field>
+        <field name="bom_3">0</field>
         <field name="price@10">0</field>
       </fields>
       <libsource lib="Mechanical" part="MountingHole" description="Mounting Hole without connection"/>
@@ -6635,6 +6768,9 @@
       <datasheet>~</datasheet>
       <fields>
         <field name="Description">slots for isolation</field>
+        <field name="bom_1">0</field>
+        <field name="bom_2">0</field>
+        <field name="bom_3">0</field>
         <field name="price@10">0</field>
       </fields>
       <libsource lib="Mechanical" part="MountingHole" description="Mounting Hole without connection"/>
@@ -6647,6 +6783,9 @@
       <datasheet>~</datasheet>
       <fields>
         <field name="Description">slots for isolation</field>
+        <field name="bom_1">0</field>
+        <field name="bom_2">0</field>
+        <field name="bom_3">0</field>
         <field name="price@10">0</field>
       </fields>
       <libsource lib="Mechanical" part="MountingHole" description="Mounting Hole without connection"/>
@@ -6659,6 +6798,9 @@
       <datasheet>~</datasheet>
       <fields>
         <field name="Description">slots for isolation</field>
+        <field name="bom_1">0</field>
+        <field name="bom_2">0</field>
+        <field name="bom_3">0</field>
         <field name="price@10">0</field>
       </fields>
       <libsource lib="Mechanical" part="MountingHole" description="Mounting Hole without connection"/>
@@ -6671,6 +6813,9 @@
       <datasheet>~</datasheet>
       <fields>
         <field name="Description">slots for isolation</field>
+        <field name="bom_1">0</field>
+        <field name="bom_2">0</field>
+        <field name="bom_3">0</field>
         <field name="price@10">0</field>
       </fields>
       <libsource lib="Mechanical" part="MountingHole" description="Mounting Hole without connection"/>
@@ -6683,6 +6828,9 @@
       <datasheet>~</datasheet>
       <fields>
         <field name="Description">slots for isolation</field>
+        <field name="bom_1">0</field>
+        <field name="bom_2">0</field>
+        <field name="bom_3">0</field>
         <field name="price@10">0</field>
       </fields>
       <libsource lib="Mechanical" part="MountingHole" description="Mounting Hole without connection"/>
@@ -6695,6 +6843,9 @@
       <datasheet>~</datasheet>
       <fields>
         <field name="Description">slots for isolation</field>
+        <field name="bom_1">0</field>
+        <field name="bom_2">0</field>
+        <field name="bom_3">0</field>
         <field name="price@10">0</field>
       </fields>
       <libsource lib="Mechanical" part="MountingHole" description="Mounting Hole without connection"/>
@@ -6707,6 +6858,9 @@
       <datasheet>~</datasheet>
       <fields>
         <field name="Description">slots for isolation</field>
+        <field name="bom_1">0</field>
+        <field name="bom_2">0</field>
+        <field name="bom_3">0</field>
         <field name="price@10">0</field>
       </fields>
       <libsource lib="Mechanical" part="MountingHole" description="Mounting Hole without connection"/>
@@ -6719,6 +6873,9 @@
       <datasheet>~</datasheet>
       <fields>
         <field name="Description">slots for isolation</field>
+        <field name="bom_1">0</field>
+        <field name="bom_2">0</field>
+        <field name="bom_3">0</field>
         <field name="price@10">0</field>
       </fields>
       <libsource lib="Mechanical" part="MountingHole" description="Mounting Hole without connection"/>
@@ -6731,6 +6888,9 @@
       <datasheet>~</datasheet>
       <fields>
         <field name="Description">slots for isolation</field>
+        <field name="bom_1">0</field>
+        <field name="bom_2">0</field>
+        <field name="bom_3">0</field>
         <field name="price@10">0</field>
       </fields>
       <libsource lib="Mechanical" part="MountingHole" description="Mounting Hole without connection"/>
@@ -6743,6 +6903,9 @@
       <datasheet>~</datasheet>
       <fields>
         <field name="Description">slots for isolation</field>
+        <field name="bom_1">0</field>
+        <field name="bom_2">0</field>
+        <field name="bom_3">0</field>
         <field name="price@10">0</field>
       </fields>
       <libsource lib="Mechanical" part="MountingHole" description="Mounting Hole without connection"/>
@@ -6755,6 +6918,9 @@
       <datasheet>~</datasheet>
       <fields>
         <field name="Description">slots for isolation</field>
+        <field name="bom_1">0</field>
+        <field name="bom_2">0</field>
+        <field name="bom_3">0</field>
         <field name="price@10">0</field>
       </fields>
       <libsource lib="Mechanical" part="MountingHole" description="Mounting Hole without connection"/>
@@ -6767,6 +6933,9 @@
       <datasheet>~</datasheet>
       <fields>
         <field name="Description">slots for isolation</field>
+        <field name="bom_1">0</field>
+        <field name="bom_2">0</field>
+        <field name="bom_3">0</field>
         <field name="price@10">0</field>
       </fields>
       <libsource lib="Mechanical" part="MountingHole" description="Mounting Hole without connection"/>
@@ -6779,6 +6948,9 @@
       <datasheet>~</datasheet>
       <fields>
         <field name="Description">slots for isolation</field>
+        <field name="bom_1">0</field>
+        <field name="bom_2">0</field>
+        <field name="bom_3">0</field>
         <field name="price@10">0</field>
       </fields>
       <libsource lib="Mechanical" part="MountingHole" description="Mounting Hole without connection"/>
@@ -6791,6 +6963,9 @@
       <datasheet>~</datasheet>
       <fields>
         <field name="Description">slots for isolation</field>
+        <field name="bom_1">0</field>
+        <field name="bom_2">0</field>
+        <field name="bom_3">0</field>
         <field name="price@10">0</field>
       </fields>
       <libsource lib="Mechanical" part="MountingHole" description="Mounting Hole without connection"/>
@@ -6803,6 +6978,9 @@
       <datasheet>~</datasheet>
       <fields>
         <field name="Description">slots for isolation</field>
+        <field name="bom_1">0</field>
+        <field name="bom_2">0</field>
+        <field name="bom_3">0</field>
         <field name="price@10">0</field>
       </fields>
       <libsource lib="Mechanical" part="MountingHole" description="Mounting Hole without connection"/>
@@ -6815,6 +6993,9 @@
       <datasheet>~</datasheet>
       <fields>
         <field name="Description">slots for isolation</field>
+        <field name="bom_1">0</field>
+        <field name="bom_2">0</field>
+        <field name="bom_3">0</field>
         <field name="price@10">0</field>
       </fields>
       <libsource lib="Mechanical" part="MountingHole" description="Mounting Hole without connection"/>
@@ -6827,6 +7008,9 @@
       <datasheet>~</datasheet>
       <fields>
         <field name="Description">slots for isolation</field>
+        <field name="bom_1">0</field>
+        <field name="bom_2">0</field>
+        <field name="bom_3">0</field>
         <field name="price@10">0</field>
       </fields>
       <libsource lib="Mechanical" part="MountingHole" description="Mounting Hole without connection"/>
@@ -6839,6 +7023,9 @@
       <datasheet>~</datasheet>
       <fields>
         <field name="Description">slots for isolation</field>
+        <field name="bom_1">0</field>
+        <field name="bom_2">0</field>
+        <field name="bom_3">0</field>
         <field name="price@10">0</field>
       </fields>
       <libsource lib="Mechanical" part="MountingHole" description="Mounting Hole without connection"/>
@@ -6851,6 +7038,9 @@
       <datasheet>~</datasheet>
       <fields>
         <field name="Description">slots for isolation</field>
+        <field name="bom_1">0</field>
+        <field name="bom_2">0</field>
+        <field name="bom_3">0</field>
         <field name="price@10">0</field>
       </fields>
       <libsource lib="Mechanical" part="MountingHole" description="Mounting Hole without connection"/>
@@ -6863,6 +7053,9 @@
       <datasheet>~</datasheet>
       <fields>
         <field name="Description">slots for isolation</field>
+        <field name="bom_1">0</field>
+        <field name="bom_2">0</field>
+        <field name="bom_3">0</field>
         <field name="price@10">0</field>
       </fields>
       <libsource lib="Mechanical" part="MountingHole" description="Mounting Hole without connection"/>
@@ -6875,6 +7068,9 @@
       <datasheet>~</datasheet>
       <fields>
         <field name="Description">slots for isolation</field>
+        <field name="bom_1">0</field>
+        <field name="bom_2">0</field>
+        <field name="bom_3">0</field>
         <field name="price@10">0</field>
       </fields>
       <libsource lib="Mechanical" part="MountingHole" description="Mounting Hole without connection"/>
@@ -6887,6 +7083,9 @@
       <datasheet>~</datasheet>
       <fields>
         <field name="Description">slots for isolation</field>
+        <field name="bom_1">0</field>
+        <field name="bom_2">0</field>
+        <field name="bom_3">0</field>
         <field name="price@10">0</field>
       </fields>
       <libsource lib="Mechanical" part="MountingHole" description="Mounting Hole without connection"/>
@@ -6899,6 +7098,9 @@
       <datasheet>~</datasheet>
       <fields>
         <field name="Description">slots for isolation</field>
+        <field name="bom_1">0</field>
+        <field name="bom_2">0</field>
+        <field name="bom_3">0</field>
         <field name="price@10">0</field>
       </fields>
       <libsource lib="Mechanical" part="MountingHole" description="Mounting Hole without connection"/>
@@ -6911,6 +7113,9 @@
       <datasheet>~</datasheet>
       <fields>
         <field name="Description">slots for isolation</field>
+        <field name="bom_1">0</field>
+        <field name="bom_2">0</field>
+        <field name="bom_3">0</field>
         <field name="price@10">0</field>
       </fields>
       <libsource lib="Mechanical" part="MountingHole" description="Mounting Hole without connection"/>
@@ -6923,6 +7128,9 @@
       <datasheet>~</datasheet>
       <fields>
         <field name="Description">slots for isolation</field>
+        <field name="bom_1">0</field>
+        <field name="bom_2">0</field>
+        <field name="bom_3">0</field>
         <field name="price@10">0</field>
       </fields>
       <libsource lib="Mechanical" part="MountingHole" description="Mounting Hole without connection"/>
@@ -6935,6 +7143,9 @@
       <datasheet>~</datasheet>
       <fields>
         <field name="Description">slots for isolation</field>
+        <field name="bom_1">0</field>
+        <field name="bom_2">0</field>
+        <field name="bom_3">0</field>
         <field name="price@10">0</field>
       </fields>
       <libsource lib="Mechanical" part="MountingHole" description="Mounting Hole without connection"/>
@@ -6947,6 +7158,9 @@
       <datasheet>~</datasheet>
       <fields>
         <field name="Description">slots for isolation</field>
+        <field name="bom_1">0</field>
+        <field name="bom_2">0</field>
+        <field name="bom_3">0</field>
         <field name="price@10">0</field>
       </fields>
       <libsource lib="Mechanical" part="MountingHole" description="Mounting Hole without connection"/>
@@ -6959,6 +7173,9 @@
       <datasheet>~</datasheet>
       <fields>
         <field name="Description">slots for isolation</field>
+        <field name="bom_1">0</field>
+        <field name="bom_2">0</field>
+        <field name="bom_3">0</field>
         <field name="price@10">0</field>
       </fields>
       <libsource lib="Mechanical" part="MountingHole" description="Mounting Hole without connection"/>
@@ -6971,6 +7188,9 @@
       <datasheet>~</datasheet>
       <fields>
         <field name="Description">slots for isolation</field>
+        <field name="bom_1">0</field>
+        <field name="bom_2">0</field>
+        <field name="bom_3">0</field>
         <field name="price@10">0</field>
       </fields>
       <libsource lib="Mechanical" part="MountingHole" description="Mounting Hole without connection"/>
@@ -6983,6 +7203,9 @@
       <datasheet>~</datasheet>
       <fields>
         <field name="Description">slots for isolation</field>
+        <field name="bom_1">0</field>
+        <field name="bom_2">0</field>
+        <field name="bom_3">0</field>
         <field name="price@10">0</field>
       </fields>
       <libsource lib="Mechanical" part="MountingHole" description="Mounting Hole without connection"/>
@@ -6995,6 +7218,9 @@
       <datasheet>~</datasheet>
       <fields>
         <field name="Description">slots for isolation</field>
+        <field name="bom_1">0</field>
+        <field name="bom_2">0</field>
+        <field name="bom_3">0</field>
         <field name="price@10">0</field>
       </fields>
       <libsource lib="Mechanical" part="MountingHole" description="Mounting Hole without connection"/>
@@ -7007,6 +7233,9 @@
       <datasheet>~</datasheet>
       <fields>
         <field name="Description">slots for isolation</field>
+        <field name="bom_1">0</field>
+        <field name="bom_2">0</field>
+        <field name="bom_3">0</field>
         <field name="price@10">0</field>
       </fields>
       <libsource lib="Mechanical" part="MountingHole" description="Mounting Hole without connection"/>
@@ -7019,6 +7248,9 @@
       <datasheet>~</datasheet>
       <fields>
         <field name="Description">slots for isolation</field>
+        <field name="bom_1">0</field>
+        <field name="bom_2">0</field>
+        <field name="bom_3">0</field>
         <field name="price@10">0</field>
       </fields>
       <libsource lib="Mechanical" part="MountingHole" description="Mounting Hole without connection"/>
@@ -7031,6 +7263,9 @@
       <datasheet>~</datasheet>
       <fields>
         <field name="Description">slots for isolation</field>
+        <field name="bom_1">0</field>
+        <field name="bom_2">0</field>
+        <field name="bom_3">0</field>
         <field name="price@10">0</field>
       </fields>
       <libsource lib="Mechanical" part="MountingHole" description="Mounting Hole without connection"/>
@@ -7043,6 +7278,9 @@
       <datasheet>~</datasheet>
       <fields>
         <field name="Description">slots for isolation</field>
+        <field name="bom_1">0</field>
+        <field name="bom_2">0</field>
+        <field name="bom_3">0</field>
         <field name="price@10">0</field>
       </fields>
       <libsource lib="Mechanical" part="MountingHole" description="Mounting Hole without connection"/>
@@ -7055,6 +7293,9 @@
       <datasheet>~</datasheet>
       <fields>
         <field name="Description">slots for isolation</field>
+        <field name="bom_1">0</field>
+        <field name="bom_2">0</field>
+        <field name="bom_3">0</field>
         <field name="price@10">0</field>
       </fields>
       <libsource lib="Mechanical" part="MountingHole" description="Mounting Hole without connection"/>
@@ -7067,6 +7308,9 @@
       <datasheet>~</datasheet>
       <fields>
         <field name="Description">slots for isolation</field>
+        <field name="bom_1">0</field>
+        <field name="bom_2">0</field>
+        <field name="bom_3">0</field>
         <field name="price@10">0</field>
       </fields>
       <libsource lib="Mechanical" part="MountingHole" description="Mounting Hole without connection"/>
@@ -7079,6 +7323,9 @@
       <datasheet>~</datasheet>
       <fields>
         <field name="Description">slots for isolation</field>
+        <field name="bom_1">0</field>
+        <field name="bom_2">0</field>
+        <field name="bom_3">0</field>
         <field name="price@10">0</field>
       </fields>
       <libsource lib="Mechanical" part="MountingHole" description="Mounting Hole without connection"/>
@@ -7091,6 +7338,9 @@
       <datasheet>~</datasheet>
       <fields>
         <field name="Description">slots for isolation</field>
+        <field name="bom_1">0</field>
+        <field name="bom_2">0</field>
+        <field name="bom_3">0</field>
         <field name="price@10">0</field>
       </fields>
       <libsource lib="Mechanical" part="MountingHole" description="Mounting Hole without connection"/>
@@ -7103,6 +7353,9 @@
       <datasheet>~</datasheet>
       <fields>
         <field name="Description">slots for isolation</field>
+        <field name="bom_1">0</field>
+        <field name="bom_2">0</field>
+        <field name="bom_3">0</field>
         <field name="price@10">0</field>
       </fields>
       <libsource lib="Mechanical" part="MountingHole" description="Mounting Hole without connection"/>
@@ -7115,6 +7368,9 @@
       <datasheet>~</datasheet>
       <fields>
         <field name="Description">slots for isolation</field>
+        <field name="bom_1">0</field>
+        <field name="bom_2">0</field>
+        <field name="bom_3">0</field>
         <field name="price@10">0</field>
       </fields>
       <libsource lib="Mechanical" part="MountingHole" description="Mounting Hole without connection"/>
@@ -7127,6 +7383,9 @@
       <datasheet>~</datasheet>
       <fields>
         <field name="Description">slots for isolation</field>
+        <field name="bom_1">0</field>
+        <field name="bom_2">0</field>
+        <field name="bom_3">0</field>
         <field name="price@10">0</field>
       </fields>
       <libsource lib="Mechanical" part="MountingHole" description="Mounting Hole without connection"/>
@@ -7139,6 +7398,9 @@
       <datasheet>~</datasheet>
       <fields>
         <field name="Description">slots for isolation</field>
+        <field name="bom_1">0</field>
+        <field name="bom_2">0</field>
+        <field name="bom_3">0</field>
         <field name="price@10">0</field>
       </fields>
       <libsource lib="Mechanical" part="MountingHole" description="Mounting Hole without connection"/>
@@ -7151,6 +7413,9 @@
       <datasheet>~</datasheet>
       <fields>
         <field name="Description">slots for isolation</field>
+        <field name="bom_1">0</field>
+        <field name="bom_2">0</field>
+        <field name="bom_3">0</field>
         <field name="price@10">0</field>
       </fields>
       <libsource lib="Mechanical" part="MountingHole" description="Mounting Hole without connection"/>
@@ -7163,6 +7428,9 @@
       <datasheet>~</datasheet>
       <fields>
         <field name="Description">slots for isolation</field>
+        <field name="bom_1">0</field>
+        <field name="bom_2">0</field>
+        <field name="bom_3">0</field>
         <field name="price@10">0</field>
       </fields>
       <libsource lib="Mechanical" part="MountingHole" description="Mounting Hole without connection"/>
@@ -7175,6 +7443,9 @@
       <datasheet>~</datasheet>
       <fields>
         <field name="Description">slots for isolation</field>
+        <field name="bom_1">0</field>
+        <field name="bom_2">0</field>
+        <field name="bom_3">0</field>
         <field name="price@10">0</field>
       </fields>
       <libsource lib="Mechanical" part="MountingHole" description="Mounting Hole without connection"/>
@@ -7188,6 +7459,9 @@
       <fields>
         <field name="Description">logo high voltage</field>
         <field name="PartNumber">-</field>
+        <field name="bom_1">0</field>
+        <field name="bom_2">0</field>
+        <field name="bom_3">0</field>
         <field name="price@10">0</field>
       </fields>
       <libsource lib="servo" part="high_voltage" description="Flash symbol, small"/>
@@ -7201,6 +7475,9 @@
       <fields>
         <field name="Description">logo kicad</field>
         <field name="PartNumber">-</field>
+        <field name="bom_1">0</field>
+        <field name="bom_2">0</field>
+        <field name="bom_3">0</field>
         <field name="price@10">0</field>
       </fields>
       <libsource lib="servo" part="logo" description="Open Hardware logo, large"/>
@@ -7214,6 +7491,9 @@
       <fields>
         <field name="Description">logo nanocut</field>
         <field name="PartNumber">-</field>
+        <field name="bom_1">0</field>
+        <field name="bom_2">0</field>
+        <field name="bom_3">0</field>
         <field name="price@10">0</field>
       </fields>
       <libsource lib="servo" part="logo" description="Open Hardware logo, large"/>
@@ -7227,6 +7507,9 @@
       <fields>
         <field name="Description">logo pslavkin</field>
         <field name="PartNumber">-</field>
+        <field name="bom_1">0</field>
+        <field name="bom_2">0</field>
+        <field name="bom_3">0</field>
         <field name="price@10">0</field>
       </fields>
       <libsource lib="servo" part="logo" description="Open Hardware logo, large"/>
@@ -7240,6 +7523,9 @@
       <fields>
         <field name="Description">logo recycler</field>
         <field name="PartNumber">-</field>
+        <field name="bom_1">0</field>
+        <field name="bom_2">0</field>
+        <field name="bom_3">0</field>
         <field name="price@10">0</field>
       </fields>
       <libsource lib="servo" part="logo" description="Open Hardware logo, large"/>
@@ -7253,6 +7539,9 @@
       <fields>
         <field name="Description">logo high voltage</field>
         <field name="PartNumber">-</field>
+        <field name="bom_1">0</field>
+        <field name="bom_2">0</field>
+        <field name="bom_3">0</field>
         <field name="price@10">0</field>
       </fields>
       <libsource lib="servo" part="high_voltage" description="Flash symbol, small"/>
@@ -7266,6 +7555,9 @@
       <fields>
         <field name="Description">logo high voltage</field>
         <field name="PartNumber">-</field>
+        <field name="bom_1">0</field>
+        <field name="bom_2">0</field>
+        <field name="bom_3">0</field>
         <field name="price@10">0</field>
       </fields>
       <libsource lib="servo" part="high_voltage" description="Flash symbol, small"/>
@@ -7279,6 +7571,9 @@
       <fields>
         <field name="Description">logo high voltage</field>
         <field name="PartNumber">-</field>
+        <field name="bom_1">0</field>
+        <field name="bom_2">0</field>
+        <field name="bom_3">0</field>
         <field name="price@10">0</field>
       </fields>
       <libsource lib="servo" part="high_voltage" description="Flash symbol, small"/>
@@ -7291,6 +7586,9 @@
       <datasheet>~</datasheet>
       <fields>
         <field name="Description">slots for isolation</field>
+        <field name="bom_1">0</field>
+        <field name="bom_2">0</field>
+        <field name="bom_3">0</field>
         <field name="price@10">0</field>
       </fields>
       <libsource lib="Mechanical" part="MountingHole" description="Mounting Hole without connection"/>
@@ -7303,6 +7601,9 @@
       <datasheet>~</datasheet>
       <fields>
         <field name="Description">slots for isolation</field>
+        <field name="bom_1">0</field>
+        <field name="bom_2">0</field>
+        <field name="bom_3">0</field>
         <field name="price@10">0</field>
       </fields>
       <libsource lib="Mechanical" part="MountingHole" description="Mounting Hole without connection"/>
@@ -7316,6 +7617,9 @@
       <fields>
         <field name="Description">,logo neurona</field>
         <field name="PartNumber">-</field>
+        <field name="bom_1">0</field>
+        <field name="bom_2">0</field>
+        <field name="bom_3">0</field>
         <field name="price@10">0</field>
       </fields>
       <libsource lib="servo" part="logo" description="Open Hardware logo, large"/>
@@ -7329,6 +7633,9 @@
       <fields>
         <field name="Description">logo open hard</field>
         <field name="PartNumber">-</field>
+        <field name="bom_1">0</field>
+        <field name="bom_2">0</field>
+        <field name="bom_3">0</field>
         <field name="price@10">0</field>
       </fields>
       <libsource lib="Graphic" part="Logo_Open_Hardware_Large" description="Open Hardware logo, large"/>
@@ -7342,6 +7649,9 @@
       <fields>
         <field name="Description">stackup</field>
         <field name="PartNumber">-</field>
+        <field name="bom_1">0</field>
+        <field name="bom_2">0</field>
+        <field name="bom_3">0</field>
         <field name="price@10">0</field>
       </fields>
       <libsource lib="servo" part="logo" description="Open Hardware logo, large"/>
@@ -7355,6 +7665,9 @@
       <fields>
         <field name="Description">stackup</field>
         <field name="PartNumber">-</field>
+        <field name="bom_1">0</field>
+        <field name="bom_2">0</field>
+        <field name="bom_3">0</field>
         <field name="price@10">0</field>
       </fields>
       <libsource lib="servo" part="logo" description="Open Hardware logo, large"/>
@@ -7368,6 +7681,9 @@
       <fields>
         <field name="Description">logo pslavkin</field>
         <field name="PartNumber">-</field>
+        <field name="bom_1">0</field>
+        <field name="bom_2">0</field>
+        <field name="bom_3">0</field>
         <field name="price@10">0</field>
       </fields>
       <libsource lib="servo" part="logo" description="Open Hardware logo, large"/>
@@ -7447,6 +7763,7 @@
       <fields>
         <field name="Description">Amplifier IC 1-Channel (Mono) Class D SOT-23-6</field>
         <field name="PartNumber">PAM8301AAF</field>
+        <field name="bom_1">0</field>
         <field name="bom_2">1</field>
         <field name="bom_3">1</field>
         <field name="digikey">PAM8301AAFDICT-ND </field>
@@ -7523,10 +7840,12 @@
     <comp ref="J1401">
       <value>idc2x10</value>
       <footprint>servo:idc2x10_smd</footprint>
-      <datasheet>../doc/datasheets/NHD-4.3-480272FT-CTXL-T.pdf</datasheet>
+      <datasheet>../doc/datasheets/PAGE122 .100 SBH11 SERIES MALE BOX HDR ST RA SMT.pdf</datasheet>
       <fields>
         <field name="Description"> Connector Header Surface Mount 20 position 0.100" (2.54mm) </field>
         <field name="PartNumber">SBH11-NBPC-D10-SM-BK</field>
+        <field name="bom_1">0</field>
+        <field name="bom_2">0</field>
         <field name="bom_3">1</field>
         <field name="digikey">S9188-ND</field>
         <field name="price@10">1.10200</field>
@@ -7557,6 +7876,8 @@
       <fields>
         <field name="Description">Connector Header Through Hole 2 position 0.100" (2.54mm) </field>
         <field name="PartNumber">0022232023 </field>
+        <field name="bom_1">0</field>
+        <field name="bom_2">0</field>
         <field name="bom_3">1</field>
         <field name="digikey"> WM19468-ND </field>
         <field name="price@10">0.23100</field>
@@ -7569,6 +7890,11 @@
       <value>NHD-4.3-480272FT-CTXL-T</value>
       <footprint>servo:lcd</footprint>
       <datasheet>../doc/datasheets/NHD-4.3-480272FT-CTXL-T.pdf</datasheet>
+      <fields>
+        <field name="bom_1">0</field>
+        <field name="bom_2">0</field>
+        <field name="bom_3">1</field>
+      </fields>
       <libsource lib="Mechanical" part="MountingHole" description="Mounting Hole without connection"/>
       <sheetpath names="/ui/" tstamps="/5E72D841/"/>
       <tstamp>5E61A395</tstamp>
@@ -7644,6 +7970,8 @@
       <fields>
         <field name="Description">Current Sensor 6A 1 Channel Hall Effect, Closed Loop Bidirectional Module </field>
         <field name="PartNumber">LXS 6-NPS</field>
+        <field name="bom_1">0</field>
+        <field name="bom_2">0</field>
         <field name="bom_3">1</field>
         <field name="digikey">398-1212-ND</field>
         <field name="price@10">12.50000</field>
@@ -7723,6 +8051,8 @@
       <fields>
         <field name="Description">Current Sensor 6A 1 Channel Hall Effect, Closed Loop Bidirectional Module </field>
         <field name="PartNumber">LXS 6-NPS</field>
+        <field name="bom_1">0</field>
+        <field name="bom_2">0</field>
         <field name="bom_3">1</field>
         <field name="digikey">398-1212-ND</field>
         <field name="price@10">12.50000</field>
@@ -7866,6 +8196,8 @@
       <fields>
         <field name="Description">Current Sensor 6A 1 Channel Hall Effect, Closed Loop Bidirectional Module </field>
         <field name="PartNumber">LXS 6-NPS</field>
+        <field name="bom_1">0</field>
+        <field name="bom_2">0</field>
         <field name="bom_3">1</field>
         <field name="digikey">398-1212-ND</field>
         <field name="price@10">12.50000</field>
@@ -7945,6 +8277,8 @@
       <fields>
         <field name="Description">Current Sensor 6A 1 Channel Hall Effect, Closed Loop Bidirectional Module </field>
         <field name="PartNumber">LXS 6-NPS</field>
+        <field name="bom_1">0</field>
+        <field name="bom_2">0</field>
         <field name="bom_3">1</field>
         <field name="digikey">398-1212-ND</field>
         <field name="price@10">12.50000</field>
@@ -8024,6 +8358,8 @@
       <fields>
         <field name="Description">Current Sensor 6A 1 Channel Hall Effect, Closed Loop Bidirectional Module </field>
         <field name="PartNumber">LXS 6-NPS</field>
+        <field name="bom_1">0</field>
+        <field name="bom_2">0</field>
         <field name="bom_3">1</field>
         <field name="digikey">398-1212-ND</field>
         <field name="price@10">12.50000</field>
@@ -8039,6 +8375,8 @@
       <fields>
         <field name="Description">6 Position Terminal Block Header, Male Pins, Shrouded (4 Side) 0.200" (5.08mm) 90°, Right Angle Through Hole </field>
         <field name="PartNumber">1762376 </field>
+        <field name="bom_1">0</field>
+        <field name="bom_2">0</field>
         <field name="bom_3">1</field>
         <field name="digikey"> 277-1400-ND </field>
         <field name="price@10">3.95500</field>
@@ -8054,6 +8392,8 @@
       <fields>
         <field name="Description">6 Position Terminal Block Header, Male Pins, Shrouded (4 Side) 0.200" (5.08mm) 90°, Right Angle Through Hole </field>
         <field name="PartNumber">1762376 </field>
+        <field name="bom_1">0</field>
+        <field name="bom_2">0</field>
         <field name="bom_3">1</field>
         <field name="digikey"> 277-1400-ND </field>
         <field name="price@10">3.95500</field>
@@ -8069,6 +8409,8 @@
       <fields>
         <field name="Description">6 Position Terminal Block Header, Male Pins, Shrouded (4 Side) 0.200" (5.08mm) 90°, Right Angle Through Hole </field>
         <field name="PartNumber">1762376 </field>
+        <field name="bom_1">0</field>
+        <field name="bom_2">0</field>
         <field name="bom_3">1</field>
         <field name="digikey"> 277-1400-ND </field>
         <field name="price@10">3.95500</field>
@@ -8084,6 +8426,8 @@
       <fields>
         <field name="Description">6 Position Terminal Block Header, Male Pins, Shrouded (4 Side) 0.200" (5.08mm) 90°, Right Angle Through Hole </field>
         <field name="PartNumber">1762376 </field>
+        <field name="bom_1">0</field>
+        <field name="bom_2">0</field>
         <field name="bom_3">1</field>
         <field name="digikey"> 277-1400-ND </field>
         <field name="price@10">3.95500</field>
@@ -8099,6 +8443,8 @@
       <fields>
         <field name="Description">6 Position Terminal Block Header, Male Pins, Shrouded (4 Side) 0.200" (5.08mm) 90°, Right Angle Through Hole </field>
         <field name="PartNumber">1762376 </field>
+        <field name="bom_1">0</field>
+        <field name="bom_2">0</field>
         <field name="bom_3">1</field>
         <field name="digikey"> 277-1400-ND </field>
         <field name="price@10">3.95500</field>
@@ -8114,6 +8460,8 @@
       <fields>
         <field name="Description">6 Position Terminal Block Header, Male Pins, Shrouded (4 Side) 0.200" (5.08mm) 90°, Right Angle Through Hole </field>
         <field name="PartNumber">1762376 </field>
+        <field name="bom_1">0</field>
+        <field name="bom_2">0</field>
         <field name="bom_3">1</field>
         <field name="digikey"> 277-1400-ND </field>
         <field name="price@10">3.95500</field>
@@ -8129,6 +8477,8 @@
       <fields>
         <field name="Description">Current Sensor 6A 1 Channel Hall Effect, Closed Loop Bidirectional Module </field>
         <field name="PartNumber">LXS 6-NPS</field>
+        <field name="bom_1">0</field>
+        <field name="bom_2">0</field>
         <field name="bom_3">1</field>
         <field name="digikey">398-1212-ND</field>
         <field name="price@10">12.50000</field>
@@ -8192,6 +8542,7 @@
       <fields>
         <field name="Description">Isolation IC 8-SOIC </field>
         <field name="PartNumber">AMC1311BDWV</field>
+        <field name="bom_1">0</field>
         <field name="bom_2">1</field>
         <field name="bom_3">1</field>
         <field name="digikey">296-47610-ND</field>
@@ -8306,6 +8657,8 @@
       <fields>
         <field name="Description">Isolated Module DC DC Converter 1 Output 5V 200mA - 5V Input </field>
         <field name="PartNumber">RFM-0505S</field>
+        <field name="bom_1">0</field>
+        <field name="bom_2">0</field>
         <field name="bom_3">1</field>
         <field name="digikey">945-3159-ND</field>
         <field name="price@10">1.36000</field>
@@ -8433,6 +8786,7 @@
       <fields>
         <field name="Description">Isolation IC 8-SOIC </field>
         <field name="PartNumber">AMC1311BDWV</field>
+        <field name="bom_1">0</field>
         <field name="bom_2">1</field>
         <field name="bom_3">1</field>
         <field name="digikey">296-47610-ND</field>
@@ -8531,6 +8885,8 @@
       <fields>
         <field name="Description">Isolated Module DC DC Converter 1 Output 5V 200mA - 5V Input </field>
         <field name="PartNumber">RFM-0505S</field>
+        <field name="bom_1">0</field>
+        <field name="bom_2">0</field>
         <field name="bom_3">1</field>
         <field name="digikey">945-3159-ND</field>
         <field name="price@10">1.36000</field>
@@ -8722,6 +9078,8 @@
       <fields>
         <field name="Description">Connector Header Surface Mount 34 position 0.100" (2.54mm) </field>
         <field name="PartNumber">SBH11-NBPC-D17-SM-BK</field>
+        <field name="bom_1">0</field>
+        <field name="bom_2">0</field>
         <field name="bom_3">1</field>
         <field name="digikey">S9191-ND</field>
         <field name="price@10">1.31900</field>
@@ -8737,6 +9095,8 @@
       <fields>
         <field name="Description">Connector Header Surface Mount 34 position 0.100" (2.54mm) </field>
         <field name="PartNumber">SBH11-NBPC-D17-SM-BK</field>
+        <field name="bom_1">0</field>
+        <field name="bom_2">0</field>
         <field name="bom_3">1</field>
         <field name="digikey">S9191-ND</field>
         <field name="price@10">1.31900</field>
@@ -8912,6 +9272,7 @@
       <fields>
         <field name="Description">General Purpose Digital Isolator 5000Vrms 6 Channel 150Mbps 35kV/µs CMTI 16-SOIC (0.295", 7.50mm Width) </field>
         <field name="PartNumber">SI8661BD-B-ISR</field>
+        <field name="bom_1">0</field>
         <field name="bom_2">1</field>
         <field name="bom_3">1</field>
         <field name="digikey">336-4411-1-ND </field>
@@ -9104,6 +9465,7 @@
       <fields>
         <field name="Description">General Purpose Digital Isolator 5000Vrms 6 Channel 150Mbps 35kV/µs CMTI 16-SOIC (0.295", 7.50mm Width) </field>
         <field name="PartNumber">SI8661BD-B-ISR</field>
+        <field name="bom_1">0</field>
         <field name="bom_2">1</field>
         <field name="bom_3">1</field>
         <field name="digikey">336-4411-1-ND </field>
@@ -9136,6 +9498,7 @@
       <fields>
         <field name="Description">Buffer, Non-Inverting 2 Element 1 Bit per Element Push-Pull Output SOT-23-6</field>
         <field name="PartNumber">SN74LVC2G17DBVR</field>
+        <field name="bom_1">0</field>
         <field name="bom_2">1</field>
         <field name="bom_3">1</field>
         <field name="digikey"> 296-SN74LVC2G17DBVRCT-ND </field>
@@ -9152,6 +9515,7 @@
       <fields>
         <field name="Description">Buffer, Non-Inverting 2 Element 1 Bit per Element Push-Pull Output SOT-23-6</field>
         <field name="PartNumber">SN74LVC2G17DBVR</field>
+        <field name="bom_1">0</field>
         <field name="bom_2">1</field>
         <field name="bom_3">1</field>
         <field name="digikey"> 296-SN74LVC2G17DBVRCT-ND </field>
@@ -9296,6 +9660,7 @@
       <fields>
         <field name="Description">2/2 Transceiver Full RS422, RS485 16-SSOP </field>
         <field name="PartNumber">SN75C1168DBR</field>
+        <field name="bom_1">0</field>
         <field name="bom_2">1</field>
         <field name="bom_3">1</field>
         <field name="digikey">296-SN75C1168DBRCT-ND</field>
@@ -9328,6 +9693,7 @@
       <fields>
         <field name="Description">General Purpose Digital Isolator 5000Vrms 6 Channel 150Mbps 35kV/µs CMTI 16-SOIC (0.295", 7.50mm Width)</field>
         <field name="PartNumber">SI8662BD-B-IS</field>
+        <field name="bom_1">0</field>
         <field name="bom_2">1</field>
         <field name="bom_3">1</field>
         <field name="digikey">336-2125-5-ND </field>
@@ -9344,6 +9710,8 @@
       <fields>
         <field name="Description">12 Position Terminal Block Header, Male Pins, Shrouded (4 Side) 0.150" (3.81mm) 90°, Right Angle Through Hole </field>
         <field name="PartNumber">1843114 </field>
+        <field name="bom_1">0</field>
+        <field name="bom_2">0</field>
         <field name="bom_3">1</field>
         <field name="digikey">277-6009-ND </field>
         <field name="price@10">7.50500</field>
@@ -9391,6 +9759,7 @@
       <fields>
         <field name="Description">2/2 Transceiver Full RS422, RS485 16-SSOP </field>
         <field name="PartNumber">SN75C1168DBR</field>
+        <field name="bom_1">0</field>
         <field name="bom_2">1</field>
         <field name="bom_3">1</field>
         <field name="digikey">296-SN75C1168DBRCT-ND</field>
@@ -9423,6 +9792,7 @@
       <fields>
         <field name="Description">General Purpose Digital Isolator 5000Vrms 6 Channel 150Mbps 35kV/µs CMTI 16-SOIC (0.295", 7.50mm Width)</field>
         <field name="PartNumber">SI8662BD-B-IS</field>
+        <field name="bom_1">0</field>
         <field name="bom_2">1</field>
         <field name="bom_3">1</field>
         <field name="digikey">336-2125-5-ND </field>
@@ -9675,6 +10045,8 @@
       <fields>
         <field name="Description">jumper smd bridge using tin</field>
         <field name="PartNumber">-</field>
+        <field name="bom_1">0</field>
+        <field name="bom_2">0</field>
         <field name="digikey">-</field>
         <field name="price@10">0</field>
       </fields>
@@ -9689,6 +10061,8 @@
       <fields>
         <field name="Description">jumper smd bridge using tin</field>
         <field name="PartNumber">-</field>
+        <field name="bom_1">0</field>
+        <field name="bom_2">0</field>
         <field name="digikey">-</field>
         <field name="price@10">0</field>
       </fields>
@@ -9703,6 +10077,8 @@
       <fields>
         <field name="Description">jumper smd bridge using tin</field>
         <field name="PartNumber">-</field>
+        <field name="bom_1">0</field>
+        <field name="bom_2">0</field>
         <field name="digikey">-</field>
         <field name="price@10">0</field>
       </fields>
@@ -9717,6 +10093,8 @@
       <fields>
         <field name="Description">jumper smd bridge using tin</field>
         <field name="PartNumber">-</field>
+        <field name="bom_1">0</field>
+        <field name="bom_2">0</field>
         <field name="digikey">-</field>
         <field name="price@10">0</field>
       </fields>
@@ -13984,42 +14362,42 @@
     </net>
     <net code="482" name="/endat/ENDAT2_DATA_H_N">
       <node ref="J1901" pin="5b"/>
-      <node ref="U1905" pin="13"/>
       <node ref="R1904" pin="2"/>
+      <node ref="U1905" pin="13"/>
       <node ref="R1905" pin="1"/>
       <node ref="U1905" pin="2"/>
     </net>
     <net code="483" name="/endat/ENDAT1_DATA_H_P">
+      <node ref="R1915" pin="1"/>
       <node ref="R1914" pin="2"/>
       <node ref="U1904" pin="14"/>
       <node ref="U1904" pin="1"/>
-      <node ref="R1915" pin="1"/>
       <node ref="J1901" pin="4a"/>
     </net>
     <net code="484" name="/endat/ENDAT1_CLK_H_P">
+      <node ref="R1911" pin="2"/>
       <node ref="R1912" pin="1"/>
       <node ref="J1901" pin="2a"/>
-      <node ref="R1911" pin="2"/>
       <node ref="U1904" pin="10"/>
     </net>
     <net code="485" name="Net-(C1810-Pad1)">
       <node ref="C1810" pin="1"/>
-      <node ref="R1809" pin="1"/>
       <node ref="U1802" pin="4"/>
+      <node ref="R1809" pin="1"/>
     </net>
     <net code="486" name="Net-(U1802-Pad7)">
+      <node ref="U1804" pin="3"/>
       <node ref="U1802" pin="7"/>
-      <node ref="U1804" pin="1"/>
     </net>
     <net code="487" name="Net-(C1809-Pad1)">
-      <node ref="C1809" pin="1"/>
       <node ref="R1810" pin="1"/>
       <node ref="U1802" pin="5"/>
+      <node ref="C1809" pin="1"/>
     </net>
     <net code="488" name="Net-(C1812-Pad1)">
+      <node ref="C1812" pin="1"/>
       <node ref="R1807" pin="1"/>
       <node ref="U1802" pin="2"/>
-      <node ref="C1812" pin="1"/>
     </net>
     <net code="489" name="Net-(C1811-Pad1)">
       <node ref="C1811" pin="1"/>
@@ -14027,14 +14405,14 @@
       <node ref="U1802" pin="3"/>
     </net>
     <net code="490" name="Net-(C1803-Pad1)">
-      <node ref="R1804" pin="1"/>
-      <node ref="U1801" pin="4"/>
       <node ref="C1803" pin="1"/>
+      <node ref="U1801" pin="4"/>
+      <node ref="R1804" pin="1"/>
     </net>
     <net code="491" name="Net-(C1804-Pad1)">
       <node ref="U1801" pin="5"/>
-      <node ref="R1805" pin="1"/>
       <node ref="C1804" pin="1"/>
+      <node ref="R1805" pin="1"/>
     </net>
     <net code="492" name="Net-(C1801-Pad1)">
       <node ref="R1802" pin="1"/>
@@ -14048,16 +14426,16 @@
     </net>
     <net code="494" name="Net-(C1808-Pad1)">
       <node ref="R1811" pin="1"/>
-      <node ref="U1804" pin="3"/>
+      <node ref="U1804" pin="1"/>
       <node ref="C1808" pin="1"/>
     </net>
-    <net code="495" name="Net-(U1802-Pad6)">
-      <node ref="U1802" pin="6"/>
+    <net code="495" name="Net-(R1812-Pad1)">
+      <node ref="R1812" pin="1"/>
       <node ref="U1804" pin="4"/>
     </net>
-    <net code="496" name="Net-(R1812-Pad1)">
+    <net code="496" name="Net-(U1802-Pad6)">
       <node ref="U1804" pin="6"/>
-      <node ref="R1812" pin="1"/>
+      <node ref="U1802" pin="6"/>
     </net>
     <net code="497" name="Net-(R1801-Pad1)">
       <node ref="R1801" pin="1"/>

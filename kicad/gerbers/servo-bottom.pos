@@ -1,4 +1,4 @@
-### Module positions - created on Fri 06 Mar 2020 02:19:38 AM -03 ###
+### Module positions - created on Fri 06 Mar 2020 12:37:00 PM -03 ###
 ### Printed by Pcbnew version kicad 5.0.2+dfsg1-1
 ## Unit = mm, Angle = deg.
 ## Side : bottom
@@ -28,7 +28,7 @@ C503      0.1uF                      C_0603_1608Metric                          
 C504      0.1uF                      C_0603_1608Metric                                 -78.1010    64.2401  180.0000  bottom
 C505      0.1uF                      C_0603_1608Metric                                 -78.7010    70.6401    0.0000  bottom
 C506      0.1uF                      C_0603_1608Metric                                 -68.7010    65.6401   90.0000  bottom
-C507      0.1uF                      C_0603_1608Metric                                 -80.7010    67.8401   90.0000  bottom
+C507      0.1uF                      C_0603_1608Metric                                 -80.5910    67.8501   90.0000  bottom
 C508      2.2uF                      C_0603_1608Metric                                 -72.9010    90.6401  270.0000  bottom
 C511      0.1uF                      C_0603_1608Metric                                 -72.1010    66.2401   90.0000  bottom
 C512      0.1uF                      C_0603_1608Metric                                 -77.5010    69.0401    0.0000  bottom

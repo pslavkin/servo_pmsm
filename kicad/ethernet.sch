@@ -194,6 +194,7 @@ F 6 "296-47256-1-ND" H 0   0   50  0001 C CNN "digikey"
 F 7 "2.37700" H 0   0   50  0001 C CNN "price@10"
 F 8 "1" H 0   0   50  0001 C CNN "bom_2"
 F 9 "1" H 0   0   50  0001 C CNN "bom_3"
+F 10 "0" H 0   0   50  0001 C CNN "bom_1"
 	1    7150 4000
 	1    0    0    -1  
 $EndComp
@@ -900,6 +901,7 @@ F 6 "296-39344-1-ND" H 0   0   50  0001 C CNN "digikey"
 F 7 "0.56800" H 0   0   50  0001 C CNN "price@10"
 F 8 "1" H 0   0   50  0001 C CNN "bom_2"
 F 9 "1" H 0   0   50  0001 C CNN "bom_3"
+F 10 "0" H 0   0   50  0001 C CNN "bom_1"
 	1    7800 8350
 	1    0    0    -1  
 $EndComp
@@ -1060,8 +1062,9 @@ F 4 "1 Port RJ45 with USB A Magjack Connector Through Hole 10/100 Base-T, AutoMD
 F 5 "0821-1X1T-36-F " H 0   0   50  0001 C CNN "PartNumber"
 F 6 "507-1424-ND " H 0   0   50  0001 C CNN "digikey"
 F 7 "4.89600" H 0   0   50  0001 C CNN "price@10"
-F 8 "" H 0   0   50  0001 C CNN "bom_2"
+F 8 "0" H 0   0   50  0001 C CNN "bom_2"
 F 9 "1" H 0   0   50  0001 C CNN "bom_3"
+F 10 "0" H 0   0   50  0001 C CNN "bom_1"
 	1    14150 3300
 	1    0    0    -1  
 $EndComp
@@ -1181,8 +1184,8 @@ F 4 "jumper smd bridge using tin" H 5450 -900 50  0001 C CNN "Description"
 F 5 "-" H 5450 -900 50  0001 C CNN "PartNumber"
 F 6 "-" H 5450 -900 50  0001 C CNN "digikey"
 F 7 "0" H 5450 -900 50  0001 C CNN "price@10"
-F 8 "" H 0   0   50  0001 C CNN "bom_1"
-F 9 "" H 0   0   50  0001 C CNN "bom_2"
+F 8 "0" H 0   0   50  0001 C CNN "bom_1"
+F 9 "0" H 0   0   50  0001 C CNN "bom_2"
 	1    8750 4700
 	0    1    1    0   
 $EndComp
@@ -1205,8 +1208,8 @@ F 4 "jumper smd bridge using tin" H 5850 -1100 50  0001 C CNN "Description"
 F 5 "-" H 5850 -1100 50  0001 C CNN "PartNumber"
 F 6 "-" H 5850 -1100 50  0001 C CNN "digikey"
 F 7 "0" H 5850 -1100 50  0001 C CNN "price@10"
-F 8 "" H 0   0   50  0001 C CNN "bom_1"
-F 9 "" H 0   0   50  0001 C CNN "bom_2"
+F 8 "0" H 0   0   50  0001 C CNN "bom_1"
+F 9 "0" H 0   0   50  0001 C CNN "bom_2"
 	1    9150 4500
 	-1   0    0    1   
 $EndComp

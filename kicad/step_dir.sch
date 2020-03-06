@@ -181,6 +181,8 @@ F 5 "1843114 " H 0   0   50  0001 C CNN "PartNumber"
 F 6 "277-6009-ND " H 0   0   50  0001 C CNN "digikey"
 F 7 "7.50500" H 0   0   50  0001 C CNN "price@10"
 F 8 "1" H 0   0   50  0001 C CNN "bom_3"
+F 9 "0" H 0   0   50  0001 C CNN "bom_1"
+F 10 "0" H 0   0   50  0001 C CNN "bom_2"
 	1    8600 3850
 	1    0    0    -1  
 $EndComp
@@ -374,6 +376,7 @@ F 6 "AM26LS32ACDR" H 0   0   50  0001 C CNN "PartNumber"
 F 7 "296-1011-1-ND" H 0   0   50  0001 C CNN "digikey"
 F 8 "0.57800" H 0   0   50  0001 C CNN "price@10"
 F 9 "1" H 0   0   50  0001 C CNN "bom_2"
+F 10 "0" H 0   0   50  0001 C CNN "bom_1"
 	1    8950 5950
 	0    -1   1    0   
 $EndComp

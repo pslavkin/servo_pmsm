@@ -286,6 +286,7 @@ F 6 "336-4411-1-ND " H 0   0   50  0001 C CNN "digikey"
 F 7 "2.75000" H 0   0   50  0001 C CNN "price@10"
 F 8 "1" H 0   0   50  0001 C CNN "bom_2"
 F 9 "1" H 0   0   50  0001 C CNN "bom_3"
+F 10 "0" H 0   0   50  0001 C CNN "bom_1"
 	1    3500 3150
 	-1   0    0    -1  
 $EndComp
@@ -622,6 +623,7 @@ F 6 "336-4411-1-ND " H 0   0   50  0001 C CNN "digikey"
 F 7 "2.75000" H 0   0   50  0001 C CNN "price@10"
 F 8 "1" H 0   0   50  0001 C CNN "bom_2"
 F 9 "1" H 0   0   50  0001 C CNN "bom_3"
+F 10 "0" H 0   0   50  0001 C CNN "bom_1"
 	1    14300 3150
 	1    0    0    -1  
 $EndComp
@@ -760,7 +762,7 @@ F 4 "Buffer, Non-Inverting 2 Element 1 Bit per Element Push-Pull Output SOT-23-6
 F 5 "SN74LVC2G17DBVR" H 0   0   50  0001 C CNN "PartNumber"
 F 6 " 296-SN74LVC2G17DBVRCT-ND " H 0   0   50  0001 C CNN "digikey"
 F 7 "0.30200" H 0   0   50  0001 C CNN "price@10"
-F 8 "" H 0   0   50  0001 C CNN "bom_1"
+F 8 "0" H 0   0   50  0001 C CNN "bom_1"
 F 9 "1" H 0   0   50  0001 C CNN "bom_2"
 F 10 "1" H 0   0   50  0001 C CNN "bom_3"
 	1    5200 3900
@@ -803,22 +805,22 @@ Wire Wire Line
 $Comp
 L servo:SN74LVC2G17DBVR U?
 U 1 1 5E553628
-P 12600 3900
+P 12600 3700
 AR Path="/5DDE8C5E/5E553628" Ref="U?"  Part="1" 
 AR Path="/6056AA11/5E553628" Ref="U1804"  Part="1" 
-F 0 "U1804" H 12475 3733 39  0000 C CNN
-F 1 "SN74LVC2G17DBVR" H 12475 3674 20  0000 C CNN
-F 2 "servo:SOT-23-6" H 12100 4100 60  0001 C CNN
-F 3 "../doc/datasheets/sn74lvc2g17.pdf" H 12300 4350 60  0001 C CNN
-F 4 "Buffer, Non-Inverting 2 Element 1 Bit per Element Push-Pull Output SOT-23-6" H 0   0   50  0001 C CNN "Description"
-F 5 "SN74LVC2G17DBVR" H 0   0   50  0001 C CNN "PartNumber"
-F 6 " 296-SN74LVC2G17DBVRCT-ND " H 0   0   50  0001 C CNN "digikey"
-F 7 "0.30200" H 0   0   50  0001 C CNN "price@10"
-F 8 "" H 0   0   50  0001 C CNN "bom_1"
-F 9 "1" H 0   0   50  0001 C CNN "bom_2"
-F 10 "1" H 0   0   50  0001 C CNN "bom_3"
-	1    12600 3900
-	-1   0    0    -1  
+F 0 "U1804" H 12475 3533 39  0000 C CNN
+F 1 "SN74LVC2G17DBVR" H 12475 3474 20  0000 C CNN
+F 2 "servo:SOT-23-6" H 12100 3900 60  0001 C CNN
+F 3 "../doc/datasheets/sn74lvc2g17.pdf" H 12300 4150 60  0001 C CNN
+F 4 "Buffer, Non-Inverting 2 Element 1 Bit per Element Push-Pull Output SOT-23-6" H 0   -200 50  0001 C CNN "Description"
+F 5 "SN74LVC2G17DBVR" H 0   -200 50  0001 C CNN "PartNumber"
+F 6 " 296-SN74LVC2G17DBVRCT-ND " H 0   -200 50  0001 C CNN "digikey"
+F 7 "0.30200" H 0   -200 50  0001 C CNN "price@10"
+F 8 "0" H 0   -200 50  0001 C CNN "bom_1"
+F 9 "1" H 0   -200 50  0001 C CNN "bom_2"
+F 10 "1" H 0   -200 50  0001 C CNN "bom_3"
+	1    12600 3700
+	-1   0    0    1   
 $EndComp
 Wire Wire Line
 	13100 3800 13250 3800

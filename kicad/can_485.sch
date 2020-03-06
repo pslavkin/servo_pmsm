@@ -28,6 +28,7 @@ F 6 "296-33295-5-ND" H 0   0   50  0001 C CNN "digikey"
 F 7 "5.27900" H 0   0   50  0001 C CNN "price@10"
 F 8 "1" H 0   0   50  0001 C CNN "bom_2"
 F 9 "1" H 0   0   50  0001 C CNN "bom_3"
+F 10 "0" H 0   0   50  0001 C CNN "bom_1"
 	1    5800 3650
 	1    0    0    -1  
 $EndComp
@@ -163,7 +164,7 @@ F 4 "RS422, RS485 Digital Isolator 2500Vrms 3 Channel 500kbps 25kV/µs CMTI 16-S
 F 5 "ADM2483BRWZ" H 0   0   50  0001 C CNN "PartNumber"
 F 6 "ADM2483BRWZ-ND" H 0   0   50  0001 C CNN "digikey"
 F 7 "5.59000" H 0   0   50  0001 C CNN "price@10"
-F 8 "" H 0   0   50  0001 C CNN "bom_1"
+F 8 "0" H 0   0   50  0001 C CNN "bom_1"
 F 9 "1" H 0   0   50  0001 C CNN "bom_2"
 F 10 "1" H 0   0   50  0001 C CNN "bom_3"
 	1    10500 3500
@@ -285,6 +286,8 @@ F 5 "1843091" H 0   0   50  0001 C CNN "PartNumber"
 F 6 "277-6025-ND" H 0   0   50  0001 C CNN "digikey"
 F 7 "5.01100" H 0   0   50  0001 C CNN "price@10"
 F 8 "1" H 0   0   50  0001 C CNN "bom_3"
+F 9 "0" H 0   0   50  0001 C CNN "bom_1"
+F 10 "0" H 0   0   50  0001 C CNN "bom_2"
 	1    8050 3400
 	1    0    0    -1  
 $EndComp

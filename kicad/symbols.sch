@@ -28,6 +28,9 @@ F 2 "servo:Fiducial_1mm_Dia_2.54mm_Outer_CopperTop" H 4100 2000 50  0001 C CNN
 F 3 "~" H 4100 2000 50  0001 C CNN
 F 4 "fiducials" H 0   0   50  0001 C CNN "Description"
 F 5 "0" H 0   0   50  0001 C CNN "price@10"
+F 6 "0" H 0   0   50  0001 C CNN "bom_1"
+F 7 "0" H 0   0   50  0001 C CNN "bom_2"
+F 8 "0" H 0   0   50  0001 C CNN "bom_3"
 	1    4100 2000
 	1    0    0    -1  
 $EndComp
@@ -44,6 +47,9 @@ F 3 "~" H 2350 1900 50  0001 C CNN
 F 4 "case housing" H 0   0   50  0001 C CNN "Description"
 F 5 "-" H 0   0   50  0001 C CNN "PartNumber"
 F 6 "0" H 0   0   50  0001 C CNN "price@10"
+F 7 "0" H 0   0   50  0001 C CNN "bom_1"
+F 8 "0" H 0   0   50  0001 C CNN "bom_2"
+F 9 "0" H 0   0   50  0001 C CNN "bom_3"
 	1    2300 1850
 	1    0    0    -1  
 $EndComp
@@ -63,6 +69,9 @@ F 2 "servo:Fiducial_1mm_Dia_2.54mm_Outer_CopperTop" H 4150 2900 50  0001 C CNN
 F 3 "~" H 4150 2900 50  0001 C CNN
 F 4 "fiducials" H 0   0   50  0001 C CNN "Description"
 F 5 "0" H 0   0   50  0001 C CNN "price@10"
+F 6 "0" H 0   0   50  0001 C CNN "bom_1"
+F 7 "0" H 0   0   50  0001 C CNN "bom_2"
+F 8 "0" H 0   0   50  0001 C CNN "bom_3"
 	1    4150 2900
 	1    0    0    -1  
 $EndComp
@@ -76,6 +85,9 @@ F 2 "servo:Fiducial_1mm_Dia_2.54mm_Outer_CopperTop" H 4800 2000 50  0001 C CNN
 F 3 "~" H 4800 2000 50  0001 C CNN
 F 4 "fiducials" H 0   0   50  0001 C CNN "Description"
 F 5 "0" H 0   0   50  0001 C CNN "price@10"
+F 6 "0" H 0   0   50  0001 C CNN "bom_1"
+F 7 "0" H 0   0   50  0001 C CNN "bom_2"
+F 8 "0" H 0   0   50  0001 C CNN "bom_3"
 	1    4800 2000
 	1    0    0    -1  
 $EndComp
@@ -89,6 +101,9 @@ F 2 "servo:Fiducial_1mm_Dia_2.54mm_Outer_CopperTop" H 5450 2000 50  0001 C CNN
 F 3 "~" H 5450 2000 50  0001 C CNN
 F 4 "fiducials" H 0   0   50  0001 C CNN "Description"
 F 5 "0" H 0   0   50  0001 C CNN "price@10"
+F 6 "0" H 0   0   50  0001 C CNN "bom_1"
+F 7 "0" H 0   0   50  0001 C CNN "bom_2"
+F 8 "0" H 0   0   50  0001 C CNN "bom_3"
 	1    5450 2000
 	1    0    0    -1  
 $EndComp
@@ -102,6 +117,9 @@ F 2 "servo:Fiducial_1mm_Dia_2.54mm_Outer_CopperTop" H 6150 2000 50  0001 C CNN
 F 3 "~" H 6150 2000 50  0001 C CNN
 F 4 "fiducials" H 0   0   50  0001 C CNN "Description"
 F 5 "0" H 0   0   50  0001 C CNN "price@10"
+F 6 "0" H 0   0   50  0001 C CNN "bom_1"
+F 7 "0" H 0   0   50  0001 C CNN "bom_2"
+F 8 "0" H 0   0   50  0001 C CNN "bom_3"
 	1    6150 2000
 	1    0    0    -1  
 $EndComp
@@ -115,6 +133,9 @@ F 2 "servo:Fiducial_1mm_Dia_2.54mm_Outer_CopperTop" H 4850 2900 50  0001 C CNN
 F 3 "~" H 4850 2900 50  0001 C CNN
 F 4 "fiducials" H 0   0   50  0001 C CNN "Description"
 F 5 "0" H 0   0   50  0001 C CNN "price@10"
+F 6 "0" H 0   0   50  0001 C CNN "bom_1"
+F 7 "0" H 0   0   50  0001 C CNN "bom_2"
+F 8 "0" H 0   0   50  0001 C CNN "bom_3"
 	1    4850 2900
 	1    0    0    -1  
 $EndComp
@@ -128,6 +149,9 @@ F 2 "servo:Fiducial_1mm_Dia_2.54mm_Outer_CopperTop" H 5500 2900 50  0001 C CNN
 F 3 "~" H 5500 2900 50  0001 C CNN
 F 4 "fiducials" H 0   0   50  0001 C CNN "Description"
 F 5 "0" H 0   0   50  0001 C CNN "price@10"
+F 6 "0" H 0   0   50  0001 C CNN "bom_1"
+F 7 "0" H 0   0   50  0001 C CNN "bom_2"
+F 8 "0" H 0   0   50  0001 C CNN "bom_3"
 	1    5500 2900
 	1    0    0    -1  
 $EndComp
@@ -141,6 +165,9 @@ F 2 "servo:Fiducial_1mm_Dia_2.54mm_Outer_CopperTop" H 6150 2900 50  0001 C CNN
 F 3 "~" H 6150 2900 50  0001 C CNN
 F 4 "fiducials" H 0   0   50  0001 C CNN "Description"
 F 5 "0" H 0   0   50  0001 C CNN "price@10"
+F 6 "0" H 0   0   50  0001 C CNN "bom_1"
+F 7 "0" H 0   0   50  0001 C CNN "bom_2"
+F 8 "0" H 0   0   50  0001 C CNN "bom_3"
 	1    6150 2900
 	1    0    0    -1  
 $EndComp
@@ -154,6 +181,9 @@ F 2 "servo:slot" H 4250 4550 50  0001 C CNN
 F 3 "~" H 4250 4550 50  0001 C CNN
 F 4 "slots for isolation" H 0   0   50  0001 C CNN "Description"
 F 5 "0" H 0   0   50  0001 C CNN "price@10"
+F 6 "0" H 0   0   50  0001 C CNN "bom_1"
+F 7 "0" H 0   0   50  0001 C CNN "bom_2"
+F 8 "0" H 0   0   50  0001 C CNN "bom_3"
 	1    4250 4550
 	1    0    0    -1  
 $EndComp
@@ -167,6 +197,9 @@ F 2 "servo:slot" H 4650 4550 50  0001 C CNN
 F 3 "~" H 4650 4550 50  0001 C CNN
 F 4 "slots for isolation" H 0   0   50  0001 C CNN "Description"
 F 5 "0" H 0   0   50  0001 C CNN "price@10"
+F 6 "0" H 0   0   50  0001 C CNN "bom_1"
+F 7 "0" H 0   0   50  0001 C CNN "bom_2"
+F 8 "0" H 0   0   50  0001 C CNN "bom_3"
 	1    4650 4550
 	1    0    0    -1  
 $EndComp
@@ -180,6 +213,9 @@ F 2 "servo:slot" H 5050 4550 50  0001 C CNN
 F 3 "~" H 5050 4550 50  0001 C CNN
 F 4 "slots for isolation" H 0   0   50  0001 C CNN "Description"
 F 5 "0" H 0   0   50  0001 C CNN "price@10"
+F 6 "0" H 0   0   50  0001 C CNN "bom_1"
+F 7 "0" H 0   0   50  0001 C CNN "bom_2"
+F 8 "0" H 0   0   50  0001 C CNN "bom_3"
 	1    5050 4550
 	1    0    0    -1  
 $EndComp
@@ -193,6 +229,9 @@ F 2 "servo:slot" H 5450 4550 50  0001 C CNN
 F 3 "~" H 5450 4550 50  0001 C CNN
 F 4 "slots for isolation" H 0   0   50  0001 C CNN "Description"
 F 5 "0" H 0   0   50  0001 C CNN "price@10"
+F 6 "0" H 0   0   50  0001 C CNN "bom_1"
+F 7 "0" H 0   0   50  0001 C CNN "bom_2"
+F 8 "0" H 0   0   50  0001 C CNN "bom_3"
 	1    5450 4550
 	1    0    0    -1  
 $EndComp
@@ -206,6 +245,9 @@ F 2 "servo:slot" H 4250 4900 50  0001 C CNN
 F 3 "~" H 4250 4900 50  0001 C CNN
 F 4 "slots for isolation" H 0   0   50  0001 C CNN "Description"
 F 5 "0" H 0   0   50  0001 C CNN "price@10"
+F 6 "0" H 0   0   50  0001 C CNN "bom_1"
+F 7 "0" H 0   0   50  0001 C CNN "bom_2"
+F 8 "0" H 0   0   50  0001 C CNN "bom_3"
 	1    4250 4900
 	1    0    0    -1  
 $EndComp
@@ -219,6 +261,9 @@ F 2 "servo:slot" H 4650 4900 50  0001 C CNN
 F 3 "~" H 4650 4900 50  0001 C CNN
 F 4 "slots for isolation" H 0   0   50  0001 C CNN "Description"
 F 5 "0" H 0   0   50  0001 C CNN "price@10"
+F 6 "0" H 0   0   50  0001 C CNN "bom_1"
+F 7 "0" H 0   0   50  0001 C CNN "bom_2"
+F 8 "0" H 0   0   50  0001 C CNN "bom_3"
 	1    4650 4900
 	1    0    0    -1  
 $EndComp
@@ -232,6 +277,9 @@ F 2 "servo:slot" H 5050 4900 50  0001 C CNN
 F 3 "~" H 5050 4900 50  0001 C CNN
 F 4 "slots for isolation" H 0   0   50  0001 C CNN "Description"
 F 5 "0" H 0   0   50  0001 C CNN "price@10"
+F 6 "0" H 0   0   50  0001 C CNN "bom_1"
+F 7 "0" H 0   0   50  0001 C CNN "bom_2"
+F 8 "0" H 0   0   50  0001 C CNN "bom_3"
 	1    5050 4900
 	1    0    0    -1  
 $EndComp
@@ -245,6 +293,9 @@ F 2 "servo:slot" H 5450 4900 50  0001 C CNN
 F 3 "~" H 5450 4900 50  0001 C CNN
 F 4 "slots for isolation" H 0   0   50  0001 C CNN "Description"
 F 5 "0" H 0   0   50  0001 C CNN "price@10"
+F 6 "0" H 0   0   50  0001 C CNN "bom_1"
+F 7 "0" H 0   0   50  0001 C CNN "bom_2"
+F 8 "0" H 0   0   50  0001 C CNN "bom_3"
 	1    5450 4900
 	1    0    0    -1  
 $EndComp
@@ -258,6 +309,9 @@ F 2 "servo:slot" H 4250 5200 50  0001 C CNN
 F 3 "~" H 4250 5200 50  0001 C CNN
 F 4 "slots for isolation" H 0   0   50  0001 C CNN "Description"
 F 5 "0" H 0   0   50  0001 C CNN "price@10"
+F 6 "0" H 0   0   50  0001 C CNN "bom_1"
+F 7 "0" H 0   0   50  0001 C CNN "bom_2"
+F 8 "0" H 0   0   50  0001 C CNN "bom_3"
 	1    4250 5200
 	1    0    0    -1  
 $EndComp
@@ -271,6 +325,9 @@ F 2 "servo:slot" H 4650 5200 50  0001 C CNN
 F 3 "~" H 4650 5200 50  0001 C CNN
 F 4 "slots for isolation" H 0   0   50  0001 C CNN "Description"
 F 5 "0" H 0   0   50  0001 C CNN "price@10"
+F 6 "0" H 0   0   50  0001 C CNN "bom_1"
+F 7 "0" H 0   0   50  0001 C CNN "bom_2"
+F 8 "0" H 0   0   50  0001 C CNN "bom_3"
 	1    4650 5200
 	1    0    0    -1  
 $EndComp
@@ -284,6 +341,9 @@ F 2 "servo:slot" H 5050 5200 50  0001 C CNN
 F 3 "~" H 5050 5200 50  0001 C CNN
 F 4 "slots for isolation" H 0   0   50  0001 C CNN "Description"
 F 5 "0" H 0   0   50  0001 C CNN "price@10"
+F 6 "0" H 0   0   50  0001 C CNN "bom_1"
+F 7 "0" H 0   0   50  0001 C CNN "bom_2"
+F 8 "0" H 0   0   50  0001 C CNN "bom_3"
 	1    5050 5200
 	1    0    0    -1  
 $EndComp
@@ -297,6 +357,9 @@ F 2 "servo:slot" H 5450 5200 50  0001 C CNN
 F 3 "~" H 5450 5200 50  0001 C CNN
 F 4 "slots for isolation" H 0   0   50  0001 C CNN "Description"
 F 5 "0" H 0   0   50  0001 C CNN "price@10"
+F 6 "0" H 0   0   50  0001 C CNN "bom_1"
+F 7 "0" H 0   0   50  0001 C CNN "bom_2"
+F 8 "0" H 0   0   50  0001 C CNN "bom_3"
 	1    5450 5200
 	1    0    0    -1  
 $EndComp
@@ -310,6 +373,9 @@ F 2 "servo:slot" H 4250 5550 50  0001 C CNN
 F 3 "~" H 4250 5550 50  0001 C CNN
 F 4 "slots for isolation" H 0   0   50  0001 C CNN "Description"
 F 5 "0" H 0   0   50  0001 C CNN "price@10"
+F 6 "0" H 0   0   50  0001 C CNN "bom_1"
+F 7 "0" H 0   0   50  0001 C CNN "bom_2"
+F 8 "0" H 0   0   50  0001 C CNN "bom_3"
 	1    4250 5550
 	1    0    0    -1  
 $EndComp
@@ -323,6 +389,9 @@ F 2 "servo:slot" H 4650 5550 50  0001 C CNN
 F 3 "~" H 4650 5550 50  0001 C CNN
 F 4 "slots for isolation" H 0   0   50  0001 C CNN "Description"
 F 5 "0" H 0   0   50  0001 C CNN "price@10"
+F 6 "0" H 0   0   50  0001 C CNN "bom_1"
+F 7 "0" H 0   0   50  0001 C CNN "bom_2"
+F 8 "0" H 0   0   50  0001 C CNN "bom_3"
 	1    4650 5550
 	1    0    0    -1  
 $EndComp
@@ -336,6 +405,9 @@ F 2 "servo:slot" H 5050 5550 50  0001 C CNN
 F 3 "~" H 5050 5550 50  0001 C CNN
 F 4 "slots for isolation" H 0   0   50  0001 C CNN "Description"
 F 5 "0" H 0   0   50  0001 C CNN "price@10"
+F 6 "0" H 0   0   50  0001 C CNN "bom_1"
+F 7 "0" H 0   0   50  0001 C CNN "bom_2"
+F 8 "0" H 0   0   50  0001 C CNN "bom_3"
 	1    5050 5550
 	1    0    0    -1  
 $EndComp
@@ -349,6 +421,9 @@ F 2 "servo:slot" H 5450 5550 50  0001 C CNN
 F 3 "~" H 5450 5550 50  0001 C CNN
 F 4 "slots for isolation" H 0   0   50  0001 C CNN "Description"
 F 5 "0" H 0   0   50  0001 C CNN "price@10"
+F 6 "0" H 0   0   50  0001 C CNN "bom_1"
+F 7 "0" H 0   0   50  0001 C CNN "bom_2"
+F 8 "0" H 0   0   50  0001 C CNN "bom_3"
 	1    5450 5550
 	1    0    0    -1  
 $EndComp
@@ -362,6 +437,9 @@ F 2 "servo:slot" H 4250 5900 50  0001 C CNN
 F 3 "~" H 4250 5900 50  0001 C CNN
 F 4 "slots for isolation" H 0   0   50  0001 C CNN "Description"
 F 5 "0" H 0   0   50  0001 C CNN "price@10"
+F 6 "0" H 0   0   50  0001 C CNN "bom_1"
+F 7 "0" H 0   0   50  0001 C CNN "bom_2"
+F 8 "0" H 0   0   50  0001 C CNN "bom_3"
 	1    4250 5900
 	1    0    0    -1  
 $EndComp
@@ -375,6 +453,9 @@ F 2 "servo:slot" H 4650 5900 50  0001 C CNN
 F 3 "~" H 4650 5900 50  0001 C CNN
 F 4 "slots for isolation" H 0   0   50  0001 C CNN "Description"
 F 5 "0" H 0   0   50  0001 C CNN "price@10"
+F 6 "0" H 0   0   50  0001 C CNN "bom_1"
+F 7 "0" H 0   0   50  0001 C CNN "bom_2"
+F 8 "0" H 0   0   50  0001 C CNN "bom_3"
 	1    4650 5900
 	1    0    0    -1  
 $EndComp
@@ -388,6 +469,9 @@ F 2 "servo:slot" H 5050 5900 50  0001 C CNN
 F 3 "~" H 5050 5900 50  0001 C CNN
 F 4 "slots for isolation" H 0   0   50  0001 C CNN "Description"
 F 5 "0" H 0   0   50  0001 C CNN "price@10"
+F 6 "0" H 0   0   50  0001 C CNN "bom_1"
+F 7 "0" H 0   0   50  0001 C CNN "bom_2"
+F 8 "0" H 0   0   50  0001 C CNN "bom_3"
 	1    5050 5900
 	1    0    0    -1  
 $EndComp
@@ -401,6 +485,9 @@ F 2 "servo:slot" H 5450 5900 50  0001 C CNN
 F 3 "~" H 5450 5900 50  0001 C CNN
 F 4 "slots for isolation" H 0   0   50  0001 C CNN "Description"
 F 5 "0" H 0   0   50  0001 C CNN "price@10"
+F 6 "0" H 0   0   50  0001 C CNN "bom_1"
+F 7 "0" H 0   0   50  0001 C CNN "bom_2"
+F 8 "0" H 0   0   50  0001 C CNN "bom_3"
 	1    5450 5900
 	1    0    0    -1  
 $EndComp
@@ -414,6 +501,9 @@ F 2 "servo:slot" H 4250 6200 50  0001 C CNN
 F 3 "~" H 4250 6200 50  0001 C CNN
 F 4 "slots for isolation" H 0   0   50  0001 C CNN "Description"
 F 5 "0" H 0   0   50  0001 C CNN "price@10"
+F 6 "0" H 0   0   50  0001 C CNN "bom_1"
+F 7 "0" H 0   0   50  0001 C CNN "bom_2"
+F 8 "0" H 0   0   50  0001 C CNN "bom_3"
 	1    4250 6200
 	1    0    0    -1  
 $EndComp
@@ -427,6 +517,9 @@ F 2 "servo:slot" H 4650 6200 50  0001 C CNN
 F 3 "~" H 4650 6200 50  0001 C CNN
 F 4 "slots for isolation" H 0   0   50  0001 C CNN "Description"
 F 5 "0" H 0   0   50  0001 C CNN "price@10"
+F 6 "0" H 0   0   50  0001 C CNN "bom_1"
+F 7 "0" H 0   0   50  0001 C CNN "bom_2"
+F 8 "0" H 0   0   50  0001 C CNN "bom_3"
 	1    4650 6200
 	1    0    0    -1  
 $EndComp
@@ -440,6 +533,9 @@ F 2 "servo:slot" H 5050 6200 50  0001 C CNN
 F 3 "~" H 5050 6200 50  0001 C CNN
 F 4 "slots for isolation" H 0   0   50  0001 C CNN "Description"
 F 5 "0" H 0   0   50  0001 C CNN "price@10"
+F 6 "0" H 0   0   50  0001 C CNN "bom_1"
+F 7 "0" H 0   0   50  0001 C CNN "bom_2"
+F 8 "0" H 0   0   50  0001 C CNN "bom_3"
 	1    5050 6200
 	1    0    0    -1  
 $EndComp
@@ -453,6 +549,9 @@ F 2 "servo:slot" H 5450 6200 50  0001 C CNN
 F 3 "~" H 5450 6200 50  0001 C CNN
 F 4 "slots for isolation" H 0   0   50  0001 C CNN "Description"
 F 5 "0" H 0   0   50  0001 C CNN "price@10"
+F 6 "0" H 0   0   50  0001 C CNN "bom_1"
+F 7 "0" H 0   0   50  0001 C CNN "bom_2"
+F 8 "0" H 0   0   50  0001 C CNN "bom_3"
 	1    5450 6200
 	1    0    0    -1  
 $EndComp
@@ -466,6 +565,9 @@ F 2 "servo:slot" H 4250 6550 50  0001 C CNN
 F 3 "~" H 4250 6550 50  0001 C CNN
 F 4 "slots for isolation" H 0   0   50  0001 C CNN "Description"
 F 5 "0" H 0   0   50  0001 C CNN "price@10"
+F 6 "0" H 0   0   50  0001 C CNN "bom_1"
+F 7 "0" H 0   0   50  0001 C CNN "bom_2"
+F 8 "0" H 0   0   50  0001 C CNN "bom_3"
 	1    4250 6550
 	1    0    0    -1  
 $EndComp
@@ -479,6 +581,9 @@ F 2 "servo:slot" H 4650 6550 50  0001 C CNN
 F 3 "~" H 4650 6550 50  0001 C CNN
 F 4 "slots for isolation" H 0   0   50  0001 C CNN "Description"
 F 5 "0" H 0   0   50  0001 C CNN "price@10"
+F 6 "0" H 0   0   50  0001 C CNN "bom_1"
+F 7 "0" H 0   0   50  0001 C CNN "bom_2"
+F 8 "0" H 0   0   50  0001 C CNN "bom_3"
 	1    4650 6550
 	1    0    0    -1  
 $EndComp
@@ -492,6 +597,9 @@ F 2 "servo:slot" H 5050 6550 50  0001 C CNN
 F 3 "~" H 5050 6550 50  0001 C CNN
 F 4 "slots for isolation" H 0   0   50  0001 C CNN "Description"
 F 5 "0" H 0   0   50  0001 C CNN "price@10"
+F 6 "0" H 0   0   50  0001 C CNN "bom_1"
+F 7 "0" H 0   0   50  0001 C CNN "bom_2"
+F 8 "0" H 0   0   50  0001 C CNN "bom_3"
 	1    5050 6550
 	1    0    0    -1  
 $EndComp
@@ -505,6 +613,9 @@ F 2 "servo:slot" H 5450 6550 50  0001 C CNN
 F 3 "~" H 5450 6550 50  0001 C CNN
 F 4 "slots for isolation" H 0   0   50  0001 C CNN "Description"
 F 5 "0" H 0   0   50  0001 C CNN "price@10"
+F 6 "0" H 0   0   50  0001 C CNN "bom_1"
+F 7 "0" H 0   0   50  0001 C CNN "bom_2"
+F 8 "0" H 0   0   50  0001 C CNN "bom_3"
 	1    5450 6550
 	1    0    0    -1  
 $EndComp
@@ -518,6 +629,9 @@ F 2 "servo:slot" H 4250 6900 50  0001 C CNN
 F 3 "~" H 4250 6900 50  0001 C CNN
 F 4 "slots for isolation" H 0   0   50  0001 C CNN "Description"
 F 5 "0" H 0   0   50  0001 C CNN "price@10"
+F 6 "0" H 0   0   50  0001 C CNN "bom_1"
+F 7 "0" H 0   0   50  0001 C CNN "bom_2"
+F 8 "0" H 0   0   50  0001 C CNN "bom_3"
 	1    4250 6900
 	1    0    0    -1  
 $EndComp
@@ -531,6 +645,9 @@ F 2 "servo:slot" H 4650 6900 50  0001 C CNN
 F 3 "~" H 4650 6900 50  0001 C CNN
 F 4 "slots for isolation" H 0   0   50  0001 C CNN "Description"
 F 5 "0" H 0   0   50  0001 C CNN "price@10"
+F 6 "0" H 0   0   50  0001 C CNN "bom_1"
+F 7 "0" H 0   0   50  0001 C CNN "bom_2"
+F 8 "0" H 0   0   50  0001 C CNN "bom_3"
 	1    4650 6900
 	1    0    0    -1  
 $EndComp
@@ -544,6 +661,9 @@ F 2 "servo:slot" H 5050 6900 50  0001 C CNN
 F 3 "~" H 5050 6900 50  0001 C CNN
 F 4 "slots for isolation" H 0   0   50  0001 C CNN "Description"
 F 5 "0" H 0   0   50  0001 C CNN "price@10"
+F 6 "0" H 0   0   50  0001 C CNN "bom_1"
+F 7 "0" H 0   0   50  0001 C CNN "bom_2"
+F 8 "0" H 0   0   50  0001 C CNN "bom_3"
 	1    5050 6900
 	1    0    0    -1  
 $EndComp
@@ -557,6 +677,9 @@ F 2 "servo:slot" H 5450 6900 50  0001 C CNN
 F 3 "~" H 5450 6900 50  0001 C CNN
 F 4 "slots for isolation" H 0   0   50  0001 C CNN "Description"
 F 5 "0" H 0   0   50  0001 C CNN "price@10"
+F 6 "0" H 0   0   50  0001 C CNN "bom_1"
+F 7 "0" H 0   0   50  0001 C CNN "bom_2"
+F 8 "0" H 0   0   50  0001 C CNN "bom_3"
 	1    5450 6900
 	1    0    0    -1  
 $EndComp
@@ -570,6 +693,9 @@ F 2 "servo:slot" H 4250 7300 50  0001 C CNN
 F 3 "~" H 4250 7300 50  0001 C CNN
 F 4 "slots for isolation" H 0   0   50  0001 C CNN "Description"
 F 5 "0" H 0   0   50  0001 C CNN "price@10"
+F 6 "0" H 0   0   50  0001 C CNN "bom_1"
+F 7 "0" H 0   0   50  0001 C CNN "bom_2"
+F 8 "0" H 0   0   50  0001 C CNN "bom_3"
 	1    4250 7300
 	1    0    0    -1  
 $EndComp
@@ -583,6 +709,9 @@ F 2 "servo:slot" H 4650 7300 50  0001 C CNN
 F 3 "~" H 4650 7300 50  0001 C CNN
 F 4 "slots for isolation" H 0   0   50  0001 C CNN "Description"
 F 5 "0" H 0   0   50  0001 C CNN "price@10"
+F 6 "0" H 0   0   50  0001 C CNN "bom_1"
+F 7 "0" H 0   0   50  0001 C CNN "bom_2"
+F 8 "0" H 0   0   50  0001 C CNN "bom_3"
 	1    4650 7300
 	1    0    0    -1  
 $EndComp
@@ -596,6 +725,9 @@ F 2 "servo:slot" H 5050 7300 50  0001 C CNN
 F 3 "~" H 5050 7300 50  0001 C CNN
 F 4 "slots for isolation" H 0   0   50  0001 C CNN "Description"
 F 5 "0" H 0   0   50  0001 C CNN "price@10"
+F 6 "0" H 0   0   50  0001 C CNN "bom_1"
+F 7 "0" H 0   0   50  0001 C CNN "bom_2"
+F 8 "0" H 0   0   50  0001 C CNN "bom_3"
 	1    5050 7300
 	1    0    0    -1  
 $EndComp
@@ -609,6 +741,9 @@ F 2 "servo:slot" H 5450 7300 50  0001 C CNN
 F 3 "~" H 5450 7300 50  0001 C CNN
 F 4 "slots for isolation" H 0   0   50  0001 C CNN "Description"
 F 5 "0" H 0   0   50  0001 C CNN "price@10"
+F 6 "0" H 0   0   50  0001 C CNN "bom_1"
+F 7 "0" H 0   0   50  0001 C CNN "bom_2"
+F 8 "0" H 0   0   50  0001 C CNN "bom_3"
 	1    5450 7300
 	1    0    0    -1  
 $EndComp
@@ -622,6 +757,9 @@ F 2 "servo:slot_v" H 7050 4500 50  0001 C CNN
 F 3 "~" H 7050 4500 50  0001 C CNN
 F 4 "slots for isolation" H 0   0   50  0001 C CNN "Description"
 F 5 "0" H 0   0   50  0001 C CNN "price@10"
+F 6 "0" H 0   0   50  0001 C CNN "bom_1"
+F 7 "0" H 0   0   50  0001 C CNN "bom_2"
+F 8 "0" H 0   0   50  0001 C CNN "bom_3"
 	1    7050 4500
 	1    0    0    -1  
 $EndComp
@@ -635,6 +773,9 @@ F 2 "servo:slot_v" H 7550 4500 50  0001 C CNN
 F 3 "~" H 7550 4500 50  0001 C CNN
 F 4 "slots for isolation" H 0   0   50  0001 C CNN "Description"
 F 5 "0" H 0   0   50  0001 C CNN "price@10"
+F 6 "0" H 0   0   50  0001 C CNN "bom_1"
+F 7 "0" H 0   0   50  0001 C CNN "bom_2"
+F 8 "0" H 0   0   50  0001 C CNN "bom_3"
 	1    7550 4500
 	1    0    0    -1  
 $EndComp
@@ -648,6 +789,9 @@ F 2 "servo:slot_v" H 8650 4500 50  0001 C CNN
 F 3 "~" H 8650 4500 50  0001 C CNN
 F 4 "slots for isolation" H 0   0   50  0001 C CNN "Description"
 F 5 "0" H 0   0   50  0001 C CNN "price@10"
+F 6 "0" H 0   0   50  0001 C CNN "bom_1"
+F 7 "0" H 0   0   50  0001 C CNN "bom_2"
+F 8 "0" H 0   0   50  0001 C CNN "bom_3"
 	1    8650 4500
 	1    0    0    -1  
 $EndComp
@@ -661,6 +805,9 @@ F 2 "servo:slot_v" H 8100 4500 50  0001 C CNN
 F 3 "~" H 8100 4500 50  0001 C CNN
 F 4 "slots for isolation" H 0   0   50  0001 C CNN "Description"
 F 5 "0" H 0   0   50  0001 C CNN "price@10"
+F 6 "0" H 0   0   50  0001 C CNN "bom_1"
+F 7 "0" H 0   0   50  0001 C CNN "bom_2"
+F 8 "0" H 0   0   50  0001 C CNN "bom_3"
 	1    8100 4500
 	1    0    0    -1  
 $EndComp
@@ -674,6 +821,9 @@ F 2 "servo:slot_v" H 7050 4800 50  0001 C CNN
 F 3 "~" H 7050 4800 50  0001 C CNN
 F 4 "slots for isolation" H 0   0   50  0001 C CNN "Description"
 F 5 "0" H 0   0   50  0001 C CNN "price@10"
+F 6 "0" H 0   0   50  0001 C CNN "bom_1"
+F 7 "0" H 0   0   50  0001 C CNN "bom_2"
+F 8 "0" H 0   0   50  0001 C CNN "bom_3"
 	1    7050 4800
 	1    0    0    -1  
 $EndComp
@@ -687,6 +837,9 @@ F 2 "servo:slot_v" H 7550 4800 50  0001 C CNN
 F 3 "~" H 7550 4800 50  0001 C CNN
 F 4 "slots for isolation" H 0   0   50  0001 C CNN "Description"
 F 5 "0" H 0   0   50  0001 C CNN "price@10"
+F 6 "0" H 0   0   50  0001 C CNN "bom_1"
+F 7 "0" H 0   0   50  0001 C CNN "bom_2"
+F 8 "0" H 0   0   50  0001 C CNN "bom_3"
 	1    7550 4800
 	1    0    0    -1  
 $EndComp
@@ -700,6 +853,9 @@ F 2 "servo:slot_v" H 8650 4800 50  0001 C CNN
 F 3 "~" H 8650 4800 50  0001 C CNN
 F 4 "slots for isolation" H 0   0   50  0001 C CNN "Description"
 F 5 "0" H 0   0   50  0001 C CNN "price@10"
+F 6 "0" H 0   0   50  0001 C CNN "bom_1"
+F 7 "0" H 0   0   50  0001 C CNN "bom_2"
+F 8 "0" H 0   0   50  0001 C CNN "bom_3"
 	1    8650 4800
 	1    0    0    -1  
 $EndComp
@@ -713,6 +869,9 @@ F 2 "servo:slot_v" H 8100 4800 50  0001 C CNN
 F 3 "~" H 8100 4800 50  0001 C CNN
 F 4 "slots for isolation" H 0   0   50  0001 C CNN "Description"
 F 5 "0" H 0   0   50  0001 C CNN "price@10"
+F 6 "0" H 0   0   50  0001 C CNN "bom_1"
+F 7 "0" H 0   0   50  0001 C CNN "bom_2"
+F 8 "0" H 0   0   50  0001 C CNN "bom_3"
 	1    8100 4800
 	1    0    0    -1  
 $EndComp
@@ -726,6 +885,9 @@ F 2 "servo:slot_v" H 7050 5100 50  0001 C CNN
 F 3 "~" H 7050 5100 50  0001 C CNN
 F 4 "slots for isolation" H 0   0   50  0001 C CNN "Description"
 F 5 "0" H 0   0   50  0001 C CNN "price@10"
+F 6 "0" H 0   0   50  0001 C CNN "bom_1"
+F 7 "0" H 0   0   50  0001 C CNN "bom_2"
+F 8 "0" H 0   0   50  0001 C CNN "bom_3"
 	1    7050 5100
 	1    0    0    -1  
 $EndComp
@@ -739,6 +901,9 @@ F 2 "servo:slot_v" H 7550 5100 50  0001 C CNN
 F 3 "~" H 7550 5100 50  0001 C CNN
 F 4 "slots for isolation" H 0   0   50  0001 C CNN "Description"
 F 5 "0" H 0   0   50  0001 C CNN "price@10"
+F 6 "0" H 0   0   50  0001 C CNN "bom_1"
+F 7 "0" H 0   0   50  0001 C CNN "bom_2"
+F 8 "0" H 0   0   50  0001 C CNN "bom_3"
 	1    7550 5100
 	1    0    0    -1  
 $EndComp
@@ -752,6 +917,9 @@ F 2 "servo:slot_v" H 8650 5100 50  0001 C CNN
 F 3 "~" H 8650 5100 50  0001 C CNN
 F 4 "slots for isolation" H 0   0   50  0001 C CNN "Description"
 F 5 "0" H 0   0   50  0001 C CNN "price@10"
+F 6 "0" H 0   0   50  0001 C CNN "bom_1"
+F 7 "0" H 0   0   50  0001 C CNN "bom_2"
+F 8 "0" H 0   0   50  0001 C CNN "bom_3"
 	1    8650 5100
 	1    0    0    -1  
 $EndComp
@@ -765,6 +933,9 @@ F 2 "servo:slot_v" H 8100 5100 50  0001 C CNN
 F 3 "~" H 8100 5100 50  0001 C CNN
 F 4 "slots for isolation" H 0   0   50  0001 C CNN "Description"
 F 5 "0" H 0   0   50  0001 C CNN "price@10"
+F 6 "0" H 0   0   50  0001 C CNN "bom_1"
+F 7 "0" H 0   0   50  0001 C CNN "bom_2"
+F 8 "0" H 0   0   50  0001 C CNN "bom_3"
 	1    8100 5100
 	1    0    0    -1  
 $EndComp
@@ -783,6 +954,9 @@ F 3 "~" H 13600 3500 50  0001 C CNN
 F 4 "logo high voltage" H 0   150 50  0001 C CNN "Description"
 F 5 "-" H 0   150 50  0001 C CNN "PartNumber"
 F 6 "0" H 0   150 50  0001 C CNN "price@10"
+F 7 "0" H 0   0   50  0001 C CNN "bom_1"
+F 8 "0" H 0   0   50  0001 C CNN "bom_2"
+F 9 "0" H 0   0   50  0001 C CNN "bom_3"
 	1    13200 3600
 	1    0    0    -1  
 $EndComp
@@ -797,6 +971,9 @@ F 3 "~" H 13350 2650 50  0001 C CNN
 F 4 "logo kicad" H 0   0   50  0001 C CNN "Description"
 F 5 "-" H 0   0   50  0001 C CNN "PartNumber"
 F 6 "0" H 0   0   50  0001 C CNN "price@10"
+F 7 "0" H 0   0   50  0001 C CNN "bom_1"
+F 8 "0" H 0   0   50  0001 C CNN "bom_2"
+F 9 "0" H 0   0   50  0001 C CNN "bom_3"
 	1    13350 2650
 	1    0    0    -1  
 $EndComp
@@ -811,6 +988,9 @@ F 3 "~" H 13350 2350 50  0001 C CNN
 F 4 "logo nanocut" H 0   0   50  0001 C CNN "Description"
 F 5 "-" H 0   0   50  0001 C CNN "PartNumber"
 F 6 "0" H 0   0   50  0001 C CNN "price@10"
+F 7 "0" H 0   0   50  0001 C CNN "bom_1"
+F 8 "0" H 0   0   50  0001 C CNN "bom_2"
+F 9 "0" H 0   0   50  0001 C CNN "bom_3"
 	1    13350 2350
 	1    0    0    -1  
 $EndComp
@@ -825,6 +1005,9 @@ F 3 "~" H 13400 2950 50  0001 C CNN
 F 4 "logo pslavkin" H 0   0   50  0001 C CNN "Description"
 F 5 "-" H 0   0   50  0001 C CNN "PartNumber"
 F 6 "0" H 0   0   50  0001 C CNN "price@10"
+F 7 "0" H 0   0   50  0001 C CNN "bom_1"
+F 8 "0" H 0   0   50  0001 C CNN "bom_2"
+F 9 "0" H 0   0   50  0001 C CNN "bom_3"
 	1    13400 2950
 	1    0    0    -1  
 $EndComp
@@ -839,6 +1022,9 @@ F 3 "~" H 13350 2050 50  0001 C CNN
 F 4 "logo recycler" H 0   0   50  0001 C CNN "Description"
 F 5 "-" H 0   0   50  0001 C CNN "PartNumber"
 F 6 "0" H 0   0   50  0001 C CNN "price@10"
+F 7 "0" H 0   0   50  0001 C CNN "bom_1"
+F 8 "0" H 0   0   50  0001 C CNN "bom_2"
+F 9 "0" H 0   0   50  0001 C CNN "bom_3"
 	1    13350 2050
 	1    0    0    -1  
 $EndComp
@@ -853,6 +1039,9 @@ F 3 "~" H 13750 3500 50  0001 C CNN
 F 4 "logo high voltage" H 0   150 50  0001 C CNN "Description"
 F 5 "-" H 0   150 50  0001 C CNN "PartNumber"
 F 6 "0" H 0   150 50  0001 C CNN "price@10"
+F 7 "0" H 0   0   50  0001 C CNN "bom_1"
+F 8 "0" H 0   0   50  0001 C CNN "bom_2"
+F 9 "0" H 0   0   50  0001 C CNN "bom_3"
 	1    13350 3600
 	1    0    0    -1  
 $EndComp
@@ -867,6 +1056,9 @@ F 3 "~" H 13900 3500 50  0001 C CNN
 F 4 "logo high voltage" H 0   150 50  0001 C CNN "Description"
 F 5 "-" H 0   150 50  0001 C CNN "PartNumber"
 F 6 "0" H 0   150 50  0001 C CNN "price@10"
+F 7 "0" H 0   0   50  0001 C CNN "bom_1"
+F 8 "0" H 0   0   50  0001 C CNN "bom_2"
+F 9 "0" H 0   0   50  0001 C CNN "bom_3"
 	1    13500 3600
 	1    0    0    -1  
 $EndComp
@@ -881,6 +1073,9 @@ F 3 "~" H 14050 3500 50  0001 C CNN
 F 4 "logo high voltage" H 0   150 50  0001 C CNN "Description"
 F 5 "-" H 0   150 50  0001 C CNN "PartNumber"
 F 6 "0" H 0   150 50  0001 C CNN "price@10"
+F 7 "0" H 0   0   50  0001 C CNN "bom_1"
+F 8 "0" H 0   0   50  0001 C CNN "bom_2"
+F 9 "0" H 0   0   50  0001 C CNN "bom_3"
 	1    13650 3600
 	1    0    0    -1  
 $EndComp
@@ -894,6 +1089,9 @@ F 2 "servo:slot" H 5450 7600 50  0001 C CNN
 F 3 "~" H 5450 7600 50  0001 C CNN
 F 4 "slots for isolation" H 0   0   50  0001 C CNN "Description"
 F 5 "0" H 0   0   50  0001 C CNN "price@10"
+F 6 "0" H 0   0   50  0001 C CNN "bom_1"
+F 7 "0" H 0   0   50  0001 C CNN "bom_2"
+F 8 "0" H 0   0   50  0001 C CNN "bom_3"
 	1    5450 7600
 	1    0    0    -1  
 $EndComp
@@ -907,6 +1105,9 @@ F 2 "servo:slot" H 5050 7600 50  0001 C CNN
 F 3 "~" H 5050 7600 50  0001 C CNN
 F 4 "slots for isolation" H 0   0   50  0001 C CNN "Description"
 F 5 "0" H 0   0   50  0001 C CNN "price@10"
+F 6 "0" H 0   0   50  0001 C CNN "bom_1"
+F 7 "0" H 0   0   50  0001 C CNN "bom_2"
+F 8 "0" H 0   0   50  0001 C CNN "bom_3"
 	1    5050 7600
 	1    0    0    -1  
 $EndComp
@@ -923,6 +1124,9 @@ F 3 "~" H 13350 3900 50  0001 C CNN
 F 4 ",logo neurona" H 0   0   50  0001 C CNN "Description"
 F 5 "-" H 0   0   50  0001 C CNN "PartNumber"
 F 6 "0" H 0   0   50  0001 C CNN "price@10"
+F 7 "0" H 0   0   50  0001 C CNN "bom_1"
+F 8 "0" H 0   0   50  0001 C CNN "bom_2"
+F 9 "0" H 0   0   50  0001 C CNN "bom_3"
 	1    13350 3900
 	1    0    0    1   
 $EndComp
@@ -937,6 +1141,9 @@ F 3 "~" H 13350 4650 50  0001 C CNN
 F 4 "logo open hard" H 0   0   50  0001 C CNN "Description"
 F 5 "-" H 0   0   50  0001 C CNN "PartNumber"
 F 6 "0" H 0   0   50  0001 C CNN "price@10"
+F 7 "0" H 0   0   50  0001 C CNN "bom_1"
+F 8 "0" H 0   0   50  0001 C CNN "bom_2"
+F 9 "0" H 0   0   50  0001 C CNN "bom_3"
 	1    13350 4650
 	1    0    0    -1  
 $EndComp
@@ -951,6 +1158,9 @@ F 3 "~" H 13250 5900 50  0001 C CNN
 F 4 "stackup" H -150 2950 50  0001 C CNN "Description"
 F 5 "-" H -150 2950 50  0001 C CNN "PartNumber"
 F 6 "0" H -150 2950 50  0001 C CNN "price@10"
+F 7 "0" H 0   0   50  0001 C CNN "bom_1"
+F 8 "0" H 0   0   50  0001 C CNN "bom_2"
+F 9 "0" H 0   0   50  0001 C CNN "bom_3"
 	1    13250 5900
 	1    0    0    -1  
 $EndComp
@@ -965,6 +1175,9 @@ F 3 "~" H 13250 6200 50  0001 C CNN
 F 4 "stackup" H -150 3250 50  0001 C CNN "Description"
 F 5 "-" H -150 3250 50  0001 C CNN "PartNumber"
 F 6 "0" H -150 3250 50  0001 C CNN "price@10"
+F 7 "0" H 0   0   50  0001 C CNN "bom_1"
+F 8 "0" H 0   0   50  0001 C CNN "bom_2"
+F 9 "0" H 0   0   50  0001 C CNN "bom_3"
 	1    13250 6200
 	1    0    0    -1  
 $EndComp
@@ -979,6 +1192,9 @@ F 3 "~" H 13400 3200 50  0001 C CNN
 F 4 "logo pslavkin" H 0   250 50  0001 C CNN "Description"
 F 5 "-" H 0   250 50  0001 C CNN "PartNumber"
 F 6 "0" H 0   250 50  0001 C CNN "price@10"
+F 7 "0" H 0   0   50  0001 C CNN "bom_1"
+F 8 "0" H 0   0   50  0001 C CNN "bom_2"
+F 9 "0" H 0   0   50  0001 C CNN "bom_3"
 	1    13400 3200
 	1    0    0    -1  
 $EndComp

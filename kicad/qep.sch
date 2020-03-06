@@ -31,6 +31,8 @@ F 5 "1843156 " H 0   0   50  0001 C CNN "PartNumber"
 F 6 "277-6029-ND" H 0   0   50  0001 C CNN "digikey"
 F 7 "12.49300" H 0   0   50  0001 C CNN "price@10"
 F 8 "1" H 0   0   50  0001 C CNN "bom_3"
+F 9 "0" H 0   0   50  0001 C CNN "bom_1"
+F 10 "0" H 0   0   50  0001 C CNN "bom_2"
 	1    5800 3750
 	1    0    0    -1  
 $EndComp
@@ -258,7 +260,7 @@ F 4 "General Purpose Digital Isolator 5000Vrms 6 Channel 150Mbps 35kV/µs CMTI 1
 F 5 "SI8660BD-B-ISR" H 0   0   50  0001 C CNN "PartNumber"
 F 6 " 336-4786-1-ND" H 0   0   50  0001 C CNN "digikey"
 F 7 "2.75000" H 0   0   50  0001 C CNN "price@10"
-F 8 "" H 0   0   50  0001 C CNN "bom_1"
+F 8 "0" H 0   0   50  0001 C CNN "bom_1"
 F 9 "1" H 0   0   50  0001 C CNN "bom_2"
 F 10 "1" H 0   0   50  0001 C CNN "bom_3"
 	1    9750 3700
@@ -502,6 +504,7 @@ F 6 "296-1011-1-ND" H 0   0   50  0001 C CNN "digikey"
 F 7 "0.57800" H 0   0   50  0001 C CNN "price@10"
 F 8 "1" H 0   0   50  0001 C CNN "bom_2"
 F 9 "1" H 0   0   50  0001 C CNN "bom_3"
+F 10 "0" H 0   0   50  0001 C CNN "bom_1"
 	1    8100 4100
 	1    0    0    -1  
 $EndComp
@@ -747,7 +750,7 @@ F 4 "General Purpose Digital Isolator 5000Vrms 6 Channel 150Mbps 35kV/µs CMTI 1
 F 5 "SI8660BD-B-ISR" H 0   0   50  0001 C CNN "PartNumber"
 F 6 " 336-4786-1-ND" H 0   0   50  0001 C CNN "digikey"
 F 7 "2.75000" H 0   0   50  0001 C CNN "price@10"
-F 8 "" H 0   0   50  0001 C CNN "bom_1"
+F 8 "0" H 0   0   50  0001 C CNN "bom_1"
 F 9 "1" H 0   0   50  0001 C CNN "bom_2"
 F 10 "1" H 0   0   50  0001 C CNN "bom_3"
 	1    1950 3700
@@ -981,6 +984,7 @@ F 6 "296-1011-1-ND" H 0   0   50  0001 C CNN "digikey"
 F 7 "0.57800" H 0   0   50  0001 C CNN "price@10"
 F 8 "1" H 0   0   50  0001 C CNN "bom_2"
 F 9 "1" H 0   0   50  0001 C CNN "bom_3"
+F 10 "0" H 0   0   50  0001 C CNN "bom_1"
 	1    3600 4100
 	-1   0    0    -1  
 $EndComp

@@ -457,6 +457,7 @@ F 6 "SST26VF032B-104V/SM-ND " H 0   0   50  0001 C CNN "digikey"
 F 7 "1.67000" H 0   0   50  0001 C CNN "price@10"
 F 8 "1" H 0   0   50  0001 C CNN "bom_2"
 F 9 "1" H 0   0   50  0001 C CNN "bom_3"
+F 10 "0" H 0   0   50  0001 C CNN "bom_1"
 	1    13850 8000
 	1    0    0    -1  
 $EndComp
@@ -676,8 +677,8 @@ F 4 "Connector Header Surface Mount 12 position 0.100\" (2.54mm) " H 0   0   50 
 F 5 "GBC06DABN-M30" H 0   0   50  0001 C CNN "PartNumber"
 F 6 "S2351E-06-ND" H 0   0   50  0001 C CNN "digikey"
 F 7 "1.10200" H 0   0   50  0001 C CNN "price@10"
-F 8 "" H 0   0   50  0001 C CNN "bom_1"
-F 9 "" H 0   0   50  0001 C CNN "bom_2"
+F 8 "0" H 0   0   50  0001 C CNN "bom_1"
+F 9 "0" H 0   0   50  0001 C CNN "bom_2"
 F 10 "1" H 0   0   50  0001 C CNN "bom_3"
 	1    3300 2600
 	1    0    0    -1  
@@ -822,8 +823,8 @@ F 4 "jumper smd bridge using tin" H 3000 2750 50  0001 C CNN "Description"
 F 5 "-" H 3000 2750 50  0001 C CNN "PartNumber"
 F 6 "-" H 3000 2750 50  0001 C CNN "digikey"
 F 7 "0" H 3000 2750 50  0001 C CNN "price@10"
-F 8 "" H 0   0   50  0001 C CNN "bom_1"
-F 9 "" H 0   0   50  0001 C CNN "bom_2"
+F 8 "0" H 0   0   50  0001 C CNN "bom_1"
+F 9 "0" H 0   0   50  0001 C CNN "bom_2"
 	1    6300 8350
 	0    1    1    0   
 $EndComp
@@ -842,8 +843,8 @@ F 4 "jumper smd bridge using tin" H 3300 2750 50  0001 C CNN "Description"
 F 5 "-" H 3300 2750 50  0001 C CNN "PartNumber"
 F 6 "-" H 3300 2750 50  0001 C CNN "digikey"
 F 7 "0" H 3300 2750 50  0001 C CNN "price@10"
-F 8 "" H 0   0   50  0001 C CNN "bom_1"
-F 9 "" H 0   0   50  0001 C CNN "bom_2"
+F 8 "0" H 0   0   50  0001 C CNN "bom_1"
+F 9 "0" H 0   0   50  0001 C CNN "bom_2"
 	1    6600 8350
 	0    1    1    0   
 $EndComp

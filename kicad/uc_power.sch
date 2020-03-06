@@ -1534,8 +1534,8 @@ F 4 "jumper smd bridge using tin" H 8250 -2650 50  0001 C CNN "Description"
 F 5 "-" H 8250 -2650 50  0001 C CNN "PartNumber"
 F 6 "-" H 8250 -2650 50  0001 C CNN "digikey"
 F 7 "0" H 8250 -2650 50  0001 C CNN "price@10"
-F 8 "" H 0   0   50  0001 C CNN "bom_1"
-F 9 "" H 0   0   50  0001 C CNN "bom_2"
+F 8 "0" H 0   0   50  0001 C CNN "bom_1"
+F 9 "0" H 0   0   50  0001 C CNN "bom_2"
 	1    11550 2950
 	1    0    0    -1  
 $EndComp
@@ -1553,8 +1553,8 @@ F 4 "jumper smd bridge using tin" H 8200 -1150 50  0001 C CNN "Description"
 F 5 "-" H 8200 -1150 50  0001 C CNN "PartNumber"
 F 6 "-" H 8200 -1150 50  0001 C CNN "digikey"
 F 7 "0" H 8200 -1150 50  0001 C CNN "price@10"
-F 8 "" H 0   0   50  0001 C CNN "bom_1"
-F 9 "" H 0   0   50  0001 C CNN "bom_2"
+F 8 "0" H 0   0   50  0001 C CNN "bom_1"
+F 9 "0" H 0   0   50  0001 C CNN "bom_2"
 	1    11500 4450
 	1    0    0    -1  
 $EndComp
@@ -1579,8 +1579,8 @@ F 4 "jumper smd bridge using tin" H 8350 400 50  0001 C CNN "Description"
 F 5 "-" H 8350 400 50  0001 C CNN "PartNumber"
 F 6 "-" H 8350 400 50  0001 C CNN "digikey"
 F 7 "0" H 8350 400 50  0001 C CNN "price@10"
-F 8 "" H 0   0   50  0001 C CNN "bom_1"
-F 9 "" H 0   0   50  0001 C CNN "bom_2"
+F 8 "0" H 0   0   50  0001 C CNN "bom_1"
+F 9 "0" H 0   0   50  0001 C CNN "bom_2"
 	1    11650 6000
 	1    0    0    -1  
 $EndComp

@@ -160,7 +160,7 @@ F 4 "Isolation IC 8-SOIC " H 0   0   50  0001 C CNN "Description"
 F 5 "AMC1311BDWV" H 0   0   50  0001 C CNN "PartNumber"
 F 6 "296-47610-ND" H 0   0   50  0001 C CNN "digikey"
 F 7 "7.24300" H 0   0   50  0001 C CNN "price@10"
-F 8 "" H 0   0   50  0001 C CNN "bom_1"
+F 8 "0" H 0   0   50  0001 C CNN "bom_1"
 F 9 "1" H 0   0   50  0001 C CNN "bom_2"
 F 10 "1" H 0   0   50  0001 C CNN "bom_3"
 	1    7250 2950
@@ -379,6 +379,8 @@ F 5 "RFM-0505S" H 0   0   50  0001 C CNN "PartNumber"
 F 6 "945-3159-ND" H 0   0   50  0001 C CNN "digikey"
 F 7 "1.36000" H 0   0   50  0001 C CNN "price@10"
 F 8 "1" H 0   0   50  0001 C CNN "bom_3"
+F 9 "0" H 0   0   50  0001 C CNN "bom_1"
+F 10 "0" H 0   0   50  0001 C CNN "bom_2"
 	1    9400 2600
 	-1   0    0    -1  
 $EndComp
@@ -651,7 +653,7 @@ F 4 "Isolation IC 8-SOIC " H 0   0   50  0001 C CNN "Description"
 F 5 "AMC1311BDWV" H 0   0   50  0001 C CNN "PartNumber"
 F 6 "296-47610-ND" H 0   0   50  0001 C CNN "digikey"
 F 7 "7.24300" H 0   0   50  0001 C CNN "price@10"
-F 8 "" H 0   0   50  0001 C CNN "bom_1"
+F 8 "0" H 0   0   50  0001 C CNN "bom_1"
 F 9 "1" H 0   0   50  0001 C CNN "bom_2"
 F 10 "1" H 0   0   50  0001 C CNN "bom_3"
 	1    7350 5250
@@ -844,6 +846,8 @@ F 5 "RFM-0505S" H 0   0   50  0001 C CNN "PartNumber"
 F 6 "945-3159-ND" H 0   0   50  0001 C CNN "digikey"
 F 7 "1.36000" H 0   0   50  0001 C CNN "price@10"
 F 8 "1" H 0   0   50  0001 C CNN "bom_3"
+F 9 "0" H 0   0   50  0001 C CNN "bom_1"
+F 10 "0" H 0   0   50  0001 C CNN "bom_2"
 	1    9500 4900
 	-1   0    0    -1  
 $EndComp
