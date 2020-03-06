@@ -26,6 +26,8 @@ F 4 "1/1 Transceiver Half CANbus 8-SOP " H 0   0   50  0001 C CNN "Description"
 F 5 "ISO1050DUB" H 0   0   50  0001 C CNN "PartNumber"
 F 6 "296-33295-5-ND" H 0   0   50  0001 C CNN "digikey"
 F 7 "5.27900" H 0   0   50  0001 C CNN "price@10"
+F 8 "1" H 0   0   50  0001 C CNN "bom_2"
+F 9 "1" H 0   0   50  0001 C CNN "bom_3"
 	1    5800 3650
 	1    0    0    -1  
 $EndComp
@@ -58,6 +60,9 @@ F 4 "CC0603KPX7R7BB104" H 0   0   50  0001 C CNN "PartNumber"
 F 5 "311-1335-1-ND" H 0   0   50  0001 C CNN "digikey"
 F 6 "CAP CER 0.1UF 16V X7R 0603 " H 0   0   50  0001 C CNN "Description"
 F 7 "0.05800" H 0   0   50  0001 C CNN "price@10"
+F 8 "1" H 0   0   50  0001 C CNN "bom_1"
+F 9 "1" H 0   0   50  0001 C CNN "bom_2"
+F 10 "1" H 0   0   50  0001 C CNN "bom_3"
 	1    6800 3100
 	0    1    1    0   
 $EndComp
@@ -76,6 +81,9 @@ F 4 "CC0603KPX7R7BB104" H 0   0   50  0001 C CNN "PartNumber"
 F 5 "311-1335-1-ND" H 0   0   50  0001 C CNN "digikey"
 F 6 "CAP CER 0.1UF 16V X7R 0603 " H 0   0   50  0001 C CNN "Description"
 F 7 "0.05800" H 0   0   50  0001 C CNN "price@10"
+F 8 "1" H 0   0   50  0001 C CNN "bom_1"
+F 9 "1" H 0   0   50  0001 C CNN "bom_2"
+F 10 "1" H 0   0   50  0001 C CNN "bom_3"
 	1    4800 3100
 	0    1    1    0   
 $EndComp
@@ -155,6 +163,9 @@ F 4 "RS422, RS485 Digital Isolator 2500Vrms 3 Channel 500kbps 25kV/µs CMTI 16-S
 F 5 "ADM2483BRWZ" H 0   0   50  0001 C CNN "PartNumber"
 F 6 "ADM2483BRWZ-ND" H 0   0   50  0001 C CNN "digikey"
 F 7 "5.59000" H 0   0   50  0001 C CNN "price@10"
+F 8 "" H 0   0   50  0001 C CNN "bom_1"
+F 9 "1" H 0   0   50  0001 C CNN "bom_2"
+F 10 "1" H 0   0   50  0001 C CNN "bom_3"
 	1    10500 3500
 	-1   0    0    -1  
 $EndComp
@@ -273,6 +284,7 @@ F 4 "8 Position Terminal Block Header, Male Pins, Shrouded (4 Side) 0.150\" (3.8
 F 5 "1843091" H 0   0   50  0001 C CNN "PartNumber"
 F 6 "277-6025-ND" H 0   0   50  0001 C CNN "digikey"
 F 7 "5.01100" H 0   0   50  0001 C CNN "price@10"
+F 8 "1" H 0   0   50  0001 C CNN "bom_3"
 	1    8050 3400
 	1    0    0    -1  
 $EndComp
@@ -301,6 +313,9 @@ F 4 "10 kOhms ±5% 0.1W, 1/10W Chip Resistor 0603 (1608 Metric) Moisture Resista
 F 5 "RC0603JR-0710KL" H 0   0   50  0001 C CNN "PartNumber"
 F 6 "311-10KGRCT-ND" H 0   0   50  0001 C CNN "digikey"
 F 7 "0.01900" H 0   0   50  0001 C CNN "price@10"
+F 8 "1" H 0   0   50  0001 C CNN "bom_1"
+F 9 "1" H 0   0   50  0001 C CNN "bom_2"
+F 10 "1" H 0   0   50  0001 C CNN "bom_3"
 	1    7300 3250
 	1    0    0    -1  
 $EndComp
@@ -318,6 +333,9 @@ F 4 "10 kOhms ±5% 0.1W, 1/10W Chip Resistor 0603 (1608 Metric) Moisture Resista
 F 5 "RC0603JR-0710KL" H 0   0   50  0001 C CNN "PartNumber"
 F 6 "311-10KGRCT-ND" H 0   0   50  0001 C CNN "digikey"
 F 7 "0.01900" H 0   0   50  0001 C CNN "price@10"
+F 8 "1" H 0   0   50  0001 C CNN "bom_1"
+F 9 "1" H 0   0   50  0001 C CNN "bom_2"
+F 10 "1" H 0   0   50  0001 C CNN "bom_3"
 	1    7300 3450
 	1    0    0    -1  
 $EndComp
@@ -335,6 +353,9 @@ F 4 "10 kOhms ±5% 0.1W, 1/10W Chip Resistor 0603 (1608 Metric) Moisture Resista
 F 5 "RC0603JR-0710KL" H 0   0   50  0001 C CNN "PartNumber"
 F 6 "311-10KGRCT-ND" H 0   0   50  0001 C CNN "digikey"
 F 7 "0.01900" H 0   0   50  0001 C CNN "price@10"
+F 8 "1" H 0   0   50  0001 C CNN "bom_1"
+F 9 "1" H 0   0   50  0001 C CNN "bom_2"
+F 10 "1" H 0   0   50  0001 C CNN "bom_3"
 	1    7300 3650
 	1    0    0    -1  
 $EndComp
@@ -364,6 +385,9 @@ F 4 "10 kOhms ±5% 0.1W, 1/10W Chip Resistor 0603 (1608 Metric) Moisture Resista
 F 5 "RC0603JR-0710KL" H 0   0   50  0001 C CNN "PartNumber"
 F 6 "311-10KGRCT-ND" H 0   0   50  0001 C CNN "digikey"
 F 7 "0.01900" H 0   0   50  0001 C CNN "price@10"
+F 8 "1" H 0   0   50  0001 C CNN "bom_1"
+F 9 "1" H 0   0   50  0001 C CNN "bom_2"
+F 10 "1" H 0   0   50  0001 C CNN "bom_3"
 	1    9200 3300
 	1    0    0    -1  
 $EndComp
@@ -381,6 +405,9 @@ F 4 "10 kOhms ±5% 0.1W, 1/10W Chip Resistor 0603 (1608 Metric) Moisture Resista
 F 5 "RC0603JR-0710KL" H 0   0   50  0001 C CNN "PartNumber"
 F 6 "311-10KGRCT-ND" H 0   0   50  0001 C CNN "digikey"
 F 7 "0.01900" H 0   0   50  0001 C CNN "price@10"
+F 8 "1" H 0   0   50  0001 C CNN "bom_1"
+F 9 "1" H 0   0   50  0001 C CNN "bom_2"
+F 10 "1" H 0   0   50  0001 C CNN "bom_3"
 	1    9200 3500
 	1    0    0    -1  
 $EndComp
@@ -398,6 +425,9 @@ F 4 "10 kOhms ±5% 0.1W, 1/10W Chip Resistor 0603 (1608 Metric) Moisture Resista
 F 5 "RC0603JR-0710KL" H 0   0   50  0001 C CNN "PartNumber"
 F 6 "311-10KGRCT-ND" H 0   0   50  0001 C CNN "digikey"
 F 7 "0.01900" H 0   0   50  0001 C CNN "price@10"
+F 8 "1" H 0   0   50  0001 C CNN "bom_1"
+F 9 "1" H 0   0   50  0001 C CNN "bom_2"
+F 10 "1" H 0   0   50  0001 C CNN "bom_3"
 	1    9200 3700
 	1    0    0    -1  
 $EndComp
@@ -440,6 +470,9 @@ F 4 "CC0603KPX7R7BB104" H 0   0   50  0001 C CNN "PartNumber"
 F 5 "311-1335-1-ND" H 0   0   50  0001 C CNN "digikey"
 F 6 "CAP CER 0.1UF 16V X7R 0603 " H 0   0   50  0001 C CNN "Description"
 F 7 "0.05800" H 0   0   50  0001 C CNN "price@10"
+F 8 "1" H 0   0   50  0001 C CNN "bom_1"
+F 9 "1" H 0   0   50  0001 C CNN "bom_2"
+F 10 "1" H 0   0   50  0001 C CNN "bom_3"
 	1    9450 2900
 	0    1    1    0   
 $EndComp
@@ -458,6 +491,9 @@ F 4 "CC0603KPX7R7BB104" H 0   0   50  0001 C CNN "PartNumber"
 F 5 "311-1335-1-ND" H 0   0   50  0001 C CNN "digikey"
 F 6 "CAP CER 0.1UF 16V X7R 0603 " H 0   0   50  0001 C CNN "Description"
 F 7 "0.05800" H 0   0   50  0001 C CNN "price@10"
+F 8 "1" H 0   0   50  0001 C CNN "bom_1"
+F 9 "1" H 0   0   50  0001 C CNN "bom_2"
+F 10 "1" H 0   0   50  0001 C CNN "bom_3"
 	1    11650 3000
 	0    1    1    0   
 $EndComp

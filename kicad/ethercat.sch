@@ -267,6 +267,8 @@ F 4 "DP83822IRHBR" V -650 1750 60  0001 C CNN "PartNumber"
 F 5 "Ethernet Interface 32-VQFN (5x5) " H 0   0   50  0001 C CNN "Description"
 F 6 "296-47256-1-ND" H 0   0   50  0001 C CNN "digikey"
 F 7 "2.37700" H 0   0   50  0001 C CNN "price@10"
+F 8 "1" H 0   0   50  0001 C CNN "bom_2"
+F 9 "1" H 0   0   50  0001 C CNN "bom_3"
 	1    6650 2850
 	1    0    0    -1  
 $EndComp
@@ -282,6 +284,9 @@ F 4 "311-1335-1-ND" H 0   0   50  0001 C CNN "digikey"
 F 5 "CAP CER 0.1UF 16V X7R 0603 " H 0   0   50  0001 C CNN "Description"
 F 6 "CC0603KPX7R7BB104" H 0   0   50  0001 C CNN "PartNumber"
 F 7 "0.05800" H 0   0   50  0001 C CNN "price@10"
+F 8 "1" H 0   0   50  0001 C CNN "bom_1"
+F 9 "1" H 0   0   50  0001 C CNN "bom_2"
+F 10 "1" H 0   0   50  0001 C CNN "bom_3"
 	1    9500 1250
 	0    -1   -1   0   
 $EndComp
@@ -297,6 +302,9 @@ F 4 "680 Ohms ±5% 0.1W, 1/10W Chip Resistor 0603 (1608 Metric) Automotive AEC-Q
 F 5 "RMCF0603JT680R" H 0   0   50  0001 C CNN "PartNumber"
 F 6 "RMCF0603JT680RCT-ND" H 0   0   50  0001 C CNN "digikey"
 F 7 "0.01400" H 0   0   50  0001 C CNN "price@10"
+F 8 "1" H 0   0   50  0001 C CNN "bom_1"
+F 9 "1" H 0   0   50  0001 C CNN "bom_2"
+F 10 "1" H 0   0   50  0001 C CNN "bom_3"
 	1    7800 10500
 	1    0    0    -1  
 $EndComp
@@ -312,6 +320,9 @@ F 4 "2.2 kOhms ±5% 0.1W, 1/10W Chip Resistor 0603 (1608 Metric) Automotive AEC-
 F 5 "ERJ-3GEYJ222V" H 0   0   50  0001 C CNN "PartNumber"
 F 6 "P2.2KGCT-ND " H 0   0   50  0001 C CNN "digikey"
 F 7 "0.04500" H 0   0   50  0001 C CNN "price@10"
+F 8 "1" H 0   0   50  0001 C CNN "bom_1"
+F 9 "1" H 0   0   50  0001 C CNN "bom_2"
+F 10 "1" H 0   0   50  0001 C CNN "bom_3"
 	1    1600 4900
 	0    1    1    0   
 $EndComp
@@ -327,6 +338,9 @@ F 4 "311-1335-1-ND" H 0   0   50  0001 C CNN "digikey"
 F 5 "CAP CER 0.1UF 16V X7R 0603 " H 0   0   50  0001 C CNN "Description"
 F 6 "CC0603KPX7R7BB104" H 0   0   50  0001 C CNN "PartNumber"
 F 7 "0.05800" H 0   0   50  0001 C CNN "price@10"
+F 8 "1" H 0   0   50  0001 C CNN "bom_1"
+F 9 "1" H 0   0   50  0001 C CNN "bom_2"
+F 10 "1" H 0   0   50  0001 C CNN "bom_3"
 	1    10750 1250
 	0    -1   -1   0   
 $EndComp
@@ -343,6 +357,9 @@ F 5 "EEPROM Memory IC 16Kb (2K x 8) I²C 400kHz 900ns 8-SOIC" H 0   0   50  0001
 F 6 "CAT24C16WI-GT3" H 0   0   50  0001 C CNN "PartNumber"
 F 7 "CAT24C16WI-GT3CT-ND " H 0   0   50  0001 C CNN "digikey"
 F 8 "0.16300" H 0   0   50  0001 C CNN "price@10"
+F 9 "" H 0   0   50  0001 C CNN "bom_1"
+F 10 "1" H 0   0   50  0001 C CNN "bom_2"
+F 11 "1" H 0   0   50  0001 C CNN "bom_3"
 	1    4200 10200
 	1    0    0    -1  
 $EndComp
@@ -358,6 +375,9 @@ F 4 "680 Ohms ±5% 0.1W, 1/10W Chip Resistor 0603 (1608 Metric) Automotive AEC-Q
 F 5 "RMCF0603JT680R" H 0   0   50  0001 C CNN "PartNumber"
 F 6 "RMCF0603JT680RCT-ND" H 0   0   50  0001 C CNN "digikey"
 F 7 "0.01400" H 0   0   50  0001 C CNN "price@10"
+F 8 "1" H 0   0   50  0001 C CNN "bom_1"
+F 9 "1" H 0   0   50  0001 C CNN "bom_2"
+F 10 "1" H 0   0   50  0001 C CNN "bom_3"
 	1    7800 10250
 	1    0    0    -1  
 $EndComp
@@ -373,6 +393,9 @@ F 4 "311-1335-1-ND" H 0   0   50  0001 C CNN "digikey"
 F 5 "CAP CER 0.1UF 16V X7R 0603 " H 0   0   50  0001 C CNN "Description"
 F 6 "CC0603KPX7R7BB104" H 0   0   50  0001 C CNN "PartNumber"
 F 7 "0.05800" H 0   0   50  0001 C CNN "price@10"
+F 8 "1" H 0   0   50  0001 C CNN "bom_1"
+F 9 "1" H 0   0   50  0001 C CNN "bom_2"
+F 10 "1" H 0   0   50  0001 C CNN "bom_3"
 	1    3550 10100
 	0    -1   -1   0   
 $EndComp
@@ -388,6 +411,9 @@ F 4 "2.2 kOhms ±5% 0.1W, 1/10W Chip Resistor 0603 (1608 Metric) Automotive AEC-
 F 5 "ERJ-3GEYJ222V" H 0   0   50  0001 C CNN "PartNumber"
 F 6 "P2.2KGCT-ND " H 0   0   50  0001 C CNN "digikey"
 F 7 "0.04500" H 0   0   50  0001 C CNN "price@10"
+F 8 "1" H 0   0   50  0001 C CNN "bom_1"
+F 9 "1" H 0   0   50  0001 C CNN "bom_2"
+F 10 "1" H 0   0   50  0001 C CNN "bom_3"
 	1    3950 4000
 	0    1    1    0   
 $EndComp
@@ -403,6 +429,9 @@ F 4 "2.2 kOhms ±5% 0.1W, 1/10W Chip Resistor 0603 (1608 Metric) Automotive AEC-
 F 5 "ERJ-3GEYJ222V" H 0   0   50  0001 C CNN "PartNumber"
 F 6 "P2.2KGCT-ND " H 0   0   50  0001 C CNN "digikey"
 F 7 "0.04500" H 0   0   50  0001 C CNN "price@10"
+F 8 "1" H 0   0   50  0001 C CNN "bom_1"
+F 9 "1" H 0   0   50  0001 C CNN "bom_2"
+F 10 "1" H 0   0   50  0001 C CNN "bom_3"
 	1    3850 4000
 	0    1    1    0   
 $EndComp
@@ -418,6 +447,9 @@ F 4 "2.2 kOhms ±5% 0.1W, 1/10W Chip Resistor 0603 (1608 Metric) Automotive AEC-
 F 5 "ERJ-3GEYJ222V" H 0   0   50  0001 C CNN "PartNumber"
 F 6 "P2.2KGCT-ND " H 0   0   50  0001 C CNN "digikey"
 F 7 "0.04500" H 0   0   50  0001 C CNN "price@10"
+F 8 "1" H 0   0   50  0001 C CNN "bom_1"
+F 9 "1" H 0   0   50  0001 C CNN "bom_2"
+F 10 "1" H 0   0   50  0001 C CNN "bom_3"
 	1    3750 4000
 	0    1    1    0   
 $EndComp
@@ -433,6 +465,9 @@ F 4 "2.2 kOhms ±5% 0.1W, 1/10W Chip Resistor 0603 (1608 Metric) Automotive AEC-
 F 5 "ERJ-3GEYJ222V" H 0   0   50  0001 C CNN "PartNumber"
 F 6 "P2.2KGCT-ND " H 0   0   50  0001 C CNN "digikey"
 F 7 "0.04500" H 0   0   50  0001 C CNN "price@10"
+F 8 "1" H 0   0   50  0001 C CNN "bom_1"
+F 9 "1" H 0   0   50  0001 C CNN "bom_2"
+F 10 "1" H 0   0   50  0001 C CNN "bom_3"
 	1    3650 4000
 	0    1    1    0   
 $EndComp
@@ -448,6 +483,9 @@ F 4 "2.2 kOhms ±5% 0.1W, 1/10W Chip Resistor 0603 (1608 Metric) Automotive AEC-
 F 5 "ERJ-3GEYJ222V" H 0   0   50  0001 C CNN "PartNumber"
 F 6 "P2.2KGCT-ND " H 0   0   50  0001 C CNN "digikey"
 F 7 "0.04500" H 0   0   50  0001 C CNN "price@10"
+F 8 "1" H 0   0   50  0001 C CNN "bom_1"
+F 9 "1" H 0   0   50  0001 C CNN "bom_2"
+F 10 "1" H 0   0   50  0001 C CNN "bom_3"
 	1    3550 4000
 	0    1    1    0   
 $EndComp
@@ -463,6 +501,9 @@ F 4 "2.2 kOhms ±5% 0.1W, 1/10W Chip Resistor 0603 (1608 Metric) Automotive AEC-
 F 5 "ERJ-3GEYJ222V" H 0   0   50  0001 C CNN "PartNumber"
 F 6 "P2.2KGCT-ND " H 0   0   50  0001 C CNN "digikey"
 F 7 "0.04500" H 0   0   50  0001 C CNN "price@10"
+F 8 "1" H 0   0   50  0001 C CNN "bom_1"
+F 9 "1" H 0   0   50  0001 C CNN "bom_2"
+F 10 "1" H 0   0   50  0001 C CNN "bom_3"
 	1    3450 4000
 	0    1    1    0   
 $EndComp
@@ -478,6 +519,9 @@ F 4 "4.87 kOhms ±1% 0.1W, 1/10W Chip Resistor 0603 (1608 Metric) Automotive AEC
 F 5 "RMCF0603FT4K87" H 0   0   50  0001 C CNN "PartNumber"
 F 6 " RMCF0603FT4K87CT-ND" H 0   0   50  0001 C CNN "digikey"
 F 7 "0.01600" H 0   0   50  0001 C CNN "price@10"
+F 8 "1" H 0   0   50  0001 C CNN "bom_1"
+F 9 "1" H 0   0   50  0001 C CNN "bom_2"
+F 10 "1" H 0   0   50  0001 C CNN "bom_3"
 	1    8350 2250
 	1    0    0    -1  
 $EndComp
@@ -493,6 +537,9 @@ F 4 "2.2 kOhms ±5% 0.1W, 1/10W Chip Resistor 0603 (1608 Metric) Automotive AEC-
 F 5 "ERJ-3GEYJ222V" H 0   0   50  0001 C CNN "PartNumber"
 F 6 "P2.2KGCT-ND " H 0   0   50  0001 C CNN "digikey"
 F 7 "0.04500" H 0   0   50  0001 C CNN "price@10"
+F 8 "1" H 0   0   50  0001 C CNN "bom_1"
+F 9 "1" H 0   0   50  0001 C CNN "bom_2"
+F 10 "1" H 0   0   50  0001 C CNN "bom_3"
 	1    4250 2200
 	0    1    1    0   
 $EndComp
@@ -508,6 +555,9 @@ F 4 "2.2 kOhms ±5% 0.1W, 1/10W Chip Resistor 0603 (1608 Metric) Automotive AEC-
 F 5 "ERJ-3GEYJ222V" H 0   0   50  0001 C CNN "PartNumber"
 F 6 "P2.2KGCT-ND " H 0   0   50  0001 C CNN "digikey"
 F 7 "0.04500" H 0   0   50  0001 C CNN "price@10"
+F 8 "1" H 0   0   50  0001 C CNN "bom_1"
+F 9 "1" H 0   0   50  0001 C CNN "bom_2"
+F 10 "1" H 0   0   50  0001 C CNN "bom_3"
 	1    4450 2200
 	0    1    1    0   
 $EndComp
@@ -523,6 +573,9 @@ F 4 "4.7 kOhms ±5% 0.1W, 1/10W Chip Resistor 0603 (1608 Metric) Moisture Resist
 F 5 "RC0603JR-074K7L" H 0   0   50  0001 C CNN "PartNumber"
 F 6 "311-4.7KGRCT-ND" H 0   0   50  0001 C CNN "digikey"
 F 7 "0.01900" H 0   0   50  0001 C CNN "price@10"
+F 8 "1" H 0   0   50  0001 C CNN "bom_1"
+F 9 "1" H 0   0   50  0001 C CNN "bom_2"
+F 10 "1" H 0   0   50  0001 C CNN "bom_3"
 	1    5100 9950
 	0    1    1    0   
 $EndComp
@@ -538,6 +591,9 @@ F 4 "10 kOhms ±5% 0.1W, 1/10W Chip Resistor 0603 (1608 Metric) Moisture Resista
 F 5 "RC0603JR-0710KL" H 0   0   50  0001 C CNN "PartNumber"
 F 6 "311-10KGRCT-ND" H 0   0   50  0001 C CNN "digikey"
 F 7 "0.01900" H 0   0   50  0001 C CNN "price@10"
+F 8 "1" H 0   0   50  0001 C CNN "bom_1"
+F 9 "1" H 0   0   50  0001 C CNN "bom_2"
+F 10 "1" H 0   0   50  0001 C CNN "bom_3"
 	1    8350 2950
 	1    0    0    -1  
 $EndComp
@@ -553,6 +609,9 @@ F 4 "49.9 Ohms ±1% 0.1W, 1/10W Chip Resistor 0603 (1608 Metric) Moisture Resist
 F 5 "RC0603FR-0749R9L" H 0   0   50  0001 C CNN "PartNumber"
 F 6 "311-49.9HRCT-ND" H 0   0   50  0001 C CNN "digikey"
 F 7 "0.02300" H 0   0   50  0001 C CNN "price@10"
+F 8 "1" H 0   0   50  0001 C CNN "bom_1"
+F 9 "1" H 0   0   50  0001 C CNN "bom_2"
+F 10 "1" H 0   0   50  0001 C CNN "bom_3"
 	1    9050 1150
 	0    1    1    0   
 $EndComp
@@ -568,6 +627,9 @@ F 4 "49.9 Ohms ±1% 0.1W, 1/10W Chip Resistor 0603 (1608 Metric) Moisture Resist
 F 5 "RC0603FR-0749R9L" H 0   0   50  0001 C CNN "PartNumber"
 F 6 "311-49.9HRCT-ND" H 0   0   50  0001 C CNN "digikey"
 F 7 "0.02300" H 0   0   50  0001 C CNN "price@10"
+F 8 "1" H 0   0   50  0001 C CNN "bom_1"
+F 9 "1" H 0   0   50  0001 C CNN "bom_2"
+F 10 "1" H 0   0   50  0001 C CNN "bom_3"
 	1    9250 1150
 	0    1    1    0   
 $EndComp
@@ -583,6 +645,9 @@ F 4 "49.9 Ohms ±1% 0.1W, 1/10W Chip Resistor 0603 (1608 Metric) Moisture Resist
 F 5 "RC0603FR-0749R9L" H 0   0   50  0001 C CNN "PartNumber"
 F 6 "311-49.9HRCT-ND" H 0   0   50  0001 C CNN "digikey"
 F 7 "0.02300" H 0   0   50  0001 C CNN "price@10"
+F 8 "1" H 0   0   50  0001 C CNN "bom_1"
+F 9 "1" H 0   0   50  0001 C CNN "bom_2"
+F 10 "1" H 0   0   50  0001 C CNN "bom_3"
 	1    10300 1200
 	0    1    1    0   
 $EndComp
@@ -598,6 +663,9 @@ F 4 "49.9 Ohms ±1% 0.1W, 1/10W Chip Resistor 0603 (1608 Metric) Moisture Resist
 F 5 "RC0603FR-0749R9L" H 0   0   50  0001 C CNN "PartNumber"
 F 6 "311-49.9HRCT-ND" H 0   0   50  0001 C CNN "digikey"
 F 7 "0.02300" H 0   0   50  0001 C CNN "price@10"
+F 8 "1" H 0   0   50  0001 C CNN "bom_1"
+F 9 "1" H 0   0   50  0001 C CNN "bom_2"
+F 10 "1" H 0   0   50  0001 C CNN "bom_3"
 	1    10450 1200
 	0    1    1    0   
 $EndComp
@@ -613,6 +681,9 @@ F 4 "490-10475-1-ND" H 0   0   50  0001 C CNN "digikey"
 F 5 "GRM188R61A106ME69D " H 0   0   50  0001 C CNN "PartNumber"
 F 6 "10µF ±20% 10V Ceramic Capacitor X5R 0603 (1608 Metric) " H 0   0   50  0001 C CNN "Description"
 F 7 "0.15400" H 0   0   50  0001 C CNN "price@10"
+F 8 "1" H 0   0   50  0001 C CNN "bom_1"
+F 9 "1" H 0   0   50  0001 C CNN "bom_2"
+F 10 "1" H 0   0   50  0001 C CNN "bom_3"
 	1    3700 2150
 	0    -1   -1   0   
 $EndComp
@@ -628,6 +699,9 @@ F 4 "490-10475-1-ND" H 0   0   50  0001 C CNN "digikey"
 F 5 "GRM188R61A106ME69D " H 0   0   50  0001 C CNN "PartNumber"
 F 6 "10µF ±20% 10V Ceramic Capacitor X5R 0603 (1608 Metric) " H 0   0   50  0001 C CNN "Description"
 F 7 "0.15400" H 0   0   50  0001 C CNN "price@10"
+F 8 "1" H 0   0   50  0001 C CNN "bom_1"
+F 9 "1" H 0   0   50  0001 C CNN "bom_2"
+F 10 "1" H 0   0   50  0001 C CNN "bom_3"
 	1    3350 1850
 	0    -1   -1   0   
 $EndComp
@@ -643,6 +717,9 @@ F 4 "311-1335-1-ND" H 0   0   50  0001 C CNN "digikey"
 F 5 "CAP CER 0.1UF 16V X7R 0603 " H 0   0   50  0001 C CNN "Description"
 F 6 "CC0603KPX7R7BB104" H 0   0   50  0001 C CNN "PartNumber"
 F 7 "0.05800" H 0   0   50  0001 C CNN "price@10"
+F 8 "1" H 0   0   50  0001 C CNN "bom_1"
+F 9 "1" H 0   0   50  0001 C CNN "bom_2"
+F 10 "1" H 0   0   50  0001 C CNN "bom_3"
 	1    3950 2150
 	0    -1   -1   0   
 $EndComp
@@ -658,6 +735,9 @@ F 4 "311-1335-1-ND" H 0   0   50  0001 C CNN "digikey"
 F 5 "CAP CER 0.1UF 16V X7R 0603 " H 0   0   50  0001 C CNN "Description"
 F 6 "CC0603KPX7R7BB104" H 0   0   50  0001 C CNN "PartNumber"
 F 7 "0.05800" H 0   0   50  0001 C CNN "price@10"
+F 8 "1" H 0   0   50  0001 C CNN "bom_1"
+F 9 "1" H 0   0   50  0001 C CNN "bom_2"
+F 10 "1" H 0   0   50  0001 C CNN "bom_3"
 	1    3150 1850
 	0    -1   -1   0   
 $EndComp
@@ -673,6 +753,9 @@ F 4 "2.2 kOhms ±5% 0.1W, 1/10W Chip Resistor 0603 (1608 Metric) Automotive AEC-
 F 5 "ERJ-3GEYJ222V" H 0   0   50  0001 C CNN "PartNumber"
 F 6 "P2.2KGCT-ND " H 0   0   50  0001 C CNN "digikey"
 F 7 "0.04500" H 0   0   50  0001 C CNN "price@10"
+F 8 "1" H 0   0   50  0001 C CNN "bom_1"
+F 9 "1" H 0   0   50  0001 C CNN "bom_2"
+F 10 "1" H 0   0   50  0001 C CNN "bom_3"
 	1    10100 2750
 	0    1    1    0   
 $EndComp
@@ -774,6 +857,9 @@ F 4 "475-3124-1-ND" H 7400 10500 50  0001 C CNN "digikey"
 F 5 "LS L29K-G1H2-1-Z" H 0   0   50  0001 C CNN "PartNumber"
 F 6 "LED RED DIFFUSED 0603 SMD " H 0   0   50  0001 C CNN "Description"
 F 7 "0.33900" H 0   0   50  0001 C CNN "price@10"
+F 8 "1" H 0   0   50  0001 C CNN "bom_1"
+F 9 "1" H 0   0   50  0001 C CNN "bom_2"
+F 10 "1" H 0   0   50  0001 C CNN "bom_3"
 	1    7400 10500
 	-1   0    0    1   
 $EndComp
@@ -789,6 +875,9 @@ F 4 "475-2709-1-ND" H 7400 10250 50  0001 C CNN "digikey"
 F 5 "LG L29K-G2J1-24-Z" H 0   0   50  0001 C CNN "PartNumber"
 F 6 "LED GREEN DIFFUSED 0603 SMD " H 0   0   50  0001 C CNN "Description"
 F 7 "0.31900" H 0   0   50  0001 C CNN "price@10"
+F 8 "1" H 0   0   50  0001 C CNN "bom_1"
+F 9 "1" H 0   0   50  0001 C CNN "bom_2"
+F 10 "1" H 0   0   50  0001 C CNN "bom_3"
 	1    7400 10250
 	-1   0    0    1   
 $EndComp
@@ -915,6 +1004,9 @@ F 4 "25MHz XO (Standard) HCMOS Oscillator 3.3V Enable/Disable 4-SMD, No Lead " H
 F 5 "ECS-2520S33-250-FN-TR" H 0   0   50  0001 C CNN "PartNumber"
 F 6 "XC2198CT-ND " H 0   0   50  0001 C CNN "digikey"
 F 7 "1.41900" H 0   0   50  0001 C CNN "price@10"
+F 8 "1" H 0   0   50  0001 C CNN "bom_1"
+F 9 "1" H 0   0   50  0001 C CNN "bom_2"
+F 10 "1" H 0   0   50  0001 C CNN "bom_3"
 	1    8750 3950
 	-1   0    0    -1  
 $EndComp
@@ -1242,6 +1334,8 @@ F 4 "DP83822IRHBR" V -500 5900 60  0001 C CNN "PartNumber"
 F 5 "Ethernet Interface 32-VQFN (5x5) " H 0   0   50  0001 C CNN "Description"
 F 6 "296-47256-1-ND" H 0   0   50  0001 C CNN "digikey"
 F 7 "2.37700" H 0   0   50  0001 C CNN "price@10"
+F 8 "1" H 0   0   50  0001 C CNN "bom_2"
+F 9 "1" H 0   0   50  0001 C CNN "bom_3"
 	1    6800 7000
 	1    0    0    -1  
 $EndComp
@@ -1257,6 +1351,9 @@ F 4 "311-1335-1-ND" H 0   0   50  0001 C CNN "digikey"
 F 5 "CAP CER 0.1UF 16V X7R 0603 " H 0   0   50  0001 C CNN "Description"
 F 6 "CC0603KPX7R7BB104" H 0   0   50  0001 C CNN "PartNumber"
 F 7 "0.05800" H 0   0   50  0001 C CNN "price@10"
+F 8 "1" H 0   0   50  0001 C CNN "bom_1"
+F 9 "1" H 0   0   50  0001 C CNN "bom_2"
+F 10 "1" H 0   0   50  0001 C CNN "bom_3"
 	1    9650 5400
 	0    -1   -1   0   
 $EndComp
@@ -1272,6 +1369,9 @@ F 4 "311-1335-1-ND" H 0   0   50  0001 C CNN "digikey"
 F 5 "CAP CER 0.1UF 16V X7R 0603 " H 0   0   50  0001 C CNN "Description"
 F 6 "CC0603KPX7R7BB104" H 0   0   50  0001 C CNN "PartNumber"
 F 7 "0.05800" H 0   0   50  0001 C CNN "price@10"
+F 8 "1" H 0   0   50  0001 C CNN "bom_1"
+F 9 "1" H 0   0   50  0001 C CNN "bom_2"
+F 10 "1" H 0   0   50  0001 C CNN "bom_3"
 	1    10900 5400
 	0    -1   -1   0   
 $EndComp
@@ -1287,6 +1387,9 @@ F 4 "2.2 kOhms ±5% 0.1W, 1/10W Chip Resistor 0603 (1608 Metric) Automotive AEC-
 F 5 "ERJ-3GEYJ222V" H 0   0   50  0001 C CNN "PartNumber"
 F 6 "P2.2KGCT-ND " H 0   0   50  0001 C CNN "digikey"
 F 7 "0.04500" H 0   0   50  0001 C CNN "price@10"
+F 8 "1" H 0   0   50  0001 C CNN "bom_1"
+F 9 "1" H 0   0   50  0001 C CNN "bom_2"
+F 10 "1" H 0   0   50  0001 C CNN "bom_3"
 	1    4200 6350
 	0    1    1    0   
 $EndComp
@@ -1302,6 +1405,9 @@ F 4 "2.2 kOhms ±5% 0.1W, 1/10W Chip Resistor 0603 (1608 Metric) Automotive AEC-
 F 5 "ERJ-3GEYJ222V" H 0   0   50  0001 C CNN "PartNumber"
 F 6 "P2.2KGCT-ND " H 0   0   50  0001 C CNN "digikey"
 F 7 "0.04500" H 0   0   50  0001 C CNN "price@10"
+F 8 "1" H 0   0   50  0001 C CNN "bom_1"
+F 9 "1" H 0   0   50  0001 C CNN "bom_2"
+F 10 "1" H 0   0   50  0001 C CNN "bom_3"
 	1    4000 8150
 	0    1    1    0   
 $EndComp
@@ -1317,6 +1423,9 @@ F 4 "2.2 kOhms ±5% 0.1W, 1/10W Chip Resistor 0603 (1608 Metric) Automotive AEC-
 F 5 "ERJ-3GEYJ222V" H 0   0   50  0001 C CNN "PartNumber"
 F 6 "P2.2KGCT-ND " H 0   0   50  0001 C CNN "digikey"
 F 7 "0.04500" H 0   0   50  0001 C CNN "price@10"
+F 8 "1" H 0   0   50  0001 C CNN "bom_1"
+F 9 "1" H 0   0   50  0001 C CNN "bom_2"
+F 10 "1" H 0   0   50  0001 C CNN "bom_3"
 	1    3900 8150
 	0    1    1    0   
 $EndComp
@@ -1332,6 +1441,9 @@ F 4 "2.2 kOhms ±5% 0.1W, 1/10W Chip Resistor 0603 (1608 Metric) Automotive AEC-
 F 5 "ERJ-3GEYJ222V" H 0   0   50  0001 C CNN "PartNumber"
 F 6 "P2.2KGCT-ND " H 0   0   50  0001 C CNN "digikey"
 F 7 "0.04500" H 0   0   50  0001 C CNN "price@10"
+F 8 "1" H 0   0   50  0001 C CNN "bom_1"
+F 9 "1" H 0   0   50  0001 C CNN "bom_2"
+F 10 "1" H 0   0   50  0001 C CNN "bom_3"
 	1    3800 8150
 	0    1    1    0   
 $EndComp
@@ -1347,6 +1459,9 @@ F 4 "2.2 kOhms ±5% 0.1W, 1/10W Chip Resistor 0603 (1608 Metric) Automotive AEC-
 F 5 "ERJ-3GEYJ222V" H 0   0   50  0001 C CNN "PartNumber"
 F 6 "P2.2KGCT-ND " H 0   0   50  0001 C CNN "digikey"
 F 7 "0.04500" H 0   0   50  0001 C CNN "price@10"
+F 8 "1" H 0   0   50  0001 C CNN "bom_1"
+F 9 "1" H 0   0   50  0001 C CNN "bom_2"
+F 10 "1" H 0   0   50  0001 C CNN "bom_3"
 	1    3700 8150
 	0    1    1    0   
 $EndComp
@@ -1362,6 +1477,9 @@ F 4 "2.2 kOhms ±5% 0.1W, 1/10W Chip Resistor 0603 (1608 Metric) Automotive AEC-
 F 5 "ERJ-3GEYJ222V" H 0   0   50  0001 C CNN "PartNumber"
 F 6 "P2.2KGCT-ND " H 0   0   50  0001 C CNN "digikey"
 F 7 "0.04500" H 0   0   50  0001 C CNN "price@10"
+F 8 "1" H 0   0   50  0001 C CNN "bom_1"
+F 9 "1" H 0   0   50  0001 C CNN "bom_2"
+F 10 "1" H 0   0   50  0001 C CNN "bom_3"
 	1    3600 8150
 	0    1    1    0   
 $EndComp
@@ -1377,6 +1495,9 @@ F 4 "4.87 kOhms ±1% 0.1W, 1/10W Chip Resistor 0603 (1608 Metric) Automotive AEC
 F 5 "RMCF0603FT4K87" H 0   0   50  0001 C CNN "PartNumber"
 F 6 " RMCF0603FT4K87CT-ND" H 0   0   50  0001 C CNN "digikey"
 F 7 "0.01600" H 0   0   50  0001 C CNN "price@10"
+F 8 "1" H 0   0   50  0001 C CNN "bom_1"
+F 9 "1" H 0   0   50  0001 C CNN "bom_2"
+F 10 "1" H 0   0   50  0001 C CNN "bom_3"
 	1    8500 6400
 	1    0    0    -1  
 $EndComp
@@ -1392,6 +1513,9 @@ F 4 "2.2 kOhms ±5% 0.1W, 1/10W Chip Resistor 0603 (1608 Metric) Automotive AEC-
 F 5 "ERJ-3GEYJ222V" H 0   0   50  0001 C CNN "PartNumber"
 F 6 "P2.2KGCT-ND " H 0   0   50  0001 C CNN "digikey"
 F 7 "0.04500" H 0   0   50  0001 C CNN "price@10"
+F 8 "1" H 0   0   50  0001 C CNN "bom_1"
+F 9 "1" H 0   0   50  0001 C CNN "bom_2"
+F 10 "1" H 0   0   50  0001 C CNN "bom_3"
 	1    4400 6350
 	0    1    1    0   
 $EndComp
@@ -1407,6 +1531,9 @@ F 4 "2.2 kOhms ±5% 0.1W, 1/10W Chip Resistor 0603 (1608 Metric) Automotive AEC-
 F 5 "ERJ-3GEYJ222V" H 0   0   50  0001 C CNN "PartNumber"
 F 6 "P2.2KGCT-ND " H 0   0   50  0001 C CNN "digikey"
 F 7 "0.04500" H 0   0   50  0001 C CNN "price@10"
+F 8 "1" H 0   0   50  0001 C CNN "bom_1"
+F 9 "1" H 0   0   50  0001 C CNN "bom_2"
+F 10 "1" H 0   0   50  0001 C CNN "bom_3"
 	1    4600 6350
 	0    1    1    0   
 $EndComp
@@ -1422,6 +1549,9 @@ F 4 "10 kOhms ±5% 0.1W, 1/10W Chip Resistor 0603 (1608 Metric) Moisture Resista
 F 5 "RC0603JR-0710KL" H 0   0   50  0001 C CNN "PartNumber"
 F 6 "311-10KGRCT-ND" H 0   0   50  0001 C CNN "digikey"
 F 7 "0.01900" H 0   0   50  0001 C CNN "price@10"
+F 8 "1" H 0   0   50  0001 C CNN "bom_1"
+F 9 "1" H 0   0   50  0001 C CNN "bom_2"
+F 10 "1" H 0   0   50  0001 C CNN "bom_3"
 	1    8850 7100
 	1    0    0    -1  
 $EndComp
@@ -1437,6 +1567,9 @@ F 4 "49.9 Ohms ±1% 0.1W, 1/10W Chip Resistor 0603 (1608 Metric) Moisture Resist
 F 5 "RC0603FR-0749R9L" H 0   0   50  0001 C CNN "PartNumber"
 F 6 "311-49.9HRCT-ND" H 0   0   50  0001 C CNN "digikey"
 F 7 "0.02300" H 0   0   50  0001 C CNN "price@10"
+F 8 "1" H 0   0   50  0001 C CNN "bom_1"
+F 9 "1" H 0   0   50  0001 C CNN "bom_2"
+F 10 "1" H 0   0   50  0001 C CNN "bom_3"
 	1    9200 5300
 	0    1    1    0   
 $EndComp
@@ -1452,6 +1585,9 @@ F 4 "49.9 Ohms ±1% 0.1W, 1/10W Chip Resistor 0603 (1608 Metric) Moisture Resist
 F 5 "RC0603FR-0749R9L" H 0   0   50  0001 C CNN "PartNumber"
 F 6 "311-49.9HRCT-ND" H 0   0   50  0001 C CNN "digikey"
 F 7 "0.02300" H 0   0   50  0001 C CNN "price@10"
+F 8 "1" H 0   0   50  0001 C CNN "bom_1"
+F 9 "1" H 0   0   50  0001 C CNN "bom_2"
+F 10 "1" H 0   0   50  0001 C CNN "bom_3"
 	1    9400 5300
 	0    1    1    0   
 $EndComp
@@ -1467,6 +1603,9 @@ F 4 "49.9 Ohms ±1% 0.1W, 1/10W Chip Resistor 0603 (1608 Metric) Moisture Resist
 F 5 "RC0603FR-0749R9L" H 0   0   50  0001 C CNN "PartNumber"
 F 6 "311-49.9HRCT-ND" H 0   0   50  0001 C CNN "digikey"
 F 7 "0.02300" H 0   0   50  0001 C CNN "price@10"
+F 8 "1" H 0   0   50  0001 C CNN "bom_1"
+F 9 "1" H 0   0   50  0001 C CNN "bom_2"
+F 10 "1" H 0   0   50  0001 C CNN "bom_3"
 	1    10450 5350
 	0    1    1    0   
 $EndComp
@@ -1482,6 +1621,9 @@ F 4 "49.9 Ohms ±1% 0.1W, 1/10W Chip Resistor 0603 (1608 Metric) Moisture Resist
 F 5 "RC0603FR-0749R9L" H 0   0   50  0001 C CNN "PartNumber"
 F 6 "311-49.9HRCT-ND" H 0   0   50  0001 C CNN "digikey"
 F 7 "0.02300" H 0   0   50  0001 C CNN "price@10"
+F 8 "1" H 0   0   50  0001 C CNN "bom_1"
+F 9 "1" H 0   0   50  0001 C CNN "bom_2"
+F 10 "1" H 0   0   50  0001 C CNN "bom_3"
 	1    10600 5350
 	0    1    1    0   
 $EndComp
@@ -1497,6 +1639,9 @@ F 4 "CAP CER 1UF 10V X7R 0603" H 0   0   50  0001 C CNN "Description"
 F 5 "399-11133-1-ND" H 0   0   50  0001 C CNN "digikey"
 F 6 "C0603C105K8RACTU" H 0   0   50  0001 C CNN "PartNumber"
 F 7 "0.06400" H 0   0   50  0001 C CNN "price@10"
+F 8 "1" H 0   0   50  0001 C CNN "bom_1"
+F 9 "1" H 0   0   50  0001 C CNN "bom_2"
+F 10 "1" H 0   0   50  0001 C CNN "bom_3"
 	1    11900 6900
 	0    1    1    0   
 $EndComp
@@ -1512,6 +1657,9 @@ F 4 "490-10475-1-ND" H 0   0   50  0001 C CNN "digikey"
 F 5 "GRM188R61A106ME69D " H 0   0   50  0001 C CNN "PartNumber"
 F 6 "10µF ±20% 10V Ceramic Capacitor X5R 0603 (1608 Metric) " H 0   0   50  0001 C CNN "Description"
 F 7 "0.15400" H 0   0   50  0001 C CNN "price@10"
+F 8 "1" H 0   0   50  0001 C CNN "bom_1"
+F 9 "1" H 0   0   50  0001 C CNN "bom_2"
+F 10 "1" H 0   0   50  0001 C CNN "bom_3"
 	1    3700 6300
 	0    -1   -1   0   
 $EndComp
@@ -1527,6 +1675,9 @@ F 4 "490-10475-1-ND" H 0   0   50  0001 C CNN "digikey"
 F 5 "GRM188R61A106ME69D " H 0   0   50  0001 C CNN "PartNumber"
 F 6 "10µF ±20% 10V Ceramic Capacitor X5R 0603 (1608 Metric) " H 0   0   50  0001 C CNN "Description"
 F 7 "0.15400" H 0   0   50  0001 C CNN "price@10"
+F 8 "1" H 0   0   50  0001 C CNN "bom_1"
+F 9 "1" H 0   0   50  0001 C CNN "bom_2"
+F 10 "1" H 0   0   50  0001 C CNN "bom_3"
 	1    3450 6050
 	0    -1   -1   0   
 $EndComp
@@ -1542,6 +1693,9 @@ F 4 "311-1335-1-ND" H 0   0   50  0001 C CNN "digikey"
 F 5 "CAP CER 0.1UF 16V X7R 0603 " H 0   0   50  0001 C CNN "Description"
 F 6 "CC0603KPX7R7BB104" H 0   0   50  0001 C CNN "PartNumber"
 F 7 "0.05800" H 0   0   50  0001 C CNN "price@10"
+F 8 "1" H 0   0   50  0001 C CNN "bom_1"
+F 9 "1" H 0   0   50  0001 C CNN "bom_2"
+F 10 "1" H 0   0   50  0001 C CNN "bom_3"
 	1    3950 6300
 	0    -1   -1   0   
 $EndComp
@@ -1557,6 +1711,9 @@ F 4 "2.2 kOhms ±5% 0.1W, 1/10W Chip Resistor 0603 (1608 Metric) Automotive AEC-
 F 5 "ERJ-3GEYJ222V" H 0   0   50  0001 C CNN "PartNumber"
 F 6 "P2.2KGCT-ND " H 0   0   50  0001 C CNN "digikey"
 F 7 "0.04500" H 0   0   50  0001 C CNN "price@10"
+F 8 "1" H 0   0   50  0001 C CNN "bom_1"
+F 9 "1" H 0   0   50  0001 C CNN "bom_2"
+F 10 "1" H 0   0   50  0001 C CNN "bom_3"
 	1    10250 6900
 	0    1    1    0   
 $EndComp
@@ -1680,6 +1837,9 @@ F 4 "25MHz XO (Standard) HCMOS Oscillator 3.3V Enable/Disable 4-SMD, No Lead " H
 F 5 "ECS-2520S33-250-FN-TR" H 0   0   50  0001 C CNN "PartNumber"
 F 6 "XC2198CT-ND " H 0   0   50  0001 C CNN "digikey"
 F 7 "1.41900" H 0   0   50  0001 C CNN "price@10"
+F 8 "1" H 0   0   50  0001 C CNN "bom_1"
+F 9 "1" H 0   0   50  0001 C CNN "bom_2"
+F 10 "1" H 0   0   50  0001 C CNN "bom_3"
 	1    8900 8100
 	-1   0    0    -1  
 $EndComp
@@ -1823,6 +1983,9 @@ F 4 "4.7 kOhms ±5% 0.1W, 1/10W Chip Resistor 0603 (1608 Metric) Moisture Resist
 F 5 "RC0603JR-074K7L" H 0   0   50  0001 C CNN "PartNumber"
 F 6 "311-4.7KGRCT-ND" H 0   0   50  0001 C CNN "digikey"
 F 7 "0.01900" H 0   0   50  0001 C CNN "price@10"
+F 8 "1" H 0   0   50  0001 C CNN "bom_1"
+F 9 "1" H 0   0   50  0001 C CNN "bom_2"
+F 10 "1" H 0   0   50  0001 C CNN "bom_3"
 	1    4900 9950
 	0    1    1    0   
 $EndComp
@@ -1892,6 +2055,9 @@ F 4 "CAP CER 1UF 10V X7R 0603" H 0   0   50  0001 C CNN "Description"
 F 5 "399-11133-1-ND" H 0   0   50  0001 C CNN "digikey"
 F 6 "C0603C105K8RACTU" H 0   0   50  0001 C CNN "PartNumber"
 F 7 "0.06400" H 0   0   50  0001 C CNN "price@10"
+F 8 "1" H 0   0   50  0001 C CNN "bom_1"
+F 9 "1" H 0   0   50  0001 C CNN "bom_2"
+F 10 "1" H 0   0   50  0001 C CNN "bom_3"
 	1    12250 6900
 	0    1    1    0   
 $EndComp
@@ -1909,6 +2075,9 @@ F 4 "470 Ohms ±5% 0.1W, 1/10W Chip Resistor 0603 (1608 Metric) Automotive AEC-Q
 F 5 "CRGCQ0603J470R" H 0   0   50  0001 C CNN "PartNumber"
 F 6 "A130089CT-ND" H 0   0   50  0001 C CNN "digikey"
 F 7 "0.02100" H 0   0   50  0001 C CNN "price@10"
+F 8 "1" H 0   0   50  0001 C CNN "bom_1"
+F 9 "1" H 0   0   50  0001 C CNN "bom_2"
+F 10 "1" H 0   0   50  0001 C CNN "bom_3"
 	1    14100 3250
 	0    1    1    0   
 $EndComp
@@ -1939,6 +2108,9 @@ F 4 "470 Ohms ±5% 0.1W, 1/10W Chip Resistor 0603 (1608 Metric) Automotive AEC-Q
 F 5 "CRGCQ0603J470R" H 0   0   50  0001 C CNN "PartNumber"
 F 6 "A130089CT-ND" H 0   0   50  0001 C CNN "digikey"
 F 7 "0.02100" H 0   0   50  0001 C CNN "price@10"
+F 8 "1" H 0   0   50  0001 C CNN "bom_1"
+F 9 "1" H 0   0   50  0001 C CNN "bom_2"
+F 10 "1" H 0   0   50  0001 C CNN "bom_3"
 	1    13900 3250
 	0    1    1    0   
 $EndComp
@@ -1956,6 +2128,9 @@ F 4 "CAP CER 1UF 10V X7R 0603" H 0   0   50  0001 C CNN "Description"
 F 5 "399-11133-1-ND" H 0   0   50  0001 C CNN "digikey"
 F 6 "C0603C105K8RACTU" H 0   0   50  0001 C CNN "PartNumber"
 F 7 "0.06400" H 0   0   50  0001 C CNN "price@10"
+F 8 "1" H 0   0   50  0001 C CNN "bom_1"
+F 9 "1" H 0   0   50  0001 C CNN "bom_2"
+F 10 "1" H 0   0   50  0001 C CNN "bom_3"
 	1    11550 4100
 	0    1    1    0   
 $EndComp
@@ -1971,6 +2146,9 @@ F 4 "CAP CER 1UF 10V X7R 0603" H 0   0   50  0001 C CNN "Description"
 F 5 "399-11133-1-ND" H 0   0   50  0001 C CNN "digikey"
 F 6 "C0603C105K8RACTU" H 0   0   50  0001 C CNN "PartNumber"
 F 7 "0.06400" H 0   0   50  0001 C CNN "price@10"
+F 8 "1" H 0   0   50  0001 C CNN "bom_1"
+F 9 "1" H 0   0   50  0001 C CNN "bom_2"
+F 10 "1" H 0   0   50  0001 C CNN "bom_3"
 	1    11850 4600
 	0    1    1    0   
 $EndComp
@@ -1986,6 +2164,8 @@ F 4 "2 Port RJ45 Magjack Connector Through Hole 10/100 Base-T, AutoMDIX " H 0   
 F 5 "0845-2G1T-H5 " H 0   0   50  0001 C CNN "PartNumber"
 F 6 "380-1123-ND" H 0   0   50  0001 C CNN "digikey"
 F 7 "7.17400" H 0   0   50  0001 C CNN "price@10"
+F 8 "" H 0   0   50  0001 C CNN "bom_2"
+F 9 "1" H 0   0   50  0001 C CNN "bom_3"
 	1    14800 4900
 	1    0    0    -1  
 $EndComp
@@ -2027,6 +2207,9 @@ F 4 "470 Ohms ±5% 0.1W, 1/10W Chip Resistor 0603 (1608 Metric) Automotive AEC-Q
 F 5 "CRGCQ0603J470R" H 0   0   50  0001 C CNN "PartNumber"
 F 6 "A130089CT-ND" H 0   0   50  0001 C CNN "digikey"
 F 7 "0.02100" H 0   0   50  0001 C CNN "price@10"
+F 8 "1" H 0   0   50  0001 C CNN "bom_1"
+F 9 "1" H 0   0   50  0001 C CNN "bom_2"
+F 10 "1" H 0   0   50  0001 C CNN "bom_3"
 	1    13600 3200
 	0    1    1    0   
 $EndComp
@@ -2044,6 +2227,9 @@ F 4 "470 Ohms ±5% 0.1W, 1/10W Chip Resistor 0603 (1608 Metric) Automotive AEC-Q
 F 5 "CRGCQ0603J470R" H 0   0   50  0001 C CNN "PartNumber"
 F 6 "A130089CT-ND" H 0   0   50  0001 C CNN "digikey"
 F 7 "0.02100" H 0   0   50  0001 C CNN "price@10"
+F 8 "1" H 0   0   50  0001 C CNN "bom_1"
+F 9 "1" H 0   0   50  0001 C CNN "bom_2"
+F 10 "1" H 0   0   50  0001 C CNN "bom_3"
 	1    13400 3200
 	0    1    1    0   
 $EndComp
@@ -2178,6 +2364,9 @@ F 4 "12061C472KAT2A" H 0   700 50  0001 C CNN "PartNumber"
 F 5 "478-1521-1-ND" H 0   700 50  0001 C CNN "digikey"
 F 6 "4700pF ±10% 100V Ceramic Capacitor X7R 1206 (3216 Metric) " H 0   700 50  0001 C CNN "Description"
 F 7 "0.18700" H 0   700 50  0001 C CNN "price@10"
+F 8 "1" H 0   0   50  0001 C CNN "bom_1"
+F 9 "1" H 0   0   50  0001 C CNN "bom_2"
+F 10 "1" H 0   0   50  0001 C CNN "bom_3"
 	1    14850 7200
 	0    1    1    0   
 $EndComp
@@ -2421,6 +2610,9 @@ F 4 "311-1335-1-ND" H 0   0   50  0001 C CNN "digikey"
 F 5 "CAP CER 0.1UF 16V X7R 0603 " H 0   0   50  0001 C CNN "Description"
 F 6 "CC0603KPX7R7BB104" H 0   0   50  0001 C CNN "PartNumber"
 F 7 "0.05800" H 0   0   50  0001 C CNN "price@10"
+F 8 "1" H 0   0   50  0001 C CNN "bom_1"
+F 9 "1" H 0   0   50  0001 C CNN "bom_2"
+F 10 "1" H 0   0   50  0001 C CNN "bom_3"
 	1    3250 5950
 	0    1    1    0   
 $EndComp
@@ -2459,6 +2651,8 @@ F 4 "jumper smd bridge using tin" H 4950 -2000 50  0001 C CNN "Description"
 F 5 "-" H 4950 -2000 50  0001 C CNN "PartNumber"
 F 6 "-" H 4950 -2000 50  0001 C CNN "digikey"
 F 7 "0" H 4950 -2000 50  0001 C CNN "price@10"
+F 8 "" H 0   0   50  0001 C CNN "bom_1"
+F 9 "" H 0   0   50  0001 C CNN "bom_2"
 	1    8250 3600
 	0    1    1    0   
 $EndComp
@@ -2480,6 +2674,8 @@ F 4 "jumper smd bridge using tin" H 5100 2200 50  0001 C CNN "Description"
 F 5 "-" H 5100 2200 50  0001 C CNN "PartNumber"
 F 6 "-" H 5100 2200 50  0001 C CNN "digikey"
 F 7 "0" H 5100 2200 50  0001 C CNN "price@10"
+F 8 "" H 0   0   50  0001 C CNN "bom_1"
+F 9 "" H 0   0   50  0001 C CNN "bom_2"
 	1    8400 7800
 	0    1    1    0   
 $EndComp
@@ -2501,6 +2697,8 @@ F 4 "jumper smd bridge using tin" H 5400 1900 50  0001 C CNN "Description"
 F 5 "-" H 5400 1900 50  0001 C CNN "PartNumber"
 F 6 "-" H 5400 1900 50  0001 C CNN "digikey"
 F 7 "0" H 5400 1900 50  0001 C CNN "price@10"
+F 8 "" H 0   0   50  0001 C CNN "bom_1"
+F 9 "" H 0   0   50  0001 C CNN "bom_2"
 	1    8700 7500
 	-1   0    0    1   
 $EndComp
@@ -2521,6 +2719,8 @@ F 4 "jumper smd bridge using tin" H 5250 -2250 50  0001 C CNN "Description"
 F 5 "-" H 5250 -2250 50  0001 C CNN "PartNumber"
 F 6 "-" H 5250 -2250 50  0001 C CNN "digikey"
 F 7 "0" H 5250 -2250 50  0001 C CNN "price@10"
+F 8 "" H 0   0   50  0001 C CNN "bom_1"
+F 9 "" H 0   0   50  0001 C CNN "bom_2"
 	1    8550 3350
 	-1   0    0    1   
 $EndComp
@@ -2541,6 +2741,8 @@ F 4 "jumper smd bridge using tin" H 7150 -2350 50  0001 C CNN "Description"
 F 5 "-" H 7150 -2350 50  0001 C CNN "PartNumber"
 F 6 "-" H 7150 -2350 50  0001 C CNN "digikey"
 F 7 "0" H 7150 -2350 50  0001 C CNN "price@10"
+F 8 "" H 0   0   50  0001 C CNN "bom_1"
+F 9 "" H 0   0   50  0001 C CNN "bom_2"
 	1    10450 3250
 	-1   0    0    1   
 $EndComp
@@ -2560,6 +2762,8 @@ F 4 "jumper smd bridge using tin" H 7300 1800 50  0001 C CNN "Description"
 F 5 "-" H 7300 1800 50  0001 C CNN "PartNumber"
 F 6 "-" H 7300 1800 50  0001 C CNN "digikey"
 F 7 "0" H 7300 1800 50  0001 C CNN "price@10"
+F 8 "" H 0   0   50  0001 C CNN "bom_1"
+F 9 "" H 0   0   50  0001 C CNN "bom_2"
 	1    10600 7400
 	-1   0    0    1   
 $EndComp

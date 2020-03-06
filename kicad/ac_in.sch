@@ -17,68 +17,74 @@ $EndDescr
 $Comp
 L servo:3V3 #PWR0718
 U 1 1 5DDC15D8
-P 6000 5550
-F 0 "#PWR0718" H 6000 5350 20  0001 C CNN
-F 1 "3V3" H 6005 5707 28  0000 C CNN
-F 2 "" H 6000 5550 50  0001 C CNN
-F 3 "" H 6000 5550 50  0001 C CNN
-	1    6000 5550
+P 6600 5550
+F 0 "#PWR0718" H 6600 5350 20  0001 C CNN
+F 1 "3V3" H 6605 5707 28  0000 C CNN
+F 2 "" H 6600 5550 50  0001 C CNN
+F 3 "" H 6600 5550 50  0001 C CNN
+	1    6600 5550
 	1    0    0    -1  
 $EndComp
 $Comp
 L servo:1V2C #PWR0719
 U 1 1 5DDC3F59
-P 8200 5550
-F 0 "#PWR0719" H 8200 5350 20  0001 C CNN
-F 1 "1V2C" H 8200 5700 28  0000 C CNN
-F 2 "" H 8200 5550 50  0001 C CNN
-F 3 "" H 8200 5550 50  0001 C CNN
-	1    8200 5550
+P 9200 5600
+F 0 "#PWR0719" H 9200 5400 20  0001 C CNN
+F 1 "1V2C" H 9200 5750 28  0000 C CNN
+F 2 "" H 9200 5600 50  0001 C CNN
+F 3 "" H 9200 5600 50  0001 C CNN
+	1    9200 5600
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
-	6000 5650 6000 5550
+	6600 5650 6600 5550
 Wire Wire Line
-	6000 5650 6000 5750
-Connection ~ 6000 5650
+	6600 5650 6600 5750
+Connection ~ 6600 5650
 $Comp
 L servo:Resistor R?
 U 1 1 5DDAAD75
-P 6000 5950
+P 6600 5950
 AR Path="/5EAA846A/5DDAAD75" Ref="R?"  Part="1" 
 AR Path="/5DD76B18/5DDAAD75" Ref="R705"  Part="1" 
-F 0 "R705" V 5978 6000 20  0000 L CNN
-F 1 "680" V 6021 6000 20  0000 L CNN
-F 2 "servo:R_0603_1608Metric" H 5500 5850 60  0001 C CNN
-F 3 "" H 5600 5950 60  0001 C CNN
-F 4 "680 Ohms ±5% 0.1W, 1/10W Chip Resistor 0603 (1608 Metric) Automotive AEC-Q200 Thick Film" H 0   0   50  0001 C CNN "Description"
-F 5 "RMCF0603JT680R" H 0   0   50  0001 C CNN "PartNumber"
-F 6 "RMCF0603JT680RCT-ND" H 0   0   50  0001 C CNN "digikey"
-F 7 "0.01400" H 0   0   50  0001 C CNN "price@10"
-	1    6000 5950
+F 0 "R705" V 6578 6000 20  0000 L CNN
+F 1 "680" V 6621 6000 20  0000 L CNN
+F 2 "servo:R_0603_1608Metric" H 6100 5850 60  0001 C CNN
+F 3 "" H 6200 5950 60  0001 C CNN
+F 4 "680 Ohms ±5% 0.1W, 1/10W Chip Resistor 0603 (1608 Metric) Automotive AEC-Q200 Thick Film" H 600 0   50  0001 C CNN "Description"
+F 5 "RMCF0603JT680R" H 600 0   50  0001 C CNN "PartNumber"
+F 6 "RMCF0603JT680RCT-ND" H 600 0   50  0001 C CNN "digikey"
+F 7 "0.01400" H 600 0   50  0001 C CNN "price@10"
+F 8 "1" H 0   0   50  0001 C CNN "bom_1"
+F 9 "1" H 0   0   50  0001 C CNN "bom_2"
+F 10 "1" H 0   0   50  0001 C CNN "bom_3"
+	1    6600 5950
 	0    1    1    0   
 $EndComp
 $Comp
 L servo:LED_A2_K1 D?
 U 1 1 5E18DDA9
-P 6000 6250
+P 6600 6250
 AR Path="/5EAA846A/5E18DDA9" Ref="D?"  Part="1" 
 AR Path="/5DD76B18/5E18DDA9" Ref="D705"  Part="1" 
-F 0 "D705" V 6006 6380 20  0000 L CNN
-F 1 "green@2mA" V 6046 6380 16  0000 L CNN
-F 2 "servo:LED_0603_1608Metric" H 5800 6050 60  0001 C CNN
-F 3 "" H 5800 6050 60  0000 C CNN
-F 4 "475-2709-1-ND" H 6000 6250 50  0001 C CNN "digikey"
-F 5 "LG L29K-G2J1-24-Z" H 0   0   50  0001 C CNN "PartNumber"
-F 6 "LED GREEN DIFFUSED 0603 SMD " H 0   0   50  0001 C CNN "Description"
-F 7 "0.31900" H 0   0   50  0001 C CNN "price@10"
-	1    6000 6250
+F 0 "D705" V 6606 6380 20  0000 L CNN
+F 1 "green@2mA" V 6646 6380 16  0000 L CNN
+F 2 "servo:LED_0603_1608Metric" H 6400 6050 60  0001 C CNN
+F 3 "" H 6400 6050 60  0000 C CNN
+F 4 "475-2709-1-ND" H 6600 6250 50  0001 C CNN "digikey"
+F 5 "LG L29K-G2J1-24-Z" H 600 0   50  0001 C CNN "PartNumber"
+F 6 "LED GREEN DIFFUSED 0603 SMD " H 600 0   50  0001 C CNN "Description"
+F 7 "0.31900" H 600 0   50  0001 C CNN "price@10"
+F 8 "1" H 0   0   50  0001 C CNN "bom_1"
+F 9 "1" H 0   0   50  0001 C CNN "bom_2"
+F 10 "1" H 0   0   50  0001 C CNN "bom_3"
+	1    6600 6250
 	0    1    1    0   
 $EndComp
 Wire Wire Line
-	6000 6400 6000 6450
+	6600 6400 6600 6450
 Wire Wire Line
-	5650 5650 6000 5650
+	5650 5650 6050 5650
 $Comp
 L servo:Capacitor C?
 U 1 1 5E18DDB7
@@ -86,13 +92,16 @@ P 5650 5950
 AR Path="/5EAA846A/5E18DDB7" Ref="C?"  Part="1" 
 AR Path="/5DD76B18/5E18DDB7" Ref="C704"  Part="1" 
 F 0 "C704" V 5678 6060 20  0000 L CNN
-F 1 "10uF" V 5721 6060 20  0000 L CNN
+F 1 "22uF" V 5721 6060 20  0000 L CNN
 F 2 "servo:C_0603_1608Metric" H 5650 5850 60  0001 C CNN
 F 3 "" H 5650 5950 60  0000 C CNN
-F 4 "490-10475-1-ND" H 0   0   50  0001 C CNN "digikey"
-F 5 "GRM188R61A106ME69D " H 0   0   50  0001 C CNN "PartNumber"
-F 6 "10µF ±20% 10V Ceramic Capacitor X5R 0603 (1608 Metric) " H 0   0   50  0001 C CNN "Description"
-F 7 "0.15400" H 0   0   50  0001 C CNN "price@10"
+F 4 "490-7611-1-ND" H 0   0   50  0001 C CNN "digikey"
+F 5 "GRM188R60J226MEA0D" H 0   0   50  0001 C CNN "PartNumber"
+F 6 "CAP CER 22UF 6.3V X5R 0603 " H 0   0   50  0001 C CNN "Description"
+F 7 "0.19400" H 0   0   50  0001 C CNN "price@10"
+F 8 "1" H 0   0   50  0001 C CNN "bom_1"
+F 9 "1" H 0   0   50  0001 C CNN "bom_2"
+F 10 "1" H 0   0   50  0001 C CNN "bom_3"
 	1    5650 5950
 	0    1    1    0   
 $EndComp
@@ -101,32 +110,35 @@ Wire Wire Line
 $Comp
 L servo:GND #PWR?
 U 1 1 5E286204
-P 7300 6550
+P 7900 6550
 AR Path="/5DCD812E/5E286204" Ref="#PWR?"  Part="1" 
 AR Path="/5EAA846A/5E286204" Ref="#PWR?"  Part="1" 
 AR Path="/5DD76B18/5E286204" Ref="#PWR0715"  Part="1" 
-F 0 "#PWR0715" H 7305 6401 20  0001 C CNN
-F 1 "GND" H 7300 6392 30  0000 C CNN
-F 2 "" H 7300 6550 70  0000 C CNN
-F 3 "" H 7300 6550 70  0000 C CNN
-	1    7300 6550
+F 0 "#PWR0715" H 7905 6401 20  0001 C CNN
+F 1 "GND" H 7900 6392 30  0000 C CNN
+F 2 "" H 7900 6550 70  0000 C CNN
+F 3 "" H 7900 6550 70  0000 C CNN
+	1    7900 6550
 	1    0    0    -1  
 $EndComp
 $Comp
 L servo:Capacitor C?
 U 1 1 5E28620B
-P 7850 5950
+P 8450 5950
 AR Path="/5EAA846A/5E28620B" Ref="C?"  Part="1" 
 AR Path="/5DD76B18/5E28620B" Ref="C712"  Part="1" 
-F 0 "C712" V 7878 6060 20  0000 L CNN
-F 1 "10uF" V 7921 6060 20  0000 L CNN
-F 2 "servo:C_0603_1608Metric" H 7850 5850 60  0001 C CNN
-F 3 "" H 7850 5950 60  0000 C CNN
-F 4 "490-10475-1-ND" H 0   0   50  0001 C CNN "digikey"
-F 5 "GRM188R61A106ME69D " H 0   0   50  0001 C CNN "PartNumber"
-F 6 "10µF ±20% 10V Ceramic Capacitor X5R 0603 (1608 Metric) " H 0   0   50  0001 C CNN "Description"
-F 7 "0.15400" H 0   0   50  0001 C CNN "price@10"
-	1    7850 5950
+F 0 "C712" V 8478 6060 20  0000 L CNN
+F 1 "10uF" V 8521 6060 20  0000 L CNN
+F 2 "servo:C_0603_1608Metric" H 8450 5850 60  0001 C CNN
+F 3 "" H 8450 5950 60  0000 C CNN
+F 4 "490-10475-1-ND" H 600 0   50  0001 C CNN "digikey"
+F 5 "GRM188R61A106ME69D " H 600 0   50  0001 C CNN "PartNumber"
+F 6 "10µF ±20% 10V Ceramic Capacitor X5R 0603 (1608 Metric) " H 600 0   50  0001 C CNN "Description"
+F 7 "0.15400" H 600 0   50  0001 C CNN "price@10"
+F 8 "1" H 0   0   50  0001 C CNN "bom_1"
+F 9 "1" H 0   0   50  0001 C CNN "bom_2"
+F 10 "1" H 0   0   50  0001 C CNN "bom_3"
+	1    8450 5950
 	0    1    1    0   
 $EndComp
 $Comp
@@ -171,15 +183,14 @@ COLD SUPPLY\n
 Text Notes 13050 4900 0    197  ~ 39
 HOT SUPPLY
 Wire Wire Line
-	7600 5650 7650 5650
+	8200 5650 8250 5650
 Wire Wire Line
-	7600 5750 7650 5750
+	8200 5750 8250 5750
 Wire Wire Line
-	7650 5750 7650 5650
-Connection ~ 7650 5650
+	8250 5750 8250 5650
 Wire Wire Line
-	7300 6050 7300 6450
-Connection ~ 7300 6450
+	7900 6050 7900 6450
+Connection ~ 7900 6450
 Connection ~ 1500 5900
 Wire Wire Line
 	1500 5900 1400 5900
@@ -195,27 +206,26 @@ Text Notes 6050 4950 0    20   ~ 0
 It is inteded to use only, I mean ONLY inside the control board, none of\n these coopers wires has to leave the board. I isolate every single pin\n from these supply to go outside, take these in account\n
 Wire Wire Line
 	1500 5750 1500 5900
-Wire Wire Line
-	5650 6450 6000 6450
 $Comp
 L servo:R-78E3.3-1.0 U702
 U 1 1 5E18DDB9
 P 5200 5650
 F 0 "U702" H 5200 5792 39  0000 C CNN
 F 1 "R-78B3.3-2.0  Reg sw 3.3v 2A" H 5200 5775 39  0001 L CNN
-F 2 "servo:Converter_DCDC_RECOM_R-78E-0.5_THT" H 5250 5400 50  0001 L CIN
+F 2 "servo:Converter_DCDC_RECOM_R-78B3.3-2.0_THT" H 5250 5400 50  0001 L CIN
 F 3 "../doc/datasheets/R-78B-2.0.pdf" H 5050 5775 50  0001 C CNN
 F 4 "Linear Regulator Replacement DC DC Converter 1 Output 3.3V 2A 4.75V - 32V Input " H 0   0   50  0001 C CNN "Description"
 F 5 "R-78B3.3-2.0 " H 0   0   50  0001 C CNN "PartNumber"
 F 6 "945-3040-ND" H 0   0   50  0001 C CNN "digikey"
 F 7 "9.71800" H 0   0   50  0001 C CNN "price@10"
+F 8 "" H 0   0   50  0001 C CNN "bom_1"
+F 9 "1" H 0   0   50  0001 C CNN "bom_2"
+F 10 "1" H 0   0   50  0001 C CNN "bom_3"
 	1    5200 5650
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
 	5500 5650 5650 5650
-Wire Wire Line
-	7650 5650 7850 5650
 Wire Wire Line
 	5650 5850 5650 5650
 Wire Wire Line
@@ -225,26 +235,27 @@ Wire Wire Line
 $Comp
 L servo:AP2114 U706
 U 1 1 5E28622B
-P 7300 5750
-F 0 "U706" H 7300 6016 39  0000 C CNN
-F 1 "AP2114 Reg linear 1.2v 1A" H 7300 6016 39  0001 C CNN
-F 2 "servo:SOT-223" H 7400 6375 50  0001 C CNN
-F 3 "../doc/datasheets/AP2114.pdf" H 7350 6150 50  0001 C CNN
-F 4 "Linear Voltage Regulator IC Positive Fixed 1 Output 1A SOT-223 " H 0   0   50  0001 C CNN "Description"
-F 5 "AP2114H-1.2TRG1" H 0   0   50  0001 C CNN "PartNumber"
-F 6 "AP2114H-1.2TRG1DICT-ND" H 0   0   50  0001 C CNN "digikey"
-F 7 "0.29600" H 0   0   50  0001 C CNN "price@10"
-	1    7300 5750
+P 7900 5750
+F 0 "U706" H 7900 6016 39  0000 C CNN
+F 1 "AP2114 Reg linear 1.2v 1A" H 7900 6016 39  0001 C CNN
+F 2 "servo:SOT-223" H 8000 6375 50  0001 C CNN
+F 3 "../doc/datasheets/AP2114.pdf" H 7950 6150 50  0001 C CNN
+F 4 "Linear Voltage Regulator IC Positive Fixed 1 Output 1A SOT-223 " H 600 0   50  0001 C CNN "Description"
+F 5 "AP2114H-1.2TRG1" H 600 0   50  0001 C CNN "PartNumber"
+F 6 "AP2114H-1.2TRG1DICT-ND" H 600 0   50  0001 C CNN "digikey"
+F 7 "0.29600" H 600 0   50  0001 C CNN "price@10"
+F 8 "" H 0   0   50  0001 C CNN "bom_1"
+F 9 "1" H 0   0   50  0001 C CNN "bom_2"
+F 10 "1" H 0   0   50  0001 C CNN "bom_3"
+	1    7900 5750
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
-	7850 6150 7850 6450
+	8450 6150 8450 6450
+Connection ~ 8450 6450
 Wire Wire Line
-	7300 6450 7850 6450
-Connection ~ 7850 6450
-Wire Wire Line
-	7850 5850 7850 5650
-Connection ~ 7850 5650
+	8450 5850 8450 5650
+Connection ~ 8450 5650
 Text Notes 6850 6350 0    20   ~ 0
 the intention of the LCD it to clean \nthe noise without using big filters\n and L's. It's recommended and \ntested that these method works \npretty\nlow noise \nLDO <30uV
 $Comp
@@ -281,6 +292,9 @@ F 4 "2A 600V AC 250V DC Fuse Board Mount (Cartridge Style Excluded) Surface Moun
 F 5 "SF-3812TM200T-2" H 0   0   50  0001 C CNN "PartNumber"
 F 6 "SF-3812TM200T-2CT-ND" H 0   0   50  0001 C CNN "digikey"
 F 7 "1.70000" H 0   0   50  0001 C CNN "price@10"
+F 8 "1" H 0   0   50  0001 C CNN "bom_1"
+F 9 "1" H 0   0   50  0001 C CNN "bom_2"
+F 10 "1" H 0   0   50  0001 C CNN "bom_3"
 	1    1250 5900
 	0    1    1    0   
 $EndComp
@@ -298,6 +312,9 @@ F 4 "1.2 kOhms ±5% 0.25W, 1/4W Chip Resistor 0603 (1608 Metric) Automotive AEC-
 F 5 "ESR03EZPJ122" H 0   0   50  0001 C CNN "PartNumber"
 F 6 "RHM1.2KDCT-ND" H 0   0   50  0001 C CNN "digikey"
 F 7 "0.07900" H 0   0   50  0001 C CNN "price@10"
+F 8 "1" H 0   0   50  0001 C CNN "bom_1"
+F 9 "1" H 0   0   50  0001 C CNN "bom_2"
+F 10 "1" H 0   0   50  0001 C CNN "bom_3"
 	1    3050 5850
 	0    1    1    0   
 $EndComp
@@ -315,6 +332,9 @@ F 4 "475-3124-1-ND" H 3050 6150 50  0001 C CNN "digikey"
 F 5 "LS L29K-G1H2-1-Z" H 0   0   50  0001 C CNN "PartNumber"
 F 6 "LED RED DIFFUSED 0603 SMD " H 0   0   50  0001 C CNN "Description"
 F 7 "0.33900" H 0   0   50  0001 C CNN "price@10"
+F 8 "1" H 0   0   50  0001 C CNN "bom_1"
+F 9 "1" H 0   0   50  0001 C CNN "bom_2"
+F 10 "1" H 0   0   50  0001 C CNN "bom_3"
 	1    3050 6150
 	0    1    1    0   
 $EndComp
@@ -343,6 +363,8 @@ F 4 "jumper smd bridge using tin" H 0   0   50  0001 C CNN "Description"
 F 5 "-" H 0   0   50  0001 C CNN "PartNumber"
 F 6 "-" H 0   0   50  0001 C CNN "digikey"
 F 7 "0" H 0   0   50  0001 C CNN "price@10"
+F 8 "" H 0   0   50  0001 C CNN "bom_1"
+F 9 "" H 0   0   50  0001 C CNN "bom_2"
 	1    3300 5600
 	1    0    0    -1  
 $EndComp
@@ -378,6 +400,9 @@ F 4 "1.70000" H 10550 5850 50  0001 C CNN "price@10"
 F 5 "2A 600V AC 250V DC Fuse Board Mount (Cartridge Style Excluded) Surface Mount 2-SMD, Square End Block" H 0   0   50  0001 C CNN "Description"
 F 6 "SF-3812TM200T-2" H 0   0   50  0001 C CNN "PartNumber"
 F 7 "SF-3812TM200T-2CT-ND" H 0   0   50  0001 C CNN "digikey"
+F 8 "1" H 0   0   50  0001 C CNN "bom_1"
+F 9 "1" H 0   0   50  0001 C CNN "bom_2"
+F 10 "1" H 0   0   50  0001 C CNN "bom_3"
 	1    10550 5850
 	0    1    1    0   
 $EndComp
@@ -395,6 +420,9 @@ F 4 "1.2 kOhms ±5% 0.25W, 1/4W Chip Resistor 0603 (1608 Metric) Automotive AEC-
 F 5 "ESR03EZPJ122" H 0   0   50  0001 C CNN "PartNumber"
 F 6 "RHM1.2KDCT-ND" H 0   0   50  0001 C CNN "digikey"
 F 7 "0.07900" H 0   0   50  0001 C CNN "price@10"
+F 8 "1" H 0   0   50  0001 C CNN "bom_1"
+F 9 "1" H 0   0   50  0001 C CNN "bom_2"
+F 10 "1" H 0   0   50  0001 C CNN "bom_3"
 	1    12300 5800
 	0    1    1    0   
 $EndComp
@@ -412,6 +440,9 @@ F 4 "475-1196-1-ND" H 12300 6100 50  0001 C CNN "digikey"
 F 5 "LY L29K-H1K2-26-Z " H 0   0   50  0001 C CNN "PartNumber"
 F 6 "LED YELLOW DIFFUSED 0603 SMD " H 0   0   50  0001 C CNN "Description"
 F 7 "0.30100" H 0   0   50  0001 C CNN "price@10"
+F 8 "1" H 0   0   50  0001 C CNN "bom_1"
+F 9 "1" H 0   0   50  0001 C CNN "bom_2"
+F 10 "1" H 0   0   50  0001 C CNN "bom_3"
 	1    12300 6100
 	0    1    1    0   
 $EndComp
@@ -469,6 +500,7 @@ F 4 "8 Position Terminal Block Header, Male Pins, Shrouded (4 Side) 0.200\" (5.0
 F 5 "1736713" H 0   0   50  0001 C CNN "PartNumber"
 F 6 "277-1401-ND " H 0   0   50  0001 C CNN "digikey"
 F 7 "5.37000" H 0   0   50  0001 C CNN "price@10"
+F 8 "1" H 0   0   50  0001 C CNN "bom_3"
 	1    8650 3400
 	-1   0    0    -1  
 $EndComp
@@ -484,6 +516,9 @@ F 4 "Enclosed AC DC Converter 1 Output 5V 2A 85 ~ 305 VAC, 120 ~ 430 VDC Input "
 F 5 "RM-10-5 " H 0   0   50  0001 C CNN "PartNumber"
 F 6 "1866-3032-ND " H 0   0   50  0001 C CNN "digikey"
 F 7 "8.89300" H 0   0   50  0001 C CNN "price@10"
+F 8 "" H 0   0   50  0001 C CNN "bom_1"
+F 9 "" H 0   0   50  0001 C CNN "bom_2"
+F 10 "1" H 0   0   50  0001 C CNN "bom_3"
 	1    2200 6000
 	1    0    0    -1  
 $EndComp
@@ -520,6 +555,9 @@ F 4 "Enclosed AC DC Converter 1 Output 5V 2A 85 ~ 305 VAC, 120 ~ 430 VDC Input "
 F 5 "RM-10-5 " H 0   0   50  0001 C CNN "PartNumber"
 F 6 "1866-3032-ND " H 0   0   50  0001 C CNN "digikey"
 F 7 "8.89300" H 0   0   50  0001 C CNN "price@10"
+F 8 "" H 0   0   50  0001 C CNN "bom_1"
+F 9 "" H 0   0   50  0001 C CNN "bom_2"
+F 10 "1" H 0   0   50  0001 C CNN "bom_3"
 	1    11450 5950
 	1    0    0    -1  
 $EndComp
@@ -542,49 +580,12 @@ F 3 "" H 4700 5450 50  0001 C CNN
 	1    4700 5450
 	1    0    0    -1  
 $EndComp
-$Comp
-L servo:Earth #PWR?
-U 1 1 5E23C47B
-P 9000 3950
-AR Path="/5DC3DC9E/5E23C47B" Ref="#PWR?"  Part="1" 
-AR Path="/5DD76B18/5E23C47B" Ref="#PWR0131"  Part="1" 
-F 0 "#PWR0131" H 9000 3700 20  0001 C CNN
-F 1 "Earth" H 9000 3801 20  0000 C CNN
-F 2 "" H 9000 3950 50  0001 C CNN
-F 3 "~" H 9000 3950 50  0001 C CNN
-	1    9000 3950
-	1    0    0    -1  
-$EndComp
 Wire Wire Line
 	8850 3600 9000 3600
 Wire Wire Line
-	9000 3600 9000 3900
-Wire Wire Line
 	8850 3500 9000 3500
-Wire Wire Line
-	8850 3400 9300 3400
-Wire Wire Line
-	8850 3300 9300 3300
 Text Notes 8300 3800 0    20   ~ 0
 Individuali selected input, but in case \nyou want, just join input line pins and \nwith 3 pins turn it all
-$Comp
-L servo:PWR_FLAG #FLG0102
-U 1 1 63A59982
-P 9150 3800
-F 0 "#FLG0102" H 9150 3875 20  0001 C CNN
-F 1 "PWR_FLAG" H 9150 3950 20  0000 C CNN
-F 2 "" H 9150 3800 50  0001 C CNN
-F 3 "~" H 9150 3800 50  0001 C CNN
-	1    9150 3800
-	1    0    0    -1  
-$EndComp
-Wire Wire Line
-	9000 3900 9150 3900
-Wire Wire Line
-	9150 3900 9150 3800
-Connection ~ 9000 3900
-Wire Wire Line
-	9000 3900 9000 3950
 Wire Wire Line
 	10100 6050 11050 6050
 Wire Wire Line
@@ -630,6 +631,9 @@ F 4 "CAP CER 22UF 6.3V X5R 0603 " H 0   0   50  0001 C CNN "Description"
 F 5 "GRM188R60J226MEA0D" H 0   0   50  0001 C CNN "PartNumber"
 F 6 "490-7611-1-ND" H 0   0   50  0001 C CNN "digikey"
 F 7 "0.19400" H 0   0   50  0001 C CNN "price@10"
+F 8 "1" H 0   0   50  0001 C CNN "bom_1"
+F 9 "1" H 0   0   50  0001 C CNN "bom_2"
+F 10 "1" H 0   0   50  0001 C CNN "bom_3"
 	1    4700 5950
 	0    1    1    0   
 $EndComp
@@ -645,12 +649,12 @@ Wire Wire Line
 Connection ~ 5650 5650
 Connection ~ 5650 6450
 Wire Wire Line
-	6000 5650 6400 5650
+	6600 5650 7000 5650
 Wire Wire Line
-	7300 6450 6800 6450
-Connection ~ 6000 6450
+	7900 6450 7400 6450
+Connection ~ 6600 6450
 Wire Wire Line
-	7300 6550 7300 6450
+	7900 6550 7900 6450
 Connection ~ 5200 6450
 Text Label 10900 5850 0    20   ~ 0
 AC_L_H_FUSE
@@ -667,30 +671,33 @@ Wire Wire Line
 $Comp
 L servo:Capacitor C?
 U 1 1 5E2B77D4
-P 6800 5950
+P 7400 5950
 AR Path="/5EAA846A/5E2B77D4" Ref="C?"  Part="1" 
 AR Path="/5DD76B18/5E2B77D4" Ref="C703"  Part="1" 
-F 0 "C703" V 6828 6060 20  0000 L CNN
-F 1 "0.1uF" V 6871 6060 20  0000 L CNN
-F 2 "servo:C_0603_1608Metric" H 6800 5850 60  0001 C CNN
-F 3 "" H 6800 5950 60  0000 C CNN
-F 4 "CC0603KPX7R7BB104" H 0   0   50  0001 C CNN "PartNumber"
-F 5 "311-1335-1-ND" H 0   0   50  0001 C CNN "digikey"
-F 6 "CAP CER 0.1UF 16V X7R 0603 " H 0   0   50  0001 C CNN "Description"
-F 7 "0.05800" H 0   0   50  0001 C CNN "price@10"
-	1    6800 5950
+F 0 "C703" V 7428 6060 20  0000 L CNN
+F 1 "0.1uF" V 7471 6060 20  0000 L CNN
+F 2 "servo:C_0603_1608Metric" H 7400 5850 60  0001 C CNN
+F 3 "" H 7400 5950 60  0000 C CNN
+F 4 "CC0603KPX7R7BB104" H 600 0   50  0001 C CNN "PartNumber"
+F 5 "311-1335-1-ND" H 600 0   50  0001 C CNN "digikey"
+F 6 "CAP CER 0.1UF 16V X7R 0603 " H 600 0   50  0001 C CNN "Description"
+F 7 "0.05800" H 600 0   50  0001 C CNN "price@10"
+F 8 "1" H 0   0   50  0001 C CNN "bom_1"
+F 9 "1" H 0   0   50  0001 C CNN "bom_2"
+F 10 "1" H 0   0   50  0001 C CNN "bom_3"
+	1    7400 5950
 	0    1    1    0   
 $EndComp
 Wire Wire Line
-	6800 5850 6800 5650
-Connection ~ 6800 5650
+	7400 5850 7400 5650
+Connection ~ 7400 5650
 Wire Wire Line
-	6800 5650 7000 5650
+	7400 5650 7600 5650
 Wire Wire Line
-	6800 6150 6800 6450
-Connection ~ 6800 6450
+	7400 6150 7400 6450
+Connection ~ 7400 6450
 Wire Wire Line
-	6800 6450 6400 6450
+	7400 6450 7000 6450
 Wire Wire Line
 	12950 6050 12950 6350
 Wire Wire Line
@@ -721,6 +728,9 @@ F 4 "CAP CER 2.2UF 16V X6S 0603 " H 0   0   50  0001 C CNN "Description"
 F 5 "GRT188C81C225KE13D" H 0   0   50  0001 C CNN "PartNumber"
 F 6 "490-12287-1-ND" H 0   0   50  0001 C CNN "digikey"
 F 7 "0.35500" H 0   0   50  0001 C CNN "price@10"
+F 8 "1" H 0   0   50  0001 C CNN "bom_1"
+F 9 "1" H 0   0   50  0001 C CNN "bom_2"
+F 10 "1" H 0   0   50  0001 C CNN "bom_3"
 	1    12950 5850
 	0    1    1    0   
 $EndComp
@@ -738,6 +748,9 @@ F 4 "CAP CER 22UF 6.3V X5R 0603 " H 0   0   50  0001 C CNN "Description"
 F 5 "GRM188R60J226MEA0D" H 0   0   50  0001 C CNN "PartNumber"
 F 6 "490-7611-1-ND" H 0   0   50  0001 C CNN "digikey"
 F 7 "0.19400" H 0   0   50  0001 C CNN "price@10"
+F 8 "1" H 0   0   50  0001 C CNN "bom_1"
+F 9 "1" H 0   0   50  0001 C CNN "bom_2"
+F 10 "1" H 0   0   50  0001 C CNN "bom_3"
 	1    12650 5850
 	0    1    1    0   
 $EndComp
@@ -745,28 +758,31 @@ Wire Wire Line
 	12300 6350 12650 6350
 Connection ~ 12650 6350
 Wire Wire Line
-	7850 5650 8200 5650
+	8450 5650 8800 5650
 Wire Wire Line
-	8200 5850 8200 5650
+	8800 5850 8800 5650
 Wire Wire Line
-	7850 6450 8200 6450
+	8450 6450 8800 6450
 Wire Wire Line
-	8200 6150 8200 6450
+	8800 6150 8800 6450
 $Comp
 L servo:Capacitor C?
 U 1 1 5E286219
-P 8200 5950
+P 8800 5950
 AR Path="/5EAA846A/5E286219" Ref="C?"  Part="1" 
 AR Path="/5DD76B18/5E286219" Ref="C714"  Part="1" 
-F 0 "C714" V 8228 6060 20  0000 L CNN
-F 1 "0.1uF" V 8271 6060 20  0000 L CNN
-F 2 "servo:C_0603_1608Metric" H 8200 5850 60  0001 C CNN
-F 3 "" H 8200 5950 60  0000 C CNN
-F 4 "CC0603KPX7R7BB104" H 0   0   50  0001 C CNN "PartNumber"
-F 5 "311-1335-1-ND" H 0   0   50  0001 C CNN "digikey"
-F 6 "CAP CER 0.1UF 16V X7R 0603 " H 0   0   50  0001 C CNN "Description"
-F 7 "0.05800" H 0   0   50  0001 C CNN "price@10"
-	1    8200 5950
+F 0 "C714" V 8828 6060 20  0000 L CNN
+F 1 "0.1uF" V 8871 6060 20  0000 L CNN
+F 2 "servo:C_0603_1608Metric" H 8800 5850 60  0001 C CNN
+F 3 "" H 8800 5950 60  0000 C CNN
+F 4 "CC0603KPX7R7BB104" H 600 0   50  0001 C CNN "PartNumber"
+F 5 "311-1335-1-ND" H 600 0   50  0001 C CNN "digikey"
+F 6 "CAP CER 0.1UF 16V X7R 0603 " H 600 0   50  0001 C CNN "Description"
+F 7 "0.05800" H 600 0   50  0001 C CNN "price@10"
+F 8 "1" H 0   0   50  0001 C CNN "bom_1"
+F 9 "1" H 0   0   50  0001 C CNN "bom_2"
+F 10 "1" H 0   0   50  0001 C CNN "bom_3"
+	1    8800 5950
 	0    1    1    0   
 $EndComp
 $Comp
@@ -783,6 +799,9 @@ F 4 "CAP CER 2.2UF 16V X6S 0603 " H 0   0   50  0001 C CNN "Description"
 F 5 "GRT188C81C225KE13D" H 0   0   50  0001 C CNN "PartNumber"
 F 6 "490-12287-1-ND" H 0   0   50  0001 C CNN "digikey"
 F 7 "0.35500" H 0   0   50  0001 C CNN "price@10"
+F 8 "1" H 0   0   50  0001 C CNN "bom_1"
+F 9 "1" H 0   0   50  0001 C CNN "bom_2"
+F 10 "1" H 0   0   50  0001 C CNN "bom_3"
 	1    4400 5950
 	0    1    1    0   
 $EndComp
@@ -829,6 +848,8 @@ F 4 "jumper smd bridge using tin" H 0   0   50  0001 C CNN "Description"
 F 5 "-" H 0   0   50  0001 C CNN "PartNumber"
 F 6 "-" H 0   0   50  0001 C CNN "digikey"
 F 7 "0" H 0   0   50  0001 C CNN "price@10"
+F 8 "" H 0   0   50  0001 C CNN "bom_1"
+F 9 "" H 0   0   50  0001 C CNN "bom_2"
 	1    14300 8100
 	1    0    0    -1  
 $EndComp
@@ -837,15 +858,9 @@ Wire Wire Line
 Wire Wire Line
 	14600 8100 14600 8150
 Wire Wire Line
-	14200 8100 14000 8100
-Wire Wire Line
 	14000 8100 14000 8150
 Wire Wire Line
-	14200 7700 14000 7700
-Wire Wire Line
 	14000 7700 14000 7650
-Wire Wire Line
-	14400 7700 14600 7700
 Wire Wire Line
 	14600 7700 14600 7650
 Text Notes 13900 5900 0    39   ~ 0
@@ -862,41 +877,33 @@ F 3 "" H 14000 6850 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
-	14400 6800 14600 6800
-Wire Wire Line
-	14600 6800 14600 6850
-Wire Wire Line
-	14200 6800 14000 6800
+	14950 6800 14950 6850
 Wire Wire Line
 	14000 6800 14000 6850
 Wire Wire Line
-	14200 6400 14000 6400
-Wire Wire Line
 	14000 6400 14000 6350
 Wire Wire Line
-	14400 6400 14600 6400
-Wire Wire Line
-	14600 6400 14600 6350
+	14950 6400 14950 6350
 $Comp
 L servo:GNDI #PWR0272
 U 1 1 5ECFE9BB
-P 14600 6850
-F 0 "#PWR0272" H 14600 6600 30  0001 C CNN
-F 1 "GNDI" H 14600 6701 20  0000 C CNN
-F 2 "" H 14600 6850 50  0001 C CNN
-F 3 "" H 14600 6850 50  0001 C CNN
-	1    14600 6850
+P 14950 6850
+F 0 "#PWR0272" H 14950 6600 30  0001 C CNN
+F 1 "GNDI" H 14950 6701 20  0000 C CNN
+F 2 "" H 14950 6850 50  0001 C CNN
+F 3 "" H 14950 6850 50  0001 C CNN
+	1    14950 6850
 	1    0    0    -1  
 $EndComp
 $Comp
 L servo:5VI #PWR0273
 U 1 1 5ECFEA79
-P 14600 6350
-F 0 "#PWR0273" H 14600 6150 20  0001 C CNN
-F 1 "5VI" H 14600 6507 28  0000 C CNN
-F 2 "" H 14600 6350 50  0001 C CNN
-F 3 "" H 14600 6350 50  0001 C CNN
-	1    14600 6350
+P 14950 6350
+F 0 "#PWR0273" H 14950 6150 20  0001 C CNN
+F 1 "5VI" H 14950 6507 28  0000 C CNN
+F 2 "" H 14950 6350 50  0001 C CNN
+F 3 "" H 14950 6350 50  0001 C CNN
+	1    14950 6350
 	1    0    0    -1  
 $EndComp
 $Comp
@@ -911,22 +918,9 @@ F 4 "jumper smd bridge using tin" H 0   0   50  0001 C CNN "Description"
 F 5 "-" H 0   0   50  0001 C CNN "PartNumber"
 F 6 "-" H 0   0   50  0001 C CNN "digikey"
 F 7 "0" H 0   0   50  0001 C CNN "price@10"
+F 8 "" H 0   0   50  0001 C CNN "bom_1"
+F 9 "" H 0   0   50  0001 C CNN "bom_2"
 	1    14300 7700
-	1    0    0    -1  
-$EndComp
-$Comp
-L servo:jumper JP705
-U 1 1 5E380332
-P 14300 6400
-F 0 "JP705" H 14300 6561 39  0000 C CNN
-F 1 "jumper" H 14300 6486 39  0000 C CNN
-F 2 "servo:R_1806_4516Metric_Pad1.57x1.80mm_HandSolder" H 14200 6380 50  0001 C CNN
-F 3 "~" H 14300 6480 50  0001 C CNN
-F 4 "jumper smd bridge using tin" H 0   0   50  0001 C CNN "Description"
-F 5 "-" H 0   0   50  0001 C CNN "PartNumber"
-F 6 "-" H 0   0   50  0001 C CNN "digikey"
-F 7 "0" H 0   0   50  0001 C CNN "price@10"
-	1    14300 6400
 	1    0    0    -1  
 $EndComp
 $Comp
@@ -977,86 +971,25 @@ F 3 "" H 14000 6350 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L servo:jumper JP706
-U 1 1 5E3ACEAA
-P 14300 6800
-F 0 "JP706" H 14300 6961 39  0000 C CNN
-F 1 "jumper" H 14300 6886 39  0000 C CNN
-F 2 "servo:R_1806_4516Metric_Pad1.57x1.80mm_HandSolder" H 14200 6780 50  0001 C CNN
-F 3 "~" H 14300 6880 50  0001 C CNN
-F 4 "jumper smd bridge using tin" H 0   0   50  0001 C CNN "Description"
-F 5 "-" H 0   0   50  0001 C CNN "PartNumber"
-F 6 "-" H 0   0   50  0001 C CNN "digikey"
-F 7 "0" H 0   0   50  0001 C CNN "price@10"
-	1    14300 6800
-	1    0    0    -1  
-$EndComp
-$Comp
 L servo:GNDH #PWR0154
 U 1 1 5E3EA06F
-P 14000 9250
-F 0 "#PWR0154" H 14000 9000 30  0001 C CNN
-F 1 "GNDH" H 14000 9100 20  0000 C CNN
-F 2 "" H 14000 9250 50  0001 C CNN
-F 3 "" H 14000 9250 50  0001 C CNN
-	1    14000 9250
-	1    0    0    -1  
-$EndComp
-Wire Wire Line
-	14400 9200 14600 9200
-Wire Wire Line
-	14600 9200 14600 9250
-Wire Wire Line
-	14200 9200 14000 9200
-Wire Wire Line
-	14000 9200 14000 9250
-Wire Wire Line
-	14200 8800 14000 8800
-Wire Wire Line
-	14000 8800 14000 8750
-Wire Wire Line
-	14400 8800 14600 8800
-Wire Wire Line
-	14600 8800 14600 8750
-$Comp
-L servo:jumper JP702
-U 1 1 5E3EA089
-P 14300 8800
-F 0 "JP702" H 14300 8961 39  0000 C CNN
-F 1 "jumper" H 14300 8886 39  0000 C CNN
-F 2 "servo:R_1806_4516Metric_Pad1.57x1.80mm_HandSolder" H 14200 8780 50  0001 C CNN
-F 3 "~" H 14300 8880 50  0001 C CNN
-F 4 "jumper smd bridge using tin" H 0   0   50  0001 C CNN "Description"
-F 5 "-" H 0   0   50  0001 C CNN "PartNumber"
-F 6 "-" H 0   0   50  0001 C CNN "digikey"
-F 7 "0" H 0   0   50  0001 C CNN "price@10"
-	1    14300 8800
+P 13700 9150
+F 0 "#PWR0154" H 13700 8900 30  0001 C CNN
+F 1 "GNDH" H 13700 9000 20  0000 C CNN
+F 2 "" H 13700 9150 50  0001 C CNN
+F 3 "" H 13700 9150 50  0001 C CNN
+	1    13700 9150
 	1    0    0    -1  
 $EndComp
 $Comp
 L servo:5VH_IN #PWR0155
 U 1 1 5E3EA090
-P 14000 8750
-F 0 "#PWR0155" H 14000 8550 20  0001 C CNN
-F 1 "5VH_IN" H 14000 8907 28  0000 C CNN
-F 2 "" H 14000 8750 50  0001 C CNN
-F 3 "" H 14000 8750 50  0001 C CNN
-	1    14000 8750
-	1    0    0    -1  
-$EndComp
-$Comp
-L servo:jumper JP707
-U 1 1 5E3EA096
-P 14300 9200
-F 0 "JP707" H 14300 9361 39  0000 C CNN
-F 1 "jumper" H 14300 9286 39  0000 C CNN
-F 2 "servo:R_1806_4516Metric_Pad1.57x1.80mm_HandSolder" H 14200 9180 50  0001 C CNN
-F 3 "~" H 14300 9280 50  0001 C CNN
-F 4 "jumper smd bridge using tin" H 0   0   50  0001 C CNN "Description"
-F 5 "-" H 0   0   50  0001 C CNN "PartNumber"
-F 6 "-" H 0   0   50  0001 C CNN "digikey"
-F 7 "0" H 0   0   50  0001 C CNN "price@10"
-	1    14300 9200
+P 13700 8750
+F 0 "#PWR0155" H 13700 8550 20  0001 C CNN
+F 1 "5VH_IN" H 13700 8907 28  0000 C CNN
+F 2 "" H 13700 8750 50  0001 C CNN
+F 3 "" H 13700 8750 50  0001 C CNN
+	1    13700 8750
 	1    0    0    -1  
 $EndComp
 $Comp
@@ -1073,12 +1006,12 @@ $EndComp
 $Comp
 L servo:GNDB #PWR0157
 U 1 1 5E3F25DD
-P 14600 9250
-F 0 "#PWR0157" H 14600 9000 30  0001 C CNN
-F 1 "GNDB" H 14600 9101 20  0000 C CNN
-F 2 "" H 14600 9250 50  0001 C CNN
-F 3 "" H 14600 9250 50  0001 C CNN
-	1    14600 9250
+P 14600 9150
+F 0 "#PWR0157" H 14600 8900 30  0001 C CNN
+F 1 "GNDB" H 14600 9001 20  0000 C CNN
+F 2 "" H 14600 9150 50  0001 C CNN
+F 3 "" H 14600 9150 50  0001 C CNN
+	1    14600 9150
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
@@ -1099,6 +1032,9 @@ F 4 "Zener Diode 5.1V 1.25W ±5.88% Surface Mount DO-214AC (SMA) " H 0   0   50 
 F 5 "BZG05C5V1-M3-08" H 0   0   50  0001 C CNN "PartNumber"
 F 6 "BZG05C5V1-M3-08GICT-ND" H 0   0   50  0001 C CNN "digikey"
 F 7 "0.32000" H 0   0   50  0001 C CNN "price@10"
+F 8 "1" H 0   0   50  0001 C CNN "bom_1"
+F 9 "1" H 0   0   50  0001 C CNN "bom_2"
+F 10 "1" H 0   0   50  0001 C CNN "bom_3"
 	1    14950 7900
 	0    1    1    0   
 $EndComp
@@ -1115,28 +1051,29 @@ Connection ~ 14600 8100
 $Comp
 L servo:zener D703
 U 1 1 5E3CE25B
-P 14900 6600
-F 0 "D703" V 14878 6679 20  0000 L CNN
-F 1 "zener 5v1" V 14921 6679 20  0000 L CNN
-F 2 "servo:D_SMA" H 14900 6425 20  0001 C CNN
-F 3 "https://diotec.com/tl_files/diotec/files/pdf/datasheets/z1sma1.pdf" H 14900 6700 50  0001 C CNN
-F 4 "Zener Diode 5.1V 1.25W ±5.88% Surface Mount DO-214AC (SMA) " H 0   0   50  0001 C CNN "Description"
-F 5 "BZG05C5V1-M3-08" H 0   0   50  0001 C CNN "PartNumber"
-F 6 "BZG05C5V1-M3-08GICT-ND" H 0   0   50  0001 C CNN "digikey"
-F 7 "0.32000" H 0   0   50  0001 C CNN "price@10"
-	1    14900 6600
+P 15250 6600
+F 0 "D703" V 15228 6679 20  0000 L CNN
+F 1 "zener 5v1" V 15271 6679 20  0000 L CNN
+F 2 "servo:D_SMA" H 15250 6425 20  0001 C CNN
+F 3 "https://diotec.com/tl_files/diotec/files/pdf/datasheets/z1sma1.pdf" H 15250 6700 50  0001 C CNN
+F 4 "Zener Diode 5.1V 1.25W ±5.88% Surface Mount DO-214AC (SMA) " H 350 0   50  0001 C CNN "Description"
+F 5 "BZG05C5V1-M3-08" H 350 0   50  0001 C CNN "PartNumber"
+F 6 "BZG05C5V1-M3-08GICT-ND" H 350 0   50  0001 C CNN "digikey"
+F 7 "0.32000" H 350 0   50  0001 C CNN "price@10"
+F 8 "1" H 0   0   50  0001 C CNN "bom_1"
+F 9 "1" H 0   0   50  0001 C CNN "bom_2"
+F 10 "1" H 0   0   50  0001 C CNN "bom_3"
+	1    15250 6600
 	0    1    1    0   
 $EndComp
 Wire Wire Line
-	14600 6400 14900 6400
+	14950 6400 15250 6400
 Wire Wire Line
-	14900 6400 14900 6450
-Connection ~ 14600 6400
+	15250 6400 15250 6450
 Wire Wire Line
-	14600 6800 14900 6800
+	14950 6800 15250 6800
 Wire Wire Line
-	14900 6800 14900 6750
-Connection ~ 14600 6800
+	15250 6800 15250 6750
 Text Notes 14700 6250 0    20   ~ 0
 5v interfaces\n
 Text Notes 14750 7550 0    20   ~ 0
@@ -1155,6 +1092,9 @@ F 4 "Zener Diode 5.1V 1.25W ±5.88% Surface Mount DO-214AC (SMA) " H 0   0   50 
 F 5 "BZG05C5V1-M3-08" H 0   0   50  0001 C CNN "PartNumber"
 F 6 "BZG05C5V1-M3-08GICT-ND" H 0   0   50  0001 C CNN "digikey"
 F 7 "0.32000" H 0   0   50  0001 C CNN "price@10"
+F 8 "1" H 0   0   50  0001 C CNN "bom_1"
+F 9 "1" H 0   0   50  0001 C CNN "bom_2"
+F 10 "1" H 0   0   50  0001 C CNN "bom_3"
 	1    4150 6000
 	0    1    1    0   
 $EndComp
@@ -1171,29 +1111,360 @@ Connection ~ 4400 6450
 $Comp
 L servo:zener D708
 U 1 1 5E600820
-P 6400 6050
-F 0 "D708" V 6378 6129 20  0000 L CNN
-F 1 "zener 3v6" V 6421 6129 20  0000 L CNN
-F 2 "servo:D_SMA" H 6400 5875 20  0001 C CNN
-F 3 "https://diotec.com/tl_files/diotec/files/pdf/datasheets/z1sma1.pdf" H 6400 6150 50  0001 C CNN
-F 4 "Zener Diode 3.6V 1.25W ±5.56% Surface Mount DO-214AC (SMA) " H 0   0   50  0001 C CNN "Description"
-F 5 "BZG05C3V6-M3-08" H 0   0   50  0001 C CNN "PartNumber"
-F 6 "BZG05C3V6-M3-08GICT-ND" H 0   0   50  0001 C CNN "digikey"
-F 7 "0.32000" H 0   0   50  0001 C CNN "price@10"
-	1    6400 6050
+P 7000 6050
+F 0 "D708" V 6978 6129 20  0000 L CNN
+F 1 "zener 3v6" V 7021 6129 20  0000 L CNN
+F 2 "servo:D_SMA" H 7000 5875 20  0001 C CNN
+F 3 "https://diotec.com/tl_files/diotec/files/pdf/datasheets/z1sma1.pdf" H 7000 6150 50  0001 C CNN
+F 4 "Zener Diode 3.6V 1.25W ±5.56% Surface Mount DO-214AC (SMA) " H 600 0   50  0001 C CNN "Description"
+F 5 "BZG05C3V6-M3-08" H 600 0   50  0001 C CNN "PartNumber"
+F 6 "BZG05C3V6-M3-08GICT-ND" H 600 0   50  0001 C CNN "digikey"
+F 7 "0.32000" H 600 0   50  0001 C CNN "price@10"
+F 8 "1" H 0   0   50  0001 C CNN "bom_1"
+F 9 "1" H 0   0   50  0001 C CNN "bom_2"
+F 10 "1" H 0   0   50  0001 C CNN "bom_3"
+	1    7000 6050
 	0    1    1    0   
 $EndComp
 Wire Wire Line
-	6400 5900 6400 5650
-Connection ~ 6400 5650
+	7000 5900 7000 5650
+Connection ~ 7000 5650
 Wire Wire Line
-	6400 5650 6800 5650
+	7000 5650 7400 5650
 Wire Wire Line
-	6400 6200 6400 6450
-Connection ~ 6400 6450
+	7000 6200 7000 6450
+Connection ~ 7000 6450
 Wire Wire Line
-	6400 6450 6000 6450
+	7000 6450 6600 6450
+Connection ~ 8800 5650
+Connection ~ 8250 5650
 Wire Wire Line
-	8200 5550 8200 5650
-Connection ~ 8200 5650
+	7900 6450 8450 6450
+Wire Wire Line
+	8250 5650 8450 5650
+Wire Wire Line
+	9200 5650 9200 5600
+Wire Wire Line
+	8800 5650 9200 5650
+$Comp
+L servo:Capacitor C?
+U 1 1 5E91B726
+P 6050 5950
+AR Path="/5EAA846A/5E91B726" Ref="C?"  Part="1" 
+AR Path="/5DD76B18/5E91B726" Ref="C705"  Part="1" 
+F 0 "C705" V 6078 6060 20  0000 L CNN
+F 1 "2.2uF" V 6121 6060 20  0000 L CNN
+F 2 "servo:C_0603_1608Metric" H 6050 5850 60  0001 C CNN
+F 3 "" H 6050 5950 60  0000 C CNN
+F 4 "CAP CER 2.2UF 16V X6S 0603 " H -5600 1200 50  0001 C CNN "Description"
+F 5 "GRT188C81C225KE13D" H -5600 1200 50  0001 C CNN "PartNumber"
+F 6 "490-12287-1-ND" H -5600 1200 50  0001 C CNN "digikey"
+F 7 "0.35500" H -5600 1200 50  0001 C CNN "price@10"
+F 8 "1" H 0   0   50  0001 C CNN "bom_1"
+F 9 "1" H 0   0   50  0001 C CNN "bom_2"
+F 10 "1" H 0   0   50  0001 C CNN "bom_3"
+	1    6050 5950
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	6050 5850 6050 5650
+Connection ~ 6050 5650
+Wire Wire Line
+	6050 5650 6600 5650
+Wire Wire Line
+	6050 6150 6050 6450
+Wire Wire Line
+	5650 6450 6050 6450
+Connection ~ 6050 6450
+Wire Wire Line
+	6050 6450 6600 6450
+$Comp
+L servo:Resistor R?
+U 1 1 5E95681E
+P 14300 9050
+AR Path="/5DEE980E/5E95681E" Ref="R?"  Part="1" 
+AR Path="/5E2F3BE3/5E95681E" Ref="R?"  Part="1" 
+AR Path="/605BEC04/5E95681E" Ref="R?"  Part="1" 
+AR Path="/5DE49152/5E95681E" Ref="R?"  Part="1" 
+AR Path="/5DD76B18/5E95681E" Ref="R704"  Part="1" 
+F 0 "R704" H 14300 8979 20  0000 C CNN
+F 1 "0" H 14300 8936 20  0000 C CNN
+F 2 "servo:R_1206_3216Metric_Pad1.42x1.75mm_HandSolder" H 13800 8950 60  0001 C CNN
+F 3 "" H 13900 9050 60  0001 C CNN
+F 4 "0 Ohms Jumper 0.25W, 1/4W Chip Resistor 1206 (3216 Metric) Automotive AEC-Q200 Thick Film" H 5200 5750 50  0001 C CNN "Description"
+F 5 "RMCF1206ZT0R00" H 5200 5750 50  0001 C CNN "PartNumber"
+F 6 "RMCF1206ZT0R00CT-ND" H 5200 5750 50  0001 C CNN "digikey"
+F 7 "0.02700" H 5200 5750 50  0001 C CNN "price@10"
+F 8 "1" H 0   0   50  0001 C CNN "bom_1"
+F 9 "1" H 0   0   50  0001 C CNN "bom_2"
+F 10 "1" H 0   0   50  0001 C CNN "bom_3"
+	1    14300 9050
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	14500 9050 14600 9050
+$Comp
+L servo:Resistor R?
+U 1 1 5E96B15A
+P 14300 8900
+AR Path="/5DEE980E/5E96B15A" Ref="R?"  Part="1" 
+AR Path="/5E2F3BE3/5E96B15A" Ref="R?"  Part="1" 
+AR Path="/605BEC04/5E96B15A" Ref="R?"  Part="1" 
+AR Path="/5DE49152/5E96B15A" Ref="R?"  Part="1" 
+AR Path="/5DD76B18/5E96B15A" Ref="R703"  Part="1" 
+F 0 "R703" H 14300 9015 20  0000 C CNN
+F 1 "0" H 14300 8972 20  0000 C CNN
+F 2 "servo:R_1206_3216Metric_Pad1.42x1.75mm_HandSolder" H 13800 8800 60  0001 C CNN
+F 3 "" H 13900 8900 60  0001 C CNN
+F 4 "0 Ohms Jumper 0.25W, 1/4W Chip Resistor 1206 (3216 Metric) Automotive AEC-Q200 Thick Film" H 5200 5600 50  0001 C CNN "Description"
+F 5 "RMCF1206ZT0R00" H 5200 5600 50  0001 C CNN "PartNumber"
+F 6 "RMCF1206ZT0R00CT-ND" H 5200 5600 50  0001 C CNN "digikey"
+F 7 "0.02700" H 5200 5600 50  0001 C CNN "price@10"
+F 8 "1" H 0   0   50  0001 C CNN "bom_1"
+F 9 "1" H 0   0   50  0001 C CNN "bom_2"
+F 10 "1" H 0   0   50  0001 C CNN "bom_3"
+	1    14300 8900
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	14500 8900 14600 8900
+Wire Wire Line
+	13700 9050 13700 9150
+Wire Wire Line
+	14600 9050 14600 9150
+Wire Wire Line
+	14600 8750 14600 8900
+Wire Wire Line
+	13700 8750 13700 8900
+Wire Wire Line
+	14000 7700 14200 7700
+Wire Wire Line
+	14400 7700 14600 7700
+Wire Wire Line
+	14000 8100 14200 8100
+$Comp
+L servo:Resistor R?
+U 1 1 5E99F140
+P 14300 6400
+AR Path="/5DEE980E/5E99F140" Ref="R?"  Part="1" 
+AR Path="/5E2F3BE3/5E99F140" Ref="R?"  Part="1" 
+AR Path="/605BEC04/5E99F140" Ref="R?"  Part="1" 
+AR Path="/5DE49152/5E99F140" Ref="R?"  Part="1" 
+AR Path="/5DD76B18/5E99F140" Ref="R706"  Part="1" 
+F 0 "R706" H 14300 6515 20  0000 C CNN
+F 1 "0" H 14300 6472 20  0000 C CNN
+F 2 "servo:R_1206_3216Metric_Pad1.42x1.75mm_HandSolder" H 13800 6300 60  0001 C CNN
+F 3 "" H 13900 6400 60  0001 C CNN
+F 4 "0 Ohms Jumper 0.25W, 1/4W Chip Resistor 1206 (3216 Metric) Automotive AEC-Q200 Thick Film" H 5200 3100 50  0001 C CNN "Description"
+F 5 "RMCF1206ZT0R00" H 5200 3100 50  0001 C CNN "PartNumber"
+F 6 "RMCF1206ZT0R00CT-ND" H 5200 3100 50  0001 C CNN "digikey"
+F 7 "0.02700" H 5200 3100 50  0001 C CNN "price@10"
+F 8 "1" H 0   0   50  0001 C CNN "bom_1"
+F 9 "1" H 0   0   50  0001 C CNN "bom_2"
+F 10 "1" H 0   0   50  0001 C CNN "bom_3"
+	1    14300 6400
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	14100 6400 14000 6400
+$Comp
+L servo:Resistor R?
+U 1 1 5E9A93E2
+P 14300 6800
+AR Path="/5DEE980E/5E9A93E2" Ref="R?"  Part="1" 
+AR Path="/5E2F3BE3/5E9A93E2" Ref="R?"  Part="1" 
+AR Path="/605BEC04/5E9A93E2" Ref="R?"  Part="1" 
+AR Path="/5DE49152/5E9A93E2" Ref="R?"  Part="1" 
+AR Path="/5DD76B18/5E9A93E2" Ref="R707"  Part="1" 
+F 0 "R707" H 14300 6915 20  0000 C CNN
+F 1 "0" H 14300 6872 20  0000 C CNN
+F 2 "servo:R_1206_3216Metric_Pad1.42x1.75mm_HandSolder" H 13800 6700 60  0001 C CNN
+F 3 "" H 13900 6800 60  0001 C CNN
+F 4 "0 Ohms Jumper 0.25W, 1/4W Chip Resistor 1206 (3216 Metric) Automotive AEC-Q200 Thick Film" H 5200 3500 50  0001 C CNN "Description"
+F 5 "RMCF1206ZT0R00" H 5200 3500 50  0001 C CNN "PartNumber"
+F 6 "RMCF1206ZT0R00CT-ND" H 5200 3500 50  0001 C CNN "digikey"
+F 7 "0.02700" H 5200 3500 50  0001 C CNN "price@10"
+F 8 "1" H 0   0   50  0001 C CNN "bom_1"
+F 9 "1" H 0   0   50  0001 C CNN "bom_2"
+F 10 "1" H 0   0   50  0001 C CNN "bom_3"
+	1    14300 6800
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	14100 6800 14000 6800
+$Comp
+L servo:jumper JP702
+U 1 1 5E9C3692
+P 14700 6400
+F 0 "JP702" H 14700 6513 20  0000 C CNN
+F 1 "jumper" H 14700 6470 20  0000 C CNN
+F 2 "servo:SolderJumper-2_P1.3mm_Open_RoundedPad1.0x1.5mm" H 14600 6380 50  0001 C CNN
+F 3 "~" H 14700 6480 50  0001 C CNN
+F 4 "jumper smd bridge using tin" H 11400 800 50  0001 C CNN "Description"
+F 5 "-" H 11400 800 50  0001 C CNN "PartNumber"
+F 6 "-" H 11400 800 50  0001 C CNN "digikey"
+F 7 "0" H 11400 800 50  0001 C CNN "price@10"
+F 8 "" H 0   0   50  0001 C CNN "bom_1"
+F 9 "" H 0   0   50  0001 C CNN "bom_2"
+	1    14700 6400
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	14500 6400 14600 6400
+Wire Wire Line
+	14800 6400 14950 6400
+Connection ~ 14950 6400
+$Comp
+L servo:jumper JP705
+U 1 1 5E9D49CA
+P 14700 6800
+F 0 "JP705" H 14700 6913 20  0000 C CNN
+F 1 "jumper" H 14700 6870 20  0000 C CNN
+F 2 "servo:SolderJumper-2_P1.3mm_Open_RoundedPad1.0x1.5mm" H 14600 6780 50  0001 C CNN
+F 3 "~" H 14700 6880 50  0001 C CNN
+F 4 "jumper smd bridge using tin" H 11400 1200 50  0001 C CNN "Description"
+F 5 "-" H 11400 1200 50  0001 C CNN "PartNumber"
+F 6 "-" H 11400 1200 50  0001 C CNN "digikey"
+F 7 "0" H 11400 1200 50  0001 C CNN "price@10"
+F 8 "" H 0   0   50  0001 C CNN "bom_1"
+F 9 "" H 0   0   50  0001 C CNN "bom_2"
+	1    14700 6800
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	14800 6800 14950 6800
+Connection ~ 14950 6800
+Wire Wire Line
+	14600 6800 14500 6800
+Wire Wire Line
+	14050 8900 14100 8900
+Wire Wire Line
+	13850 8900 13700 8900
+Wire Wire Line
+	14100 9050 13700 9050
+$Comp
+L servo:jumper JP706
+U 1 1 5E64FD8B
+P 13950 8900
+F 0 "JP706" H 13950 9013 20  0000 C CNN
+F 1 "jumper" H 13950 8970 20  0000 C CNN
+F 2 "servo:SolderJumper-2_P1.3mm_Open_RoundedPad1.0x1.5mm" H 13850 8880 50  0001 C CNN
+F 3 "~" H 13950 8980 50  0001 C CNN
+F 4 "jumper smd bridge using tin" H 10650 3300 50  0001 C CNN "Description"
+F 5 "-" H 10650 3300 50  0001 C CNN "PartNumber"
+F 6 "-" H 10650 3300 50  0001 C CNN "digikey"
+F 7 "0" H 10650 3300 50  0001 C CNN "price@10"
+F 8 "" H 0   0   50  0001 C CNN "bom_1"
+F 9 "" H 0   0   50  0001 C CNN "bom_2"
+	1    13950 8900
+	1    0    0    -1  
+$EndComp
+$Comp
+L servo:jumper JP707
+U 1 1 5E652961
+P 9550 3350
+F 0 "JP707" V 9528 3398 20  0000 L CNN
+F 1 "jumper" V 9571 3398 20  0000 L CNN
+F 2 "servo:SolderJumper-2_P1.3mm_Open_RoundedPad1.0x1.5mm" H 9450 3330 50  0001 C CNN
+F 3 "~" H 9550 3430 50  0001 C CNN
+F 4 "jumper smd bridge using tin" H 6250 -2250 50  0001 C CNN "Description"
+F 5 "-" H 6250 -2250 50  0001 C CNN "PartNumber"
+F 6 "-" H 6250 -2250 50  0001 C CNN "digikey"
+F 7 "0" H 6250 -2250 50  0001 C CNN "price@10"
+F 8 "" H 0   0   50  0001 C CNN "bom_1"
+F 9 "" H 0   0   50  0001 C CNN "bom_2"
+	1    9550 3350
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	9350 3300 9350 3250
+Wire Wire Line
+	9350 3250 9550 3250
+Wire Wire Line
+	8850 3300 9350 3300
+Wire Wire Line
+	9350 3400 9350 3450
+Wire Wire Line
+	9350 3450 9550 3450
+Wire Wire Line
+	8850 3400 9350 3400
+$Comp
+L servo:Resistor R?
+U 1 1 5E699655
+P 9450 3850
+AR Path="/5DEE980E/5E699655" Ref="R?"  Part="1" 
+AR Path="/5E2F3BE3/5E699655" Ref="R?"  Part="1" 
+AR Path="/605BEC04/5E699655" Ref="R?"  Part="1" 
+AR Path="/5DE49152/5E699655" Ref="R?"  Part="1" 
+AR Path="/5DD76B18/5E699655" Ref="R?"  Part="1" 
+F 0 "R?" H 9450 3965 20  0000 C CNN
+F 1 "0" H 9450 3922 20  0000 C CNN
+F 2 "servo:R_1206_3216Metric_Pad1.42x1.75mm_HandSolder" H 8950 3750 60  0001 C CNN
+F 3 "" H 9050 3850 60  0001 C CNN
+F 4 "0 Ohms Jumper 0.25W, 1/4W Chip Resistor 1206 (3216 Metric) Automotive AEC-Q200 Thick Film" H 350 550 50  0001 C CNN "Description"
+F 5 "RMCF1206ZT0R00" H 350 550 50  0001 C CNN "PartNumber"
+F 6 "RMCF1206ZT0R00CT-ND" H 350 550 50  0001 C CNN "digikey"
+F 7 "0.02700" H 350 550 50  0001 C CNN "price@10"
+F 8 "1" H -4850 -5050 50  0001 C CNN "bom_1"
+F 9 "1" H -4850 -5050 50  0001 C CNN "bom_2"
+F 10 "1" H -4850 -5050 50  0001 C CNN "bom_3"
+	1    9450 3850
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	9200 3850 9250 3850
+$Comp
+L servo:jumper JP?
+U 1 1 5E699663
+P 9100 3850
+F 0 "JP?" H 9100 3963 20  0000 C CNN
+F 1 "jumper" H 9100 3920 20  0000 C CNN
+F 2 "servo:SolderJumper-2_P1.3mm_Open_RoundedPad1.0x1.5mm" H 9000 3830 50  0001 C CNN
+F 3 "~" H 9100 3930 50  0001 C CNN
+F 4 "jumper smd bridge using tin" H 5800 -1750 50  0001 C CNN "Description"
+F 5 "-" H 5800 -1750 50  0001 C CNN "PartNumber"
+F 6 "-" H 5800 -1750 50  0001 C CNN "digikey"
+F 7 "0" H 5800 -1750 50  0001 C CNN "price@10"
+F 8 "" H -4850 -5050 50  0001 C CNN "bom_1"
+F 9 "" H -4850 -5050 50  0001 C CNN "bom_2"
+	1    9100 3850
+	1    0    0    -1  
+$EndComp
+$Comp
+L servo:Earth #PWR?
+U 1 1 5E6A4127
+P 10150 4300
+AR Path="/5DC3DC9E/5E6A4127" Ref="#PWR?"  Part="1" 
+AR Path="/5DD76B18/5E6A4127" Ref="#PWR?"  Part="1" 
+F 0 "#PWR?" H 10150 4050 20  0001 C CNN
+F 1 "Earth" H 10150 4151 20  0000 C CNN
+F 2 "" H 10150 4300 50  0001 C CNN
+F 3 "~" H 10150 4300 50  0001 C CNN
+	1    10150 4300
+	1    0    0    -1  
+$EndComp
+$Comp
+L servo:PWR_FLAG #FLG?
+U 1 1 5E6A412E
+P 10300 4150
+F 0 "#FLG?" H 10300 4225 20  0001 C CNN
+F 1 "PWR_FLAG" H 10300 4300 20  0000 C CNN
+F 2 "" H 10300 4150 50  0001 C CNN
+F 3 "~" H 10300 4150 50  0001 C CNN
+	1    10300 4150
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	10150 4250 10300 4250
+Wire Wire Line
+	10300 4250 10300 4150
+Connection ~ 10150 4250
+Wire Wire Line
+	10150 4250 10150 4300
+Wire Wire Line
+	9000 3600 9000 3850
+Wire Wire Line
+	9650 3850 10150 3850
+Wire Wire Line
+	10150 3850 10150 4250
 $EndSCHEMATC

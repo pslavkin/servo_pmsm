@@ -7,7 +7,7 @@
       "Application": "Pcbnew",
       "Version":     "5.0.2+dfsg1-1"
     },
-    "CreationDate":  "2020-03-04T17:04:27-03:00"
+    "CreationDate":  "2020-03-06T02:23:56-03:00"
   },
   "GeneralSpecs":
   {
@@ -76,16 +76,6 @@
     {
       "Path":  "servo-B.Cu.gbr",
       "FileFunction":  "Copper,L6,Bot",
-      "FilePolarity":  "Positive"
-    },
-    {
-      "Path":  "servo-F.Adhes.gbr",
-      "FileFunction":  "Glue,Top",
-      "FilePolarity":  "Positive"
-    },
-    {
-      "Path":  "servo-B.Adhes.gbr",
-      "FileFunction":  "Glue,Bot",
       "FilePolarity":  "Positive"
     },
     {

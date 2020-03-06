@@ -30,6 +30,9 @@ F 4 "RS422, RS485 Digital Isolator 2500Vrms 3 Channel 500kbps 25kV/µs CMTI 16-S
 F 5 "ADM2483BRWZ" H 0   0   50  0001 C CNN "PartNumber"
 F 6 "ADM2483BRWZ-ND" H 0   0   50  0001 C CNN "digikey"
 F 7 "5.59000" H 0   0   50  0001 C CNN "price@10"
+F 8 "" H 0   0   50  0001 C CNN "bom_1"
+F 9 "1" H 0   0   50  0001 C CNN "bom_2"
+F 10 "1" H 0   0   50  0001 C CNN "bom_3"
 	1    7850 2850
 	1    0    0    -1  
 $EndComp
@@ -67,6 +70,9 @@ F 4 "120 Ohms ±5% 0.1W, 1/10W Chip Resistor 0603 (1608 Metric) Automotive AEC-Q
 F 5 "RMCF0603JT120R" H 0   0   50  0001 C CNN "PartNumber"
 F 6 "RMCF0603JT120RCT-ND" H 0   0   50  0001 C CNN "digikey"
 F 7 "0.01400" H 0   0   50  0001 C CNN "price@10"
+F 8 "1" H 0   0   50  0001 C CNN "bom_1"
+F 9 "1" H 0   0   50  0001 C CNN "bom_2"
+F 10 "1" H 0   0   50  0001 C CNN "bom_3"
 	1    9000 2800
 	0    1    1    0   
 $EndComp
@@ -88,6 +94,9 @@ F 4 "10 kOhms ±5% 0.1W, 1/10W Chip Resistor 0603 (1608 Metric) Moisture Resista
 F 5 "RC0603JR-0710KL" H 0   0   50  0001 C CNN "PartNumber"
 F 6 "311-10KGRCT-ND" H 0   0   50  0001 C CNN "digikey"
 F 7 "0.01900" H 0   0   50  0001 C CNN "price@10"
+F 8 "1" H 0   0   50  0001 C CNN "bom_1"
+F 9 "1" H 0   0   50  0001 C CNN "bom_2"
+F 10 "1" H 0   0   50  0001 C CNN "bom_3"
 	1    9000 3200
 	0    1    1    0   
 $EndComp
@@ -106,6 +115,9 @@ F 4 "2.2 kOhms ±5% 0.1W, 1/10W Chip Resistor 0603 (1608 Metric) Automotive AEC-
 F 5 "ERJ-3GEYJ222V" H 0   0   50  0001 C CNN "PartNumber"
 F 6 "P2.2KGCT-ND " H 0   0   50  0001 C CNN "digikey"
 F 7 "0.04500" H 0   0   50  0001 C CNN "price@10"
+F 8 "1" H 0   0   50  0001 C CNN "bom_1"
+F 9 "1" H 0   0   50  0001 C CNN "bom_2"
+F 10 "1" H 0   0   50  0001 C CNN "bom_3"
 	1    9000 2400
 	0    1    1    0   
 $EndComp
@@ -177,6 +189,9 @@ F 4 "CC0603KPX7R7BB104" H 0   0   50  0001 C CNN "PartNumber"
 F 5 "311-1335-1-ND" H 0   0   50  0001 C CNN "digikey"
 F 6 "CAP CER 0.1UF 16V X7R 0603 " H 0   0   50  0001 C CNN "Description"
 F 7 "0.05800" H 0   0   50  0001 C CNN "price@10"
+F 8 "1" H 0   0   50  0001 C CNN "bom_1"
+F 9 "1" H 0   0   50  0001 C CNN "bom_2"
+F 10 "1" H 0   0   50  0001 C CNN "bom_3"
 	1    8450 5300
 	0    1    1    0   
 $EndComp
@@ -228,6 +243,9 @@ F 4 "100 kOhms ±5% 0.1W, 1/10W Chip Resistor 0603 (1608 Metric) Moisture Resist
 F 5 "CR0603-JW-104ELF" H 0   0   50  0001 C CNN "PartNumber"
 F 6 " CR0603-JW-104ELFCT-ND" H 0   0   50  0001 C CNN "digikey"
 F 7 "0.01500" H 0   0   50  0001 C CNN "price@10"
+F 8 "1" H 0   0   50  0001 C CNN "bom_1"
+F 9 "1" H 0   0   50  0001 C CNN "bom_2"
+F 10 "1" H 0   0   50  0001 C CNN "bom_3"
 	1    9250 5350
 	0    1    1    0   
 $EndComp
@@ -247,6 +265,9 @@ F 4 "CC0603KPX7R7BB104" H 0   0   50  0001 C CNN "PartNumber"
 F 5 "311-1335-1-ND" H 0   0   50  0001 C CNN "digikey"
 F 6 "CAP CER 0.1UF 16V X7R 0603 " H 0   0   50  0001 C CNN "Description"
 F 7 "0.05800" H 0   0   50  0001 C CNN "price@10"
+F 8 "1" H 0   0   50  0001 C CNN "bom_1"
+F 9 "1" H 0   0   50  0001 C CNN "bom_2"
+F 10 "1" H 0   0   50  0001 C CNN "bom_3"
 	1    8700 5300
 	0    1    1    0   
 $EndComp
@@ -266,6 +287,9 @@ F 4 "1 kOhms ±5% 0.1W, 1/10W Chip Resistor 0603 (1608 Metric) Moisture Resistan
 F 5 "RC0603JR-071KL" H 0   0   50  0001 C CNN "PartNumber"
 F 6 "311-1.0KGRCT-ND" H 0   0   50  0001 C CNN "digikey"
 F 7 "0.01900" H 0   0   50  0001 C CNN "price@10"
+F 8 "1" H 0   0   50  0001 C CNN "bom_1"
+F 9 "1" H 0   0   50  0001 C CNN "bom_2"
+F 10 "1" H 0   0   50  0001 C CNN "bom_3"
 	1    8950 5050
 	1    0    0    -1  
 $EndComp
@@ -304,6 +328,9 @@ F 4 "Isolation IC 8-SOIC " H 0   0   50  0001 C CNN "Description"
 F 5 "AMC1311BDWV" H 0   0   50  0001 C CNN "PartNumber"
 F 6 "296-47610-ND" H 0   0   50  0001 C CNN "digikey"
 F 7 "7.24300" H 0   0   50  0001 C CNN "price@10"
+F 8 "" H 0   0   50  0001 C CNN "bom_1"
+F 9 "1" H 0   0   50  0001 C CNN "bom_2"
+F 10 "1" H 0   0   50  0001 C CNN "bom_3"
 	1    7700 4700
 	-1   0    0    -1  
 $EndComp
@@ -343,6 +370,9 @@ F 4 "18 kOhms ±5% 0.1W, 1/10W Chip Resistor 0603 (1608 Metric) Automotive AEC-Q
 F 5 "RK73B1JTTD183J" H 0   0   50  0001 C CNN "PartNumber"
 F 6 "2019-RK73B1JTTD183JCT-ND" H 0   0   50  0001 C CNN "digikey"
 F 7 "0.01900" H 0   0   50  0001 C CNN "price@10"
+F 8 "1" H 0   0   50  0001 C CNN "bom_1"
+F 9 "1" H 0   0   50  0001 C CNN "bom_2"
+F 10 "1" H 0   0   50  0001 C CNN "bom_3"
 	1    9250 4850
 	0    1    1    0   
 $EndComp
@@ -406,6 +436,9 @@ F 4 "CAP CER 0.1UF 16V X7R 0603 " H 0   0   50  0001 C CNN "Description"
 F 5 "CC0603KPX7R7BB104" H 0   0   50  0001 C CNN "PartNumber"
 F 6 "311-1335-1-ND" H 0   0   50  0001 C CNN "digikey"
 F 7 "0.05800" H 0   0   50  0001 C CNN "price@10"
+F 8 "1" H 0   0   50  0001 C CNN "bom_1"
+F 9 "1" H 0   0   50  0001 C CNN "bom_2"
+F 10 "1" H 0   0   50  0001 C CNN "bom_3"
 	1    6200 4750
 	0    1    1    0   
 $EndComp
@@ -424,6 +457,9 @@ F 4 "560 Ohms ±5% 0.1W, 1/10W Chip Resistor 0603 (1608 Metric) Moisture Resista
 F 5 "CR0603-JW-561ELF" H 0   0   50  0001 C CNN "PartNumber"
 F 6 "118-CR0603-JW-561ELFCT-ND" H 0   0   50  0001 C CNN "digikey"
 F 7 "0.02600" H 0   0   50  0001 C CNN "price@10"
+F 8 "1" H 0   0   50  0001 C CNN "bom_1"
+F 9 "1" H 0   0   50  0001 C CNN "bom_2"
+F 10 "1" H 0   0   50  0001 C CNN "bom_3"
 	1    6450 4600
 	-1   0    0    1   
 $EndComp
@@ -442,6 +478,9 @@ F 4 "560 Ohms ±5% 0.1W, 1/10W Chip Resistor 0603 (1608 Metric) Moisture Resista
 F 5 "CR0603-JW-561ELF" H 0   0   50  0001 C CNN "PartNumber"
 F 6 "118-CR0603-JW-561ELFCT-ND" H 0   0   50  0001 C CNN "digikey"
 F 7 "0.02600" H 0   0   50  0001 C CNN "price@10"
+F 8 "1" H 0   0   50  0001 C CNN "bom_1"
+F 9 "1" H 0   0   50  0001 C CNN "bom_2"
+F 10 "1" H 0   0   50  0001 C CNN "bom_3"
 	1    6450 5000
 	-1   0    0    1   
 $EndComp
@@ -476,6 +515,9 @@ F 4 "CC0603KPX7R7BB104" H 0   0   50  0001 C CNN "PartNumber"
 F 5 "311-1335-1-ND" H 0   0   50  0001 C CNN "digikey"
 F 6 "CAP CER 0.1UF 16V X7R 0603 " H 0   0   50  0001 C CNN "Description"
 F 7 "0.05800" H 0   0   50  0001 C CNN "price@10"
+F 8 "1" H 0   0   50  0001 C CNN "bom_1"
+F 9 "1" H 0   0   50  0001 C CNN "bom_2"
+F 10 "1" H 0   0   50  0001 C CNN "bom_3"
 	1    6950 4500
 	0    1    1    0   
 $EndComp
@@ -521,6 +563,9 @@ F 4 "CC0603KPX7R7BB104" H 0   0   50  0001 C CNN "PartNumber"
 F 5 "311-1335-1-ND" H 0   0   50  0001 C CNN "digikey"
 F 6 "CAP CER 0.1UF 16V X7R 0603 " H 0   0   50  0001 C CNN "Description"
 F 7 "0.05800" H 0   0   50  0001 C CNN "price@10"
+F 8 "1" H 0   0   50  0001 C CNN "bom_1"
+F 9 "1" H 0   0   50  0001 C CNN "bom_2"
+F 10 "1" H 0   0   50  0001 C CNN "bom_3"
 	1    11250 5300
 	0    -1   1    0   
 $EndComp
@@ -572,6 +617,9 @@ F 4 "100 kOhms ±5% 0.1W, 1/10W Chip Resistor 0603 (1608 Metric) Moisture Resist
 F 5 "CR0603-JW-104ELF" H 0   0   50  0001 C CNN "PartNumber"
 F 6 " CR0603-JW-104ELFCT-ND" H 0   0   50  0001 C CNN "digikey"
 F 7 "0.01500" H 0   0   50  0001 C CNN "price@10"
+F 8 "1" H 0   0   50  0001 C CNN "bom_1"
+F 9 "1" H 0   0   50  0001 C CNN "bom_2"
+F 10 "1" H 0   0   50  0001 C CNN "bom_3"
 	1    10450 5350
 	0    -1   1    0   
 $EndComp
@@ -591,6 +639,9 @@ F 4 "CC0603KPX7R7BB104" H 0   0   50  0001 C CNN "PartNumber"
 F 5 "311-1335-1-ND" H 0   0   50  0001 C CNN "digikey"
 F 6 "CAP CER 0.1UF 16V X7R 0603 " H 0   0   50  0001 C CNN "Description"
 F 7 "0.05800" H 0   0   50  0001 C CNN "price@10"
+F 8 "1" H 0   0   50  0001 C CNN "bom_1"
+F 9 "1" H 0   0   50  0001 C CNN "bom_2"
+F 10 "1" H 0   0   50  0001 C CNN "bom_3"
 	1    11000 5300
 	0    -1   1    0   
 $EndComp
@@ -610,6 +661,9 @@ F 4 "1 kOhms ±5% 0.1W, 1/10W Chip Resistor 0603 (1608 Metric) Moisture Resistan
 F 5 "RC0603JR-071KL" H 0   0   50  0001 C CNN "PartNumber"
 F 6 "311-1.0KGRCT-ND" H 0   0   50  0001 C CNN "digikey"
 F 7 "0.01900" H 0   0   50  0001 C CNN "price@10"
+F 8 "1" H 0   0   50  0001 C CNN "bom_1"
+F 9 "1" H 0   0   50  0001 C CNN "bom_2"
+F 10 "1" H 0   0   50  0001 C CNN "bom_3"
 	1    10750 5050
 	-1   0    0    -1  
 $EndComp
@@ -648,6 +702,9 @@ F 4 "Isolation IC 8-SOIC " H 0   0   50  0001 C CNN "Description"
 F 5 "AMC1311BDWV" H 0   0   50  0001 C CNN "PartNumber"
 F 6 "296-47610-ND" H 0   0   50  0001 C CNN "digikey"
 F 7 "7.24300" H 0   0   50  0001 C CNN "price@10"
+F 8 "" H 0   0   50  0001 C CNN "bom_1"
+F 9 "1" H 0   0   50  0001 C CNN "bom_2"
+F 10 "1" H 0   0   50  0001 C CNN "bom_3"
 	1    12000 4700
 	1    0    0    -1  
 $EndComp
@@ -687,6 +744,9 @@ F 4 "18 kOhms ±5% 0.1W, 1/10W Chip Resistor 0603 (1608 Metric) Automotive AEC-Q
 F 5 "RK73B1JTTD183J" H 0   0   50  0001 C CNN "PartNumber"
 F 6 "2019-RK73B1JTTD183JCT-ND" H 0   0   50  0001 C CNN "digikey"
 F 7 "0.01900" H 0   0   50  0001 C CNN "price@10"
+F 8 "1" H 0   0   50  0001 C CNN "bom_1"
+F 9 "1" H 0   0   50  0001 C CNN "bom_2"
+F 10 "1" H 0   0   50  0001 C CNN "bom_3"
 	1    10450 4850
 	0    -1   1    0   
 $EndComp
@@ -712,6 +772,9 @@ F 4 "CAP CER 0.1UF 16V X7R 0603 " H 0   0   50  0001 C CNN "Description"
 F 5 "CC0603KPX7R7BB104" H 0   0   50  0001 C CNN "PartNumber"
 F 6 "311-1335-1-ND" H 0   0   50  0001 C CNN "digikey"
 F 7 "0.05800" H 0   0   50  0001 C CNN "price@10"
+F 8 "1" H 0   0   50  0001 C CNN "bom_1"
+F 9 "1" H 0   0   50  0001 C CNN "bom_2"
+F 10 "1" H 0   0   50  0001 C CNN "bom_3"
 	1    13500 4750
 	0    -1   1    0   
 $EndComp
@@ -730,6 +793,9 @@ F 4 "560 Ohms ±5% 0.1W, 1/10W Chip Resistor 0603 (1608 Metric) Moisture Resista
 F 5 "CR0603-JW-561ELF" H 0   0   50  0001 C CNN "PartNumber"
 F 6 "118-CR0603-JW-561ELFCT-ND" H 0   0   50  0001 C CNN "digikey"
 F 7 "0.02600" H 0   0   50  0001 C CNN "price@10"
+F 8 "1" H 0   0   50  0001 C CNN "bom_1"
+F 9 "1" H 0   0   50  0001 C CNN "bom_2"
+F 10 "1" H 0   0   50  0001 C CNN "bom_3"
 	1    13250 4600
 	1    0    0    1   
 $EndComp
@@ -748,6 +814,9 @@ F 4 "560 Ohms ±5% 0.1W, 1/10W Chip Resistor 0603 (1608 Metric) Moisture Resista
 F 5 "CR0603-JW-561ELF" H 0   0   50  0001 C CNN "PartNumber"
 F 6 "118-CR0603-JW-561ELFCT-ND" H 0   0   50  0001 C CNN "digikey"
 F 7 "0.02600" H 0   0   50  0001 C CNN "price@10"
+F 8 "1" H 0   0   50  0001 C CNN "bom_1"
+F 9 "1" H 0   0   50  0001 C CNN "bom_2"
+F 10 "1" H 0   0   50  0001 C CNN "bom_3"
 	1    13250 5000
 	1    0    0    1   
 $EndComp
@@ -782,6 +851,9 @@ F 4 "CC0603KPX7R7BB104" H 0   0   50  0001 C CNN "PartNumber"
 F 5 "311-1335-1-ND" H 0   0   50  0001 C CNN "digikey"
 F 6 "CAP CER 0.1UF 16V X7R 0603 " H 0   0   50  0001 C CNN "Description"
 F 7 "0.05800" H 0   0   50  0001 C CNN "price@10"
+F 8 "1" H 0   0   50  0001 C CNN "bom_1"
+F 9 "1" H 0   0   50  0001 C CNN "bom_2"
+F 10 "1" H 0   0   50  0001 C CNN "bom_3"
 	1    12750 4500
 	0    -1   1    0   
 $EndComp
@@ -841,6 +913,9 @@ F 4 "CC0603KPX7R7BB104" H 0   0   50  0001 C CNN "PartNumber"
 F 5 "311-1335-1-ND" H 0   0   50  0001 C CNN "digikey"
 F 6 "CAP CER 0.1UF 16V X7R 0603 " H 0   0   50  0001 C CNN "Description"
 F 7 "0.05800" H 0   0   50  0001 C CNN "price@10"
+F 8 "1" H 0   0   50  0001 C CNN "bom_1"
+F 9 "1" H 0   0   50  0001 C CNN "bom_2"
+F 10 "1" H 0   0   50  0001 C CNN "bom_3"
 	1    8450 6950
 	0    1    1    0   
 $EndComp
@@ -892,6 +967,9 @@ F 4 "100 kOhms ±5% 0.1W, 1/10W Chip Resistor 0603 (1608 Metric) Moisture Resist
 F 5 "CR0603-JW-104ELF" H 0   0   50  0001 C CNN "PartNumber"
 F 6 " CR0603-JW-104ELFCT-ND" H 0   0   50  0001 C CNN "digikey"
 F 7 "0.01500" H 0   0   50  0001 C CNN "price@10"
+F 8 "1" H 0   0   50  0001 C CNN "bom_1"
+F 9 "1" H 0   0   50  0001 C CNN "bom_2"
+F 10 "1" H 0   0   50  0001 C CNN "bom_3"
 	1    9250 7000
 	0    1    1    0   
 $EndComp
@@ -911,6 +989,9 @@ F 4 "CC0603KPX7R7BB104" H 0   0   50  0001 C CNN "PartNumber"
 F 5 "311-1335-1-ND" H 0   0   50  0001 C CNN "digikey"
 F 6 "CAP CER 0.1UF 16V X7R 0603 " H 0   0   50  0001 C CNN "Description"
 F 7 "0.05800" H 0   0   50  0001 C CNN "price@10"
+F 8 "1" H 0   0   50  0001 C CNN "bom_1"
+F 9 "1" H 0   0   50  0001 C CNN "bom_2"
+F 10 "1" H 0   0   50  0001 C CNN "bom_3"
 	1    8700 6950
 	0    1    1    0   
 $EndComp
@@ -930,6 +1011,9 @@ F 4 "1 kOhms ±5% 0.1W, 1/10W Chip Resistor 0603 (1608 Metric) Moisture Resistan
 F 5 "RC0603JR-071KL" H 0   0   50  0001 C CNN "PartNumber"
 F 6 "311-1.0KGRCT-ND" H 0   0   50  0001 C CNN "digikey"
 F 7 "0.01900" H 0   0   50  0001 C CNN "price@10"
+F 8 "1" H 0   0   50  0001 C CNN "bom_1"
+F 9 "1" H 0   0   50  0001 C CNN "bom_2"
+F 10 "1" H 0   0   50  0001 C CNN "bom_3"
 	1    8950 6700
 	1    0    0    -1  
 $EndComp
@@ -968,6 +1052,9 @@ F 4 "Isolation IC 8-SOIC " H 0   0   50  0001 C CNN "Description"
 F 5 "AMC1311BDWV" H 0   0   50  0001 C CNN "PartNumber"
 F 6 "296-47610-ND" H 0   0   50  0001 C CNN "digikey"
 F 7 "7.24300" H 0   0   50  0001 C CNN "price@10"
+F 8 "" H 0   0   50  0001 C CNN "bom_1"
+F 9 "1" H 0   0   50  0001 C CNN "bom_2"
+F 10 "1" H 0   0   50  0001 C CNN "bom_3"
 	1    7700 6350
 	-1   0    0    -1  
 $EndComp
@@ -1007,6 +1094,9 @@ F 4 "18 kOhms ±5% 0.1W, 1/10W Chip Resistor 0603 (1608 Metric) Automotive AEC-Q
 F 5 "RK73B1JTTD183J" H 0   0   50  0001 C CNN "PartNumber"
 F 6 "2019-RK73B1JTTD183JCT-ND" H 0   0   50  0001 C CNN "digikey"
 F 7 "0.01900" H 0   0   50  0001 C CNN "price@10"
+F 8 "1" H 0   0   50  0001 C CNN "bom_1"
+F 9 "1" H 0   0   50  0001 C CNN "bom_2"
+F 10 "1" H 0   0   50  0001 C CNN "bom_3"
 	1    9250 6500
 	0    1    1    0   
 $EndComp
@@ -1034,6 +1124,9 @@ F 4 "CAP CER 0.1UF 16V X7R 0603 " H 0   0   50  0001 C CNN "Description"
 F 5 "CC0603KPX7R7BB104" H 0   0   50  0001 C CNN "PartNumber"
 F 6 "311-1335-1-ND" H 0   0   50  0001 C CNN "digikey"
 F 7 "0.05800" H 0   0   50  0001 C CNN "price@10"
+F 8 "1" H 0   0   50  0001 C CNN "bom_1"
+F 9 "1" H 0   0   50  0001 C CNN "bom_2"
+F 10 "1" H 0   0   50  0001 C CNN "bom_3"
 	1    6200 6400
 	0    1    1    0   
 $EndComp
@@ -1052,6 +1145,9 @@ F 4 "560 Ohms ±5% 0.1W, 1/10W Chip Resistor 0603 (1608 Metric) Moisture Resista
 F 5 "CR0603-JW-561ELF" H 0   0   50  0001 C CNN "PartNumber"
 F 6 "118-CR0603-JW-561ELFCT-ND" H 0   0   50  0001 C CNN "digikey"
 F 7 "0.02600" H 0   0   50  0001 C CNN "price@10"
+F 8 "1" H 0   0   50  0001 C CNN "bom_1"
+F 9 "1" H 0   0   50  0001 C CNN "bom_2"
+F 10 "1" H 0   0   50  0001 C CNN "bom_3"
 	1    6450 6250
 	-1   0    0    1   
 $EndComp
@@ -1070,6 +1166,9 @@ F 4 "560 Ohms ±5% 0.1W, 1/10W Chip Resistor 0603 (1608 Metric) Moisture Resista
 F 5 "CR0603-JW-561ELF" H 0   0   50  0001 C CNN "PartNumber"
 F 6 "118-CR0603-JW-561ELFCT-ND" H 0   0   50  0001 C CNN "digikey"
 F 7 "0.02600" H 0   0   50  0001 C CNN "price@10"
+F 8 "1" H 0   0   50  0001 C CNN "bom_1"
+F 9 "1" H 0   0   50  0001 C CNN "bom_2"
+F 10 "1" H 0   0   50  0001 C CNN "bom_3"
 	1    6450 6650
 	-1   0    0    1   
 $EndComp
@@ -1104,6 +1203,9 @@ F 4 "CC0603KPX7R7BB104" H 0   0   50  0001 C CNN "PartNumber"
 F 5 "311-1335-1-ND" H 0   0   50  0001 C CNN "digikey"
 F 6 "CAP CER 0.1UF 16V X7R 0603 " H 0   0   50  0001 C CNN "Description"
 F 7 "0.05800" H 0   0   50  0001 C CNN "price@10"
+F 8 "1" H 0   0   50  0001 C CNN "bom_1"
+F 9 "1" H 0   0   50  0001 C CNN "bom_2"
+F 10 "1" H 0   0   50  0001 C CNN "bom_3"
 	1    6950 6150
 	0    1    1    0   
 $EndComp
@@ -1149,6 +1251,9 @@ F 4 "CC0603KPX7R7BB104" H 0   0   50  0001 C CNN "PartNumber"
 F 5 "311-1335-1-ND" H 0   0   50  0001 C CNN "digikey"
 F 6 "CAP CER 0.1UF 16V X7R 0603 " H 0   0   50  0001 C CNN "Description"
 F 7 "0.05800" H 0   0   50  0001 C CNN "price@10"
+F 8 "1" H 0   0   50  0001 C CNN "bom_1"
+F 9 "1" H 0   0   50  0001 C CNN "bom_2"
+F 10 "1" H 0   0   50  0001 C CNN "bom_3"
 	1    11250 6950
 	0    -1   1    0   
 $EndComp
@@ -1200,6 +1305,9 @@ F 4 "100 kOhms ±5% 0.1W, 1/10W Chip Resistor 0603 (1608 Metric) Moisture Resist
 F 5 "CR0603-JW-104ELF" H 0   0   50  0001 C CNN "PartNumber"
 F 6 " CR0603-JW-104ELFCT-ND" H 0   0   50  0001 C CNN "digikey"
 F 7 "0.01500" H 0   0   50  0001 C CNN "price@10"
+F 8 "1" H 0   0   50  0001 C CNN "bom_1"
+F 9 "1" H 0   0   50  0001 C CNN "bom_2"
+F 10 "1" H 0   0   50  0001 C CNN "bom_3"
 	1    10450 7000
 	0    -1   1    0   
 $EndComp
@@ -1219,6 +1327,9 @@ F 4 "CC0603KPX7R7BB104" H 0   0   50  0001 C CNN "PartNumber"
 F 5 "311-1335-1-ND" H 0   0   50  0001 C CNN "digikey"
 F 6 "CAP CER 0.1UF 16V X7R 0603 " H 0   0   50  0001 C CNN "Description"
 F 7 "0.05800" H 0   0   50  0001 C CNN "price@10"
+F 8 "1" H 0   0   50  0001 C CNN "bom_1"
+F 9 "1" H 0   0   50  0001 C CNN "bom_2"
+F 10 "1" H 0   0   50  0001 C CNN "bom_3"
 	1    11000 6950
 	0    -1   1    0   
 $EndComp
@@ -1238,6 +1349,9 @@ F 4 "1 kOhms ±5% 0.1W, 1/10W Chip Resistor 0603 (1608 Metric) Moisture Resistan
 F 5 "RC0603JR-071KL" H 0   0   50  0001 C CNN "PartNumber"
 F 6 "311-1.0KGRCT-ND" H 0   0   50  0001 C CNN "digikey"
 F 7 "0.01900" H 0   0   50  0001 C CNN "price@10"
+F 8 "1" H 0   0   50  0001 C CNN "bom_1"
+F 9 "1" H 0   0   50  0001 C CNN "bom_2"
+F 10 "1" H 0   0   50  0001 C CNN "bom_3"
 	1    10750 6700
 	-1   0    0    -1  
 $EndComp
@@ -1276,6 +1390,9 @@ F 4 "Isolation IC 8-SOIC " H 0   0   50  0001 C CNN "Description"
 F 5 "AMC1311BDWV" H 0   0   50  0001 C CNN "PartNumber"
 F 6 "296-47610-ND" H 0   0   50  0001 C CNN "digikey"
 F 7 "7.24300" H 0   0   50  0001 C CNN "price@10"
+F 8 "" H 0   0   50  0001 C CNN "bom_1"
+F 9 "1" H 0   0   50  0001 C CNN "bom_2"
+F 10 "1" H 0   0   50  0001 C CNN "bom_3"
 	1    12000 6350
 	1    0    0    -1  
 $EndComp
@@ -1315,6 +1432,9 @@ F 4 "18 kOhms ±5% 0.1W, 1/10W Chip Resistor 0603 (1608 Metric) Automotive AEC-Q
 F 5 "RK73B1JTTD183J" H 0   0   50  0001 C CNN "PartNumber"
 F 6 "2019-RK73B1JTTD183JCT-ND" H 0   0   50  0001 C CNN "digikey"
 F 7 "0.01900" H 0   0   50  0001 C CNN "price@10"
+F 8 "1" H 0   0   50  0001 C CNN "bom_1"
+F 9 "1" H 0   0   50  0001 C CNN "bom_2"
+F 10 "1" H 0   0   50  0001 C CNN "bom_3"
 	1    10450 6500
 	0    -1   1    0   
 $EndComp
@@ -1340,6 +1460,9 @@ F 4 "CAP CER 0.1UF 16V X7R 0603 " H 0   0   50  0001 C CNN "Description"
 F 5 "CC0603KPX7R7BB104" H 0   0   50  0001 C CNN "PartNumber"
 F 6 "311-1335-1-ND" H 0   0   50  0001 C CNN "digikey"
 F 7 "0.05800" H 0   0   50  0001 C CNN "price@10"
+F 8 "1" H 0   0   50  0001 C CNN "bom_1"
+F 9 "1" H 0   0   50  0001 C CNN "bom_2"
+F 10 "1" H 0   0   50  0001 C CNN "bom_3"
 	1    13500 6400
 	0    -1   1    0   
 $EndComp
@@ -1358,6 +1481,9 @@ F 4 "560 Ohms ±5% 0.1W, 1/10W Chip Resistor 0603 (1608 Metric) Moisture Resista
 F 5 "CR0603-JW-561ELF" H 0   0   50  0001 C CNN "PartNumber"
 F 6 "118-CR0603-JW-561ELFCT-ND" H 0   0   50  0001 C CNN "digikey"
 F 7 "0.02600" H 0   0   50  0001 C CNN "price@10"
+F 8 "1" H 0   0   50  0001 C CNN "bom_1"
+F 9 "1" H 0   0   50  0001 C CNN "bom_2"
+F 10 "1" H 0   0   50  0001 C CNN "bom_3"
 	1    13250 6250
 	1    0    0    1   
 $EndComp
@@ -1376,6 +1502,9 @@ F 4 "560 Ohms ±5% 0.1W, 1/10W Chip Resistor 0603 (1608 Metric) Moisture Resista
 F 5 "CR0603-JW-561ELF" H 0   0   50  0001 C CNN "PartNumber"
 F 6 "118-CR0603-JW-561ELFCT-ND" H 0   0   50  0001 C CNN "digikey"
 F 7 "0.02600" H 0   0   50  0001 C CNN "price@10"
+F 8 "1" H 0   0   50  0001 C CNN "bom_1"
+F 9 "1" H 0   0   50  0001 C CNN "bom_2"
+F 10 "1" H 0   0   50  0001 C CNN "bom_3"
 	1    13250 6650
 	1    0    0    1   
 $EndComp
@@ -1410,6 +1539,9 @@ F 4 "CC0603KPX7R7BB104" H 0   0   50  0001 C CNN "PartNumber"
 F 5 "311-1335-1-ND" H 0   0   50  0001 C CNN "digikey"
 F 6 "CAP CER 0.1UF 16V X7R 0603 " H 0   0   50  0001 C CNN "Description"
 F 7 "0.05800" H 0   0   50  0001 C CNN "price@10"
+F 8 "1" H 0   0   50  0001 C CNN "bom_1"
+F 9 "1" H 0   0   50  0001 C CNN "bom_2"
+F 10 "1" H 0   0   50  0001 C CNN "bom_3"
 	1    12750 6150
 	0    -1   1    0   
 $EndComp
@@ -1459,6 +1591,9 @@ F 4 "CC0603KPX7R7BB104" H 0   0   50  0001 C CNN "PartNumber"
 F 5 "311-1335-1-ND" H 0   0   50  0001 C CNN "digikey"
 F 6 "CAP CER 0.1UF 16V X7R 0603 " H 0   0   50  0001 C CNN "Description"
 F 7 "0.05800" H 0   0   50  0001 C CNN "price@10"
+F 8 "1" H 0   0   50  0001 C CNN "bom_1"
+F 9 "1" H 0   0   50  0001 C CNN "bom_2"
+F 10 "1" H 0   0   50  0001 C CNN "bom_3"
 	1    10100 2300
 	0    1    1    0   
 $EndComp
@@ -1482,6 +1617,9 @@ F 4 "CC0603KPX7R7BB104" H 0   0   50  0001 C CNN "PartNumber"
 F 5 "311-1335-1-ND" H 0   0   50  0001 C CNN "digikey"
 F 6 "CAP CER 0.1UF 16V X7R 0603 " H 0   0   50  0001 C CNN "Description"
 F 7 "0.05800" H 0   0   50  0001 C CNN "price@10"
+F 8 "1" H 0   0   50  0001 C CNN "bom_1"
+F 9 "1" H 0   0   50  0001 C CNN "bom_2"
+F 10 "1" H 0   0   50  0001 C CNN "bom_3"
 	1    6750 2250
 	0    1    1    0   
 $EndComp

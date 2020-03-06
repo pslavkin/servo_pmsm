@@ -48,6 +48,7 @@ I'll let pins to aquire and filter it.
 - :heavy_check_mark:    moving ethernet connector to right and remove 15vh->5vh and debuh
 - :heavy_check_mark:    ronting DONE!!! begin to improve nets..
 - :heavy_check_mark:    Gerbers READY.. leaving Moldova...
+- :heavy_check_mark:    Gerbers RELOADED from Bariloche
  
 
 ## Welcome back Moldova 3.0
@@ -106,10 +107,13 @@ first pic, easy, doesn't it?
 <img src="doc/pics/layout7_back.jpg" width="400"/>
 <img src="doc/pics/layout8.jpg" width="400"/>
 <img src="doc/pics/layout8_case.jpg" width="400"/>
+<img src="doc/pics/layout9.jpg" width="400"/>
+<img src="doc/pics/layout9_back.jpg" width="400"/>
 
 ## Nets plane 2d and 3d nets
 <img src="doc/pics/nets2d_1.png" width="400"/>
 <img src="doc/pics/nets3d_1.png" width="400"/>
+<img src="doc/pics/nets2d_2.png" width="400"/>
 
 
 ## Video 3d rotating PCB
@@ -138,6 +142,8 @@ first pic, easy, doesn't it?
 <img src="doc/pics/servo-17.jpg" width="800"/>
 <img src="doc/pics/servo-18.jpg" width="800"/>
 <img src="doc/pics/servo-19.jpg" width="800"/>
+<img src="doc/pics/servo-20.jpg" width="800"/>
+<img src="doc/pics/servo-21.jpg" width="800"/>
 
 ## Hierarchy
 

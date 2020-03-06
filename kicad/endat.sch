@@ -30,6 +30,8 @@ F 4 "2/2 Transceiver Full RS422, RS485 16-SSOP " H 0   0   50  0001 C CNN "Descr
 F 5 "SN75C1168DBR" H 0   0   50  0001 C CNN "PartNumber"
 F 6 "296-SN75C1168DBRCT-ND" H 0   0   50  0001 C CNN "digikey"
 F 7 "1.55300" H 0   0   50  0001 C CNN "price@10"
+F 8 "1" H 0   0   50  0001 C CNN "bom_2"
+F 9 "1" H 0   0   50  0001 C CNN "bom_3"
 	1    6000 5100
 	1    0    0    -1  
 $EndComp
@@ -47,6 +49,9 @@ F 4 "CC0603KPX7R7BB104" H 0   0   50  0001 C CNN "PartNumber"
 F 5 "311-1335-1-ND" H 0   0   50  0001 C CNN "digikey"
 F 6 "CAP CER 0.1UF 16V X7R 0603 " H 0   0   50  0001 C CNN "Description"
 F 7 "0.05800" H 0   0   50  0001 C CNN "price@10"
+F 8 "1" H 0   0   50  0001 C CNN "bom_1"
+F 9 "1" H 0   0   50  0001 C CNN "bom_2"
+F 10 "1" H 0   0   50  0001 C CNN "bom_3"
 	1    6350 3300
 	0    1    1    0   
 $EndComp
@@ -63,9 +68,9 @@ Wire Wire Line
 Wire Wire Line
 	6800 5450 6800 5800
 Wire Wire Line
-	6800 5800 5000 5800
+	6800 5800 4900 5800
 Wire Wire Line
-	5000 5800 5000 4450
+	4900 5800 4900 4450
 $Comp
 L servo:SI8662BD U?
 U 1 1 5E3E25E7
@@ -80,29 +85,32 @@ F 4 "General Purpose Digital Isolator 5000Vrms 6 Channel 150Mbps 35kV/µs CMTI 1
 F 5 "SI8662BD-B-IS" H 0   0   50  0001 C CNN "PartNumber"
 F 6 "336-2125-5-ND " H 0   0   50  0001 C CNN "digikey"
 F 7 "2.75000" H 0   0   50  0001 C CNN "price@10"
+F 8 "" H 0   0   50  0001 C CNN "bom_1"
+F 9 "1" H 0   0   50  0001 C CNN "bom_2"
+F 10 "1" H 0   0   50  0001 C CNN "bom_3"
 	1    3600 4350
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
-	5500 4750 5400 4750
+	5500 4750 5300 4750
 Wire Wire Line
-	5400 4750 5400 4400
+	5300 4750 5300 4400
 Wire Wire Line
-	5400 4400 6750 4400
+	5300 4400 6750 4400
 Wire Wire Line
 	6750 4400 6750 4950
 Connection ~ 6750 4950
 Wire Wire Line
-	5500 4850 5300 4850
+	5500 4850 5200 4850
 Wire Wire Line
-	5300 4850 5300 4300
+	5200 4850 5200 4300
 Wire Wire Line
-	5300 4300 6850 4300
+	5200 4300 6850 4300
 Wire Wire Line
 	6850 4300 6850 5050
 Connection ~ 6850 5050
 Wire Wire Line
-	5500 4950 5200 4950
+	5500 4950 5100 4950
 Wire Wire Line
 	6550 4750 6650 4750
 Wire Wire Line
@@ -113,7 +121,7 @@ Wire Wire Line
 	6350 3150 6650 3150
 Wire Wire Line
 	5500 5450 5350 5450
-Text Notes 5100 5300 0    20   ~ 0
+Text Notes 5250 5300 0    20   ~ 0
 free to use\n
 Wire Wire Line
 	8050 5400 8100 5400
@@ -131,6 +139,7 @@ F 4 "12 Position Terminal Block Header, Male Pins, Shrouded (4 Side) 0.150\" (3.
 F 5 "1843114 " H 0   0   50  0001 C CNN "PartNumber"
 F 6 "277-6009-ND " H 0   0   50  0001 C CNN "digikey"
 F 7 "7.50500" H 0   0   50  0001 C CNN "price@10"
+F 8 "1" H 0   0   50  0001 C CNN "bom_3"
 	1    8300 5100
 	1    0    0    -1  
 $EndComp
@@ -154,6 +163,9 @@ F 4 "CC0603KPX7R7BB104" H 0   0   50  0001 C CNN "PartNumber"
 F 5 "311-1335-1-ND" H 0   0   50  0001 C CNN "digikey"
 F 6 "CAP CER 0.1UF 16V X7R 0603 " H 0   0   50  0001 C CNN "Description"
 F 7 "0.05800" H 0   0   50  0001 C CNN "price@10"
+F 8 "1" H 0   0   50  0001 C CNN "bom_1"
+F 9 "1" H 0   0   50  0001 C CNN "bom_2"
+F 10 "1" H 0   0   50  0001 C CNN "bom_3"
 	1    4600 3300
 	0    -1   1    0   
 $EndComp
@@ -168,11 +180,11 @@ Wire Wire Line
 Wire Wire Line
 	4450 3150 4600 3150
 Wire Wire Line
-	5500 5050 5100 5050
+	5500 5050 5000 5050
 Wire Wire Line
-	5100 5050 5100 4350
+	5000 5050 5000 4350
 Wire Wire Line
-	5200 4550 5200 4950
+	5100 4550 5100 4950
 Text Label 4350 4350 0    39   ~ 0
 ENDAT1_CS_H
 Wire Wire Line
@@ -186,7 +198,7 @@ Wire Wire Line
 Wire Wire Line
 	4300 4150 7000 4150
 Wire Wire Line
-	4300 4350 5100 4350
+	4300 4350 5000 4350
 Text GLabel 2750 4350 0    50   Input ~ 0
 ENDAT1_CS
 Text GLabel 2750 4150 0    50   Input ~ 0
@@ -212,11 +224,11 @@ Wire Wire Line
 Wire Wire Line
 	2900 4350 2750 4350
 Wire Wire Line
-	2900 4150 2750 4150
+	2900 4150 2850 4150
 Wire Wire Line
-	4300 4450 5000 4450
+	4300 4450 4900 4450
 Wire Wire Line
-	4300 4550 5200 4550
+	4300 4550 5100 4550
 Wire Wire Line
 	2900 4450 1950 4450
 Wire Wire Line
@@ -238,6 +250,9 @@ F 4 "CC0603KPX7R7BB104" H 0   0   50  0001 C CNN "PartNumber"
 F 5 "311-1335-1-ND" H 0   0   50  0001 C CNN "digikey"
 F 6 "CAP CER 0.1UF 16V X7R 0603 " H 0   0   50  0001 C CNN "Description"
 F 7 "0.05800" H 0   0   50  0001 C CNN "price@10"
+F 8 "1" H 0   0   50  0001 C CNN "bom_1"
+F 9 "1" H 0   0   50  0001 C CNN "bom_2"
+F 10 "1" H 0   0   50  0001 C CNN "bom_3"
 	1    2500 3700
 	0    1    1    0   
 $EndComp
@@ -327,6 +342,8 @@ F 4 "2/2 Transceiver Full RS422, RS485 16-SSOP " H 0   0   50  0001 C CNN "Descr
 F 5 "SN75C1168DBR" H 0   0   50  0001 C CNN "PartNumber"
 F 6 "296-SN75C1168DBRCT-ND" H 0   0   50  0001 C CNN "digikey"
 F 7 "1.55300" H 0   0   50  0001 C CNN "price@10"
+F 8 "1" H 0   0   50  0001 C CNN "bom_2"
+F 9 "1" H 0   0   50  0001 C CNN "bom_3"
 	1    10750 5100
 	-1   0    0    -1  
 $EndComp
@@ -344,6 +361,9 @@ F 4 "CC0603KPX7R7BB104" H 0   0   50  0001 C CNN "PartNumber"
 F 5 "311-1335-1-ND" H 0   0   50  0001 C CNN "digikey"
 F 6 "CAP CER 0.1UF 16V X7R 0603 " H 0   0   50  0001 C CNN "Description"
 F 7 "0.05800" H 0   0   50  0001 C CNN "price@10"
+F 8 "1" H 0   0   50  0001 C CNN "bom_1"
+F 9 "1" H 0   0   50  0001 C CNN "bom_2"
+F 10 "1" H 0   0   50  0001 C CNN "bom_3"
 	1    10400 3300
 	0    -1   1    0   
 $EndComp
@@ -360,9 +380,9 @@ Wire Wire Line
 Wire Wire Line
 	9950 5450 9950 5800
 Wire Wire Line
-	9950 5800 11750 5800
+	9950 5800 11850 5800
 Wire Wire Line
-	11750 5800 11750 4450
+	11850 5800 11850 4450
 $Comp
 L servo:SI8662BD U?
 U 1 1 5F749C33
@@ -377,29 +397,32 @@ F 4 "General Purpose Digital Isolator 5000Vrms 6 Channel 150Mbps 35kV/µs CMTI 1
 F 5 "SI8662BD-B-IS" H 0   0   50  0001 C CNN "PartNumber"
 F 6 "336-2125-5-ND " H 0   0   50  0001 C CNN "digikey"
 F 7 "2.75000" H 0   0   50  0001 C CNN "price@10"
+F 8 "" H 0   0   50  0001 C CNN "bom_1"
+F 9 "1" H 0   0   50  0001 C CNN "bom_2"
+F 10 "1" H 0   0   50  0001 C CNN "bom_3"
 	1    13150 4350
 	-1   0    0    -1  
 $EndComp
 Wire Wire Line
-	11250 4750 11350 4750
+	11250 4750 11450 4750
 Wire Wire Line
-	11350 4750 11350 4400
+	11450 4750 11450 4400
 Wire Wire Line
-	11350 4400 10000 4400
+	11450 4400 10000 4400
 Wire Wire Line
 	10000 4400 10000 4950
 Connection ~ 10000 4950
 Wire Wire Line
-	11250 4850 11450 4850
+	11250 4850 11550 4850
 Wire Wire Line
-	11450 4850 11450 4300
+	11550 4850 11550 4300
 Wire Wire Line
-	11450 4300 9900 4300
+	11550 4300 9900 4300
 Wire Wire Line
 	9900 4300 9900 5050
 Connection ~ 9900 5050
 Wire Wire Line
-	11250 4950 11550 4950
+	11250 4950 11650 4950
 Wire Wire Line
 	10200 4750 10100 4750
 Wire Wire Line
@@ -430,6 +453,9 @@ F 4 "CC0603KPX7R7BB104" H 0   0   50  0001 C CNN "PartNumber"
 F 5 "311-1335-1-ND" H 0   0   50  0001 C CNN "digikey"
 F 6 "CAP CER 0.1UF 16V X7R 0603 " H 0   0   50  0001 C CNN "Description"
 F 7 "0.05800" H 0   0   50  0001 C CNN "price@10"
+F 8 "1" H 0   0   50  0001 C CNN "bom_1"
+F 9 "1" H 0   0   50  0001 C CNN "bom_2"
+F 10 "1" H 0   0   50  0001 C CNN "bom_3"
 	1    12150 3300
 	0    1    1    0   
 $EndComp
@@ -445,17 +471,17 @@ Wire Wire Line
 	12300 3150 12150 3150
 Connection ~ 12150 3150
 Wire Wire Line
-	11250 5050 11650 5050
+	11250 5050 11750 5050
 Wire Wire Line
-	11650 5050 11650 4350
+	11750 5050 11750 4350
 Wire Wire Line
-	11550 4550 11550 4950
+	11650 4550 11650 4950
 Text Label 12400 4350 2    39   ~ 0
 ENDAT2_CS_H
 Wire Wire Line
 	12450 4150 9750 4150
 Wire Wire Line
-	12450 4350 11650 4350
+	12450 4350 11750 4350
 Text GLabel 14000 4350 2    50   Input ~ 0
 ENDAT2_CS
 Text GLabel 14000 4150 2    50   Input ~ 0
@@ -481,11 +507,11 @@ Wire Wire Line
 Wire Wire Line
 	13850 4350 14000 4350
 Wire Wire Line
-	13850 4150 14000 4150
+	13850 4150 13900 4150
 Wire Wire Line
-	12450 4450 11750 4450
+	12450 4450 11850 4450
 Wire Wire Line
-	12450 4550 11550 4550
+	12450 4550 11650 4550
 Wire Wire Line
 	13850 4450 14800 4450
 Wire Wire Line
@@ -507,6 +533,9 @@ F 4 "CC0603KPX7R7BB104" H 0   0   50  0001 C CNN "PartNumber"
 F 5 "311-1335-1-ND" H 0   0   50  0001 C CNN "digikey"
 F 6 "CAP CER 0.1UF 16V X7R 0603 " H 0   0   50  0001 C CNN "Description"
 F 7 "0.05800" H 0   0   50  0001 C CNN "price@10"
+F 8 "1" H 0   0   50  0001 C CNN "bom_1"
+F 9 "1" H 0   0   50  0001 C CNN "bom_2"
+F 10 "1" H 0   0   50  0001 C CNN "bom_3"
 	1    14250 3700
 	0    -1   1    0   
 $EndComp
@@ -597,6 +626,9 @@ F 4 "10 kOhms ±5% 0.1W, 1/10W Chip Resistor 0603 (1608 Metric) Moisture Resista
 F 5 "RC0603JR-0710KL" H 0   0   50  0001 C CNN "PartNumber"
 F 6 "311-10KGRCT-ND" H 0   0   50  0001 C CNN "digikey"
 F 7 "0.01900" H 0   0   50  0001 C CNN "price@10"
+F 8 "1" H 0   0   50  0001 C CNN "bom_1"
+F 9 "1" H 0   0   50  0001 C CNN "bom_2"
+F 10 "1" H 0   0   50  0001 C CNN "bom_3"
 	1    7300 3250
 	1    0    0    -1  
 $EndComp
@@ -615,6 +647,9 @@ F 4 "1 kOhms ±5% 0.1W, 1/10W Chip Resistor 0603 (1608 Metric) Moisture Resistan
 F 5 "RC0603JR-071KL" H 0   0   50  0001 C CNN "PartNumber"
 F 6 "311-1.0KGRCT-ND" H 0   0   50  0001 C CNN "digikey"
 F 7 "0.01900" H 0   0   50  0001 C CNN "price@10"
+F 8 "1" H 0   0   50  0001 C CNN "bom_1"
+F 9 "1" H 0   0   50  0001 C CNN "bom_2"
+F 10 "1" H 0   0   50  0001 C CNN "bom_3"
 	1    7300 3450
 	1    0    0    -1  
 $EndComp
@@ -633,6 +668,9 @@ F 4 "10 kOhms ±5% 0.1W, 1/10W Chip Resistor 0603 (1608 Metric) Moisture Resista
 F 5 "RC0603JR-0710KL" H 0   0   50  0001 C CNN "PartNumber"
 F 6 "311-10KGRCT-ND" H 0   0   50  0001 C CNN "digikey"
 F 7 "0.01900" H 0   0   50  0001 C CNN "price@10"
+F 8 "1" H 0   0   50  0001 C CNN "bom_1"
+F 9 "1" H 0   0   50  0001 C CNN "bom_2"
+F 10 "1" H 0   0   50  0001 C CNN "bom_3"
 	1    7300 3650
 	1    0    0    -1  
 $EndComp
@@ -657,6 +695,9 @@ F 4 "10 kOhms ±5% 0.1W, 1/10W Chip Resistor 0603 (1608 Metric) Moisture Resista
 F 5 "RC0603JR-0710KL" H 0   0   50  0001 C CNN "PartNumber"
 F 6 "311-10KGRCT-ND" H 0   0   50  0001 C CNN "digikey"
 F 7 "0.01900" H 0   0   50  0001 C CNN "price@10"
+F 8 "1" H 0   0   50  0001 C CNN "bom_1"
+F 9 "1" H 0   0   50  0001 C CNN "bom_2"
+F 10 "1" H 0   0   50  0001 C CNN "bom_3"
 	1    7650 3250
 	1    0    0    -1  
 $EndComp
@@ -675,6 +716,9 @@ F 4 "1 kOhms ±5% 0.1W, 1/10W Chip Resistor 0603 (1608 Metric) Moisture Resistan
 F 5 "RC0603JR-071KL" H 0   0   50  0001 C CNN "PartNumber"
 F 6 "311-1.0KGRCT-ND" H 0   0   50  0001 C CNN "digikey"
 F 7 "0.01900" H 0   0   50  0001 C CNN "price@10"
+F 8 "1" H 0   0   50  0001 C CNN "bom_1"
+F 9 "1" H 0   0   50  0001 C CNN "bom_2"
+F 10 "1" H 0   0   50  0001 C CNN "bom_3"
 	1    7650 3450
 	1    0    0    -1  
 $EndComp
@@ -693,6 +737,9 @@ F 4 "10 kOhms ±5% 0.1W, 1/10W Chip Resistor 0603 (1608 Metric) Moisture Resista
 F 5 "RC0603JR-0710KL" H 0   0   50  0001 C CNN "PartNumber"
 F 6 "311-10KGRCT-ND" H 0   0   50  0001 C CNN "digikey"
 F 7 "0.01900" H 0   0   50  0001 C CNN "price@10"
+F 8 "1" H 0   0   50  0001 C CNN "bom_1"
+F 9 "1" H 0   0   50  0001 C CNN "bom_2"
+F 10 "1" H 0   0   50  0001 C CNN "bom_3"
 	1    7650 3650
 	1    0    0    -1  
 $EndComp
@@ -702,20 +749,11 @@ Connection ~ 7650 3550
 Wire Wire Line
 	7450 3350 7650 3350
 Connection ~ 7650 3350
-NoConn ~ 13850 4250
-NoConn ~ 13850 4650
 NoConn ~ 12450 4250
-NoConn ~ 12450 4650
 NoConn ~ 4300 4250
-NoConn ~ 4300 4650
-NoConn ~ 2900 4250
 NoConn ~ 2900 4650
 NoConn ~ 5500 5150
-NoConn ~ 5500 5250
-NoConn ~ 5500 5350
 NoConn ~ 11250 5150
-NoConn ~ 11250 5250
-NoConn ~ 11250 5350
 $Comp
 L servo:R_Small R?
 U 1 1 5E3D483F
@@ -731,6 +769,9 @@ F 4 "10 kOhms ±5% 0.1W, 1/10W Chip Resistor 0603 (1608 Metric) Moisture Resista
 F 5 "RC0603JR-0710KL" H 0   0   50  0001 C CNN "PartNumber"
 F 6 "311-10KGRCT-ND" H 0   0   50  0001 C CNN "digikey"
 F 7 "0.01900" H 0   0   50  0001 C CNN "price@10"
+F 8 "1" H 0   0   50  0001 C CNN "bom_1"
+F 9 "1" H 0   0   50  0001 C CNN "bom_2"
+F 10 "1" H 0   0   50  0001 C CNN "bom_3"
 	1    9400 3250
 	-1   0    0    -1  
 $EndComp
@@ -749,6 +790,9 @@ F 4 "1 kOhms ±5% 0.1W, 1/10W Chip Resistor 0603 (1608 Metric) Moisture Resistan
 F 5 "RC0603JR-071KL" H 0   0   50  0001 C CNN "PartNumber"
 F 6 "311-1.0KGRCT-ND" H 0   0   50  0001 C CNN "digikey"
 F 7 "0.01900" H 0   0   50  0001 C CNN "price@10"
+F 8 "1" H 0   0   50  0001 C CNN "bom_1"
+F 9 "1" H 0   0   50  0001 C CNN "bom_2"
+F 10 "1" H 0   0   50  0001 C CNN "bom_3"
 	1    9400 3450
 	-1   0    0    -1  
 $EndComp
@@ -767,6 +811,9 @@ F 4 "10 kOhms ±5% 0.1W, 1/10W Chip Resistor 0603 (1608 Metric) Moisture Resista
 F 5 "RC0603JR-0710KL" H 0   0   50  0001 C CNN "PartNumber"
 F 6 "311-10KGRCT-ND" H 0   0   50  0001 C CNN "digikey"
 F 7 "0.01900" H 0   0   50  0001 C CNN "price@10"
+F 8 "1" H 0   0   50  0001 C CNN "bom_1"
+F 9 "1" H 0   0   50  0001 C CNN "bom_2"
+F 10 "1" H 0   0   50  0001 C CNN "bom_3"
 	1    9400 3650
 	-1   0    0    -1  
 $EndComp
@@ -791,6 +838,9 @@ F 4 "10 kOhms ±5% 0.1W, 1/10W Chip Resistor 0603 (1608 Metric) Moisture Resista
 F 5 "RC0603JR-0710KL" H 0   0   50  0001 C CNN "PartNumber"
 F 6 "311-10KGRCT-ND" H 0   0   50  0001 C CNN "digikey"
 F 7 "0.01900" H 0   0   50  0001 C CNN "price@10"
+F 8 "1" H 0   0   50  0001 C CNN "bom_1"
+F 9 "1" H 0   0   50  0001 C CNN "bom_2"
+F 10 "1" H 0   0   50  0001 C CNN "bom_3"
 	1    9050 3250
 	-1   0    0    -1  
 $EndComp
@@ -809,6 +859,9 @@ F 4 "1 kOhms ±5% 0.1W, 1/10W Chip Resistor 0603 (1608 Metric) Moisture Resistan
 F 5 "RC0603JR-071KL" H 0   0   50  0001 C CNN "PartNumber"
 F 6 "311-1.0KGRCT-ND" H 0   0   50  0001 C CNN "digikey"
 F 7 "0.01900" H 0   0   50  0001 C CNN "price@10"
+F 8 "1" H 0   0   50  0001 C CNN "bom_1"
+F 9 "1" H 0   0   50  0001 C CNN "bom_2"
+F 10 "1" H 0   0   50  0001 C CNN "bom_3"
 	1    9050 3450
 	-1   0    0    -1  
 $EndComp
@@ -827,6 +880,9 @@ F 4 "10 kOhms ±5% 0.1W, 1/10W Chip Resistor 0603 (1608 Metric) Moisture Resista
 F 5 "RC0603JR-0710KL" H 0   0   50  0001 C CNN "PartNumber"
 F 6 "311-10KGRCT-ND" H 0   0   50  0001 C CNN "digikey"
 F 7 "0.01900" H 0   0   50  0001 C CNN "price@10"
+F 8 "1" H 0   0   50  0001 C CNN "bom_1"
+F 9 "1" H 0   0   50  0001 C CNN "bom_2"
+F 10 "1" H 0   0   50  0001 C CNN "bom_3"
 	1    9050 3650
 	-1   0    0    -1  
 $EndComp
@@ -1025,7 +1081,7 @@ Wire Wire Line
 	12400 4750 12400 6150
 Connection ~ 11400 6150
 Wire Wire Line
-	12150 3150 10400 3150
+	12150 3150 11350 3150
 Connection ~ 10400 3150
 Wire Wire Line
 	12150 3500 12150 3750
@@ -1040,7 +1096,7 @@ Wire Wire Line
 	4600 3750 4600 3500
 Connection ~ 6350 3750
 Wire Wire Line
-	4600 3150 6350 3150
+	4600 3150 5400 3150
 Connection ~ 4600 3150
 Connection ~ 6350 3150
 Wire Wire Line
@@ -1086,6 +1142,8 @@ F 4 "jumper smd bridge using tin" H -400 100 50  0001 C CNN "Description"
 F 5 "-" H -400 100 50  0001 C CNN "PartNumber"
 F 6 "-" H -400 100 50  0001 C CNN "digikey"
 F 7 "0" H -400 100 50  0001 C CNN "price@10"
+F 8 "" H 0   0   50  0001 C CNN "bom_1"
+F 9 "" H 0   0   50  0001 C CNN "bom_2"
 	1    2900 5700
 	-1   0    0    1   
 $EndComp
@@ -1104,6 +1162,8 @@ F 4 "jumper smd bridge using tin" H -800 100 50  0001 C CNN "Description"
 F 5 "-" H -800 100 50  0001 C CNN "PartNumber"
 F 6 "-" H -800 100 50  0001 C CNN "digikey"
 F 7 "0" H -800 100 50  0001 C CNN "price@10"
+F 8 "" H 0   0   50  0001 C CNN "bom_1"
+F 9 "" H 0   0   50  0001 C CNN "bom_2"
 	1    2500 5700
 	-1   0    0    1   
 $EndComp
@@ -1131,6 +1191,8 @@ F 4 "jumper smd bridge using tin" H 10550 100 50  0001 C CNN "Description"
 F 5 "-" H 10550 100 50  0001 C CNN "PartNumber"
 F 6 "-" H 10550 100 50  0001 C CNN "digikey"
 F 7 "0" H 10550 100 50  0001 C CNN "price@10"
+F 8 "" H 0   0   50  0001 C CNN "bom_1"
+F 9 "" H 0   0   50  0001 C CNN "bom_2"
 	1    13850 5700
 	-1   0    0    1   
 $EndComp
@@ -1153,6 +1215,8 @@ F 4 "jumper smd bridge using tin" H 10950 100 50  0001 C CNN "Description"
 F 5 "-" H 10950 100 50  0001 C CNN "PartNumber"
 F 6 "-" H 10950 100 50  0001 C CNN "digikey"
 F 7 "0" H 10950 100 50  0001 C CNN "price@10"
+F 8 "" H 0   0   50  0001 C CNN "bom_1"
+F 9 "" H 0   0   50  0001 C CNN "bom_2"
 	1    14250 5700
 	-1   0    0    1   
 $EndComp
@@ -1161,4 +1225,68 @@ Wire Wire Line
 Connection ~ 14050 5700
 Wire Wire Line
 	14350 5700 14450 5700
+Wire Wire Line
+	5500 5350 5350 5350
+Wire Wire Line
+	5350 5350 5350 5450
+Connection ~ 5350 5450
+Wire Wire Line
+	11250 5350 11400 5350
+Wire Wire Line
+	11400 5350 11400 5450
+Connection ~ 11400 5450
+Wire Wire Line
+	4300 4650 4350 4650
+Wire Wire Line
+	4350 4650 4350 4750
+Connection ~ 4350 4750
+Wire Wire Line
+	2900 4250 2850 4250
+Wire Wire Line
+	2850 4250 2850 4150
+Connection ~ 2850 4150
+Wire Wire Line
+	2850 4150 2750 4150
+Text Notes 2600 4250 0    20   ~ 0
+free to use\n
+Text Notes 4450 4250 0    20   ~ 0
+free to use\n
+Text Notes 4400 4700 0    20   ~ 0
+free to use\n
+Text Notes 2650 4700 0    20   ~ 0
+free to use\n
+Text Notes 12100 4650 0    20   ~ 0
+free to use\n
+Wire Wire Line
+	12450 4650 12400 4650
+Wire Wire Line
+	12400 4650 12400 4750
+Connection ~ 12400 4750
+Text Notes 14000 4650 0    20   ~ 0
+free to use\n
+Text Notes 14000 4250 0    20   ~ 0
+free to use\n
+Text Notes 12200 4250 0    20   ~ 0
+free to use\n
+Wire Wire Line
+	13850 4250 13900 4250
+Wire Wire Line
+	13900 4250 13900 4150
+Connection ~ 13900 4150
+Wire Wire Line
+	13900 4150 14000 4150
+Wire Wire Line
+	11250 5250 11350 5250
+Wire Wire Line
+	11350 5250 11350 3150
+Connection ~ 11350 3150
+Wire Wire Line
+	11350 3150 10400 3150
+Wire Wire Line
+	5500 5250 5400 5250
+Wire Wire Line
+	5400 5250 5400 3150
+Connection ~ 5400 3150
+Wire Wire Line
+	5400 3150 6350 3150
 $EndSCHEMATC

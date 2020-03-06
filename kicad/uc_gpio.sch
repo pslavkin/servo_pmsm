@@ -566,6 +566,9 @@ F 3 "../doc/datasheets/tms320f28388d_datasheet.pdf" H 5900 6300 50  0001 C CNN
 F 4 "TMS320F28388DZWTS" V 4300 3200 60  0001 C CNN "PartNumber"
 F 5 "32-bit MCU with connectivity manager, 2x C28x+CLA CPU, 1.5 MB flash, FPU64, CLB, Ethernet, EtherCAT" H 0   0   50  0001 C CNN "Description"
 F 6 "14.96" H 0   0   50  0001 C CNN "price@10"
+F 7 "1" H 0   0   50  0001 C CNN "bom_1"
+F 8 "1" H 0   0   50  0001 C CNN "bom_2"
+F 9 "1" H 0   0   50  0001 C CNN "bom_3"
 	2    5900 6300
 	1    0    0    -1  
 $EndComp

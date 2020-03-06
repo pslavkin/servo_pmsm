@@ -775,15 +775,15 @@ SLOT 'I' anyware\n\n\n
 $Comp
 L servo:high_voltage ref1302
 U 1 1 5E38C9D6
-P 13200 3450
-F 0 "ref1302" V 13110 3450 50  0001 C CNN
-F 1 "high_voltage" V 13290 3450 50  0001 C CNN
-F 2 "servo:Symbol_Highvoltage_Type1_CopperTop_Small" H 13400 3950 50  0001 C CNN
-F 3 "~" H 13600 3350 50  0001 C CNN
-F 4 "logo high voltage" H 0   0   50  0001 C CNN "Description"
-F 5 "-" H 0   0   50  0001 C CNN "PartNumber"
-F 6 "0" H 0   0   50  0001 C CNN "price@10"
-	1    13200 3450
+P 13200 3600
+F 0 "ref1302" V 13110 3600 50  0001 C CNN
+F 1 "high_voltage" V 13290 3600 50  0001 C CNN
+F 2 "servo:Symbol_Highvoltage_Type1_CopperTop_Small" H 13400 4100 50  0001 C CNN
+F 3 "~" H 13600 3500 50  0001 C CNN
+F 4 "logo high voltage" H 0   150 50  0001 C CNN "Description"
+F 5 "-" H 0   150 50  0001 C CNN "PartNumber"
+F 6 "0" H 0   150 50  0001 C CNN "price@10"
+	1    13200 3600
 	1    0    0    -1  
 $EndComp
 $Comp
@@ -819,7 +819,7 @@ L servo:logo logo1302
 U 1 1 5E399FD9
 P 13400 2950
 F 0 "logo1302" H 13400 3150 50  0001 C CNN
-F 1 "pslavkin" H 13728 2950 50  0000 L CNN
+F 1 "pslavkin_bottom" H 13728 2950 50  0000 L CNN
 F 2 "servo:logo_pslavkin" H 13400 2950 50  0001 C CNN
 F 3 "~" H 13400 2950 50  0001 C CNN
 F 4 "logo pslavkin" H 0   0   50  0001 C CNN "Description"
@@ -845,43 +845,43 @@ $EndComp
 $Comp
 L servo:high_voltage ref1303
 U 1 1 5E39D206
-P 13350 3450
-F 0 "ref1303" V 13260 3450 50  0001 C CNN
-F 1 "high_voltage" V 13440 3450 50  0001 C CNN
-F 2 "servo:Symbol_Highvoltage_Type1_CopperTop_Small" H 13550 3950 50  0001 C CNN
-F 3 "~" H 13750 3350 50  0001 C CNN
-F 4 "logo high voltage" H 0   0   50  0001 C CNN "Description"
-F 5 "-" H 0   0   50  0001 C CNN "PartNumber"
-F 6 "0" H 0   0   50  0001 C CNN "price@10"
-	1    13350 3450
+P 13350 3600
+F 0 "ref1303" V 13260 3600 50  0001 C CNN
+F 1 "high_voltage" V 13440 3600 50  0001 C CNN
+F 2 "servo:Symbol_Highvoltage_Type1_CopperTop_Small" H 13550 4100 50  0001 C CNN
+F 3 "~" H 13750 3500 50  0001 C CNN
+F 4 "logo high voltage" H 0   150 50  0001 C CNN "Description"
+F 5 "-" H 0   150 50  0001 C CNN "PartNumber"
+F 6 "0" H 0   150 50  0001 C CNN "price@10"
+	1    13350 3600
 	1    0    0    -1  
 $EndComp
 $Comp
 L servo:high_voltage ref1304
 U 1 1 5E39D283
-P 13500 3450
-F 0 "ref1304" V 13410 3450 50  0001 C CNN
-F 1 "high_voltage" V 13590 3450 50  0001 C CNN
-F 2 "servo:Symbol_Highvoltage_Type1_CopperTop_Small" H 13700 3950 50  0001 C CNN
-F 3 "~" H 13900 3350 50  0001 C CNN
-F 4 "logo high voltage" H 0   0   50  0001 C CNN "Description"
-F 5 "-" H 0   0   50  0001 C CNN "PartNumber"
-F 6 "0" H 0   0   50  0001 C CNN "price@10"
-	1    13500 3450
+P 13500 3600
+F 0 "ref1304" V 13410 3600 50  0001 C CNN
+F 1 "high_voltage" V 13590 3600 50  0001 C CNN
+F 2 "servo:Symbol_Highvoltage_Type1_CopperTop_Small" H 13700 4100 50  0001 C CNN
+F 3 "~" H 13900 3500 50  0001 C CNN
+F 4 "logo high voltage" H 0   150 50  0001 C CNN "Description"
+F 5 "-" H 0   150 50  0001 C CNN "PartNumber"
+F 6 "0" H 0   150 50  0001 C CNN "price@10"
+	1    13500 3600
 	1    0    0    -1  
 $EndComp
 $Comp
 L servo:high_voltage ref1305
 U 1 1 5E39D300
-P 13650 3450
-F 0 "ref1305" V 13560 3450 50  0001 C CNN
-F 1 "high_voltage" V 13740 3450 50  0001 C CNN
-F 2 "servo:Symbol_Highvoltage_Type1_CopperTop_Small" H 13850 3950 50  0001 C CNN
-F 3 "~" H 14050 3350 50  0001 C CNN
-F 4 "logo high voltage" H 0   0   50  0001 C CNN "Description"
-F 5 "-" H 0   0   50  0001 C CNN "PartNumber"
-F 6 "0" H 0   0   50  0001 C CNN "price@10"
-	1    13650 3450
+P 13650 3600
+F 0 "ref1305" V 13560 3600 50  0001 C CNN
+F 1 "high_voltage" V 13740 3600 50  0001 C CNN
+F 2 "servo:Symbol_Highvoltage_Type1_CopperTop_Small" H 13850 4100 50  0001 C CNN
+F 3 "~" H 14050 3500 50  0001 C CNN
+F 4 "logo high voltage" H 0   150 50  0001 C CNN "Description"
+F 5 "-" H 0   150 50  0001 C CNN "PartNumber"
+F 6 "0" H 0   150 50  0001 C CNN "price@10"
+	1    13650 3600
 	1    0    0    -1  
 $EndComp
 $Comp
@@ -941,20 +941,6 @@ F 6 "0" H 0   0   50  0001 C CNN "price@10"
 	1    0    0    -1  
 $EndComp
 $Comp
-L servo:logo logo1304
-U 1 1 5E3C6E44
-P 13250 5250
-F 0 "logo1304" H 13250 5450 50  0001 C CNN
-F 1 "GNU" H 13578 5250 50  0000 L CNN
-F 2 "Symbol:Symbol_GNU-Logo_SilkscreenTop" H 13250 5250 50  0001 C CNN
-F 3 "~" H 13250 5250 50  0001 C CNN
-F 4 "logo gnu" H 0   0   50  0001 C CNN "Description"
-F 5 "-" H 0   0   50  0001 C CNN "PartNumber"
-F 6 "0" H 0   0   50  0001 C CNN "price@10"
-	1    13250 5250
-	1    0    0    1   
-$EndComp
-$Comp
 L servo:logo logo1306
 U 1 1 5E5637A5
 P 13250 5900
@@ -980,6 +966,20 @@ F 4 "stackup" H -150 3250 50  0001 C CNN "Description"
 F 5 "-" H -150 3250 50  0001 C CNN "PartNumber"
 F 6 "0" H -150 3250 50  0001 C CNN "price@10"
 	1    13250 6200
+	1    0    0    -1  
+$EndComp
+$Comp
+L servo:logo logo1308
+U 1 1 5E66A127
+P 13400 3200
+F 0 "logo1308" H 13400 3400 50  0001 C CNN
+F 1 "pslavkin_top" H 13728 3200 50  0000 L CNN
+F 2 "servo:logo_pslavkin" H 13400 3200 50  0001 C CNN
+F 3 "~" H 13400 3200 50  0001 C CNN
+F 4 "logo pslavkin" H 0   250 50  0001 C CNN "Description"
+F 5 "-" H 0   250 50  0001 C CNN "PartNumber"
+F 6 "0" H 0   250 50  0001 C CNN "price@10"
+	1    13400 3200
 	1    0    0    -1  
 $EndComp
 $EndSCHEMATC

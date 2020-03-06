@@ -282,6 +282,9 @@ F 4 "311-1335-1-ND" H 0   0   50  0001 C CNN "digikey"
 F 5 "CAP CER 0.1UF 16V X7R 0603 " H 0   0   50  0001 C CNN "Description"
 F 6 "CC0603KPX7R7BB104" H 0   0   50  0001 C CNN "PartNumber"
 F 7 "0.05800" H 0   0   50  0001 C CNN "price@10"
+F 8 "1" H 0   0   50  0001 C CNN "bom_1"
+F 9 "1" H 0   0   50  0001 C CNN "bom_2"
+F 10 "1" H 0   0   50  0001 C CNN "bom_3"
 	1    7850 5700
 	0    -1   -1   0   
 $EndComp
@@ -297,6 +300,9 @@ F 4 "311-1335-1-ND" H 0   0   50  0001 C CNN "digikey"
 F 5 "CAP CER 0.1UF 16V X7R 0603 " H 0   0   50  0001 C CNN "Description"
 F 6 "CC0603KPX7R7BB104" H 0   0   50  0001 C CNN "PartNumber"
 F 7 "0.05800" H 0   0   50  0001 C CNN "price@10"
+F 8 "1" H 0   0   50  0001 C CNN "bom_1"
+F 9 "1" H 0   0   50  0001 C CNN "bom_2"
+F 10 "1" H 0   0   50  0001 C CNN "bom_3"
 	1    12750 4850
 	0    -1   -1   0   
 $EndComp
@@ -311,6 +317,9 @@ F 3 "../doc/datasheets/tms320f28388d_datasheet.pdf" H 6300 4300 50  0001 C CNN
 F 4 "TMS320F28388DZWTS" H 4700 -1800 60  0001 C CNN "PartNumber"
 F 5 "32-bit MCU with connectivity manager, 2x C28x+CLA CPU, 1.5 MB flash, FPU64, CLB, Ethernet, EtherCAT" H 0   0   50  0001 C CNN "Description"
 F 6 "14.96" H 0   0   50  0001 C CNN "price@10"
+F 7 "1" H 0   0   50  0001 C CNN "bom_1"
+F 8 "1" H 0   0   50  0001 C CNN "bom_2"
+F 9 "1" H 0   0   50  0001 C CNN "bom_3"
 	4    6300 4300
 	1    0    0    -1  
 $EndComp
@@ -471,7 +480,7 @@ $EndComp
 Wire Wire Line
 	12350 4450 12350 4650
 Wire Wire Line
-	11650 4450 11650 4650
+	11700 4450 11700 4650
 Text Notes 11750 2300 0    84   ~ 0
 Place near U1
 Wire Wire Line
@@ -479,40 +488,37 @@ Wire Wire Line
 Wire Wire Line
 	12400 3450 12400 3550
 Wire Wire Line
-	11650 2950 11650 3150
+	11200 2950 11200 3150
 Wire Wire Line
-	11650 3450 11650 3550
+	11200 3450 11200 3550
 Wire Wire Line
-	11600 5950 11600 5850
+	11450 6000 11450 5900
 Wire Wire Line
-	11650 2950 11650 2850
+	11200 2950 11200 2850
 Wire Wire Line
-	11800 2950 11650 2950
+	11450 2950 11200 2950
 Wire Wire Line
 	12400 2950 12200 2950
 Wire Wire Line
 	12400 2850 12400 2950
 Wire Wire Line
-	11600 5950 11800 5950
+	11450 6000 11550 6000
 Wire Wire Line
-	12350 5950 12200 5950
+	12650 6000 12500 6000
 Wire Wire Line
-	12350 5850 12350 5950
+	12650 5900 12650 6000
 Wire Wire Line
-	12350 5950 12350 6050
+	12650 6000 12650 6100
 Wire Wire Line
-	11650 4450 11650 4350
-Wire Wire Line
-	11800 4450 11650 4450
+	11200 4450 11200 4350
 Wire Wire Line
 	12350 4450 12200 4450
 Wire Wire Line
 	12350 4350 12350 4450
 Text Notes 11500 2150 0    120  ~ 0
 Ferrite Beads
-Connection ~ 11650 4450
-Connection ~ 11650 2950
-Connection ~ 12350 5950
+Connection ~ 11200 2950
+Connection ~ 12650 6000
 Connection ~ 12350 4450
 Connection ~ 12400 2950
 $Comp
@@ -527,6 +533,9 @@ F 4 "50 Ohms @ 100MHz 1 Power Line Ferrite Bead 1206 (3216 Metric) 3A 30mOhm " H
 F 5 "PE-1206PFB500ST" H 0   0   50  0001 C CNN "PartNumber"
 F 6 "553-2403-1-ND" H 0   0   50  0001 C CNN "digikey"
 F 7 "0.14900" H 0   0   50  0001 C CNN "price@10"
+F 8 "1" H 0   0   50  0001 C CNN "bom_1"
+F 9 "1" H 0   0   50  0001 C CNN "bom_2"
+F 10 "1" H 0   0   50  0001 C CNN "bom_3"
 	1    12000 4450
 	1    0    0    -1  
 $EndComp
@@ -542,37 +551,46 @@ F 4 "50 Ohms @ 100MHz 1 Power Line Ferrite Bead 1206 (3216 Metric) 3A 30mOhm " H
 F 5 "PE-1206PFB500ST" H 0   0   50  0001 C CNN "PartNumber"
 F 6 "553-2403-1-ND" H 0   0   50  0001 C CNN "digikey"
 F 7 "0.14900" H 0   0   50  0001 C CNN "price@10"
+F 8 "1" H 0   0   50  0001 C CNN "bom_1"
+F 9 "1" H 0   0   50  0001 C CNN "bom_2"
+F 10 "1" H 0   0   50  0001 C CNN "bom_3"
 	1    12000 2950
 	1    0    0    -1  
 $EndComp
 $Comp
 L servo:Ferrite_Bead L503
 U 1 1 5DF0B54C
-P 12000 5950
-F 0 "L503" H 12000 6085 20  0000 C CNN
-F 1 "120 ohm@100mHz" H 12000 6042 20  0000 C CNN
-F 2 "servo:L_1206_3216Metric_Pad1.42x1.75mm_HandSolder" H 11850 5950 60  0001 C CNN
-F 3 "" H 11950 6050 60  0001 C CNN
-F 4 "120 Ohms @ 100MHz 1 Power Line Ferrite Bead 1206 (3216 Metric) 3A 30mOhm " H 0   0   50  0001 C CNN "Description"
-F 5 "PE-1206PFB121ST" H 0   0   50  0001 C CNN "PartNumber"
-F 6 "553-2402-1-ND" H 0   0   50  0001 C CNN "digikey"
-F 7 "0.14900" H 0   0   50  0001 C CNN "price@10"
-	1    12000 5950
+P 12300 6000
+F 0 "L503" H 12300 6135 20  0000 C CNN
+F 1 "120 ohm@100mHz" H 12300 6092 20  0000 C CNN
+F 2 "servo:L_1206_3216Metric_Pad1.42x1.75mm_HandSolder" H 12150 6000 60  0001 C CNN
+F 3 "" H 12250 6100 60  0001 C CNN
+F 4 "120 Ohms @ 100MHz 1 Power Line Ferrite Bead 1206 (3216 Metric) 3A 30mOhm " H 300 50  50  0001 C CNN "Description"
+F 5 "PE-1206PFB121ST" H 300 50  50  0001 C CNN "PartNumber"
+F 6 "553-2402-1-ND" H 300 50  50  0001 C CNN "digikey"
+F 7 "0.14900" H 300 50  50  0001 C CNN "price@10"
+F 8 "1" H 0   0   50  0001 C CNN "bom_1"
+F 9 "1" H 0   0   50  0001 C CNN "bom_2"
+F 10 "1" H 0   0   50  0001 C CNN "bom_3"
+	1    12300 6000
 	1    0    0    -1  
 $EndComp
 $Comp
 L servo:Capacitor C530
 U 1 1 5DF0B554
-P 12350 6250
-F 0 "C530" V 12422 6140 20  0000 R CNN
-F 1 "10uF" V 12379 6140 20  0000 R CNN
-F 2 "servo:C_0603_1608Metric" H 12350 6150 60  0001 C CNN
-F 3 "" H 12350 6250 60  0000 C CNN
-F 4 "490-10475-1-ND" H 0   0   50  0001 C CNN "digikey"
-F 5 "GRM188R61A106ME69D " H 0   0   50  0001 C CNN "PartNumber"
-F 6 "10µF ±20% 10V Ceramic Capacitor X5R 0603 (1608 Metric) " H 0   0   50  0001 C CNN "Description"
-F 7 "0.15400" H 0   0   50  0001 C CNN "price@10"
-	1    12350 6250
+P 12650 6300
+F 0 "C530" V 12722 6190 20  0000 R CNN
+F 1 "10uF" V 12679 6190 20  0000 R CNN
+F 2 "servo:C_0603_1608Metric" H 12650 6200 60  0001 C CNN
+F 3 "" H 12650 6300 60  0000 C CNN
+F 4 "490-10475-1-ND" H 300 50  50  0001 C CNN "digikey"
+F 5 "GRM188R61A106ME69D " H 300 50  50  0001 C CNN "PartNumber"
+F 6 "10µF ±20% 10V Ceramic Capacitor X5R 0603 (1608 Metric) " H 300 50  50  0001 C CNN "Description"
+F 7 "0.15400" H 300 50  50  0001 C CNN "price@10"
+F 8 "1" H 0   0   50  0001 C CNN "bom_1"
+F 9 "1" H 0   0   50  0001 C CNN "bom_2"
+F 10 "1" H 0   0   50  0001 C CNN "bom_3"
+	1    12650 6300
 	0    -1   -1   0   
 $EndComp
 $Comp
@@ -587,6 +605,9 @@ F 4 "CAP CER 2.2UF 16V X6S 0603 " H 0   0   50  0001 C CNN "Description"
 F 5 "GRT188C81C225KE13D" H 0   0   50  0001 C CNN "PartNumber"
 F 6 "490-12287-1-ND" H 0   0   50  0001 C CNN "digikey"
 F 7 "0.35500" H 0   0   50  0001 C CNN "price@10"
+F 8 "1" H 0   0   50  0001 C CNN "bom_1"
+F 9 "1" H 0   0   50  0001 C CNN "bom_2"
+F 10 "1" H 0   0   50  0001 C CNN "bom_3"
 	1    12400 3250
 	0    1    1    0   
 $EndComp
@@ -602,33 +623,21 @@ F 4 "CAP CER 2.2UF 16V X6S 0603 " H 0   0   50  0001 C CNN "Description"
 F 5 "GRT188C81C225KE13D" H 0   0   50  0001 C CNN "PartNumber"
 F 6 "490-12287-1-ND" H 0   0   50  0001 C CNN "digikey"
 F 7 "0.35500" H 0   0   50  0001 C CNN "price@10"
+F 8 "1" H 0   0   50  0001 C CNN "bom_1"
+F 9 "1" H 0   0   50  0001 C CNN "bom_2"
+F 10 "1" H 0   0   50  0001 C CNN "bom_3"
 	1    12350 4750
-	0    1    1    0   
-$EndComp
-$Comp
-L servo:Capacitor C528
-U 1 1 5DF0B56C
-P 11650 4750
-F 0 "C528" V 11678 4860 20  0000 L CNN
-F 1 "2.2uF" V 11721 4860 20  0000 L CNN
-F 2 "servo:C_0603_1608Metric" H 11650 4650 60  0001 C CNN
-F 3 "" H 11650 4750 60  0000 C CNN
-F 4 "CAP CER 2.2UF 16V X6S 0603 " H 0   0   50  0001 C CNN "Description"
-F 5 "GRT188C81C225KE13D" H 0   0   50  0001 C CNN "PartNumber"
-F 6 "490-12287-1-ND" H 0   0   50  0001 C CNN "digikey"
-F 7 "0.35500" H 0   0   50  0001 C CNN "price@10"
-	1    11650 4750
 	0    1    1    0   
 $EndComp
 $Comp
 L servo:3V3 #PWR0512
 U 1 1 5DF0B583
-P 11650 2850
-F 0 "#PWR0512" H 11655 3060 20  0001 C CNN
-F 1 "3V3" H 11655 3008 30  0000 C CNN
-F 2 "" H 11650 2850 70  0000 C CNN
-F 3 "" H 11650 2850 70  0000 C CNN
-	1    11650 2850
+P 11200 2850
+F 0 "#PWR0512" H 11205 3060 20  0001 C CNN
+F 1 "3V3" H 11205 3008 30  0000 C CNN
+F 2 "" H 11200 2850 70  0000 C CNN
+F 3 "" H 11200 2850 70  0000 C CNN
+	1    11200 2850
 	1    0    0    -1  
 $EndComp
 $Comp
@@ -647,42 +656,42 @@ $EndComp
 $Comp
 L servo:GND #PWR?
 U 1 1 5DF0B58F
-P 11650 5050
+P 11700 5050
 AR Path="/5DCD812E/5DF0B58F" Ref="#PWR?"  Part="1" 
 AR Path="/5EAA846A/5DF0B58F" Ref="#PWR0515"  Part="1" 
-F 0 "#PWR0515" H 11655 4901 20  0001 C CNN
-F 1 "GND" H 11655 4849 30  0000 C CNN
-F 2 "" H 11650 5050 70  0000 C CNN
-F 3 "" H 11650 5050 70  0000 C CNN
-	1    11650 5050
+F 0 "#PWR0515" H 11705 4901 20  0001 C CNN
+F 1 "GND" H 11705 4849 30  0000 C CNN
+F 2 "" H 11700 5050 70  0000 C CNN
+F 3 "" H 11700 5050 70  0000 C CNN
+	1    11700 5050
 	1    0    0    -1  
 $EndComp
 $Comp
 L servo:GND #PWR?
 U 1 1 5DF0B59B
-P 12350 6450
+P 12650 6500
 AR Path="/5DCD812E/5DF0B59B" Ref="#PWR?"  Part="1" 
 AR Path="/5EAA846A/5DF0B59B" Ref="#PWR0519"  Part="1" 
-F 0 "#PWR0519" H 12355 6301 20  0001 C CNN
-F 1 "GND" H 12355 6249 30  0000 C CNN
-F 2 "" H 12350 6450 70  0000 C CNN
-F 3 "" H 12350 6450 70  0000 C CNN
-	1    12350 6450
+F 0 "#PWR0519" H 12655 6351 20  0001 C CNN
+F 1 "GND" H 12655 6299 30  0000 C CNN
+F 2 "" H 12650 6500 70  0000 C CNN
+F 3 "" H 12650 6500 70  0000 C CNN
+	1    12650 6500
 	1    0    0    -1  
 $EndComp
 $Comp
 L servo:1V2uC #PWR0518
 U 1 1 5DF0B5A7
-P 12350 5850
-F 0 "#PWR0518" H 12350 5650 20  0001 C CNN
-F 1 "1V2uC" H 12350 6000 28  0000 C CNN
-F 2 "" H 12350 5850 50  0001 C CNN
-F 3 "" H 12350 5850 50  0001 C CNN
-	1    12350 5850
+P 12650 5900
+F 0 "#PWR0518" H 12650 5700 20  0001 C CNN
+F 1 "1V2uC" H 12650 6050 28  0000 C CNN
+F 2 "" H 12650 5900 50  0001 C CNN
+F 3 "" H 12650 5900 50  0001 C CNN
+	1    12650 5900
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
-	12350 6350 12350 6450
+	12650 6400 12650 6500
 $Comp
 L servo:3V3uC #PWR0520
 U 1 1 5DF0B5BC
@@ -697,12 +706,12 @@ $EndComp
 $Comp
 L servo:1V2C #PWR0510
 U 1 1 5DF0B5C8
-P 11600 5850
-F 0 "#PWR0510" H 11600 5650 20  0001 C CNN
-F 1 "1V2C" H 11600 6000 28  0000 C CNN
-F 2 "" H 11600 5850 50  0001 C CNN
-F 3 "" H 11600 5850 50  0001 C CNN
-	1    11600 5850
+P 11450 5900
+F 0 "#PWR0510" H 11450 5700 20  0001 C CNN
+F 1 "1V2C" H 11450 6050 28  0000 C CNN
+F 2 "" H 11450 5900 50  0001 C CNN
+F 3 "" H 11450 5900 50  0001 C CNN
+	1    11450 5900
 	1    0    0    -1  
 $EndComp
 Text Notes 7100 1200 0    197  ~ 39
@@ -721,12 +730,12 @@ $EndComp
 $Comp
 L servo:3V3 #PWR0514
 U 1 1 5E67103E
-P 11650 4350
-F 0 "#PWR0514" H 11550 4450 20  0001 C CNN
-F 1 "3V3" H 11650 4500 28  0000 C CNN
-F 2 "" H 11650 4350 50  0001 C CNN
-F 3 "" H 11650 4350 50  0001 C CNN
-	1    11650 4350
+P 11200 4350
+F 0 "#PWR0514" H 11100 4450 20  0001 C CNN
+F 1 "3V3" H 11200 4500 28  0000 C CNN
+F 2 "" H 11200 4350 50  0001 C CNN
+F 3 "" H 11200 4350 50  0001 C CNN
+	1    11200 4350
 	1    0    0    -1  
 $EndComp
 Connection ~ 4450 6550
@@ -942,6 +951,9 @@ F 3 "../doc/datasheets/tms320f28388d_datasheet.pdf" H 3550 4750 50  0001 C CNN
 F 4 "TMS320F28388DZWTS" H 1950 4250 60  0001 C CNN "PartNumber"
 F 5 "32-bit MCU with connectivity manager, 2x C28x+CLA CPU, 1.5 MB flash, FPU64, CLB, Ethernet, EtherCAT" H 0   0   50  0001 C CNN "Description"
 F 6 "14.96" H 0   0   50  0001 C CNN "price@10"
+F 7 "1" H 0   0   50  0001 C CNN "bom_1"
+F 8 "1" H 0   0   50  0001 C CNN "bom_2"
+F 9 "1" H 0   0   50  0001 C CNN "bom_3"
 	5    3550 4750
 	1    0    0    -1  
 $EndComp
@@ -985,14 +997,14 @@ $EndComp
 $Comp
 L servo:GND #PWR?
 U 1 1 5E98BDF5
-P 11650 3550
+P 11200 3550
 AR Path="/5DCD812E/5E98BDF5" Ref="#PWR?"  Part="1" 
 AR Path="/5EAA846A/5E98BDF5" Ref="#PWR0513"  Part="1" 
-F 0 "#PWR0513" H 11655 3401 20  0001 C CNN
-F 1 "GND" H 11655 3349 30  0000 C CNN
-F 2 "" H 11650 3550 70  0000 C CNN
-F 3 "" H 11650 3550 70  0000 C CNN
-	1    11650 3550
+F 0 "#PWR0513" H 11205 3401 20  0001 C CNN
+F 1 "GND" H 11205 3349 30  0000 C CNN
+F 2 "" H 11200 3550 70  0000 C CNN
+F 3 "" H 11200 3550 70  0000 C CNN
+	1    11200 3550
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
@@ -1000,9 +1012,9 @@ Wire Wire Line
 Wire Wire Line
 	12400 2950 12700 2950
 Wire Wire Line
-	12700 5950 12700 5850
+	13000 6000 13000 5900
 Wire Wire Line
-	12350 5950 12700 5950
+	12650 6000 13000 6000
 $Comp
 L servo:PWR_FLAG #FLG0501
 U 1 1 61929CC6
@@ -1019,12 +1031,12 @@ Wire Wire Line
 $Comp
 L servo:PWR_FLAG #FLG0503
 U 1 1 61AD2672
-P 12700 5850
-F 0 "#FLG0503" H 12700 5925 20  0001 C CNN
-F 1 "PWR_FLAG" H 12700 6000 20  0000 C CNN
-F 2 "" H 12700 5850 50  0001 C CNN
-F 3 "~" H 12700 5850 50  0001 C CNN
-	1    12700 5850
+P 13000 5900
+F 0 "#FLG0503" H 13000 5975 20  0001 C CNN
+F 1 "PWR_FLAG" H 13000 6050 20  0000 C CNN
+F 2 "" H 13000 5900 50  0001 C CNN
+F 3 "~" H 13000 5900 50  0001 C CNN
+	1    13000 5900
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
@@ -1041,6 +1053,9 @@ F 4 "311-1335-1-ND" H 0   0   50  0001 C CNN "digikey"
 F 5 "CAP CER 0.1UF 16V X7R 0603 " H 0   0   50  0001 C CNN "Description"
 F 6 "CC0603KPX7R7BB104" H 0   0   50  0001 C CNN "PartNumber"
 F 7 "0.05800" H 0   0   50  0001 C CNN "price@10"
+F 8 "1" H 0   0   50  0001 C CNN "bom_1"
+F 9 "1" H 0   0   50  0001 C CNN "bom_2"
+F 10 "1" H 0   0   50  0001 C CNN "bom_3"
 	1    8050 5700
 	0    -1   -1   0   
 $EndComp
@@ -1056,6 +1071,9 @@ F 4 "311-1335-1-ND" H 0   0   50  0001 C CNN "digikey"
 F 5 "CAP CER 0.1UF 16V X7R 0603 " H 0   0   50  0001 C CNN "Description"
 F 6 "CC0603KPX7R7BB104" H 0   0   50  0001 C CNN "PartNumber"
 F 7 "0.05800" H 0   0   50  0001 C CNN "price@10"
+F 8 "1" H 0   0   50  0001 C CNN "bom_1"
+F 9 "1" H 0   0   50  0001 C CNN "bom_2"
+F 10 "1" H 0   0   50  0001 C CNN "bom_3"
 	1    8250 5700
 	0    -1   -1   0   
 $EndComp
@@ -1071,6 +1089,9 @@ F 4 "311-1335-1-ND" H 0   0   50  0001 C CNN "digikey"
 F 5 "CAP CER 0.1UF 16V X7R 0603 " H 0   0   50  0001 C CNN "Description"
 F 6 "CC0603KPX7R7BB104" H 0   0   50  0001 C CNN "PartNumber"
 F 7 "0.05800" H 0   0   50  0001 C CNN "price@10"
+F 8 "1" H 0   0   50  0001 C CNN "bom_1"
+F 9 "1" H 0   0   50  0001 C CNN "bom_2"
+F 10 "1" H 0   0   50  0001 C CNN "bom_3"
 	1    8450 5700
 	0    -1   -1   0   
 $EndComp
@@ -1086,6 +1107,9 @@ F 4 "311-1335-1-ND" H 0   0   50  0001 C CNN "digikey"
 F 5 "CAP CER 0.1UF 16V X7R 0603 " H 0   0   50  0001 C CNN "Description"
 F 6 "CC0603KPX7R7BB104" H 0   0   50  0001 C CNN "PartNumber"
 F 7 "0.05800" H 0   0   50  0001 C CNN "price@10"
+F 8 "1" H 0   0   50  0001 C CNN "bom_1"
+F 9 "1" H 0   0   50  0001 C CNN "bom_2"
+F 10 "1" H 0   0   50  0001 C CNN "bom_3"
 	1    8650 5700
 	0    -1   -1   0   
 $EndComp
@@ -1101,6 +1125,9 @@ F 4 "311-1335-1-ND" H 0   0   50  0001 C CNN "digikey"
 F 5 "CAP CER 0.1UF 16V X7R 0603 " H 0   0   50  0001 C CNN "Description"
 F 6 "CC0603KPX7R7BB104" H 0   0   50  0001 C CNN "PartNumber"
 F 7 "0.05800" H 0   0   50  0001 C CNN "price@10"
+F 8 "1" H 0   0   50  0001 C CNN "bom_1"
+F 9 "1" H 0   0   50  0001 C CNN "bom_2"
+F 10 "1" H 0   0   50  0001 C CNN "bom_3"
 	1    9050 5700
 	0    -1   -1   0   
 $EndComp
@@ -1116,6 +1143,9 @@ F 4 "311-1335-1-ND" H 0   0   50  0001 C CNN "digikey"
 F 5 "CAP CER 0.1UF 16V X7R 0603 " H 0   0   50  0001 C CNN "Description"
 F 6 "CC0603KPX7R7BB104" H 0   0   50  0001 C CNN "PartNumber"
 F 7 "0.05800" H 0   0   50  0001 C CNN "price@10"
+F 8 "1" H 0   0   50  0001 C CNN "bom_1"
+F 9 "1" H 0   0   50  0001 C CNN "bom_2"
+F 10 "1" H 0   0   50  0001 C CNN "bom_3"
 	1    9450 5700
 	0    -1   -1   0   
 $EndComp
@@ -1131,6 +1161,9 @@ F 4 "311-1335-1-ND" H 0   0   50  0001 C CNN "digikey"
 F 5 "CAP CER 0.1UF 16V X7R 0603 " H 0   0   50  0001 C CNN "Description"
 F 6 "CC0603KPX7R7BB104" H 0   0   50  0001 C CNN "PartNumber"
 F 7 "0.05800" H 0   0   50  0001 C CNN "price@10"
+F 8 "1" H 0   0   50  0001 C CNN "bom_1"
+F 9 "1" H 0   0   50  0001 C CNN "bom_2"
+F 10 "1" H 0   0   50  0001 C CNN "bom_3"
 	1    9650 5700
 	0    -1   -1   0   
 $EndComp
@@ -1146,6 +1179,9 @@ F 4 "311-1335-1-ND" H 0   0   50  0001 C CNN "digikey"
 F 5 "CAP CER 0.1UF 16V X7R 0603 " H 0   0   50  0001 C CNN "Description"
 F 6 "CC0603KPX7R7BB104" H 0   0   50  0001 C CNN "PartNumber"
 F 7 "0.05800" H 0   0   50  0001 C CNN "price@10"
+F 8 "1" H 0   0   50  0001 C CNN "bom_1"
+F 9 "1" H 0   0   50  0001 C CNN "bom_2"
+F 10 "1" H 0   0   50  0001 C CNN "bom_3"
 	1    9850 5700
 	0    -1   -1   0   
 $EndComp
@@ -1161,6 +1197,9 @@ F 4 "311-1335-1-ND" H 0   0   50  0001 C CNN "digikey"
 F 5 "CAP CER 0.1UF 16V X7R 0603 " H 0   0   50  0001 C CNN "Description"
 F 6 "CC0603KPX7R7BB104" H 0   0   50  0001 C CNN "PartNumber"
 F 7 "0.05800" H 0   0   50  0001 C CNN "price@10"
+F 8 "1" H 0   0   50  0001 C CNN "bom_1"
+F 9 "1" H 0   0   50  0001 C CNN "bom_2"
+F 10 "1" H 0   0   50  0001 C CNN "bom_3"
 	1    10050 5700
 	0    -1   -1   0   
 $EndComp
@@ -1176,6 +1215,9 @@ F 4 "311-1335-1-ND" H 0   0   50  0001 C CNN "digikey"
 F 5 "CAP CER 0.1UF 16V X7R 0603 " H 0   0   50  0001 C CNN "Description"
 F 6 "CC0603KPX7R7BB104" H 0   0   50  0001 C CNN "PartNumber"
 F 7 "0.05800" H 0   0   50  0001 C CNN "price@10"
+F 8 "1" H 0   0   50  0001 C CNN "bom_1"
+F 9 "1" H 0   0   50  0001 C CNN "bom_2"
+F 10 "1" H 0   0   50  0001 C CNN "bom_3"
 	1    10250 5700
 	0    -1   -1   0   
 $EndComp
@@ -1191,6 +1233,9 @@ F 4 "311-1335-1-ND" H 0   0   50  0001 C CNN "digikey"
 F 5 "CAP CER 0.1UF 16V X7R 0603 " H 0   0   50  0001 C CNN "Description"
 F 6 "CC0603KPX7R7BB104" H 0   0   50  0001 C CNN "PartNumber"
 F 7 "0.05800" H 0   0   50  0001 C CNN "price@10"
+F 8 "1" H 0   0   50  0001 C CNN "bom_1"
+F 9 "1" H 0   0   50  0001 C CNN "bom_2"
+F 10 "1" H 0   0   50  0001 C CNN "bom_3"
 	1    9250 5700
 	0    -1   -1   0   
 $EndComp
@@ -1206,6 +1251,9 @@ F 4 "311-1335-1-ND" H 0   0   50  0001 C CNN "digikey"
 F 5 "CAP CER 0.1UF 16V X7R 0603 " H 0   0   50  0001 C CNN "Description"
 F 6 "CC0603KPX7R7BB104" H 0   0   50  0001 C CNN "PartNumber"
 F 7 "0.05800" H 0   0   50  0001 C CNN "price@10"
+F 8 "1" H 0   0   50  0001 C CNN "bom_1"
+F 9 "1" H 0   0   50  0001 C CNN "bom_2"
+F 10 "1" H 0   0   50  0001 C CNN "bom_3"
 	1    8900 3850
 	0    -1   -1   0   
 $EndComp
@@ -1221,6 +1269,9 @@ F 4 "311-1335-1-ND" H 0   0   50  0001 C CNN "digikey"
 F 5 "CAP CER 0.1UF 16V X7R 0603 " H 0   0   50  0001 C CNN "Description"
 F 6 "CC0603KPX7R7BB104" H 0   0   50  0001 C CNN "PartNumber"
 F 7 "0.05800" H 0   0   50  0001 C CNN "price@10"
+F 8 "1" H 0   0   50  0001 C CNN "bom_1"
+F 9 "1" H 0   0   50  0001 C CNN "bom_2"
+F 10 "1" H 0   0   50  0001 C CNN "bom_3"
 	1    10850 5700
 	0    -1   -1   0   
 $EndComp
@@ -1236,6 +1287,9 @@ F 4 "311-1335-1-ND" H 0   0   50  0001 C CNN "digikey"
 F 5 "CAP CER 0.1UF 16V X7R 0603 " H 0   0   50  0001 C CNN "Description"
 F 6 "CC0603KPX7R7BB104" H 0   0   50  0001 C CNN "PartNumber"
 F 7 "0.05800" H 0   0   50  0001 C CNN "price@10"
+F 8 "1" H 0   0   50  0001 C CNN "bom_1"
+F 9 "1" H 0   0   50  0001 C CNN "bom_2"
+F 10 "1" H 0   0   50  0001 C CNN "bom_3"
 	1    8300 3850
 	0    -1   -1   0   
 $EndComp
@@ -1251,6 +1305,9 @@ F 4 "311-1335-1-ND" H 0   0   50  0001 C CNN "digikey"
 F 5 "CAP CER 0.1UF 16V X7R 0603 " H 0   0   50  0001 C CNN "Description"
 F 6 "CC0603KPX7R7BB104" H 0   0   50  0001 C CNN "PartNumber"
 F 7 "0.05800" H 0   0   50  0001 C CNN "price@10"
+F 8 "1" H 0   0   50  0001 C CNN "bom_1"
+F 9 "1" H 0   0   50  0001 C CNN "bom_2"
+F 10 "1" H 0   0   50  0001 C CNN "bom_3"
 	1    8500 3850
 	0    -1   -1   0   
 $EndComp
@@ -1266,6 +1323,9 @@ F 4 "311-1335-1-ND" H 0   0   50  0001 C CNN "digikey"
 F 5 "CAP CER 0.1UF 16V X7R 0603 " H 0   0   50  0001 C CNN "Description"
 F 6 "CC0603KPX7R7BB104" H 0   0   50  0001 C CNN "PartNumber"
 F 7 "0.05800" H 0   0   50  0001 C CNN "price@10"
+F 8 "1" H 0   0   50  0001 C CNN "bom_1"
+F 9 "1" H 0   0   50  0001 C CNN "bom_2"
+F 10 "1" H 0   0   50  0001 C CNN "bom_3"
 	1    9100 3850
 	0    -1   -1   0   
 $EndComp
@@ -1281,6 +1341,9 @@ F 4 "311-1335-1-ND" H 0   0   50  0001 C CNN "digikey"
 F 5 "CAP CER 0.1UF 16V X7R 0603 " H 0   0   50  0001 C CNN "Description"
 F 6 "CC0603KPX7R7BB104" H 0   0   50  0001 C CNN "PartNumber"
 F 7 "0.05800" H 0   0   50  0001 C CNN "price@10"
+F 8 "1" H 0   0   50  0001 C CNN "bom_1"
+F 9 "1" H 0   0   50  0001 C CNN "bom_2"
+F 10 "1" H 0   0   50  0001 C CNN "bom_3"
 	1    9300 3850
 	0    -1   -1   0   
 $EndComp
@@ -1296,6 +1359,9 @@ F 4 "311-1335-1-ND" H 0   0   50  0001 C CNN "digikey"
 F 5 "CAP CER 0.1UF 16V X7R 0603 " H 0   0   50  0001 C CNN "Description"
 F 6 "CC0603KPX7R7BB104" H 0   0   50  0001 C CNN "PartNumber"
 F 7 "0.05800" H 0   0   50  0001 C CNN "price@10"
+F 8 "1" H 0   0   50  0001 C CNN "bom_1"
+F 9 "1" H 0   0   50  0001 C CNN "bom_2"
+F 10 "1" H 0   0   50  0001 C CNN "bom_3"
 	1    9500 3850
 	0    -1   -1   0   
 $EndComp
@@ -1401,10 +1467,6 @@ Wire Wire Line
 	4550 3850 4450 3850
 Connection ~ 4450 2950
 Connection ~ 4450 3850
-Wire Wire Line
-	12350 4950 12350 5000
-Wire Wire Line
-	11650 4950 11650 5000
 $Comp
 L servo:GNDA #PWR0223
 U 1 1 5E3635A8
@@ -1417,13 +1479,7 @@ F 3 "" H 12350 5050 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
-	11650 5000 12350 5000
-Connection ~ 11650 5000
-Wire Wire Line
-	11650 5000 11650 5050
-Connection ~ 12350 5000
-Wire Wire Line
-	12350 5000 12350 5050
+	11700 5000 11700 5050
 Text Notes 11850 5000 0    20   ~ 0
 all GND together
 Wire Wire Line
@@ -1434,34 +1490,141 @@ Connection ~ 12750 4450
 $Comp
 L servo:GND #PWR?
 U 1 1 5DF0B5A1
-P 11600 6450
+P 11950 6500
 AR Path="/5DCD812E/5DF0B5A1" Ref="#PWR?"  Part="1" 
 AR Path="/5EAA846A/5DF0B5A1" Ref="#PWR0511"  Part="1" 
-F 0 "#PWR0511" H 11605 6301 20  0001 C CNN
-F 1 "GND" H 11605 6249 30  0000 C CNN
-F 2 "" H 11600 6450 70  0000 C CNN
-F 3 "" H 11600 6450 70  0000 C CNN
-	1    11600 6450
+F 0 "#PWR0511" H 11955 6351 20  0001 C CNN
+F 1 "GND" H 11955 6299 30  0000 C CNN
+F 2 "" H 11950 6500 70  0000 C CNN
+F 3 "" H 11950 6500 70  0000 C CNN
+	1    11950 6500
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
-	11600 6350 11600 6450
-Connection ~ 11600 5950
-Wire Wire Line
-	11600 6050 11600 5950
+	11950 6400 11950 6500
 $Comp
 L servo:Capacitor C526
 U 1 1 5DF0B57C
-P 11600 6150
-F 0 "C526" V 11628 6260 20  0000 L CNN
-F 1 "10uF" V 11671 6260 20  0000 L CNN
-F 2 "servo:C_0603_1608Metric" H 11600 6050 60  0001 C CNN
-F 3 "" H 11600 6150 60  0000 C CNN
-F 4 "490-10475-1-ND" H 0   0   50  0001 C CNN "digikey"
-F 5 "GRM188R61A106ME69D " H 0   0   50  0001 C CNN "PartNumber"
-F 6 "10µF ±20% 10V Ceramic Capacitor X5R 0603 (1608 Metric) " H 0   0   50  0001 C CNN "Description"
-F 7 "0.15400" H 0   0   50  0001 C CNN "price@10"
-	1    11600 6150
+P 11950 6200
+F 0 "C526" V 11978 6310 20  0000 L CNN
+F 1 "10uF" V 12021 6310 20  0000 L CNN
+F 2 "servo:C_0603_1608Metric" H 11950 6100 60  0001 C CNN
+F 3 "" H 11950 6200 60  0000 C CNN
+F 4 "490-10475-1-ND" H 350 50  50  0001 C CNN "digikey"
+F 5 "GRM188R61A106ME69D " H 350 50  50  0001 C CNN "PartNumber"
+F 6 "10µF ±20% 10V Ceramic Capacitor X5R 0603 (1608 Metric) " H 350 50  50  0001 C CNN "Description"
+F 7 "0.15400" H 350 50  50  0001 C CNN "price@10"
+F 8 "1" H 0   0   50  0001 C CNN "bom_1"
+F 9 "1" H 0   0   50  0001 C CNN "bom_2"
+F 10 "1" H 0   0   50  0001 C CNN "bom_3"
+	1    11950 6200
+	0    1    1    0   
+$EndComp
+$Comp
+L servo:jumper JP?
+U 1 1 5E650CF0
+P 11550 2950
+AR Path="/5DD76B18/5E650CF0" Ref="JP?"  Part="1" 
+AR Path="/5EAA846A/5E650CF0" Ref="JP501"  Part="1" 
+F 0 "JP501" H 11550 3063 20  0000 C CNN
+F 1 "jumper" H 11550 3020 20  0000 C CNN
+F 2 "servo:SolderJumper-2_P1.3mm_Open_RoundedPad1.0x1.5mm" H 11450 2930 50  0001 C CNN
+F 3 "~" H 11550 3030 50  0001 C CNN
+F 4 "jumper smd bridge using tin" H 8250 -2650 50  0001 C CNN "Description"
+F 5 "-" H 8250 -2650 50  0001 C CNN "PartNumber"
+F 6 "-" H 8250 -2650 50  0001 C CNN "digikey"
+F 7 "0" H 8250 -2650 50  0001 C CNN "price@10"
+F 8 "" H 0   0   50  0001 C CNN "bom_1"
+F 9 "" H 0   0   50  0001 C CNN "bom_2"
+	1    11550 2950
+	1    0    0    -1  
+$EndComp
+$Comp
+L servo:jumper JP?
+U 1 1 5E68511E
+P 11500 4450
+AR Path="/5DD76B18/5E68511E" Ref="JP?"  Part="1" 
+AR Path="/5EAA846A/5E68511E" Ref="JP502"  Part="1" 
+F 0 "JP502" H 11500 4563 20  0000 C CNN
+F 1 "jumper" H 11500 4520 20  0000 C CNN
+F 2 "servo:SolderJumper-2_P1.3mm_Open_RoundedPad1.0x1.5mm" H 11400 4430 50  0001 C CNN
+F 3 "~" H 11500 4530 50  0001 C CNN
+F 4 "jumper smd bridge using tin" H 8200 -1150 50  0001 C CNN "Description"
+F 5 "-" H 8200 -1150 50  0001 C CNN "PartNumber"
+F 6 "-" H 8200 -1150 50  0001 C CNN "digikey"
+F 7 "0" H 8200 -1150 50  0001 C CNN "price@10"
+F 8 "" H 0   0   50  0001 C CNN "bom_1"
+F 9 "" H 0   0   50  0001 C CNN "bom_2"
+	1    11500 4450
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	12350 4950 12350 5000
+Connection ~ 12350 5000
+Wire Wire Line
+	12350 5000 12350 5050
+Wire Wire Line
+	11200 4450 11400 4450
+$Comp
+L servo:jumper JP?
+U 1 1 5E6DD8A0
+P 11650 6000
+AR Path="/5DD76B18/5E6DD8A0" Ref="JP?"  Part="1" 
+AR Path="/5EAA846A/5E6DD8A0" Ref="JP503"  Part="1" 
+F 0 "JP503" H 11650 6113 20  0000 C CNN
+F 1 "jumper" H 11650 6070 20  0000 C CNN
+F 2 "servo:SolderJumper-2_P1.3mm_Open_RoundedPad1.0x1.5mm" H 11550 5980 50  0001 C CNN
+F 3 "~" H 11650 6080 50  0001 C CNN
+F 4 "jumper smd bridge using tin" H 8350 400 50  0001 C CNN "Description"
+F 5 "-" H 8350 400 50  0001 C CNN "PartNumber"
+F 6 "-" H 8350 400 50  0001 C CNN "digikey"
+F 7 "0" H 8350 400 50  0001 C CNN "price@10"
+F 8 "" H 0   0   50  0001 C CNN "bom_1"
+F 9 "" H 0   0   50  0001 C CNN "bom_2"
+	1    11650 6000
+	1    0    0    -1  
+$EndComp
+Text Label 11700 2950 0    20   ~ 0
+3V3uC_in
+Text Label 11750 4450 0    20   ~ 0
+3V3A_in
+Text Label 12000 6000 0    20   ~ 0
+1V2uC_in
+Wire Wire Line
+	11800 2950 11650 2950
+Wire Wire Line
+	11800 4450 11700 4450
+Wire Wire Line
+	11750 6000 11950 6000
+Wire Wire Line
+	11950 6000 11950 6100
+Connection ~ 11950 6000
+Wire Wire Line
+	11950 6000 12100 6000
+Connection ~ 11700 4450
+Wire Wire Line
+	11700 4450 11600 4450
+Wire Wire Line
+	11700 4950 11700 5000
+Connection ~ 11700 5000
+Wire Wire Line
+	11700 5000 12350 5000
+$Comp
+L servo:Capacitor C508
+U 1 1 5E93588A
+P 11700 4750
+F 0 "C508" V 11728 4860 20  0000 L CNN
+F 1 "2.2uF" V 11771 4860 20  0000 L CNN
+F 2 "servo:C_0603_1608Metric" H 11700 4650 60  0001 C CNN
+F 3 "" H 11700 4750 60  0000 C CNN
+F 4 "CAP CER 2.2UF 16V X6S 0603 " H -650 0   50  0001 C CNN "Description"
+F 5 "GRT188C81C225KE13D" H -650 0   50  0001 C CNN "PartNumber"
+F 6 "490-12287-1-ND" H -650 0   50  0001 C CNN "digikey"
+F 7 "0.35500" H -650 0   50  0001 C CNN "price@10"
+F 8 "1" H 0   0   50  0001 C CNN "bom_1"
+F 9 "1" H 0   0   50  0001 C CNN "bom_2"
+F 10 "1" H 0   0   50  0001 C CNN "bom_3"
+	1    11700 4750
 	0    1    1    0   
 $EndComp
 $EndSCHEMATC

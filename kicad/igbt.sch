@@ -43,6 +43,9 @@ F 4 "General Purpose Digital Isolator 5000Vrms 6 Channel 150Mbps 35kV/µs CMTI 1
 F 5 "SI8660BD-B-ISR" H 0   0   50  0001 C CNN "PartNumber"
 F 6 " 336-4786-1-ND" H 0   0   50  0001 C CNN "digikey"
 F 7 "2.75000" H 0   0   50  0001 C CNN "price@10"
+F 8 "" H 0   0   50  0001 C CNN "bom_1"
+F 9 "1" H 0   0   50  0001 C CNN "bom_2"
+F 10 "1" H 0   0   50  0001 C CNN "bom_3"
 	1    3050 2300
 	1    0    0    -1  
 $EndComp
@@ -289,6 +292,9 @@ F 4 "General Purpose Digital Isolator 5000Vrms 6 Channel 150Mbps 35kV/µs CMTI 1
 F 5 "SI8662BD-B-IS" H 0   0   50  0001 C CNN "PartNumber"
 F 6 "336-2125-5-ND " H 0   0   50  0001 C CNN "digikey"
 F 7 "2.75000" H 0   0   50  0001 C CNN "price@10"
+F 8 "" H 0   0   50  0001 C CNN "bom_1"
+F 9 "1" H 0   0   50  0001 C CNN "bom_2"
+F 10 "1" H 0   0   50  0001 C CNN "bom_3"
 	1    3050 3650
 	1    0    0    -1  
 $EndComp
@@ -296,14 +302,17 @@ $Comp
 L servo:SN74LVC2G17DBVR U807
 U 1 1 5E60CBE0
 P 4950 3850
-F 0 "U807" H 4450 3750 39  0000 L BNN
-F 1 "SN74LVC2G17DBVR" H 5150 3800 20  0000 L BNN
+F 0 "U807" H 4450 3800 39  0000 C CNN
+F 1 "SN74LVC2G17DBVR" H 5150 3800 20  0001 L BNN
 F 2 "servo:SOT-23-6" H 4450 4050 60  0001 C CNN
 F 3 "../doc/datasheets/sn74lvc2g17.pdf" H 4650 4300 60  0001 C CNN
 F 4 "Buffer, Non-Inverting 2 Element 1 Bit per Element Push-Pull Output SOT-23-6" H 0   0   50  0001 C CNN "Description"
 F 5 "SN74LVC2G17DBVR" H 0   0   50  0001 C CNN "PartNumber"
 F 6 " 296-SN74LVC2G17DBVRCT-ND " H 0   0   50  0001 C CNN "digikey"
 F 7 "0.30200" H 0   0   50  0001 C CNN "price@10"
+F 8 "" H 0   0   50  0001 C CNN "bom_1"
+F 9 "1" H 0   0   50  0001 C CNN "bom_2"
+F 10 "1" H 0   0   50  0001 C CNN "bom_3"
 	1    4950 3850
 	1    0    0    -1  
 $EndComp
@@ -311,14 +320,17 @@ $Comp
 L servo:SN74LVC2G17DBVR U806
 U 1 1 5E60CBE7
 P 4950 3400
-F 0 "U806" H 4450 3300 39  0000 L BNN
-F 1 "SN74LVC2G17DBVR" H 5150 3350 20  0000 L BNN
+F 0 "U806" H 4450 3350 39  0000 C CNN
+F 1 "SN74LVC2G17DBVR" H 5150 3350 20  0001 L BNN
 F 2 "servo:SOT-23-6" H 4450 3600 60  0001 C CNN
 F 3 "../doc/datasheets/sn74lvc2g17.pdf" H 4650 3850 60  0001 C CNN
 F 4 "Buffer, Non-Inverting 2 Element 1 Bit per Element Push-Pull Output SOT-23-6" H 0   0   50  0001 C CNN "Description"
 F 5 "SN74LVC2G17DBVR" H 0   0   50  0001 C CNN "PartNumber"
 F 6 " 296-SN74LVC2G17DBVRCT-ND " H 0   0   50  0001 C CNN "digikey"
 F 7 "0.30200" H 0   0   50  0001 C CNN "price@10"
+F 8 "" H 0   0   50  0001 C CNN "bom_1"
+F 9 "1" H 0   0   50  0001 C CNN "bom_2"
+F 10 "1" H 0   0   50  0001 C CNN "bom_3"
 	1    4950 3400
 	1    0    0    -1  
 $EndComp
@@ -326,14 +338,17 @@ $Comp
 L servo:SN74LVC2G17DBVR U805
 U 1 1 5E60CBEE
 P 4950 2950
-F 0 "U805" H 4450 2850 39  0000 L BNN
-F 1 "SN74LVC2G17DBVR" H 5150 2900 20  0000 L BNN
+F 0 "U805" H 4350 2850 39  0000 L BNN
+F 1 "SN74LVC2G17DBVR" H 5150 2900 20  0001 L BNN
 F 2 "servo:SOT-23-6" H 4450 3150 60  0001 C CNN
 F 3 "../doc/datasheets/sn74lvc2g17.pdf" H 4650 3400 60  0001 C CNN
 F 4 "Buffer, Non-Inverting 2 Element 1 Bit per Element Push-Pull Output SOT-23-6" H 0   0   50  0001 C CNN "Description"
 F 5 "SN74LVC2G17DBVR" H 0   0   50  0001 C CNN "PartNumber"
 F 6 " 296-SN74LVC2G17DBVRCT-ND " H 0   0   50  0001 C CNN "digikey"
 F 7 "0.30200" H 0   0   50  0001 C CNN "price@10"
+F 8 "" H 0   0   50  0001 C CNN "bom_1"
+F 9 "1" H 0   0   50  0001 C CNN "bom_2"
+F 10 "1" H 0   0   50  0001 C CNN "bom_3"
 	1    4950 2950
 	1    0    0    -1  
 $EndComp
@@ -341,14 +356,17 @@ $Comp
 L servo:SN74LVC2G17DBVR U804
 U 1 1 5E60CBF5
 P 4950 2500
-F 0 "U804" H 4450 2400 39  0000 L BNN
-F 1 "SN74LVC2G17DBVR" H 5150 2450 20  0000 L BNN
+F 0 "U804" H 4450 2450 39  0000 C CNN
+F 1 "SN74LVC2G17DBVR" H 4825 2852 20  0001 C CNN
 F 2 "servo:SOT-23-6" H 4450 2700 60  0001 C CNN
 F 3 "../doc/datasheets/sn74lvc2g17.pdf" H 4650 2950 60  0001 C CNN
 F 4 "Buffer, Non-Inverting 2 Element 1 Bit per Element Push-Pull Output SOT-23-6" H 0   0   50  0001 C CNN "Description"
 F 5 "SN74LVC2G17DBVR" H 0   0   50  0001 C CNN "PartNumber"
 F 6 " 296-SN74LVC2G17DBVRCT-ND " H 0   0   50  0001 C CNN "digikey"
 F 7 "0.30200" H 0   0   50  0001 C CNN "price@10"
+F 8 "" H 0   0   50  0001 C CNN "bom_1"
+F 9 "1" H 0   0   50  0001 C CNN "bom_2"
+F 10 "1" H 0   0   50  0001 C CNN "bom_3"
 	1    4950 2500
 	1    0    0    -1  
 $EndComp
@@ -364,6 +382,9 @@ F 4 "22 Ohms ±5% 0.1W, 1/10W Chip Resistor 0603 (1608 Metric) Automotive AEC-Q2
 F 5 "CRGCQ0603J22R" H 0   0   50  0001 C CNN "PartNumber"
 F 6 "A130081CT-ND" H 0   0   50  0001 C CNN "digikey"
 F 7 "0.02100" H 0   0   50  0001 C CNN "price@10"
+F 8 "1" H 0   0   50  0001 C CNN "bom_1"
+F 9 "1" H 0   0   50  0001 C CNN "bom_2"
+F 10 "1" H 0   0   50  0001 C CNN "bom_3"
 	1    6700 2500
 	1    0    0    -1  
 $EndComp
@@ -383,6 +404,9 @@ F 4 "CAP CER 100PF 10V X7R 0603 " H 0   0   50  0001 C CNN "Description"
 F 5 "885012206003" H 0   0   50  0001 C CNN "PartNumber"
 F 6 " 732-7922-1-ND" H 0   0   50  0001 C CNN "digikey"
 F 7 "0.02100" H 0   0   50  0001 C CNN "price@10"
+F 8 "1" H 0   0   50  0001 C CNN "bom_1"
+F 9 "1" H 0   0   50  0001 C CNN "bom_2"
+F 10 "1" H 0   0   50  0001 C CNN "bom_3"
 	1    6200 3900
 	0    1    1    0   
 $EndComp
@@ -398,6 +422,9 @@ F 4 "CAP CER 100PF 10V X7R 0603 " H 0   0   50  0001 C CNN "Description"
 F 5 "885012206003" H 0   0   50  0001 C CNN "PartNumber"
 F 6 " 732-7922-1-ND" H 0   0   50  0001 C CNN "digikey"
 F 7 "0.02100" H 0   0   50  0001 C CNN "price@10"
+F 8 "1" H 0   0   50  0001 C CNN "bom_1"
+F 9 "1" H 0   0   50  0001 C CNN "bom_2"
+F 10 "1" H 0   0   50  0001 C CNN "bom_3"
 	1    6400 3900
 	0    1    1    0   
 $EndComp
@@ -413,6 +440,9 @@ F 4 "CAP CER 100PF 10V X7R 0603 " H 0   0   50  0001 C CNN "Description"
 F 5 "885012206003" H 0   0   50  0001 C CNN "PartNumber"
 F 6 " 732-7922-1-ND" H 0   0   50  0001 C CNN "digikey"
 F 7 "0.02100" H 0   0   50  0001 C CNN "price@10"
+F 8 "1" H 0   0   50  0001 C CNN "bom_1"
+F 9 "1" H 0   0   50  0001 C CNN "bom_2"
+F 10 "1" H 0   0   50  0001 C CNN "bom_3"
 	1    7050 3900
 	0    1    1    0   
 $EndComp
@@ -428,6 +458,9 @@ F 4 "CAP CER 100PF 10V X7R 0603 " H 0   0   50  0001 C CNN "Description"
 F 5 "885012206003" H 0   0   50  0001 C CNN "PartNumber"
 F 6 " 732-7922-1-ND" H 0   0   50  0001 C CNN "digikey"
 F 7 "0.02100" H 0   0   50  0001 C CNN "price@10"
+F 8 "1" H 0   0   50  0001 C CNN "bom_1"
+F 9 "1" H 0   0   50  0001 C CNN "bom_2"
+F 10 "1" H 0   0   50  0001 C CNN "bom_3"
 	1    7250 3900
 	0    1    1    0   
 $EndComp
@@ -443,6 +476,9 @@ F 4 "CAP CER 100PF 10V X7R 0603 " H 0   0   50  0001 C CNN "Description"
 F 5 "885012206003" H 0   0   50  0001 C CNN "PartNumber"
 F 6 " 732-7922-1-ND" H 0   0   50  0001 C CNN "digikey"
 F 7 "0.02100" H 0   0   50  0001 C CNN "price@10"
+F 8 "1" H 0   0   50  0001 C CNN "bom_1"
+F 9 "1" H 0   0   50  0001 C CNN "bom_2"
+F 10 "1" H 0   0   50  0001 C CNN "bom_3"
 	1    7450 3900
 	0    1    1    0   
 $EndComp
@@ -458,6 +494,9 @@ F 4 "CAP CER 100PF 10V X7R 0603 " H 0   0   50  0001 C CNN "Description"
 F 5 "885012206003" H 0   0   50  0001 C CNN "PartNumber"
 F 6 " 732-7922-1-ND" H 0   0   50  0001 C CNN "digikey"
 F 7 "0.02100" H 0   0   50  0001 C CNN "price@10"
+F 8 "1" H 0   0   50  0001 C CNN "bom_1"
+F 9 "1" H 0   0   50  0001 C CNN "bom_2"
+F 10 "1" H 0   0   50  0001 C CNN "bom_3"
 	1    7650 3900
 	0    1    1    0   
 $EndComp
@@ -473,6 +512,9 @@ F 4 "CAP CER 100PF 10V X7R 0603 " H 0   0   50  0001 C CNN "Description"
 F 5 "885012206003" H 0   0   50  0001 C CNN "PartNumber"
 F 6 " 732-7922-1-ND" H 0   0   50  0001 C CNN "digikey"
 F 7 "0.02100" H 0   0   50  0001 C CNN "price@10"
+F 8 "1" H 0   0   50  0001 C CNN "bom_1"
+F 9 "1" H 0   0   50  0001 C CNN "bom_2"
+F 10 "1" H 0   0   50  0001 C CNN "bom_3"
 	1    7850 3900
 	0    1    1    0   
 $EndComp
@@ -488,6 +530,9 @@ F 4 "CAP CER 100PF 10V X7R 0603 " H 0   0   50  0001 C CNN "Description"
 F 5 "885012206003" H 0   0   50  0001 C CNN "PartNumber"
 F 6 " 732-7922-1-ND" H 0   0   50  0001 C CNN "digikey"
 F 7 "0.02100" H 0   0   50  0001 C CNN "price@10"
+F 8 "1" H 0   0   50  0001 C CNN "bom_1"
+F 9 "1" H 0   0   50  0001 C CNN "bom_2"
+F 10 "1" H 0   0   50  0001 C CNN "bom_3"
 	1    8050 3900
 	0    1    1    0   
 $EndComp
@@ -503,6 +548,9 @@ F 4 "CAP CER 100PF 10V X7R 0603 " H 0   0   50  0001 C CNN "Description"
 F 5 "885012206003" H 0   0   50  0001 C CNN "PartNumber"
 F 6 " 732-7922-1-ND" H 0   0   50  0001 C CNN "digikey"
 F 7 "0.02100" H 0   0   50  0001 C CNN "price@10"
+F 8 "1" H 0   0   50  0001 C CNN "bom_1"
+F 9 "1" H 0   0   50  0001 C CNN "bom_2"
+F 10 "1" H 0   0   50  0001 C CNN "bom_3"
 	1    8250 3900
 	0    1    1    0   
 $EndComp
@@ -518,6 +566,9 @@ F 4 "CAP CER 100PF 10V X7R 0603 " H 0   0   50  0001 C CNN "Description"
 F 5 "885012206003" H 0   0   50  0001 C CNN "PartNumber"
 F 6 " 732-7922-1-ND" H 0   0   50  0001 C CNN "digikey"
 F 7 "0.02100" H 0   0   50  0001 C CNN "price@10"
+F 8 "1" H 0   0   50  0001 C CNN "bom_1"
+F 9 "1" H 0   0   50  0001 C CNN "bom_2"
+F 10 "1" H 0   0   50  0001 C CNN "bom_3"
 	1    8450 3900
 	0    1    1    0   
 $EndComp
@@ -533,6 +584,9 @@ F 4 "CAP CER 100PF 10V X7R 0603 " H 0   0   50  0001 C CNN "Description"
 F 5 "885012206003" H 0   0   50  0001 C CNN "PartNumber"
 F 6 " 732-7922-1-ND" H 0   0   50  0001 C CNN "digikey"
 F 7 "0.02100" H 0   0   50  0001 C CNN "price@10"
+F 8 "1" H 0   0   50  0001 C CNN "bom_1"
+F 9 "1" H 0   0   50  0001 C CNN "bom_2"
+F 10 "1" H 0   0   50  0001 C CNN "bom_3"
 	1    8650 3900
 	0    1    1    0   
 $EndComp
@@ -548,6 +602,9 @@ F 4 "CAP CER 100PF 10V X7R 0603 " H 0   0   50  0001 C CNN "Description"
 F 5 "885012206003" H 0   0   50  0001 C CNN "PartNumber"
 F 6 " 732-7922-1-ND" H 0   0   50  0001 C CNN "digikey"
 F 7 "0.02100" H 0   0   50  0001 C CNN "price@10"
+F 8 "1" H 0   0   50  0001 C CNN "bom_1"
+F 9 "1" H 0   0   50  0001 C CNN "bom_2"
+F 10 "1" H 0   0   50  0001 C CNN "bom_3"
 	1    8850 3900
 	0    1    1    0   
 $EndComp
@@ -715,6 +772,9 @@ F 4 "General Purpose Digital Isolator 5000Vrms 6 Channel 150Mbps 35kV/µs CMTI 1
 F 5 "SI8660BD-B-ISR" H 0   0   50  0001 C CNN "PartNumber"
 F 6 " 336-4786-1-ND" H 0   0   50  0001 C CNN "digikey"
 F 7 "2.75000" H 0   0   50  0001 C CNN "price@10"
+F 8 "" H 0   0   50  0001 C CNN "bom_1"
+F 9 "1" H 0   0   50  0001 C CNN "bom_2"
+F 10 "1" H 0   0   50  0001 C CNN "bom_3"
 	1    13450 5950
 	-1   0    0    -1  
 $EndComp
@@ -980,6 +1040,9 @@ F 4 "General Purpose Digital Isolator 5000Vrms 6 Channel 150Mbps 35kV/µs CMTI 1
 F 5 "SI8662BD-B-IS" H 0   0   50  0001 C CNN "PartNumber"
 F 6 "336-2125-5-ND " H 0   0   50  0001 C CNN "digikey"
 F 7 "2.75000" H 0   0   50  0001 C CNN "price@10"
+F 8 "" H 0   0   50  0001 C CNN "bom_1"
+F 9 "1" H 0   0   50  0001 C CNN "bom_2"
+F 10 "1" H 0   0   50  0001 C CNN "bom_3"
 	1    13450 7300
 	-1   0    0    -1  
 $EndComp
@@ -987,7 +1050,7 @@ $Comp
 L servo:SN74LVC2G17DBVR U812
 U 1 1 5ED1838C
 P 11550 7500
-F 0 "U812" H 11050 7400 39  0000 L BNN
+F 0 "U812" H 11800 7400 39  0000 L BNN
 F 1 "SN74LVC2G17DBVR" H 11750 7450 20  0000 L BNN
 F 2 "servo:SOT-23-6" H 11050 7700 60  0001 C CNN
 F 3 "../doc/datasheets/sn74lvc2g17.pdf" H 11250 7950 60  0001 C CNN
@@ -995,6 +1058,9 @@ F 4 "Buffer, Non-Inverting 2 Element 1 Bit per Element Push-Pull Output SOT-23-6
 F 5 "SN74LVC2G17DBVR" H 0   0   50  0001 C CNN "PartNumber"
 F 6 " 296-SN74LVC2G17DBVRCT-ND " H 0   0   50  0001 C CNN "digikey"
 F 7 "0.30200" H 0   0   50  0001 C CNN "price@10"
+F 8 "" H 0   0   50  0001 C CNN "bom_1"
+F 9 "1" H 0   0   50  0001 C CNN "bom_2"
+F 10 "1" H 0   0   50  0001 C CNN "bom_3"
 	1    11550 7500
 	-1   0    0    -1  
 $EndComp
@@ -1002,7 +1068,7 @@ $Comp
 L servo:SN74LVC2G17DBVR U811
 U 1 1 5ED18393
 P 11550 7050
-F 0 "U811" H 11050 6950 39  0000 L BNN
+F 0 "U811" H 11750 6950 39  0000 L BNN
 F 1 "SN74LVC2G17DBVR" H 11750 7000 20  0000 L BNN
 F 2 "servo:SOT-23-6" H 11050 7250 60  0001 C CNN
 F 3 "../doc/datasheets/sn74lvc2g17.pdf" H 11250 7500 60  0001 C CNN
@@ -1010,6 +1076,9 @@ F 4 "Buffer, Non-Inverting 2 Element 1 Bit per Element Push-Pull Output SOT-23-6
 F 5 "SN74LVC2G17DBVR" H 0   0   50  0001 C CNN "PartNumber"
 F 6 " 296-SN74LVC2G17DBVRCT-ND " H 0   0   50  0001 C CNN "digikey"
 F 7 "0.30200" H 0   0   50  0001 C CNN "price@10"
+F 8 "" H 0   0   50  0001 C CNN "bom_1"
+F 9 "1" H 0   0   50  0001 C CNN "bom_2"
+F 10 "1" H 0   0   50  0001 C CNN "bom_3"
 	1    11550 7050
 	-1   0    0    -1  
 $EndComp
@@ -1017,7 +1086,7 @@ $Comp
 L servo:SN74LVC2G17DBVR U810
 U 1 1 5ED1839A
 P 11550 6600
-F 0 "U810" H 11050 6500 39  0000 L BNN
+F 0 "U810" H 11750 6500 39  0000 L BNN
 F 1 "SN74LVC2G17DBVR" H 11750 6550 20  0000 L BNN
 F 2 "servo:SOT-23-6" H 11050 6800 60  0001 C CNN
 F 3 "../doc/datasheets/sn74lvc2g17.pdf" H 11250 7050 60  0001 C CNN
@@ -1025,6 +1094,9 @@ F 4 "Buffer, Non-Inverting 2 Element 1 Bit per Element Push-Pull Output SOT-23-6
 F 5 "SN74LVC2G17DBVR" H 0   0   50  0001 C CNN "PartNumber"
 F 6 " 296-SN74LVC2G17DBVRCT-ND " H 0   0   50  0001 C CNN "digikey"
 F 7 "0.30200" H 0   0   50  0001 C CNN "price@10"
+F 8 "" H 0   0   50  0001 C CNN "bom_1"
+F 9 "1" H 0   0   50  0001 C CNN "bom_2"
+F 10 "1" H 0   0   50  0001 C CNN "bom_3"
 	1    11550 6600
 	-1   0    0    -1  
 $EndComp
@@ -1032,7 +1104,7 @@ $Comp
 L servo:SN74LVC2G17DBVR U809
 U 1 1 5ED183A1
 P 11550 6150
-F 0 "U809" H 11050 6050 39  0000 L BNN
+F 0 "U809" H 11750 6050 39  0000 L BNN
 F 1 "SN74LVC2G17DBVR" H 11750 6100 20  0000 L BNN
 F 2 "servo:SOT-23-6" H 11050 6350 60  0001 C CNN
 F 3 "../doc/datasheets/sn74lvc2g17.pdf" H 11250 6600 60  0001 C CNN
@@ -1040,6 +1112,9 @@ F 4 "Buffer, Non-Inverting 2 Element 1 Bit per Element Push-Pull Output SOT-23-6
 F 5 "SN74LVC2G17DBVR" H 0   0   50  0001 C CNN "PartNumber"
 F 6 " 296-SN74LVC2G17DBVRCT-ND " H 0   0   50  0001 C CNN "digikey"
 F 7 "0.30200" H 0   0   50  0001 C CNN "price@10"
+F 8 "" H 0   0   50  0001 C CNN "bom_1"
+F 9 "1" H 0   0   50  0001 C CNN "bom_2"
+F 10 "1" H 0   0   50  0001 C CNN "bom_3"
 	1    11550 6150
 	-1   0    0    -1  
 $EndComp
@@ -1047,7 +1122,7 @@ $Comp
 L servo:SN74LVC2G17DBVR U808
 U 1 1 5ED183A8
 P 11550 5700
-F 0 "U808" H 11050 5600 39  0000 L BNN
+F 0 "U808" H 11750 5600 39  0000 L BNN
 F 1 "SN74LVC2G17DBVR" H 11750 5650 20  0000 L BNN
 F 2 "servo:SOT-23-6" H 11050 5900 60  0001 C CNN
 F 3 "../doc/datasheets/sn74lvc2g17.pdf" H 11250 6150 60  0001 C CNN
@@ -1055,6 +1130,9 @@ F 4 "Buffer, Non-Inverting 2 Element 1 Bit per Element Push-Pull Output SOT-23-6
 F 5 "SN74LVC2G17DBVR" H 0   0   50  0001 C CNN "PartNumber"
 F 6 " 296-SN74LVC2G17DBVRCT-ND " H 0   0   50  0001 C CNN "digikey"
 F 7 "0.30200" H 0   0   50  0001 C CNN "price@10"
+F 8 "" H 0   0   50  0001 C CNN "bom_1"
+F 9 "1" H 0   0   50  0001 C CNN "bom_2"
+F 10 "1" H 0   0   50  0001 C CNN "bom_3"
 	1    11550 5700
 	-1   0    0    -1  
 $EndComp
@@ -1074,6 +1152,9 @@ F 4 "CAP CER 100PF 10V X7R 0603 " H 0   0   50  0001 C CNN "Description"
 F 5 "885012206003" H 0   0   50  0001 C CNN "PartNumber"
 F 6 " 732-7922-1-ND" H 0   0   50  0001 C CNN "digikey"
 F 7 "0.02100" H 0   0   50  0001 C CNN "price@10"
+F 8 "1" H 0   0   50  0001 C CNN "bom_1"
+F 9 "1" H 0   0   50  0001 C CNN "bom_2"
+F 10 "1" H 0   0   50  0001 C CNN "bom_3"
 	1    10300 7550
 	0    -1   1    0   
 $EndComp
@@ -1089,6 +1170,9 @@ F 4 "CAP CER 100PF 10V X7R 0603 " H 0   0   50  0001 C CNN "Description"
 F 5 "885012206003" H 0   0   50  0001 C CNN "PartNumber"
 F 6 " 732-7922-1-ND" H 0   0   50  0001 C CNN "digikey"
 F 7 "0.02100" H 0   0   50  0001 C CNN "price@10"
+F 8 "1" H 0   0   50  0001 C CNN "bom_1"
+F 9 "1" H 0   0   50  0001 C CNN "bom_2"
+F 10 "1" H 0   0   50  0001 C CNN "bom_3"
 	1    10100 7550
 	0    -1   1    0   
 $EndComp
@@ -1104,6 +1188,9 @@ F 4 "CAP CER 100PF 10V X7R 0603 " H 0   0   50  0001 C CNN "Description"
 F 5 "885012206003" H 0   0   50  0001 C CNN "PartNumber"
 F 6 " 732-7922-1-ND" H 0   0   50  0001 C CNN "digikey"
 F 7 "0.02100" H 0   0   50  0001 C CNN "price@10"
+F 8 "1" H 0   0   50  0001 C CNN "bom_1"
+F 9 "1" H 0   0   50  0001 C CNN "bom_2"
+F 10 "1" H 0   0   50  0001 C CNN "bom_3"
 	1    9450 7550
 	0    -1   1    0   
 $EndComp
@@ -1119,6 +1206,9 @@ F 4 "CAP CER 100PF 10V X7R 0603 " H 0   0   50  0001 C CNN "Description"
 F 5 "885012206003" H 0   0   50  0001 C CNN "PartNumber"
 F 6 " 732-7922-1-ND" H 0   0   50  0001 C CNN "digikey"
 F 7 "0.02100" H 0   0   50  0001 C CNN "price@10"
+F 8 "1" H 0   0   50  0001 C CNN "bom_1"
+F 9 "1" H 0   0   50  0001 C CNN "bom_2"
+F 10 "1" H 0   0   50  0001 C CNN "bom_3"
 	1    9250 7550
 	0    -1   1    0   
 $EndComp
@@ -1134,6 +1224,9 @@ F 4 "CAP CER 100PF 10V X7R 0603 " H 0   0   50  0001 C CNN "Description"
 F 5 "885012206003" H 0   0   50  0001 C CNN "PartNumber"
 F 6 " 732-7922-1-ND" H 0   0   50  0001 C CNN "digikey"
 F 7 "0.02100" H 0   0   50  0001 C CNN "price@10"
+F 8 "1" H 0   0   50  0001 C CNN "bom_1"
+F 9 "1" H 0   0   50  0001 C CNN "bom_2"
+F 10 "1" H 0   0   50  0001 C CNN "bom_3"
 	1    9050 7550
 	0    -1   1    0   
 $EndComp
@@ -1149,6 +1242,9 @@ F 4 "CAP CER 100PF 10V X7R 0603 " H 0   0   50  0001 C CNN "Description"
 F 5 "885012206003" H 0   0   50  0001 C CNN "PartNumber"
 F 6 " 732-7922-1-ND" H 0   0   50  0001 C CNN "digikey"
 F 7 "0.02100" H 0   0   50  0001 C CNN "price@10"
+F 8 "1" H 0   0   50  0001 C CNN "bom_1"
+F 9 "1" H 0   0   50  0001 C CNN "bom_2"
+F 10 "1" H 0   0   50  0001 C CNN "bom_3"
 	1    8850 7550
 	0    -1   1    0   
 $EndComp
@@ -1164,6 +1260,9 @@ F 4 "CAP CER 100PF 10V X7R 0603 " H 0   0   50  0001 C CNN "Description"
 F 5 "885012206003" H 0   0   50  0001 C CNN "PartNumber"
 F 6 " 732-7922-1-ND" H 0   0   50  0001 C CNN "digikey"
 F 7 "0.02100" H 0   0   50  0001 C CNN "price@10"
+F 8 "1" H 0   0   50  0001 C CNN "bom_1"
+F 9 "1" H 0   0   50  0001 C CNN "bom_2"
+F 10 "1" H 0   0   50  0001 C CNN "bom_3"
 	1    8650 7550
 	0    -1   1    0   
 $EndComp
@@ -1179,6 +1278,9 @@ F 4 "CAP CER 100PF 10V X7R 0603 " H 0   0   50  0001 C CNN "Description"
 F 5 "885012206003" H 0   0   50  0001 C CNN "PartNumber"
 F 6 " 732-7922-1-ND" H 0   0   50  0001 C CNN "digikey"
 F 7 "0.02100" H 0   0   50  0001 C CNN "price@10"
+F 8 "1" H 0   0   50  0001 C CNN "bom_1"
+F 9 "1" H 0   0   50  0001 C CNN "bom_2"
+F 10 "1" H 0   0   50  0001 C CNN "bom_3"
 	1    8450 7550
 	0    -1   1    0   
 $EndComp
@@ -1194,6 +1296,9 @@ F 4 "CAP CER 100PF 10V X7R 0603 " H 0   0   50  0001 C CNN "Description"
 F 5 "885012206003" H 0   0   50  0001 C CNN "PartNumber"
 F 6 " 732-7922-1-ND" H 0   0   50  0001 C CNN "digikey"
 F 7 "0.02100" H 0   0   50  0001 C CNN "price@10"
+F 8 "1" H 0   0   50  0001 C CNN "bom_1"
+F 9 "1" H 0   0   50  0001 C CNN "bom_2"
+F 10 "1" H 0   0   50  0001 C CNN "bom_3"
 	1    8250 7550
 	0    -1   1    0   
 $EndComp
@@ -1209,6 +1314,9 @@ F 4 "CAP CER 100PF 10V X7R 0603 " H 0   0   50  0001 C CNN "Description"
 F 5 "885012206003" H 0   0   50  0001 C CNN "PartNumber"
 F 6 " 732-7922-1-ND" H 0   0   50  0001 C CNN "digikey"
 F 7 "0.02100" H 0   0   50  0001 C CNN "price@10"
+F 8 "1" H 0   0   50  0001 C CNN "bom_1"
+F 9 "1" H 0   0   50  0001 C CNN "bom_2"
+F 10 "1" H 0   0   50  0001 C CNN "bom_3"
 	1    8050 7550
 	0    -1   1    0   
 $EndComp
@@ -1224,6 +1332,9 @@ F 4 "CAP CER 100PF 10V X7R 0603 " H 0   0   50  0001 C CNN "Description"
 F 5 "885012206003" H 0   0   50  0001 C CNN "PartNumber"
 F 6 " 732-7922-1-ND" H 0   0   50  0001 C CNN "digikey"
 F 7 "0.02100" H 0   0   50  0001 C CNN "price@10"
+F 8 "1" H 0   0   50  0001 C CNN "bom_1"
+F 9 "1" H 0   0   50  0001 C CNN "bom_2"
+F 10 "1" H 0   0   50  0001 C CNN "bom_3"
 	1    7850 7550
 	0    -1   1    0   
 $EndComp
@@ -1239,6 +1350,9 @@ F 4 "CAP CER 100PF 10V X7R 0603 " H 0   0   50  0001 C CNN "Description"
 F 5 "885012206003" H 0   0   50  0001 C CNN "PartNumber"
 F 6 " 732-7922-1-ND" H 0   0   50  0001 C CNN "digikey"
 F 7 "0.02100" H 0   0   50  0001 C CNN "price@10"
+F 8 "1" H 0   0   50  0001 C CNN "bom_1"
+F 9 "1" H 0   0   50  0001 C CNN "bom_2"
+F 10 "1" H 0   0   50  0001 C CNN "bom_3"
 	1    7650 7550
 	0    -1   1    0   
 $EndComp
@@ -1401,6 +1515,9 @@ F 4 "22 Ohms ±5% 0.1W, 1/10W Chip Resistor 0603 (1608 Metric) Automotive AEC-Q2
 F 5 "CRGCQ0603J22R" H 0   0   50  0001 C CNN "PartNumber"
 F 6 "A130081CT-ND" H 0   0   50  0001 C CNN "digikey"
 F 7 "0.02100" H 0   0   50  0001 C CNN "price@10"
+F 8 "1" H 0   0   50  0001 C CNN "bom_1"
+F 9 "1" H 0   0   50  0001 C CNN "bom_2"
+F 10 "1" H 0   0   50  0001 C CNN "bom_3"
 	1    6700 2600
 	1    0    0    -1  
 $EndComp
@@ -1416,6 +1533,9 @@ F 4 "22 Ohms ±5% 0.1W, 1/10W Chip Resistor 0603 (1608 Metric) Automotive AEC-Q2
 F 5 "CRGCQ0603J22R" H 0   0   50  0001 C CNN "PartNumber"
 F 6 "A130081CT-ND" H 0   0   50  0001 C CNN "digikey"
 F 7 "0.02100" H 0   0   50  0001 C CNN "price@10"
+F 8 "1" H 0   0   50  0001 C CNN "bom_1"
+F 9 "1" H 0   0   50  0001 C CNN "bom_2"
+F 10 "1" H 0   0   50  0001 C CNN "bom_3"
 	1    6700 2700
 	1    0    0    -1  
 $EndComp
@@ -1431,6 +1551,9 @@ F 4 "22 Ohms ±5% 0.1W, 1/10W Chip Resistor 0603 (1608 Metric) Automotive AEC-Q2
 F 5 "CRGCQ0603J22R" H 0   0   50  0001 C CNN "PartNumber"
 F 6 "A130081CT-ND" H 0   0   50  0001 C CNN "digikey"
 F 7 "0.02100" H 0   0   50  0001 C CNN "price@10"
+F 8 "1" H 0   0   50  0001 C CNN "bom_1"
+F 9 "1" H 0   0   50  0001 C CNN "bom_2"
+F 10 "1" H 0   0   50  0001 C CNN "bom_3"
 	1    6700 2800
 	1    0    0    -1  
 $EndComp
@@ -1446,6 +1569,9 @@ F 4 "22 Ohms ±5% 0.1W, 1/10W Chip Resistor 0603 (1608 Metric) Automotive AEC-Q2
 F 5 "CRGCQ0603J22R" H 0   0   50  0001 C CNN "PartNumber"
 F 6 "A130081CT-ND" H 0   0   50  0001 C CNN "digikey"
 F 7 "0.02100" H 0   0   50  0001 C CNN "price@10"
+F 8 "1" H 0   0   50  0001 C CNN "bom_1"
+F 9 "1" H 0   0   50  0001 C CNN "bom_2"
+F 10 "1" H 0   0   50  0001 C CNN "bom_3"
 	1    6700 2900
 	1    0    0    -1  
 $EndComp
@@ -1461,6 +1587,9 @@ F 4 "22 Ohms ±5% 0.1W, 1/10W Chip Resistor 0603 (1608 Metric) Automotive AEC-Q2
 F 5 "CRGCQ0603J22R" H 0   0   50  0001 C CNN "PartNumber"
 F 6 "A130081CT-ND" H 0   0   50  0001 C CNN "digikey"
 F 7 "0.02100" H 0   0   50  0001 C CNN "price@10"
+F 8 "1" H 0   0   50  0001 C CNN "bom_1"
+F 9 "1" H 0   0   50  0001 C CNN "bom_2"
+F 10 "1" H 0   0   50  0001 C CNN "bom_3"
 	1    6700 3000
 	1    0    0    -1  
 $EndComp
@@ -1476,6 +1605,9 @@ F 4 "22 Ohms ±5% 0.1W, 1/10W Chip Resistor 0603 (1608 Metric) Automotive AEC-Q2
 F 5 "CRGCQ0603J22R" H 0   0   50  0001 C CNN "PartNumber"
 F 6 "A130081CT-ND" H 0   0   50  0001 C CNN "digikey"
 F 7 "0.02100" H 0   0   50  0001 C CNN "price@10"
+F 8 "1" H 0   0   50  0001 C CNN "bom_1"
+F 9 "1" H 0   0   50  0001 C CNN "bom_2"
+F 10 "1" H 0   0   50  0001 C CNN "bom_3"
 	1    6700 3100
 	1    0    0    -1  
 $EndComp
@@ -1491,6 +1623,9 @@ F 4 "22 Ohms ±5% 0.1W, 1/10W Chip Resistor 0603 (1608 Metric) Automotive AEC-Q2
 F 5 "CRGCQ0603J22R" H 0   0   50  0001 C CNN "PartNumber"
 F 6 "A130081CT-ND" H 0   0   50  0001 C CNN "digikey"
 F 7 "0.02100" H 0   0   50  0001 C CNN "price@10"
+F 8 "1" H 0   0   50  0001 C CNN "bom_1"
+F 9 "1" H 0   0   50  0001 C CNN "bom_2"
+F 10 "1" H 0   0   50  0001 C CNN "bom_3"
 	1    6700 3200
 	1    0    0    -1  
 $EndComp
@@ -1506,6 +1641,9 @@ F 4 "22 Ohms ±5% 0.1W, 1/10W Chip Resistor 0603 (1608 Metric) Automotive AEC-Q2
 F 5 "CRGCQ0603J22R" H 0   0   50  0001 C CNN "PartNumber"
 F 6 "A130081CT-ND" H 0   0   50  0001 C CNN "digikey"
 F 7 "0.02100" H 0   0   50  0001 C CNN "price@10"
+F 8 "1" H 0   0   50  0001 C CNN "bom_1"
+F 9 "1" H 0   0   50  0001 C CNN "bom_2"
+F 10 "1" H 0   0   50  0001 C CNN "bom_3"
 	1    6700 3300
 	1    0    0    -1  
 $EndComp
@@ -1521,6 +1659,9 @@ F 4 "22 Ohms ±5% 0.1W, 1/10W Chip Resistor 0603 (1608 Metric) Automotive AEC-Q2
 F 5 "CRGCQ0603J22R" H 0   0   50  0001 C CNN "PartNumber"
 F 6 "A130081CT-ND" H 0   0   50  0001 C CNN "digikey"
 F 7 "0.02100" H 0   0   50  0001 C CNN "price@10"
+F 8 "1" H 0   0   50  0001 C CNN "bom_1"
+F 9 "1" H 0   0   50  0001 C CNN "bom_2"
+F 10 "1" H 0   0   50  0001 C CNN "bom_3"
 	1    6700 3400
 	1    0    0    -1  
 $EndComp
@@ -1536,6 +1677,9 @@ F 4 "22 Ohms ±5% 0.1W, 1/10W Chip Resistor 0603 (1608 Metric) Automotive AEC-Q2
 F 5 "CRGCQ0603J22R" H 0   0   50  0001 C CNN "PartNumber"
 F 6 "A130081CT-ND" H 0   0   50  0001 C CNN "digikey"
 F 7 "0.02100" H 0   0   50  0001 C CNN "price@10"
+F 8 "1" H 0   0   50  0001 C CNN "bom_1"
+F 9 "1" H 0   0   50  0001 C CNN "bom_2"
+F 10 "1" H 0   0   50  0001 C CNN "bom_3"
 	1    6700 3500
 	1    0    0    -1  
 $EndComp
@@ -1551,6 +1695,9 @@ F 4 "22 Ohms ±5% 0.1W, 1/10W Chip Resistor 0603 (1608 Metric) Automotive AEC-Q2
 F 5 "CRGCQ0603J22R" H 0   0   50  0001 C CNN "PartNumber"
 F 6 "A130081CT-ND" H 0   0   50  0001 C CNN "digikey"
 F 7 "0.02100" H 0   0   50  0001 C CNN "price@10"
+F 8 "1" H 0   0   50  0001 C CNN "bom_1"
+F 9 "1" H 0   0   50  0001 C CNN "bom_2"
+F 10 "1" H 0   0   50  0001 C CNN "bom_3"
 	1    6700 3600
 	1    0    0    -1  
 $EndComp
@@ -1566,6 +1713,9 @@ F 4 "22 Ohms ±5% 0.1W, 1/10W Chip Resistor 0603 (1608 Metric) Automotive AEC-Q2
 F 5 "CRGCQ0603J22R" H 0   0   50  0001 C CNN "PartNumber"
 F 6 "A130081CT-ND" H 0   0   50  0001 C CNN "digikey"
 F 7 "0.02100" H 0   0   50  0001 C CNN "price@10"
+F 8 "1" H 0   0   50  0001 C CNN "bom_1"
+F 9 "1" H 0   0   50  0001 C CNN "bom_2"
+F 10 "1" H 0   0   50  0001 C CNN "bom_3"
 	1    9800 6250
 	1    0    0    -1  
 $EndComp
@@ -1581,6 +1731,9 @@ F 4 "22 Ohms ±5% 0.1W, 1/10W Chip Resistor 0603 (1608 Metric) Automotive AEC-Q2
 F 5 "CRGCQ0603J22R" H 0   0   50  0001 C CNN "PartNumber"
 F 6 "A130081CT-ND" H 0   0   50  0001 C CNN "digikey"
 F 7 "0.02100" H 0   0   50  0001 C CNN "price@10"
+F 8 "1" H 0   0   50  0001 C CNN "bom_1"
+F 9 "1" H 0   0   50  0001 C CNN "bom_2"
+F 10 "1" H 0   0   50  0001 C CNN "bom_3"
 	1    9800 6150
 	1    0    0    -1  
 $EndComp
@@ -1596,6 +1749,9 @@ F 4 "22 Ohms ±5% 0.1W, 1/10W Chip Resistor 0603 (1608 Metric) Automotive AEC-Q2
 F 5 "CRGCQ0603J22R" H 0   0   50  0001 C CNN "PartNumber"
 F 6 "A130081CT-ND" H 0   0   50  0001 C CNN "digikey"
 F 7 "0.02100" H 0   0   50  0001 C CNN "price@10"
+F 8 "1" H 0   0   50  0001 C CNN "bom_1"
+F 9 "1" H 0   0   50  0001 C CNN "bom_2"
+F 10 "1" H 0   0   50  0001 C CNN "bom_3"
 	1    9800 6350
 	1    0    0    -1  
 $EndComp
@@ -1611,6 +1767,9 @@ F 4 "22 Ohms ±5% 0.1W, 1/10W Chip Resistor 0603 (1608 Metric) Automotive AEC-Q2
 F 5 "CRGCQ0603J22R" H 0   0   50  0001 C CNN "PartNumber"
 F 6 "A130081CT-ND" H 0   0   50  0001 C CNN "digikey"
 F 7 "0.02100" H 0   0   50  0001 C CNN "price@10"
+F 8 "1" H 0   0   50  0001 C CNN "bom_1"
+F 9 "1" H 0   0   50  0001 C CNN "bom_2"
+F 10 "1" H 0   0   50  0001 C CNN "bom_3"
 	1    9800 6450
 	1    0    0    -1  
 $EndComp
@@ -1626,6 +1785,9 @@ F 4 "22 Ohms ±5% 0.1W, 1/10W Chip Resistor 0603 (1608 Metric) Automotive AEC-Q2
 F 5 "CRGCQ0603J22R" H 0   0   50  0001 C CNN "PartNumber"
 F 6 "A130081CT-ND" H 0   0   50  0001 C CNN "digikey"
 F 7 "0.02100" H 0   0   50  0001 C CNN "price@10"
+F 8 "1" H 0   0   50  0001 C CNN "bom_1"
+F 9 "1" H 0   0   50  0001 C CNN "bom_2"
+F 10 "1" H 0   0   50  0001 C CNN "bom_3"
 	1    9800 6550
 	1    0    0    -1  
 $EndComp
@@ -1641,6 +1803,9 @@ F 4 "22 Ohms ±5% 0.1W, 1/10W Chip Resistor 0603 (1608 Metric) Automotive AEC-Q2
 F 5 "CRGCQ0603J22R" H 0   0   50  0001 C CNN "PartNumber"
 F 6 "A130081CT-ND" H 0   0   50  0001 C CNN "digikey"
 F 7 "0.02100" H 0   0   50  0001 C CNN "price@10"
+F 8 "1" H 0   0   50  0001 C CNN "bom_1"
+F 9 "1" H 0   0   50  0001 C CNN "bom_2"
+F 10 "1" H 0   0   50  0001 C CNN "bom_3"
 	1    9800 6650
 	1    0    0    -1  
 $EndComp
@@ -1656,6 +1821,9 @@ F 4 "22 Ohms ±5% 0.1W, 1/10W Chip Resistor 0603 (1608 Metric) Automotive AEC-Q2
 F 5 "CRGCQ0603J22R" H 0   0   50  0001 C CNN "PartNumber"
 F 6 "A130081CT-ND" H 0   0   50  0001 C CNN "digikey"
 F 7 "0.02100" H 0   0   50  0001 C CNN "price@10"
+F 8 "1" H 0   0   50  0001 C CNN "bom_1"
+F 9 "1" H 0   0   50  0001 C CNN "bom_2"
+F 10 "1" H 0   0   50  0001 C CNN "bom_3"
 	1    9800 6750
 	1    0    0    -1  
 $EndComp
@@ -1671,6 +1839,9 @@ F 4 "22 Ohms ±5% 0.1W, 1/10W Chip Resistor 0603 (1608 Metric) Automotive AEC-Q2
 F 5 "CRGCQ0603J22R" H 0   0   50  0001 C CNN "PartNumber"
 F 6 "A130081CT-ND" H 0   0   50  0001 C CNN "digikey"
 F 7 "0.02100" H 0   0   50  0001 C CNN "price@10"
+F 8 "1" H 0   0   50  0001 C CNN "bom_1"
+F 9 "1" H 0   0   50  0001 C CNN "bom_2"
+F 10 "1" H 0   0   50  0001 C CNN "bom_3"
 	1    9800 6850
 	1    0    0    -1  
 $EndComp
@@ -1686,6 +1857,9 @@ F 4 "22 Ohms ±5% 0.1W, 1/10W Chip Resistor 0603 (1608 Metric) Automotive AEC-Q2
 F 5 "CRGCQ0603J22R" H 0   0   50  0001 C CNN "PartNumber"
 F 6 "A130081CT-ND" H 0   0   50  0001 C CNN "digikey"
 F 7 "0.02100" H 0   0   50  0001 C CNN "price@10"
+F 8 "1" H 0   0   50  0001 C CNN "bom_1"
+F 9 "1" H 0   0   50  0001 C CNN "bom_2"
+F 10 "1" H 0   0   50  0001 C CNN "bom_3"
 	1    9800 6950
 	1    0    0    -1  
 $EndComp
@@ -1701,6 +1875,9 @@ F 4 "22 Ohms ±5% 0.1W, 1/10W Chip Resistor 0603 (1608 Metric) Automotive AEC-Q2
 F 5 "CRGCQ0603J22R" H 0   0   50  0001 C CNN "PartNumber"
 F 6 "A130081CT-ND" H 0   0   50  0001 C CNN "digikey"
 F 7 "0.02100" H 0   0   50  0001 C CNN "price@10"
+F 8 "1" H 0   0   50  0001 C CNN "bom_1"
+F 9 "1" H 0   0   50  0001 C CNN "bom_2"
+F 10 "1" H 0   0   50  0001 C CNN "bom_3"
 	1    9800 7050
 	1    0    0    -1  
 $EndComp
@@ -1716,6 +1893,9 @@ F 4 "22 Ohms ±5% 0.1W, 1/10W Chip Resistor 0603 (1608 Metric) Automotive AEC-Q2
 F 5 "CRGCQ0603J22R" H 0   0   50  0001 C CNN "PartNumber"
 F 6 "A130081CT-ND" H 0   0   50  0001 C CNN "digikey"
 F 7 "0.02100" H 0   0   50  0001 C CNN "price@10"
+F 8 "1" H 0   0   50  0001 C CNN "bom_1"
+F 9 "1" H 0   0   50  0001 C CNN "bom_2"
+F 10 "1" H 0   0   50  0001 C CNN "bom_3"
 	1    9800 7150
 	1    0    0    -1  
 $EndComp
@@ -1731,6 +1911,9 @@ F 4 "22 Ohms ±5% 0.1W, 1/10W Chip Resistor 0603 (1608 Metric) Automotive AEC-Q2
 F 5 "CRGCQ0603J22R" H 0   0   50  0001 C CNN "PartNumber"
 F 6 "A130081CT-ND" H 0   0   50  0001 C CNN "digikey"
 F 7 "0.02100" H 0   0   50  0001 C CNN "price@10"
+F 8 "1" H 0   0   50  0001 C CNN "bom_1"
+F 9 "1" H 0   0   50  0001 C CNN "bom_2"
+F 10 "1" H 0   0   50  0001 C CNN "bom_3"
 	1    9800 7250
 	1    0    0    -1  
 $EndComp
@@ -1740,14 +1923,17 @@ $Comp
 L servo:SN74LVC2G17DBVR U803
 U 1 1 5E60CBFC
 P 4950 2050
-F 0 "U803" H 4450 1950 39  0000 L BNN
-F 1 "SN74LVC2G17DBVR" H 5150 2000 20  0000 L BNN
+F 0 "U803" H 4450 2000 39  0000 C CNN
+F 1 "SN74LVC2G17DBVR" H 5250 2000 20  0001 C CNN
 F 2 "servo:SOT-23-6" H 4450 2250 60  0001 C CNN
 F 3 "../doc/datasheets/sn74lvc2g17.pdf" H 4650 2500 60  0001 C CNN
 F 4 "Buffer, Non-Inverting 2 Element 1 Bit per Element Push-Pull Output SOT-23-6" H 0   0   50  0001 C CNN "Description"
 F 5 "SN74LVC2G17DBVR" H 0   0   50  0001 C CNN "PartNumber"
 F 6 " 296-SN74LVC2G17DBVRCT-ND " H 0   0   50  0001 C CNN "digikey"
 F 7 "0.30200" H 0   0   50  0001 C CNN "price@10"
+F 8 "" H 0   0   50  0001 C CNN "bom_1"
+F 9 "1" H 0   0   50  0001 C CNN "bom_2"
+F 10 "1" H 0   0   50  0001 C CNN "bom_3"
 	1    4950 2050
 	1    0    0    -1  
 $EndComp
@@ -1786,6 +1972,9 @@ F 4 "CAP CER 0.1UF 16V X7R 0603 " H 0   0   50  0001 C CNN "Description"
 F 5 "CC0603KPX7R7BB104" H 0   0   50  0001 C CNN "PartNumber"
 F 6 "311-1335-1-ND" H 0   0   50  0001 C CNN "digikey"
 F 7 "0.05800" H 0   0   50  0001 C CNN "price@10"
+F 8 "1" H 0   0   50  0001 C CNN "bom_1"
+F 9 "1" H 0   0   50  0001 C CNN "bom_2"
+F 10 "1" H 0   0   50  0001 C CNN "bom_3"
 	1    14550 5300
 	0    -1   -1   0   
 $EndComp
@@ -1832,6 +2021,9 @@ F 4 "CAP CER 0.1UF 16V X7R 0603 " H 0   0   50  0001 C CNN "Description"
 F 5 "CC0603KPX7R7BB104" H 0   0   50  0001 C CNN "PartNumber"
 F 6 "311-1335-1-ND" H 0   0   50  0001 C CNN "digikey"
 F 7 "0.05800" H 0   0   50  0001 C CNN "price@10"
+F 8 "1" H 0   0   50  0001 C CNN "bom_1"
+F 9 "1" H 0   0   50  0001 C CNN "bom_2"
+F 10 "1" H 0   0   50  0001 C CNN "bom_3"
 	1    14500 6800
 	0    -1   -1   0   
 $EndComp
@@ -1878,6 +2070,9 @@ F 4 "CAP CER 0.1UF 16V X7R 0603 " H 0   0   50  0001 C CNN "Description"
 F 5 "CC0603KPX7R7BB104" H 0   0   50  0001 C CNN "PartNumber"
 F 6 "311-1335-1-ND" H 0   0   50  0001 C CNN "digikey"
 F 7 "0.05800" H 0   0   50  0001 C CNN "price@10"
+F 8 "1" H 0   0   50  0001 C CNN "bom_1"
+F 9 "1" H 0   0   50  0001 C CNN "bom_2"
+F 10 "1" H 0   0   50  0001 C CNN "bom_3"
 	1    2000 1650
 	0    -1   -1   0   
 $EndComp
@@ -1924,6 +2119,9 @@ F 4 "CAP CER 0.1UF 16V X7R 0603 " H 0   0   50  0001 C CNN "Description"
 F 5 "CC0603KPX7R7BB104" H 0   0   50  0001 C CNN "PartNumber"
 F 6 "311-1335-1-ND" H 0   0   50  0001 C CNN "digikey"
 F 7 "0.05800" H 0   0   50  0001 C CNN "price@10"
+F 8 "1" H 0   0   50  0001 C CNN "bom_1"
+F 9 "1" H 0   0   50  0001 C CNN "bom_2"
+F 10 "1" H 0   0   50  0001 C CNN "bom_3"
 	1    1950 3100
 	0    -1   -1   0   
 $EndComp
@@ -1974,6 +2172,9 @@ F 4 "CAP CER 0.1UF 16V X7R 0603 " H 0   0   50  0001 C CNN "Description"
 F 5 "CC0603KPX7R7BB104" H 0   0   50  0001 C CNN "PartNumber"
 F 6 "311-1335-1-ND" H 0   0   50  0001 C CNN "digikey"
 F 7 "0.05800" H 0   0   50  0001 C CNN "price@10"
+F 8 "1" H 0   0   50  0001 C CNN "bom_1"
+F 9 "1" H 0   0   50  0001 C CNN "bom_2"
+F 10 "1" H 0   0   50  0001 C CNN "bom_3"
 	1    6300 1800
 	0    1    -1   0   
 $EndComp
@@ -1992,6 +2193,9 @@ F 4 "CAP CER 0.1UF 16V X7R 0603 " H 0   0   50  0001 C CNN "Description"
 F 5 "CC0603KPX7R7BB104" H 0   0   50  0001 C CNN "PartNumber"
 F 6 "311-1335-1-ND" H 0   0   50  0001 C CNN "digikey"
 F 7 "0.05800" H 0   0   50  0001 C CNN "price@10"
+F 8 "1" H 0   0   50  0001 C CNN "bom_1"
+F 9 "1" H 0   0   50  0001 C CNN "bom_2"
+F 10 "1" H 0   0   50  0001 C CNN "bom_3"
 	1    6550 1800
 	0    1    -1   0   
 $EndComp
@@ -2010,6 +2214,9 @@ F 4 "CAP CER 0.1UF 16V X7R 0603 " H 0   0   50  0001 C CNN "Description"
 F 5 "CC0603KPX7R7BB104" H 0   0   50  0001 C CNN "PartNumber"
 F 6 "311-1335-1-ND" H 0   0   50  0001 C CNN "digikey"
 F 7 "0.05800" H 0   0   50  0001 C CNN "price@10"
+F 8 "1" H 0   0   50  0001 C CNN "bom_1"
+F 9 "1" H 0   0   50  0001 C CNN "bom_2"
+F 10 "1" H 0   0   50  0001 C CNN "bom_3"
 	1    6800 1800
 	0    1    -1   0   
 $EndComp
@@ -2028,6 +2235,9 @@ F 4 "CAP CER 0.1UF 16V X7R 0603 " H 0   0   50  0001 C CNN "Description"
 F 5 "CC0603KPX7R7BB104" H 0   0   50  0001 C CNN "PartNumber"
 F 6 "311-1335-1-ND" H 0   0   50  0001 C CNN "digikey"
 F 7 "0.05800" H 0   0   50  0001 C CNN "price@10"
+F 8 "1" H 0   0   50  0001 C CNN "bom_1"
+F 9 "1" H 0   0   50  0001 C CNN "bom_2"
+F 10 "1" H 0   0   50  0001 C CNN "bom_3"
 	1    7050 1800
 	0    1    -1   0   
 $EndComp
@@ -2046,6 +2256,9 @@ F 4 "CAP CER 0.1UF 16V X7R 0603 " H 0   0   50  0001 C CNN "Description"
 F 5 "CC0603KPX7R7BB104" H 0   0   50  0001 C CNN "PartNumber"
 F 6 "311-1335-1-ND" H 0   0   50  0001 C CNN "digikey"
 F 7 "0.05800" H 0   0   50  0001 C CNN "price@10"
+F 8 "1" H 0   0   50  0001 C CNN "bom_1"
+F 9 "1" H 0   0   50  0001 C CNN "bom_2"
+F 10 "1" H 0   0   50  0001 C CNN "bom_3"
 	1    7300 1800
 	0    1    -1   0   
 $EndComp
@@ -2064,6 +2277,9 @@ F 4 "CAP CER 0.1UF 16V X7R 0603 " H 0   0   50  0001 C CNN "Description"
 F 5 "CC0603KPX7R7BB104" H 0   0   50  0001 C CNN "PartNumber"
 F 6 "311-1335-1-ND" H 0   0   50  0001 C CNN "digikey"
 F 7 "0.05800" H 0   0   50  0001 C CNN "price@10"
+F 8 "1" H 0   0   50  0001 C CNN "bom_1"
+F 9 "1" H 0   0   50  0001 C CNN "bom_2"
+F 10 "1" H 0   0   50  0001 C CNN "bom_3"
 	1    7550 1800
 	0    1    -1   0   
 $EndComp
@@ -2143,6 +2359,9 @@ F 4 "CAP CER 0.1UF 16V X7R 0603 " H 0   0   50  0001 C CNN "Description"
 F 5 "CC0603KPX7R7BB104" H 0   0   50  0001 C CNN "PartNumber"
 F 6 "311-1335-1-ND" H 0   0   50  0001 C CNN "digikey"
 F 7 "0.05800" H 0   0   50  0001 C CNN "price@10"
+F 8 "1" H 0   0   50  0001 C CNN "bom_1"
+F 9 "1" H 0   0   50  0001 C CNN "bom_2"
+F 10 "1" H 0   0   50  0001 C CNN "bom_3"
 	1    10400 5550
 	0    -1   -1   0   
 $EndComp
@@ -2165,6 +2384,9 @@ F 4 "CAP CER 0.1UF 16V X7R 0603 " H 0   0   50  0001 C CNN "Description"
 F 5 "CC0603KPX7R7BB104" H 0   0   50  0001 C CNN "PartNumber"
 F 6 "311-1335-1-ND" H 0   0   50  0001 C CNN "digikey"
 F 7 "0.05800" H 0   0   50  0001 C CNN "price@10"
+F 8 "1" H 0   0   50  0001 C CNN "bom_1"
+F 9 "1" H 0   0   50  0001 C CNN "bom_2"
+F 10 "1" H 0   0   50  0001 C CNN "bom_3"
 	1    10150 5550
 	0    -1   -1   0   
 $EndComp
@@ -2183,6 +2405,9 @@ F 4 "CAP CER 0.1UF 16V X7R 0603 " H 0   0   50  0001 C CNN "Description"
 F 5 "CC0603KPX7R7BB104" H 0   0   50  0001 C CNN "PartNumber"
 F 6 "311-1335-1-ND" H 0   0   50  0001 C CNN "digikey"
 F 7 "0.05800" H 0   0   50  0001 C CNN "price@10"
+F 8 "1" H 0   0   50  0001 C CNN "bom_1"
+F 9 "1" H 0   0   50  0001 C CNN "bom_2"
+F 10 "1" H 0   0   50  0001 C CNN "bom_3"
 	1    9900 5550
 	0    -1   -1   0   
 $EndComp
@@ -2201,6 +2426,9 @@ F 4 "CAP CER 0.1UF 16V X7R 0603 " H 0   0   50  0001 C CNN "Description"
 F 5 "CC0603KPX7R7BB104" H 0   0   50  0001 C CNN "PartNumber"
 F 6 "311-1335-1-ND" H 0   0   50  0001 C CNN "digikey"
 F 7 "0.05800" H 0   0   50  0001 C CNN "price@10"
+F 8 "1" H 0   0   50  0001 C CNN "bom_1"
+F 9 "1" H 0   0   50  0001 C CNN "bom_2"
+F 10 "1" H 0   0   50  0001 C CNN "bom_3"
 	1    9650 5550
 	0    -1   -1   0   
 $EndComp
@@ -2219,6 +2447,9 @@ F 4 "CAP CER 0.1UF 16V X7R 0603 " H 0   0   50  0001 C CNN "Description"
 F 5 "CC0603KPX7R7BB104" H 0   0   50  0001 C CNN "PartNumber"
 F 6 "311-1335-1-ND" H 0   0   50  0001 C CNN "digikey"
 F 7 "0.05800" H 0   0   50  0001 C CNN "price@10"
+F 8 "1" H 0   0   50  0001 C CNN "bom_1"
+F 9 "1" H 0   0   50  0001 C CNN "bom_2"
+F 10 "1" H 0   0   50  0001 C CNN "bom_3"
 	1    9400 5550
 	0    -1   -1   0   
 $EndComp
@@ -2237,6 +2468,9 @@ F 4 "CAP CER 0.1UF 16V X7R 0603 " H 0   0   50  0001 C CNN "Description"
 F 5 "CC0603KPX7R7BB104" H 0   0   50  0001 C CNN "PartNumber"
 F 6 "311-1335-1-ND" H 0   0   50  0001 C CNN "digikey"
 F 7 "0.05800" H 0   0   50  0001 C CNN "price@10"
+F 8 "1" H 0   0   50  0001 C CNN "bom_1"
+F 9 "1" H 0   0   50  0001 C CNN "bom_2"
+F 10 "1" H 0   0   50  0001 C CNN "bom_3"
 	1    9150 5550
 	0    -1   -1   0   
 $EndComp
@@ -2255,6 +2489,9 @@ F 4 "CAP CER 0.1UF 16V X7R 0603 " H 0   0   50  0001 C CNN "Description"
 F 5 "CC0603KPX7R7BB104" H 0   0   50  0001 C CNN "PartNumber"
 F 6 "311-1335-1-ND" H 0   0   50  0001 C CNN "digikey"
 F 7 "0.05800" H 0   0   50  0001 C CNN "price@10"
+F 8 "1" H 0   0   50  0001 C CNN "bom_1"
+F 9 "1" H 0   0   50  0001 C CNN "bom_2"
+F 10 "1" H 0   0   50  0001 C CNN "bom_3"
 	1    8900 5550
 	0    -1   -1   0   
 $EndComp

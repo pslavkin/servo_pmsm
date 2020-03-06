@@ -41,6 +41,9 @@ F 4 "Connector Header Surface Mount 34 position 0.100\" (2.54mm) " H 0   0   50 
 F 5 "SBH11-NBPC-D17-SM-BK" H 0   0   50  0001 C CNN "PartNumber"
 F 6 "S9191-ND" H 0   0   50  0001 C CNN "digikey"
 F 7 "1.31900" H 0   0   50  0001 C CNN "price@10"
+F 8 "" H 0   0   50  0001 C CNN "bom_1"
+F 9 "" H 0   0   50  0001 C CNN "bom_2"
+F 10 "1" H 0   0   50  0001 C CNN "bom_3"
 	1    6600 3050
 	1    0    0    -1  
 $EndComp
@@ -56,6 +59,9 @@ F 4 "Connector Header Surface Mount 34 position 0.100\" (2.54mm) " H 0   0   50 
 F 5 "SBH11-NBPC-D17-SM-BK" H 0   0   50  0001 C CNN "PartNumber"
 F 6 "S9191-ND" H 0   0   50  0001 C CNN "digikey"
 F 7 "1.31900" H 0   0   50  0001 C CNN "price@10"
+F 8 "" H 0   0   50  0001 C CNN "bom_1"
+F 9 "" H 0   0   50  0001 C CNN "bom_2"
+F 10 "1" H 0   0   50  0001 C CNN "bom_3"
 	1    9900 3000
 	1    0    0    -1  
 $EndComp

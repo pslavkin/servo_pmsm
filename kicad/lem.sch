@@ -62,6 +62,9 @@ F 4 "CC0603KPX7R7BB104" H 0   0   50  0001 C CNN "PartNumber"
 F 5 "311-1335-1-ND" H 0   0   50  0001 C CNN "digikey"
 F 6 "CAP CER 0.1UF 16V X7R 0603 " H 0   0   50  0001 C CNN "Description"
 F 7 "0.05800" H 0   0   50  0001 C CNN "price@10"
+F 8 "1" H 0   0   50  0001 C CNN "bom_1"
+F 9 "1" H 0   0   50  0001 C CNN "bom_2"
+F 10 "1" H 0   0   50  0001 C CNN "bom_3"
 	1    3950 3450
 	0    -1   1    0   
 $EndComp
@@ -111,6 +114,9 @@ F 4 "6.8 kOhms ±5% 0.1W, 1/10W Chip Resistor 0603 (1608 Metric) Automotive AEC-
 F 5 "RMCF0603JT6K80" H 0   0   50  0001 C CNN "PartNumber"
 F 6 " RMCF0603JT6K80CT-ND " H 0   0   50  0001 C CNN "digikey"
 F 7 "0.01400" H 0   0   50  0001 C CNN "price@10"
+F 8 "1" H 0   0   50  0001 C CNN "bom_1"
+F 9 "1" H 0   0   50  0001 C CNN "bom_2"
+F 10 "1" H 0   0   50  0001 C CNN "bom_3"
 	1    4200 4350
 	0    -1   1    0   
 $EndComp
@@ -126,6 +132,9 @@ F 4 "3.3 kOhms ±5% 0.1W, 1/10W Chip Resistor 0603 (1608 Metric) Automotive AEC-
 F 5 "CRGCQ0603J3K3" H 0   0   50  0001 C CNN "PartNumber"
 F 6 "A130094CT-ND" H 0   0   50  0001 C CNN "digikey"
 F 7 "0.02100" H 0   0   50  0001 C CNN "price@10"
+F 8 "1" H 0   0   50  0001 C CNN "bom_1"
+F 9 "1" H 0   0   50  0001 C CNN "bom_2"
+F 10 "1" H 0   0   50  0001 C CNN "bom_3"
 	1    4200 3950
 	0    -1   1    0   
 $EndComp
@@ -141,6 +150,9 @@ F 4 "CAP CER 1000PF 16V X7R 0603 " H 0   0   50  0001 C CNN "Description"
 F 5 "0603B102K160CT" H 0   0   50  0001 C CNN "PartNumber"
 F 6 "1292-1378-1-ND " H 0   0   50  0001 C CNN "digikey"
 F 7 "0.04100" H 0   0   50  0001 C CNN "price@10"
+F 8 "1" H 0   0   50  0001 C CNN "bom_1"
+F 9 "1" H 0   0   50  0001 C CNN "bom_2"
+F 10 "1" H 0   0   50  0001 C CNN "bom_3"
 	1    3600 4350
 	0    -1   1    0   
 $EndComp
@@ -173,6 +185,7 @@ F 4 "Current Sensor 6A 1 Channel Hall Effect, Closed Loop Bidirectional Module "
 F 5 "LXS 6-NPS" H 0   0   50  0001 C CNN "PartNumber"
 F 6 "398-1212-ND" H 0   0   50  0001 C CNN "digikey"
 F 7 "12.50000" H 0   0   50  0001 C CNN "price@10"
+F 8 "1" H 0   0   50  0001 C CNN "bom_3"
 	1    4850 3650
 	1    0    0    -1  
 $EndComp
@@ -246,6 +259,9 @@ F 4 "CC0603KPX7R7BB104" H 0   0   50  0001 C CNN "PartNumber"
 F 5 "311-1335-1-ND" H 0   0   50  0001 C CNN "digikey"
 F 6 "CAP CER 0.1UF 16V X7R 0603 " H 0   0   50  0001 C CNN "Description"
 F 7 "0.05800" H 0   0   50  0001 C CNN "price@10"
+F 8 "1" H 0   0   50  0001 C CNN "bom_1"
+F 9 "1" H 0   0   50  0001 C CNN "bom_2"
+F 10 "1" H 0   0   50  0001 C CNN "bom_3"
 	1    3750 5400
 	0    -1   1    0   
 $EndComp
@@ -279,6 +295,9 @@ F 4 "6.8 kOhms ±5% 0.1W, 1/10W Chip Resistor 0603 (1608 Metric) Automotive AEC-
 F 5 "RMCF0603JT6K80" H 0   0   50  0001 C CNN "PartNumber"
 F 6 " RMCF0603JT6K80CT-ND " H 0   0   50  0001 C CNN "digikey"
 F 7 "0.01400" H 0   0   50  0001 C CNN "price@10"
+F 8 "1" H 0   0   50  0001 C CNN "bom_1"
+F 9 "1" H 0   0   50  0001 C CNN "bom_2"
+F 10 "1" H 0   0   50  0001 C CNN "bom_3"
 	1    4000 6300
 	0    -1   1    0   
 $EndComp
@@ -294,6 +313,9 @@ F 4 "3.3 kOhms ±5% 0.1W, 1/10W Chip Resistor 0603 (1608 Metric) Automotive AEC-
 F 5 "CRGCQ0603J3K3" H 0   0   50  0001 C CNN "PartNumber"
 F 6 "A130094CT-ND" H 0   0   50  0001 C CNN "digikey"
 F 7 "0.02100" H 0   0   50  0001 C CNN "price@10"
+F 8 "1" H 0   0   50  0001 C CNN "bom_1"
+F 9 "1" H 0   0   50  0001 C CNN "bom_2"
+F 10 "1" H 0   0   50  0001 C CNN "bom_3"
 	1    4000 5900
 	0    -1   1    0   
 $EndComp
@@ -309,6 +331,9 @@ F 4 "CAP CER 1000PF 16V X7R 0603 " H 0   0   50  0001 C CNN "Description"
 F 5 "0603B102K160CT" H 0   0   50  0001 C CNN "PartNumber"
 F 6 "1292-1378-1-ND " H 0   0   50  0001 C CNN "digikey"
 F 7 "0.04100" H 0   0   50  0001 C CNN "price@10"
+F 8 "1" H 0   0   50  0001 C CNN "bom_1"
+F 9 "1" H 0   0   50  0001 C CNN "bom_2"
+F 10 "1" H 0   0   50  0001 C CNN "bom_3"
 	1    3400 6300
 	0    -1   1    0   
 $EndComp
@@ -341,6 +366,7 @@ F 4 "Current Sensor 6A 1 Channel Hall Effect, Closed Loop Bidirectional Module "
 F 5 "LXS 6-NPS" H 0   0   50  0001 C CNN "PartNumber"
 F 6 "398-1212-ND" H 0   0   50  0001 C CNN "digikey"
 F 7 "12.50000" H 0   0   50  0001 C CNN "price@10"
+F 8 "1" H 0   0   50  0001 C CNN "bom_3"
 	1    4650 5600
 	1    0    0    -1  
 $EndComp
@@ -399,6 +425,9 @@ F 4 "CC0603KPX7R7BB104" H 0   0   50  0001 C CNN "PartNumber"
 F 5 "311-1335-1-ND" H 0   0   50  0001 C CNN "digikey"
 F 6 "CAP CER 0.1UF 16V X7R 0603 " H 0   0   50  0001 C CNN "Description"
 F 7 "0.05800" H 0   0   50  0001 C CNN "price@10"
+F 8 "1" H 0   0   50  0001 C CNN "bom_1"
+F 9 "1" H 0   0   50  0001 C CNN "bom_2"
+F 10 "1" H 0   0   50  0001 C CNN "bom_3"
 	1    3850 8000
 	0    -1   1    0   
 $EndComp
@@ -432,6 +461,9 @@ F 4 "6.8 kOhms ±5% 0.1W, 1/10W Chip Resistor 0603 (1608 Metric) Automotive AEC-
 F 5 "RMCF0603JT6K80" H 0   0   50  0001 C CNN "PartNumber"
 F 6 " RMCF0603JT6K80CT-ND " H 0   0   50  0001 C CNN "digikey"
 F 7 "0.01400" H 0   0   50  0001 C CNN "price@10"
+F 8 "1" H 0   0   50  0001 C CNN "bom_1"
+F 9 "1" H 0   0   50  0001 C CNN "bom_2"
+F 10 "1" H 0   0   50  0001 C CNN "bom_3"
 	1    4100 8900
 	0    -1   1    0   
 $EndComp
@@ -447,6 +479,9 @@ F 4 "3.3 kOhms ±5% 0.1W, 1/10W Chip Resistor 0603 (1608 Metric) Automotive AEC-
 F 5 "CRGCQ0603J3K3" H 0   0   50  0001 C CNN "PartNumber"
 F 6 "A130094CT-ND" H 0   0   50  0001 C CNN "digikey"
 F 7 "0.02100" H 0   0   50  0001 C CNN "price@10"
+F 8 "1" H 0   0   50  0001 C CNN "bom_1"
+F 9 "1" H 0   0   50  0001 C CNN "bom_2"
+F 10 "1" H 0   0   50  0001 C CNN "bom_3"
 	1    4100 8500
 	0    -1   1    0   
 $EndComp
@@ -462,6 +497,9 @@ F 4 "CAP CER 1000PF 16V X7R 0603 " H 0   0   50  0001 C CNN "Description"
 F 5 "0603B102K160CT" H 0   0   50  0001 C CNN "PartNumber"
 F 6 "1292-1378-1-ND " H 0   0   50  0001 C CNN "digikey"
 F 7 "0.04100" H 0   0   50  0001 C CNN "price@10"
+F 8 "1" H 0   0   50  0001 C CNN "bom_1"
+F 9 "1" H 0   0   50  0001 C CNN "bom_2"
+F 10 "1" H 0   0   50  0001 C CNN "bom_3"
 	1    3500 8900
 	0    -1   1    0   
 $EndComp
@@ -537,6 +575,9 @@ F 4 "CC0603KPX7R7BB104" H 0   0   50  0001 C CNN "PartNumber"
 F 5 "311-1335-1-ND" H 0   0   50  0001 C CNN "digikey"
 F 6 "CAP CER 0.1UF 16V X7R 0603 " H 0   0   50  0001 C CNN "Description"
 F 7 "0.05800" H 0   0   50  0001 C CNN "price@10"
+F 8 "1" H 0   0   50  0001 C CNN "bom_1"
+F 9 "1" H 0   0   50  0001 C CNN "bom_2"
+F 10 "1" H 0   0   50  0001 C CNN "bom_3"
 	1    8750 3450
 	0    1    1    0   
 $EndComp
@@ -559,6 +600,9 @@ F 4 "CAP CER 1000PF 16V X7R 0603 " H 0   0   50  0001 C CNN "Description"
 F 5 "0603B102K160CT" H 0   0   50  0001 C CNN "PartNumber"
 F 6 "1292-1378-1-ND " H 0   0   50  0001 C CNN "digikey"
 F 7 "0.04100" H 0   0   50  0001 C CNN "price@10"
+F 8 "1" H 0   0   50  0001 C CNN "bom_1"
+F 9 "1" H 0   0   50  0001 C CNN "bom_2"
+F 10 "1" H 0   0   50  0001 C CNN "bom_3"
 	1    8800 4350
 	0    1    1    0   
 $EndComp
@@ -585,6 +629,9 @@ F 4 "6.8 kOhms ±5% 0.1W, 1/10W Chip Resistor 0603 (1608 Metric) Automotive AEC-
 F 5 "RMCF0603JT6K80" H 0   0   50  0001 C CNN "PartNumber"
 F 6 " RMCF0603JT6K80CT-ND " H 0   0   50  0001 C CNN "digikey"
 F 7 "0.01400" H 0   0   50  0001 C CNN "price@10"
+F 8 "1" H 0   0   50  0001 C CNN "bom_1"
+F 9 "1" H 0   0   50  0001 C CNN "bom_2"
+F 10 "1" H 0   0   50  0001 C CNN "bom_3"
 	1    8500 4350
 	0    1    1    0   
 $EndComp
@@ -600,6 +647,9 @@ F 4 "3.3 kOhms ±5% 0.1W, 1/10W Chip Resistor 0603 (1608 Metric) Automotive AEC-
 F 5 "CRGCQ0603J3K3" H 0   0   50  0001 C CNN "PartNumber"
 F 6 "A130094CT-ND" H 0   0   50  0001 C CNN "digikey"
 F 7 "0.02100" H 0   0   50  0001 C CNN "price@10"
+F 8 "1" H 0   0   50  0001 C CNN "bom_1"
+F 9 "1" H 0   0   50  0001 C CNN "bom_2"
+F 10 "1" H 0   0   50  0001 C CNN "bom_3"
 	1    8500 3950
 	0    1    1    0   
 $EndComp
@@ -632,6 +682,7 @@ F 4 "Current Sensor 6A 1 Channel Hall Effect, Closed Loop Bidirectional Module "
 F 5 "LXS 6-NPS" H 0   0   50  0001 C CNN "PartNumber"
 F 6 "398-1212-ND" H 0   0   50  0001 C CNN "digikey"
 F 7 "12.50000" H 0   0   50  0001 C CNN "price@10"
+F 8 "1" H 0   0   50  0001 C CNN "bom_3"
 	1    7850 3650
 	-1   0    0    -1  
 $EndComp
@@ -690,6 +741,9 @@ F 4 "CC0603KPX7R7BB104" H 0   0   50  0001 C CNN "PartNumber"
 F 5 "311-1335-1-ND" H 0   0   50  0001 C CNN "digikey"
 F 6 "CAP CER 0.1UF 16V X7R 0603 " H 0   0   50  0001 C CNN "Description"
 F 7 "0.05800" H 0   0   50  0001 C CNN "price@10"
+F 8 "1" H 0   0   50  0001 C CNN "bom_1"
+F 9 "1" H 0   0   50  0001 C CNN "bom_2"
+F 10 "1" H 0   0   50  0001 C CNN "bom_3"
 	1    8750 5400
 	0    1    1    0   
 $EndComp
@@ -712,6 +766,9 @@ F 4 "CAP CER 1000PF 16V X7R 0603 " H 0   0   50  0001 C CNN "Description"
 F 5 "0603B102K160CT" H 0   0   50  0001 C CNN "PartNumber"
 F 6 "1292-1378-1-ND " H 0   0   50  0001 C CNN "digikey"
 F 7 "0.04100" H 0   0   50  0001 C CNN "price@10"
+F 8 "1" H 0   0   50  0001 C CNN "bom_1"
+F 9 "1" H 0   0   50  0001 C CNN "bom_2"
+F 10 "1" H 0   0   50  0001 C CNN "bom_3"
 	1    8800 6300
 	0    1    1    0   
 $EndComp
@@ -738,6 +795,9 @@ F 4 "6.8 kOhms ±5% 0.1W, 1/10W Chip Resistor 0603 (1608 Metric) Automotive AEC-
 F 5 "RMCF0603JT6K80" H 0   0   50  0001 C CNN "PartNumber"
 F 6 " RMCF0603JT6K80CT-ND " H 0   0   50  0001 C CNN "digikey"
 F 7 "0.01400" H 0   0   50  0001 C CNN "price@10"
+F 8 "1" H 0   0   50  0001 C CNN "bom_1"
+F 9 "1" H 0   0   50  0001 C CNN "bom_2"
+F 10 "1" H 0   0   50  0001 C CNN "bom_3"
 	1    8500 6300
 	0    1    1    0   
 $EndComp
@@ -753,6 +813,9 @@ F 4 "3.3 kOhms ±5% 0.1W, 1/10W Chip Resistor 0603 (1608 Metric) Automotive AEC-
 F 5 "CRGCQ0603J3K3" H 0   0   50  0001 C CNN "PartNumber"
 F 6 "A130094CT-ND" H 0   0   50  0001 C CNN "digikey"
 F 7 "0.02100" H 0   0   50  0001 C CNN "price@10"
+F 8 "1" H 0   0   50  0001 C CNN "bom_1"
+F 9 "1" H 0   0   50  0001 C CNN "bom_2"
+F 10 "1" H 0   0   50  0001 C CNN "bom_3"
 	1    8500 5900
 	0    1    1    0   
 $EndComp
@@ -785,6 +848,7 @@ F 4 "Current Sensor 6A 1 Channel Hall Effect, Closed Loop Bidirectional Module "
 F 5 "LXS 6-NPS" H 0   0   50  0001 C CNN "PartNumber"
 F 6 "398-1212-ND" H 0   0   50  0001 C CNN "digikey"
 F 7 "12.50000" H 0   0   50  0001 C CNN "price@10"
+F 8 "1" H 0   0   50  0001 C CNN "bom_3"
 	1    7850 5600
 	-1   0    0    -1  
 $EndComp
@@ -843,6 +907,9 @@ F 4 "CC0603KPX7R7BB104" H 0   0   50  0001 C CNN "PartNumber"
 F 5 "311-1335-1-ND" H 0   0   50  0001 C CNN "digikey"
 F 6 "CAP CER 0.1UF 16V X7R 0603 " H 0   0   50  0001 C CNN "Description"
 F 7 "0.05800" H 0   0   50  0001 C CNN "price@10"
+F 8 "1" H 0   0   50  0001 C CNN "bom_1"
+F 9 "1" H 0   0   50  0001 C CNN "bom_2"
+F 10 "1" H 0   0   50  0001 C CNN "bom_3"
 	1    8750 8000
 	0    1    1    0   
 $EndComp
@@ -865,6 +932,9 @@ F 4 "CAP CER 1000PF 16V X7R 0603 " H 0   0   50  0001 C CNN "Description"
 F 5 "0603B102K160CT" H 0   0   50  0001 C CNN "PartNumber"
 F 6 "1292-1378-1-ND " H 0   0   50  0001 C CNN "digikey"
 F 7 "0.04100" H 0   0   50  0001 C CNN "price@10"
+F 8 "1" H 0   0   50  0001 C CNN "bom_1"
+F 9 "1" H 0   0   50  0001 C CNN "bom_2"
+F 10 "1" H 0   0   50  0001 C CNN "bom_3"
 	1    8800 8900
 	0    1    1    0   
 $EndComp
@@ -891,6 +961,9 @@ F 4 "6.8 kOhms ±5% 0.1W, 1/10W Chip Resistor 0603 (1608 Metric) Automotive AEC-
 F 5 "RMCF0603JT6K80" H 0   0   50  0001 C CNN "PartNumber"
 F 6 " RMCF0603JT6K80CT-ND " H 0   0   50  0001 C CNN "digikey"
 F 7 "0.01400" H 0   0   50  0001 C CNN "price@10"
+F 8 "1" H 0   0   50  0001 C CNN "bom_1"
+F 9 "1" H 0   0   50  0001 C CNN "bom_2"
+F 10 "1" H 0   0   50  0001 C CNN "bom_3"
 	1    8500 8900
 	0    1    1    0   
 $EndComp
@@ -906,6 +979,9 @@ F 4 "3.3 kOhms ±5% 0.1W, 1/10W Chip Resistor 0603 (1608 Metric) Automotive AEC-
 F 5 "CRGCQ0603J3K3" H 0   0   50  0001 C CNN "PartNumber"
 F 6 "A130094CT-ND" H 0   0   50  0001 C CNN "digikey"
 F 7 "0.02100" H 0   0   50  0001 C CNN "price@10"
+F 8 "1" H 0   0   50  0001 C CNN "bom_1"
+F 9 "1" H 0   0   50  0001 C CNN "bom_2"
+F 10 "1" H 0   0   50  0001 C CNN "bom_3"
 	1    8500 8500
 	0    1    1    0   
 $EndComp
@@ -938,6 +1014,7 @@ F 4 "Current Sensor 6A 1 Channel Hall Effect, Closed Loop Bidirectional Module "
 F 5 "LXS 6-NPS" H 0   0   50  0001 C CNN "PartNumber"
 F 6 "398-1212-ND" H 0   0   50  0001 C CNN "digikey"
 F 7 "12.50000" H 0   0   50  0001 C CNN "price@10"
+F 8 "1" H 0   0   50  0001 C CNN "bom_3"
 	1    7850 8200
 	-1   0    0    -1  
 $EndComp
@@ -964,6 +1041,7 @@ F 4 "6 Position Terminal Block Header, Male Pins, Shrouded (4 Side) 0.200\" (5.0
 F 5 "1762376 " H 0   0   50  0001 C CNN "PartNumber"
 F 6 " 277-1400-ND " H 0   0   50  0001 C CNN "digikey"
 F 7 "3.95500" H 0   0   50  0001 C CNN "price@10"
+F 8 "1" H 0   0   50  0001 C CNN "bom_3"
 	1    5450 3700
 	0    -1   -1   0   
 $EndComp
@@ -979,6 +1057,7 @@ F 4 "6 Position Terminal Block Header, Male Pins, Shrouded (4 Side) 0.200\" (5.0
 F 5 "1762376 " H 0   0   50  0001 C CNN "PartNumber"
 F 6 " 277-1400-ND " H 0   0   50  0001 C CNN "digikey"
 F 7 "3.95500" H 0   0   50  0001 C CNN "price@10"
+F 8 "1" H 0   0   50  0001 C CNN "bom_3"
 	1    7250 3700
 	0    1    -1   0   
 $EndComp
@@ -994,6 +1073,7 @@ F 4 "6 Position Terminal Block Header, Male Pins, Shrouded (4 Side) 0.200\" (5.0
 F 5 "1762376 " H 0   0   50  0001 C CNN "PartNumber"
 F 6 " 277-1400-ND " H 0   0   50  0001 C CNN "digikey"
 F 7 "3.95500" H 0   0   50  0001 C CNN "price@10"
+F 8 "1" H 0   0   50  0001 C CNN "bom_3"
 	1    5250 5650
 	0    -1   -1   0   
 $EndComp
@@ -1009,6 +1089,7 @@ F 4 "6 Position Terminal Block Header, Male Pins, Shrouded (4 Side) 0.200\" (5.0
 F 5 "1762376 " H 0   0   50  0001 C CNN "PartNumber"
 F 6 " 277-1400-ND " H 0   0   50  0001 C CNN "digikey"
 F 7 "3.95500" H 0   0   50  0001 C CNN "price@10"
+F 8 "1" H 0   0   50  0001 C CNN "bom_3"
 	1    7250 5650
 	0    1    -1   0   
 $EndComp
@@ -1024,6 +1105,7 @@ F 4 "6 Position Terminal Block Header, Male Pins, Shrouded (4 Side) 0.200\" (5.0
 F 5 "1762376 " H 0   0   50  0001 C CNN "PartNumber"
 F 6 " 277-1400-ND " H 0   0   50  0001 C CNN "digikey"
 F 7 "3.95500" H 0   0   50  0001 C CNN "price@10"
+F 8 "1" H 0   0   50  0001 C CNN "bom_3"
 	1    5350 8250
 	0    -1   -1   0   
 $EndComp
@@ -1039,6 +1121,7 @@ F 4 "6 Position Terminal Block Header, Male Pins, Shrouded (4 Side) 0.200\" (5.0
 F 5 "1762376 " H 0   0   50  0001 C CNN "PartNumber"
 F 6 " 277-1400-ND " H 0   0   50  0001 C CNN "digikey"
 F 7 "3.95500" H 0   0   50  0001 C CNN "price@10"
+F 8 "1" H 0   0   50  0001 C CNN "bom_3"
 	1    7250 8250
 	0    1    -1   0   
 $EndComp
@@ -1066,6 +1149,7 @@ F 4 "Current Sensor 6A 1 Channel Hall Effect, Closed Loop Bidirectional Module "
 F 5 "LXS 6-NPS" H 0   0   50  0001 C CNN "PartNumber"
 F 6 "398-1212-ND" H 0   0   50  0001 C CNN "digikey"
 F 7 "12.50000" H 0   0   50  0001 C CNN "price@10"
+F 8 "1" H 0   0   50  0001 C CNN "bom_3"
 	1    4750 8200
 	1    0    0    -1  
 $EndComp

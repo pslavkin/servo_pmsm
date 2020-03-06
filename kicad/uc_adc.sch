@@ -43,10 +43,13 @@ F 0 "C303" V 11372 4040 20  0000 R CNN
 F 1 "10uF" V 11329 4040 20  0000 R CNN
 F 2 "servo:C_0603_1608Metric" H 11300 4050 60  0001 C CNN
 F 3 "" H 11300 4150 60  0000 C CNN
-F 4 "CAP CER 2.2UF 16V X6S 0603 " H 0   0   50  0001 C CNN "Description"
-F 5 "GRT188C81C225KE13D" H 0   0   50  0001 C CNN "PartNumber"
-F 6 "490-12287-1-ND" H 0   0   50  0001 C CNN "digikey"
-F 7 "0.35500" H 0   0   50  0001 C CNN "price@10"
+F 4 "10µF ±20% 10V Ceramic Capacitor X5R 0603 (1608 Metric) " H 0   0   50  0001 C CNN "Description"
+F 5 "GRM188R61A106ME69D " H 0   0   50  0001 C CNN "PartNumber"
+F 6 "490-10475-1-ND" H 0   0   50  0001 C CNN "digikey"
+F 7 "0.15400" H 0   0   50  0001 C CNN "price@10"
+F 8 "1" H 0   0   50  0001 C CNN "bom_1"
+F 9 "1" H 0   0   50  0001 C CNN "bom_2"
+F 10 "1" H 0   0   50  0001 C CNN "bom_3"
 	1    11300 4150
 	0    -1   -1   0   
 $EndComp
@@ -58,10 +61,13 @@ F 0 "C302" V 10322 4040 20  0000 R CNN
 F 1 "0.1uF" V 10279 4040 20  0000 R CNN
 F 2 "servo:C_0603_1608Metric" H 10250 4050 60  0001 C CNN
 F 3 "" H 10250 4150 60  0000 C CNN
-F 4 "CAP CER 1UF 10V X7R 0603" H 0   0   50  0001 C CNN "Description"
-F 5 "399-11133-1-ND" H 0   0   50  0001 C CNN "digikey"
-F 6 "C0603C105K8RACTU" H 0   0   50  0001 C CNN "PartNumber"
-F 7 "0.06400" H 0   0   50  0001 C CNN "price@10"
+F 4 "CAP CER 0.1UF 16V X7R 0603 " H 0   0   50  0001 C CNN "Description"
+F 5 "311-1335-1-ND" H 0   0   50  0001 C CNN "digikey"
+F 6 "CC0603KPX7R7BB104" H 0   0   50  0001 C CNN "PartNumber"
+F 7 "0.05800" H 0   0   50  0001 C CNN "price@10"
+F 8 "1" H 0   0   50  0001 C CNN "bom_1"
+F 9 "1" H 0   0   50  0001 C CNN "bom_2"
+F 10 "1" H 0   0   50  0001 C CNN "bom_3"
 	1    10250 4150
 	0    -1   -1   0   
 $EndComp
@@ -73,10 +79,13 @@ F 0 "C301" V 9922 4040 20  0000 R CNN
 F 1 "10uF" V 9879 4040 20  0000 R CNN
 F 2 "servo:C_0603_1608Metric" H 9850 4050 60  0001 C CNN
 F 3 "" H 9850 4150 60  0000 C CNN
-F 4 "490-7611-1-ND" H 9850 4150 50  0001 C CNN "digikey"
-F 5 "CAP CER 22UF 6.3V X5R 0603 " H 0   0   50  0001 C CNN "Description"
-F 6 "GRM188R60J226MEA0D" H 0   0   50  0001 C CNN "PartNumber"
-F 7 "0.19400" H 0   0   50  0001 C CNN "price@10"
+F 4 "490-10475-1-ND" H 9850 4150 50  0001 C CNN "digikey"
+F 5 "10µF ±20% 10V Ceramic Capacitor X5R 0603 (1608 Metric) " H 0   0   50  0001 C CNN "Description"
+F 6 "GRM188R61A106ME69D " H 0   0   50  0001 C CNN "PartNumber"
+F 7 "0.15400" H 0   0   50  0001 C CNN "price@10"
+F 8 "1" H 0   0   50  0001 C CNN "bom_1"
+F 9 "1" H 0   0   50  0001 C CNN "bom_2"
+F 10 "1" H 0   0   50  0001 C CNN "bom_3"
 	1    9850 4150
 	0    -1   -1   0   
 $EndComp
@@ -92,6 +101,9 @@ F 4 "311-1335-1-ND" H 0   0   50  0001 C CNN "digikey"
 F 5 "CAP CER 0.1UF 16V X7R 0603 " H 0   0   50  0001 C CNN "Description"
 F 6 "CC0603KPX7R7BB104" H 0   0   50  0001 C CNN "PartNumber"
 F 7 "0.05800" H 0   0   50  0001 C CNN "price@10"
+F 8 "1" H 0   0   50  0001 C CNN "bom_1"
+F 9 "1" H 0   0   50  0001 C CNN "bom_2"
+F 10 "1" H 0   0   50  0001 C CNN "bom_3"
 	1    11700 4150
 	0    -1   -1   0   
 $EndComp
@@ -136,6 +148,9 @@ F 4 "1 kOhms ±5% 0.1W, 1/10W Chip Resistor 0603 (1608 Metric) Moisture Resistan
 F 5 "RC0603JR-071KL" H 0   0   50  0001 C CNN "PartNumber"
 F 6 "311-1.0KGRCT-ND" H 0   0   50  0001 C CNN "digikey"
 F 7 "0.01900" H 0   0   50  0001 C CNN "price@10"
+F 8 "1" H 0   0   50  0001 C CNN "bom_1"
+F 9 "1" H 0   0   50  0001 C CNN "bom_2"
+F 10 "1" H 0   0   50  0001 C CNN "bom_3"
 	1    10950 3450
 	1    0    0    -1  
 $EndComp
@@ -224,6 +239,9 @@ F 3 "../doc/datasheets/tms320f28388d_datasheet.pdf" H 8150 3750 50  0001 C CNN
 F 4 "TMS320F28388DZWTS" V 1350 -350 60  0001 C CNN "PartNumber"
 F 5 "32-bit MCU with connectivity manager, 2x C28x+CLA CPU, 1.5 MB flash, FPU64, CLB, Ethernet, EtherCAT" H 0   0   50  0001 C CNN "Description"
 F 6 "14.96" H 0   0   50  0001 C CNN "price@10"
+F 7 "1" H 0   0   50  0001 C CNN "bom_1"
+F 8 "1" H 0   0   50  0001 C CNN "bom_2"
+F 9 "1" H 0   0   50  0001 C CNN "bom_3"
 	1    8150 3750
 	1    0    0    -1  
 $EndComp
@@ -243,6 +261,8 @@ F 4 "TVS DIODE 5.5V 16V SOT23-6 " H 0   0   50  0001 C CNN "Description"
 F 5 "TPD4E001QDBVRQ1" H 0   0   50  0001 C CNN "PartNumber"
 F 6 "296-39344-1-ND" H 0   0   50  0001 C CNN "digikey"
 F 7 "0.56800" H 0   0   50  0001 C CNN "price@10"
+F 8 "1" H 0   0   50  0001 C CNN "bom_2"
+F 9 "1" H 0   0   50  0001 C CNN "bom_3"
 	1    2700 1850
 	0    -1   -1   0   
 $EndComp
@@ -275,6 +295,8 @@ F 4 "TVS DIODE 5.5V 16V SOT23-6 " H 0   0   50  0001 C CNN "Description"
 F 5 "TPD4E001QDBVRQ1" H 0   0   50  0001 C CNN "PartNumber"
 F 6 "296-39344-1-ND" H 0   0   50  0001 C CNN "digikey"
 F 7 "0.56800" H 0   0   50  0001 C CNN "price@10"
+F 8 "1" H 0   0   50  0001 C CNN "bom_2"
+F 9 "1" H 0   0   50  0001 C CNN "bom_3"
 	1    3300 1850
 	0    1    -1   0   
 $EndComp
@@ -305,6 +327,8 @@ F 4 "TVS DIODE 5.5V 16V SOT23-6 " H 0   0   50  0001 C CNN "Description"
 F 5 "TPD4E001QDBVRQ1" H 0   0   50  0001 C CNN "PartNumber"
 F 6 "296-39344-1-ND" H 0   0   50  0001 C CNN "digikey"
 F 7 "0.56800" H 0   0   50  0001 C CNN "price@10"
+F 8 "1" H 0   0   50  0001 C CNN "bom_2"
+F 9 "1" H 0   0   50  0001 C CNN "bom_3"
 	1    3900 1850
 	0    -1   -1   0   
 $EndComp
@@ -339,6 +363,8 @@ F 4 "TVS DIODE 5.5V 16V SOT23-6 " H 0   0   50  0001 C CNN "Description"
 F 5 "TPD4E001QDBVRQ1" H 0   0   50  0001 C CNN "PartNumber"
 F 6 "296-39344-1-ND" H 0   0   50  0001 C CNN "digikey"
 F 7 "0.56800" H 0   0   50  0001 C CNN "price@10"
+F 8 "1" H 0   0   50  0001 C CNN "bom_2"
+F 9 "1" H 0   0   50  0001 C CNN "bom_3"
 	1    5200 1850
 	0    -1   -1   0   
 $EndComp
@@ -408,6 +434,8 @@ F 4 "TVS DIODE 5.5V 16V SOT23-6 " H 0   0   50  0001 C CNN "Description"
 F 5 "TPD4E001QDBVRQ1" H 0   0   50  0001 C CNN "PartNumber"
 F 6 "296-39344-1-ND" H 0   0   50  0001 C CNN "digikey"
 F 7 "0.56800" H 0   0   50  0001 C CNN "price@10"
+F 8 "1" H 0   0   50  0001 C CNN "bom_2"
+F 9 "1" H 0   0   50  0001 C CNN "bom_3"
 	1    4500 1850
 	0    -1   -1   0   
 $EndComp
@@ -518,6 +546,9 @@ F 4 "1 kOhms ±5% 0.1W, 1/10W Chip Resistor 0603 (1608 Metric) Moisture Resistan
 F 5 "RC0603JR-071KL" H 0   0   50  0001 C CNN "PartNumber"
 F 6 "311-1.0KGRCT-ND" H 0   0   50  0001 C CNN "digikey"
 F 7 "0.01900" H 0   0   50  0001 C CNN "price@10"
+F 8 "1" H 0   0   50  0001 C CNN "bom_1"
+F 9 "1" H 0   0   50  0001 C CNN "bom_2"
+F 10 "1" H 0   0   50  0001 C CNN "bom_3"
 	1    10700 4050
 	0    1    1    0   
 $EndComp
@@ -640,6 +671,8 @@ F 4 "TVS DIODE 5.5V 16V SOT23-6 " H 0   0   50  0001 C CNN "Description"
 F 5 "TPD4E001QDBVRQ1" H 0   0   50  0001 C CNN "PartNumber"
 F 6 "296-39344-1-ND" H 0   0   50  0001 C CNN "digikey"
 F 7 "0.56800" H 0   0   50  0001 C CNN "price@10"
+F 8 "1" H 0   0   50  0001 C CNN "bom_2"
+F 9 "1" H 0   0   50  0001 C CNN "bom_3"
 	1    5800 1850
 	0    1    -1   0   
 $EndComp
