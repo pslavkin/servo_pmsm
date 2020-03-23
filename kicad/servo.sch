@@ -6,8 +6,8 @@ $Descr A3 16535 11693
 encoding utf-8
 Sheet 1 20
 Title "servo drive"
-Date "2020-01-09"
-Rev "1.0"
+Date "2020-03-23"
+Rev "0.2"
 Comp "dci"
 Comment1 "Pablo Slavkin"
 Comment2 ""

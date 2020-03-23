@@ -2,14 +2,14 @@
 <export version="D">
   <design>
     <source>/home/pslavkin/servo_pmsm_orphano/kicad/servo.sch</source>
-    <date>Fri 06 Mar 2020 12:37:57 PM -03</date>
+    <date>Mon 23 Mar 2020 02:42:34 AM -03</date>
     <tool>Eeschema 5.0.2+dfsg1-1</tool>
     <sheet number="1" name="/" tstamps="/">
       <title_block>
         <title>servo drive</title>
         <company>dci</company>
-        <rev>1.0</rev>
-        <date>2020-01-09</date>
+        <rev>0.2</rev>
+        <date>2020-03-23</date>
         <source>servo.sch</source>
         <comment number="1" value="Pablo Slavkin"/>
         <comment number="2" value=""/>
@@ -21,8 +21,8 @@
       <title_block>
         <title>ethernet</title>
         <company>dci</company>
-        <rev>1.0</rev>
-        <date>2020-01-09</date>
+        <rev>0.2</rev>
+        <date>2020-03-23</date>
         <source>ethernet.sch</source>
         <comment number="1" value="Pablo Slavkin"/>
         <comment number="2" value=""/>
@@ -34,8 +34,8 @@
       <title_block>
         <title>ADC</title>
         <company>dci</company>
-        <rev>1.0</rev>
-        <date>2020-01-09</date>
+        <rev>0.2</rev>
+        <date>2020-03-23</date>
         <source>uc_adc.sch</source>
         <comment number="1" value="Pablo Slavkin"/>
         <comment number="2" value=""/>
@@ -47,8 +47,8 @@
       <title_block>
         <title>ethercat</title>
         <company>dci</company>
-        <rev>1.0</rev>
-        <date>2020-01-09</date>
+        <rev>0.2</rev>
+        <date>2020-03-23</date>
         <source>ethercat.sch</source>
         <comment number="1" value="Pablo Slavkin"/>
         <comment number="2" value=""/>
@@ -60,8 +60,8 @@
       <title_block>
         <title>uC Power</title>
         <company>dci</company>
-        <rev>1.0</rev>
-        <date>2020-01-09</date>
+        <rev>0.2</rev>
+        <date>2020-03-23</date>
         <source>uc_power.sch</source>
         <comment number="1" value="Pablo Slavkin"/>
         <comment number="2" value=""/>
@@ -73,8 +73,8 @@
       <title_block>
         <title>clk</title>
         <company>dci</company>
-        <rev>1.0</rev>
-        <date>2020-01-09</date>
+        <rev>0.2</rev>
+        <date>2020-03-23</date>
         <source>uc_clk_dbg.sch</source>
         <comment number="1" value="Pablo Slavkin"/>
         <comment number="2" value=""/>
@@ -86,8 +86,8 @@
       <title_block>
         <title>AC input</title>
         <company>dci</company>
-        <rev>1.0</rev>
-        <date>2020-01-09</date>
+        <rev>0.2</rev>
+        <date>2020-03-23</date>
         <source>ac_in.sch</source>
         <comment number="1" value="Pablo Slavkin"/>
         <comment number="2" value=""/>
@@ -99,8 +99,8 @@
       <title_block>
         <title>Igbt interface</title>
         <company>dci</company>
-        <rev>1.0</rev>
-        <date>2020-01-09</date>
+        <rev>0.2</rev>
+        <date>2020-03-23</date>
         <source>igbt.sch</source>
         <comment number="1" value="Pablo Slavkin"/>
         <comment number="2" value=""/>
@@ -112,8 +112,8 @@
       <title_block>
         <title>gpio</title>
         <company>dci</company>
-        <rev>1.0</rev>
-        <date>2020-01-09</date>
+        <rev>0.2</rev>
+        <date>2020-03-23</date>
         <source>temp.sch</source>
         <comment number="1" value="Pablo Slavkin"/>
         <comment number="2" value=""/>
@@ -125,8 +125,8 @@
       <title_block>
         <title>ENDAT/BISS Interface</title>
         <company>dci</company>
-        <rev>1.0</rev>
-        <date>2020-01-09</date>
+        <rev>0.2</rev>
+        <date>2020-03-23</date>
         <source>step_dir.sch</source>
         <comment number="1" value="Pablo Slavkin"/>
         <comment number="2" value=""/>
@@ -138,8 +138,8 @@
       <title_block>
         <title>QEP encoder Interfase</title>
         <company>dci</company>
-        <rev>1.0</rev>
-        <date>2020-01-09</date>
+        <rev>0.2</rev>
+        <date>2020-03-23</date>
         <source>qep.sch</source>
         <comment number="1" value="Pablo Slavkin"/>
         <comment number="2" value=""/>
@@ -151,8 +151,8 @@
       <title_block>
         <title/>
         <company>dci</company>
-        <rev>1.0</rev>
-        <date>2020-01-09</date>
+        <rev>0.2</rev>
+        <date>2020-03-23</date>
         <source>can_485.sch</source>
         <comment number="1" value="Pablo Slavkin"/>
         <comment number="2" value=""/>
@@ -164,8 +164,8 @@
       <title_block>
         <title>gpio</title>
         <company>dci</company>
-        <rev>1.0</rev>
-        <date>2020-01-09</date>
+        <rev>0.2</rev>
+        <date>2020-03-23</date>
         <source>symbols.sch</source>
         <comment number="1" value="Pablo Slavkin"/>
         <comment number="2" value=""/>
@@ -177,8 +177,8 @@
       <title_block>
         <title>clk</title>
         <company>dci</company>
-        <rev>1.0</rev>
-        <date>2020-01-09</date>
+        <rev>0.2</rev>
+        <date>2020-03-23</date>
         <source>ui.sch</source>
         <comment number="1" value="Pablo Slavkin"/>
         <comment number="2" value=""/>
@@ -190,8 +190,8 @@
       <title_block>
         <title>LEM currente measurement</title>
         <company>dci</company>
-        <rev>1.0</rev>
-        <date>2020-01-09</date>
+        <rev>0.2</rev>
+        <date>2020-03-23</date>
         <source>lem.sch</source>
         <comment number="1" value="Pablo Slavkin"/>
         <comment number="2" value=""/>
@@ -203,8 +203,8 @@
       <title_block>
         <title>Shunt isolated</title>
         <company>dci</company>
-        <rev>1.0</rev>
-        <date>2020-01-09</date>
+        <rev>0.2</rev>
+        <date>2020-03-23</date>
         <source>vbus_meas.sch</source>
         <comment number="1" value="Pablo Slavkin"/>
         <comment number="2" value=""/>
@@ -216,8 +216,8 @@
       <title_block>
         <title>Common connections</title>
         <company>dci</company>
-        <rev>1.0</rev>
-        <date>2020-01-09</date>
+        <rev>0.2</rev>
+        <date>2020-03-23</date>
         <source>conn.sch</source>
         <comment number="1" value="Pablo Slavkin"/>
         <comment number="2" value=""/>
@@ -229,8 +229,8 @@
       <title_block>
         <title>Shunt Sigma Delta isolated</title>
         <company>dci</company>
-        <rev>1.0</rev>
-        <date>2020-01-09</date>
+        <rev>0.2</rev>
+        <date>2020-03-23</date>
         <source>sigma_delta.sch</source>
         <comment number="1" value="Pablo Slavkin"/>
         <comment number="2" value=""/>
@@ -242,8 +242,8 @@
       <title_block>
         <title>ENDAT/BISS Interface</title>
         <company>dci</company>
-        <rev>1.0</rev>
-        <date>2020-01-09</date>
+        <rev>0.2</rev>
+        <date>2020-03-23</date>
         <source>endat.sch</source>
         <comment number="1" value="Pablo Slavkin"/>
         <comment number="2" value=""/>
@@ -255,8 +255,8 @@
       <title_block>
         <title>gpio</title>
         <company>dci</company>
-        <rev>1.0</rev>
-        <date>2020-01-09</date>
+        <rev>0.2</rev>
+        <date>2020-03-23</date>
         <source>uc_gpio.sch</source>
         <comment number="1" value="Pablo Slavkin"/>
         <comment number="2" value=""/>
@@ -609,13 +609,13 @@
       <value>10</value>
       <footprint>servo:R_1206_3216Metric_Pad1.42x1.75mm_HandSolder</footprint>
       <fields>
-        <field name="Description"> 10 Ohms ±5% 0.1W, 1/10W Chip Resistor 0603 (1608 Metric) Automotive AEC-Q200, Moisture Resistant Thick Film </field>
-        <field name="PartNumber">CRGCQ0603J10R</field>
+        <field name="Description">10 Ohms ±5% 0.25W, 1/4W Chip Resistor 1206 (3216 Metric) Moisture Resistant Thick Film</field>
+        <field name="PartNumber">RC1206JR-0710RL</field>
         <field name="bom_1">1</field>
         <field name="bom_2">1</field>
         <field name="bom_3">1</field>
-        <field name="digikey">A130079CT-ND</field>
-        <field name="price@10">0.02100</field>
+        <field name="digikey">311-10ERCT-ND</field>
+        <field name="price@10">0.11000</field>
       </fields>
       <libsource lib="servo" part="Resistor" description=""/>
       <sheetpath names="/ethernet/" tstamps="/5DC3DC9E/"/>
@@ -2591,14 +2591,14 @@
     </comp>
     <comp ref="R604">
       <value>56k</value>
-      <footprint>servo:R_0805_2012Metric_Pad1.15x1.40mm_HandSolder</footprint>
+      <footprint>servo:R_0603_1608Metric</footprint>
       <fields>
-        <field name="Description">56 kOhms ±5% 0.1W, 1/10W Chip Resistor 0603 (1608 Metric) Automotive AEC-Q200, Moisture Resistant Thick Film</field>
-        <field name="PartNumber">RK73B1JTTD563J</field>
+        <field name="Description">56 kOhms ±5% 0.1W, 1/10W Chip Resistor 0603 (1608 Metric) Automotive AEC-Q200, Moisture Resistant Thick Film </field>
+        <field name="PartNumber">RK73B1JTTD563J </field>
         <field name="bom_1">1</field>
         <field name="bom_2">1</field>
         <field name="bom_3">1</field>
-        <field name="digikey">2019-RK73B1JTTD563JCT-ND</field>
+        <field name="digikey">2019-RK73B1JTTD563JCT-ND </field>
         <field name="price@10">0.01400</field>
       </fields>
       <libsource lib="servo" part="Resistor" description=""/>
@@ -2607,14 +2607,14 @@
     </comp>
     <comp ref="R605">
       <value>56k</value>
-      <footprint>servo:R_0805_2012Metric_Pad1.15x1.40mm_HandSolder</footprint>
+      <footprint>servo:R_0603_1608Metric</footprint>
       <fields>
-        <field name="Description">56 kOhms ±5% 0.1W, 1/10W Chip Resistor 0603 (1608 Metric) Automotive AEC-Q200, Moisture Resistant Thick Film</field>
-        <field name="PartNumber">RK73B1JTTD563J</field>
+        <field name="Description">56 kOhms ±5% 0.1W, 1/10W Chip Resistor 0603 (1608 Metric) Automotive AEC-Q200, Moisture Resistant Thick Film </field>
+        <field name="PartNumber">RK73B1JTTD563J </field>
         <field name="bom_1">1</field>
         <field name="bom_2">1</field>
         <field name="bom_3">1</field>
-        <field name="digikey">2019-RK73B1JTTD563JCT-ND</field>
+        <field name="digikey">2019-RK73B1JTTD563JCT-ND </field>
         <field name="price@10">0.01400</field>
       </fields>
       <libsource lib="servo" part="Resistor" description=""/>
@@ -2803,48 +2803,48 @@
     </comp>
     <comp ref="J601">
       <value>pin header 2x6 2.54</value>
-      <footprint>servo:PinSocket_2x06_P2.54mm_Vertical_SMD</footprint>
-      <datasheet>~</datasheet>
+      <footprint>servo:idc2x06_smd</footprint>
+      <datasheet>../doc/datasheets/idc2x_smd.pdf</datasheet>
       <fields>
         <field name="Description">Connector Header Surface Mount 12 position 0.100" (2.54mm) </field>
-        <field name="PartNumber">GBC06DABN-M30</field>
+        <field name="PartNumber">SBH11-NBPC-D06-SM-BK</field>
         <field name="bom_1">0</field>
         <field name="bom_2">0</field>
         <field name="bom_3">1</field>
-        <field name="digikey">S2351E-06-ND</field>
-        <field name="price@10">1.10200</field>
+        <field name="digikey">SBH11-NBPC-D06-SM-BK-ND </field>
+        <field name="price@10">1</field>
       </fields>
       <libsource lib="Connector_Generic" part="Conn_02x06_Odd_Even" description="Generic connector, double row, 02x06, odd/even pin numbering scheme (row 1 odd numbers, row 2 even numbers), script generated (kicad-library-utils/schlib/autogen/connector/)"/>
       <sheetpath names="/uc_clk_dbg/" tstamps="/5DD4DF4C/"/>
       <tstamp>5E9506B9</tstamp>
     </comp>
     <comp ref="R601">
-      <value>56k</value>
-      <footprint>servo:R_0805_2012Metric_Pad1.15x1.40mm_HandSolder</footprint>
+      <value>2.2k</value>
+      <footprint>servo:R_0603_1608Metric</footprint>
       <fields>
-        <field name="Description">56 kOhms ±5% 0.1W, 1/10W Chip Resistor 0603 (1608 Metric) Automotive AEC-Q200, Moisture Resistant Thick Film</field>
-        <field name="PartNumber">RK73B1JTTD563J</field>
+        <field name="Description">2.2 kOhms ±5% 0.1W, 1/10W Chip Resistor 0603 (1608 Metric) Automotive AEC-Q200 Thick Film </field>
+        <field name="PartNumber">ERJ-3GEYJ222V</field>
         <field name="bom_1">1</field>
         <field name="bom_2">1</field>
         <field name="bom_3">1</field>
-        <field name="digikey">2019-RK73B1JTTD563JCT-ND</field>
-        <field name="price@10">0.01400</field>
+        <field name="digikey">P2.2KGCT-ND </field>
+        <field name="price@10">0.04500</field>
       </fields>
       <libsource lib="servo" part="Resistor" description=""/>
       <sheetpath names="/uc_clk_dbg/" tstamps="/5DD4DF4C/"/>
       <tstamp>5E946D6A</tstamp>
     </comp>
     <comp ref="R602">
-      <value>56k</value>
-      <footprint>servo:R_0805_2012Metric_Pad1.15x1.40mm_HandSolder</footprint>
+      <value>2.2k</value>
+      <footprint>servo:R_0603_1608Metric</footprint>
       <fields>
-        <field name="Description">56 kOhms ±5% 0.1W, 1/10W Chip Resistor 0603 (1608 Metric) Automotive AEC-Q200, Moisture Resistant Thick Film</field>
-        <field name="PartNumber">RK73B1JTTD563J</field>
+        <field name="Description">2.2 kOhms ±5% 0.1W, 1/10W Chip Resistor 0603 (1608 Metric) Automotive AEC-Q200 Thick Film </field>
+        <field name="PartNumber">ERJ-3GEYJ222V</field>
         <field name="bom_1">1</field>
         <field name="bom_2">1</field>
         <field name="bom_3">1</field>
-        <field name="digikey">2019-RK73B1JTTD563JCT-ND</field>
-        <field name="price@10">0.01400</field>
+        <field name="digikey">P2.2KGCT-ND </field>
+        <field name="price@10">0.04500</field>
       </fields>
       <libsource lib="servo" part="Resistor" description=""/>
       <sheetpath names="/uc_clk_dbg/" tstamps="/5DD4DF4C/"/>
@@ -9654,17 +9654,17 @@
       <tstamp>5E3C004E</tstamp>
     </comp>
     <comp ref="U1904">
-      <value>SN75C1168DBR</value>
+      <value>SN75C1168NSR</value>
       <footprint>servo:SOIC-16W_5.3x10.2mm_P1.27mm</footprint>
       <datasheet>../doc/datasheets/sn65c1168.pdf</datasheet>
       <fields>
-        <field name="Description">2/2 Transceiver Full RS422, RS485 16-SSOP </field>
-        <field name="PartNumber">SN75C1168DBR</field>
+        <field name="Description">2/2 Transceiver Full RS422, RS485 16-SO</field>
+        <field name="PartNumber">SN75C1168NSR</field>
         <field name="bom_1">0</field>
         <field name="bom_2">1</field>
         <field name="bom_3">1</field>
-        <field name="digikey">296-SN75C1168DBRCT-ND</field>
-        <field name="price@10">1.55300</field>
+        <field name="digikey">296-6964-1-ND </field>
+        <field name="price@10">1.66200</field>
       </fields>
       <libsource lib="servo" part="SN75C1167DBR" description="DUAL DIFFERENTIAL DRIVERS AND RECEIVERS"/>
       <sheetpath names="/endat/" tstamps="/5F8D42C2/"/>
@@ -9753,17 +9753,17 @@
       <tstamp>5F461362</tstamp>
     </comp>
     <comp ref="U1905">
-      <value>SN75C1168DBR</value>
+      <value>SN75C1168NSR</value>
       <footprint>servo:SOIC-16W_5.3x10.2mm_P1.27mm</footprint>
       <datasheet>../doc/datasheets/sn65c1168.pdf</datasheet>
       <fields>
-        <field name="Description">2/2 Transceiver Full RS422, RS485 16-SSOP </field>
-        <field name="PartNumber">SN75C1168DBR</field>
+        <field name="Description">2/2 Transceiver Full RS422, RS485 16-SO</field>
+        <field name="PartNumber">SN75C1168NSR</field>
         <field name="bom_1">0</field>
         <field name="bom_2">1</field>
         <field name="bom_3">1</field>
-        <field name="digikey">296-SN75C1168DBRCT-ND</field>
-        <field name="price@10">1.55300</field>
+        <field name="digikey">296-6964-1-ND </field>
+        <field name="price@10">1.66200</field>
       </fields>
       <libsource lib="servo" part="SN75C1167DBR" description="DUAL DIFFERENTIAL DRIVERS AND RECEIVERS"/>
       <sheetpath names="/endat/" tstamps="/5F8D42C2/"/>
@@ -11483,7 +11483,7 @@
       <node ref="C1508" pin="2"/>
       <node ref="C701" pin="2"/>
       <node ref="C702" pin="2"/>
-      <node ref="J601" pin="1"/>
+      <node ref="J601" pin="2"/>
       <node ref="D707" pin="1"/>
       <node ref="U1401" pin="5"/>
       <node ref="J1401" pin="18"/>
@@ -11679,7 +11679,8 @@
       <node ref="IC303" pin="5"/>
       <node ref="IC302" pin="5"/>
       <node ref="C904" pin="2"/>
-      <node ref="J601" pin="3"/>
+      <node ref="J601" pin="4"/>
+      <node ref="U814" pin="1"/>
       <node ref="C703" pin="2"/>
       <node ref="U602" pin="3"/>
       <node ref="U602" pin="7"/>
@@ -11689,7 +11690,6 @@
       <node ref="JP501" pin="1"/>
       <node ref="D603" pin="2"/>
       <node ref="D604" pin="2"/>
-      <node ref="U814" pin="1"/>
       <node ref="C419" pin="1"/>
       <node ref="C205" pin="1"/>
       <node ref="U905" pin="8"/>
@@ -11734,13 +11734,13 @@
       <node ref="C913" pin="2"/>
       <node ref="U201" pin="14"/>
       <node ref="Y402" pin="1"/>
+      <node ref="R211" pin="1"/>
       <node ref="J201" pin="7"/>
       <node ref="Y402" pin="4"/>
-      <node ref="R204" pin="2"/>
       <node ref="U403" pin="14"/>
       <node ref="C412" pin="1"/>
+      <node ref="R204" pin="2"/>
       <node ref="C209" pin="1"/>
-      <node ref="R211" pin="1"/>
       <node ref="U904" pin="8"/>
     </net>
     <net code="28" name="Net-(R201-Pad1)">
@@ -11754,9 +11754,9 @@
       <node ref="U201" pin="13"/>
     </net>
     <net code="31" name="/ethernet/P0_TD_N">
-      <node ref="J201" pin="9"/>
-      <node ref="R206" pin="2"/>
       <node ref="U201" pin="11"/>
+      <node ref="R206" pin="2"/>
+      <node ref="J201" pin="9"/>
     </net>
     <net code="32" name="ENET_PWDN">
       <node ref="U201" pin="8"/>
@@ -11846,8 +11846,8 @@
       <node ref="U301" pin="T19"/>
     </net>
     <net code="53" name="Net-(JP402-Pad2)">
-      <node ref="Y402" pin="3"/>
       <node ref="JP402" pin="2"/>
+      <node ref="Y402" pin="3"/>
     </net>
     <net code="54" name="ECAT_RST">
       <node ref="U403" pin="18"/>
@@ -11860,51 +11860,51 @@
       <node ref="JP402" pin="1"/>
     </net>
     <net code="56" name="Net-(JP405-Pad2)">
+      <node ref="JP405" pin="2"/>
       <node ref="U402" pin="17"/>
       <node ref="R433" pin="2"/>
-      <node ref="JP405" pin="2"/>
     </net>
     <net code="57" name="Net-(U403-Pad15)">
       <node ref="U403" pin="15"/>
     </net>
     <net code="58" name="ECAT_MDCLK">
-      <node ref="U403" pin="20"/>
-      <node ref="U402" pin="20"/>
       <node ref="U301" pin="D13"/>
+      <node ref="U402" pin="20"/>
+      <node ref="U403" pin="20"/>
     </net>
     <net code="59" name="Net-(JP401-Pad1)">
-      <node ref="JP401" pin="1"/>
       <node ref="U402" pin="23"/>
+      <node ref="JP401" pin="1"/>
       <node ref="JP403" pin="2"/>
     </net>
     <net code="60" name="Net-(JP401-Pad2)">
-      <node ref="JP401" pin="2"/>
       <node ref="Y401" pin="3"/>
+      <node ref="JP401" pin="2"/>
     </net>
     <net code="61" name="ECAT_EEPROM_SCL">
-      <node ref="U301" pin="C13"/>
       <node ref="U401" pin="6"/>
+      <node ref="U301" pin="C13"/>
       <node ref="R418" pin="2"/>
     </net>
     <net code="62" name="ECAT1_RX_D2">
+      <node ref="R409" pin="1"/>
       <node ref="U403" pin="32"/>
       <node ref="U301" pin="M18"/>
-      <node ref="R409" pin="1"/>
     </net>
     <net code="63" name="ECAT1_RX_D1">
-      <node ref="U301" pin="M19"/>
-      <node ref="R407" pin="1"/>
       <node ref="U403" pin="31"/>
+      <node ref="R407" pin="1"/>
+      <node ref="U301" pin="M19"/>
     </net>
     <net code="64" name="ECAT1_RX_D0">
+      <node ref="U403" pin="30"/>
       <node ref="U301" pin="N19"/>
       <node ref="R405" pin="1"/>
-      <node ref="U403" pin="30"/>
     </net>
     <net code="65" name="ECAT1_RX_DV">
-      <node ref="R403" pin="1"/>
       <node ref="U301" pin="T17"/>
       <node ref="U403" pin="26"/>
+      <node ref="R403" pin="1"/>
     </net>
     <net code="66" name="/ethercat/ecat1_bias">
       <node ref="U403" pin="16"/>
@@ -11918,9 +11918,9 @@
       <node ref="U403" pin="13"/>
     </net>
     <net code="69" name="ECAT1_RX_D3">
-      <node ref="R411" pin="1"/>
-      <node ref="U301" pin="L19"/>
       <node ref="U403" pin="1"/>
+      <node ref="U301" pin="L19"/>
+      <node ref="R411" pin="1"/>
     </net>
     <net code="70" name="Net-(U403-Pad24)">
       <node ref="U403" pin="24"/>
@@ -11934,19 +11934,19 @@
       <node ref="R412" pin="2"/>
     </net>
     <net code="73" name="ECAT_MDIO">
-      <node ref="R427" pin="2"/>
       <node ref="U402" pin="19"/>
       <node ref="U403" pin="19"/>
       <node ref="U301" pin="A12"/>
+      <node ref="R427" pin="2"/>
     </net>
     <net code="74" name="/ethercat/ecat1_pwrdn">
-      <node ref="U403" pin="8"/>
       <node ref="R425" pin="1"/>
+      <node ref="U403" pin="8"/>
     </net>
     <net code="75" name="/ethercat/ecat1_led0">
-      <node ref="R434" pin="2"/>
-      <node ref="JP406" pin="2"/>
       <node ref="U403" pin="17"/>
+      <node ref="JP406" pin="2"/>
+      <node ref="R434" pin="2"/>
     </net>
     <net code="76" name="/ethercat/P1_TD_P">
       <node ref="J401" pin="1"/>
@@ -11954,8 +11954,8 @@
       <node ref="U403" pin="12"/>
     </net>
     <net code="77" name="ECAT0_RJ_LED1">
-      <node ref="U301" pin="D14"/>
       <node ref="J401" pin="22"/>
+      <node ref="U301" pin="D14"/>
     </net>
     <net code="78" name="Net-(J401-Pad21)">
       <node ref="J401" pin="21"/>
@@ -11963,35 +11963,35 @@
     </net>
     <net code="79" name="ECAT0_RJ_LED0">
       <node ref="U301" pin="F18"/>
-      <node ref="J401" pin="20"/>
       <node ref="JP405" pin="1"/>
+      <node ref="J401" pin="20"/>
     </net>
     <net code="80" name="Net-(J401-Pad19)">
       <node ref="R446" pin="2"/>
       <node ref="J401" pin="19"/>
     </net>
     <net code="81" name="ECAT1_RJ_LED1">
-      <node ref="J401" pin="16"/>
       <node ref="U301" pin="A13"/>
       <node ref="JP406" pin="1"/>
+      <node ref="J401" pin="16"/>
     </net>
     <net code="82" name="Net-(J401-Pad15)">
-      <node ref="J401" pin="15"/>
       <node ref="R442" pin="2"/>
+      <node ref="J401" pin="15"/>
     </net>
     <net code="83" name="ECAT_EEPROM_SDA">
+      <node ref="R417" pin="2"/>
       <node ref="U401" pin="5"/>
       <node ref="U301" pin="B13"/>
-      <node ref="R417" pin="2"/>
     </net>
     <net code="84" name="ECAT1_RJ_LED0">
-      <node ref="J401" pin="18"/>
       <node ref="U301" pin="F17"/>
+      <node ref="J401" pin="18"/>
     </net>
     <net code="85" name="/ethercat/P1_RD_N">
-      <node ref="R440" pin="2"/>
-      <node ref="J401" pin="6"/>
       <node ref="U403" pin="9"/>
+      <node ref="J401" pin="6"/>
+      <node ref="R440" pin="2"/>
     </net>
     <net code="86" name="/ethercat/P1_RD_P">
       <node ref="R438" pin="2"/>
@@ -11999,18 +11999,18 @@
       <node ref="J401" pin="4"/>
     </net>
     <net code="87" name="/ethercat/P1_TD_N">
-      <node ref="J401" pin="3"/>
-      <node ref="R432" pin="2"/>
       <node ref="U403" pin="11"/>
+      <node ref="R432" pin="2"/>
+      <node ref="J401" pin="3"/>
     </net>
     <net code="88" name="Net-(J401-Pad17)">
-      <node ref="R441" pin="2"/>
       <node ref="J401" pin="17"/>
+      <node ref="R441" pin="2"/>
     </net>
     <net code="89" name="ECAT0_RX_D3">
       <node ref="R408" pin="1"/>
-      <node ref="U301" pin="D4"/>
       <node ref="U402" pin="1"/>
+      <node ref="U301" pin="D4"/>
     </net>
     <net code="90" name="Net-(U402-Pad13)">
       <node ref="U402" pin="13"/>
@@ -12031,44 +12031,44 @@
       <node ref="U301" pin="D12"/>
     </net>
     <net code="95" name="ECAT0_RX_D0">
+      <node ref="U402" pin="30"/>
       <node ref="R402" pin="1"/>
       <node ref="U301" pin="C5"/>
-      <node ref="U402" pin="30"/>
     </net>
     <net code="96" name="ECAT0_RX_D1">
       <node ref="U402" pin="31"/>
-      <node ref="U301" pin="D5"/>
       <node ref="R404" pin="1"/>
+      <node ref="U301" pin="D5"/>
     </net>
     <net code="97" name="ECAT0_RX_D2">
-      <node ref="U301" pin="C4"/>
       <node ref="U402" pin="32"/>
       <node ref="R406" pin="1"/>
+      <node ref="U301" pin="C4"/>
     </net>
     <net code="98" name="ECAT0_RX_DV">
-      <node ref="U402" pin="26"/>
       <node ref="R401" pin="1"/>
       <node ref="U301" pin="D9"/>
+      <node ref="U402" pin="26"/>
     </net>
     <net code="99" name="ECAT0_TX_D1">
-      <node ref="U301" pin="D10"/>
       <node ref="U402" pin="5"/>
+      <node ref="U301" pin="D10"/>
     </net>
     <net code="100" name="ECAT0_TX_D2">
       <node ref="U402" pin="6"/>
       <node ref="U301" pin="B9"/>
     </net>
     <net code="101" name="ECAT0_TX_D3">
-      <node ref="U402" pin="7"/>
       <node ref="U301" pin="C9"/>
+      <node ref="U402" pin="7"/>
     </net>
     <net code="102" name="/ethercat/ecat0_bias">
-      <node ref="U402" pin="8"/>
       <node ref="R422" pin="1"/>
+      <node ref="U402" pin="8"/>
     </net>
     <net code="103" name="Net-(R421-Pad1)">
-      <node ref="U402" pin="16"/>
       <node ref="R421" pin="1"/>
+      <node ref="U402" pin="16"/>
     </net>
     <net code="104" name="ECAT0_RX_CLK">
       <node ref="U402" pin="25"/>
@@ -12079,41 +12079,41 @@
       <node ref="U301" pin="B10"/>
     </net>
     <net code="106" name="/ethercat/P0_RD_N">
-      <node ref="U402" pin="9"/>
       <node ref="J401" pin="13"/>
+      <node ref="U402" pin="9"/>
       <node ref="R437" pin="2"/>
     </net>
     <net code="107" name="/ethercat/P0_RD_P">
-      <node ref="R435" pin="2"/>
-      <node ref="U402" pin="10"/>
       <node ref="J401" pin="11"/>
+      <node ref="U402" pin="10"/>
+      <node ref="R435" pin="2"/>
     </net>
     <net code="108" name="/ethercat/P0_TD_N">
-      <node ref="U402" pin="11"/>
       <node ref="J401" pin="10"/>
       <node ref="R431" pin="2"/>
+      <node ref="U402" pin="11"/>
     </net>
     <net code="109" name="/ethercat/P0_TD_P">
+      <node ref="J401" pin="8"/>
       <node ref="U402" pin="12"/>
       <node ref="R429" pin="2"/>
-      <node ref="J401" pin="8"/>
     </net>
     <net code="110" name="/ethercat/ecat0_col">
       <node ref="R410" pin="1"/>
       <node ref="U402" pin="29"/>
     </net>
     <net code="111" name="Net-(D402-Pad2)">
-      <node ref="R420" pin="1"/>
       <node ref="D402" pin="2"/>
+      <node ref="R420" pin="1"/>
     </net>
     <net code="112" name="Net-(D401-Pad2)">
-      <node ref="D401" pin="2"/>
       <node ref="R419" pin="1"/>
+      <node ref="D401" pin="2"/>
     </net>
     <net code="113" name="ECAT0_RX_ER">
       <node ref="U301" pin="B8"/>
-      <node ref="R415" pin="2"/>
       <node ref="U402" pin="28"/>
+      <node ref="R415" pin="2"/>
     </net>
     <net code="114" name="ECAT_LED_ERR">
       <node ref="U301" pin="E17"/>
@@ -12132,8 +12132,8 @@
     <net code="118" name="NTC1_2_N">
       <node ref="U301" pin="T3"/>
       <node ref="IC301" pin="1"/>
-      <node ref="R904" pin="2"/>
       <node ref="C902" pin="1"/>
+      <node ref="R904" pin="2"/>
     </net>
     <net code="119" name="Net-(U301-PadU4)">
       <node ref="U301" pin="U4"/>
@@ -12142,39 +12142,39 @@
       <node ref="U301" pin="T4"/>
     </net>
     <net code="121" name="VBUS2_P">
-      <node ref="U301" pin="V4"/>
+      <node ref="IC304" pin="4"/>
       <node ref="C1602" pin="2"/>
       <node ref="R1603" pin="1"/>
-      <node ref="IC304" pin="4"/>
+      <node ref="U301" pin="V4"/>
     </net>
     <net code="122" name="NTC1_1_P">
+      <node ref="U301" pin="U2"/>
+      <node ref="IC301" pin="6"/>
       <node ref="R901" pin="2"/>
       <node ref="C901" pin="2"/>
-      <node ref="IC301" pin="6"/>
-      <node ref="U301" pin="U2"/>
     </net>
     <net code="123" name="LEM_B_V">
       <node ref="IC303" pin="1"/>
       <node ref="R1510" pin="1"/>
-      <node ref="R1509" pin="2"/>
-      <node ref="C1514" pin="2"/>
       <node ref="U301" pin="W2"/>
+      <node ref="C1514" pin="2"/>
+      <node ref="R1509" pin="2"/>
     </net>
     <net code="124" name="LEM_B_ALL">
       <node ref="U301" pin="V3"/>
+      <node ref="IC303" pin="3"/>
+      <node ref="C1515" pin="2"/>
       <node ref="R1512" pin="1"/>
       <node ref="R1511" pin="2"/>
-      <node ref="C1515" pin="2"/>
-      <node ref="IC303" pin="3"/>
     </net>
     <net code="125" name="Net-(IC303-Pad4)">
       <node ref="IC303" pin="4"/>
     </net>
     <net code="126" name="LEM_B_U">
       <node ref="R1507" pin="2"/>
+      <node ref="U301" pin="V2"/>
       <node ref="R1508" pin="1"/>
       <node ref="C1513" pin="2"/>
-      <node ref="U301" pin="V2"/>
       <node ref="IC303" pin="6"/>
     </net>
     <net code="127" name="NTC2_2_P">
@@ -12186,12 +12186,12 @@
     <net code="128" name="3V3A">
       <node ref="L502" pin="2"/>
       <node ref="C529" pin="2"/>
+      <node ref="C304" pin="1"/>
       <node ref="U301" pin="P6"/>
       <node ref="U301" pin="R6"/>
       <node ref="R301" pin="2"/>
-      <node ref="C303" pin="1"/>
       <node ref="C520" pin="1"/>
-      <node ref="C304" pin="1"/>
+      <node ref="C303" pin="1"/>
     </net>
     <net code="129" name="LCD_AUDIO">
       <node ref="J1401" pin="9"/>
@@ -12201,10 +12201,10 @@
     </net>
     <net code="132" name="LEM_A_ALL">
       <node ref="U301" pin="T6"/>
-      <node ref="R1504" pin="1"/>
       <node ref="R1503" pin="2"/>
       <node ref="IC306" pin="3"/>
       <node ref="C1502" pin="2"/>
+      <node ref="R1504" pin="1"/>
     </net>
     <net code="133" name="NTC1_2_P">
       <node ref="R903" pin="2"/>
@@ -12410,21 +12410,21 @@
       <node ref="U301" pin="L9"/>
       <node ref="U301" pin="M10"/>
       <node ref="C826" pin="2"/>
-      <node ref="J601" pin="11"/>
-      <node ref="C428" pin="1"/>
-      <node ref="C426" pin="1"/>
-      <node ref="C429" pin="1"/>
-      <node ref="J601" pin="9"/>
-      <node ref="C703" pin="1"/>
+      <node ref="J601" pin="10"/>
       <node ref="C404" pin="1"/>
+      <node ref="C703" pin="1"/>
+      <node ref="J601" pin="12"/>
+      <node ref="C434" pin="1"/>
       <node ref="C714" pin="1"/>
-      <node ref="R602" pin="2"/>
       <node ref="C702" pin="1"/>
-      <node ref="R601" pin="2"/>
+      <node ref="C429" pin="1"/>
+      <node ref="C426" pin="1"/>
+      <node ref="C428" pin="1"/>
+      <node ref="C603" pin="1"/>
       <node ref="C1603" pin="1"/>
       <node ref="U1601" pin="5"/>
+      <node ref="U706" pin="1"/>
       <node ref="C701" pin="1"/>
-      <node ref="C434" pin="1"/>
       <node ref="D707" pin="2"/>
       <node ref="C1604" pin="1"/>
       <node ref="C303" pin="2"/>
@@ -12432,21 +12432,20 @@
       <node ref="C301" pin="2"/>
       <node ref="U301" pin="P2"/>
       <node ref="U301" pin="R2"/>
-      <node ref="IC305" pin="2"/>
       <node ref="C304" pin="2"/>
       <node ref="IC303" pin="2"/>
-      <node ref="C601" pin="1"/>
-      <node ref="U602" pin="4"/>
-      <node ref="C603" pin="1"/>
-      <node ref="R607" pin="2"/>
-      <node ref="R302" pin="2"/>
-      <node ref="IC306" pin="2"/>
-      <node ref="C418" pin="2"/>
-      <node ref="U402" pin="33"/>
-      <node ref="U401" pin="2"/>
       <node ref="IC302" pin="2"/>
       <node ref="IC304" pin="2"/>
       <node ref="U301" pin="V6"/>
+      <node ref="U602" pin="4"/>
+      <node ref="R302" pin="2"/>
+      <node ref="IC306" pin="2"/>
+      <node ref="IC305" pin="2"/>
+      <node ref="R602" pin="2"/>
+      <node ref="R601" pin="2"/>
+      <node ref="C418" pin="2"/>
+      <node ref="U402" pin="33"/>
+      <node ref="R402" pin="2"/>
       <node ref="IC301" pin="2"/>
       <node ref="U301" pin="W6"/>
       <node ref="C409" pin="2"/>
@@ -12455,31 +12454,31 @@
       <node ref="C407" pin="2"/>
       <node ref="C422" pin="2"/>
       <node ref="U401" pin="1"/>
+      <node ref="U401" pin="2"/>
       <node ref="U401" pin="3"/>
       <node ref="U401" pin="4"/>
       <node ref="U401" pin="7"/>
       <node ref="R421" pin="2"/>
       <node ref="R401" pin="2"/>
-      <node ref="R402" pin="2"/>
       <node ref="R406" pin="2"/>
       <node ref="R408" pin="2"/>
       <node ref="R410" pin="2"/>
       <node ref="C414" pin="2"/>
       <node ref="R404" pin="2"/>
       <node ref="Y401" pin="2"/>
+      <node ref="R1506" pin="2"/>
       <node ref="U1501" pin="8"/>
       <node ref="C1509" pin="1"/>
-      <node ref="R1506" pin="2"/>
       <node ref="C1504" pin="1"/>
-      <node ref="U706" pin="1"/>
       <node ref="C1508" pin="1"/>
       <node ref="R1504" pin="2"/>
       <node ref="C1505" pin="1"/>
       <node ref="C1501" pin="1"/>
+      <node ref="C1515" pin="1"/>
       <node ref="C1512" pin="1"/>
       <node ref="U1505" pin="8"/>
       <node ref="C1510" pin="1"/>
-      <node ref="C1515" pin="1"/>
+      <node ref="R1502" pin="2"/>
       <node ref="C1511" pin="1"/>
       <node ref="C1514" pin="1"/>
       <node ref="U813" pin="8"/>
@@ -12489,125 +12488,133 @@
       <node ref="U1901" pin="8"/>
       <node ref="C602" pin="2"/>
       <node ref="C1901" pin="1"/>
+      <node ref="R607" pin="2"/>
       <node ref="U1908" pin="8"/>
       <node ref="U801" pin="8"/>
+      <node ref="C601" pin="1"/>
       <node ref="C217" pin="1"/>
       <node ref="IC201" pin="2"/>
-      <node ref="C1818" pin="2"/>
-      <node ref="C1813" pin="2"/>
-      <node ref="U1502" pin="8"/>
-      <node ref="U1506" pin="8"/>
       <node ref="R1512" pin="2"/>
-      <node ref="R1502" pin="2"/>
+      <node ref="U1506" pin="8"/>
+      <node ref="U1502" pin="8"/>
+      <node ref="C1813" pin="2"/>
+      <node ref="C1818" pin="2"/>
       <node ref="U1801" pin="9"/>
       <node ref="U1802" pin="9"/>
       <node ref="C1914" pin="1"/>
-      <node ref="C427" pin="1"/>
-      <node ref="C412" pin="2"/>
-      <node ref="U403" pin="33"/>
-      <node ref="C419" pin="2"/>
-      <node ref="R424" pin="2"/>
-      <node ref="R403" pin="2"/>
-      <node ref="C410" pin="2"/>
-      <node ref="R405" pin="2"/>
-      <node ref="R407" pin="2"/>
-      <node ref="R409" pin="2"/>
-      <node ref="R411" pin="2"/>
-      <node ref="C423" pin="2"/>
-      <node ref="Y402" pin="2"/>
-      <node ref="D708" pin="2"/>
-      <node ref="C204" pin="2"/>
       <node ref="C205" pin="2"/>
+      <node ref="R407" pin="2"/>
+      <node ref="R405" pin="2"/>
+      <node ref="R403" pin="2"/>
+      <node ref="R424" pin="2"/>
+      <node ref="C419" pin="2"/>
+      <node ref="U403" pin="33"/>
+      <node ref="C412" pin="2"/>
+      <node ref="C427" pin="1"/>
+      <node ref="C410" pin="2"/>
+      <node ref="C408" pin="2"/>
+      <node ref="C204" pin="2"/>
       <node ref="C214" pin="1"/>
-      <node ref="PS701" pin="3"/>
       <node ref="C216" pin="1"/>
       <node ref="C211" pin="2"/>
       <node ref="C207" pin="2"/>
+      <node ref="PS701" pin="3"/>
       <node ref="C202" pin="1"/>
       <node ref="R201" pin="2"/>
       <node ref="Y201" pin="2"/>
       <node ref="U702" pin="2"/>
       <node ref="D701" pin="1"/>
-      <node ref="C408" pin="2"/>
       <node ref="D705" pin="1"/>
       <node ref="C704" pin="1"/>
+      <node ref="Y402" pin="2"/>
       <node ref="C712" pin="1"/>
+      <node ref="C423" pin="2"/>
+      <node ref="R411" pin="2"/>
+      <node ref="R409" pin="2"/>
+      <node ref="U1504" pin="8"/>
       <node ref="R1508" pin="2"/>
       <node ref="C1502" pin="1"/>
-      <node ref="U1504" pin="8"/>
-      <node ref="U201" pin="33"/>
-      <node ref="C209" pin="2"/>
-      <node ref="J201" pin="4"/>
-      <node ref="U1602" pin="5"/>
+      <node ref="D708" pin="2"/>
       <node ref="C705" pin="1"/>
       <node ref="C1513" pin="1"/>
+      <node ref="C209" pin="2"/>
+      <node ref="U201" pin="33"/>
+      <node ref="J201" pin="4"/>
+      <node ref="U1602" pin="5"/>
     </net>
     <net code="147" name="/uc_adc/ADC_REFH">
-      <node ref="U301" pin="W5"/>
-      <node ref="R302" pin="1"/>
       <node ref="U301" pin="V1"/>
+      <node ref="R302" pin="1"/>
+      <node ref="U301" pin="V5"/>
+      <node ref="R301" pin="1"/>
+      <node ref="U301" pin="W5"/>
       <node ref="C302" pin="1"/>
       <node ref="C301" pin="1"/>
-      <node ref="R301" pin="1"/>
       <node ref="U301" pin="R1"/>
-      <node ref="U301" pin="V5"/>
     </net>
     <net code="148" name="VBUS1_P">
       <node ref="U301" pin="T7"/>
-      <node ref="C1601" pin="2"/>
       <node ref="R1601" pin="1"/>
       <node ref="IC304" pin="1"/>
+      <node ref="C1601" pin="2"/>
     </net>
     <net code="149" name="FLASH_SPI_MISO">
-      <node ref="U602" pin="2"/>
       <node ref="U301" pin="H2"/>
+      <node ref="U602" pin="2"/>
     </net>
-    <net code="150" name="/uc_clk_dbg/MCU_TMS">
-      <node ref="U301" pin="W14"/>
-      <node ref="J601" pin="6"/>
-    </net>
-    <net code="151" name="/uc_clk_dbg/MCU_TDO">
-      <node ref="J601" pin="10"/>
+    <net code="150" name="/uc_clk_dbg/MCU_TDO">
+      <node ref="J601" pin="9"/>
       <node ref="U301" pin="W15"/>
     </net>
-    <net code="152" name="Net-(D603-Pad1)">
-      <node ref="D603" pin="1"/>
+    <net code="151" name="Net-(D603-Pad1)">
       <node ref="R603" pin="1"/>
+      <node ref="D603" pin="1"/>
     </net>
-    <net code="153" name="FLASH_SPI_CLK">
-      <node ref="U602" pin="6"/>
+    <net code="152" name="FLASH_SPI_CLK">
       <node ref="U301" pin="H3"/>
+      <node ref="U602" pin="6"/>
     </net>
-    <net code="154" name="FLASH_SPI_CS">
+    <net code="153" name="FLASH_SPI_CS">
       <node ref="U301" pin="J1"/>
       <node ref="U602" pin="1"/>
     </net>
-    <net code="155" name="FLASH_SPI_MOSI">
+    <net code="154" name="FLASH_SPI_MOSI">
       <node ref="U602" pin="5"/>
       <node ref="U301" pin="H1"/>
     </net>
-    <net code="157" name="Net-(C601-Pad2)">
-      <node ref="R608" pin="2"/>
+    <net code="155" name="Net-(C601-Pad2)">
       <node ref="R609" pin="1"/>
       <node ref="C601" pin="2"/>
+      <node ref="R608" pin="2"/>
+    </net>
+    <net code="157" name="SCIA_TX">
+      <node ref="U301" pin="W11"/>
+      <node ref="J601" pin="6"/>
+      <node ref="R603" pin="2"/>
     </net>
     <net code="158" name="3V3uC">
+      <node ref="C511" pin="1"/>
+      <node ref="C515" pin="1"/>
+      <node ref="C517" pin="1"/>
+      <node ref="C518" pin="1"/>
+      <node ref="C519" pin="1"/>
+      <node ref="C521" pin="1"/>
+      <node ref="C523" pin="1"/>
+      <node ref="C525" pin="1"/>
       <node ref="C502" pin="1"/>
-      <node ref="C505" pin="1"/>
       <node ref="C507" pin="1"/>
       <node ref="C503" pin="1"/>
-      <node ref="C511" pin="1"/>
-      <node ref="C525" pin="1"/>
-      <node ref="C523" pin="1"/>
-      <node ref="C521" pin="1"/>
-      <node ref="C519" pin="1"/>
-      <node ref="C518" pin="1"/>
-      <node ref="C517" pin="1"/>
-      <node ref="C515" pin="1"/>
-      <node ref="U301" pin="W8"/>
+      <node ref="C505" pin="1"/>
+      <node ref="U301" pin="H5"/>
+      <node ref="U301" pin="H6"/>
+      <node ref="U301" pin="L14"/>
+      <node ref="U301" pin="L15"/>
       <node ref="U301" pin="M1"/>
       <node ref="U301" pin="M5"/>
+      <node ref="U301" pin="H17"/>
       <node ref="U301" pin="M6"/>
+      <node ref="C531" pin="2"/>
+      <node ref="L501" pin="2"/>
       <node ref="U301" pin="N14"/>
       <node ref="U301" pin="N15"/>
       <node ref="U301" pin="P9"/>
@@ -12615,35 +12622,29 @@
       <node ref="U301" pin="R12"/>
       <node ref="U301" pin="R9"/>
       <node ref="U301" pin="V19"/>
-      <node ref="U301" pin="L15"/>
-      <node ref="U301" pin="H5"/>
-      <node ref="U301" pin="H6"/>
-      <node ref="U301" pin="L14"/>
-      <node ref="R610" pin="1"/>
-      <node ref="L501" pin="2"/>
-      <node ref="U301" pin="E16"/>
-      <node ref="C501" pin="1"/>
-      <node ref="U301" pin="A18"/>
-      <node ref="Y601" pin="4"/>
+      <node ref="U301" pin="W8"/>
       <node ref="R604" pin="1"/>
       <node ref="R605" pin="1"/>
       <node ref="Y601" pin="1"/>
-      <node ref="C531" pin="2"/>
-      <node ref="U301" pin="G4"/>
-      <node ref="U301" pin="G5"/>
+      <node ref="Y601" pin="4"/>
       <node ref="U301" pin="G6"/>
-      <node ref="U301" pin="H16"/>
-      <node ref="U301" pin="A9"/>
-      <node ref="U301" pin="H17"/>
-      <node ref="U301" pin="F7"/>
-      <node ref="U301" pin="F4"/>
-      <node ref="U301" pin="B1"/>
-      <node ref="U301" pin="E10"/>
       <node ref="U301" pin="E13"/>
       <node ref="U301" pin="E7"/>
       <node ref="U301" pin="F10"/>
       <node ref="U301" pin="F13"/>
       <node ref="U301" pin="F16"/>
+      <node ref="U301" pin="F4"/>
+      <node ref="U301" pin="F7"/>
+      <node ref="U301" pin="G4"/>
+      <node ref="U301" pin="G5"/>
+      <node ref="U301" pin="H16"/>
+      <node ref="U301" pin="B1"/>
+      <node ref="U301" pin="E16"/>
+      <node ref="R610" pin="1"/>
+      <node ref="C501" pin="1"/>
+      <node ref="U301" pin="A18"/>
+      <node ref="U301" pin="A9"/>
+      <node ref="U301" pin="E10"/>
     </net>
     <net code="159" name="BOOT1">
       <node ref="JP601" pin="1"/>
@@ -12651,9 +12652,9 @@
       <node ref="U301" pin="B16"/>
     </net>
     <net code="160" name="BOOT2">
-      <node ref="U301" pin="A11"/>
       <node ref="JP602" pin="1"/>
       <node ref="R605" pin="2"/>
+      <node ref="U301" pin="A11"/>
     </net>
     <net code="161" name="Net-(U301-PadH4)">
       <node ref="U301" pin="H4"/>
@@ -12671,64 +12672,63 @@
       <node ref="U301" pin="V13"/>
     </net>
     <net code="166" name="/uc_clk_dbg/MCU_XRSn">
-      <node ref="R610" pin="2"/>
       <node ref="U301" pin="F19"/>
+      <node ref="R610" pin="2"/>
       <node ref="C602" pin="1"/>
     </net>
     <net code="167" name="/uc_clk_dbg/F2838x_CLK">
-      <node ref="Y601" pin="3"/>
       <node ref="U301" pin="G19"/>
+      <node ref="Y601" pin="3"/>
     </net>
     <net code="168" name="Net-(D604-Pad1)">
-      <node ref="R606" pin="2"/>
       <node ref="D604" pin="1"/>
+      <node ref="R606" pin="2"/>
     </net>
-    <net code="169" name="/uc_clk_dbg/MCU_TCK">
-      <node ref="J601" pin="2"/>
-      <node ref="U301" pin="V15"/>
-    </net>
-    <net code="170" name="Net-(U301-PadW12)">
+    <net code="169" name="Net-(U301-PadW12)">
       <node ref="U301" pin="W12"/>
     </net>
-    <net code="171" name="/uc_clk_dbg/MCU_TDI">
+    <net code="170" name="/uc_clk_dbg/MCU_TDI">
       <node ref="U301" pin="W13"/>
-      <node ref="J601" pin="4"/>
+      <node ref="J601" pin="3"/>
+    </net>
+    <net code="171" name="/uc_clk_dbg/MCU_TMS">
+      <node ref="U301" pin="W14"/>
+      <node ref="J601" pin="5"/>
     </net>
     <net code="172" name="/uc_clk_dbg/MCU_TRSTn">
-      <node ref="J601" pin="8"/>
+      <node ref="J601" pin="7"/>
       <node ref="U301" pin="V14"/>
       <node ref="R607" pin="1"/>
     </net>
-    <net code="173" name="Net-(JP601-Pad2)">
-      <node ref="JP601" pin="2"/>
-      <node ref="R601" pin="1"/>
-    </net>
-    <net code="174" name="SCIA_RX">
-      <node ref="U301" pin="V11"/>
-      <node ref="J601" pin="7"/>
-      <node ref="R606" pin="1"/>
-    </net>
-    <net code="175" name="SCIA_TX">
-      <node ref="R603" pin="2"/>
-      <node ref="J601" pin="5"/>
-      <node ref="U301" pin="W11"/>
-    </net>
-    <net code="176" name="Net-(JP602-Pad2)">
+    <net code="173" name="Net-(JP602-Pad2)">
       <node ref="JP602" pin="2"/>
       <node ref="R602" pin="1"/>
     </net>
+    <net code="174" name="Net-(JP601-Pad2)">
+      <node ref="R601" pin="1"/>
+      <node ref="JP601" pin="2"/>
+    </net>
+    <net code="175" name="SCIA_RX">
+      <node ref="U301" pin="V11"/>
+      <node ref="R606" pin="1"/>
+      <node ref="J601" pin="8"/>
+    </net>
+    <net code="176" name="/uc_clk_dbg/MCU_TCK">
+      <node ref="U301" pin="V15"/>
+      <node ref="J601" pin="1"/>
+    </net>
     <net code="177" name="DACB_DBG_OUT">
-      <node ref="J601" pin="12"/>
       <node ref="R609" pin="2"/>
+      <node ref="J601" pin="11"/>
     </net>
     <net code="178" name="VBUS2_N_H">
-      <node ref="C1608" pin="1"/>
-      <node ref="U1602" pin="3"/>
       <node ref="J701" pin="2b"/>
-      <node ref="R1610" pin="2"/>
-      <node ref="C1606" pin="1"/>
       <node ref="U1604" pin="3"/>
+      <node ref="U1602" pin="3"/>
       <node ref="U1602" pin="4"/>
+      <node ref="R1610" pin="2"/>
+      <node ref="C1608" pin="1"/>
+      <node ref="C1606" pin="1"/>
     </net>
     <net code="179" name="VBUS1_P_H">
       <node ref="J701" pin="3b"/>
@@ -12741,28 +12741,28 @@
       <node ref="J701" pin="1b"/>
     </net>
     <net code="181" name="VBUS1_N_H">
-      <node ref="U1603" pin="3"/>
-      <node ref="R1608" pin="2"/>
       <node ref="C1605" pin="1"/>
       <node ref="C1607" pin="1"/>
       <node ref="U1601" pin="4"/>
       <node ref="U1601" pin="3"/>
+      <node ref="U1603" pin="3"/>
+      <node ref="R1608" pin="2"/>
       <node ref="J701" pin="4b"/>
     </net>
     <net code="182" name="Net-(D702-Pad2)">
-      <node ref="R702" pin="2"/>
       <node ref="D702" pin="2"/>
+      <node ref="R702" pin="2"/>
     </net>
     <net code="183" name="5VB">
-      <node ref="L1604" pin="1"/>
       <node ref="R703" pin="2"/>
+      <node ref="L1604" pin="1"/>
       <node ref="L1603" pin="1"/>
     </net>
     <net code="184" name="GNDB">
-      <node ref="C1609" pin="1"/>
       <node ref="U1603" pin="1"/>
-      <node ref="U1604" pin="1"/>
+      <node ref="C1609" pin="1"/>
       <node ref="C1610" pin="1"/>
+      <node ref="U1604" pin="1"/>
       <node ref="R704" pin="2"/>
     </net>
     <net code="185" name="5VI">

@@ -6,8 +6,8 @@ $Descr B 17000 11000
 encoding utf-8
 Sheet 9 20
 Title "gpio"
-Date "2020-01-09"
-Rev "1.0"
+Date "2020-03-23"
+Rev "0.2"
 Comp "dci"
 Comment1 "Pablo Slavkin"
 Comment2 ""

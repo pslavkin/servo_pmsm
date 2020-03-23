@@ -6,8 +6,8 @@ $Descr A3 16535 11693
 encoding utf-8
 Sheet 2 20
 Title "ethernet"
-Date "2020-01-09"
-Rev "1.0"
+Date "2020-03-23"
+Rev "0.2"
 Comp "dci"
 Comment1 "Pablo Slavkin"
 Comment2 ""
@@ -947,10 +947,10 @@ F 0 "R210" H 8500 8465 20  0000 C CNN
 F 1 "10" H 8500 8422 20  0000 C CNN
 F 2 "servo:R_1206_3216Metric_Pad1.42x1.75mm_HandSolder" H 8000 8250 60  0001 C CNN
 F 3 "" H 8100 8350 60  0001 C CNN
-F 4 " 10 Ohms ±5% 0.1W, 1/10W Chip Resistor 0603 (1608 Metric) Automotive AEC-Q200, Moisture Resistant Thick Film " H 0   0   50  0001 C CNN "Description"
-F 5 "CRGCQ0603J10R" H 0   0   50  0001 C CNN "PartNumber"
-F 6 "A130079CT-ND" H 0   0   50  0001 C CNN "digikey"
-F 7 "0.02100" H 0   0   50  0001 C CNN "price@10"
+F 4 "10 Ohms ±5% 0.25W, 1/4W Chip Resistor 1206 (3216 Metric) Moisture Resistant Thick Film" H 0   0   50  0001 C CNN "Description"
+F 5 "RC1206JR-0710RL" H 0   0   50  0001 C CNN "PartNumber"
+F 6 "311-10ERCT-ND" H 0   0   50  0001 C CNN "digikey"
+F 7 "0.11000" H 0   0   50  0001 C CNN "price@10"
 F 8 "1" H 0   0   50  0001 C CNN "bom_1"
 F 9 "1" H 0   0   50  0001 C CNN "bom_2"
 F 10 "1" H 0   0   50  0001 C CNN "bom_3"

@@ -6,8 +6,8 @@ $Descr A3 16535 11693
 encoding utf-8
 Sheet 19 20
 Title "ENDAT/BISS Interface"
-Date "2020-01-09"
-Rev "1.0"
+Date "2020-03-23"
+Rev "0.2"
 Comp "dci"
 Comment1 "Pablo Slavkin"
 Comment2 ""
@@ -23,13 +23,13 @@ P 6000 5100
 AR Path="/5DE3DF56/5E26347A" Ref="U?"  Part="1" 
 AR Path="/5F8D42C2/5E26347A" Ref="U1904"  Part="1" 
 F 0 "U1904" H 6025 5712 60  0000 C CNN
-F 1 "SN75C1168DBR" H 6025 5606 60  0000 C CNN
+F 1 "SN75C1168NSR" H 6025 5606 60  0000 C CNN
 F 2 "servo:SOIC-16W_5.3x10.2mm_P1.27mm" H 5900 5665 60  0001 C CNN
 F 3 "../doc/datasheets/sn65c1168.pdf" H 5900 5825 60  0001 C CNN
-F 4 "2/2 Transceiver Full RS422, RS485 16-SSOP " H 0   0   50  0001 C CNN "Description"
-F 5 "SN75C1168DBR" H 0   0   50  0001 C CNN "PartNumber"
-F 6 "296-SN75C1168DBRCT-ND" H 0   0   50  0001 C CNN "digikey"
-F 7 "1.55300" H 0   0   50  0001 C CNN "price@10"
+F 4 "2/2 Transceiver Full RS422, RS485 16-SO" H 0   0   50  0001 C CNN "Description"
+F 5 "SN75C1168NSR" H 0   0   50  0001 C CNN "PartNumber"
+F 6 "296-6964-1-ND " H 0   0   50  0001 C CNN "digikey"
+F 7 "1.66200" H 0   0   50  0001 C CNN "price@10"
 F 8 "1" H 0   0   50  0001 C CNN "bom_2"
 F 9 "1" H 0   0   50  0001 C CNN "bom_3"
 F 10 "0" H 0   0   50  0001 C CNN "bom_1"
@@ -338,13 +338,13 @@ P 10750 5100
 AR Path="/5DE3DF56/5F749BC7" Ref="U?"  Part="1" 
 AR Path="/5F8D42C2/5F749BC7" Ref="U1905"  Part="1" 
 F 0 "U1905" H 10775 5712 60  0000 C CNN
-F 1 "SN75C1168DBR" H 10775 5606 60  0000 C CNN
+F 1 "SN75C1168NSR" H 10775 5606 60  0000 C CNN
 F 2 "servo:SOIC-16W_5.3x10.2mm_P1.27mm" H 10650 5665 60  0001 C CNN
 F 3 "../doc/datasheets/sn65c1168.pdf" H 10650 5825 60  0001 C CNN
-F 4 "2/2 Transceiver Full RS422, RS485 16-SSOP " H 0   0   50  0001 C CNN "Description"
-F 5 "SN75C1168DBR" H 0   0   50  0001 C CNN "PartNumber"
-F 6 "296-SN75C1168DBRCT-ND" H 0   0   50  0001 C CNN "digikey"
-F 7 "1.55300" H 0   0   50  0001 C CNN "price@10"
+F 4 "2/2 Transceiver Full RS422, RS485 16-SO" H 0   0   50  0001 C CNN "Description"
+F 5 "SN75C1168NSR" H 0   0   50  0001 C CNN "PartNumber"
+F 6 "296-6964-1-ND " H 0   0   50  0001 C CNN "digikey"
+F 7 "1.66200" H 0   0   50  0001 C CNN "price@10"
 F 8 "1" H 0   0   50  0001 C CNN "bom_2"
 F 9 "1" H 0   0   50  0001 C CNN "bom_3"
 F 10 "0" H 0   0   50  0001 C CNN "bom_1"

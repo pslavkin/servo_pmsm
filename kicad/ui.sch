@@ -6,8 +6,8 @@ $Descr A4 11693 8268
 encoding utf-8
 Sheet 14 20
 Title "clk"
-Date "2020-01-09"
-Rev "1.0"
+Date "2020-03-23"
+Rev "0.2"
 Comp "dci"
 Comment1 "Pablo Slavkin"
 Comment2 ""

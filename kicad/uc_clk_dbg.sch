@@ -6,16 +6,14 @@ $Descr A3 16535 11693
 encoding utf-8
 Sheet 6 20
 Title "clk"
-Date "2020-01-09"
-Rev "1.0"
+Date "2020-03-23"
+Rev "0.2"
 Comp "dci"
 Comment1 "Pablo Slavkin"
 Comment2 ""
 Comment3 ""
 Comment4 ""
 $EndDescr
-Text Notes 6150 6800 0    20   ~ 0
-I left fixed in flash mode\nif you need to change it you'll get dirty\n\n
 $Comp
 L servo:GND #PWR_0609
 U 1 1 5DB38F81
@@ -113,11 +111,11 @@ U 1 1 5DB38F64
 P 6300 7550
 F 0 "R604" V 6278 7600 20  0000 L CNN
 F 1 "56k" V 6321 7600 20  0000 L CNN
-F 2 "servo:R_0805_2012Metric_Pad1.15x1.40mm_HandSolder" H 5800 7450 60  0001 C CNN
+F 2 "servo:R_0603_1608Metric" H 5800 7450 60  0001 C CNN
 F 3 "" H 5900 7550 60  0001 C CNN
-F 4 "56 kOhms ±5% 0.1W, 1/10W Chip Resistor 0603 (1608 Metric) Automotive AEC-Q200, Moisture Resistant Thick Film" H 0   0   50  0001 C CNN "Description"
-F 5 "RK73B1JTTD563J" H 0   0   50  0001 C CNN "PartNumber"
-F 6 "2019-RK73B1JTTD563JCT-ND" H 0   0   50  0001 C CNN "digikey"
+F 4 "56 kOhms ±5% 0.1W, 1/10W Chip Resistor 0603 (1608 Metric) Automotive AEC-Q200, Moisture Resistant Thick Film " H 0   0   50  0001 C CNN "Description"
+F 5 "RK73B1JTTD563J " H 0   0   50  0001 C CNN "PartNumber"
+F 6 "2019-RK73B1JTTD563JCT-ND " H 0   0   50  0001 C CNN "digikey"
 F 7 "0.01400" H 0   0   50  0001 C CNN "price@10"
 F 8 "1" H 0   0   50  0001 C CNN "bom_1"
 F 9 "1" H 0   0   50  0001 C CNN "bom_2"
@@ -131,11 +129,11 @@ U 1 1 5DB38F63
 P 6600 7550
 F 0 "R605" V 6578 7600 20  0000 L CNN
 F 1 "56k" V 6621 7600 20  0000 L CNN
-F 2 "servo:R_0805_2012Metric_Pad1.15x1.40mm_HandSolder" H 6100 7450 60  0001 C CNN
+F 2 "servo:R_0603_1608Metric" H 6100 7450 60  0001 C CNN
 F 3 "" H 6200 7550 60  0001 C CNN
-F 4 "56 kOhms ±5% 0.1W, 1/10W Chip Resistor 0603 (1608 Metric) Automotive AEC-Q200, Moisture Resistant Thick Film" H 0   0   50  0001 C CNN "Description"
-F 5 "RK73B1JTTD563J" H 0   0   50  0001 C CNN "PartNumber"
-F 6 "2019-RK73B1JTTD563JCT-ND" H 0   0   50  0001 C CNN "digikey"
+F 4 "56 kOhms ±5% 0.1W, 1/10W Chip Resistor 0603 (1608 Metric) Automotive AEC-Q200, Moisture Resistant Thick Film " H 0   0   50  0001 C CNN "Description"
+F 5 "RK73B1JTTD563J " H 0   0   50  0001 C CNN "PartNumber"
+F 6 "2019-RK73B1JTTD563JCT-ND " H 0   0   50  0001 C CNN "digikey"
 F 7 "0.01400" H 0   0   50  0001 C CNN "price@10"
 F 8 "1" H 0   0   50  0001 C CNN "bom_1"
 F 9 "1" H 0   0   50  0001 C CNN "bom_2"
@@ -475,8 +473,6 @@ Text Label 4100 2600 2    60   ~ 0
 PRG_TMS
 Text Label 4100 2800 2    60   ~ 0
 PRG_TDO
-Wire Wire Line
-	3100 2400 2900 2400
 $Comp
 L servo:3V3 #PWR0601
 U 1 1 5EEB86F5
@@ -490,8 +486,6 @@ F 3 "" H 2750 2200 50  0001 C CNN
 $EndComp
 Wire Wire Line
 	2750 2200 2750 2500
-Wire Wire Line
-	2750 2500 3100 2500
 Wire Wire Line
 	7950 2600 10650 2600
 Wire Wire Line
@@ -668,20 +662,20 @@ Connection ~ 3000 2900
 $Comp
 L Connector_Generic:Conn_02x06_Odd_Even J601
 U 1 1 5E9506B9
-P 3300 2600
-F 0 "J601" H 3350 3017 50  0000 C CNN
-F 1 "pin header 2x6 2.54" H 3350 2926 50  0000 C CNN
-F 2 "servo:PinSocket_2x06_P2.54mm_Vertical_SMD" H 3300 2600 50  0001 C CNN
-F 3 "~" H 3300 2600 50  0001 C CNN
-F 4 "Connector Header Surface Mount 12 position 0.100\" (2.54mm) " H 0   0   50  0001 C CNN "Description"
-F 5 "GBC06DABN-M30" H 0   0   50  0001 C CNN "PartNumber"
-F 6 "S2351E-06-ND" H 0   0   50  0001 C CNN "digikey"
-F 7 "1.10200" H 0   0   50  0001 C CNN "price@10"
-F 8 "0" H 0   0   50  0001 C CNN "bom_1"
-F 9 "0" H 0   0   50  0001 C CNN "bom_2"
-F 10 "1" H 0   0   50  0001 C CNN "bom_3"
-	1    3300 2600
-	1    0    0    -1  
+P 3400 2600
+F 0 "J601" H 3450 3017 50  0000 C CNN
+F 1 "pin header 2x6 2.54" H 3450 2926 50  0000 C CNN
+F 2 "servo:idc2x06_smd" H 3400 2600 50  0001 C CNN
+F 3 "../doc/datasheets/idc2x_smd.pdf" H 3400 2600 50  0001 C CNN
+F 4 "Connector Header Surface Mount 12 position 0.100\" (2.54mm) " H 100 0   50  0001 C CNN "Description"
+F 5 "SBH11-NBPC-D06-SM-BK" H 100 0   50  0001 C CNN "PartNumber"
+F 6 "SBH11-NBPC-D06-SM-BK-ND " H 100 0   50  0001 C CNN "digikey"
+F 7 "1" H 100 0   50  0001 C CNN "price@10"
+F 8 "0" H 100 0   50  0001 C CNN "bom_1"
+F 9 "0" H 100 0   50  0001 C CNN "bom_2"
+F 10 "1" H 100 0   50  0001 C CNN "bom_3"
+	1    3400 2600
+	-1   0    0    -1  
 $EndComp
 Wire Wire Line
 	3600 2400 10650 2400
@@ -719,11 +713,7 @@ F 3 "" H 13900 3150 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
-	2900 2600 3100 2600
-Wire Wire Line
 	2900 2600 2900 3800
-Wire Wire Line
-	3100 2700 2800 2700
 Wire Wire Line
 	2800 2700 2800 4000
 $Comp
@@ -759,16 +749,16 @@ L servo:Resistor R601
 U 1 1 5E946D6A
 P 6300 8650
 F 0 "R601" V 6278 8700 20  0000 L CNN
-F 1 "56k" V 6321 8700 20  0000 L CNN
-F 2 "servo:R_0805_2012Metric_Pad1.15x1.40mm_HandSolder" H 5800 8550 60  0001 C CNN
+F 1 "2.2k" V 6321 8700 20  0000 L CNN
+F 2 "servo:R_0603_1608Metric" H 5800 8550 60  0001 C CNN
 F 3 "" H 5900 8650 60  0001 C CNN
-F 4 "56 kOhms ±5% 0.1W, 1/10W Chip Resistor 0603 (1608 Metric) Automotive AEC-Q200, Moisture Resistant Thick Film" H 0   1100 50  0001 C CNN "Description"
-F 5 "RK73B1JTTD563J" H 0   1100 50  0001 C CNN "PartNumber"
-F 6 "2019-RK73B1JTTD563JCT-ND" H 0   1100 50  0001 C CNN "digikey"
-F 7 "0.01400" H 0   1100 50  0001 C CNN "price@10"
-F 8 "1" H 0   0   50  0001 C CNN "bom_1"
-F 9 "1" H 0   0   50  0001 C CNN "bom_2"
-F 10 "1" H 0   0   50  0001 C CNN "bom_3"
+F 4 "2.2 kOhms ±5% 0.1W, 1/10W Chip Resistor 0603 (1608 Metric) Automotive AEC-Q200 Thick Film " H 0   1100 50  0001 C CNN "Description"
+F 5 "P2.2KGCT-ND " H 0   1100 50  0001 C CNN "digikey"
+F 6 "0.04500" H 0   1100 50  0001 C CNN "price@10"
+F 7 "1" H 0   0   50  0001 C CNN "bom_1"
+F 8 "1" H 0   0   50  0001 C CNN "bom_2"
+F 9 "1" H 0   0   50  0001 C CNN "bom_3"
+F 10 "ERJ-3GEYJ222V" H 0   0   50  0001 C CNN "PartNumber"
 	1    6300 8650
 	0    1    1    0   
 $EndComp
@@ -777,16 +767,16 @@ L servo:Resistor R602
 U 1 1 5E946DCA
 P 6600 8650
 F 0 "R602" V 6578 8700 20  0000 L CNN
-F 1 "56k" V 6621 8700 20  0000 L CNN
-F 2 "servo:R_0805_2012Metric_Pad1.15x1.40mm_HandSolder" H 6100 8550 60  0001 C CNN
+F 1 "2.2k" V 6621 8700 20  0000 L CNN
+F 2 "servo:R_0603_1608Metric" H 6100 8550 60  0001 C CNN
 F 3 "" H 6200 8650 60  0001 C CNN
-F 4 "56 kOhms ±5% 0.1W, 1/10W Chip Resistor 0603 (1608 Metric) Automotive AEC-Q200, Moisture Resistant Thick Film" H 0   1100 50  0001 C CNN "Description"
-F 5 "RK73B1JTTD563J" H 0   1100 50  0001 C CNN "PartNumber"
-F 6 "2019-RK73B1JTTD563JCT-ND" H 0   1100 50  0001 C CNN "digikey"
-F 7 "0.01400" H 0   1100 50  0001 C CNN "price@10"
-F 8 "1" H 0   0   50  0001 C CNN "bom_1"
-F 9 "1" H 0   0   50  0001 C CNN "bom_2"
-F 10 "1" H 0   0   50  0001 C CNN "bom_3"
+F 4 "P2.2KGCT-ND " H 0   1100 50  0001 C CNN "digikey"
+F 5 "0.04500" H 0   1100 50  0001 C CNN "price@10"
+F 6 "1" H 0   0   50  0001 C CNN "bom_1"
+F 7 "1" H 0   0   50  0001 C CNN "bom_2"
+F 8 "1" H 0   0   50  0001 C CNN "bom_3"
+F 9 "2.2 kOhms ±5% 0.1W, 1/10W Chip Resistor 0603 (1608 Metric) Automotive AEC-Q200 Thick Film " H 0   0   50  0001 C CNN "Description"
+F 10 "ERJ-3GEYJ222V" H 0   0   50  0001 C CNN "PartNumber"
 	1    6600 8650
 	0    1    1    0   
 $EndComp
@@ -854,4 +844,12 @@ Connection ~ 6600 8050
 Wire Wire Line
 	6300 8250 6300 7850
 Connection ~ 6300 7850
+Wire Wire Line
+	2800 2700 3100 2700
+Wire Wire Line
+	2900 2600 3100 2600
+Wire Wire Line
+	2750 2500 3100 2500
+Wire Wire Line
+	2900 2400 3100 2400
 $EndSCHEMATC
