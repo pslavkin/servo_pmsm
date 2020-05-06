@@ -50,6 +50,8 @@ I'll let pins to aquire and filter it.
 - :heavy_check_mark:    Gerbers READY.. leaving Moldova...
 - :heavy_check_mark:    Gerbers RELOADED from Bariloche
 - :heavy_check_mark:    Gerbers RELEAED ... cross fingers..
+- :heavy_check_mark:    Board partially manufactured!! miss uC that is traveling on a
+  boat...see pics
  
 
 ## Welcome back Moldova 3.0
@@ -145,6 +147,22 @@ first pic, easy, doesn't it?
 <img src="doc/pics/servo-19.jpg" width="800"/>
 <img src="doc/pics/servo-20.jpg" width="800"/>
 <img src="doc/pics/servo-21.jpg" width="800"/>
+
+## Manufactured PCB
+
+I wanna cry! 
+
+<img src = "doc/pics/mounted_board/mounted_board1.jpeg" width = "400"/>
+<img src = "doc/pics/mounted_board/mounted_board2.jpeg" width = "400"/>
+<img src = "doc/pics/mounted_board/mounted_board3.jpeg" width = "400"/>
+<img src = "doc/pics/mounted_board/mounted_board4.jpeg" width = "400"/>
+<img src = "doc/pics/mounted_board/mounted_board5.jpeg" width = "400"/>
+<img src = "doc/pics/mounted_board/mounted_board6.jpeg" width = "400"/>
+<img src = "doc/pics/mounted_board/mounted_board7.jpeg" width = "400"/>
+<img src = "doc/pics/mounted_board/mounted_board8.jpeg" width = "400"/>
+<img src = "doc/pics/mounted_board/mounted_board9.jpeg" width = "400"/>
+<img src = "doc/pics/mounted_board/mounted_board10.jpeg" width = "400"/>
+<img src = "doc/pics/mounted_board/mounted_board11.jpeg" width = "400"/>
 
 ## Hierarchy
 
